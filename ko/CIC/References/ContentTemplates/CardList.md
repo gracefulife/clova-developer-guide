@@ -1,0 +1,375 @@
+# CardList Template
+화면에 카드 리스트형으로 표현될 데이터를 정형화한 템플릿입니다. CardList는 다시 다음과 같은 카드 타입을 가집니다. 각 카드 타입에 따라 *card* 객체의 구성 필드가 달라질 수 있습니다.
+
+| 카드 타입       | 타입 설명                      | *card* 객체 구성 필드          |
+|---------------|-----------------------------|-----------------------------|
+| Type1         | 콘텐츠의 이미지, 제목, 설명을 표시하는 카드 타입입니다.      | description, imageUrl, referenceText, referenceUrl, title           |
+| Type2         | 콘텐츠의 이미지, 제목, 설명, 링크를 표시하는 카드 타입입니다. | description, imageUrl, linkUrl, referenceText, referenceUrl, title  |
+| Type3         | 비디오 콘텐츠를 표시하는 카드 타입입니다.                 | description, imageUrl, referenceText, referenceUrl, title, videoUrl |
+| Type4         | 뉴스 콘텐츠를 표시하는 카드 타입입니다.                  | description, press, pressIconUrl, publishDate, title                |
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>각 타입별 표시 형태는 <a href="#UIExample">Screen UI example</a>를 참조합니다.</p>
+</div>
+
+## Template field
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|---------|
+| cardList[]                | object array | 카드 목록을 표현하는 객체 배열 | 필수     |
+| cardList[].description    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열         | 선택 |
+| cardList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 표시해야 할 이미지의 URL이 담긴 객체    | 선택 |
+| cardList[].linkUrl        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 콘텐츠의 URL 정보가 담긴 객체         | 선택 |
+| cardList[].press          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체             | 선택 |
+| cardList[].pressIconUrl   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 언론사 아이콘의 URL 정보가 담긴 객체    | 선택 |
+| cardList[].publishDate    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | 기사 발표 일자가 담긴 객체            | 선택 |
+| cardList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 출처의 텍스트 정보가 담긴 객체         | 선택 |
+| cardList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체          | 선택 |
+| cardList[].title          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             | 선택 |
+| cardList[].videoUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체    | 선택 |
+| subType                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li>Type1</li><li>Type2</li><li>Type3</li><li>Type4</li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 Type1, Type2, Type3은 빈 문자열로 표현됩니다. 따라서 <em>card</em> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
+| type                      | string  | Content Template 구분자. "CardList"로 고정                                                                       | 필수 |
+
+## Template Example
+
+{% raw %}
+```json
+// Type1, Type2 예제:
+// 사용자 요청: 공포 영화 추천해줘
+
+{
+  "subType": "",
+  "type": "CardList",
+  "cardList": [
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "공포, 스릴러"
+        },
+        {
+          "type": "string",
+          "value": "아론 에크하트, 데이비드 매주즈, 캐리스 밴 허슨, 카타리나 산디노 모레노, 키어 오도넬, 매트 네이블, 존 피루첼로, 엠제이 안소니, 카롤리나 위드라, 마크 스테거, 토마스 아라나, 페트라 스프레처, 마크 헨리, 애슐리 그린 엘리자베스"
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://movie.phinf.naver.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=118965"
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
+      },
+      "title": {
+        "type": "string",
+        "value": "인카네이트"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "공포"
+        },
+        {
+          "type": "string",
+          "value": "마틸다 안나 잉그리드 루츠, 알렉스 로, 자니 갈렉키, 빈센트 도노프리오, 에이미 티가든, 보니 모건, 로라 위긴스, 잭 로어리그, 리지 브로체르"
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://movie.phinf.naver.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=137909"
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
+      },
+      "title": {
+        "type": "string",
+        "value": "링스"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    ...
+  ]
+}
+
+// Type3 예제
+// 사용자 요청: 축구 동영상 보여줘
+{
+  "subType": "",
+  "type": "CardList",
+  "cardList": [
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "04:14"
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://hol.phinf.naver.net/00/587/820/58782072_0.jpg"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
+      },
+      "title": {
+        "type": "string",
+        "value": "[해외반응] U20 월드컵, 이탈리아 일본, 해외네티즌 \"최악의 더러운 경기\" - 해외네티즌반응"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": "http://m.tv.naver.com/v/1720910"
+      }
+    },
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "06:31"
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://hol.phinf.naver.net/00/587/815/58781581_0.jpg"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
+      },
+      "title": {
+        "type": "string",
+        "value": "FA컵 결승: 아스널 v 첼시 경기 후 인터뷰"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": "http://m.sports.naver.com/video.nhn?id=310230"
+      }
+    },
+    ...
+  ]
+}
+
+
+// Type4 예제
+// 사용자 요청: 최신 뉴스 보여줘
+{
+  "subType": "Type4",
+  "type": "CardList",
+  "cardList": [
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "다음 달이면 말 많고 탈 많았던 '4대강'의 보 수문이 열립니다. 문재인 대통령이 지난 22일 '4대강 사업'에 대한 감사 지시를 하면서 이뤄진 결정입니다. 이를 계기로 4대강 사업 논란이 다시 수면 위로 떠올랐습니"
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=025&aid=0002720454"
+      },
+      "press": {
+        "type": "string",
+        "value": "중앙일보"
+      },
+      "publishDate": {
+        "type": "date",
+        "value": "2017-05-28"
+      },
+      "referenceText": {
+        "type": "string",
+        "value": ""
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "title": {
+        "type": "string",
+        "value": "[시민마이크]'녹차라떼 4대강' 감사, 시민들의 생각은?"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "5월 마지막 주말 나들이객 줄이어더위 식히고 모래작품 보고(부산=연합뉴스) 조정호 기자 = 초여름 날씨를 보인 28일 부산 해운대 모래축제가 열린 해운대해수욕장에서 나들이객들이 가로 25ｍ, 높이 5ｍ 크기의 대형 모래작품을 구경하고 있습니다. 2017.5.28(전국종합=연합뉴스) 5월의 마지막 주말인 28일 초여름 날씨가..."
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=001&aid=0009297247"
+      },
+      "press": {
+        "type": "string",
+        "value": "연합뉴스"
+      },
+      "publishDate": {
+        "type": "date",
+        "value": "2017-05-28"
+      },
+      "referenceText": {
+        "type": "string",
+        "value": ""
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "title": {
+        "type": "string",
+        "value": "단오제 등 전국 곳곳 축제…초여름 날씨에 때이른 피서 행렬"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": ""
+      }
+    },
+    ...
+  ]
+}
+
+```
+{% endraw %}
+
+## Screen UI example {#UIExample}
+다음은 NAVER가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
+
+| Type1 | Type2 |
+|-------|-------|
+| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_with_Link_Type.png" /></div> |
+
+| Type3 | Type4 |
+|-------|-------|
+| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Video_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-News_Card_Type.png" /></div> |
+
+## See also
+* [ImageList](/CIC/References/ContentTemplates/ImageList.md)
+* [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+* [Text](/CIC/References/ContentTemplates/Text.md)

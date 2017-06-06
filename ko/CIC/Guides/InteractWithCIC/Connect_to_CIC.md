@@ -1,0 +1,108 @@
+## CIC 연결하기 {#ConnectToCIC}
+클라이언트가 CIC와 연결하려면 다음과 같은 항목을 수행해야 합니다.
+* [Clova access token 생성하기](#CreateClovaAccessToken)
+* [연결 생성하기](#CreateConnection)
+* [인증하기](#Authentication)
+
+### Clova access token 생성하기 {#CreateClovaAccessToken}
+사용자는 네이버 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. 네이버 계정 인증 정보까지 처리된  Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
+
+![](/CIC/Resources/Images/CIC_Authentication.png)
+<a class="ignoreOnPDF" target="_blank" href="/CIC/Resources/Images/CIC_Authentication.png">확대해서 보기</a>
+
+Clova access token을 획득하는 절차는 다음과 같습니다.
+
+<ol>
+<li><p>사용자가 네이버 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다. (<a href="https://developers.naver.com/docs/login/overview/" target="_blank">네이버 아이디로 로그인하기 SDK</a>)</p>
+</li>
+<li><p>사용자가 입력한 네이버 계정 정보를 이용하여 네이버 계정 인증 토큰을 획득합니다.</p>
+</li>
+<li><p>획득한 네이버 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/Clova_Auth_API.html#authorize">/authorize</a> API의 파라미터로 입력하여 Clova 인증 코드를 획득합니다. 다음은 Clova 인증 코드를 요청한 예입니다.</p>
+<pre><code>https://auth.clova.ai/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+                               &amp;device_id=test_device
+                               &amp;model_id=test_model
+                               &amp;response_type=code
+                               &amp;state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
+</code></pre>
+<p>다음과 같은 인증 코드가 반환됩니다.</p>
+<pre><code>{
+    "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
+    "state": "95/KjaJfMlakjdfTVbES5ccZQ=="
+}
+</code></pre></li>
+<li><p>(필요에 따라 생략 가능) Clova 인증 코드를 실제 클라이언트 기기로 전송합니다.</p>
+</li>
+<li><p>획득한 Clova 인증 코드와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API의 파라미터로 입력하여 Clova access token을 획득합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+<pre><code>http://auth.clova.ai:15828/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+                                &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                                &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
+                                &amp;device_id=test_device
+                                &amp;grant_type=authorization_code
+                                &amp;model_id=test_model
+</code></pre>
+<p>다음과 같은 Clova access token이 반환됩니다.</p>
+<pre><code>{
+    "access_token": "XHapQasdfsdfFsdfasdflQQ7w",
+    "expires_in": 332000,
+    "refresh_token": "GW-Ipsdfasdfdfs3IbHFBA",
+    "token_type": "Bearer"
+}
+</code></pre>
+</li>
+</ol>
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>네이버 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
+</div>
+
+
+### CIC 연결하기 {#CreateConnection}
+CIC는 HTTP/2 프로토콜을 사용하며, CIC에 연결할 때 사용하는 base URL은 다음과 같습니다.
+
+{% raw %}
+```
+https://prod-ni-cic.clova.ai/
+```
+{% endraw %}
+
+클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 Downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 Downchannel을 통해 지시 메시지가 전달될 것입니다.
+
+Downchannel은 */v1/directives* 경로로 *GET* 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
+
+{% raw %}
+```
+:method: GET
+:scheme: https
+:path = /v1/directives
+Authorization: Bearer {{ClovaAccessToken}}
+```
+{% endraw %}
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 Downchannel을 유지하도록 해야 합니다. 만약, Downchannel이 생성된 상태에서 */v1/directives*으로 추가 요청이 들어오면 기존 Downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authentication">인증하기</a>를 참조합니다.</li></ul>
+</div>
+
+
+### 인증하기 {#Authentication}
+클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다.
+
+{% raw %}
+```
+:method: {{GET|POST}}
+:scheme: https
+:path = /v1/events
+Authorization: Bearer {{ClovaAccessToken}}
+```
+{% endraw %}
+
+클라이언트가 새로운 요청(이벤트 메시지)을 보낼 때마다 다음 그림과 같이 Clova access token을 함께 전달해야 합니다.
+
+![](/CIC/Resources/Images/CIC_Message_Interaction_Diagram.png)
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>HTTP 포맷에 대한 자세한 설명은 <a href="/CIC/References/HTTP2_Message_Format.html">HTTP/2 메시지 포맷</a>을 참조합니다.
+</p>
+</div>
