@@ -86,14 +86,14 @@ https://auth.clova.ai/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
 ### Parameter
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| access_token  | string  | 인증 성공 후 발급받은 Clova access token. *grant_type* 필드 값이 "delete" 일 경우 필수입니다.                                   | 선택 |
+| access_token  | string  | 인증 성공 후 발급받은 Clova access token. *grant_type* 필드 값이 "delete" 이면 필수입니다.                                   | 선택 |
 | client_id     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | client_secret | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| code          | string  | [/authorize](#authorize) API로 발급받은 Clova 인증 코드. *grant_type* 필드 값이 "authorization_code" 일 경우 필수입니다.        | 선택 |
+| code          | string  | [/authorize](#authorize) API로 발급받은 Clova 인증 코드. *grant_type* 필드 값이 "authorization_code" 이면 필수입니다.        | 선택 |
 | device_id     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
 | grant_type    | string  | 동작 구분자. <ul><li>"authorization_code": 토큰 발급</li><li>"refresh_token": 토큰 갱신</li><li>"delete": 토큰 삭제</li></ul> | 필수 |
 | model_id      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
-| refresh_token | string  | 인증 성공 후 발급받은 갱신 토큰. *grant_type* 필드 값이 "refresh_token" 일 경우 필수입니다.                                        | 선택 |
+| refresh_token | string  | 인증 성공 후 발급받은 갱신 토큰. *grant_type* 필드 값이 "refresh_token" 이면 필수입니다.                                        | 선택 |
 | response_type | string  | 응답 유형. 현재는 "code"만 지원합니다.                                                                                      | 필수 |
 
 ### Request Example

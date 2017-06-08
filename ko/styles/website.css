@@ -26,7 +26,6 @@
     text-align: center;
 }
 
-.book-langs-index .inner .languages li {
-    float: none;
-    width: 100%;
+.book-body .body-inner .page-wrapper .page-inner {
+	max-width: 1000px;
 }

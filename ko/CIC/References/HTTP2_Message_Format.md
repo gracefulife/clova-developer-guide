@@ -31,8 +31,8 @@ content-type = multipart/form-data; boundary={{boundary_term}}
 ```
 {% endraw %}
 
-| 필드 이름 | 설명 |
-|----------------|-----|
+| 필드 이름          | 메시지 설명                                    |
+|------------------|---------------------------------------------|
 | :method        | CIC는 다음과 같은 메서드를 지원합니다. <ul><li>GET: <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">Downchannel</a> 생성 시 사용</li><li>POST: <a href="/CIC/References/CIC_Message_Format.html#Event">이벤트 메시지</a>를 보낼 때 사용</li></ul> |
 | :scheme        | CIC API는 https 통신을 지원합니다.                                                                            |
 | :path          | 이벤트 메시지와 지시 메시지를 전송할 때 각각 다음 경로를 사용합니다. <ul><li>/v1/events</li><li>/v1/directives</li></ul> |

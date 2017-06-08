@@ -79,4 +79,4 @@
 * [CEK 메시지 포맷]
   * TBD
 * [Custom Extension API]
-* [Clova Home Extension API]
+* [Clova Home Extension API](/CEK/References/Clova_Home_Extension_API.md)

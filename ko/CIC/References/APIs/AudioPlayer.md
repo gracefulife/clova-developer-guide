@@ -442,7 +442,7 @@
 | audioStream | [AudioStreamObject](#AudioStreamObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체               | 필수 |
 
 ### Remarks
-StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시지의 본문인 *payload.audioStream*을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 StreamDeliver 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 StreamDeliver 지시 메시지의 AudioStreamObject의 내용이 이미 Play 지시 메시지로 전달된 내용과 중복된 부분이 있을 경우 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
+StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시지의 본문인 *payload.audioStream*을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 StreamDeliver 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 StreamDeliver 지시 메시지의 AudioStreamObject의 내용이 이미 Play 지시 메시지로 전달된 내용과 중복된 부분이 있으면 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
 
 ### Message example
 {% raw %}

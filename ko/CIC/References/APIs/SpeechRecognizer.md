@@ -59,7 +59,7 @@ timeoutInMilliseconds 시간 동안 사용자의 음성 데이터 입력이 없�
 
 ## ExpectSpeechTimedOut Event {#ExpectSpeechTimedOut}
 
-[SpeechRecognizer.ExpectSpeech](#ExpectSpeech) 지시 메시지로 전달된 대기 시간 동안 사용자의 음성 입력이 없을 경우 해당 이벤트 메시지를 CIC로 전달합니다.
+[SpeechRecognizer.ExpectSpeech](#ExpectSpeech) 지시 메시지로 전달된 대기 시간 동안 사용자의 음성 입력이 없으면 해당 이벤트 메시지를 CIC로 전달합니다.
 
 ### Context field
 
