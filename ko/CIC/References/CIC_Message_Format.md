@@ -21,10 +21,10 @@
   ],
   "event": {
     "header": {
-      "namespace": "{{string}}",
-      "name": "{{string}}",
-      "dialogRequestId": "{{string}}",
-      "messageId": "{{string}}"
+      "namespace": {{string}},
+      "name": {{string}},
+      "dialogRequestId": {{string}},
+      "messageId": {{string}}
     },
     "payload": {{object}}
   }
@@ -38,11 +38,11 @@
 | context                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context.html#PlaybackState">AudioPlayer.PlaybackState</a>: 최근 재생 정보</li><li><a href="/CIC/References/Context.html#DeviceState">Device.DeviceState</a>: 기기 정보</li><li><a href="/CIC/References/Context.html#FreetalkState">Clova.FreetalkState</a>: 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context.html#Location">Clova.Location</a>: 기기 위치 정보</li><li><a href="/CIC/References/Context.html#SavedPlace">Clova.SavedPlace</a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context.html#VolumeState">Speaker.VolumeState</a>: 스피커 정보</li></ul> | 필수 |
 | event                        | obejct       | 이벤트 메시지의 헤더와 필요한 데이터(payload)를 가지는 객체                                                                 | 필수 |
 | event.header                 | object       | 이벤트 메시지의 헤더                                                                                                 | 필수 |
-| event.header.dialogRequestId | string       | 대화 ID(Dialog ID). 추후 CIC 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다.                                             | 필수 |
+| event.header.dialogRequestId | string       | 대화 ID(Dialogue ID). 추후 CIC 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다.                                             | 필수 |
 | event.header.messageId       | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다.                                                                 | 필수 |
 | event.header.name            | string       | 이벤트 메시지의 API 이름                                                                                             | 필수 |
 | event.header.namespace       | string       | 이벤트 메시지의 API 네임스페이스                                                                                       | 필수 |
-| event.payload                | object       | 이벤트 메시지와 관련된 정보를 담고 있는 객체 사용하는 [API](/CIC/References/CIC_API.md)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수 |
+| event.payload                | object       | 이벤트 메시지와 관련된 정보를 담고 있는 객체. 사용하는 [API](/CIC/References/CIC_API.md)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수 |
 
 ### Message example
 {% raw %}
@@ -88,10 +88,10 @@
 {
   "directive": {
     "header": {
-      "namespace": "{{string}}",
-      "name": "{{string}}",
-      "dialogRequestId": "{{string}}",
-      "messageId": "{{string}}"
+      "namespace": {{string}},
+      "name": {{string}},
+      "dialogRequestId": {{string}},
+      "messageId": {{string}}
     },
     "payload": {{object}}
   }
@@ -105,11 +105,11 @@
 |---------------|---------|-----------------------------|---------|
 | directive                        | obejct | 지시 메시지의 헤더와 필요한 데이터(payload)를 가지는 객체                                                                 | 필수     |
 | directive.header                 | object | 지시 메시지의 헤더                                                                                                 | 필수     |
-| directive.header.dialogRequestId | string | 대화 ID(Dialog ID). 추후 클라이언트 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다.                                        | 필수    |
+| directive.header.dialogRequestId | string | 대화 ID(Dialogue ID). 추후 클라이언트 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다.                                        | 필수    |
 | directive.header.messageId       | string | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다.                                                                | 필수     |
 | directive.header.name            | string | 지시 메시지의 API 이름                                                                                             | 필수     |
 | directive.header.namespace       | string | 지시 메시지의 API 네임스페이스                                                                                       | 필수     |
-| directive.payload                | object | 지시 메시지와 관련된 정보를 담고 있는 객체 사용하는 [API](/CIC/References/CIC_API.md)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수     |
+| directive.payload                | object | 지시 메시지와 관련된 정보를 담고 있는 객체. 사용하는 [API](/CIC/References/CIC_API.md)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수     |
 
 ### Message example
 {% raw %}

@@ -1,5 +1,5 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지는 메시지 포맷입니다.
+PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지는 메시지 포맷입니다. 이 정보는 추후 음악 서비스를 제공하는 [extension으로 전달](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)될 수 있습니다.
 
 ### Message format
 {% raw %}

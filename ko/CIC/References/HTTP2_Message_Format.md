@@ -4,13 +4,17 @@ CIC와 연동할 때 HTTP/2 프로토콜을 사용합니다. 클라이언트가 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 
 이 문서에서는 다음에 대해 설명합니다.
-* [CIC base URL](#BaseURL)
-* [HTTP 헤더](#Header)
-* [HTTP multipart 메시지](#MultipartMessage)
+* [HTTP 요청](#request)
+  * [CIC base URL](#BaseURL)
+  * [HTTP 헤더](#Header)
+  * [HTTP multipart 메시지](#MultipartMessage)
 * [HTTP 응답](#Response)
 
-## CIC base URL {#BaseURL}
-현재 Clova는 한국에 서비스되고 있으며, 아래 URL을 base URL로 사용합니다.
+## HTTP 요청 {#Request}
+주로 클라이언트가 CIC로 사용자의 요청을 전달할 때 HTTP 요청을 사용하며, 이벤트 메시지를 HTTP 요청을 통해 보냅니다.
+
+### CIC base URL {#BaseURL}
+Clova는 아래 URL을 base URL로 사용합니다.
 
 {% raw %}
 ```
@@ -18,7 +22,7 @@ https://prod-ni-cic.clova.ai/
 ```
 {% endraw %}
 
-## HTTP 헤더 {#Header}
+### HTTP 헤더 {#Header}
 CIC와 연결할 때 다음과 같은 필드가 HTTP 헤더로 필요합니다.
 
 {% raw %}
@@ -39,10 +43,10 @@ content-type = multipart/form-data; boundary={{boundary_term}}
 | authorization  | Clova 인증 서버를 통해 획득한 인증 토큰을 입력합니다. 인증 토큰은 모든 요청의 헤더에 포함되어 있어야 합니다.                     |
 | content-type   | HTTP 메시지의 콘텐츠 타입이며, multipart 메시지를 보내기 때문에 항상 *multipart/form-data*여야 합니다. 또한, 메시지를 구분하는 메시지 경계 문구를 지정해야 하며, 이 문구는 메시지의 본문에서 나타나지 않아야 합니다. 참조로 각 메시지에 대한 콘텐츠 타입은 메시지 헤더에서 정의합니다. |
 
-## HTTP multipart 메시지 {#MultipartMessage}
+### HTTP multipart 메시지 {#MultipartMessage}
 HTTP 헤더를 전달한 이후 연결이 설정되면 stream이 생성됩니다. 이 stream을 통해 CIC와 클라이언트가 이벤트 메시지 또는 지시 메시지를 전송하게 됩니다. 각 메시지는 요청이나 응답에 대한 정보를 담고 있는 JSON 형식의 데이터를 담고 있거나 사용자의 음성이 녹음된 바이너리 형식의 데이터로 구성됩니다. 각각의 메시지 구성은 데이터의 타입에 따라 다음과 같이 구분됩니다.
 
-### JSON 데이터 형식의 메시지 구성
+#### JSON 데이터 형식의 메시지 구성
 JSON 형태의 메시지는 이벤트 메시지 정보를 담고 있거나 또는 콘텐츠 정보를 담을 때 사용됩니다. JSON 형식의 데이터를 보낼 때 메시지는 다음 예처럼 헤더와 본문으로 구성됩니다.
 
 {% raw %}
@@ -57,10 +61,10 @@ Content-Type: application/json; charset=UTF-8
   ],
   "event": {
     "header": {
-      "namespace": "{{string}}",
-      "name": "{{string}}",
-      "dialogRequestId": "{{string}}",
-      "messageId": "{{string}}"
+      "namespace": {{string}},
+      "name": {{string}},
+      "dialogRequestId": {{string}},
+      "messageId": {{string}}
     },
     "payload": {{object}}
   }
@@ -71,7 +75,7 @@ Content-Type: application/json; charset=UTF-8
 
 각 이벤트 메시지는 CIC가 제공하는 API에 따라 그 구성이 달라질 수 있습니다. 메시지의 구성과 API에 대한 자세한 정보는 [메시지 포맷](/CIC/References/CIC_Message_Format.md)과 [API](/CIC/References/CIC_API.md)를 참조합니다.
 
-### 음성 데이터 형식의 메시지 구성
+#### 음성 데이터 형식의 메시지 구성
 음성 데이터는 다음과 같은 헤더를 가지며, 본문에는 바이너리 데이터가 포함됩니다. 자세한 내용은 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)를 참조합니다.
 
 {% raw %}
@@ -95,8 +99,8 @@ Content-Type: application/octet-stream
   <p>현재 HTTP 상태 코드로 오류 상황을 전달하고 있으나 곧 exception 응답을 별도로 준비할 예정입니다.</p>
 </div>
 
-## 메시지 예제 {#MessageExample}
-다음은 클라이언트와 CIC 사이에서 주고 받은 요청/응답 메시지 예제입니다.
+## HTTP 메시지 예제 {#MessageExample}
+다음은 클라이언트와 CIC 사이에서 주고 받은 HTTP 요청/응답 메시지 예제입니다.
 
 ### Request Example
 {% raw %}

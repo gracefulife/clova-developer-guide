@@ -12,10 +12,10 @@
   "payload": {
     "places": [
       {
-        "latitude": "{{string}}",
-        "longitude": "{{string}}",
-        "refreshedAt": "{{string}}"
-        "name": "{{string}}"
+        "latitude": {{string}},
+        "longitude": {{string}},
+        "refreshedAt": {{string}}
+        "name": {{string}}
       }
     ]
   }

@@ -10,7 +10,7 @@ DeviceState는 사용자 기기에 설정된 현지 시간 정보와 같이 클�
     "name": "DeviceState"
   },
   "payload": {
-    "localTime": "{{string}}"
+    "localTime": {{string}}
   }
 }
 ```

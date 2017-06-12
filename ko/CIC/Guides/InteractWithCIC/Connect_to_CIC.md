@@ -106,3 +106,18 @@ Authorization: Bearer {{ClovaAccessToken}}
 <p>HTTP 포맷에 대한 자세한 설명은 <a href="/CIC/References/HTTP2_Message_Format.html">HTTP/2 메시지 포맷</a>을 참조합니다.
 </p>
 </div>
+
+### 연결 관리하기 {#ManageConnection}
+
+클라이언트와 CIC 사이에 연결이 구성되면, 클라이언트는 다음과 같이 연결을 관리해야 합니다.
+
+| 구분      | 설명                               |
+|----------|-----------------------------------|
+| DownChannel 유지 | Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [Downchannel을 구성](##CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다. |
+| Ping-pong 수행 | 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하는 경우, 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. |
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>HTTP/2 PING 프레임에 대한 자세한 설명은 <a href="https://http2.github.io/http2-spec/#rfc.figure.12">HTTP/2 PING Payload Format</a>을 참조합니다.
+</p>
+</div>

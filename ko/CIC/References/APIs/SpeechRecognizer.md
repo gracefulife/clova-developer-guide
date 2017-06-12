@@ -44,7 +44,7 @@ timeoutInMilliseconds 시간 동안 사용자의 음성 데이터 입력이 없�
       "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
     },
     "payload": {
-      "timeoutInMilliseconds": 10000
+      "timeoutInMilliseconds": 7000
     }
   }
 }

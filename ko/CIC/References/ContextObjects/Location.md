@@ -10,9 +10,9 @@
     "name": "Location"
   },
   "payload": {
-    "latitude": "{{string}}",
-    "longitude": "{{string}}",
-    "refreshedAt": "{{string}}"
+    "latitude": {{string}},
+    "longitude": {{string}},
+    "refreshedAt": {{string}}
   }
 }
 ```
