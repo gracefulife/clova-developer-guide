@@ -57,7 +57,7 @@
 
 ## Clova Extension Kit
 
-* [CEK 개요](/CEK_Overview.md)
+* [CEK 개요](/CEK/CEK_Overview.md)
   * CEK란?
   * CEK 동작 구조
   * Extension 종류
