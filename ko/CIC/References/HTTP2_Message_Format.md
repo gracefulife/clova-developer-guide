@@ -109,9 +109,9 @@ Content-Type: application/octet-stream
 :scheme = https
 :path = /v1/events
 authorization = Bearer {{clova-access-token}}
-content-type = multipart/form-data; boundary=----boundary----
+content-type = multipart/form-data; boundary=boundary
 
-----boundary----
+--boundary
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8
 
@@ -141,13 +141,13 @@ Content-Type: application/json; charset=UTF-8
   }
 }
 
-----boundary----
+--boundary
 
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
 {{binary audio attachment}}
-----boundary----
+--boundary--
 
 ```
 {% endraw %}
@@ -156,9 +156,9 @@ Content-Type: application/octet-stream
 {% raw %}
 ```
 :status = 200
-content-type = multipart/related; boundary=----boundary----; type="application/json"
+content-type = multipart/related; boundary=boundary; type="application/json"
 
-----boundary----
+--boundary
 Content-Type: application/json; charset=UTF-8
 
 {
@@ -177,11 +177,11 @@ Content-Type: application/json; charset=UTF-8
     }
 }
 
-----boundary----
+--boundary
 Content-Type: application/octet-stream
 Content-ID: <1234>
 
 {{binary audio attachment}}
-----boundary----
+--boundary----
 ```
 {% endraw %}
