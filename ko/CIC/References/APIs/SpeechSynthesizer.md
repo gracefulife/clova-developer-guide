@@ -75,7 +75,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 // cid:{Content-Id} 포맷
 // Content-Id가 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369인 오디오 데이터 메시지를 재생해야 합니다.
 
--- boundary
+--Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"
 Content-Type: application/json; charset=utf-8
 
@@ -98,22 +98,17 @@ Content-Type: application/json; charset=utf-8
   }
 }
 
--- boundary
+--Boundary-Text
 Content-Disposition: form-data; name="attachment"
 Content-Id: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 Content-Type: application/octet-stream
 
-[ Audio Attachment ]
--- boundary
-```
-{% endraw %}
+{ Audio Attachment }
+--Boundary-Text--
 
 
-{% raw %}
-
-```
 // URL 포맷
-
+--Boundary-Text
 {
   "directive": {
     "header": {
@@ -129,6 +124,7 @@ Content-Type: application/octet-stream
     }
   }
 }
+--Boundary-Text--
 ```
 
 {% endraw %}

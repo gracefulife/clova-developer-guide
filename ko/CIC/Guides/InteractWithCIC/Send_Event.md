@@ -16,12 +16,12 @@
 :scheme = https
 :path = /v1/events
 Authorization = Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
-content-type = multipart/form-data; boundary=-------Boundary-text-------
+content-type = multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
 <li>이벤트 메시지에 포함시킬 대화 ID(dialogRequestId)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</li>
 <li>첫 번째 메시지 파트에 <a href="/CIC/References/APIs/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.
-<pre><code>-------Boundary-text-------
+<pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8
 
@@ -50,14 +50,16 @@ Content-Type: application/json; charset=UTF-8
     }
   }
 }
+--Boundary-Text--
 </code></pre>
 </li>
 <li>두 번째 메시지 파트부터 사용자가 입력한 음성 데이터를 200ms 간격으로 끊어서 전송합니다. 데이터 형식 변경에 따라 메시지 헤더도 아래와 같이 작성합니다.
-<pre><code>-------Boundary-text-------
+<pre><code>--Boundary-Text
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
-[ PCM Audio Attachment ]
+{ PCM Audio Attachment }
+--Boundary-Text--
 </code></pre>
 </li>
 <li><p>사용자가 음성 입력을 마치거나 CIC로부터 <a href="/CIC/References/APIs/SpeechRecognizer.html#StopCapture">SpeechRecognizer.StopCapture</a> Downchannel 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</p>
