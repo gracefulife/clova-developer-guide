@@ -13,11 +13,11 @@
 | AudioPlayer       | [AudioPlayer.StreamRequested](/CIC/References/APIs/AudioPlayer.md#StreamRequested) | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다. |
 | Memo              | [Created](/CIC/References/APIs/Memo.md#Created)                  | CIC에 특정 메모를 등록하도록 요청합니다.                                                            |
 | Memo              | [Deleted](/CIC/References/APIs/Memo.md#Deleted)                  | CIC에 특정 메모를 삭제하도록 요청합니다.                                                            |
-| Memo              | [Get](/CIC/References/APIs/Memo.md#Get)                          | CIC에 사용자가 생선한 모든 메모 목록을 요청합니다.                                                    |
+| Memo              | [Get](/CIC/References/APIs/Memo.md#Get)                          | CIC에 사용자가 생성한 모든 메모 목록을 요청합니다.                                                    |
 | Memo              | [Updated](/CIC/References/APIs/Memo.md#Updated)                  | CIC에 특정 메모를 갱신하도록 요청합니다.                                                            |
 | Reminder          | [Created](/CIC/References/APIs/Reminder.md#Created)              | CIC에 특정 리마인더를 생성하도록 요청합니다.                                                         |
 | Reminder          | [Deleted](/CIC/References/APIs/Reminder.md#Deleted)              | CIC에 특정 리마인더를 삭제하도록 요청합니다.                                                         |
-| Reminder          | [Get](/CIC/References/APIs/Reminder.md#Get)                      | CIC에 사용자가 생선한 모든 리마인더 목록을 요청합니다.                                                 |
+| Reminder          | [Get](/CIC/References/APIs/Reminder.md#Get)                      | CIC에 사용자가 생성한 모든 리마인더 목록을 요청합니다.                                                 |
 | Reminder          | [Updated](/CIC/References/APIs/Reminder.md#Updated)              | CIC에 특정 리마인더를 갱신하도록 요청합니다.                                                         |
 | SpeechRecognizer  | [ExpectSpeechTimedOut](/CIC/References/APIs/SpeechRecognizer.md#ExpectSpeechTimedOut) | 음성 입력 대기 시간이 초과했음을 CIC에 보고합니다.                               |
 | SpeechRecognizer  | [Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)  | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.                                          |

@@ -4,7 +4,7 @@
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [AddMemo](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록지시합니다.                   |
+| [AddMemo](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                   |
 | [AddReminder](#AddReminder)               | Directive | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.               |
 | [AddSchedule](#AddSchedule)               | Directive | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                  |
 | [CountSchedule](#CountSchedlue)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
@@ -25,7 +25,7 @@
 
 ## AddMemo Directive {#AddMemo}
 
-클라이언트에게 새로운 메모를 추가하도록지시합니다. 사용자의 음성 인식으로 파악된 결과가 메모 내용으로 함께 전달됩니다.
+클라이언트에게 새로운 메모를 추가하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 메모 내용으로 함께 전달됩니다.
 
 ### Payload field
 
@@ -36,7 +36,7 @@
 
 ### Remarks
 
-새로운 메모 생성이 완료되면 그 결과를 [Memo.Created](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 리마인더 생성이 완료되면 그 결과를 [Memo.Created](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -535,7 +535,7 @@
 |---------------|---------|-----------------------------|---------|
 | reminder[]         | object array | 리마인더 목록을 포함하고 있는 객체 배열 | 필수    |
 | reminder[].content | string       | 표시할 리마인더의 내용              | 필수    |
-| reminder[].done    | boolean      | 리마인더를 완료햇는지 여부           | 필수    |
+| reminder[].done    | boolean      | 리마인더를 완료했는지 여부           | 필수    |
 | reminder[].id      | string       | 표시할 리마인더의 ID               | 필수    |
 
 ### Message example
@@ -585,7 +585,7 @@
 클라이언트에게 데이터를 Content Template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
 ### Payload field
-*payload* 필드는 [Content Template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다.. 현재 다음과 같은 Content Template을 제공하고 있습니다.
+*payload* 필드는 [Content Template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 Content Template을 제공하고 있습니다.
 
 * [Image List](/CIC/References/Content_Templates.md#ImageList)
 * [Image & Text](/CIC/References/Content_Templates.md#ImageText)

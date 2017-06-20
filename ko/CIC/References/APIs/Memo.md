@@ -6,7 +6,7 @@
 |------------------|-----------|---------------------------------------------|
 | [Created](#Created) | Event  | CIC에 특정 메모를 등록하도록 요청합니다. |
 | [Deleted](#Deleted) | Event  | CIC에 특정 메모를 삭제하도록 요청합니다. |
-| [Get](#Get) | Event  | CIC에 사용자가 생선한 모든 메모 목록을 요청합니다. |
+| [Get](#Get) | Event  | CIC에 사용자가 생성한 모든 메모 목록을 요청합니다. |
 | [Updated](#Updated) | Event  | CIC에 특정 메모를 갱신하도록 요청합니다. |
 
 ## Created Event {#Created}
@@ -191,7 +191,7 @@ CIC에 특정 메모의 갱신을 요청합니다.
 
 * Updated 이벤트 메시지는 payload 전체를 변경하므로 어떤 필드 값이 비어 있으면 해당 필드는 빈 값으로 변경되므로 갱신하고자 하는 특정 필드만 보내지 않도록 유의합니다.
 
-* 각 메모의 필드 값은 [Memo.Get](#Get) 이벤트 메시지 응답 전달되는 [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) 지시 메시지를 통해 확인할 수 있습니다.
+* 각 메모의 필드 값은 [Memo.Get](#Get) 이벤트 메시지의 응답으로 전달되는 [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) 지시 메시지를 통해 확인할 수 있습니다.
 
 ### Message example
 

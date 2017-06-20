@@ -15,7 +15,7 @@
   * [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
     * [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
     * [연결하기](/CIC/Guides/Interact_with_CIC.md#CreateConnection)
-    * [인증하기](/CIC/Guides/Interact_with_CIC.md#Authentication)
+    * [인증하기](/CIC/Guides/Interact_with_CIC.md#Authorization)
     * [연결 관리하기](/CIC/Guides/Interact_with_CIC.md#ManageConnection)
   * [이벤트 메시지 전송하기](/CIC/Guides/Interact_with_CIC.md#SendEvent)
   * [지시 메시지 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
@@ -58,23 +58,24 @@
 ## Clova Extension Kit
 
 * [CEK 개요](/CEK/CEK_Overview.md)
-  * CEK란?
-  * CEK 동작 구조
-  * Extension 종류
-* [Custom Extension 만들기](/CEK/Guides/Build_Custom_Extension.md)
-  * Custom Extension이란?
-  * 사전 준비 사항
-  * Extension 요청 처리
-  * Extension 응답 처리
-* [Clova Home Extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)
-  * Clova Home Extension이란?
-  * 사전 준비 사항
-  * Discovery 제공하기
-  * Extension 요청 처리
-  * Extension 응답 처리
-* [사용자 계정 연동하기](/CEK/Guides/LinkClovaUserToUserInYourService.md)
+  * [CEK란?](/CEK/CEK_Overview.md#WhatisCEK)
+  * [CEK 동작 구조](/CEK/CEK_Overview.md#CEKInteractionStructure)
+  * [Extension 종류](/CEK/CEK_Overview.md#ExtensionType)
+* [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md)
+  * [사전 준비사항](/CEK/Guides/Build_Custom_Extension.md#Prepation)
+  * [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
+    * [LaunchRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleLaunchRequest)
+    * [IntentRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
+    * [SessionEndedRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
+  * [Custom extension 응답 반환하기](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
+* [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)
+  * [사전 준비사항](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
+  * [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
+  * [Clova Home extension 요청 처리하기](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
+  * [Clova Home extension 응답 반환하기](/CEK/Guides/Build_Clova_Home_Extension.md#ReturnClovaHomeExtensionResponse)
+* [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)
 * [CEK 메시지 포맷](/CEK/References/CEK_Message_Format.md)
   * [HTTP 메시지](/CEK/References/CEK_Message_Format.md#HTTPMessage)
   * [Custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)
   * [Clova Home extension 메시지](/CEK/References/CEK_Message_Format.md#ClovaHomeExtensionMessage)
-* [Clova Home extension API](/CEK/References/Clova_Home_Extension_API.md)
+* [Clova Home API](/CEK/References/Clova_Home_API.md)

@@ -4,7 +4,7 @@
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>PlaybackController 네임스페이스는 내부적으로 지원 중지 결정(Deprecated)을 내렸고 이상 제공하지 않을 예정입니다. 이 네임스페이스에서 제공하던 API는 추후 <a href="/CIC/References/APIs/AudioPlayer.html">AudioPlayer</a> 네임스페이스에서 제공될 예정입니다.</p>
+  <p>PlaybackController 네임스페이스는 내부적으로 지원 중지 결정(Deprecated)을 내렸고 더 이상 제공하지 않을 예정입니다. 이 네임스페이스에서 제공하던 API는 추후 <a href="/CIC/References/APIs/AudioPlayer.html">AudioPlayer</a> 네임스페이스에서 제공될 예정입니다.</p>
 </div>
 
 이 PlaybackController API가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
@@ -265,7 +265,7 @@
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## volumneDown Directive {#volumeDown}
-클라이언트에게 스피커 볼륨을 낮추도록 지시합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다..
+클라이언트에게 스피커 볼륨을 낮추도록 지시합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
 없음
@@ -292,7 +292,7 @@
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## volumneUp Directive {#volumeUp}
-클라이언트에게 스피커 볼륨을 높이도록 지시합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다..
+클라이언트에게 스피커 볼륨을 높이도록 지시합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
 없음

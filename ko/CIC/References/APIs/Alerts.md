@@ -86,7 +86,7 @@
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | currentTime   | string       | 현재 시간 ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷). 타이머의 경우 CIC로부터 현재 시간이 전달됩니다.                | 선택    |
-| daysOfWeek    | string array | 반복 요일이 포함된 배열. "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"와 같은 값이 올 수 있습니다. | 선택    |
+| daysOfWeek[]  | string array | 반복 요일이 포함된 배열. "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"와 같은 값이 올 수 있습니다. | 선택    |
 | scheduledTime | string       | 알람 또는 타이머의 설정 시간 ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷)                                        | 필수    |
 | token         | string       | 알람 또는 타이머의 ID                                                                                                      | 필수    |
 | type          | string       | 타입 구분자 <ul><li>ALARM: 알람</li><li>TIMER: 타이머</li></ul>                                                             | 필수    |

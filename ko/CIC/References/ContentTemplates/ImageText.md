@@ -18,7 +18,7 @@
 | referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체                                  | 선택 |
 | subTextList    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 보조 문구가 담긴 배열                                       | 선택 |
 | thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 썸네일 이미지의 URL 정보가 담긴 객체                           | 선택 |
-| thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li>인물</li><li>책</li><li>앨범</li></ul> | 선택 |
+| thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li>"인물""</li><li>"책"</li><li>"앨범"</li></ul> | 선택 |
 | type           | string  | Content Template 구분자. "ImageText"로 고정      | 필수      |
 
 ## Template Example

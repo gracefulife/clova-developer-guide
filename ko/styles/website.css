@@ -29,3 +29,23 @@
 .book-body .body-inner .page-wrapper .page-inner {
 	max-width: 1000px;
 }
+
+.book-summary .summary .divider {
+    display: none;
+}
+
+.book-summary .summary>li:last-child {
+    display: none;
+}
+
+.markdown-section ul p, .markdown-section ol p, .markdown-section dl p {
+    margin-bottom: 0;
+}
+
+.markdown-section ul li, .markdown-section ol li, .markdown-section dl li {
+    margin-top: 0.6em;
+}
+
+.book-summary ul.summary {
+    margin-bottom: 2em;
+}

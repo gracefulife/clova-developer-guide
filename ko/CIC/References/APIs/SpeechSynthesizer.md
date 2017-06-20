@@ -47,7 +47,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 * [SpeechSynthesizer.Speak](/CIC/References/APIs/SpeechSynthesizer.md#Speak)
 
 ## Speak Directive {#Speak}
-클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [HTTP multipart 메시지](/CIC/References/HTTP2_Message_Format.md#MultipartMessage)(multipart)로 전달로 전달될 수도 있고 오디오 스트리밍 주소로 전달될 수도 있습니다.
+클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [HTTP multipart 메시지](/CIC/References/HTTP2_Message_Format.md#MultipartMessage)(multipart)로 전달될 수도 있고 오디오 스트리밍 주소로 전달될 수도 있습니다.
 
 ### Payload field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -65,7 +65,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 
 | 포맷 | 설명 |
 |---------|-------------------------------|
-| cid:{Content-Id} 포맷 | 클라이언트의 *url* 값이 cid:{Content-Id} 포맷이면 합성된 음성이 multipart 메시지로 전달됩니다. 메시지 헤더 중 *Content-Id* 값이 같은 메시지의 오디오 데이터(바이너리 형식)을 재생해야 합니다. 오디오 데이터가 포함된 메시지는 순서가 보장되지 않기 때문에 전달된 지시 메시지의 Content-ID 값을 기준으로 음성 데이트를 출력합니다.|
+| cid:{Content-Id} 포맷 | 클라이언트의 *url* 값이 cid:{Content-Id} 포맷이면 합성된 음성이 multipart 메시지로 전달됩니다. 메시지 헤더 중 *Content-Id* 값이 같은 메시지의 오디오 데이터(바이너리 형식)을 재생해야 합니다. 오디오 데이터가 포함된 메시지는 순서가 보장되지 않기 때문에 전달된 지시 메시지의 Content-ID 값을 기준으로 음성 데이터를 출력합니다.|
 | URL 포맷 | 전달받은 *url*의 오디오 스트림을 재생해야 합니다.  |
 
 ### Message example

@@ -25,7 +25,7 @@
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | audioItem               | AudioItemObject | 재생할 오디오 스트림의 메타 정보와 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                     | 필수 |
-| audioItem.audioItemId   | string          | 오디오 스트림 정보를 구분하는 ID. 클라이언트는 이 값을 기준으로 중복된 Play 지시 메시지 제거할 수 있습니다. | 필수 |
+| audioItem.audioItemId   | string          | 오디오 스트림 정보를 구분하는 ID. 클라이언트는 이 값을 기준으로 중복된 Play 지시 메시지를 제거할 수 있습니다. | 필수 |
 | audioItem.stream        | [AudioStreamObject](#AudioStreamObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                        | 필수 |
 | audioItem.[CustomField] | any             | 재생할 오디오 스트림에 첨부할 메타 정보를 서비스 제공자 임의대로 추가할 수 있습니다.                     | 선택 |
 | playBehavior            | string         | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li>"REPLACE_ALL": 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li>"ENQUEUE": 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 필수 |

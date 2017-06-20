@@ -9,7 +9,7 @@
 | AudioPlayer        | [PlayNext](/CIC/References/APIs/AudioPlayer.md#PlayNext)              | 클라이언트에게 재생 중인 오디오 스트림 재생을 중지하고 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다. |
 | AudioPlayer        | [Stop](/CIC/References/APIs/AudioPlayer.md#Stop)                      | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                                             |
 | AudioPlayer        | [StreamDeliver](/CIC/References/APIs/AudioPlayer.md#StreamDeliver)    | [AudioPlayer.StreamRequested](/CIC/References/APIs/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
-| Clova              | [AddMemo](/CIC/References/APIs/Clova.md#AddMemo)                      | 클라이언트에게 새로운 메모를 추가하도록지시합니다.                                                   |
+| Clova              | [AddMemo](/CIC/References/APIs/Clova.md#AddMemo)                      | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                                                   |
 | Clova              | [AddReminder](/CIC/References/APIs/Clova.md#AddReminder)              | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.                                               |
 | Clova              | [AddSchedule](/CIC/References/APIs/Clova.md#AddSchedule)              | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                                                  |
 | Clova              | [CountSchedule](/CIC/References/APIs/Clova.md#CountSchedlue)          | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다.                                 |
