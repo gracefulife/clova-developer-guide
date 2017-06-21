@@ -12,7 +12,7 @@ https://auth.clova.ai
 {% endraw %}
 
 ## /authorize {#authorize}
-네이버 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 인카 코드를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
+네이버 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
