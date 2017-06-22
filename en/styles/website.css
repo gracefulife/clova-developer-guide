@@ -30,11 +30,11 @@
 	max-width: 1000px;
 }
 
-.book-summary .summary>li:last-child {
+.book-summary .summary .divider {
     display: none;
 }
 
-.book-summary .summary li:last-child {
+.book-summary .summary>li:last-child {
     display: none;
 }
 
