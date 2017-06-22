@@ -7,7 +7,7 @@
 | [AddMemo](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                   |
 | [AddReminder](#AddReminder)               | Directive | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.               |
 | [AddSchedule](#AddSchedule)               | Directive | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                  |
-| [CountSchedule](#CountSchedlue)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
+| [CountSchedule](#CountSchedule)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
 | [DeleteMemo](#DeleteMemo)                 | Directive | 클라이언트에게 메모를 삭제하도록 지시합니다.                       |
 | [DeleteReminder](#DeleteReminder)         | Directive | 클라이언트에게 리마인더를 삭제하도록 지시합니다.                    |
 | [DeleteSchedule](#DeleteSchedule)         | Directive | 클라이언트에게 일정을 삭제하도록 지시합니다.                       |
@@ -80,7 +80,7 @@
 
 ### Remarks
 
-새로운 메모 생성이 완료되면 그 결과를 [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 리마인더 생성이 완료되면 그 결과를 [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -156,7 +156,7 @@
 
 ### See also
 
-* [Clova.CountSchedule](#CountSchedlue)
+* [Clova.CountSchedule](#CountSchedule)
 * [Clova.DeleteSchedule](#DeleteSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
@@ -317,7 +317,7 @@
 
 ### See also
 * [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedlue)
+* [Clova.CountSchedule](#CountSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
 ## FinishExtension Directive {#FinishExtension}
@@ -467,7 +467,7 @@
 
 ### See also
 * [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedlue)
+* [Clova.CountSchedule](#CountSchedule)
 * [Clova.DeleteSchedule](#DeleteSchedule)
 
 ## RenderMemoList Directive {#RenderMemoList}

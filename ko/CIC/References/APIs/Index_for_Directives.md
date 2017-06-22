@@ -12,7 +12,7 @@
 | Clova              | [AddMemo](/CIC/References/APIs/Clova.md#AddMemo)                      | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                                                   |
 | Clova              | [AddReminder](/CIC/References/APIs/Clova.md#AddReminder)              | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.                                               |
 | Clova              | [AddSchedule](/CIC/References/APIs/Clova.md#AddSchedule)              | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                                                  |
-| Clova              | [CountSchedule](/CIC/References/APIs/Clova.md#CountSchedlue)          | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다.                                 |
+| Clova              | [CountSchedule](/CIC/References/APIs/Clova.md#CountSchedule)          | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다.                                 |
 | Clova              | [DeleteMemo](/CIC/References/APIs/Clova.md#DeleteMemo)                | 클라이언트에게 메모를 삭제하도록 지시합니다.                                                       |
 | Clova              | [DeleteReminder](/CIC/References/APIs/Clova.md#DeleteReminder)        | 클라이언트에게 리마인더를 삭제하도록 지시합니다.                                                    |
 | Clova              | [DeleteSchedule](/CIC/References/APIs/Clova.md#DeleteSchedule)        | 클라이언트에게 일정을 삭제하도록 지시합니다.                                                       |

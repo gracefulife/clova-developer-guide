@@ -1,5 +1,5 @@
 ## 지시 메시지 처리하기 {#HandleDirective}
-지시 메시지는 CIC로부터 수신되며 클라이언트에 특정 동작을 요구합니다. 지시 메시지는 [이벤트 메시지](#SendEvent)의 응답이나 CIC와 최초 연결시 생성했던 Downchannel을 통해 전달됩니다. JSON 포맷 형태의 [지시 메시지](/CIC/CIC_Message_Format.md#Directive)가 첫 번째 메시지로 먼저 수신되며, [API](/CIC/API.md)에 따라 주로 다음과 같이 부가적인 정보(음성 데이터, 콘텐츠 정보)를 담은 메시지가 추가로 수신될 수 있습니다.
+지시 메시지는 CIC로부터 수신되며 클라이언트에 특정 동작을 요구합니다. 지시 메시지는 [이벤트 메시지](#SendEvent)의 응답이나 CIC와 최초 연결시 생성했던 Downchannel을 통해 전달됩니다. JSON 포맷 형태의 [지시 메시지](/CIC/CIC_Message_Format.md#Directive)가 첫 번째 메시지로 먼저 수신되며, [API](/CIC/References/CIC_API.md)에 따라 주로 다음과 같이 부가적인 정보(음성 데이터, 콘텐츠 정보)를 담은 메시지가 추가로 수신될 수 있습니다.
 
 | 콘텐츠 유형            | 설명                                             |
 |---------------------|-------------------------------------------------|
@@ -11,7 +11,7 @@
 <ol>
 <li><p>특정 이벤트 메시지의 응답이나 Downchannel을 통해 전달받는 지시 메시지를 미리 정해둔 <a href="#ManageMessageQ">메시지 큐</a>에 저장합니다.</p>
 </li>
-<li><p>수신된 <a href="/CIC/References/CIC_Message_Format.html#Directive">지시 메시지</a>의 메시지 헤더를 분석(parsing)합니다. 일반적으로 <em>dialogRequestId</em>는 사용자 요청, <em>namespace</em>와 <em>name</em>은 <a href="/CIC/Reference/API.html">API</a>를 구분하는데 사용합니다. 다음은 수신된 지시 메시지의 예입니다.</p>
+<li><p>수신된 <a href="/CIC/References/CIC_Message_Format.html#Directive">지시 메시지</a>의 메시지 헤더를 분석(parsing)합니다. 일반적으로 <em>dialogRequestId</em>는 사용자 요청, <em>namespace</em>와 <em>name</em>은 <a href="/CIC/Reference/CIC_API.html">API</a>를 구분하는데 사용합니다. 다음은 수신된 지시 메시지의 예입니다.</p>
 <pre><code>{
   "directive": {
     "header": {

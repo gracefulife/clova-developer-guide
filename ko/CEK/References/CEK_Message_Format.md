@@ -85,16 +85,16 @@ JSON 포맷의 메시지는 이벤트 메시지 정보를 담고 있거나 또�
 ### Message field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| context                                  | obejct  | 클라이언트의 맥락 정보를 가지고 있는 객체                                | 필수 |
-| context.AudioPlayer                      | obejct  | 클라이언트가 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지고 있는 객체 | 선택 |
+| context                                  | object  | 클라이언트의 맥락 정보를 가지고 있는 객체                                | 필수 |
+| context.AudioPlayer                      | object  | 클라이언트가 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지고 있는 객체 | 선택 |
 | context.AudioPlayer.offsetInMilliseconds | number  | 최근 재생 미디어의 마지막 재생 지점(offset). 단위는 밀리초이며, *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                       | 선택 |
 | context.AudioPlayer.playerActivity       | string  | 플레이어의 상태를 나타내는 값이며 다음과 같은 값을 가집니다.<ul><li>IDLE: 비활성 상태</li><li>PLAYING: 재생 중인 상태</li><li>PAUSED: 일시 정지 상태</li><li>STOPPED: 중지 상태</li></ul> | 필수 |
 | context.AudioPlayer.stream               | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.    | 선택 |
 | context.AudioPlayer.totalInMilliseconds  | number  | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                                                  | 선택 |
-| context.System                           | obejct  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
+| context.System                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
 | context.System.device                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
 | context.System.device.deviceId           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 필수 |
-| context.System.user                      | obejct  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
+| context.System.user                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
 | context.System.user.userId               | string  | 기기 기본 사용자의 Clova ID                                    | 필수 |
 | context.System.user.accessToken          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수 |
 | request                                  | object  | 분석된 사용자의 발화 정보를 가지고 있는 객체. [요청 타입](#RequestType)에 따라 구성되는 필드가 달라집니다. | 필수 |
@@ -504,4 +504,4 @@ Clova Home extension 메시지는 IoT 기기를 제어하는 extension이 CEK와
 
 ### See also
 * [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)
-* [API](/CEK/References/CEK_API.md)
+* [CEK API](/CEK/References/CEK_API.md)

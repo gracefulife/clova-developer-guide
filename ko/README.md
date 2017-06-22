@@ -13,5 +13,5 @@
 | 버전 | 배포 일자         | 이력 사항                   | 작성자     | 승인자    |
 |-----|----------------|---------------------------|----------|----------|
 | v0.3 | 2017-06-19 | 2차 초안<ul><li>CEK 문서 파트 작성</li><li>"연결 관리하기" 업데이트 (HTTP Ping 프레임을 사용할 수 없을 경우)</li></ul> | <ul><li>pf1팀 강윤신</li><li>pf1팀 박재현</li><li>pf1팀 김현준</li><li>pf1팀 임성순</li><li>Technical Writing팀 강정일</li></ul> | <ul><li>pf1팀 정민영</li><li>pf3팀 권세영</li></ul> |
-| v0.2 | 2017-06-08 | "CIC 연동하기"에 "연결 관리하기" 추가 (HTTP Ping) | <ul><li>pf팀 김현준</li><li>Technical Writing팀 강정일</li></ul> | pf1팀 정민영 |
+| v0.2 | 2017-06-08 | "CIC 연동하기"에 "연결 관리하기" 추가 (HTTP Ping) | <ul><li>pf1팀 김현준</li><li>Technical Writing팀 강정일</li></ul> | pf1팀 정민영 |
 | v0.1 | 2017-05-29 | 1차 초안<ul><li>CIC 문서 파트 작성</li><li>LG전자 전달용</li></ul> | <ul><li>pf1팀 강윤신</li><li>pf1팀 박진영</li><li>pf1팀 김현준</li><li>pf1팀 임성순</li><li>Technical Writing팀 강정일</li></ul> | <ul><li>pf1팀 정민영</li><li>pf3팀 권세영</li></ul> |

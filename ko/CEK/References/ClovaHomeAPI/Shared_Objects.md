@@ -13,7 +13,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | actions[]                  | string array  | 기기가 지원하는 동작 목록. 사용자는 기기가 지원하는 제어 동작을 요청할 수 있습니다.               | 선택    |
-| additionalApplianceDetails | obejct        | 제조사나 IoT 서비스의 추가 정보를 받기 위해 예약해둔 필드                                  | 선택    |
+| additionalApplianceDetails | object        | 제조사나 IoT 서비스의 추가 정보를 받기 위해 예약해둔 필드                                  | 선택    |
 | applianceId                | string        | 기기 ID                                                                        | 필수    |
 | applianceTypes[]           | string array  | 기기 타입. 다음과 같은 값을 가집니다.<ul><li>LIGHT : 조명 기기 타입</li><li>SMARTLOCK : 도어락 타입</li><li>SWITCH : 가정 내 콘센트 전원을 제어하는 스위치</li><li>SMARTPLUG : 기기 전원을 제어하는 플러그</li></ul>          | 필수    |
 | friendlyName               | string        | 사용자가 붙여준 기기의 이름                                                           | 선택    |

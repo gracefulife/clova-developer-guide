@@ -1,4 +1,4 @@
-# PlaybackContoroller
+# PlaybackController
 
 클라이언트의 오디오 재생 및 스피커 출력을 제어할 때 사용되는 API입니다.
 
