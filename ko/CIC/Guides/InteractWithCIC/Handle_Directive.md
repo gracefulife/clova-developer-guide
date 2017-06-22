@@ -11,7 +11,7 @@
 <ol>
 <li><p>특정 이벤트 메시지의 응답이나 Downchannel을 통해 전달받는 지시 메시지를 미리 정해둔 <a href="#ManageMessageQ">메시지 큐</a>에 저장합니다.</p>
 </li>
-<li><p>수신된 <a href="/CIC/References/CIC_Message_Format.html#Directive">지시 메시지</a>의 메시지 헤더를 분석(parsing)합니다. 일반적으로 <em>dialogRequestId</em>는 사용자 요청, <em>namespace</em>와 <em>name</em>은 <a href="/CIC/Reference/CIC_API.html">API</a>를 구분하는데 사용합니다. 다음은 수신된 지시 메시지의 예입니다.</p>
+<li><p>수신된 <a href="/CIC/References/CIC_Message_Format.html#Directive">지시 메시지</a>의 메시지 헤더를 분석(parsing)합니다. 일반적으로 <em>dialogRequestId</em>는 사용자 요청, <em>namespace</em>와 <em>name</em>은 <a href="/CIC/References/CIC_API.html">API</a>를 구분하는데 사용합니다. 다음은 수신된 지시 메시지의 예입니다.</p>
 <pre><code>{
   "directive": {
     "header": {
