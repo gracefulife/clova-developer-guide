@@ -41,14 +41,12 @@
   "version": "0.1.0",
   "sessionAttributes": {},
   "response": {
-    "outputSpeech": [
-      {
+    "outputSpeech": {
         "type": "PlainText",
         "text": "공포 영화 추천해 드려요.",
         "pause": "0",
         "lang": "ko"
-      }
-    ],
+    },
     "card": {
       "subType": "",
       "type": "CardList",
@@ -169,14 +167,12 @@
   "version": "0.1.0",
   "sessionAttributes": {},
   "response": {
-    "outputSpeech": [
-      {
+    "outputSpeech": {
         "type": "PlainText",
         "text": "몇 판 주문할까요?",
         "pause": "0",
         "lang": "ko"
-      }
-    ],
+    },
     "card": {},
     "directives": [],
     "shouldEndSession": false

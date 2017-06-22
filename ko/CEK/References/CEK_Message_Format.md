@@ -333,10 +333,10 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | response.directives[].header.namespace | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
 | response.directives[].payload          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
 | response.outputSpeech                  | object       | 사용자에게 발화할 정보를 담고 있는 객체.                         | 필수 |
-| response.outputSpeech[].lang           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li>"ko": 한국어</li><li>"en": 영어</li></ul>         | 필수 |
-| response.outputSpeech[].pause          | string       | 발화 지연 시간. 이전 발화 메시지의 음성 출력이 끝나면 지정한 시간만큼 기다렸다가 음성이 출력되도록 설정합니다. 단위는 밀리초(millisecond)입니다. | 필수 |
-| response.outputSpeech[].text           | string       | 음성 합성할 내용                                           | 필수 |
-| response.outputSpeech[].type           | string       | 현재는 "PlainText"를 고정으로 입력해야 합니다.                  | 필수 |
+| response.outputSpeech.lang           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li>"ko": 한국어</li><li>"en": 영어</li></ul>         | 필수 |
+| response.outputSpeech.pause          | string       | 발화 지연 시간. 이전 발화 메시지의 음성 출력이 끝나면 지정한 시간만큼 기다렸다가 음성이 출력되도록 설정합니다. 단위는 밀리초(millisecond)입니다. | 필수 |
+| response.outputSpeech.text           | string       | 음성 합성할 내용                                           | 필수 |
+| response.outputSpeech.type           | string       | 현재는 "PlainText"를 고정으로 입력해야 합니다.                  | 필수 |
 | response.shouldEndSession              | boolean      | 세션 종료 플래그. 클라이언트에게 특정 extension 사용이 종료됨을 알리는 필드입니다. [SessionEndedRequest](#SessionEndedRequest) 타입의 요청 메시지를 받기 전에 extension이 먼저 사용 종료를 알릴 때 사용합니다.<ul><li>true : 사용 종료</li><li>false : 계속 사용</li></ul> | 필수 |
 | sessionAttributes                      | object       | 추후 확장을 위해 예약해 둔 필드                                 | 필수 |
 | version                                | string       | CEK 메시지의 버전                                          | 필수 |
@@ -353,14 +353,12 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
   "version": "0.1.0",
   "sessionAttributes": {},
   "response": {
-    "outputSpeech": [
-      {
+    "outputSpeech": {
         "type": "PlainText",
         "text": "You are back. I want to know more about you. Do you go to school?",
         "pause": "500",
         "lang": "en"
-      }
-    ],
+    },
     "card": {},
     "directives": [],
     "shouldEndSession": false
