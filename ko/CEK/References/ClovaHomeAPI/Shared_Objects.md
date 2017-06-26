@@ -160,6 +160,6 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [DecrementTargetTemperatureRequest](#DecrementTargetTemperatureRequest)
 * [DecrementTargetTemperatureConfirmation](#DecrementTargetTemperatureConfirmation)
 * [GetTargetTemperatureRequest](#GetTargetTemperatureRequest)
-* [GetTargetTemperatureRequest](#GetTargetTemperatureResponse)
+* [GetTargetTemperatureResponse](#GetTargetTemperatureResponse)
 * [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest)
-* [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureConfirmation)
+* [IncrementTargetTemperatureConfirmation](#IncrementTargetTemperatureConfirmation)
