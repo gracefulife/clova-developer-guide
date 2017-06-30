@@ -1,5 +1,5 @@
 # HTTP/2 메시지
-CIC와 연동할 때 HTTP/2 프로토콜을 사용합니다. 클라이언트가 CIC로 전송하는 HTTP/2 메시지 구조는 다음 그림과 같습니다.
+CIC와 연동할 때 [HTTP/2 프로토콜](https://tools.ietf.org/html/rfc7540)을 사용합니다. 클라이언트가 CIC로 전송하는 HTTP/2 메시지 구조는 다음 그림과 같습니다.
 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 

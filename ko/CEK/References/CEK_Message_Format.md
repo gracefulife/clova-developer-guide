@@ -14,9 +14,9 @@ CEK가 extension으로 분석된 사용자의 발화 정보를 보낼 때 HTTPS 
 {% raw %}
 ```
 POST /APIpath HTTP/1.1
-Host : your.extension.endpoint
+Host: your.extension.endpoint
 Content-Type: application/json;charset-UTF-8
-Accept :  application/json
+Accept:  application/json
 Accept-Charset : utf-8
 ```
 {% endraw %}

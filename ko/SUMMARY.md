@@ -1,10 +1,5 @@
 # Summary
 
-## Clova Developer Guide
-
-* [문서 정보](README.md)
-* [저작권](Copyright.md)
-
 ## Clova Interface Connect
 
 * [CIC 개요](/CIC/CIC_Overview.md)
@@ -62,7 +57,7 @@
   * [CEK 동작 구조](/CEK/CEK_Overview.md#CEKInteractionStructure)
   * [Extension 종류](/CEK/CEK_Overview.md#ExtensionType)
 * [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md)
-  * [사전 준비사항](/CEK/Guides/Build_Custom_Extension.md#Prepation)
+  * [사전 준비사항](/CEK/Guides/Build_Custom_Extension.md#Preparation)
   * [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
     * [LaunchRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleLaunchRequest)
     * [IntentRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
@@ -79,3 +74,8 @@
   * [Custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)
   * [Clova Home extension 메시지](/CEK/References/CEK_Message_Format.md#ClovaHomeExtensionMessage)
 * [Clova Home API](/CEK/References/Clova_Home_API.md)
+
+## About This Document
+
+* [문서 정보](README.md)
+* [저작권](Copyright.md)

@@ -10,8 +10,6 @@
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
-<a class="ignoreOnPDF" target="_blank" href="/CIC/Resources/Images/CIC_Authorization.png">이미지 확대해서 보기</a>
-
 Clova access token을 획득하는 절차는 다음과 같습니다.
 
 <ol>
@@ -32,7 +30,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     "state": "95/KjaJfMlakjdfTVbES5ccZQ=="
 }
 </code></pre></li>
-<li><p>(필요에 따라 생략 가능) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
+<li><p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
 </li>
 <li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API의 파라미터로 입력하여 Clova access token을 획득합니다. 다음은 Clova access token을 요청한 예입니다.</p>
 <pre><code>http://auth.clova.ai:15828/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
