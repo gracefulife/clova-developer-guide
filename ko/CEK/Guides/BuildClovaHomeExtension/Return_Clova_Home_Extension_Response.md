@@ -63,7 +63,7 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>오류 메시지 종류을 계속 추가할 예정입니다.</p>
+<p>오류 메시지 종류를 계속 추가할 예정입니다.</p>
 </div>
 
 다음은 기기에 접속할 수 없어 *TargetOfflineError* 오류 메시지를 전달한 예제입니다.

@@ -37,13 +37,13 @@ Content-Type: application/json;charset-UTF-8
 * 본문의 데이터 형식은 JSON 포맷으로 되어 있으며, UTF-8 인코딩을 사용합니다.
 
 ### HTTP 본문 {#HTTPBody}
-HTTPS 요청 메시지와 응답 메시지의 본문은 JSON 포맷이며, 분석된 사용자의 발화 정보나 entension의 처리 결과가 담긴 정보입니다. 각 메시지의 구성은 어떤 종류의 extension을 사용하느냐에 따라 달라집니다. 메시지의 구성에 대한 자세한 정보는 [Custom extension 메시지](#CustomExtenstionMessage)와 [Clova Home extension 메시지](#ClovaHomeExtensionMessage)를 참조합니다.
+HTTPS 요청 메시지와 응답 메시지의 본문은 JSON 포맷이며, 분석된 사용자의 발화 정보나 extension의 처리 결과가 담긴 정보입니다. 각 메시지의 구성은 어떤 종류의 extension을 사용하느냐에 따라 달라집니다. 메시지의 구성에 대한 자세한 정보는 [custom extension 메시지](#CustomExtenstionMessage)와 [Clova Home extension 메시지](#ClovaHomeExtensionMessage)를 참조합니다.
 
 ## Custom extension 메시지 {#CustomExtenstionMessage}
-Custom extension 메시지는 CEK와 Custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. Custom extension 메시지는 [요청 메시지](#RequestMessage)와 [응답 메시지](#ResponseMessage)로 나뉩니다.
+Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. custom extension 메시지는 [요청 메시지](#RequestMessage)와 [응답 메시지](#ResponseMessage)로 나뉩니다.
 
 ### 요청 메시지 {#RequestMessage}
-CEK는 Clova가 분석한 사용자의 요구 사항을 Custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 *request* 필드에 대해 설명합니다.
+CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 *request* 필드에 대해 설명합니다.
 
 #### Message format
 JSON 포맷의 메시지는 이벤트 메시지 정보를 담고 있거나 또는 콘텐츠 정보를 담을 때 사용됩니다. JSON 형식의 데이터를 보낼 때 메시지는 다음 예처럼 헤더와 본문으로 구성됩니다.

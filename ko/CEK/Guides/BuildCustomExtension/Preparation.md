@@ -5,15 +5,15 @@ Custom extension 개발자는 다음을 미리 준비해야 합니다.
 * (선택) [인증 서버](#AuthServer)
 
 ### Interaction 모델 {#InteractionModel}
-Custom extension을 만들 때 사용자로부터 어떤 요청을 어떻게 받을지 Interaction 모델을 미리 정의해야 합니다. Interaction 모델은 Custom extension이 받게 될 요청을 정형화한 스키마로서 다음과 같은 내용을 Clova Developer Console에 등록해야 합니다.
+Custom extension을 만들 때 사용자로부터 어떤 요청을 어떻게 받을지 Interaction 모델을 미리 정의해야 합니다. Interaction 모델은 custom extension이 받게 될 요청을 정형화한 스키마로서 다음과 같은 내용을 Clova Developer Console에 등록해야 합니다.
 
 | 구분         | 설명                            |
 |-------------|--------------------------------|
-| Intent              | 사용자의 요청을 구별하여 정의한 명세입니다. Custom extension은 *intent*의 집합으로 구성된 Interaction 모델이 있어야 합니다. CEK는 분석된 사용자의 발화 정보를 [IntentRequest](/CEK/References/CEK_Message_Format.md#IntentRequest) 타입의 요청 메시지로 extnsion에 전달합니다. 이때, Interaction 모델에 정의된 *intent*를 참조하여 메시지를 구성합니다. |
+| Intent              | 사용자의 요청을 구별하여 정의한 명세입니다. Custom extension은 *intent*의 집합으로 구성된 Interaction 모델이 있어야 합니다. CEK는 분석된 사용자의 발화 정보를 [IntentRequest](/CEK/References/CEK_Message_Format.md#IntentRequest) 타입의 요청 메시지로 extension에 전달합니다. 이때, Interaction 모델에 정의된 *intent*를 참조하여 메시지를 구성합니다. |
 | slot | Slot은 *intent*에 선언된 요청을 처리할 때 필요한 정보이며, *intent*를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 되며, CEK가 extension으로 *IntentRequest* 메시지를 보낼 때 key, value 쌍의 *slot* 정보를 함께 전달합니다.  |
 | 사용자 발화 예시        | 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. *intent*별로 복수의 사례를 정의할 수 있으며, 예문에는 slot이 표시됩니다. Clova는 사용자 요청을 분석하는 데 이 정보를 사용합니다. |
 
-예를 들어, Custome extension이 피자 주문 서비스를 제공한다고 가정할 때 사용자로부터 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 들어온다고 가정할 수 있습니다. 이런 사용자 요청을 Intent로 정의하면 다음과 같이 정의할 수 있습니다.
+예를 들어, custom extension이 피자 주문 서비스를 제공한다고 가정할 때 사용자로부터 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 들어온다고 가정할 수 있습니다. 이런 사용자 요청을 Intent로 정의하면 다음과 같이 정의할 수 있습니다.
 
 ![](/CEK/Resources/Images/CEK_Interaction_Model_Analysis_Diagram.png)
 
@@ -59,7 +59,7 @@ OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
 ```
 {% endraw %}
 
-위와 같이 정의된 Interaction 모델에 의해 Custom extension은 다음과 같은 메시지를 수신합니다.
+위와 같이 정의된 Interaction 모델에 의해 custom extension은 다음과 같은 메시지를 수신합니다.
 
 {% raw %}
 ```json
@@ -111,4 +111,4 @@ OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
 
 
 ### 인증 서버 {#AuthServer}
-음악, 쇼핑, 금융 서비스 등과 같이 사용자 계정 인증이 필요한 외부 서비스를 제공하는 Custom extension의 경우 사용자 계정을 연결해야 합니다. 이를 위해 인증 서버 등을 구축해야 합니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.
+음악, 쇼핑, 금융 서비스 등과 같이 사용자 계정 인증이 필요한 외부 서비스를 제공하는 custom extension의 경우 사용자 계정을 연결해야 합니다. 이를 위해 인증 서버 등을 구축해야 합니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.

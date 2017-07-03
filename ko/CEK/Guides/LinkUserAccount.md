@@ -1,7 +1,7 @@
 # 사용자 계정 연결하기
-Clova는 [Custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 통해 사용자 계정 권한이 필요한 외부 서비스를 제공할 수 있습니다. 예를 들면, 유료 콘텐츠 서비스인 음악 스트리밍 서비스나 쇼핑, 금융, 메신저, 홈 IoT 등과 같은 서비스가 Clova에 연동될 수 있습니다. 이를 위해, Clova는 외부 서비스의 사용자 계정과 사용자 계정 정보를 연결하는 계정 연결(account linking)을 지원하며, 이 기술은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)을 이용합니다.
+Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 통해 사용자 계정 권한이 필요한 외부 서비스를 제공할 수 있습니다. 예를 들면, 유료 콘텐츠 서비스인 음악 스트리밍 서비스나 쇼핑, 금융, 메신저, 홈 IoT 등과 같은 서비스가 Clova에 연동될 수 있습니다. 이를 위해, Clova는 외부 서비스의 사용자 계정과 Clova 사용자 계정을 연결하는 계정 연결(account linking)을 지원하며, 이 기술은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)을 이용합니다.
 
-계정 연결은 사용자의 계정 인증(authentication)이 필요한 외부 서비스를 Custom extension이 제공해야 할 때 사용됩니다. 계정 인증이 필요 없는 외부 서비스는 계정 연결을 하지 않아도 되며, 사용자 식별이 가능한 수준의 정보가 요구되는 서비스는 일반적으로 [Custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)가 제공하는 기기 식별자(*context.System.device.deviceId*)와 사용자 계정 식별자(*context.System.user.userId* 또는 *session.user.userId*)를 조합한 값을 이용합니다.
+계정 연결은 사용자의 계정 인증(authentication)이 필요한 외부 서비스를 custom extension이 제공해야 할 때 사용됩니다. 계정 인증이 필요 없는 외부 서비스는 계정 연결을 하지 않아도 되며, 사용자 식별이 가능한 수준의 정보가 요구되는 서비스는 일반적으로 [custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)가 제공하는 기기 식별자(*context.System.device.deviceId*)와 사용자 계정 식별자(*context.System.user.userId* 또는 *session.user.userId*)를 조합한 값을 이용합니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -18,11 +18,11 @@ Clova는 [Custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 * [계정 연결 후 extension 호출](#ExtensionInvokingAfterAccountLinking)
 
 ### 계정 연결 설정 {#SetupAccountLinking}
-사용자가 계정 인증이 필요한 Custom extension이나 Clova Home extension을 활성화하면 다음과 같이 계정 연결 설정을 시도합니다.
+사용자가 계정 인증이 필요한 custom extension이나 Clova Home extension을 활성화하면 다음과 같이 계정 연결 설정을 시도합니다.
 
 ![](/CEK/Resources/Images/CEK_Account_Linking_Setup_Sequence_Diagram.png)
 
-1. 사용자가 특정 Custom extension이나 Clova Home extension을 활성화합니다.
+1. 사용자가 특정 custom extension이나 Clova Home extension을 활성화합니다.
 
 2. 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 외부 서비스의 로그인 페이지를 표시합니다. 이때, extension 개발자가 미리 등록해 둔 인증 서버의 *[Authorization URL](#BuildAuthServer)*을 이용합니다.
 
@@ -36,7 +36,7 @@ Clova는 [Custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>사용자가 특정 Custom extension이나 Clova Home extension을 비활성화한 경우 사용자의 Clova 계정에 저장된 access token을 제거합니다. 따라서, 사용자가 해당 extension을 재활성화하면, 계정 연결을 다시 수행해야 합니다.</p>
+<p>사용자가 특정 custom extension이나 Clova Home extension을 비활성화한 경우 사용자의 Clova 계정에 저장된 access token을 제거합니다. 따라서, 사용자가 해당 extension을 재활성화하면, 계정 연결을 다시 수행해야 합니다.</p>
 </div>
 
 ### 계정 연결 후 extension 호출 {#ExtensionInvokingAfterAccountLinking}
@@ -47,7 +47,7 @@ Clova는 [Custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 2. **(만약 access token이 만료된 경우)** refresh token을 이용하여 *[Access Token URI](#RegisterAccountLinkingToCEK)*에 새로운 access token을 요청합니다.
 
 3. [CEK 메시지](/CEK/References/CEK_Message_Format.md)에 access token을 포함시켜 사용자의 요청을 전달합니다.
-   * Custome extension의 경우 *context.System.user.accessToken*와 *session.user.accessToken* 필드에 access token이 전달됩니다.
+   * Custom extension의 경우 *context.System.user.accessToken*와 *session.user.accessToken* 필드에 access token이 전달됩니다.
    * Clova Home extension의 경우 *payload.accessToken* 필드에 access token이 전달됩니다.
 
 4. Extension은 상황에 따라 다음과 같이 응답해야 합니다.
@@ -77,8 +77,8 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 
 | 파라미터 이름     | 설명                                         |
 |---------------|---------------------------------------------|
-| state         | 사용자 인증을 처리하기 위한 상태 값. 이 값은 5분 뒤에 만료되므로 사용자가 인증을 5분 안에 마치지 않으면 인증을 다시 시도해야 합니다. |
-| client_id     | Clova가 외부 서비스의 access token 토큰을 발급 받기 위해 사용할 ID. 개발자는 Clova Developer Console을 통해 미리 *cliend_id*를 등록해둬야 합니다. |
+| state         | 인증 세션의 시간 만료 여부를 확인하는 상태 값. 이 값은 5분 뒤에 만료되므로 사용자가 인증을 5분 안에 마치지 않으면 인증을 다시 시도해야 합니다. |
+| client_id     | Clova가 외부 서비스의 access token을 발급 받기 위해 사용할 ID. 개발자는 Clova Developer Console을 통해 미리 *cliend_id*를 등록해둬야 합니다. |
 | response_type | OAuth 2.0 인가 타입("code" 또는 "token")을 정의해 둔 파라미터. 높은 보안이 필요한 경우 "code" 타입을 사용합니다. Clova Home extension은 항상 "code" 타입을 사용합니다. Clova Developer Console를 통해 미리 *reponse_type*을 등록해둬야 합니다. |
 | scope         | OAuth의 scope 필드. 접근 수준을 정의할 수 있습니다. Clova Developer Console를 통해 미리 *scope*를 등록해둬야 합니다. |
 | redirect_uri  | 계정 인증 후 이동할 URL(redirect URL)이며, *redirect_uri*의 값은 Clova Developer Console에서 통해 미리 확인할 수 있습니다. |
@@ -112,7 +112,7 @@ https://yourdomain.com/login?state=qwer123
 | 파라미터 이름     | 설명                                        |
 |---------------|---------------------------------------------|
 | vendorId      | Extension 개발자에게 부여된 ID. 외부 서비스 또는 기업을 구분하기 위해 Clova Developer Console에 등록된 ID입니다. *redirect_uri*에 미리 포함되어 있습니다. |
-| state         | 사용자 인증을 처리하기 위한 상태 값. *Authorization URL*을 통해 전달받은 *state* 파라미터를 그대로 입력합니다.    |
+| state         | 인증 세션의 시간 만료 여부를 확인하는 상태 값. *Authorization URL*을 통해 전달받은 *state* 파라미터를 그대로 입력합니다.    |
 | code          | Authorization code. *response_type* 값이 "code"이면, 이 파라미터에 authorization code를 입력합니다.  |
 | access_token  | Access token. *response_type* 값이 "token"이면, 이 파라미터에 access token을 입력합니다.               |
 | token_type    | Access token의 타입. *access_token*과 함께 전달해야 하며, "Bearer"로 고정됩니다.                        |
@@ -150,7 +150,7 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 계정 연결을 적용하려면 extension 개발자는 access token이 유효한지 검증하는 코드를 작성해야 합니다. Custom extension과 Clova Home extension으로 전달되는 [CEK 메시지](/CEK/References/CEK_Message_Format.md)는 각각 다음과 같은 *accessToken* 필드를 가지고 있습니다.
 아래 필드에서 access token을 확인한 후 해당 access token이 존재하며 유효한 값인지 확인해야 합니다.
 
-* Custome extension : *context.System.user.accessToken*, *session.user.accessToken*
+* Custom extension : *context.System.user.accessToken*, *session.user.accessToken*
 * Clova Home extension : *payload.accessToken*
 
 {% raw %}
@@ -191,7 +191,7 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
   }
 }
 
-// 예제 2: Clova Home
+// 예제 2: Clova Home extension 메시지 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -219,10 +219,10 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 | 필드 이름           | 설명                                         |
 |-------------------|---------------------------------------------|
 | Authorization URL | 사용자가 [계정 인증](#SetupAccountLinking)을 위해 접속할 URL                            |
-| Cliend ID         | 사용자 [계정 인증](#SetupAccountLinking) 페이지를 요청할 때 서비스를 식별하기 위해 부여한 ID    |
-| Authorization Grant Type | OAuth 2.0의 인가 방식. <ul><li>Implicit grant 방식(Custom extension 적용 가능)</li><li>Authorization code grant 방식(Custome extension, Clova Home extension 적용 가능)</li></ul>    |
+| Client ID         | 사용자 [계정 인증](#SetupAccountLinking) 페이지를 요청할 때 서비스를 식별하기 위해 부여한 ID    |
+| Authorization Grant Type | OAuth 2.0의 인가 방식. <ul><li>Implicit grant 방식(custom extension 적용 가능)</li><li>Authorization code grant 방식(custom extension, Clova Home extension 적용 가능)</li></ul>    |
 | Access Token URI  | Authorization code로 access token을 획득하기 위한 주소. Authorization code grant 방식을 설정한 경우 입력합니다. |
-| Client Secret     | Authorization code로 access toekn을 획득할 때 *Client ID*와 함께 전달되어야 하는 Secret. Authorization code grant 방식을 설정한 경우 입력합니다. |
+| Client Secret     | Authorization code로 access token을 획득할 때 *Client ID*와 함께 전달되어야 하는 Secret. Authorization code grant 방식을 설정한 경우 입력합니다. |
 | Client Authentication Scheme | Access Token URI로 access token을 요청할 때 사용하는 scheme              |
 | Privacy Policy URL | 서비스와 관련하여 개인 정보 보호 정책과 관련된 내용이 제공되는 페이지. Clova App이나 페어링 앱에 표시됩니다. |
 

@@ -18,7 +18,7 @@ Custom extension은 CEK로부터 [CEK 메시지](/CEK/References/CEK_Message_For
 
 LaunchRequest 타입 메시지는 *request.type* 필드에 "LaunchRequest"라는 값을 가지며 *request* 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 사전 준비 사항을 처리하거나 사용자에게 서비스를 제공할 준비가 되었다는 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
-이 메시지를 받은 후부터 [SessionEndedRequest 타입](#HandleSessionEndedRequest) 요청 메시지를 받기 전까지 [IntentRequest 타입](#HandleIntentRequest)의 요청 메시지를 받게 되며, *session.sessionId* 필드는 같은 값을 가지게 됩니다.
+이 메시지를 받은 후부터 [SessionEndedRequest 타입](#HandleSessionEndedRequest) 요청 메시지를 받기 전까지 [IntentRequest 타입](#HandleIntentRequest)의 요청 메시지를 받게 되며, *session.sessionId* 필드는 이전 메시지와 같은 값을 가지게 됩니다.
 
 다음은 *LaunchReqeust* 타입의 요청 메시지 예입니다.
 
@@ -54,7 +54,7 @@ LaunchRequest 타입 메시지는 *request.type* 필드에 "LaunchRequest"라는
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* *version* : 현재 사용하는 Custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* *version* : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * *session* : **새로운 세션이며**, 새로운 세션에 사용될 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * *context* : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
 * *request* : *LaunchRequest* 타입 요청으로 현재 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
@@ -62,7 +62,7 @@ LaunchRequest 타입 메시지는 *request.type* 필드에 "LaunchRequest"라는
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
 [IntentRequest 타입 요청](/CEK/References/CEK_Message_Format.md#IntentRequest)은 미리 정의해 둔 [Interaction 모델](#InteractionModel)에 따라 CEK로부터 요청 메시지를 받습니다. *IntentRequest* 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
 
-IntentRequest 타입 메시지는 *request.type* 필드에 "IntentRequest"라는 값을 가지며 호출된 intent 이름과 분석된 사용자의 발화 정보를 *request.intent* 필드를 통해 확인할 수 있습니다. 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
+IntentRequest 타입 메시지는 *request.type* 필드에 "IntentRequest"라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 *request.intent* 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
 다음은 *IntentRequest* 타입의 요청 메시지 예입니다.
 
@@ -107,7 +107,7 @@ IntentRequest 타입 메시지는 *request.type* 필드에 "IntentRequest"라는
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* *version* : 현재 사용하는 Custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* *version* : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * *session* : **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * *context* : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
 * *request* : *IntentRequest* 타입 요청이며, "FreeTalk"라는 이름으로 등록된 *intent*를 호출했습니다. 해당 *intent*의 필요 정보로 "q"라는 *slot*이 함께 전달되었고 해당 *slot*은 "How are you"라는 값을 가지고 있습니다.
@@ -158,7 +158,7 @@ IntentRequest 타입 메시지는 *request.type* 필드에 "IntentRequest"라는
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* *version* : 현재 사용하는 Custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* *version* : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * *session* : **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * *context* : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* *request* : *SessionEndedRequest* 타입 요청으로 현재 extension의 사용 중지를 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
+* *request* : *SessionEndedRequest* 타입 요청으로 현재 extension의 사용을 중지했음을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.

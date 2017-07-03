@@ -23,7 +23,7 @@
 
 각 필드는 다음과 같은 의미를 가집니다.
 
-* *version* : 현재 사용하는 Custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* *version* : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * *response.outputSpeech* : 사용자에게 영어로 "You are back. I want to know more about you. Do you go to school?"의 문장을 말하도록 설정합니다.
 * *response.card* : 클라이언트 화면에 표시할 데이터가 없습니다. [Content Template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.
 * *response.shouldEndSession* : 현재 세션을 종료하지 않고 계속 사용자의 입력을 받습니다. 만약 이 필드 값이 true이면 *[SessionEndedRequest](#SessionEndedRequest)* 요청을 받기 전에 extension이 주도하여 세션을 종료할 수 있습니다.
@@ -159,7 +159,7 @@
 
 
 
-참고로 *response.shouldEndSession*을 이용하면, 부족한 정보를 추가로 확인하기 위해 연속된 대화를 시도할 수 있습니다. 예를 들어, 사용자가 "페퍼로니 피자 주문해줘"라고 했는데 extension 쪽에서 해당 내용을 처리하기 위해 수량과 같은 추가 정보가 필요할 수 있습니다. 그럴 경우 아래와 같이 응답하면 사용자에게 수량과 관련된 추가 정보를 얻을 수 있습니다. 이때 Clova 플랫폼은 대화 엔진을 활용하여 사용자의 이전 요청인 "페퍼로니 피자 주문해줘"와 추가로 얻은 수량 정보를 조합하여 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 입력된 것처럼 정보를 분석하여 전달할 것입니다.
+참고로 *response.shouldEndSession*을 **false**로 설정하면, 부족한 정보를 추가로 확인하기 위해 연속된 대화를 시도할 수 있습니다. 예를 들어, 사용자가 "페퍼로니 피자 주문해줘"라고 했는데 extension 쪽에서 해당 내용을 처리하기 위해 수량과 같은 추가 정보가 필요할 수 있습니다. 그럴 경우 아래와 같이 응답하면 사용자에게 수량과 관련된 추가 정보를 얻을 수 있습니다. 이때 Clova 플랫폼은 대화 엔진을 활용하여 사용자의 이전 요청인 "페퍼로니 피자 주문해줘"와 추가로 얻은 수량 정보를 조합하여 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 입력된 것처럼 정보를 분석하여 전달할 것입니다.
 
 {% raw %}
 ```json
