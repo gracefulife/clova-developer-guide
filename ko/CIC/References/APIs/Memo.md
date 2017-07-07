@@ -9,7 +9,7 @@
 | [Get](#Get) | Event  | CIC에 사용자가 생성한 모든 메모 목록을 요청합니다. |
 | [Updated](#Updated) | Event  | CIC에 특정 메모를 갱신하도록 요청합니다. |
 
-## Created Event {#Created}
+## Created event {#Created}
 CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 생성을 요청한 사용자 음성을 CIC로 전송합니다.
@@ -62,7 +62,7 @@ CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 
-## Deleted Event {#Deleted}
+## Deleted event {#Deleted}
 
 CIC에 특정 메모를 삭제하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
@@ -118,7 +118,7 @@ CIC에 특정 메모를 삭제하도록 요청합니다. 이 이벤트 메시지
 * [Memo.Get](#Get)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Get Event {#Get}
+## Get event {#Get}
 
 CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
@@ -170,7 +170,7 @@ CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 �
 * [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Updated Event {#Updated}
+## Updated event {#Updated}
 
 CIC에 특정 메모의 갱신을 요청합니다.
 

@@ -18,7 +18,7 @@
 | [StreamDeliver](#StreamDeliver)     | Directive | [AudioPlayer.StreamRequested](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | [StreamRequested](#StreamRequested) | Event     | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.               |
 
-## Play Directive {#Play}
+## Play directive {#Play}
 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.
 
 ### Payload field
@@ -81,7 +81,7 @@
 * [AudioPlayer.Stop](#Stop)
 * [AudioPlayer.StreamRequested](#StreamRequested)
 
-## PlayFinished Event {#PlayFinished}
+## PlayFinished event {#PlayFinished}
 클라이언트가 오디오 스트림 재생을 완료할 때 재생 완료된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
 
 ### Context field
@@ -115,7 +115,7 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 
-## PlayNext Directive {#PlayNext}
+## PlayNext directive {#PlayNext}
 클라이언트에게 재생 중인 오디오 스트림 재생을 중지하고 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.
 
 ### Payload field
@@ -141,7 +141,7 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 
-## PlayPaused Event {#PlayPaused}
+## PlayPaused event {#PlayPaused}
 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
@@ -181,7 +181,7 @@
 * [AudioPlayer.PlayResumed](#PlayResumed)
 * [PlaybackController.pause](/CIC/References/APIs/PlaybackController.md#pause)
 
-## PlayResumed Event {#PlayResuemd}
+## PlayResumed event {#PlayResuemd}
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
@@ -221,7 +221,7 @@
 * [AudioPlayer.PlayPaused](#PlayPaused)
 * [PlaybackController.resume](/CIC/References/APIs/PlaybackController.md#resume)
 
-## PlayStarted Event {#PlayStarted}
+## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
 
 ### Context field
@@ -256,7 +256,7 @@
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.PlayStopped](#PlayStopped)
 
-## PlayStopped Event {#PlayStopped}
+## PlayStopped event {#PlayStopped}
 클라이언트가 오디오 스트림 재생을 중지할 때 재생이 중지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
@@ -296,7 +296,7 @@
 * [AudioPlayer.PlayStarted](#PlayStarted)
 * [PlaybackController.stop](/CIC/References/APIs/PlaybackController.md#stop)
 
-## ProgressReportDelayPassed Event {#ProgressReportDelayPassed}
+## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
 ### Context field
@@ -332,7 +332,7 @@
 * [AudioPlayer.ProgressReportIntervalPassed](#ProgressReportIntervalPassed)
 * [AudioPlayer.ProgressReportPositionPassed](#ProgressReportPositionPassed)
 
-## ProgressReportIntervalPassed Event {#ProgressReportIntervalPassed}
+## ProgressReportIntervalPassed event {#ProgressReportIntervalPassed}
 오디오 스트림 재생이 시작된 후 지정된 간격마다 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 간격은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
 ### Context field
@@ -368,7 +368,7 @@
 * [AudioPlayer.ProgressReportDelayPassed](#ProgressReportDelayPassed)
 * [AudioPlayer.ProgressReportPositionPassed](#ProgressReportPositionPassed)
 
-## ProgressReportPositionPassed Event {#ProgressReportPositionPassed}
+## ProgressReportPositionPassed event {#ProgressReportPositionPassed}
 오디오 스트림 재생이 시작된 후 지정된 보고 시점에 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 시점은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
 ### Context field
@@ -404,7 +404,7 @@
 * [AudioPlayer.ProgressReportDelayPassed](#ProgressReportDelayPassed)
 * [AudioPlayer.ProgressReportIntervalPassed](#ProgressReportIntervalPassed)
 
-## Stop Directive {#Stop}
+## Stop directive {#Stop}
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.
 
 ### Payload field
@@ -432,7 +432,7 @@
 * [AudioPlayer.Started](#PlayStarted)
 * [AudioPlayer.Stopped](#PlayStopped)
 
-## StreamDeliver Directive {#StreamDeliver}
+## StreamDeliver directive {#StreamDeliver}
 [AudioPlayer.StreamRequested](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. 클라이언트가 음악을 재생할 수 있도록 오디오 스트림 정보에 스트리밍할 수 있는 URL 정보가 필수로 포함되어 있습니다.
 
 ### Payload field
@@ -471,7 +471,7 @@ StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시�
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.StreamRequested](#StreamRequested)
 
-## StreamRequested Event {#StreamRequested}
+## StreamRequested event {#StreamRequested}
 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.
 
 ### Context field

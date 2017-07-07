@@ -1,7 +1,7 @@
 # 사용자 계정 연결하기
 Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 통해 사용자 계정 권한이 필요한 외부 서비스를 제공할 수 있습니다. 예를 들면, 유료 콘텐츠 서비스인 음악 스트리밍 서비스나 쇼핑, 금융, 메신저, 홈 IoT 등과 같은 서비스가 Clova에 연동될 수 있습니다. 이를 위해, Clova는 외부 서비스의 사용자 계정과 Clova 사용자 계정을 연결하는 계정 연결(account linking)을 지원하며, 이 기술은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)을 이용합니다.
 
-계정 연결은 사용자의 계정 인증(authentication)이 필요한 외부 서비스를 custom extension이 제공해야 할 때 사용됩니다. 계정 인증이 필요 없는 외부 서비스는 계정 연결을 하지 않아도 되며, 사용자 식별이 가능한 수준의 정보가 요구되는 서비스는 일반적으로 [custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)가 제공하는 기기 식별자(*context.System.device.deviceId*)와 사용자 계정 식별자(*context.System.user.userId* 또는 *session.user.userId*)를 조합한 값을 이용합니다.
+계정 연결은 사용자의 계정 인증(authentication)이 필요한 외부 서비스를 custom extension이 제공해야 할 때 사용됩니다. 계정 인증이 필요 없는 외부 서비스는 계정 연결을 하지 않아도 되며, 사용자 식별이 가능한 수준의 정보가 요구되는 서비스는 일반적으로 [custom extension 메시지](/CEK/References/Custom_Extension_Message_Format.md)가 제공하는 기기 식별자(*context.System.device.deviceId*)와 사용자 계정 식별자(*context.System.user.userId* 또는 *session.user.userId*)를 조합한 값을 이용합니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -46,7 +46,7 @@ Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 
 2. **(만약 access token이 만료된 경우)** refresh token을 이용하여 *[Access Token URI](#RegisterAccountLinkingToCEK)*에 새로운 access token을 요청합니다.
 
-3. [CEK 메시지](/CEK/References/CEK_Message_Format.md)에 access token을 포함시켜 사용자의 요청을 전달합니다.
+3. Extension에 전달하는 메시지에 access token을 포함시켜 사용자의 요청을 전달합니다.
    * Custom extension의 경우 *context.System.user.accessToken*와 *session.user.accessToken* 필드에 access token이 전달됩니다.
    * Clova Home extension의 경우 *payload.accessToken* 필드에 access token이 전달됩니다.
 
@@ -147,7 +147,7 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 </div>
 
 ### 계정 권한 검증 구현 {#AddValidationLogic}
-계정 연결을 적용하려면 extension 개발자는 access token이 유효한지 검증하는 코드를 작성해야 합니다. Custom extension과 Clova Home extension으로 전달되는 [CEK 메시지](/CEK/References/CEK_Message_Format.md)는 각각 다음과 같은 *accessToken* 필드를 가지고 있습니다.
+계정 연결을 적용하려면 extension 개발자는 access token이 유효한지 검증하는 코드를 작성해야 합니다. Custom extension과 Clova Home extension으로 전달되는 extension 메시지는 각각 다음과 같은 *accessToken* 필드를 가지고 있습니다.
 아래 필드에서 access token을 확인한 후 해당 access token이 존재하며 유효한 값인지 확인해야 합니다.
 
 * Custom extension : *context.System.user.accessToken*, *session.user.accessToken*

@@ -16,7 +16,7 @@
 | [ShowRecognizedText](#ShowRecognizedText)     | Directive | 클라이언트에게 음성으로 인식된 자연어를 실시간으로 전달합니다.   |
 | [StopCapture](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.      |
 
-## ExpectSpeech Directive {#ExpectSpeech}
+## ExpectSpeech directive {#ExpectSpeech}
 
 클라이언트에게 마이크를 활성화하여 사용자의 음성 입력을 받도록 지시합니다. 해당 지시 메시지는 CIC가 먼저 사용자의 요청에서 불충분한 정보를 추가로 요구하거나 대화 모드(Freetalk mode)와 같이 대화를 계속 진행하기 위해 전달됩니다. 입력된 사용자 음성은 [SpeechRecognizer.Recognize](#Recognize) 이벤트 메시지를 통해 CIC로 전달합니다.
 
@@ -57,7 +57,7 @@
 * [SpeechRecognizer.Recognize](#Recognize)
 * [SpeechRecognizer.ExpectSpeechTimedOut](#ExpectSpeechTimedOut)
 
-## ExpectSpeechTimedOut Event {#ExpectSpeechTimedOut}
+## ExpectSpeechTimedOut event {#ExpectSpeechTimedOut}
 
 [SpeechRecognizer.ExpectSpeech](#ExpectSpeech) 지시 메시지로 전달된 대기 시간 동안 사용자의 음성 입력이 없으면 해당 이벤트 메시지를 CIC로 전달합니다.
 
@@ -102,7 +102,7 @@
 * [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
 * [SpeechRecognizer.ExpectSpeech](#ExpectSpeech)
 
-## Recognize Event {#Recognize}
+## Recognize event {#Recognize}
 Recognize 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_Message_Format.md#Directives)는 Recognize 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
 다음과 같은 기준의 음성 입력을 처리할 수 있습니다.
@@ -166,7 +166,7 @@ Content-Type: application/octet-stream
 * [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
 * [SpeechRecognizer.StopCapture](#StopCapture)
 
-## ShowRecognizedText Directive {#ShowRecognizedText}
+## ShowRecognizedText directive {#ShowRecognizedText}
 
 Clova 음성 인식 시스템은 [SpeechRecognizer.Recognize](#Recognize) 이벤트 메시지로 전달받고 있는 사용자의 음성 입력을 분석하여 인식 결과를 제공합니다. CIC는 ShowRecognizedText 지시 메시지로 자연어 인식의 중간 처리 결과를 클라이언트로 전달합니다. 클라이언트는 이를 바탕으로 처리 과정을 사용자에게 실시간으로 보여 줄 수 있습니다.
 
@@ -238,7 +238,7 @@ Clova 음성 인식 시스템은 [SpeechRecognizer.Recognize](#Recognize) 이벤
 * [SpeechRecognizer.Recognize](#Recognize)
 * [SpeechRecognizer.StopCapture](#StopCapture)
 
-## StopCapture Directive {#StopCapture}
+## StopCapture directive {#StopCapture}
 CIC가 [SpeechRecognizer.Recognize](#Recognize) 이벤트 메시지를 받은 후 더 이상 녹음 데이터(PCM)를 수신할 필요가 없다고 판단한 경우 StopCapture 지시 메시지를 클라이언트에 전달합니다. 클라이언트는 이 메시지를 수신한 즉시 사용자 음성 녹음을 중지해야 합니다. CIC가 이 메시지를 보낸 후에도 사용자 음성 정보를 수신할 수 있지만 해당 음성 정보는 처리되지 않습니다. 또한, StopCapture 지시 메시지는 사용자의 음성 입력이 마지막까지 인식된 결과를 payload에 포함하고 있습니다.
 
 ### Payload field

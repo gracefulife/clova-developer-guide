@@ -8,7 +8,7 @@ Clova extension(이하 extension)은 음악, 쇼핑, 금융 등과 같은 외부
 
 CEK는 다음과 같은 기능을 제공합니다.
 * Interaction 모델 관리(Clova Developer Console 제공)
-* Clova와 extension 간 인터페이스 제공 ([CEK 메시지](/CEK/References/CEK_Message_Format.md))
+* Clova와 extension 간 인터페이스 제공
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -16,7 +16,7 @@ CEK는 다음과 같은 기능을 제공합니다.
 </div>
 
 ## CEK 동작 구조 {#CEKInteractionStructure}
-Clova는 CIC로부터 입력된 사용자의 발화를 인식하며, CEK를 통해 미리 등록된 [Iteraction 모델](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조하여 사용자의 발화를 분석합니다. CEK는 분석된 사용자의 발화 정보를 extension에게 전달하며, extension은 사용자 요청에 대한 처리 결과를 응답으로 돌려줘야 합니다. 이때 미리 정의된 [CEK 메시지 포맷](/CEK/References/CEK_Message_Format.md)에 맞게 메시지를 주고 받게 됩니다.
+Clova는 CIC로부터 입력된 사용자의 발화를 인식하며, CEK를 통해 미리 등록된 [Interaction 모델](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조하여 사용자의 발화를 분석합니다. CEK는 분석된 사용자의 발화 정보를 extension에게 전달하며, extension은 사용자 요청에 대한 처리 결과를 응답으로 돌려줘야 합니다. 이때 미리 정의된 메시지 포맷에 맞게 메시지를 주고 받게 됩니다.
 
 다음은 Clova 플랫폼과 extension 사이의 동작 구조를 나타내는 다이어그램입니다.
 

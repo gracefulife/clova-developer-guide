@@ -23,7 +23,7 @@
 
 
 
-## AddMemo Directive {#AddMemo}
+## AddMemo directive {#AddMemo}
 
 클라이언트에게 새로운 메모를 추가하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 메모 내용으로 함께 전달됩니다.
 
@@ -67,7 +67,7 @@
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Created](/CIC/References/APIs/Memo.md#Created)
 
-## AddReminder Directive {#AddReminder}
+## AddReminder directive {#AddReminder}
 
 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 리마인더 내용으로 함께 전달됩니다.
 
@@ -111,7 +111,7 @@
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Created](/CIC/References/APIs/Reminder.md#Created)
 
-## AddSchedule Directive {#AddSchedule}
+## AddSchedule directive {#AddSchedule}
 
 클라이언트에게 새로운 일정을 추가하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 일정 내용으로 함께 전달됩니다. 클라이언트는 일정을 관리하는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -160,7 +160,7 @@
 * [Clova.DeleteSchedule](#DeleteSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## CountSchedule Directive {#CountSchedule}
+## CountSchedule directive {#CountSchedule}
 
 클라이언트에게 조건에 일치하는 일정이 몇 개인지 표시하도록 지시합니다. 사용자의 음성 인식으로 파악된 조회 조건이 함께 전달됩니다. 클라이언트는 일정을 관리하는 로컬 앱 등에서 조건에 일치하는 일정이 몇 개인지 파악해야 합니다.
 
@@ -204,7 +204,7 @@
 * [Clova.DeleteSchedule](#DeleteSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## DeleteMemo Directive {#DeleteMemo}
+## DeleteMemo directive {#DeleteMemo}
 
 클라이언트에게 메모 삭제를 진행하도록 지시합니다. 클라이언트는 DeleteMemo 지시 메시지를 전달받으면 사용자가 메모를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
 
@@ -242,7 +242,7 @@
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted)
 
-## DeleteReminder Directive {#DeleteReminder}
+## DeleteReminder directive {#DeleteReminder}
 
 클라이언트에게 리마인더 삭제를 진행하도록 지시합니다. 클라이언트는 DeleteReminder 지시 메시지를 전달받으면 사용자가 리마인더를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
 
@@ -280,7 +280,7 @@
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted)
 
-## DeleteSchedule Directive {#DeleteSchedule}
+## DeleteSchedule directive {#DeleteSchedule}
 
 클라이언트에게 일정을 삭제하도록 지시합니다. 사용자의 음성 인식으로 파악된 조건이 함께 전달됩니다. 클라이언트는 해당 조건에 일치하는 일정을 삭제하기 위해 일정을 관리하는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -320,7 +320,7 @@
 * [Clova.CountSchedule](#CountSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## FinishExtension Directive {#FinishExtension}
+## FinishExtension directive {#FinishExtension}
 
 클라이언트에게 특정 Extension을 종료하도록 지시합니다. 클라이언트는 FinishExtension 지시 메시지를 수신하면 해당 값에 대응하는 Extension을 종료해야 합니다.
 
@@ -359,7 +359,7 @@
 ### See also
 * [Clova.StartExtension](#StartExtension)
 
-## GetMemo Directive {#GetMemo}
+## GetMemo directive {#GetMemo}
 
 클라이언트에게 메모 조회를 진행하도록 지시합니다. 클라이언트는 메모를 조회할 수 있는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -394,7 +394,7 @@
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Get](/CIC/References/APIs/Memo.md#Get)
 
-## GetReminder Directive {#GetReminder}
+## GetReminder directive {#GetReminder}
 
 클라이언트에게 리마인더 조회를 진행하도록 지시합니다. 클라이언트는 리마인더를 조회할 수 있는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -428,7 +428,7 @@
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
 
-## GetSchedule Directive {#GetSchedule}
+## GetSchedule directive {#GetSchedule}
 
 클라이언트에게 일정 조회를 진행하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 조회 조건으로 함께 전달됩니다. 클라이언트는 리마인더를 조회할 수 있는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -470,7 +470,7 @@
 * [Clova.CountSchedule](#CountSchedule)
 * [Clova.DeleteSchedule](#DeleteSchedule)
 
-## RenderMemoList Directive {#RenderMemoList}
+## RenderMemoList directive {#RenderMemoList}
 
 클라이언트에게 메모 목록을 표시하도록 지시합니다. 사용자의 음성 인식으로 파악된 메모 목록이 함께 전달됩니다.
 
@@ -525,7 +525,7 @@
 * [Clova.RenderText](#RenderText)
 * [Memo.Get](/CIC/References/APIs/Memo.md#Get)
 
-## RenderReminderList Directive {#RenderReminderList}
+## RenderReminderList directive {#RenderReminderList}
 
 클라이언트에게 리마인더 목록을 표시하도록 지시합니다. 사용자의 음성 인식으로 파악된 리마인더 목록이 함께 전달됩니다.
 
@@ -580,7 +580,7 @@
 * [Clova.RenderText](#RenderText)
 * [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
 
-## RenderTemplate Directive {#RenderTemplate}
+## RenderTemplate directive {#RenderTemplate}
 
 클라이언트에게 데이터를 Content Template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
@@ -620,7 +620,7 @@
 * [Clova.RenderText](#RenderText)
 * [Content Template](/CIC/References/Content_Templates.md)
 
-## RenderText Directive {#RenderText}
+## RenderText directive {#RenderText}
 
 클라이언트에게 텍스트 메시지를 표시하도록 지시합니다. 사용자가 요청한 텍스트가 함께 전달됩니다.
 
@@ -657,7 +657,7 @@
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Clova.RenderTemplate](#RenderTemplate)
 
-## StartExtension Directive {#StartExtension}
+## StartExtension directive {#StartExtension}
 
 클라이언트에게 특정 Extension을 시작하도록 지시합니다. 클라이언트는 StartExtension 지시 메시지를 수신하면 해당 값에 대응하는 Extension을 시작합니다.
 

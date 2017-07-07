@@ -14,7 +14,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| accessToken   | string  | Clova Home extension 접근 토큰  | 필수     |
+| accessToken   | string  | Clova Home extension의 access token  | 필수     |
 
 #### Message example
 

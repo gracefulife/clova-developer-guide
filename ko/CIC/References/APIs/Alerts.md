@@ -8,7 +8,7 @@
 | [GetAlert](#GetAlert)       | Directive | 클라이언트에게 알람 혹은 타이머를 조회하도록 지시합니다. |
 | [SetAlert](#SetAlert)       | Directive | 클라이언트에게 알람 혹은 타이머를 설정하도록 지시합니다. |
 
-## DeleteAlert Directive {#DeleteAlert}
+## DeleteAlert directive {#DeleteAlert}
 클라이언트에게 알람 또는 타이머를 삭제하도록 지시합니다. 클라이언트는 사용자의 알람 또는 타이머를 삭제할 수 있도록 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
 ### Payload field
@@ -42,7 +42,7 @@
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## GetAlert Directive {#GetAlert}
+## GetAlert directive {#GetAlert}
 
 클라이언트에게 알람 또는 타이머를 조회하도록 지시합니다. 클라이언트는 사용자의 알람 혹은 타이머를 조회할 수 있도록 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
@@ -77,7 +77,7 @@
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## SetAlert Directive {#SetAlert}
+## SetAlert directive {#SetAlert}
 
 클라이언트에게 알람을 설정하도록 지시합니다. 클라이언트는 사용자의 알람 혹은 타이머를 설정할 수 있도록 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 

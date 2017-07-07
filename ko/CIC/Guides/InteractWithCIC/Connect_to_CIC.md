@@ -107,7 +107,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 | 구분      | 설명                               |
 |----------|-----------------------------------|
-| DownChannel 유지 | Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [Downchannel을 구성](##CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다. |
+| DownChannel 유지 | Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [Downchannel을 구성](#CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다. |
 | Ping-pong 수행 | 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.|
 
 <div class="note">

@@ -69,13 +69,14 @@
   * [Clova Home extension 요청 처리하기](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
   * [Clova Home extension 응답 반환하기](/CEK/Guides/Build_Clova_Home_Extension.md#ReturnClovaHomeExtensionResponse)
 * [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)
-* [CEK 메시지 포맷](/CEK/References/CEK_Message_Format.md)
-  * [HTTP 메시지](/CEK/References/CEK_Message_Format.md#HTTPMessage)
-  * [Custom extension 메시지](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)
-  * [Clova Home extension 메시지](/CEK/References/CEK_Message_Format.md#ClovaHomeExtensionMessage)
-* [Clova Home API](/CEK/References/Clova_Home_API.md)
+* [HTTP 메시지 포맷](/CEK/References/HTTP_Message_Format.md)
+* [Custom extension 메시지](/CEK/References/Custom_Extension_Message_Format.md)
+* [Clova Home extension 메시지](/CEK/References/Clova_Home_Extension_Message_Format.md)
+  * [Clova Home API](/CEK/References/Clova_Home_API.md)
 
 ## About This Document
 
-* [문서 정보](README.md)
-* [저작권](Copyright.md)
+* [Clova 플랫폼 릴리즈 노트](/README.md)
+* [문서 정보](/Doc_Info.md)
+* [저작권](/Copyright.md)
+* [용어집](/Terms.md)

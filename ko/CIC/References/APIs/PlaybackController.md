@@ -23,7 +23,7 @@
 | [volumeDown](#volumeDown)               | Directive | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                      |
 | [volumeUp](#volumeUp)                   | Directive | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                      |
 
-## mute Directive {#mute}
+## mute directive {#mute}
 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.
 
 ### Payload field
@@ -50,7 +50,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## next Directive {#next}
+## next directive {#next}
 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.
 
 ### Payload field
@@ -77,7 +77,7 @@
 * [AudioPlayer.PlayNext](/CIC/References/APIs/AudioPlayer.md#PlayNext)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## pause Directive {#pause}
+## pause directive {#pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.
 
 ### Payload field
@@ -104,7 +104,7 @@
 * [AudioPlayer.PlayPaused](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## previous Directive {#previous}
+## previous directive {#previous}
 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다.
 
 ### Payload field
@@ -131,7 +131,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## resume Directive {#resume}
+## resume directive {#resume}
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.
 
 ### Payload field
@@ -158,7 +158,7 @@
 * [AudioPlayer.PlayResumed](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## stop Directive {#stop}
+## stop directive {#stop}
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.
 
 ### Payload field
@@ -185,7 +185,7 @@
 * [AudioPlayer.PlayStopped](/CIC/References/APIs/AudioPlayer.md#PlayStopped)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## TurnOffRepeatMode Directive {#TurnOffRepeatMode}
+## TurnOffRepeatMode directive {#TurnOffRepeatMode}
  클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.
 
 ### Payload field
@@ -211,7 +211,7 @@
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## TurnOnRepeatMode Directive {#TurnOnRepeatMode}
+## TurnOnRepeatMode directive {#TurnOnRepeatMode}
 클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다.
 
 ### Payload field
@@ -237,7 +237,7 @@
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## unmute Directive {#unmute}
+## unmute directive {#unmute}
 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.
 
 ### Payload field
@@ -264,7 +264,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneDown Directive {#volumeDown}
+## volumneDown directive {#volumeDown}
 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
@@ -291,7 +291,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneUp Directive {#volumeUp}
+## volumneUp directive {#volumeUp}
 클라이언트에게 스피커 볼륨을 높이도록 지시합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field

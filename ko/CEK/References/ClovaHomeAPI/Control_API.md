@@ -207,7 +207,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| targetTemperature | [TemperatureObject](#TemperatureObject)  | 현재 설정된 희망 온도 정보를 담고 있는 객체                                  | 필수    |
+| targetTemperature            | [TemperatureObject](#TemperatureObject)  | 현재 설정된 희망 온도 정보를 담고 있는 객체                                  | 필수    |
 | applicanceResponseTimestamp  | string  | 기기의 희망 온도를 확인한 시간 (Timestamp, [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601))  | 필수    |
 
 #### Message example
@@ -241,7 +241,7 @@ Clova가 사용자 기기의 연결 여부를 파악하기 위해 이 메시지�
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| accessToken   | string  | Clova Home extension 접근 토큰 | 필수    |
+| accessToken   | string  | Clova Home extension의 access token | 필수    |
 
 #### Message example
 
@@ -342,7 +342,7 @@ Clova가 사용자 기기의 연결 여부를 파악하기 위해 이 메시지�
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                   | Clova Home extension 접근 토큰                               | 필수    |
+| accessToken      | string                                   | Clova Home extension의 access token                               | 필수    |
 | appliance        | [ApplianceObject](#ApplianceObject)      | 대상 기기 정보를 담고 있는 객체. applianceId 필드는 필수입니다.    | 필수    |
 | targetTemperature | [TemperatureObject](#TemperatureObject) | 현재 희망 온도 정보를 담고 있는 객체                               | 필수    |
 | previousState     | object                                  | 기기의 이전 상황 정보를 담고 있는 객체                              | 필수    |
@@ -377,7 +377,7 @@ Clova가 사용자 기기의 연결 여부를 파악하기 위해 이 메시지�
 * [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest)
 
 ### SetLockStateRequest {#SetLockStateRequest}
-주어 도어록과 같은 기기를 제어할 때 사용되며, 대상 기기를 잠그거나 열도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 *[SetLockStateConfirmation](#SetLockStateConfirmation)* 메시지를 사용해야 합니다.
+주로 도어록과 같은 기기를 제어할 때 사용되며, 대상 기기를 잠그거나 열도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 *[SetLockStateConfirmation](#SetLockStateConfirmation)* 메시지를 사용해야 합니다.
 
 #### Payload field
 
