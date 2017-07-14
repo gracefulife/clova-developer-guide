@@ -38,6 +38,10 @@
     display: none;
 }
 
+.book-body .navigation-next, .book-body .navigation-prev {
+    display: none;
+}
+
 .markdown-section ul p, .markdown-section ol p, .markdown-section dl p {
     margin-bottom: 0;
 }

@@ -1,10 +1,5 @@
 # Summary
 
-## Clova Developer Guide
-
-* [Documentation summary](README.md)
-* [Copyright](Copyright.md)
-
 ## Clova Interface Connect
 
 * [CIC overview](/CIC/CIC_Overview.md)
@@ -17,8 +12,8 @@
     * [Creating connection](/CIC/Guides/Interact_with_CIC.md#CreateConnection)
     * [Authorization](/CIC/Guides/Interact_with_CIC.md#Authorization)
     * [Managing connection](/CIC/Guides/Interact_with_CIC.md#ManageConnection)
-  * [Sending Event message](/CIC/Guides/Interact_with_CIC.md#SendEvent)
-  * [Handling Directive message](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
+  * [Sending event message](/CIC/Guides/Interact_with_CIC.md#SendEvent)
+  * [Handling directive message](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
   * [Managing message queue](/CIC/Guides/Interact_with_CIC.md#ManageMessageQ)
 * [HTTP/2 message format](/CIC/References/HTTP2_Message_Format.md)
   * [HTTP request](/CIC/References/HTTP2_Message_Format.md#Request)
@@ -49,7 +44,7 @@
   * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
   * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [Content Template](/CIC/References/Content_Templates.md)
-  * [CardList](/CIC/References/ContentTemplates/CardList.md)
+  * [CardList](/CIC/References/ContentTemplates/CardList.md
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
@@ -60,22 +55,28 @@
 * [CEK overview](/CEK/CEK_Overview.md)
   * [What is CEK?](/CEK/CEK_Overview.md#WhatisCEK)
   * [CEK interaction structure](/CEK/CEK_Overview.md#CEKInteractionStructure)
-  * [Extension types](/CEK/CEK_Overview.md#ExtensionType)
+  * [Extension type](/CEK/CEK_Overview.md#ExtensionType)
 * [Building custom extension](/CEK/Guides/Build_Custom_Extension.md)
-  * [Preparation](/CEK/Guides/Build_Custom_Extension.md#Prepation)
+  * [Preparation](/CEK/Guides/Build_Custom_Extension.md#Preparation)
   * [Handling custom extension request](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
-    * [Handling LaunchRequest request](/CEK/Guides/Build_Custom_Extension.md#HandleLaunchRequest)
-    * [Handling IntentRequest request](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
-    * [Handling SessionEndedRequest request](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
+    * [Handling LaunchRequest](/CEK/Guides/Build_Custom_Extension.md#HandleLaunchRequest)
+    * [Handling IntentRequest](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
+    * [Handling SessionEndedRequest](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
   * [Returning custom extension response](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
 * [Building Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)
   * [Preparation](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
-  * [Providing device discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
+  * [Device discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
   * [Handling Clova Home extension request](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
   * [Returning Clova Home extension response](/CEK/Guides/Build_Clova_Home_Extension.md#ReturnClovaHomeExtensionResponse)
 * [Linking user account](/CEK/Guides/LinkUserAccount.md)
-* [CEK message format](/CEK/References/CEK_Message_Format.md)
-  * [HTTP message](/CEK/References/CEK_Message_Format.md#HTTPMessage)
-  * [Custom extension message](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage)
-  * [Clova Home extension message](/CEK/References/CEK_Message_Format.md#ClovaHomeExtensionMessage)
-* [Clova Home API](/CEK/References/Clova_Home_API.md)
+* [HTTP message format](/CEK/References/HTTP_Message_Format.md)
+* [Custom extension message](/CEK/References/Custom_Extension_Message_Format.md)
+* [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md)
+  * [Clova Home API](/CEK/References/Clova_Home_API.md)
+
+## About this documentation
+
+* [Clova platform release notes](/README.md)
+* [Documentation summary](/Doc_Info.md)
+* [Copyright](/Copyright.md)
+* [Glossary](/Terms.md)
