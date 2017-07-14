@@ -8,5 +8,9 @@
       "right": 30
     },
     "paperSize": "a3"
+  },
+  "variables": {
+    "TargetServiceForClientAuth" : "LINE",
+    "AuthServerBaseURL" : "https://clova-authgw.line-apps.com"
   }
 }

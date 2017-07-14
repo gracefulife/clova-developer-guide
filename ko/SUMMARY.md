@@ -1,5 +1,11 @@
 # Summary
 
+## About This Document
+
+* [문서 정보](/README.md)
+* [저작권](/Copyright.md)
+* [용어집](/Terms.md)
+
 ## Clova Interface Connect
 
 * [CIC 개요](/CIC/CIC_Overview.md)
@@ -73,10 +79,3 @@
 * [Custom extension 메시지](/CEK/References/Custom_Extension_Message_Format.md)
 * [Clova Home extension 메시지](/CEK/References/Clova_Home_Extension_Message_Format.md)
   * [Clova Home API](/CEK/References/Clova_Home_API.md)
-
-## About This Document
-
-* [Clova 플랫폼 릴리즈 노트](/README.md)
-* [문서 정보](/Doc_Info.md)
-* [저작권](/Copyright.md)
-* [용어집](/Terms.md)

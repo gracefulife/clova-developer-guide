@@ -1,18 +1,14 @@
 # Clova 인증 API
 클라이언트가 CIC에 연결하려면 [Clova access token을 생성](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)해야 합니다. Clova 인증 서버는 위 단계에 필요한 API를 제공하고 있으며, 이 문서는 Clova 인증 API에 대해 설명합니다.
 
-
 ## Base URL
 Clova 인증 서버의 base URL은 다음과 같습니다.
 
-{% raw %}
-```
-https://auth.clova.ai
-```
-{% endraw %}
+<pre><code>{{ book.AuthServerBaseURL }}
+</code></pre>
 
 ## /authorize {#authorize}
-네이버 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
+{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -38,15 +34,13 @@ https://auth.clova.ai
 | state         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
 
 ### Request Example
-{% raw %}
-```
-https://auth.clova.ai/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
-                               &device_id=test_device
-                               &model_id=test_model
-                               &response_type=code
-                               &state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
-```
-{% endraw %}
+
+<pre><code>{{ book.AuthServerBaseURL }}/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+                               &amp;device_id=test_device
+                               &amp;model_id=test_model
+                               &amp;response_type=code
+                               &amp;state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
+</code></pre>
 
 ### Response field
 | 필드 이름       | 자료형    | 필드 설명                     |
@@ -97,16 +91,15 @@ https://auth.clova.ai/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
 | response_type | string  | 응답 유형. 현재는 "code"만 지원합니다.                                                                                      | 필수 |
 
 ### Request Example
-{% raw %}
-```
-http://auth.clova.ai:15828/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
-                                &client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                                &code=cnl__eCSTdsdlkjfweyuxXvnlA
-                                &device_id=test_device
-                                &grant_type=authorization_code
-                                &model_id=test_model
-```
-{% endraw %}
+
+<pre><code>{{ book.AuthServerBaseURL }}/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                           &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
+                           &amp;device_id=test_device
+                           &amp;grant_type=authorization_code
+                           &amp;model_id=test_model
+</code></pre>
+
 
 ### Response field
 | 필드 이름       | 자료형    | 필드 설명                     |

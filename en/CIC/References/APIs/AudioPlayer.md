@@ -53,6 +53,7 @@ Sometimes, due to the way music services charge users, specific streaming detail
                 "title": "\uc2eb\uc740 \ub0a0",
                 "lyrics": "\ud0a4 \ud070 ...",
                 "stream": {
+                    "beginAtInMilliseconds": 0,
                     "progressReport": {
                         "progressReportDelayInMilliseconds": null,
                         "progressReportIntervalInMilliseconds": null,
@@ -526,6 +527,7 @@ This object contains streaming details of the audio stream necessary for playbac
 #### Object field
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
+| beginAtInMilliseconds | number | The starting point of playback. If this field is specified as a non-zero value, the client must play the audio stream from that point. If this field is specified as 0, the client must play the audio stream from the beginning. Unit is a millisecond. | Yes |
 | progressReport  | object  | The object that specifies the time to report on the playback state after the playback has started  | No |
 | progressReport.progressReportDelayInMilliseconds | number | The value is used to report on the playback state after the specified time has passed since the start of the playback.  | No |
 | progressReport.progressReportIntervalInMilliseconds | number | The value is used to report on the playback state at regular intervals of time specified during the playback.  | No |
@@ -538,13 +540,14 @@ This object contains streaming details of the audio stream necessary for playbac
 {% raw %}
 ```json
 {
-    "progressReport": {
-        "progressReportDelayInMilliseconds": null,
-        "progressReportIntervalInMilliseconds": null,
-        "progressReportPositionInMilliseconds": 60000
-    },
-    "token": "TR-NM-4435786",
-    "url": "clova:TR-NM-4435786"
+  "beginAtInMilliseconds": 0,
+  "progressReport": {
+      "progressReportDelayInMilliseconds": null,
+      "progressReportIntervalInMilliseconds": null,
+      "progressReportPositionInMilliseconds": 60000
+  },
+  "token": "TR-NM-4435786",
+  "url": "clova:TR-NM-4435786"
 }
 ```
 {% endraw %}

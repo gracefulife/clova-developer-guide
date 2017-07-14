@@ -8,5 +8,12 @@
       "right": 30
     },
     "paperSize": "a3"
+  },
+  "variables": {
+    "DocVersion": "en-JP",
+    "DocOwner": "LINE",
+    "TargetServiceForClientAuth": "LINE",
+    "LoginAPIofTargetService": "https://developers.line.me/line-login/overview",
+    "AuthServerBaseURL": "https://clova-authgw.line-apps.com"
   }
 }

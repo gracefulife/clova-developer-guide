@@ -1,5 +1,11 @@
 # Summary
 
+## About this documentation
+
+* [Documentation summary](/README.md)
+* [Copyright](/Copyright.md)
+* [Glossary](/Terms.md)
+
 ## Clova Interface Connect
 
 * [CIC overview](/CIC/CIC_Overview.md)
@@ -44,7 +50,7 @@
   * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
   * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [Content Template](/CIC/References/Content_Templates.md)
-  * [CardList](/CIC/References/ContentTemplates/CardList.md
+  * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
@@ -73,10 +79,3 @@
 * [Custom extension message](/CEK/References/Custom_Extension_Message_Format.md)
 * [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md)
   * [Clova Home API](/CEK/References/Clova_Home_API.md)
-
-## About this documentation
-
-* [Clova platform release notes](/README.md)
-* [Documentation summary](/Doc_Info.md)
-* [Copyright](/Copyright.md)
-* [Glossary](/Terms.md)

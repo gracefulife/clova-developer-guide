@@ -5,14 +5,11 @@ To establish a connection between your client and CIC, it is required to [create
 ## Base URL
 The base URL of the Clova authorization server is as follows.
 
-{% raw %}
-```
-https://auth.clova.ai
-```
-{% endraw %}
+<pre><code>{{ book.AuthServerBaseURL }}
+</code></pre>
 
 ## /authorize {#authorize}
-Returns a response message containing an authorization code by receiving a NAVER account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) provided as parameters. An authorization code is credential information which is returned at a step prior to issuance of a Clova access token.
+Returns a response message containing an authorization code by receiving a {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) provided as parameters. An authorization code is credential information which is returned at a step prior to issuance of a Clova access token.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -38,15 +35,13 @@ Returns a response message containing an authorization code by receiving a NAVER
 | state  | string  | The value of the state token (URL encoding applied) used by a client to prevent cross-site request forgery attacks | Yes |
 
 ### Request Example
-{% raw %}
-```
-https://auth.clova.ai/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
-                               &device_id=test_device
-                               &model_id=test_model
-                               &response_type=code
-                               &state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
-```
-{% endraw %}
+
+<pre><code>{{ book.AuthServerBaseURL }}/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+                                            &device_id=test_device
+                                            &model_id=test_model
+                                            &response_type=code
+                                            &state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
+</code></pre>
 
 ### Response field
 | Field name  | Type  | Field description  |
@@ -97,16 +92,14 @@ Creates, refreshes, or deletes a Clova access token using an authorization code 
 | response_type | string  | Response type. Only "code" is supported at the moment. | Yes  |
 
 ### Request Example
-{% raw %}
-```
-http://auth.clova.ai:15828/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
-                                &client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                                &code=cnl__eCSTdsdlkjfweyuxXvnlA
-                                &device_id=test_device
-                                &grant_type=authorization_code
-                                &model_id=test_model
-```
-{% endraw %}
+
+<pre><code>{{ book.AuthServerBaseURL }}/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+                                        &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                                        &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
+                                        &amp;device_id=test_device
+                                        &amp;grant_type=authorization_code
+                                        &amp;model_id=test_model
+</code></pre>
 
 ### Response field
 | Field name  | Type  | Field description  |

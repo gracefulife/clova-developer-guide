@@ -6,7 +6,7 @@ Clova Home extension이란 외부 IoT 서비스를 통해 가정 내 IoT 기기�
 
 Clova Home extension을 만들기 위해 사전에 준비해야 할 것이 무엇이 있고 CEK와 어떤 메시지를 주고 받으면서 어떻게 동작을 수행해야 하는지 설명합니다.
 
-이 문서는 다음과 같은 순서로 Clova Home extension 개발자가 알아야 할 내용을 전달하고 있습니다.
+다음과 같은 순서로 Clova Home extension 개발자가 알아야 할 내용을 전달합니다.
 
 1. [사전 준비사항](#Preparation)
 2. [Discovery 기능 제공하기](#ProvideDeviceDiscovery)

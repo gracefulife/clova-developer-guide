@@ -18,7 +18,7 @@ Clova가 제공하는 기능에 따라 네임스페이스로 분류하여 제공
 클라이언트와 [Clova Interface Connect](#CIC)와 데이터를 주고받을 때 사용되는 [이벤트 메시지](#Event)와 [지시 메시지](#Directive)를 통칭하는 용어입니다.
 
 ### Clova {#Clova}
-[Clova](http://clova.ai)는 네이버가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
+[Clova](http://clova.ai)는 {{ book.TargetServiceForClientAuth }}가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
 
 ### Clova access token {#ClovaAccessToken}
 클라이언트가 [Clova Interface Cconnect](#CIC)로 [이벤트 메시지](#Event)를 보낼 때 Clova가 클라이언트를 인증하는 수단입니다. 자세한 내용은 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)를 참조합니다.
@@ -46,8 +46,6 @@ Clova extension을 개발할 때 필요한 도구와 인터페이스를 제공�
 ### Clova Home API {#ClovaHomeAPI}
 IoT 기기를 제어할 때 사용하는 API이며, [Clova Home extension message](#ClovaHomeExtensionMessage) 포맷입니다. 자세한 내용은 [Clova Home API](/CEK/References/Clova_Home_API.md)을 참조합니다.
 
-Clova가 제공하는 기능에 따라 네임스페이스로 분류하여 제공하고 있는 [이벤트 메시지](#Event)나 [지시 메시지](#Directive) 포맷입니다. 자세한 내용은 [CIC API](/CIC/References/CIC_API.md)를 참조합니다.
-
 ### Clova Home extension {#ClovaHomeExtension}
 IoT 기기 제어 서비스를 제공하기 위한 extension입니다. 자세한 내용은 [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)를 참조합니다.
 
@@ -64,7 +62,7 @@ IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova
 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화한 것입니다. 자세한 내용은 [Content Template](/CIC/References/Content_Templates.md)을 참고합니다.
 
 ### Context Objects {#ContextObjects}
-[맥락 정보](#Context)를 표현하는 객체입니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md) 참조합니다.
+[맥락 정보](#Context)를 표현하는 객체입니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
 
 ### Custom extension {#CustomExtension}
 임의의 확장된 기능을 제공하는 [extension](#ClovaExtension)입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md)를 참조합니다.
@@ -73,7 +71,7 @@ CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화
 [Clova Extension Kit](#CEK)와 [custom extension](#CustomExtension) 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. 자세한 내용은 [Custom extension 메시지](/CEK/References/Custom_Extension_Message_Format.md)를 참조합니다.
 
 ### Discovery 기능 {#Discovery}
-사용자 계정에 등록된 IoT 기기 목록을 클라이언트 기기에 제공하는 기능입니다. 자세한 내용은 [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)을 참조합니다.
+사용자 계정에 등록된 IoT 기기 목록을 클라이언트 기기에 제공하는 기능입니다. 자세한 내용은 [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)를 참조합니다.
 
 ### Downchannel {#Downchannel}
 Downchannel은 클라이언트가 [Clova Interface Cconnect](#CIC)로부터 지시 메시지를 받을 때 사용되는 [HTTP/2](#HTTP2) 스트림입니다. 자세한 내용은 [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)를 참조합니다.
@@ -95,34 +93,28 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 [Custom extension](#CustomeExtension)이 받게 될 요청을 정형화한 스키마입니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조합니다.
 
 ### LaunchRequest {#LaunchRequest}
-사용자가 특정 모드나 특정 [custom extension](#CustomExtension)을 사용하기로 선언한 것을 알릴 때 사용됩니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)를 참조합니다.
+사용자가 특정 모드나 특정 [custom extension](#CustomExtension)을 사용하기로 선언한 것을 알리기 위해 보내는 요청 메시지입니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)를 참조합니다.
 
 ### OAuth 2.0
 접근 권한을 위임하기 위한 공개 표준으로 인터넷 사용자가 다른 웹 서비스나 응요 프로그램에 사용자 계정에 접근할 수 있는 권한을 부여하는 규약입니다. Clova 플랫폼에서는 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하거나 사용자가 특정 extension을 사용 시 자신의 [계정을 연결](/CEK/Guides/LinkUserAccount.md)할 때 사용됩니다. 자세한 내용은 [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)를 참고합니다.
 
 ### SessionEndedRequest {#SessionEndedRequest}
-사용자가 특정 모드나 특정 [custom extension](#CustomExtension)의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)를 참조합니다.
+사용자가 특정 모드나 특정 [custom extension](#CustomExtension)의 사용을 중지하기로 선언한 것을 알리기 위해 보내는 요청 메시지 사용됩니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)를 참조합니다.
 
 ### Slot {#Slot}
 [Intent](#Intent)에 선언된 요청을 처리할 때 필요한 정보이며, intent를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 됩니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조합니다.
 
 ### 대화 ID {#DialogueID}
-대화 ID는 사용자 발화의 맥락을 구분하기 위한 대화 식별자입니다. 사용자와 Clova 사이에 논리적인 대화가 있을 수 있으며 하나의 대화에 복수의 [메시지](#MessageID)가 있을 수 있습니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 대화 ID를 가지며, 이어지는(multi-turn) 대화의 경우 같은 대화 ID를 가집니다. 이 대화 ID는 클라이언트가 [이벤트 메시지](#Event)를 [Clova Interface Cconnect](#CIC)에 전달할 때 생성합니다. 또한, 응답으로 전달되는 [지시 메시지](#Directive)에 포함되어 있으며, 클라이언트는 이 지시 메시지가 어떤 이벤트 메시지의 응답인지 판단할 때 사용될 수 있습니다.
+대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Cconnect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다를 경우 수신한 지시 메시지를 무시해야 합니다.
 
 ### 맥락 정보 (Context) {#Context}
 맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미하며 [Context Objects](#ContextObjects)로 표현됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
 
 ### 메시지 ID {#MessageID}
-메시지 ID는 [대화](#DialogueID) 속에서 식별되는 개개의 메시지를 구분하기 위한 식별자입니다. 예를 들어, 피자를 주문하는 대화와 날씨를 묻는 대화가 있다면 다음과 같이 대화와 메시지가 구별됩니다.
-* 대화1, 메시지 1: 피자 주문 해줘.
-* 대화1, 메시지 2: 몇 판 주문할까요?
-* 대화1, 메시지 3: 2판 주문 해줘.
-* 대화1, 메시지 4: 주문 완료했씁니다.
-* 대화2, 메시지 1: 오늘 날씨 어때?
-* 대화2, 메시지 2: 오늘은 맑아요.
+메시지 ID는 개개의 메시지를 구분하기 위한 식별자이며, [이벤트 메시지](#Event)와 [지시 메시지](#Directive)는 모두 개개의 메시지 ID를 가집니다.
 
 ### 사용자 계정 연결 (Account Linking) {#AccountLinking}
-사용자의 계정 인증(authentication)이 필요한 외부 서비스를 [extension](#ClovaExtension)이 제공해야 할 때 사용됩니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)을 참조합니다.
+사용자의 계정 인증(authentication)이 필요한 외부 서비스를 [extension](#ClovaExtension)이 제공해야 할 때 사용됩니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.
 
 ### 사용자 발화 예시 {#UserUtteranceExample}
 

@@ -8,5 +8,12 @@
       "right": 30
     },
     "paperSize": "a3"
+  },
+  "variables": {
+    "DocVersion": "ko-KR",
+    "DocOwner": "NAVER",
+    "TargetServiceForClientAuth": "NAVER",
+    "LoginAPIofTargetService": "https://developers.naver.com/docs/login/overview/",
+    "AuthServerBaseURL" : "https://auth.clova.ai"
   }
 }

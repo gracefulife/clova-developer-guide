@@ -53,6 +53,7 @@
                 "title": "\uc2eb\uc740 \ub0a0",
                 "lyrics": "\ud0a4 \ud070 ...",
                 "stream": {
+                    "beginAtInMilliseconds": 0,
                     "progressReport": {
                         "progressReportDelayInMilliseconds": null,
                         "progressReportIntervalInMilliseconds": null,
@@ -526,6 +527,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
+| beginAtInMilliseconds | number | 재생을 시작할 지점. 단위는 밀리초이며, 이 값이 지정된 경우 클라이언트는 해당 오디오 스트림을 지정된 위치부터 재생해야 합니다. 이 값이 0이면 해당 스트림을 처음부터 재생해야 합니다.          | 필수 |
 | progressReport    | object  | 재생 후 재생 상태 정보를 보고 받기 위해 보고 시간을 정해둔 객체                                                  | 선택 |
 | progressReport.progressReportDelayInMilliseconds | number | 재생 시작 후 지정된 시간이 지났을 때 재생 상태 정보를 보고받기 위해 지정하는 값입니다.   | 선택 |
 | progressReport.progressReportIntervalInMilliseconds | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정하는 값입니다.      | 선택 |
@@ -538,13 +540,14 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 {% raw %}
 ```json
 {
-    "progressReport": {
-        "progressReportDelayInMilliseconds": null,
-        "progressReportIntervalInMilliseconds": null,
-        "progressReportPositionInMilliseconds": 60000
-    },
-    "token": "TR-NM-4435786",
-    "url": "clova:TR-NM-4435786"
+  "beginAtInMilliseconds": 0,
+  "progressReport": {
+      "progressReportDelayInMilliseconds": null,
+      "progressReportIntervalInMilliseconds": null,
+      "progressReportPositionInMilliseconds": 60000
+  },
+  "token": "TR-NM-4435786",
+  "url": "clova:TR-NM-4435786"
 }
 ```
 {% endraw %}

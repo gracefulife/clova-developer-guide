@@ -5,7 +5,6 @@ Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주
 CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 *request* 필드에 대해 설명합니다.
 
 ### Message format
-JSON 포맷의 메시지는 이벤트 메시지 정보를 담고 있거나 또는 콘텐츠 정보를 담을 때 사용됩니다. JSON 형식의 데이터를 보낼 때 메시지는 다음 예처럼 헤더와 본문으로 구성됩니다.
 
 {% raw %}
 ```json
@@ -244,7 +243,6 @@ JSON 포맷의 메시지는 이벤트 메시지 정보를 담고 있거나 또�
 
 ### See also
 * [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
-* [이벤트 메시지](/CIC/References/CIC_Message_Format.md#Event)
 * [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject)
 
 ## 응답 메시지 {#ResponseMessage}
@@ -294,7 +292,7 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | response.directives[].header.name      | string       | 지시 메시지의 API 이름                                      | 필수 |
 | response.directives[].header.namespace | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
 | response.directives[].payload          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
-| response.outputSpeech                  | object       | 사용자에게 출력할 음성 정보를 담고 있는 객체.                         | 필수 |
+| response.outputSpeech                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달된다.              | 필수 |
 | response.outputSpeech.brief            | [SpeechObject](#SpeechObject) | 출력할 요약 음성 정보.                    | 선택 |
 | response.outputSpeech.type             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech" : 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체를 가져야 합니다.</li><li>"SpeechList" : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체 배열을 가져야 합니다.</li><li>"SpeechSet" : 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드 대신 <em>response.outputSpeech.brief</em>와 <em>response.outputSpeech.verbose</em> 필드를 가져야 합니다.</li></ul> | 필수 |
 | response.outputSpeech.values           | [SpeechObject](#SpeechObject) or [SpeechObject](#SpeechObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
