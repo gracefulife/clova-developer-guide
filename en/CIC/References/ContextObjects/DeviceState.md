@@ -1,5 +1,5 @@
 ## Device.DeviceState {#DeviceState}
-DeviceState is a message format used to send state information of a client device such as the current local time of a device.
+DeviceState is a message format that sends device state information, such as a current local time in a user's device.
 
 ### Message format
 {% raw %}
@@ -18,9 +18,9 @@ DeviceState is a message format used to send state information of a client devic
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| localTime  | string  | The current time set in the client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
+| localTime     | string  | Current time set in a client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
 
 
 ### Message example

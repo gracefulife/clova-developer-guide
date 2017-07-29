@@ -1,38 +1,38 @@
 # Memo
 
-This API let's your client create, look up, or delete a user's memo. The Memo API provides the following Event and Directive message.
+Creates, looks up or deletes memos. The Memo API provides the following event and directive messages.
 
-| Message name  | Message type  | Message description  |
+| Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [Created](#Created) | Event  | Asks CIC to creat a memo. |
-| [Deleted](#Deleted) | Event  | Asks CIC to delete a memo. |
-| [Get](#Get) | Event  | Asks CIC to provide the full list of memos created by the user. |
-| [Updated](#Updated) | Event  | Asks CIC to update a memo. |
+| [Created](#Created) | Event  | Requests CIC to create a specified memo. |
+| [Deleted](#Deleted) | Event  | Requests CIC to delete a specified memo. |
+| [Get](#Get) | Event  | Requests CIC to get a full list of memos created by a user. |
+| [Updated](#Updated) | Event  | Requests CIC to update a specified memo. |
 
-## Created Event {#Created}
-Asks CIC to create a memo. This Event message is sent in the following scenario.
+## Created event {#Created}
+Requests CIC to create a specified memo. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to create a memo.
-2. Once the Clova platform recognizes the request, it sends the request to client using a [Clova.AddMemo](/CIC/References/APIs/Clova.md#AddMemo) Directive message.
+1. Your client sends CIC a user's spoken request for creating a memo, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova platform recognizes the memo creation request and CIC returns it to your client, using a [Clova.AddMemo](/CIC/References/APIs/Clova.md#AddMemo) directive message.
 3. Your client displays the memo creation request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts memo creation: A Memo.Created Event message is sent to CIC.
-  * When the user rejects memo creation: No Event message is sent.
+   * When the user accepts memo creation: You send CIC a Memo.Created event message.
+   * When the user rejects memo creation: You do not have to send any event message.
 
 ### Context field
 
 None
 
 ### Payload field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the memo to add  | Yes  |
-| id  | string  | The ID of the memo to add  | Yes  |
+| content       | string  | Content of a memo to be added              | Yes     |
+| id            | string  | ID of a memo to be added               | Yes     |
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Created a memo" or "Canceled memo creation."
+* You must return results when sending this event message to CIC. For example, display messages such as "Created a memo" or "Canceled memo creation."
 
 ### Message example
 
@@ -62,16 +62,16 @@ None
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 
-## Deleted Event {#Deleted}
+## Deleted event {#Deleted}
 
-Asks CIC to delete a memo. This Event message is sent in the following scenario.
+Requests CIC to delete a specified memo. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to delete a memo.
-2. Once the Clova platform recognizes the request, it sends the request to your client using a [Clova.DeleteMemo](/CIC/References/APIs/Clova.md#DeleteMemo) Directive message.
+1. Your client sends CIC a user's spoken request for memo deletion, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova platform recognizes the memo deletion request and CIC returns it to your client, using a [Clova.DeleteMemo](/CIC/References/APIs/Clova.md#DeleteMemo) directive message.
 3. Your client displays the memo deletion request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts memo deletion: A Memo.Deleted Event message is sent to CIC.
-  * When the user rejects memo deletion: No Event message is sent.
+   * When the user accepts memo deletion: You send CIC a Memo.Deleted event message.
+   * When the user rejects memo deletion: You do not have to send any event message.
 
 ### Context field
 
@@ -79,16 +79,16 @@ None
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| id  | string  | The ID of the memo to delete  | Yes  |
+| id            | string  | ID of a memo to be deleted               | Yes     |
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Deleted the memo" or "Canceled memo deletion."
+* You must return results when sending this event message to CIC. For example, display messages such as "Deleted the memo" or "Canceled memo deletion."
 
-* To delete a memo, the user has to select a memo to delete. To do so, you client may have to send a preceding Event message ([Memo.Get](#Get)) to look up memos so that the user can view the list of memos.
+* Deleting a memo requires the process of selecting a memo for deletion. This means that you may have to send CIC a [Memo.Get](#Get) event message so that the user can see a list of memos first.
 
 ### Message example
 
@@ -118,16 +118,16 @@ None
 * [Memo.Get](#Get)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Get Event {#Get}
+## Get event {#Get}
 
-Asks CIC to provide information of all memos. This Event message is sent in the following scenario.
+Requests CIC for information of all memos. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to look up memos.
-2. Once the Clova platform recognizes the request, it sends the request to your client using a [Clova.GetMemo](/CIC/References/APIs/Clova.md#GetMemo) Directive message.
+1. Your client sends CIC a user's spoken request for memo lookup, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova platform recognizes the memo lookup request and CIC returns it to your client, using a [Clova.GetMemo](/CIC/References/APIs/Clova.md#GetMemo) directive message.
 3. Your client displays the memo lookup request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts memo lookup: A Memo.Get Event message is sent to CIC.
-  * When the user rejects memo lookup: No Event message is sent.
+   * When the user accepts memo lookup: You send CIC a Memo.Get event message.
+   * When the user rejects memo lookup: You do not have to send any event message.
 
 ### Context field
 
@@ -138,11 +138,11 @@ None
 None
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Looking up memos" or "Canceled memo lookup."
+* You must return results when sending this event message to CIC. For example, display messages such as "Looking up memos" or "Canceled memo lookup."
 
-* Once a Get Event message is sent to CIC, the user's memo list is delivered using a [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) Directive message.
+* After sending a Get event message to CIC, a list of memos is returned, using a [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) directive message.
 
 ### Message example
 
@@ -170,9 +170,9 @@ None
 * [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Updated Event {#Updated}
+## Updated event {#Updated}
 
-Asks CIC to update a memo.
+Requests CIC to update a specified memo.
 
 ### Context field
 
@@ -180,18 +180,18 @@ None
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the memo to update  | Yes  |
-| id  | string  | The ID of the memo to update  | Yes  |
+| content       | string  | Content of a memo to be updated                | Yes     |
+| id            | string  | ID of a memo to be updated               | Yes     |
 
 ### Remarks
 
-* Updating a memo cannot be done by speech input. The request must be sent by directly changing the content on a UI screen. As such, no preceding scenarios are necessary such as [Memo creation](#Created) or [Memo deletion](#Deleted).
+* To update a memo, the user must make changes to the memo on a UI screen, not with speech input. This means that the request does not require [memo creation](#Created) or [memo deletion](#Deleted).
 
-* An Updated Event message changes the entire payload. So, if the message has any field left empty, it will change its corresponding field to an empty value. Be cautious not to send only the fields that need update.
+* Be noted that an Updated event message changes the entire payload. This means that, if the message has any field left empty, such field will be replaced with an empty value. Make sure not to send only those fields to be updated.
 
-* Your client can check the field values in each memo when a [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) Directive message is sent in response to a [Memo.Get](#Get) Event message.
+* You can check field values for each memo when a [Clova.RenderMemoList](/CIC/References/APIs/Clova.md#RenderMemoList) directive message is returned in response to a [Memo.Get](#Get) event message.
 
 ### Message example
 

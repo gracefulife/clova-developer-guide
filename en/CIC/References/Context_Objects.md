@@ -1,6 +1,6 @@
 # Context information
 
-Context indicates various states information of a client. Context information is included in a context object which is sent with an [Event message](/CIC/References/CIC_Message_Format.md#Event) of the CIC APIs. Context should contain states information at the time when user's speech input is initiated. Available context objects are as follows.
+Context information indicates various states of a client. To provide context, include context objects when sending [event messages](/CIC/References/CIC_Message_Format.md#Event) with the CIC APIs. Context information must reflect states at the time when user has spoken. The following are the available context objects.
 
 * [AudioPlayer.PlaybackState](#PlaybackState)
 * [Device.DeviceState](#DeviceState)

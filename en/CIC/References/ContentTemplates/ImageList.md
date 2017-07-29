@@ -1,30 +1,30 @@
 # ImageList Template
-This template is used to display one or more images with a description. It displays a list of thumbnails or displays a large image when a user selects the thumbnail.
+Displays one or more images with description for each. It displays a list of thumbnails, or, when a user selects one of the thumbnails, displays a large image.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for the available display formats of the ImageList template.</p>
+<p>See <a href="#UIExample">Screen UI example</a> for available display formats of the ImageList template.</p>
 </div>
 
 ## Template field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| ImageList[]  | object array | The object array that displays the images list | Yes  |
-| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The object containing the source information of the image  | No |
-| ImageList[].imageTitle  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The object containing the title of the image  | No |
-| ImageList[].imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the image  | No |
-| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The object containing the text information of the source  | No |
-| ImageList[].referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the source  | No |
-| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the thumbnail image | No |
-| type  | string  | Content Template identifier. Fixed to "ImageList".  | Yes |
+| ImageList[]                | object array | An object array that displays a image list                        | Yes |
+| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains image source information      | No |
+| ImageList[].imageTitle     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains an image title           | No |
+| ImageList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains an image URL      | No |
+| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains source text information      | No |
+| ImageList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a source URL        | No |
+| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a thumbnail image URL | No |
+| type                       | string       | Content Template delimiter. The value is always "ImageList".        | Yes |
 
 ## Template Example
 
 {% raw %}
 ```json
 // Example 1.
-// User request: 자동차 사진 보여줘 (Request to view the pictures of cars.)
+// User request: 자동차 사진 보여줘 (Request to show pictures of cars)
 {
   "type": "ImageList",
   "thumbImageUrlList": [
@@ -90,7 +90,7 @@ This template is used to display one or more images with a description. It displ
 ## Screen UI example {#UIExample}
 The following examples show how the ImageList template is presented on a screen of the Clova mobile app provided by NAVER.
 
-| Thumbnail list | Display the selected image |
+| Thumbnail list | Displaying a selected image |
 |-------|-------|
 | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Thumbnail_List.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Original_Image.png" /></div> |
 

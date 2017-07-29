@@ -1,5 +1,5 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-PlaybackState is a message format containing information of the media which is currently being played or was lastly played. This information may be delivered using a [custom extension message](/CEK/References/CEK_Message_Format.md#CustomExtenstionMessage) that provides music service in the future.
+PlaybackState is a message format that contains information of media currently playing or previously played. This information can be sent to an [extension](/CEK/References/Custom_Extension_Message_Format.md) that provides a music streaming service.
 
 ### Message format
 {% raw %}
@@ -22,18 +22,18 @@ PlaybackState is a message format containing information of the media which is c
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| offsetInMilliseconds | number | The last playback point (offset) of the media recently played. The unit is a millisecond. This field can be left empty when *playerActivity* is "IDLE".  | No |
-| playerActivity  | string | Indicates the state of the player. Available values are: <ul><li>"IDLE": Player is in an idle state</li><li>"PLAYING": Player is in a playing state</li><li>"PAUSED": Player is in a paused state</li><li>"STOPPED": Player is in a stopped state</li></ul> | Yes |
-| stream  | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | The object storing details of the currently playing media. This field can be left empty when *playerActivity* is "IDLE". Enter the media information (*stream* object) which was delivered in [AudioPlayer.Play](/CIC/References/APIs/AudioPlayer.md#Play) or [AudioPlayer.StreamDelivered](/CIC/References/APIs/AudioPlayer.md#StreamDelivered) Directive message. | No |
-| totalInMilliseconds  | number | The total length of the media recently played. The unit is a millisecond. This field can be left empty when *playerActivity* is "IDLE".  | No |
+| offsetInMilliseconds | number | Recently played media's last playback point (offset). Unit is millisecond. You can leave the field empty when *playerActivity* is "IDLE".                                                  | No |
+| playerActivity       | string | Indicates a player state. Available values are:<ul><li>"IDLE": In an idle state</li><li>"PLAYING": In a playing state</li><li>"PAUSED": In a paused state</li><li>"STOPPED": In a stopped state</li></ul> | Yes |
+| stream               | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | An object that contains details of media currently playing. You can leave the field empty when *playerActivity* is "IDLE". Enter media details (*stream* object) returned from [AudioPlayer.Play](/CIC/References/APIs/AudioPlayer.md#Play) or [AudioPlayer.StreamDelivered](/CIC/References/APIs/AudioPlayer.md#StreamDelivered) directive message. | No |
+| totalInMilliseconds  | number | Total length of the media recently played. Unit is millisecond. You can leave the field empty when *playerActivity* is "IDLE".                                                               | No |
 
 ### Message example
-#### Example 1: When playback is stopped
+#### Example 1: When playback has stopped
 {% raw %}
 ```json
-// Case 1: When playback is stopped
+// Case 1: When playback has stopped
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -58,7 +58,7 @@ PlaybackState is a message format containing information of the media which is c
 ```
 {% endraw %}
 
-#### Example 2: When the player is in an inactive state
+#### Example 2: When a player is inactivated
 {% raw %}
 ```json
 {

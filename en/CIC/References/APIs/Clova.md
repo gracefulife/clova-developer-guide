@@ -1,42 +1,42 @@
 # Clova
 
-The Clova API consists of a set of Direct messages that delivers the recognized result of a client request. When a user request is sent using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, Clova analyzes the meaning. CIC, based on the recognized result, sends the following Directive messages to your client. Your client must process these Directive messages to provide the functionalities of Clova to your users.
+The Clova API consists of a set of direct messages that returns recognition results of client requests. When Clova receives user requests sent through [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes the meaning. And CIC returns appropriate directive messages to your client, as specified by recognition results. Your client processes these directive messages and provides Clova functions for users.
 
-| Message name  | Message type  | Message description  |
-|------------------|-----------|---------------------------------------------|
-| [AddMemo](#AddMemo)  | Directive | Instructs your client to add a new memo.  |
-| [AddReminder](#AddReminder)  | Directive | Instructs your client to add a new reminder.  |
-| [AddSchedule](#AddSchedule)  | Directive | Instructs your client to add a new schedule.  |
-| [CountSchedule](#CountSchedule)  | Directive | Instructs your client to count the number of schedules within the specified period. |
-| [DeleteMemo](#DeleteMemo)  | Directive | Instructs your client to delete a memo.  |
-| [DeleteReminder](#DeleteReminder)  | Directive | Instructs your client to delete a reminder.  |
-| [DeleteSchedule](#DeleteSchedule)  | Directive | Instructs your client to delete a schedule.  |
-| [FinishExtension](#FinishExtension)  | Directive | Instructs your client to finish an extension.  |
-| [GetMemo](#GetMemo)  | Directive | Instructs your client to look up a memo.  |
-| [GetReminder](#GetReminder)  | Directive | Instructs your client to look up a reminder.  |
-| [GetSchedule](#GetSchedule)  | Directive | Instructs your client to look up a schedule.  |
-| [RenderMemoList](#RenderMemoList)  | Directive | Instructs your client to display the list of memos.  |
-| [RenderReminderList](#RenderReminderList) | Directive | Instructs your client to display the list of reminders.  |
-| [RenderTemplate](#RenderTemplate)  | Directive | Instructs your client to display a template.  |
-| [RenderText](#RenderText)  | Directive | Instructs your client to display a text.  |
-| [StartExtension](#StartExtension)  | Directive | Instructs your client to start an extension.  |
+| Message name                             | Message type | Message description                      |
+| ---------------------------------------- | ------------ | ---------------------------------------- |
+| [AddMemo](#AddMemo)                      | Directive    | Instructs your client to add a new memo. |
+| [AddReminder](#AddReminder)              | Directive    | Instructs your client to add a new reminder. |
+| [AddSchedule](#AddSchedule)              | Directive    | Instructs your client to add a new schedule. |
+| [CountSchedule](#CountSchedule)          | Directive    | Instructs your client to count the number of schedules in a specified period. |
+| [DeleteMemo](#DeleteMemo)                | Directive    | Instructs your client to delete a memo.  |
+| [DeleteReminder](#DeleteReminder)        | Directive    | Instructs your client to delete a reminder. |
+| [DeleteSchedule](#DeleteSchedule)        | Directive    | Instructs your client to delete a schedule. |
+| [FinishExtension](#FinishExtension)      | Directive    | Instructs your client to finish a specified extension. |
+| [GetMemo](#GetMemo)                      | Directive    | Instructs your client to look up memos.  |
+| [GetReminder](#GetReminder)              | Directive    | Instructs your client to look up reminders. |
+| [GetSchedule](#GetSchedule)              | Directive    | Instructs your client to look up schedules. |
+| [RenderMemoList](#RenderMemoList)        | Directive    | Instructs your client to display a list of memos. |
+| [RenderReminderList](#RenderReminderList) | Directive    | Instructs your client to display a list of reminders. |
+| [RenderTemplate](#RenderTemplate)        | Directive    | Instructs your client to display templates. |
+| [RenderText](#RenderText)                | Directive    | Instructs your client to display text.   |
+| [StartExtension](#StartExtension)        | Directive    | Instructs your client to start a specified extension. |
 
 
 
-## AddMemo Directive {#AddMemo}
+## AddMemo directive {#AddMemo}
 
-Instructs your client to add a new memo. The content of the memo recognized from user's speech input is delivered together.
+Instructs your client to add a new memo. It also returns content of a memo recognized from user's speech input.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the memo to add  | Yes  |
-| id  | string  | The ID of the memo to add  | Yes  |
+| Field name | Type   | Field description             | Required |
+| ---------- | ------ | ----------------------------- | -------- |
+| content    | string | Content of a memo to be added | Yes      |
+| id         | string | ID of a memo to be added      | Yes      |
 
 ### Remarks
 
-When a new reminder is created, the result should be reported to CIC using a [Memo.Created](/CIC/References/APIs/Memo.md#Created) Event message.
+After successfully creating a new memo, you must send the result to CIC, using a [Memo.Created](/CIC/References/APIs/Memo.md#Created) event message.
 
 ### Message example
 
@@ -67,20 +67,20 @@ When a new reminder is created, the result should be reported to CIC using a [Me
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Created](/CIC/References/APIs/Memo.md#Created)
 
-## AddReminder Directive {#AddReminder}
+## AddReminder directive {#AddReminder}
 
-Instructs your client to add a new reminder. The content of the reminder recognized from user's speech input is delivered together.
+Instructs your client to add a new reminder. It also returns content of a reminder recognized from user's speech input.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the reminder to add  | Yes  |
-| id  | string  | The ID of the reminder to add  | Yes  |
+| Field name | Type   | Field description                 | Required |
+| ---------- | ------ | --------------------------------- | -------- |
+| content    | string | Content of a reminder to be added | Yes      |
+| id         | string | ID of a reminder to be added      | Yes      |
 
 ### Remarks
 
-When a new reminder is added, the result should be reported to CIC using a [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) Event message.
+After successfully creating a new reminder, you must send the result to CIC, using a [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) event message.
 
 ### Message example
 
@@ -111,23 +111,23 @@ When a new reminder is added, the result should be reported to CIC using a [Remi
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Created](/CIC/References/APIs/Reminder.md#Created)
 
-## AddSchedule Directive {#AddSchedule}
+## AddSchedule directive {#AddSchedule}
 
-Instructs your client to add a new schedule. The content of the schedule recognized from user's speech input is delivered together. Your client should call a local app for schedule management, or provide an interface for the functionality.
+Instructs your client to add a new schedule. It also returns content of a schedule recognized from user's speech input. To manage schedules, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| content  | string | The content of the schedule  | No  |
-| id  | string | The ID of the schedule to add  | Yes  |
-| period  | string | The smallest unit of period recognized from user's speech input. Schedule end time is set to the the value of *scheduledTime* added by *period*. <ul><li>"none": Unknown period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string | The start time of the schedule to add ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| Field name    | Type   | Field description                        | Required |
+| ------------- | ------ | ---------------------------------------- | -------- |
+| content       | string | Content of a schedule                    | No       |
+| id            | string | ID of a schedule to be added             | Yes      |
+| period        | string | The smallest unit of period recognized from user's speech input. Schedule end time is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
+| scheduledTime | string | Start time of a schedule to be added ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
 
 
 ### Remarks
 
-If your client receives a unit of period it does not support, proper exception handling must be implemented. For example, if your client does not support adding of a yearly schedule but received "year" for *period*, it must be handled as an exception. If your client cannot know the period, as in "Add a schedule for me," *period* is set to "none" and *scheduledTime* is set to the current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support adding of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is undetermined, as in "Add a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -160,20 +160,20 @@ If your client receives a unit of period it does not support, proper exception h
 * [Clova.DeleteSchedule](#DeleteSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## CountSchedule Directive {#CountSchedule}
+## CountSchedule directive {#CountSchedule}
 
-Instructs your client to count the number of schedules that match the specified condition. The lookup condition recognized from user's speech input is delivered together. Your client should find out the number of schedules that match the specified condition using a local app for schedule management.
+Instructs your client to count the number of schedules that match specified lookup conditions. It also returns lookup conditions recognized from user's speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of the period for schedule lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": Unknown period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of the period for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| Field name    | Type   | Field description                        | Required |
+| ------------- | ------ | ---------------------------------------- | -------- |
+| period        | string | The smallest unit of period recognized from user's speech input. End time of a lookup period is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
+| scheduledTime | string | Start time of a lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
 
 ### Remarks
 
-If your client receives a unit of period it does not support, proper exception handling must be implemented. For example, if your client does not support looking up of a yearly schedule but received "year" for *period*, it must be handled as an exception. If your client cannot know the period, as in "How many schedules are there," *period* is set to "none" and *scheduledTime* is set to the current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is undetermined, as in "How many schedules are there", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 
 ### Message example
@@ -204,9 +204,9 @@ If your client receives a unit of period it does not support, proper exception h
 * [Clova.DeleteSchedule](#DeleteSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## DeleteMemo Directive {#DeleteMemo}
+## DeleteMemo directive {#DeleteMemo}
 
-Instructs your client to delete a memo. When your client receives a DeleteMemo Directive message, it should provide a proper interface with which your user can delete the memo.
+Instructs your client to delete a memo. When a DeleteMemo directive message is returned, have your client provide a proper interface for users so that they can delete memos.
 
 ### Payload field
 
@@ -214,7 +214,7 @@ None
 
 ### Remarks
 
-When a memo is deleted, the result should be reported to CIC using a [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) Event message.
+After successfully deleting a memo, you must send the result to CIC, using a [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) event message.
 
 ### Message example
 
@@ -242,9 +242,9 @@ When a memo is deleted, the result should be reported to CIC using a [Memo.Delet
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted)
 
-## DeleteReminder Directive {#DeleteReminder}
+## DeleteReminder directive {#DeleteReminder}
 
-Instructs your client to delete a reminder. When your client receives a DeleteReminder Directive message, it should provide a proper interface with which your user can delete the reminder.
+Instructs your client to delete a reminder. When a DeleteReminder directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
 
 ### Payload field
 
@@ -252,7 +252,7 @@ None
 
 ### Remarks
 
-When a reminder is deleted, the result should be reported to CIC using a [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) Event message.
+After successfully deleting a reminder, you must send the result to CIC, using a [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) event message.
 
 ### Message example
 
@@ -280,20 +280,20 @@ When a reminder is deleted, the result should be reported to CIC using a [Remind
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted)
 
-## DeleteSchedule Directive {#DeleteSchedule}
+## DeleteSchedule directive {#DeleteSchedule}
 
-Instructs your client to delete a schedule. The condition recognized from user's speech input is delivered together. Your client should call a local app for schedule management to delete a schedule that matches the specified condition, or provide an interface for the functionality.
+Instructs your client to delete a schedule. It also returns conditions recognized from user's speech input. To delete a schedule that matches specified conditions, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of the period for schedule deletion is set to the value of *scheduledTime* added by *period*. <ul><li>"none": Unknown period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of the period for schedule deletion ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| Field name    | Type   | Field description                        | Required |
+| ------------- | ------ | ---------------------------------------- | -------- |
+| period        | string | The smallest unit of period recognized from user's speech input. End time of a period for schedule deletion is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
+| scheduledTime | string | Start time of a period for schedule deletion ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
 
 ### Remarks
 
-If your client receives a unit of period it does not support, proper exception handling must be implemented. For example, if your client does not support deleting of a weekly schedule but received "week" for *period*, it must be handled as an exception. If your client cannot know the period, as in "Delete my schedule," *period* is set to "none" and *scheduledTime* is set to the current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support deleting of a weekly schedule but has received "week" for *period*, it must be handled as an exception. If a period is undetermined, as in "Delete a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -320,19 +320,19 @@ If your client receives a unit of period it does not support, proper exception h
 * [Clova.CountSchedule](#CountSchedule)
 * [Clova.GetSchedule](#GetSchedule)
 
-## FinishExtension Directive {#FinishExtension}
+## FinishExtension directive {#FinishExtension}
 
-Instructs your client to finish an extension. When your client receives a FinishExtension Directive message, it should finish the extension that corresponds to the specified value.
+Instructs your client to finish a specified extension. When a FinishExtension directive message is returned, have your client finish the extension that corresponds to a specified value.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| extension  | string  | The name of the extension to finish  | Yes  |
+| Field name | Type   | Field description                       | Required |
+| ---------- | ------ | --------------------------------------- | -------- |
+| extension  | string | The name of an extension to be finished | Yes      |
 
 ### Remarks
 
-The server supports an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. The mode is can be finished with a trigger word, "See you later". At this point, "freetalking" is passed to the *extension* field of the FinishExtension Directive message.
+Current servers provide an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". Then, the FinishExtension directive message passes "freetalking" as the parameter of *extension* field.
 
 ### Message example
 
@@ -359,9 +359,9 @@ The server supports an extension called Freetalk mode by default. The Freetalk m
 ### See also
 * [Clova.StartExtension](#StartExtension)
 
-## GetMemo Directive {#GetMemo}
+## GetMemo directive {#GetMemo}
 
-Instructs your client to look up a memo. Your client should call a local app to look up a memo, or provide an interface for the functionality.
+Instructs your client to look up memos. To look up memos, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
@@ -394,9 +394,9 @@ None
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Memo.Get](/CIC/References/APIs/Memo.md#Get)
 
-## GetReminder Directive {#GetReminder}
+## GetReminder directive {#GetReminder}
 
-Instructs your client to look up a reminder. Your client should call a local app to look up a reminder, or provide an interface for the functionality.
+Instructs your client to look up reminders. To look up reminders, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
@@ -428,19 +428,19 @@ None
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
 
-## GetSchedule Directive {#GetSchedule}
+## GetSchedule directive {#GetSchedule}
 
-Instructs your client to look up a schedule. The lookup condition recognized from user's speech input is delivered together. Your client should call a local app to look up a reminder, or provide an interface for the functionality.
+Instructs your client to look up schedules. It also returns lookup conditions recognized from user's speech input. To look up reminders, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of the period for schedule lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": Unknown period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of the period for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| Field name    | Type   | Field description                        | Required |
+| ------------- | ------ | ---------------------------------------- | -------- |
+| period        | string | The smallest unit of period recognized from user's speech input. End time of a period to look up is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
+| scheduledTime | string | Start time of a period for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
 
 ### Remarks
-If your client receives a unit of period it does not support, proper exception handling must be implemented. For example, if your client does not support looking up of a yearly schedule but received "year" for *period*, it must be handled as an exception. If your client cannot know the period, as in "Look up my schedule," *period* is set to "none" and *scheduledTime* is set to the current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is determined, as in "Look up my schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -470,18 +470,18 @@ If your client receives a unit of period it does not support, proper exception h
 * [Clova.CountSchedule](#CountSchedule)
 * [Clova.DeleteSchedule](#DeleteSchedule)
 
-## RenderMemoList Directive {#RenderMemoList}
+## RenderMemoList directive {#RenderMemoList}
 
-Instructs your client to display the list of memos. The list of memos obtained as a result of recognizing user's speech input is delivered together.
+Instructs your client to display a list of memos. It also returns a list of memos obtained by recognizing user's speech input.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| memo[]  | object array | The object array containing the list of memos  | Yes  |
-| memo[].content  | string  | The content of memo to display  | Yes  |
-| memo[].id  | string  | The ID of the memo to display  | Yes  |
-| memo[].timestamp | string  | The time of the memo creation ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| Field name       | Type         | Field description                        | Required |
+| ---------------- | ------------ | ---------------------------------------- | -------- |
+| memo[]           | object array | An object array that contains a list of memos | Yes      |
+| memo[].content   | string       | Content of a memo to be displayed        | Yes      |
+| memo[].id        | string       | ID of a memo to be displayed             | Yes      |
+| memo[].timestamp | string       | Time of memo creation ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
 
 ### Message example
 
@@ -525,18 +525,18 @@ Instructs your client to display the list of memos. The list of memos obtained a
 * [Clova.RenderText](#RenderText)
 * [Memo.Get](/CIC/References/APIs/Memo.md#Get)
 
-## RenderReminderList Directive {#RenderReminderList}
+## RenderReminderList directive {#RenderReminderList}
 
-Instructs your client to display the list of reminders. The list of reminders obtained as a result of recognizing user's speech input is delivered together.
+Instructs your client to display a list of reminders. It also returns a list of reminders obtained from recognizing user's speech input.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| reminder[]  | object array | The object array containing the list of reminders | Yes  |
-| reminder[].content | string  | The content of the reminder to display  | Yes  |
-| reminder[].done  | boolean  | Whether the reminder was completed or not  | Yes  |
-| reminder[].id  | string  | The ID of the reminder to display  | Yes  |
+| Field name         | Type         | Field description                        | Required |
+| ------------------ | ------------ | ---------------------------------------- | -------- |
+| reminder[]         | object array | An object array that contains a list of reminders | Yes      |
+| reminder[].content | string       | Content of a reminder to be displayed    | Yes      |
+| reminder[].done    | boolean      | Whether the reminder was completed or not | Yes      |
+| reminder[].id      | string       | ID of a reminder to be displayed         | Yes      |
 
 ### Message example
 
@@ -580,12 +580,12 @@ Instructs your client to display the list of reminders. The list of reminders ob
 * [Clova.RenderText](#RenderText)
 * [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
 
-## RenderTemplate Directive {#RenderTemplate}
+## RenderTemplate directive {#RenderTemplate}
 
-Instructs your client to display data using a Content Template. The content obtained as a result of recognizing user's speech input is delivered together.
+Instructs your client to display data using Content Templates. It also returns content obtained by recognizing user's speech input.
 
 ### Payload field
-The format of the *payload* field can be different depending on the types of [Content Template](/CIC/References/Content_Templates.md). Currently available Content Templates are as follows.
+Formats of the *payload* field may vary depending on the types of [Content Template](/CIC/References/Content_Templates.md). Currently available Content Templates are as follows.
 
 * [Image List](/CIC/References/Content_Templates.md#ImageList)
 * [Image & Text](/CIC/References/Content_Templates.md#ImageText)
@@ -620,15 +620,15 @@ The format of the *payload* field can be different depending on the types of [Co
 * [Clova.RenderText](#RenderText)
 * [Content Template](/CIC/References/Content_Templates.md)
 
-## RenderText Directive {#RenderText}
+## RenderText directive {#RenderText}
 
-Instructs your client to display the text message. The text requested by the user is delivered together.
+Instructs your client to display a text message. It also returns text to be displayed to the user.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| text  | string  | The text delivered according to the user request  | Yes  |
+| Field name | Type   | Field description                     | Required |
+| ---------- | ------ | ------------------------------------- | -------- |
+| text       | string | Text returned based on a user request | Yes      |
 
 ### Message example
 
@@ -657,19 +657,19 @@ Instructs your client to display the text message. The text requested by the use
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Clova.RenderTemplate](#RenderTemplate)
 
-## StartExtension Directive {#StartExtension}
+## StartExtension directive {#StartExtension}
 
-Instructs your client to start an extension. When your client receives a StartExtension Directive message, it starts the extension that corresponds to the specified value.
+Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that corresponds to a specified value.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
-|---------------|---------|-----------------------------|---------|
-| extension  | string  | The name of the extension to start  | Yes  |
+| Field name | Type   | Field description                      | Required |
+| ---------- | ------ | -------------------------------------- | -------- |
+| extension  | string | The name of an extension to be started | Yes      |
 
 ### Remarks
 
-The server supports an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word such as "Start conversation in English". At this point, "freetalking" is passed to the *extension* field of the StartExtension Directive message.
+Current servers provide an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the StartExtension directive message passes "freetalking" as the parameter of *extension* field.
 
 ### Message example
 

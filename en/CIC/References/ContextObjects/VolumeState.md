@@ -1,5 +1,5 @@
 ## Speaker.VolumeState {#VolumeState}
-This message format contains the information of the client speaker at the time user's speech input is initiated, such as the volume size or whether the speaker is muted or not.
+Message format that contains speaker information at the time when a user has spoken, such as volume size or whether speaker is muted or unmuted.
 
 ### Message format
 {% raw %}
@@ -19,10 +19,10 @@ This message format contains the information of the client speaker at the time u
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| muted  | boolean | Whether the speaker is muted or not  | Yes  |
-| volume  | number  | The current volume size of the speaker (0-10)  | Yes  |
+| muted         | boolean | Whether muted or unmuted                    | Yes     |
+| volume        | number  | Speaker's current volume size (0-10)     | Yes     |
 
 ### Message example
 {% raw %}

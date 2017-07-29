@@ -1,42 +1,42 @@
 # CardList Template
-This template lets your client display data on a screen using a card list format. CardList has several card types as follows. Each card type consists of different *card* objects.
+Displays data in a card list format. CardList has several card types. Each card type has different field configuration for the *card* object.
 
-| Card type  | Type description  | Fields of *card* object  |
+| Card type       | Type description                      | *card* object fields          |
 |---------------|-----------------------------|-----------------------------|
-| Type1  | Displays image, title, and description of the content.  | description, imageUrl, referenceText, referenceUrl, title  |
-| Type2  | Displays image, title, description, and link of the content. | description, imageUrl, linkUrl, referenceText, referenceUrl, title  |
-| Type3  | Displays video content.  | description, imageUrl, referenceText, referenceUrl, title, videoUrl |
-| Type4  | Displays news content.  | description, press, pressIconUrl, publishDate, title  |
+| Type1         | Displays content's image, title, and description.      | description, imageUrl, referenceText, referenceUrl, title           |
+| Type2         | Displays content's image, title, description, and link. | description, imageUrl, linkUrl, referenceText, referenceUrl, title  |
+| Type3         | Displays video content.                 | description, imageUrl, referenceText, referenceUrl, title, videoUrl |
+| Type4         | Displays news content.                  | description, press, pressIconUrl, publishDate, title                |
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for the available display formats of each type.</p>
+<p>See <a href="#UIExample">Screen UI example</a> for available display formats for each card type.</p>
 </div>
 
 ## Template field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| cardList[]  | object array | The object array that displays the card list | Yes  |
-| cardList[].description  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array containing the description of the content  | No |
-| cardList[].imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the image to display  | No |
-| cardList[].linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the content  | No |
-| cardList[].press  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | The object containing the name of the press  | No |
-| cardList[].pressIconUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the press icon  | No |
-| cardList[].publishDate  | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The object containing the publishing date of the article  | No |
-| cardList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | The object containing the text information of the source  | No |
-| cardList[].referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the source  | No |
-| cardList[].title  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | The object containing the title of the content  | No |
-| cardList[].videoUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The object containing the URL of the video to play  | No |
-| subType  | string  | Card type identifier. You may specify four types as follows. <ul><li>Type1</li><li>Type2</li><li>Type3</li><li>Type4</li></ul><div class="note"><p><strong>Note!</strong></p><p>Type1, Type2, Type3 are represented as an empty string at the moment. You need to determine which type to use based on the available fields of each <em>card</em> object.</p></div> | Yes  |
-| type  | string  | Content Template identifier. Fixed to "CardList".  | Yes |
+| cardList[]                | object array | An object array that displays a card list | Yes     |
+| cardList[].description    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array that contains content's description         | No |
+| cardList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains an image URL    | No |
+| cardList[].linkUrl        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a content URL         | No |
+| cardList[].press          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains a press name             | No |
+| cardList[].pressIconUrl   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a press icon URL    | No |
+| cardList[].publishDate    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | An object that contains an article publishing date            | No |
+| cardList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains source text information         | No |
+| cardList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a source URL          | No |
+| cardList[].title          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains a content title             | No |
+| cardList[].videoUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a video URL    | No |
+| subType                   | string  | Card type delimiter. You can specify one of the four types. <ul><li>Type1</li><li>Type2</li><li>Type3</li><li>Type4</li></ul><div class="note"><p><strong>Note!</strong></p><p>Type1, Type2, Type3 are displayed as an empty string at the moment. You must determine the type from field configuration of the <em>card</em> object.</p></div>                                                    | Yes |
+| type                      | string  | Content Template delimiter. The value is always "CardList".                                                                       | Yes |
 
 ## Template Example
 
 {% raw %}
 ```json
 // Type1, Type2 example:
-// User request: 공포 영화 추천해줘 (Request to recommend a horror movie).
+// User request: 공포 영화 추천해줘 (Request to recommend horror movies)
 
 {
   "subType": "",
@@ -143,7 +143,7 @@ This template lets your client display data on a screen using a card list format
 }
 
 // Type3 example
-// User request: 축구 동영상 보여줘 (Request to play football video clips.)
+// User request: 축구 동영상 보여줘 (Request to play football game clips)
 {
   "subType": "",
   "type": "CardList",
@@ -250,7 +250,7 @@ This template lets your client display data on a screen using a card list format
 
 
 // Type4 example
-// User request: 최신 뉴스 보여줘 (Request to view the latest news.)
+// User request: 최신 뉴스 보여줘 (Request to show recent news)
 {
   "subType": "Type4",
   "type": "CardList",

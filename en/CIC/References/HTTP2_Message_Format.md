@@ -1,9 +1,9 @@
 # HTTP/2 message
-All communications with CIC is done over the HTTP/2 protocol. This picture shows how an HTTP/2 message is structured when your client sends a message to CIC.
+You use the [HTTP/2 protocol](https://tools.ietf.org/html/rfc7540) when interacting with CIC. This picture shows how an HTTP/2 message is structured when your client sends a message to CIC.
 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 
-The following topics are covered in this section.
+This section explains the following topics.
 * [HTTP request](#request)
   * [CIC base URL](#BaseURL)
   * [HTTP header](#Header)
@@ -11,10 +11,10 @@ The following topics are covered in this section.
 * [HTTP response](#Response)
 
 ## HTTP request {#Request}
-Typically, an HTTP request is sent when your client delivers a user request to CIC using an Event message.
+Send HTTP requests, through event messages, to send user requests from your client to CIC.
 
 ### CIC base URL {#BaseURL}
-Clova uses the following URL as a base URL.
+Clova uses the following base URL.
 
 {% raw %}
 ```
@@ -23,7 +23,7 @@ https://prod-ni-cic.clova.ai/
 {% endraw %}
 
 ### HTTP header {#Header}
-The following header is required when connecting to CIC.
+The following header fields are required when connecting with CIC.
 
 {% raw %}
 ```
@@ -35,19 +35,19 @@ content-type = multipart/form-data; boundary={{boundary_term}}
 ```
 {% endraw %}
 
-| Field name  | Message description  |
+| Field name          | Message description                                    |
 |------------------|---------------------------------------------|
-| :method  | CIC supports the following methods. <ul><li>GET: Used when creating a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">Downchannel</a></li><li>POST: Used when sending an <a href="/CIC/References/CIC_Message_Format.html#Event">Event message</a></li></ul> |
-| :scheme  | The CIC APIs support HTTPS communication.  |
-| :path  | Event and Directive messages use the following paths. <ul><li>/v1/events</li><li>/v1/directives</li></ul> |
-| authorization  | Enter an authorization token obtained from the Clova authorization server. An authorization token should be included in the header of all requests.  |
-| content-type  | The content type of the HTTP message. Use *multipart/form-data* because it is a multipart message. Also, specify a message boundary term to separate messages and make the term invisible in the message body. The content type of each message is defined in its message header. |
+| :method        | CIC supports the following methods. <ul><li>GET: To create a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">downchannel</a></li><li>POST: To send an <a href="/CIC/References/CIC_Message_Format.html#Event">event message</a></li></ul> |
+| :scheme        | The CIC APIs support HTTPS communication.                                                                            |
+| :path          | Use the following paths when sending event and directive messages. <ul><li>/v1/events</li><li>/v1/directives</li></ul> |
+| authorization  | Enter an authorization token obtained from an Clova authorization server. You must include an authorization token in all request headers.                     |
+| content-type   | The content type of an HTTP message. Always use *multipart/form-data* because the message type is multipart. Also, specify a message boundary term to separate messages and make the term invisible in a message body. Define the content type of each message in a message header. |
 
 ### HTTP multipart message {#MultipartMessage}
-Once an HTTP header is transferred and a connection is established, a stream is created. Both CIC and your client send Event or Directive messages through this stream. Each message may carry JSON data containing information of a request or a response, or it may contain binary audio data recorded from user's speech input. Each message is structured as follows depending on the data type.
+After an HTTP header is sent and a connection is established, a stream is created. Through this stream, clients send event messages and CIC returns directive messages. Each message carries JSON data containing information of a request or response, or, carries binary audio data recorded from user's speech input. Message structure is formed as follows depending on the data type.
 
 #### Message structure of JSON data
-You use a JSON-format message when you want to send a message containing information about an Event message or content. When a message contains JSON data, the message consists of a header and a body as follows.
+A JSON-format message contains information of an event message or content. When sending JSON-format data, the message consists of header and body as follows.
 
 {% raw %}
 ```
@@ -73,10 +73,10 @@ Content-Type: application/json; charset=UTF-8
 ```
 {% endraw %}
 
-Each Event message may have different components depending on the CIC API. See [CIC message format](/CIC/References/CIC_Message_Format.md) and [CIC API](/CIC/References/CIC_API.md) for more details on the message structure and API.
+Event messages have different configurations depending on which CIC API is in use. See [CIC message](/CIC/References/CIC_Message_Format.md) and [CIC API](/CIC/References/CIC_API.md) for more details on the message structure and API.
 
 #### Message structure of audio data
-Audio data has a header as below and contains binary data in the body. See [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) for more details.
+Audio data has a header as follows and contains binary data in its body. See [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) for more details.
 
 {% raw %}
 ```
@@ -90,17 +90,17 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ## HTTP response {#Response}
-Typically, an HTTP response is a Directive message sent from CIC. It may send the following messages in combination.
-* [Synthesizer.Speak](/CIC/References/APIs/SpeechSynthesizer.md#Speak) is a Directive message that produces audio output. It delivers audio data additionally.
-* [AudioPlayer.Play](/CIC/References/APIs/AudioPlayer.md#Play) is a Directive message that requires additional information. The message should contain JSON data such as playback streaming information.
+HTTP responses are directive messages returned from CIC. They have a combination of the following messages.
+* [Synthesizer.Speak](/CIC/References/APIs/SpeechSynthesizer.md#Speak) directive message that generates audio output of synthesized speech. It returns audio data additionally.
+* Along with a *Synthesizer.Speak* directive message, other directive messages containing additional information can be returned. For example, an [AudioPlayer.Play](/CIC/References/APIs/AudioPlayer.md#Play) directive message returns streaming information.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Currently, we are relying on HTTP status code to provide error information but we are preparing to provide responses for exception handling soon.</p>
+  <p>Currently, HTTP status codes return error information but exception responses will be available soon.</p>
 </div>
 
 ## HTTP message example {#MessageExample}
-This is an example of an HTTP request/response message sent and received between a client and CIC.
+These are examples of HTTP request and response sent and received between a client and CIC.
 
 ### Request Example
 {% raw %}

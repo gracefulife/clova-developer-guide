@@ -1,39 +1,39 @@
 # Reminder
 
-This API lets your client create, look up, or delete a user's reminder. The Reminder API provides the following Event and Directive messages.
+Creates, looks up or deletes reminders. The Reminder API provides the following event and directive messages.
 
-| Message name  | Message type  | Message description  |
+| Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [Created](#Created) | Event  | Asks CIC to create a reminder.  |
-| [Deleted](#Deleted) | Event  | Asks CIC to delete a reminder.  |
-| [Get](#Get)  | Event  | Asks CIC to provide the full list of reminders created by the user.  |
-| [Updated](#Updated) | Event  | Asks CIC to update a reminder.  |
+| [Created](#Created) | Event  | Requests CIC to create a specified reminder.          |
+| [Deleted](#Deleted) | Event  | Requests CIC to delete a specified reminder.          |
+| [Get](#Get)         | Event  | Requests CIC to get a full list of reminders created by a user.  |
+| [Updated](#Updated) | Event  | Requests CIC to update a specified reminder.          |
 
-## Created Event {#Created}
-Asks CIC to create a reminder. This Event message is sent in the following scenario.
+## Created event {#Created}
+Requests CIC to create a specified reminder. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to create a reminder.
-2. Once the Clova platform recognizes the request, it sends the request to your client using a [Clova.AddReminder](/CIC/References/APIs/Clova.md#AddReminder) Directive message.
+1. Your client sends CIC a user's spoken request for reminder creation, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova platform recognizes the reminder creation request and CIC returns it to your client, using a [Clova.AddReminder](/CIC/References/APIs/Clova.md#AddReminder) directive message.
 3. Your client displays the reminder creation request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts reminder creation: A Reminder.Created Event message is sent to CIC.
-  * When the user rejects reminder creation: No Event message is sent.
+   * When the user accepts reminder creation: You send CIC a Reminder.Created event message.
+   * When the user rejects reminder creation: You do not have to send any event message.
 
 ### Context field
 
 None
 
 ### Payload field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the reminder to add  | Yes  |
-| done  | boolean | Whether the reminder was completed or not  | No  |
-| id  | string  | The ID of the reminder to add  | Yes  |
+| content       | string  | Content of a reminder to be added           | Yes     |
+| done          | boolean | Whether the reminder was completed or not        | No     |
+| id            | string  | ID of a reminder to be added            | Yes     |
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Created a reminder" or "Canceled reminder creation."
+* You must return results when sending this event message to CIC. For example, display messages such as "Created a reminder" or "Canceled reminder creation."
 
 ### Message example
 
@@ -64,16 +64,16 @@ None
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 
-## Deleted Event {#Deleted}
+## Deleted event {#Deleted}
 
-Asks CIC to delete a reminder. This Event message is sent in the following scenario.
+Requests CIC to delete a specified reminder. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to delete a reminder.
-2. Once the request is recognized on the Clova platform, the request is sent to your client using a [Clova.DeleteReminder](/CIC/References/APIs/Clova.md#DeleteReminder) Directive message.
+1. Your client sends CIC a user's spoken request for reminder deletion, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova recognizes the reminder deletion request and CIC returns it to your client, using a [Clova.DeleteReminder](/CIC/References/APIs/Clova.md#DeleteReminder) directive message.
 3. Your client displays the reminder deletion request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts reminder deletion: A Reminder.Deleted Event message is sent to CIC.
-  * When the user rejects reminder deletion: No Event message is sent.
+   * When the user accepts reminder deletion: You send CIC a Reminder.Deleted event message.
+   * When the user rejects reminder deletion: You do not have to send any event message.
 
 ### Context field
 
@@ -81,16 +81,16 @@ None
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| id  | string  | The ID of the reminder to delete  | Yes  |
+| id            | string  | ID of a reminder to be deleted            | Yes     |
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Deleted a reminder" or "Canceled reminder deletion."
+* You must return results when sending this event message to CIC. For example, display messages such as "Deleted a reminder" or "Canceled reminder deletion."
 
-* To delete a reminder, the user has to select a reminder to delete. To do so, your client may have to send a preceding Event message ([Reminder.Get](#Get)) to look up reminders so that the user can view the list of reminders.
+* Deleting a reminder requires the process of selecting a reminder for deletion. This means that you may have to send CIC a [Reminder.Get](#Get) event message so that the user can see a list of reminders first.
 
 ### Message example
 
@@ -120,16 +120,16 @@ None
 * [Reminder.Get](#Get)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Get Event {#Get}
+## Get event {#Get}
 
-Asks CIC to provide information of all reminders. This Event message is sent in the following scenario.
+Requests CIC for information of all reminders. Send this event message in the following scenario.
 
-1. Using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) Event message, your client transmits user's speech input to CIC asking to look up reminders.
-2. Once the request is recognized on the Clova platform, the request is sent to your client using a [Clova.GetReminder](/CIC/References/APIs/Clova.md#GetReminder) Directive message.
+1. Your client sends CIC a user's spoken request for reminder lookup, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.
+2. The Clova platform recognizes the reminder lookup request and CIC returns it to your client, using a [Clova.GetReminder](/CIC/References/APIs/Clova.md#GetReminder) directive message.
 3. Your client displays the reminder lookup request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * When the user accepts reminder lookup: A Reminder.Get Event message is sent to CIC.
-  * When the user rejects reminder lookup: No Event message is sent.
+   * When the user accepts reminder lookup: You send CIC a Reminder.Get event message.
+   * When the user rejects reminder lookup: You do not have to send any event message.
 
 ### Context field
 
@@ -140,11 +140,11 @@ None
 None
 
 ### Remarks
-* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and proceed to send an Event message to CIC.
+* Depending on your UX design (usability), you may skip the scenario step 3 and 4 and send an event message to CIC right away.
 
-* When your client sends an Event message to CIC, it must return the result of the event. For example, your client should display a message such as "Looking up reminders" or "Canceled reminder lookup."
+* You must return results when sending this event message to CIC. For example, display messages such as "Looking up reminders" or "Canceled reminder lookup."
 
-* Once a Get Event message is sent to CIC, the user's reminder list is delivered using a [Clova.RenderReminderList](/CIC/References/APIs/Clova.md#RenderReminderList) Directive message.
+* After sending a Get event message to CIC, a list of reminders is returned, using a [Clova.RenderReminderList](/CIC/References/APIs/Clova.md#RenderReminderList) directive message.
 
 ### Message example
 
@@ -172,9 +172,9 @@ None
 * [Clova.RenderReminderList](/CIC/References/APIs/Clova.md#RenderReminderList)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## Updated Event {#Updated}
+## Updated event {#Updated}
 
-Asks CIC to update a reminder.
+Requests CIC to update a specified reminder.
 
 ### Context field
 
@@ -182,18 +182,18 @@ None
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | The content of the reminder to update  | Yes  |
-| id  | string  | The ID of the reminder to update  | Yes  |
+| content       | string  | Content of a reminder to be updated             | Yes     |
+| id            | string  | ID of a reminder to be updated            | Yes     |
 
 ### Remarks
 
-* Updating a reminder cannot be done by speech input. The request must be sent by directly changing the content on a UI screen. As such, no preceding scenarios are necessary such as [Reminder creation](#Created) or [Reminder deletion](#Deleted).
+* To update a reminder, the user must make changes to the reminder on a UI screen, not with speech input. This means that the request does not require [reminder creation](#Created) or [reminder deletion](#Deleted).
 
-* An Updated Event message changes the entire payload. So, if the message has any field left empty, it will change its corresponding field to an empty value. Be cautious not to send only the fields that need update. For example, if you send only the *done* field, the *content* field will be filled with an empty value.
+* Be noted that an Updated event message changes the entire payload. This means that, if the message has any field left empty, such field will be replaced with an empty value. Make sure not to send only those fields to be updated. For example, if you send only the *done* field, the *content* field will be filled with an empty value.
 
-* Your client can check the field values in each reminder when a [Clova.RenderReminderList](/CIC/References/APIs/Clova.md#RenderReminderList) Directive message is sent in response to a [Reminder.Get](#Get) Event message.
+* You can check field values for each reminder when a [Clova.RenderReminderList](/CIC/References/APIs/Clova.md#RenderReminderList) directive message is returned in response to a [Reminder.Get](#Get) event message.
 
 ### Message example
 

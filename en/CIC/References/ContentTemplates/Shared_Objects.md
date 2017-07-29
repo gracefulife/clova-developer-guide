@@ -1,22 +1,22 @@
 # Shared Objects
-Content Template uses the following shared objects.
+Content Templates use the following shared objects.
 
-| Object name  | Object description  |
+| Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [DateObject](#DateObject)  | The object containing date data  |
-| [NumberObject](#NumberObject)  | The object containing number data separated by thousands |
-| [PhoneNumberObject](#PhoneNumberObject) | The object containing phone number data  |
-| [StringObject](#StringObject)  | The object containing text data  |
-| [URLObject](#URLObject)  | The object containing URL data  |
+| [DateObject](#DateObject)               | An object that contains date data                         |
+| [NumberObject](#NumberObject)           | An object that contains number data (in thousands) |
+| [PhoneNumberObject](#PhoneNumberObject) | An object that contains a phone number                     |
+| [StringObject](#StringObject)           | An object that contains text                       |
+| [URLObject](#URLObject)                 | An object that contains URL                        |
 
 ## DateObject {#DateObject}
-This object contains date data.
+Contains date data.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | The value is fixed to "date".  | Yes  |
-| value  | string  | URL  | Yes  |
+| type          | string  | The value is always "date".  | Yes     |
+| value         | string  | URL                         | Yes     |
 
 ### Object Example
 {% raw %}
@@ -32,13 +32,13 @@ This object contains date data.
 None
 
 ## NumberObject {#NumberObject}
-This object contains number data separated by thousands.
+Contains number data (in thousands).
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | The value is fixed to "number".  | Yes  |
-| value  | string  | The number data separated by thousands | Yes  |
+| type          | string  | The value is always "number".    | Yes     |
+| value         | string  | Number data (in thousands) | Yes     |
 
 ### Object Example
 {% raw %}
@@ -54,13 +54,13 @@ This object contains number data separated by thousands.
 None
 
 ## PhoneNumberObject {#PhoneNumberObject}
-This object contains phone number data.
+Contains phone number data.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | The value is fixed to "phoneNum". | Yes  |
-| value  | string  | Phone number data  | Yes  |
+| type          | string  | The value is always "phoneNum". | Yes     |
+| value         | string  | Phone number data                    | Yes     |
 
 ### Object Example
 {% raw %}
@@ -76,13 +76,13 @@ This object contains phone number data.
 None
 
 ## StringObject {#StringObject}
-This object contains text data.
+Contains text data.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | The value is fixed to "string".  | Yes  |
-| value  | string  | Text data  | Yes  |
+| type          | string  | The value is always "string".  | Yes     |
+| value         | string  | Text data                      | Yes     |
 
 ### Object Example
 {% raw %}
@@ -105,13 +105,13 @@ This object contains text data.
 None
 
 ## URLObject {#URLObject}
-This object contains URL data.
+Contains URL data.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | The value is fixed to "url".  | Yes  |
-| value  | string  | URL  | Yes  |
+| type          | string  | The value is always "url".   | Yes     |
+| value         | string  | URL                         | Yes     |
 
 ### Object Example
 {% raw %}

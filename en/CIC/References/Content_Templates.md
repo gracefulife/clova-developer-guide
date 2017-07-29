@@ -1,6 +1,6 @@
 # Content Template
 
-Content Templates standardize the display format of various content provided by CIC. Sometimes your client may have to display additional content on its screen in addition to speaking the results provided by Clova. When Clova sends data to your client, it should send in a pre-defined format using the Content Templates. Content Templates can help your client display data in a proper manner.
+Content Templates are standardized formats for displaying content returned from CIC. Sometimes you have to make your client display content provided by Clova on its screen, not just generating audio output. To help with displaying, Clova returns data in a pre-defined format using Content Templates. Content Templates help you focus on displaying in a proper manner.
 
 Currently, Clova is providing the following Content Templates.
 

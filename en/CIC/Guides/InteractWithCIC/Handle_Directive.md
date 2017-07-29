@@ -1,17 +1,17 @@
-## Handling Directive message {#HandleDirective}
-A Directive message is sent from CIC to instruct your client to perform a specific action. A Directive message is sent either in response to an [Event message](#SendEvent) or through a Downchannel which is created when an initial connection with CIC is established. Firstly, a [Directive message](/CIC/CIC_Message_Format.md#Directive) formatted in JSON is received followed by subsequent messages containing additional information (audio data, content information) using appropriate [CIC APIs](/CIC/References/CIC_API.md).
+## Handling directive message {#HandleDirective}
+CIC returns directive messages to instruct your client to perform specific actions. A directive message is either a response to an [event message](#SendEvent) or a message sent through a downchannel created at an initial connection with CIC. A JSON-format [directive message](/CIC/CIC_Message_Format.md#Directive) is returned first followed by subsequent messages containing additional information (speech data, content details) using [CIC APIs](/CIC/References/CIC_API.md).
 
-| Content type  | Description  |
+| Content type            | Description                                             |
 |---------------------|-------------------------------------------------|
-| Audio data  | Audio output to be played back through a device speaker  |
-| JSON content data | <ul><li>Data to be displayed on a device screen (See <a href="/CIC/References/Content_Templates.md">Content Template</a>)</li><li>Data containing the location of content (necessary for music playback, for example) and credential information</li></ul> |
+| Speech data            | Speech data to be synthesized for audio output through a device speaker                  |
+| JSON content data | <ul><li>Data to be displayed on a device screen (See <a href="/CIC/References/Content_Templates.md">Content Template</a>)</li><li>Content location (necessary for music playback, for example) and credential data</li></ul> |
 
-Your client should handle a Directive message in the following steps.
+Implement your client to handle directive messages in the following steps.
 
 <ol>
-<li><p>Stores the Directive message in a preset <a href="#ManageMessageQ">message queue</a> when your client receives one, whether it is a response to an Event message or it is a Directive message delivered through a Downchannel.</p>
+<li><p>When you receive a response to an event message or a directive message through a downchannel, store the message in a preset <a href="#ManageMessageQ">message queue</a>.</p>
 </li>
-<li><p>Parse the message header of the <a href="/CIC/References/CIC_Message_Format.html#Directive">Directive message</a>. Typically, you use a <em>dialogRequestId</em> to identify the user request associated with the message, and <em>namespace</em> and <em>name</em> to identify the <a href="/CIC/References/CIC_API.html">CIC API</a>. This is an example of a Directive message.</p>
+<li><p>Parse the message header of the <a href="/CIC/References/CIC_Message_Format.html#Directive">directive message</a>. Generally, use <em>dialogRequestId</em> to find the user request, and <em>namespace</em> and <em>name</em> to fine the appropriate <a href="/CIC/References/CIC_API.html">CIC API</a>. Below is an example of a directive message.</p>
 <pre><code>{
   "directive": {
     "header": {
@@ -32,15 +32,15 @@ Your client should handle a Directive message in the following steps.
 }
 </code></pre>
 </li>
-<li>Match the dialog ID(dialogRequestId) of the Directive message to the dialog ID stored in your client.
+<li>Match the dialog ID(dialogRequestId) of the directive message to the dialog ID stored in your client.
 <ul>
-<li><strong>If it matches the dialog ID stored in your client</strong>, your client performs a necessary action as specified by the API. Usually, additional information (audio data) necessary for the client action can be sorted out from the message queue using the cid field value contained in the message payload.</li>
-<li><strong>If it does not match the dialog ID stored in your client</strong>, the Directive message and its related messages are disregarded and removed from the queue.</li>
+<li><strong>If it matches the dialog ID in your client</strong>, perform necessary actions as specified by the API. Usually, you can find the additional information (speech data) necessary for client actions in the message queue, using the cid field value contained in message payload.</li>
+<li><strong>If it does not match the dialog ID in your client</strong>, disregard the directive message and its related messages and remove them from the queue.</li>
 </ul>
 </li>
 </ol>
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>As mentioned above, your client should use a queue when handling Directive messages. See <a href="#ManageMessageQ">Managing message queue</a> for more details.</p>
+<p>As mentioned above, you must use a queue to handle directive messages. See <a href="#ManageMessageQ">Managing message queue</a> for more details.</p>
 </div>

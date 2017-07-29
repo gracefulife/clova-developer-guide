@@ -1,5 +1,5 @@
 ## Clova.SavedPlace {#SavedPlace}
-This message format is used to send the location information previously saved in your client.
+Message format that sends client's pre-saved location information.
 
 ### Message format
 {% raw %}
@@ -25,13 +25,13 @@ This message format is used to send the location information previously saved in
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| places[]  | object array | The object array containing the previously saved location information  | Yes |
-| places[].latitude  | string  | Latitude  | Yes |
-| places[].longitude  | string  | Longitude  | Yes |
-| places[].name  | string  | The name of the location saved. Available values are: <ul><li>회사</li><li>집</li></ul>  | Yes |
-| places[].refreshedAt | string  | The time when the location was saved (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes |
+| places[]             | object array | An object array that contains pre-saved location information                                          | Yes |
+| places[].latitude    | string       | Latitude                                                                          | Yes |
+| places[].longitude   | string       | Longitude                                                                          | Yes |
+| places[].name        | string       | The name of the location saved. Available values are: <ul><li>회사</li><li>집</li></ul>       | Yes |
+| places[].refreshedAt | string       | The time when the location was saved (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes |
 
 
 ### Message example

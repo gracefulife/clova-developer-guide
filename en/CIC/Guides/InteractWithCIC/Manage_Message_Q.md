@@ -1,19 +1,17 @@
 ## Managing message queue {#ManageMessageQ}
 
-A client sends and receives messages to and from CIC in sequence. When a client receives a Directive message from CIC, the message may have the following characteristics.
-* Your client may receive a multiple number of Directive messages and messages containing additional information in one delivery from CIC.
-* Your client may receive a Directive message through a Downchannel and as a response to an Event message as well.
-* Your client may receive Directive messages whose dialogue IDs are different.
-* When CIC sends Directive messages, it may not send them in a sequential order.
+Sending and receiving messages to and from CIC occurs in a consecutive way. Directive messages returned from CIC may have the following characteristics.
+* CIC may return multiple directive messages and messages for additional information at one time.
+* CIC may return directive messages not only through a downchannel but also through a response message to an event message.
+* Directive messages may have different dialog IDs.
+* CIC may not return directive messages in a sequential order.
 
-For this reason, your client should use queue data structure called a "message queue," with which your client can put in and take out messages sequentially that are sent through a Downchannel or as a response to an Event message.
+Because of these characteristics, you must use a queue-based data structure to put in and take out response messages and downchannel messages in a sequential order. We call this data structure a "message queue."
 
-You should develop your client to process Directive messages one at a time as they are being enqueued in a message queue. Also, the message being processed should match the dialog ID of the last user request in your client. If there is any Directive message whose dialog ID has been canceled, that message and all related additional information should be removed from the message queue.
+Develop your client to process directive messages one at a time as they are enqueued in each message queue. Also, the message in processing must be the equivalent of the last user request present in your client. User requests are identifiable with dialog IDs and your client must be keeping the dialog ID of the last request. If your client is keeping any directive message with a canceled dialog ID in a message queue, such message and its related information must be removed from the queue.
 
-Client developers should determine the following by considering their UX design plan.
-* The number of message queues and their size
+Determine the following rules in consideration of your UX design plan.
+* The number of messages queues and their size
 * Processing priority of message queues
 
-If you want to provide UX that runs tasks seamlessly while your client is receiving speech input or producing speech output such as music playback ([AudioPlayer](/CIC/References/APIs/AudioPlayer.md)), you may have to process such Directive messages separately in the related message queue.
-
-Also, some API namespaces send a single Directive message simultaneously. You may not need to manage message queues for such namespaces.
+If you want to provide UX that runs tasks seamlessly while your client is receiving speech input or generating speech output, such as music playback ([AudioPlayer](/CIC/References/APIs/AudioPlayer.md)), you must process such directive messages separately in the message queue. Also, there are some API namespaces that send a single directive message simultaneously. For such namespaces, you may not have to manage message queues separately.

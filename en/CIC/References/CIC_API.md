@@ -1,5 +1,5 @@
 # CIC API
-CIC categorizes [Event messages](/CIC/References/Message_Format.md#Event) and [Directive messages](CIC/References/Message_Format.md#Directive) into several namespaces by their functionalities and provides them as the CIC APIs. Your client should use these APIs to create an Event message for CIC or to interpret a message received from CIC.
+CIC categorizes [event messages](/CIC/References/Message_Format.md#Event) and [directive messages](CIC/References/Message_Format.md#Directive) into namespaces by their functions and provides them as the CIC APIs. You use these APIs to create event messages to send to CIC or to interpret messages returned from CIC.
 
 CIC provides the following namespaces.
 
@@ -12,6 +12,6 @@ CIC provides the following namespaces.
 * [SpeechRecognizer](/CIC/References/APIs/SpeechRecognizer.md)
 * [SpeechSynthesizer](/CIC/References/APIs/SpeechSynthesizer.md)
 
-See the following index for the full list of Event and Directive messages.
+See the following indexes for a full list of event and directive messages.
 * [Event messages index](/CIC/References/APIs/Index_for_Events.md)
 * [Directive messages index](/CIC/References/APIs/Index_for_Directives.md)
