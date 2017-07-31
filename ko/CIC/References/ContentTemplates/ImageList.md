@@ -1,9 +1,9 @@
 # ImageList Template
-한 개 이상의 이미지와 각 이미지에 대한 설명을 제공할 때 사용됩니다. 썸네일의 목록을 표시하거나 사용자가 썸네일을 선택했을 때 큰 이미지를 표시하기 위해 사용합니다.
+화면에 한 개 이상의 이미지와 각 이미지에 대한 설명을 제공하는 템플릿입니다. 썸네일의 목록을 표시하거나 사용자가 썸네일을 선택했을 때 큰 이미지를 표시하기 위해 사용합니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>ImageList 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>를 참조합니다.</p>
+<p>ImageList 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
 </div>
 
 ## Template field
@@ -17,7 +17,7 @@
 | ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체      | 선택 |
 | ImageList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체        | 선택 |
 | ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 썸네일 이미지의 URL 정보가 담긴 객체 | 선택 |
-| type                       | string       | Content Template 구분자. "ImageList"로 고정        | 필수 |
+| type                       | string       | Content template 구분자. "ImageList"로 고정        | 필수 |
 
 ## Template Example
 
@@ -88,7 +88,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 NAVER가 배포한 모바일용 Clova 앱에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 썸네일 목록 | 선택한 이미지 표시 |
 |-------|-------|

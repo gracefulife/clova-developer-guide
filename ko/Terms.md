@@ -59,9 +59,9 @@ IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova
 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하기 위해 사용해야 하는 API입니다. 자세한 내용은 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 참조합니다.
 
 ### Content Template {#ContentTemplate}
-CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화한 것입니다. 자세한 내용은 [Content Template](/CIC/References/Content_Templates.md)을 참고합니다.
+CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화한 것입니다. 자세한 내용은 [content template](/CIC/References/Content_Templates.md)을 참고합니다.
 
-### Context Objects {#ContextObjects}
+### Context objects {#ContextObjects}
 [맥락 정보](#Context)를 표현하는 객체입니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
 
 ### Custom extension {#CustomExtension}
@@ -104,11 +104,11 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 ### Slot {#Slot}
 [Intent](#Intent)에 선언된 요청을 처리할 때 필요한 정보이며, intent를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 됩니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조합니다.
 
-### 대화 ID {#DialogueID}
+### 대화 ID {#DialogID}
 대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Cconnect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다를 경우 수신한 지시 메시지를 무시해야 합니다.
 
 ### 맥락 정보 (Context) {#Context}
-맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미하며 [Context Objects](#ContextObjects)로 표현됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
+맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미하며 [context objects](#ContextObjects)로 표현됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
 
 ### 메시지 ID {#MessageID}
 메시지 ID는 개개의 메시지를 구분하기 위한 식별자이며, [이벤트 메시지](#Event)와 [지시 메시지](#Directive)는 모두 개개의 메시지 ID를 가집니다.

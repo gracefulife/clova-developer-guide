@@ -1,9 +1,9 @@
 # Text Template
-텍스트 데이터를 제공할 때 사용됩니다. 강조하는 형태의 텍스트, 문단 형태의 텍스트, 표 형태의 텍스트를 표시할 때 사용됩니다.
+화면에 표시해야 할 텍스트 데이터를 제공하는 템플릿입니다. 강조하는 형태의 텍스트, 문단 형태의 텍스트, 표 형태의 텍스트를 표시할 때 사용됩니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Text 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>를 참조합니다.</p>
+<p>Text 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
 </div>
 
 ## Template field
@@ -20,11 +20,11 @@
 | referenceURL           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체                                | 선택 |
 | sentenceText           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문장 형태의 문구가 담긴 객체                                | 선택 |
 | subText                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 보조 문구가 담긴 객체                                     | 선택 |
-| tablieList[]           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 열이 두 개인 표를 구성합니다.     | 선택 |
-| tablieList[].item1     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
-| tablieList[].item2     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
-| tablieList[].item2Link | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 | 선택 |
-| type                   | string                                                                          | Content Template 구분자. "ImageText"로 고정             | 필수 |
+| tableList[]           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 열이 두 개인 표를 구성합니다.     | 선택 |
+| tableList[].item1     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
+| tableList[].item2     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
+| tableList[].item2Link | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 | 선택 |
+| type                   | string                                                                          | Content template 구분자. "ImageText"로 고정             | 필수 |
 
 ## Template Example
 
@@ -229,7 +229,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 NAVER가 배포한 모바일용 Clova 앱에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 강조하는 형태의 텍스트 | 문단 형태의 텍스트 | 표 형태의 텍스트 |
 |-------|-------|-------|

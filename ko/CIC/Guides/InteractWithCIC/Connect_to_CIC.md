@@ -66,7 +66,7 @@ https://prod-ni-cic.clova.ai/
 ```
 {% endraw %}
 
-클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 Downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 Downchannel을 통해 지시 메시지가 전달될 것입니다.
+클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
 
 Downchannel은 */v1/directives* 경로로 *GET* 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
 
@@ -81,12 +81,12 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 Downchannel을 유지하도록 해야 합니다. 만약, Downchannel이 생성된 상태에서 */v1/directives*으로 추가 요청이 들어오면 기존 Downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li></ul>
+<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 */v1/directives*으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li></ul>
 </div>
 
 
 ### 인증하기 {#Authorization}
-클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. HTTP 포맷에 대한 자세한 설명은 [HTTP/2 메시지 포맷](/CIC/References/HTTP2_Message_Format.md)을 참조합니다.
+클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. HTTP 포맷에 대한 자세한 설명은 [HTTP/2 메시지](/CIC/References/HTTP2_Message_Format.md)을 참조합니다.
 
 {% raw %}
 ```
@@ -107,8 +107,8 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 | 구분      | 설명                               |
 |----------|-----------------------------------|
-| DownChannel 유지 | Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [Downchannel을 구성](#CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다. |
-| Ping-pong 수행 | 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.|
+| DownChannel 유지 | Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새로운 [downchannel을 구성](#CreateConnection)하여, CIC로부터 전달되는 지시 메시지를 받지 못하는 일이 없도록 해야합니다. |
+| Ping-pong 수행 | CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.|
 
 <div class="note">
 <p><strong>Note!</strong></p>
