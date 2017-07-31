@@ -27,7 +27,7 @@
 | timeoutInMilliseconds | integer | 사용자의 음성 입력을 받기 위해 대기하는 시간으로 단위는 밀리초(millisecond) 입니다. | 필수    |
 
 ### Remarks
-* 이 지시 메시지를 받으면 클라이언트는 사용자의 입력을 CIC 전달할 때 이전 요청 메시지와 같은 대화 ID(*dialogRequestId*)를 사용해서 전송해야 합니다.
+* 이 지시 메시지를 받으면 클라이언트는 사용자의 입력을 CIC로 전달할 때 이전 요청 메시지와 같은 대화 ID(*dialogRequestId*)를 사용해서 전송해야 합니다.
 * timeoutInMilliseconds 시간 동안 사용자의 음성 데이터 입력이 없으면  [SpeechRecognizer.ExpectSpeechTimedOut](#ExpectSpeechTimedOut) 이벤트 메시지를 CIC로 전달해야 합니다.
 
 ### Message example
@@ -178,7 +178,7 @@ Clova 음성 인식 시스템은 [SpeechRecognizer.Recognize](#Recognize) 이벤
 
 ### Remarks
 
-해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [Downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
+해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
 
 ### Message example
 
@@ -247,7 +247,7 @@ CIC가 [SpeechRecognizer.Recognize](#Recognize) 이벤트 메시지를 받은 �
 | recognizedText | string | 입력된 사용자 음성이 어떻게 인식이 되었는지 그 결과를 담고 있습니다. | 필수 |
 
 ### Remarks
-해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [Downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
+해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
 
 ### Message example
 {% raw %}

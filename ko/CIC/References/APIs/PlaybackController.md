@@ -11,19 +11,19 @@
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [mute](#mute)                           | Directive | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                    |
-| [next](#next)                           | Directive | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.   |
-| [pause](#pause)                         | Directive | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.        |
-| [previous](#previous)                   | Directive | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다. |
-| [resume](#resume)                       | Directive | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                |
-| [stop](#stop)                           | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                |
+| [Mute](#Mute)                           | Directive | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                    |
+| [Next](#Next)                           | Directive | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.   |
+| [Pause](#Pause)                         | Directive | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.        |
+| [Previous](#Previous)                   | Directive | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다. |
+| [Resume](#Resume)                       | Directive | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                |
+| [Stop](#Stop)                           | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                |
 | [TurnOffRepeatMode](#TurnOffRepeatMode) | Directive | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                  |
 | [TurnOnRepeatMode](#TurnOnRepeatMode)   | Directive | 클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다.                  |
-| [unmute](#unmute)                       | Directive | 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.              |
-| [volumeDown](#volumeDown)               | Directive | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                      |
-| [volumeUp](#volumeUp)                   | Directive | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                      |
+| [Unmute](#Unmute)                       | Directive | 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.              |
+| [VolumeDown](#VolumeDown)               | Directive | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                      |
+| [VolumeUp](#VolumeUp)                   | Directive | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                      |
 
-## mute directive {#mute}
+## Mute directive {#Mute}
 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.
 
 ### Payload field
@@ -36,7 +36,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "mute",
+            "name": "Mute",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -50,7 +50,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## next directive {#next}
+## Next directive {#Next}
 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.
 
 ### Payload field
@@ -63,7 +63,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "next",
+            "name": "Next",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -74,10 +74,9 @@
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayNext](/CIC/References/APIs/AudioPlayer.md#PlayNext)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## pause directive {#pause}
+## Pause directive {#Pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.
 
 ### Payload field
@@ -90,7 +89,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "pause",
+            "name": "Pause",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -104,7 +103,7 @@
 * [AudioPlayer.PlayPaused](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## previous directive {#previous}
+## Previous directive {#Previous}
 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다.
 
 ### Payload field
@@ -117,7 +116,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "previous",
+            "name": "Previous",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -131,7 +130,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## resume directive {#resume}
+## Resume directive {#Resume}
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.
 
 ### Payload field
@@ -144,7 +143,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "resume",
+            "name": "Resume",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -158,7 +157,7 @@
 * [AudioPlayer.PlayResumed](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## stop directive {#stop}
+## Stop directive {#Stop}
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.
 
 ### Payload field
@@ -171,7 +170,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "stop",
+            "name": "Stop",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -237,7 +236,7 @@
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## unmute directive {#unmute}
+## Unmute directive {#Unmute}
 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.
 
 ### Payload field
@@ -250,7 +249,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "unmute",
+            "name": "Unmute",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -264,7 +263,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneDown directive {#volumeDown}
+## VolumneDown directive {#VolumeDown}
 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
@@ -277,7 +276,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "volumeDown",
+            "name": "VolumeDown",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -291,7 +290,7 @@
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneUp directive {#volumeUp}
+## VolumneUp directive {#VolumeUp}
 클라이언트에게 스피커 볼륨을 높이도록 지시합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
@@ -304,7 +303,7 @@
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "volumeUp",
+            "name": "VolumeUp",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },

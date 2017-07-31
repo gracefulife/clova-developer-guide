@@ -1,12 +1,11 @@
 # AudioPlayer
 
-클라이언트에서 오디오 스트림 재생을 요청하거나 오디오 스트림 재생하는 중에 발생하는 이벤트를 CIC로 보고할 때 사용되는 API입니다. AudioPlayer API가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
+클라이언트에서 오디오 스트림 재생을 요청하거나 오디오 스트림을 재생하는 중에 발생하는 이벤트를 CIC로 보고할 때 사용되는 API입니다. AudioPlayer API가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
 | [Play](#Play)                       | Directive | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                         |
 | [PlayFinished](#PlayFinished)       | Event     | 클라이언트가 오디오 스트림 재생을 완료할 때 재생 완료된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.     |
-| [PlayNext](#PlayNext)               | Directive | 클라이언트에게 재생 중인 오디오 스트림 재생을 중지하고 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다. |
 | [PlayPaused](#PlayPaused)           | Event     | 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. |
 | [PlayResumed](#PlayResumed)         | Event     | 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.         |
 | [PlayStarted](#PlayStarted)         | Event     | 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.    |
@@ -14,7 +13,6 @@
 | [ProgressReportDelayPassed](#ProgressReportPositionPassed) | Event | 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다. |
 | [ProgressReportIntervalPassed](#ProgressReportPositionPassed)| Event | 오디오 스트림 재생이 시작된 후 지정된 간격마다 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 간격은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.|
 | [ProgressReportPositionPassed](#ProgressReportPositionPassed) | Event | 오디오 스트림 재생이 시작된 후 지정된 보고 시점에 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 시점은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.|
-| [Stop](#Stop)                       | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                                            |
 | [StreamDeliver](#StreamDeliver)     | Directive | [AudioPlayer.StreamRequested](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | [StreamRequested](#StreamRequested) | Event     | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.               |
 
@@ -27,6 +25,7 @@
 | audioItem               | AudioItemObject | 재생할 오디오 스트림의 메타 정보와 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                     | 필수 |
 | audioItem.audioItemId   | string          | 오디오 스트림 정보를 구분하는 ID. 클라이언트는 이 값을 기준으로 중복된 Play 지시 메시지를 제거할 수 있습니다. | 필수 |
 | audioItem.stream        | [AudioStreamObject](#AudioStreamObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                        | 필수 |
+| audioItem.type          | string          | 음악 서비스 구분자. 음악 스트리밍 서비스를 제공하는 사업자나 서비스 이름입니다. 이 필드 값은 각 서비스마다 달라지는 audioItem 객체의 필드를 파악하고 이를 분석하는 파서(parser)를 선택하는데 이용될 수 있습니다. | 필수 |
 | audioItem.[CustomField] | any             | 재생할 오디오 스트림에 첨부할 메타 정보를 서비스 제공자 임의대로 추가할 수 있습니다.                     | 선택 |
 | playBehavior            | string         | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li>"REPLACE_ALL": 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li>"ENQUEUE": 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 필수 |
 
@@ -62,6 +61,7 @@
                     "token": "b767313e-6790-4c28-ac18-5d9f8e432248",
                     "url": "https://aod.musicservice.net/b767313e.mp3"
                 },
+                "type": "navermusic"
             },
             "playBehavior": "ENQUEUE"
         }
@@ -71,7 +71,6 @@
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayNext](#PlayNext)
 * [AudioPlayer.PlayPaused](#PlayPaused)
 * [AudioPlayer.PlayResumed](#PlayResumed)
 * [AudioPlayer.PlayStarted](#PlayStarted)
@@ -79,7 +78,6 @@
 * [AudioPlayer.ProgressReportDelayPassed](#ProgressReportDelayPassed)
 * [AudioPlayer.ProgressReportIntervalPassed](#ProgressReportIntervalPassed)
 * [AudioPlayer.ProgressReportPositionPassed](#ProgressReportPositionPassed)
-* [AudioPlayer.Stop](#Stop)
 * [AudioPlayer.StreamRequested](#StreamRequested)
 
 ## PlayFinished event {#PlayFinished}
@@ -116,37 +114,11 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 
-## PlayNext directive {#PlayNext}
-클라이언트에게 재생 중인 오디오 스트림 재생을 중지하고 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.
-
-### Payload field
-없음
-
-### Message example
-{% raw %}
-```json
-{
-    "directive": {
-        "header": {
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a",
-            "name": "PlayNext",
-            "namespace": "AudioPlayer"
-        },
-        "payload": null
-    }
-}
-```
-{% endraw %}
-
-### See also
-* [AudioPlayer.Play](#Play)
-
 ## PlayPaused event {#PlayPaused}
 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [PlaybackController.pause](/CIC/References/APIs/PlaybackController.md#pause) 지시 메시지를 통해 클라이언트에 전달합니다.
+2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [PlaybackController.Pause](/CIC/References/APIs/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayPaused 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -180,13 +152,13 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.PlayResumed](#PlayResumed)
-* [PlaybackController.pause](/CIC/References/APIs/PlaybackController.md#pause)
+* [PlaybackController.Pause](/CIC/References/APIs/PlaybackController.md#Pause)
 
 ## PlayResumed event {#PlayResuemd}
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [PlaybackController.resume](/CIC/References/APIs/PlaybackController.md#resume) 지시 메시지를 통해 클라이언트에 전달합니다.
+2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [PlaybackController.Resume](/CIC/References/APIs/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -220,7 +192,7 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.PlayPaused](#PlayPaused)
-* [PlaybackController.resume](/CIC/References/APIs/PlaybackController.md#resume)
+* [PlaybackController.Resume](/CIC/References/APIs/PlaybackController.md#Resume)
 
 ## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
@@ -261,7 +233,7 @@
 클라이언트가 오디오 스트림 재생을 중지할 때 재생이 중지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [PlaybackController.stop](/CIC/References/APIs/PlaybackController.md#stop) 지시 메시지를 통해 클라이언트에 전달합니다.
+2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [PlaybackController.Stop](/CIC/References/APIs/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayStopped 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -295,7 +267,7 @@
 ### See also
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.PlayStarted](#PlayStarted)
-* [PlaybackController.stop](/CIC/References/APIs/PlaybackController.md#stop)
+* [PlaybackController.Stop](/CIC/References/APIs/PlaybackController.md#Stop)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [AudioPlayer.Play](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
@@ -404,34 +376,6 @@
 * [AudioPlayer.Play](#Play)
 * [AudioPlayer.ProgressReportDelayPassed](#ProgressReportDelayPassed)
 * [AudioPlayer.ProgressReportIntervalPassed](#ProgressReportIntervalPassed)
-
-## Stop directive {#Stop}
-클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.
-
-### Payload field
-없음
-
-### Message example
-{% raw %}
-```json
-{
-    "directive": {
-        "header": {
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a",
-            "name": “Stop”,
-            "namespace": "AudioPlayer"
-        },
-        "payload": {}
-    }
-}
-```
-{% endraw %}
-
-### See also
-* [AudioPlayer.Play](#Play)
-* [AudioPlayer.Started](#PlayStarted)
-* [AudioPlayer.Stopped](#PlayStopped)
 
 ## StreamDeliver directive {#StreamDeliver}
 [AudioPlayer.StreamRequested](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. 클라이언트가 음악을 재생할 수 있도록 오디오 스트림 정보에 스트리밍할 수 있는 URL 정보가 필수로 포함되어 있습니다.

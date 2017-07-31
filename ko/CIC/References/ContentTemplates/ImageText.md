@@ -1,9 +1,9 @@
 # ImageText Template
-이미지와 텍스트를 함께 제공할 때 사용됩니다. 썸네일 이미지와 텍스트를 표시하거나 지도와 텍스트를 함께 표시할 때 사용됩니다.
+화면에 표시해야 할 이미지와 텍스트 데이터를 함께 제공하는 템플릿입니다. 썸네일 이미지와 텍스트를 표시하거나 지도와 텍스트를 함께 표시할 때 사용됩니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>ImageText 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>를 참조합니다.</p>
+<p>ImageText 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
 </div>
 
 ## Template field
@@ -19,7 +19,7 @@
 | subTextList    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 보조 문구가 담긴 배열                                       | 선택 |
 | thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 썸네일 이미지의 URL 정보가 담긴 객체                           | 선택 |
 | thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li>"인물""</li><li>"책"</li><li>"앨범"</li></ul> | 선택 |
-| type           | string  | Content Template 구분자. "ImageText"로 고정      | 필수      |
+| type           | string  | Content template 구분자. "ImageText"로 고정      | 필수      |
 
 ## Template Example
 
@@ -100,7 +100,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 NAVER가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 썸네일 이미지와 텍스트 | 지도 이미지와 텍스트 |
 |-------|-------|

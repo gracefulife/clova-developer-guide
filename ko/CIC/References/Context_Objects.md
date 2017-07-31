@@ -1,6 +1,6 @@
 # 맥락 정보(Context)
 
-맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미합니다. 맥락 정보는 Context Objects를 통해 표현되며, CIC의 API인 [이벤트 메시지](/CIC/References/CIC_Message_Format.md#Event)를 보낼 때 포함됩니다. 맥락 정보는 사용자가 발화한 시점의 상태 정보를 담아야 하며, 다음과 같은 Context Objects가 있습니다.
+맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미합니다. 맥락 정보는 context objects를 통해 표현되며, CIC의 API인 [이벤트 메시지](/CIC/References/CIC_Message_Format.md#Event)를 보낼 때 포함됩니다. 맥락 정보는 사용자가 발화한 시점의 상태 정보를 담아야 하며, 다음과 같은 context objects가 있습니다.
 
 * [AudioPlayer.PlaybackState](#PlaybackState)
 * [Device.DeviceState](#DeviceState)
