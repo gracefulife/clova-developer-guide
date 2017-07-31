@@ -36,7 +36,7 @@
 
 ### Remarks
 
-새로운 리마인더 생성이 완료되면 그 결과를 [Memo.Created](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 메모 생성이 완료되면 그 결과를 [Memo.Created](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -582,15 +582,27 @@
 
 ## RenderTemplate directive {#RenderTemplate}
 
-클라이언트에게 데이터를 Content Template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
+클라이언트에게 데이터를 템플릿에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
 ### Payload field
-*payload* 필드는 [Content Template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 Content Template을 제공하고 있습니다.
+*payload* 필드는 [템플릿](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 템플릿을 제공하고 있습니다.
 
-* [Image List](/CIC/References/Content_Templates.md#ImageList)
-* [Image & Text](/CIC/References/Content_Templates.md#ImageText)
-* [Card List](/CIC/References/Content_Templates.md#CardList)
-* [Text](/CIC/References/Content_Templates.md#Text)
+* 콘텐츠 UI 유형별 템플릿
+  * [CardList](/CIC/References/ContentTemplates/CardList.md)
+  * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
+  * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Text](/CIC/References/ContentTemplates/Text.md)
+
+* 길찾기 템플릿
+  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
+  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
+
+* 날씨 템플릿
+  * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
+  * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
+  * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
+  * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
+  * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
 ### Message example
 
@@ -618,17 +630,17 @@
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Clova.RenderText](#RenderText)
-* [Content Template](/CIC/References/Content_Templates.md)
+* [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
 
-클라이언트에게 텍스트 메시지를 표시하도록 지시합니다. 사용자가 요청한 텍스트가 함께 전달됩니다.
+클라이언트에게 텍스트 메시지를 표시하도록 지시합니다. 사용자에게 보여줄 텍스트가 함께 전달됩니다.
 
 ### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| text          | string  | 사용자 요청에 따라 전달된 텍스트    | 필수     |
+| text          | string  | 사용자에게 보여줄 텍스트          | 필수     |
 
 ### Message example
 

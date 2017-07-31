@@ -10,7 +10,7 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>각 타입별 표시 형태는 <a href="#UIExample">Screen UI example</a>를 참조합니다.</p>
+<p>각 타입별 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
 </div>
 
 ## Template field
@@ -29,7 +29,7 @@
 | cardList[].title          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             | 선택 |
 | cardList[].videoUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체    | 선택 |
 | subType                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li>Type1</li><li>Type2</li><li>Type3</li><li>Type4</li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 Type1, Type2, Type3은 빈 문자열로 표현됩니다. 따라서 <em>card</em> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
-| type                      | string  | Content Template 구분자. "CardList"로 고정                                                                       | 필수 |
+| type                      | string  | Content template 구분자. "CardList"로 고정                                                                       | 필수 |
 
 ## Template Example
 
@@ -359,7 +359,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 NAVER가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
 | Type1 | Type2 |
 |-------|-------|
