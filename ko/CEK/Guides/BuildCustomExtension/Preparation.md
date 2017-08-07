@@ -9,9 +9,9 @@ Custom extension을 만들 때 사용자로부터 어떤 요청을 어떻게 받
 
 | 구분         | 설명                            |
 |-------------|--------------------------------|
-| Intent              | 사용자의 요청을 구별하여 정의한 명세입니다. Custom extension은 *intent*의 집합으로 구성된 Interaction 모델이 있어야 합니다. CEK는 분석된 사용자의 발화 정보를 [IntentRequest](/CEK/References/Custom_Extension_Message_Format.md#IntentRequest) 타입의 요청 메시지로 extension에 전달합니다. 이때, Interaction 모델에 정의된 *intent*를 참조하여 메시지를 구성합니다. |
-| slot | Slot은 *intent*에 선언된 요청을 처리할 때 필요한 정보이며, *intent*를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 되며, CEK가 extension으로 *IntentRequest* 메시지를 보낼 때 key, value 쌍의 *slot* 정보를 함께 전달합니다.  |
-| 사용자 발화 예시        | 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. *Intent*별로 복수의 사례를 정의할 수 있으며, 예문에는 slot이 표시됩니다. Clova는 사용자 요청을 분석하는 데 이 정보를 사용합니다. |
+| `Intent`              | 사용자의 요청을 구별하여 정의한 명세입니다. Custom extension은 `intent`의 집합으로 구성된 Interaction 모델이 있어야 합니다. CEK는 분석된 사용자의 발화 정보를 [`IntentRequest`](/CEK/References/Custom_Extension_Message_Format.md#IntentRequest) 타입의 요청 메시지로 extension에 전달합니다. 이때, Interaction 모델에 정의된 `intent`를 참조하여 메시지를 구성합니다. |
+| `slot` | Slot은 `intent`에 선언된 요청을 처리할 때 필요한 정보이며, `intent`를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 되며, CEK가 extension으로 `IntentRequest` 메시지를 보낼 때 key, value 쌍의 `slot` 정보를 함께 전달합니다.  |
+| 사용자 발화 예시        | 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. `Intent`별로 복수의 사례를 정의할 수 있으며, 예문에는 `slot`이 표시됩니다. Clova는 사용자 요청을 분석하는 데 이 정보를 사용합니다. |
 
 예를 들어, custom extension이 피자 주문 서비스를 제공한다고 가정할 때 사용자로부터 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 들어온다고 가정할 수 있습니다. 이런 사용자 요청을 Intent로 정의하면 다음과 같이 정의할 수 있습니다.
 
@@ -47,7 +47,7 @@ Custom extension을 만들 때 사용자로부터 어떤 요청을 어떻게 받
 ```
 {% endraw %}
 
-사용자 발화 예시는 사용자의 요청이 정의해 둔 *intent*와 *slot*으로 연결(mapping)되는지 나타냅니다. 또한, 이 정보는 같은 의도를 가지지만 표현이 다를 수 있는 사용자의 요청을 처리할 때에도 사용됩니다.
+사용자 발화 예시는 사용자의 요청이 정의해 둔 `intent`와 `slot`으로 연결(mapping)되는지 나타냅니다. 또한, 이 정보는 같은 의도를 가지지만 표현이 다를 수 있는 사용자의 요청을 처리할 때에도 사용됩니다.
 
 {% raw %}
 ```

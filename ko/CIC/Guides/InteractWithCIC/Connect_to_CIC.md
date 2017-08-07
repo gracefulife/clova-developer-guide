@@ -68,7 +68,7 @@ https://prod-ni-cic.clova.ai/
 
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
 
-Downchannel은 */v1/directives* 경로로 *GET* 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
+Downchannel은 `/v1/directives` 경로로 `GET` 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
 
 {% raw %}
 ```
@@ -79,9 +79,26 @@ Authorization: Bearer {{ClovaAccessToken}}
 ```
 {% endraw %}
 
+위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/CIC/References/APIs/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지 전달될 준비가 되었음을 나타냅니다.
+
+{% raw %}
+```
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "Hello"
+        },
+        "payload": {}
+    }
+}
+```
+{% endraw %}
+
 <div class="note">
 <p><strong>Note!</strong></p>
-<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 */v1/directives*으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li></ul>
+<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li></ul>
 </div>
 
 
@@ -112,8 +129,8 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1분마다 GET 요청을 /ping으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p>
-<p>다음은 /ping으로 GET 요청을 보내는 예제입니다.</p>
+<p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1분마다 <code>GET</code> 요청을 <code>/ping</code>으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p>
+<p>다음은 <code>/ping</code>으로 <code>GET</code> 요청을 보내는 예제입니다.</p>
 <pre><code>:method = GET
 :scheme = https
 :path = /ping

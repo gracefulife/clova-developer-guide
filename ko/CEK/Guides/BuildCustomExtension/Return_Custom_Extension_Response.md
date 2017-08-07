@@ -25,14 +25,14 @@
 
 각 필드는 다음과 같은 의미를 가집니다.
 
-* *version* : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
-* *response.outputSpeech* : 사용자에게 영어로 "Hi, nice to meet you"의 문장을 말하도록 설정합니다.
-* *response.card* : 클라이언트 화면에 표시할 데이터가 없습니다. [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.
-* *response.shouldEndSession* : 현재 세션을 종료하지 않고 계속 사용자의 입력을 받습니다. 만약 이 필드 값이 true이면 *[SessionEndedRequest](#SessionEndedRequest)* 요청을 받기 전에 extension이 주도하여 세션을 종료할 수 있습니다.
+* `version` : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* `response.outputSpeech` : 사용자에게 영어로 "Hi, nice to meet you"의 문장을 말하도록 설정합니다.
+* `response.card` : 클라이언트 화면에 표시할 데이터가 없습니다. [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.
+* `response.shouldEndSession` : 현재 세션을 종료하지 않고 계속 사용자의 입력을 받습니다. 만약 이 필드 값이 true이면 [`SessionEndedRequest`](#SessionEndedRequest) 요청을 받기 전에 extension이 주도하여 세션을 종료할 수 있습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><em>sessionAttributes</em> 필드는 확장을 위해 예약해 둔 필드이며, <em>response.directives</em> 필드는 extension이 CEK로 전달하는 지시 메시지입니다. <em>response.directives</em> 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다.</p>
+  <p><code>sessionAttributes</code> 필드는 확장을 위해 예약해 둔 필드이며, <code>response.directives</code> 필드는 extension이 CEK로 전달하는 지시 메시지입니다. <code>response.directives</code> 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다.</p>
 </div>
 
 다음과 같이 경우에 따라서 여러 문장을 출력하도록 응답 메시지를 작성할 수도 있고, 인터넷 상에 있는 음성 파일이나 음악 파일을 재생하도록 응답 메시지를 작성할 수도 있습니다.
@@ -66,7 +66,7 @@
 ```
 {% endraw %}
 
-각 *response.outputSpeech* 필드를 설명하면 다음과 같습니다.
+각 `response.outputSpeech` 필드를 설명하면 다음과 같습니다.
 
 * *response.outputSpeech.type* : 복문 타입(SpeechList)의 음성 정보입니다.
 * *response.outputSpeech.values[0]* : 일반 텍스트 형태의 음성 정보이며, 한국어로 "노래를 불러볼게요"라고 발화하도록 설정했습니다.

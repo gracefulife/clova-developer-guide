@@ -21,8 +21,8 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| muted         | boolean | 음소거 여부                    | 필수     |
-| volume        | number  | 현재 스피커의 볼륨 크기(0-10)     | 필수     |
+| `muted`         | boolean | 음소거 여부                    | 필수     |
+| `volume`        | number  | 현재 스피커의 볼륨 크기(0-10)     | 필수     |
 
 ### Message example
 {% raw %}
@@ -41,4 +41,4 @@
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)

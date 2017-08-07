@@ -8,18 +8,18 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 
 | Clova Home extension 요청 API | Clova Home extension 응답 API |
 |------------------------------|------------------------------|
-| DecrementTargetTemperatureRequest | DecrementTargetTemperatureConfirmation |
-| DiscoverAppliancesRequest         | DiscoverAppliancesResponse             |
-| GetLockStateRequest               | GetLockStateResponse                   |
-| GetTargetTemperatureRequest       | GetTargetTemperatureResponse           |
-| HealthCheckRequest                | HealthCheckResponse                    |
-| IncrementTargetTemperatureRequest | IncrementTargetTemperatureConfirmation |
-| SetLockStateRequest               | SetLockStateConfirmation               |
-| TurnOffRequest                    | TurnOffConfirmation                    |
-| TurnOnRequest                     | TurnOnConfirmation                     |
+| `DecrementTargetTemperatureRequest` | `DecrementTargetTemperatureConfirmation` |
+| `DiscoverAppliancesRequest`         | `DiscoverAppliancesResponse`             |
+| `GetLockStateRequest`               | `GetLockStateResponse`                   |
+| `GetTargetTemperatureRequest`       | `GetTargetTemperatureResponse`           |
+| `HealthCheckRequest`                | `HealthCheckResponse`                    |
+| `IncrementTargetTemperatureRequest` | `IncrementTargetTemperatureConfirmation` |
+| `SetLockStateRequest`               | `SetLockStateConfirmation`               |
+| `TurnOffRequest`                    | `TurnOffConfirmation`                    |
+| `TurnOnRequest`                     | `TurnOnConfirmation`                     |
 
 
-"거실 전등 켜줘"와 같은 제어 요청(*TurnOnRequest*)을 IoT 서비스에게 전달했고 IoT 서비스가 해당 요청이 정상적으로 처리되었다고 응답한 경우 다음과 같이 *[TurnOnRequest](/CEK/References/Clova_Home_API.md)* 메시지를 이용하여 결과를 CEK에게 전달해야 합니다.
+"거실 전등 켜줘"와 같은 제어 요청(`TurnOnRequest`)을 IoT 서비스에게 전달했고 IoT 서비스가 해당 요청이 정상적으로 처리되었다고 응답한 경우 다음과 같이 [`TurnOnRequest`](/CEK/References/Clova_Home_API.md) 메시지를 이용하여 결과를 CEK에게 전달해야 합니다.
 
 {% raw %}
 ```json
@@ -35,7 +35,7 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 ```
 {% endraw %}
 
-"현재 희망 온도 알려줘"와 같이 기기의 상태 정보(*GetTargetTemperatureRequest*)를 요청한 경우 다음과 같이 *[GetTargetTemperatureResponse](#GetTargetTemperatureResponse)* 메시지를 이용하여 상태 정보를 CEK에게 전달해야 합니다.
+"현재 희망 온도 알려줘"와 같이 기기의 상태 정보(`GetTargetTemperatureRequest`)를 요청한 경우 다음과 같이 [`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse) 메시지를 이용하여 상태 정보를 CEK에게 전달해야 합니다.
 
 {% raw %}
 ```json
@@ -66,7 +66,7 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 <p>오류 메시지 종류를 계속 추가할 예정입니다.</p>
 </div>
 
-다음은 기기에 접속할 수 없어 *TargetOfflineError* 오류 메시지를 전달한 예제입니다.
+다음은 기기에 접속할 수 없어 `TargetOfflineError` 오류 메시지를 전달한 예제입니다.
 
 {% raw %}
 ```json

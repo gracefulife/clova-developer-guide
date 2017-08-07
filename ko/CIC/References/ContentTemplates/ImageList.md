@@ -10,14 +10,14 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| ImageList[]                | object array | 이미지 목록을 표현하는 객체 배열                        | 필수 |
-| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 이미지의 출처 정보가 담긴 객체      | 선택 |
-| ImageList[].imageTitle     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 이미지 제목이 담긴 객체           | 선택 |
-| ImageList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 이미지의 URL 정보가 담긴 객체      | 선택 |
-| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체      | 선택 |
-| ImageList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체        | 선택 |
-| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 썸네일 이미지의 URL 정보가 담긴 객체 | 선택 |
-| type                       | string       | Content template 구분자. "ImageList"로 고정        | 필수 |
+| `ImageList[]`                | object array | 이미지 목록을 표현하는 객체 배열                        | 필수 |
+| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 이미지의 출처 정보가 담긴 객체      | 선택 |
+| `ImageList[].imageTitle`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 이미지 제목이 담긴 객체           | 선택 |
+| `ImageList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 이미지의 URL 정보가 담긴 객체      | 선택 |
+| `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체      | 선택 |
+| `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체        | 선택 |
+| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 썸네일 이미지의 URL 정보가 담긴 객체 | 선택 |
+| `type`                       | string       | Content template 구분자. **"ImageList"**로 고정        | 필수 |
 
 ## Template Example
 

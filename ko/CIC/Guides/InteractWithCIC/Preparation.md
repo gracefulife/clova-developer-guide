@@ -21,8 +21,8 @@ HTTP/2 프로토콜 연결을 위해 클라이언트 개발 시 다음과 같은
 
 | 인증 정보                   | 설명                                              |
 |---------------------------|--------------------------------------------------|
-| CLOVA_OAUTH_CLIENT_ID     | Clova Developer Console에 등록한 클라이언트 ID        |
-| CLOVA_OAUTH_CLIENT_SECRET | Clova Developer Console을 통해 획득한 클라이언트 인증 키 |
+| `CLOVA_OAUTH_CLIENT_ID`     | Clova Developer Console에 등록한 클라이언트 ID        |
+| `CLOVA_OAUTH_CLIENT_SECRET` | Clova Developer Console을 통해 획득한 클라이언트 인증 키 |
 
 <div class="note">
   <p><strong>Note!</strong></p>
