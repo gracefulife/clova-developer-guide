@@ -18,9 +18,10 @@
 | Clova              | [`GetMemo`](/CIC/References/APIs/Clova.md#GetMemo)                      | 클라이언트에게 메모를 조회하도록 지시합니다.                                                       |
 | Clova              | [`GetReminder`](/CIC/References/APIs/Clova.md#GetReminder)              | 클라이언트에게 리마인더를 조회하도록 지시합니다.                                                    |
 | Clova              | [`GetSchedule`](#GetSchedule)                                           | 클라이언트에게 일정을 조회하도록 지시합니다.                                                       |
+| Clova              | [`Hello`](#Hello)                                                       | 클라이언트에게 downchannel 연결 설정이 완료되었음을 일립니다.                                       |
 | Clova              | [`RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList)        | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                                                   |
 | Clova              | [`RenderReminderList`](/CIC/References/APIs/Clova.md#RenderReminderList) | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                                               |
-| Clova              | [Rend`erTemplate](/CIC/References/APIs/Clova.md#RenderTemplate)        | 클라이언트에게 템플릿을 표시하도록 지시합니다.                                                     |
+| Clova              | [`RenderTemplate`](/CIC/References/APIs/Clova.md#RenderTemplate)        | 클라이언트에게 템플릿을 표시하도록 지시합니다.                                                     |
 | Clova              | [`RenderText`](/CIC/References/APIs/Clova.md#RenderText)                | 클라이언트에게 텍스트를 표시하도록 지시합니다.                                                     |
 | Clova              | [`StartExtension`](/CIC/References/APIs/Clova.md#StartExtension)        | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.                                             |
 | PlaybackController | [`Mute`](/CIC/References/APIs/PlaybackController.md#Mute)               | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                                                |
