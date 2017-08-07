@@ -1,12 +1,12 @@
 # CardList Template
-화면에 카드 리스트형으로 표현될 데이터를 정형화한 템플릿입니다. CardList는 다시 다음과 같은 카드 타입을 가집니다. 각 카드 타입에 따라 *card* 객체의 구성 필드가 달라질 수 있습니다.
+화면에 카드 리스트형으로 표현될 데이터를 정형화한 템플릿입니다. CardList는 다시 다음과 같은 카드 타입을 가집니다. 각 카드 타입에 따라 `card` 객체의 구성 필드가 달라질 수 있습니다.
 
-| 카드 타입       | 타입 설명                      | *card* 객체 구성 필드          |
+| 카드 타입       | 타입 설명                      | `card` 객체 구성 필드          |
 |---------------|-----------------------------|-----------------------------|
-| Type1         | 콘텐츠의 이미지, 제목, 설명을 표시하는 카드 타입입니다.      | description, imageUrl, referenceText, referenceUrl, title           |
-| Type2         | 콘텐츠의 이미지, 제목, 설명, 링크를 표시하는 카드 타입입니다. | description, imageUrl, linkUrl, referenceText, referenceUrl, title  |
-| Type3         | 비디오 콘텐츠를 표시하는 카드 타입입니다.                 | description, imageUrl, referenceText, referenceUrl, title, videoUrl |
-| Type4         | 뉴스 콘텐츠를 표시하는 카드 타입입니다.                  | description, press, pressIconUrl, publishDate, title                |
+| `Type1`         | 콘텐츠의 이미지, 제목, 설명을 표시하는 카드 타입입니다.      | `description`, `imageUrl`, `referenceText`, `referenceUrl`, `title`           |
+| `Type2`         | 콘텐츠의 이미지, 제목, 설명, 링크를 표시하는 카드 타입입니다. | `description`, `imageUrl`, `linkUrl`, `referenceText`, `referenceUrl`, `title`  |
+| `Type3`         | 비디오 콘텐츠를 표시하는 카드 타입입니다.                 | `description`, `imageUrl`, `referenceText`, `referenceUrl`, `title`, `videoUrl` |
+| `Type4`         | 뉴스 콘텐츠를 표시하는 카드 타입입니다.                  | `description`, `press`, `pressIconUrl`, `publishDate`, `title`                |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -17,19 +17,19 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| cardList[]                | object array | 카드 목록을 표현하는 객체 배열 | 필수     |
-| cardList[].description    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열         | 선택 |
-| cardList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 표시해야 할 이미지의 URL이 담긴 객체    | 선택 |
-| cardList[].linkUrl        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 콘텐츠의 URL 정보가 담긴 객체         | 선택 |
-| cardList[].press          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체             | 선택 |
-| cardList[].pressIconUrl   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 언론사 아이콘의 URL 정보가 담긴 객체    | 선택 |
-| cardList[].publishDate    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | 기사 발표 일자가 담긴 객체            | 선택 |
-| cardList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 출처의 텍스트 정보가 담긴 객체         | 선택 |
-| cardList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체          | 선택 |
-| cardList[].title          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             | 선택 |
-| cardList[].videoUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체    | 선택 |
-| subType                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li>Type1</li><li>Type2</li><li>Type3</li><li>Type4</li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 Type1, Type2, Type3은 빈 문자열로 표현됩니다. 따라서 <em>card</em> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
-| type                      | string  | Content template 구분자. "CardList"로 고정                                                                       | 필수 |
+| `cardList[]`                | object array | 카드 목록을 표현하는 객체 배열 | 필수     |
+| `cardList[].description`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열         | 선택 |
+| `cardList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 표시해야 할 이미지의 URL이 담긴 객체    | 선택 |
+| `cardList[].linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 콘텐츠의 URL 정보가 담긴 객체         | 선택 |
+| `cardList[].press`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체             | 선택 |
+| `cardList[].pressIconUrl`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 언론사 아이콘의 URL 정보가 담긴 객체    | 선택 |
+| `cardList[].publishDate`    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | 기사 발표 일자가 담긴 객체            | 선택 |
+| `cardList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 출처의 텍스트 정보가 담긴 객체         | 선택 |
+| `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체          | 선택 |
+| `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             | 선택 |
+| `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체    | 선택 |
+| `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
+| `type`                      | string  | Content template 구분자. **"CardList"**로 고정                                                                       | 필수 |
 
 ## Template Example
 
@@ -361,11 +361,11 @@
 ## Screen UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
-| Type1 | Type2 |
+| `Type1` | `Type2` |
 |-------|-------|
 | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_with_Link_Type.png" /></div> |
 
-| Type3 | Type4 |
+| `Type3` | `Type4` |
 |-------|-------|
 | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Video_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-News_Card_Type.png" /></div> |
 

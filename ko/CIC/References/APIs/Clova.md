@@ -1,25 +1,26 @@
 # Clova
 
-클라이언트의 요청이 인식된 결과를 클라이언트로 전달하는 지시 메시지의 일부 집합입니다. 사용자의 요청이 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
+클라이언트의 요청이 인식된 결과를 클라이언트로 전달하는 지시 메시지의 일부 집합입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [AddMemo](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                   |
-| [AddReminder](#AddReminder)               | Directive | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.               |
-| [AddSchedule](#AddSchedule)               | Directive | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                  |
-| [CountSchedule](#CountSchedule)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
-| [DeleteMemo](#DeleteMemo)                 | Directive | 클라이언트에게 메모를 삭제하도록 지시합니다.                       |
-| [DeleteReminder](#DeleteReminder)         | Directive | 클라이언트에게 리마인더를 삭제하도록 지시합니다.                    |
-| [DeleteSchedule](#DeleteSchedule)         | Directive | 클라이언트에게 일정을 삭제하도록 지시합니다.                       |
-| [FinishExtension](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
-| [GetMemo](#GetMemo)                       | Directive | 클라이언트에게 메모를 조회하도록 지시합니다.                       |
-| [GetReminder](#GetReminder)               | Directive | 클라이언트에게 리마인더를 조회하도록 지시합니다.                    |
-| [GetSchedule](#GetSchedule)               | Directive | 클라이언트에게 일정을 조회하도록 지시합니다.                       |
-| [RenderMemoList](#RenderMemoList)         | Directive | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                   |
-| [RenderReminderList](#RenderReminderList) | Directive | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                |
-| [RenderTemplate](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
-| [RenderText](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
-| [StartExtension](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
+| [`AddMemo`](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                   |
+| [`AddReminder`](#AddReminder)               | Directive | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.               |
+| [`AddSchedule`](#AddSchedule)               | Directive | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                  |
+| [`CountSchedule`](#CountSchedule)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
+| [`DeleteMemo`](#DeleteMemo)                 | Directive | 클라이언트에게 메모를 삭제하도록 지시합니다.                       |
+| [`DeleteReminder`](#DeleteReminder)         | Directive | 클라이언트에게 리마인더를 삭제하도록 지시합니다.                    |
+| [`DeleteSchedule`](#DeleteSchedule)         | Directive | 클라이언트에게 일정을 삭제하도록 지시합니다.                       |
+| [`FinishExtension`](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
+| [`GetMemo`](#GetMemo)                       | Directive | 클라이언트에게 메모를 조회하도록 지시합니다.                       |
+| [`GetReminder`](#GetReminder)               | Directive | 클라이언트에게 리마인더를 조회하도록 지시합니다.                    |
+| [`GetSchedule`](#GetSchedule)               | Directive | 클라이언트에게 일정을 조회하도록 지시합니다.                       |
+| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 일립니다.       |
+| [`RenderMemoList`](#RenderMemoList)         | Directive | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                   |
+| [`RenderReminderList`](#RenderReminderList) | Directive | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                |
+| [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
+| [`RenderText`](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
+| [`StartExtension`](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
 
 
 
@@ -31,12 +32,12 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| content       | string  | 추가할 메모의 내용              | 필수     |
-| id            | string  | 추가할 메모의 ID               | 필수     |
+| `content`       | string  | 추가할 메모의 내용              | 필수     |
+| `id`            | string  | 추가할 메모의 ID               | 필수     |
 
 ### Remarks
 
-새로운 메모 생성이 완료되면 그 결과를 [Memo.Created](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 메모 생성이 완료되면 그 결과를 [`Memo.Created`](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -62,10 +63,10 @@
 {% endraw %}
 
 ### See also
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Created](/CIC/References/APIs/Memo.md#Created)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Created`](/CIC/References/APIs/Memo.md#Created)
 
 ## AddReminder directive {#AddReminder}
 
@@ -75,12 +76,12 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| content       | string  | 추가할 리마인더의 내용           | 필수     |
-| id            | string  | 추가할 리마인더의 ID            | 필수     |
+| `content`       | string  | 추가할 리마인더의 내용           | 필수     |
+| `id`            | string  | 추가할 리마인더의 ID            | 필수     |
 
 ### Remarks
 
-새로운 리마인더 생성이 완료되면 그 결과를 [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 리마인더 생성이 완료되면 그 결과를 [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -106,10 +107,10 @@
 {% endraw %}
 
 ### See also
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Created](/CIC/References/APIs/Reminder.md#Created)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created)
 
 ## AddSchedule directive {#AddSchedule}
 
@@ -119,15 +120,15 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| content       | string | 일정 내용                                                                    | 선택    |
-| id            | string | 추가할 일정의 ID                                                              | 필수    |
-| period        | string | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 일정 종료 시간은 *scheduledTime*에 *period* 만큼 더한 값으로 설정합니다. <ul><li>"none": 기간 없음</li><li>"year": 1년</li><li>"month": 1개월</li><li>"week": 1주</li><li>"day": 1일</li><li>"hour": 1시간</li><li>"minute": 1분</li></ul>          | 필수    |
-| scheduledTime | string | 추가할 일정의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
+| `content`       | string | 일정 내용                                                                    | 선택    |
+| `id`            | string | 추가할 일정의 ID                                                              | 필수    |
+| `period`        | string | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 일정 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>          | 필수    |
+| `scheduledTime` | string | 추가할 일정의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 
 ### Remarks
 
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 등록을 지원하지 않는데 *period* 값으로 "year"를 수신하면 예외 처리를 해야 합니다. "일정 추가해줘"처럼 기간을 알 수 없다면 *period*는 "none", *scheduledTime*은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 등록을 지원하지 않는데 `period` 값으로 **"year"**를 수신하면 예외 처리를 해야 합니다. "일정 추가해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -156,9 +157,9 @@
 
 ### See also
 
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## CountSchedule directive {#CountSchedule}
 
@@ -168,12 +169,12 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| period        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 *scheduledTime*에 *period* 만큼 더한 값으로 설정합니다. <ul><li>"none": 기간 없음</li><li>"year": 1년</li><li>"month": 1개월</li><li>"week": 1주</li><li>"day": 1일</li><li>"hour": 1시간</li><li>"minute": 1분</li></ul>                | 필수    |
+| period        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li>"none": 기간 없음</li><li>"year": 1년</li><li>"month": 1개월</li><li>"week": 1주</li><li>"day": 1일</li><li>"hour": 1시간</li><li>"minute": 1분</li></ul>                | 필수    |
 | scheduledTime | string  | 일정을 조회할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Remarks
 
-클라이언트가 처리할 수 없는 조회 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 *period* 값으로 "year"를 수신하면 예외 처리를 해야 합니다. "일정이 몇 개야"처럼 기간을 알 수 없다면 *period*는 "none", *scheduledTime*은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 조회 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 `period` 값으로 "year"를 수신하면 예외 처리를 해야 합니다. "일정이 몇 개야"처럼 기간을 알 수 없다면 `period`는 "none", `scheduledTime`은 현재 시간이 전달됩니다.
 
 
 ### Message example
@@ -200,13 +201,13 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## DeleteMemo directive {#DeleteMemo}
 
-클라이언트에게 메모 삭제를 진행하도록 지시합니다. 클라이언트는 DeleteMemo 지시 메시지를 전달받으면 사용자가 메모를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
+클라이언트에게 메모 삭제를 진행하도록 지시합니다. 클라이언트는 `DeleteMemo` 지시 메시지를 전달받으면 사용자가 메모를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
 
 ### Payload field
 
@@ -214,7 +215,7 @@
 
 ### Remarks
 
-메모 삭제가 완료되면 그 결과를 [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+메모 삭제가 완료되면 그 결과를 [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -237,14 +238,14 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted)
 
 ## DeleteReminder directive {#DeleteReminder}
 
-클라이언트에게 리마인더 삭제를 진행하도록 지시합니다. 클라이언트는 DeleteReminder 지시 메시지를 전달받으면 사용자가 리마인더를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
+클라이언트에게 리마인더 삭제를 진행하도록 지시합니다. 클라이언트는 `DeleteReminder` 지시 메시지를 전달받으면 사용자가 리마인더를 삭제할 수 있는 적절한 인터페이스를 제공해야 합니다.
 
 ### Payload field
 
@@ -252,7 +253,7 @@
 
 ### Remarks
 
-리마인더 삭제가 완료되면 그 결과를 [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+리마인더 삭제가 완료되면 그 결과를 [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -275,10 +276,10 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted)
 
 ## DeleteSchedule directive {#DeleteSchedule}
 
@@ -288,12 +289,12 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| period        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 삭제할 범위의 종료 시간은 *scheduledTime*에 *period* 만큼 더한 값으로 설정합니다. <ul><li>"none": 기간 없음</li><li>"year": 1년</li><li>"month": 1개월</li><li>"week": 1주</li><li>"day": 1일</li><li>"hour": 1시간</li><li>"minute": 1분</li></ul>                | 필수    |
-| scheduledTime | string  | 일정을 삭제할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
+| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 삭제할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>                | 필수    |
+| `scheduledTime` | string  | 일정을 삭제할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Remarks
 
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 주간 일정 삭제를 지원하지 않는데 *period* 값으로 "week"를 수신하면 예외 처리를 해야 합니다. "일정 삭제해줘"처럼 기간을 알 수 없다면 *period*는 "none", *scheduledTime*은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 주간 일정 삭제를 지원하지 않는데 `period` 값으로 **"week"**를 수신하면 예외 처리를 해야 합니다. "일정 삭제해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -316,9 +317,9 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## FinishExtension directive {#FinishExtension}
 
@@ -328,11 +329,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| extension     | string  | 종료할 Extension 이름          | 필수     |
+| `extension`     | string  | 종료할 Extension 이름          | 필수     |
 
 ### Remarks
 
-현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "See you later" 발화로 모드 종료가 가능합니다. 이때, FinishExtension 지시 메시지의 *extension* 필드 값으로 "freetalking"이 전달됩니다.
+현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "See you later" 발화로 모드 종료가 가능합니다. 이때, FinishExtension 지시 메시지의 `extension` 필드 값으로 "freetalking"이 전달됩니다.
 
 ### Message example
 
@@ -357,7 +358,7 @@
 {% endraw %}
 
 ### See also
-* [Clova.StartExtension](#StartExtension)
+* [`Clova.StartExtension`](#StartExtension)
 
 ## GetMemo directive {#GetMemo}
 
@@ -388,11 +389,11 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Get](/CIC/References/APIs/Memo.md#Get)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
 
 ## GetReminder directive {#GetReminder}
 
@@ -423,10 +424,10 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
 
 ## GetSchedule directive {#GetSchedule}
 
@@ -436,11 +437,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| period        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 *scheduledTime*에 *period* 만큼 더한 값으로 설정합니다. <ul><li>"none": 기간 없음</li><li>"year": 1년</li><li>"month": 1개월</li><li>"week": 1주</li><li>"day": 1일</li><li>"hour": 1시간</li><li>"minute": 1분</li></ul>                | 필수    |
-| scheduledTime | string  | 일정을 조회할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
+| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>                | 필수    |
+| `scheduledTime` | string  | 일정을 조회할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Remarks
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 *period* 값으로 "year"를 수신하면 예외 처리를 해야 합니다. "일정 조회해줘"처럼 기간을 알 수 없다면 *period*는 "none", *scheduledTime*은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 `period` 값으로 **"year"**를 수신하면 예외 처리를 해야 합니다. "일정 조회해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -466,9 +467,42 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+
+## Hello directive {#Hello}
+
+클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다. 클라이언트는 이 지시 메시지를 통해 Clova 서비스에 대한 [접속 시도](/CIC/Guides/Interact_with_CIC.md#CreateConnection)가 제대로 수행되었는지 확인할 수 있습니다.
+
+### Payload field
+
+없음.
+
+### Remarks
+이 지시 메시지는 대화 ID(`dialogRequestId`)를 가지지 않습니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "Hello"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+* [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
 ## RenderMemoList directive {#RenderMemoList}
 
@@ -478,10 +512,10 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| memo[]           | object array | 메모 목록을 포함하고 있는 객체 배열                                         | 필수    |
-| memo[].content   | string       | 표시할 메모의 내용                                                      | 필수    |
-| memo[].id        | string       | 표시할 메모의 ID                                                       | 필수    |
-| memo[].timestamp | string       | 메모 생성 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
+| `memo[]`           | object array | 메모 목록을 포함하고 있는 객체 배열                                         | 필수    |
+| `memo[].content`   | string       | 표시할 메모의 내용                                                      | 필수    |
+| `memo[].id`        | string       | 표시할 메모의 ID                                                       | 필수    |
+| `memo[].timestamp` | string       | 메모 생성 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Message example
 
@@ -517,13 +551,13 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderTemplate](#RenderTemplate)
-* [Clova.RenderText](#RenderText)
-* [Memo.Get](/CIC/References/APIs/Memo.md#Get)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
+* [`Clova.RenderText`](#RenderText)
+* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
 
 ## RenderReminderList directive {#RenderReminderList}
 
@@ -533,10 +567,10 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| reminder[]         | object array | 리마인더 목록을 포함하고 있는 객체 배열 | 필수    |
-| reminder[].content | string       | 표시할 리마인더의 내용              | 필수    |
-| reminder[].done    | boolean      | 리마인더를 완료했는지 여부           | 필수    |
-| reminder[].id      | string       | 표시할 리마인더의 ID               | 필수    |
+| `reminder[]`         | object array | 리마인더 목록을 포함하고 있는 객체 배열 | 필수    |
+| `reminder[].content` | string       | 표시할 리마인더의 내용              | 필수    |
+| `reminder[].done`    | boolean      | 리마인더를 완료했는지 여부           | 필수    |
+| `reminder[].id`      | string       | 표시할 리마인더의 ID               | 필수    |
 
 ### Message example
 
@@ -572,20 +606,20 @@
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderTemplate](#RenderTemplate)
-* [Clova.RenderText](#RenderText)
-* [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
+* [`Clova.RenderText`](#RenderText)
+* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
 
 ## RenderTemplate directive {#RenderTemplate}
 
-클라이언트에게 데이터를 템플릿에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
+클라이언트에게 데이터를 content template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
 ### Payload field
-*payload* 필드는 [템플릿](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 템플릿을 제공하고 있습니다.
+`payload` 필드는 [content template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 content template을 제공하고 있습니다.
 
 * 콘텐츠 UI 유형별 템플릿
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
@@ -627,9 +661,9 @@
 {% endraw %}
 
 ### See also
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderText](#RenderText)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderText`](#RenderText)
 * [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
@@ -640,7 +674,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| text          | string  | 사용자에게 보여줄 텍스트          | 필수     |
+| `text`          | string  | 사용자에게 보여줄 텍스트          | 필수     |
 
 ### Message example
 
@@ -665,9 +699,9 @@
 {% endraw %}
 
 ### See also
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderTemplate](#RenderTemplate)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
 
 ## StartExtension directive {#StartExtension}
 
@@ -677,11 +711,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| extension     | string  | 시작할 Extension 이름          | 필수     |
+| `extension`     | string  | 시작할 Extension 이름          | 필수     |
 
 ### Remarks
 
-현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, StartExtension 지시 메시지의 *extension* 필드 값으로 "freetalking"이 전달됩니다.
+현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, `StartExtension` 지시 메시지의 `extension` 필드 값으로 **"freetalking"**이 전달됩니다.
 
 ### Message example
 
@@ -707,4 +741,4 @@
 
 ### See also
 
-- [Clova.FinishExtension](#FinishExtension)
+* [`Clova.FinishExtension`](#FinishExtension)

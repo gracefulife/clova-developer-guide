@@ -1,0 +1,3395 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Clova Home API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Clova_Home_Extension_Message_Format.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Copyright.html">
+            
+                <a href="../../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Terms.html">
+            
+                <a href="../../Terms.html">
+            
+                    
+                    용어집
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP 응답
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP 메시지 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#authorize">
+            
+                    
+                    /authorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#token">
+            
+                    
+                    /token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html">
+            
+                    
+                    CIC 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../../CIC/References/APIs/Alerts.html">
+            
+                <a href="../../CIC/References/APIs/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../../CIC/References/APIs/AudioPlayer.html">
+            
+                <a href="../../CIC/References/APIs/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../../CIC/References/APIs/Clova.html">
+            
+                <a href="../../CIC/References/APIs/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../../CIC/References/APIs/Memo.html">
+            
+                <a href="../../CIC/References/APIs/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../../CIC/References/APIs/PlaybackController.html">
+            
+                <a href="../../CIC/References/APIs/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../../CIC/References/APIs/Reminder.html">
+            
+                <a href="../../CIC/References/APIs/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../../CIC/References/APIs/SpeechRecognizer.html">
+            
+                <a href="../../CIC/References/APIs/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                <a href="../../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../../CIC/References/APIs/Index_for_Events.html">
+            
+                <a href="../../CIC/References/APIs/Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../../CIC/References/APIs/Index_for_Directives.html">
+            
+                <a href="../../CIC/References/APIs/Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../CIC/References/Content_Templates.html">
+            
+                <a href="../../CIC/References/Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../CIC/References/ContentTemplates/CardList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../CIC/References/ContentTemplates/CarRoute.html">
+            
+                <a href="../../CIC/References/ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../../CIC/References/ContentTemplates/Text.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Guides/LinkUserAccount.html">
+            
+                <a href="../Guides/LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="HTTP_Message_Format.html">
+            
+                <a href="HTTP_Message_Format.html">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Custom_Extension_Message_Format.html">
+            
+                <a href="Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Clova_Home_Extension_Message_Format.html">
+            
+                <a href="Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.7.1" data-path="Clova_Home_API.html">
+            
+                <a href="Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Clova Home API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="clova-home-api">Clova Home API</h1>
+<p>IoT &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; API&#xC774;&#xBA70;, &#xBA54;&#xC2DC;&#xC9C0; &#xD5E4;&#xB354;(<code>header</code>)&#xC758; &#xAC12;&#xC73C;&#xB85C; <strong>&quot;ClovaHome&quot;</strong>&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. Clova Home extension&#xC740; &#xC774; API&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAC70;&#xB098; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; IoT &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. Clova Home API&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBD84;&#xB958;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="#DiscoveryAPI">Discovery API</a></li>
+<li><a href="#ControlAPI">Control API</a></li>
+<li><a href="#ErrorAPI">Error API</a></li>
+<li><a href="#SharedObjects">Shared objects</a></li>
+</ul>
+<h2 id="DiscoveryAPI">Discovery API </h2>
+<p>&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; IoT &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; &#xD655;&#xC778;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; API&#xC785;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC774;&#xB984;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xD0C0;&#xC785;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></td>
+<td>Request</td>
+<td>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; IoT &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></td>
+<td>Response</td>
+<td><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; IoT &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DiscoverAppliancesRequest">DiscoverAppliancesRequest </h3>
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="DiscoverAppliancesResponse"><code>ClovaHome.DiscoverAppliancesResponse</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>Clova Home extension&#xC758; access token</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;header&quot;</span>: {
+        <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;8ddd7f05-7703-4cb4-a6dd-93c209c6647b&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesRequest&quot;</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+        <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></li>
+</ul>
+<h3 id="DiscoverAppliancesResponse">DiscoverAppliancesResponse </h3>
+<p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <a href="DiscoverAppliancesRequest"><code>ClovaHome.DiscoverAppliancesRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>discoveredAppliances[]</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a> array</td>
+<td>&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; &#xD45C;&#xD604;&#xD558;&#xB294; &#xAC1D;&#xCCB4; &#xBC30;&#xC5F4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remarks">Remarks</h4>
+<p>IoT &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xB54C; &#xAC01; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;99f9d8ff-9366-4cab-a90c-b4c7eca0abbe&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;discoveredAppliances&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xAC70;&#xC2E4; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0;&#xC73C;&#xB85C; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">&quot;actions&quot;</span>: [
+            <span class="hljs-string">&quot;TurnOn&quot;</span>,
+            <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;LIGHT&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      },
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-002&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xBD80;&#xC5CC; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC5D0;&#xB108;&#xC9C0;&#xB97C; &#xC808;&#xC57D;&#xD558;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;actions&quot;</span>: [
+          <span class="hljs-string">&quot;TurnOn&quot;</span>,
+          <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;SMARTPLUG&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></li>
+</ul>
+<h2 id="ControlAPI">Control API </h2>
+<p>IoT &#xAE30;&#xAE30; &#xC815;&#xBCF4; &#xD655;&#xC778; &#xBC0F; &#xAE30;&#xAE30; &#xC81C;&#xC5B4;&#xC640; &#xAD00;&#xB828;&#xB41C; &#xC694;&#xCCAD; &#xBC0F; &#xC751;&#xB2F5;&#xC744; &#xC218;&#xD589;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; API&#xC785;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC774;&#xB984;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xD0C0;&#xC785;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#IncrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xD32C; &#xC18D;&#xB3C4;&#xB97C; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></td>
+<td>Response</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xD32C; &#xC18D;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC628;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xC628;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968; &#xD06C;&#xAE30;&#xB97C; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></td>
+<td>Response</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xBCFC;&#xB968; &#xD06C;&#xAE30;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a></td>
+<td>Request</td>
+<td>&#xC9C0;&#xC815;&#xD55C; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xD30C;&#xC545;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></td>
+<td>Response</td>
+<td><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD55C; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xD32C;&#xC758; &#xC18D;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></td>
+<td>Response</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xD32C; &#xC18D;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC628;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xC628;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968;&#xC744; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></td>
+<td>Response</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xBCFC;&#xB968; &#xD06C;&#xAE30;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#SetModeConfirmation"><code>SetChannelConfirmation</code></a></td>
+<td>Request</td>
+<td><a href="#SetChannelRequest"><code>SetChannelRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; TV &#xCC44;&#xB110;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#SetModeRequest"><code>SetChannelRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xCC44;&#xB110;&#xB85C; TV &#xCC44;&#xB110;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></td>
+<td>Request</td>
+<td><a href="#SetModeRequest"><code>SetModeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#SetModeRequest"><code>SetModeRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xBAA8;&#xB4DC;&#xB85C; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#TurnOffRequest"><code>TurnOffRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xB044;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#TurnOffRequest"><code>TurnOffRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xB044;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a></td>
+<td>Response</td>
+<td><a href="#TurnOnRequest"><code>TurnOnRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xCF1C;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#TurnOnRequest"><code>TurnOnRequest</code></a></td>
+<td>Request</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xCF1C;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DecrementFanSpeedConfirmation">DecrementFanSpeedConfirmation </h3>
+<p><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xD32C; &#xC18D;&#xB3C4;&#xB97C; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xD604;&#xC7AC; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xC774;&#xC804; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">4</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="DecrementFanSpeedRequest">DecrementFanSpeedRequest </h3>
+<p>&#xC8FC;&#xB85C; &#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xC218;&#xC900;&#xB9CC;&#xD07C; &#xD32C;&#xC758; &#xC18D;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></li>
+</ul>
+<h3 id="DecrementTargetTemperatureConfirmation">DecrementTargetTemperatureConfirmation </h3>
+<p><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC628;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xD604;&#xC7AC; &#xD76C;&#xB9DD; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xC774;&#xC804; &#xD76C;&#xB9DD; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">23.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="DecrementTargetTemperatureRequest">DecrementTargetTemperatureRequest </h3>
+<p>&#xC8FC;&#xB85C; &#xC5D0;&#xC5B4;&#xCEE8;&#xACFC; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xC628;&#xB3C4;&#xB97C; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2.0</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></li>
+</ul>
+<h3 id="DecrementVolumeConfirmation">DecrementVolumeConfirmation </h3>
+<p><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968; &#xD06C;&#xAE30;&#xB97C; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetVolume</code></td>
+<td><a href="#SpeedObject">VolumeObject</a></td>
+<td>&#xD604;&#xC7AC; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.targetVolume</code></td>
+<td><a href="#SpeedObject">VolumeObject</a></td>
+<td>&#xC774;&#xC804; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></li>
+</ul>
+<h3 id="DecrementVolumeRequest">DecrementVolumeRequest </h3>
+<p>&#xC8FC;&#xB85C; TV &#xC14B;&#xD1B1; &#xBC15;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xC218;&#xC900;&#xB9CC;&#xD07C; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968;&#xC744; &#xB0AE;&#xCD94;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></li>
+</ul>
+<h3 id="HealthCheckRequest">HealthCheckRequest </h3>
+<p>&#xC9C0;&#xC815;&#xD55C; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xD30C;&#xC545;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>Clova Home extension&#xC758; access token</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;HealthCheckRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></li>
+</ul>
+<h3 id="HealthCheckResponse">HealthCheckResponse </h3>
+<p><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xB41C; &#xAE30;&#xAE30;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isReachable</code></td>
+<td>boolean</td>
+<td>&#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C; &#xD1B5;&#xD574; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC811;&#xADFC; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xAC12;. <ul><li><strong>true</strong> : &#xC811;&#xADFC; &#xAC00;&#xB2A5;(online)</li><li><strong>false</strong> : &#xC811;&#xADFC; &#xBD88;&#xAC00;(offline)</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>isTurnOn</code></td>
+<td>boolean</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; &#xB3D9;&#xC791; &#xC0C1;&#xD0DC;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xAC12;. <ul><li><strong>true</strong> : &#xB300;&#xAE30; &#xC0C1;&#xD0DC;(idle)</li><li><strong>false</strong> : &#xB3D9;&#xC791; &#xC0C1;&#xD0DC;(working)</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;HealthCheckResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;isTurnOn&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a></li>
+</ul>
+<h3 id="IncrementFanSpeedConfirmation">IncrementFanSpeedConfirmation </h3>
+<p><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xD32C;&#xC758; &#xC18D;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xD604;&#xC7AC; &#xD32C;&#xC758; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.FanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xC774;&#xC804; &#xD32C;&#xC758; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="IncrementFanSpeedRequest">IncrementFanSpeedRequest </h3>
+<p>&#xC8FC;&#xB85C; &#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xD32C;&#xC758; &#xC18D;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></li>
+</ul>
+<h3 id="IncrementTargetTemperatureConfirmation">IncrementTargetTemperatureConfirmation </h3>
+<p><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC628;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xD604;&#xC7AC; &#xD76C;&#xB9DD; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xC774;&#xC804; &#xD76C;&#xB9DD; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">22.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="IncrementTargetTemperatureRequest">IncrementTargetTemperatureRequest </h3>
+<p>&#xC8FC;&#xB85C; &#xC5D0;&#xC5B4;&#xCEE8;&#xACFC; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xC628;&#xB3C4;&#xB97C; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3.0</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></li>
+</ul>
+<h3 id="IncrementVolumeConfirmation">IncrementVolumeConfirmation </h3>
+<p><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968;&#xC744; &#xB192;&#xC774;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>&#xD604;&#xC7AC; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>&#xAE30;&#xAE30;&#xC758; &#xC774;&#xC804; &#xC0C1;&#xD669; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>previousState.targetVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>&#xC774;&#xC804; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></li>
+</ul>
+<h3 id="IncrementVolumeRequest">IncrementVolumeRequest </h3>
+<p>&#xC8FC;&#xB85C; TV &#xC14B;&#xD1B1; &#xBC15;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xB9CC;&#xD07C; &#xC2A4;&#xD53C;&#xCEE4; &#xBCFC;&#xB968;&#xC744; &#xB192;&#xC774;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>deltaVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>&#xBCC0;&#xACBD;&#xD560; &#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></li>
+</ul>
+<h3 id="SetChannelConfirmation">SetChannelConfirmation </h3>
+<p><a href="#SetChannelRequest"><code>SetChannelRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; TV &#xCC44;&#xB110;&#xC744; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>channel</code></td>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xB41C; TV &#xCC44;&#xB110; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>:<span class="hljs-number">15</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelRequest"><code>SetChannelRequest</code></a></li>
+</ul>
+<h3 id="SetChannelRequest">SetChannelRequest </h3>
+<p>&#xC8FC;&#xB85C; TV &#xC14B;&#xD1B1; &#xBC15;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xCC44;&#xB110;&#xC744; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>channel</code></td>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xD560; TV &#xCC44;&#xB110; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">15</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a></li>
+</ul>
+<h3 id="SetModeConfirmation">SetModeConfirmation </h3>
+<p><a href="#SetModeRequest"><code>SetModeRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xB41C; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeRequest"><code>SetModeRequest</code></a></li>
+</ul>
+<h3 id="SetModeRequest">SetModeRequest </h3>
+<p>&#xC8FC;&#xB85C; &#xB09C;&#xBC29; &#xC870;&#xC808; &#xC7A5;&#xCE58;&#xC640; &#xAC19;&#xC740; &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xB97C; &#xC9C0;&#xC815;&#xD55C; &#xAC12;&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xD558;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xD560; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></li>
+</ul>
+<h3 id="TurnOffConfirmation">TurnOffConfirmation </h3>
+<p><a href="#TurnOffRequest">TurnOffRequest</a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xB044;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>&#xC5C6;&#xC74C;</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOffConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {}
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOffRequest"><code>TurnOffRequest</code></a></li>
+</ul>
+<h3 id="`TurnOffRequest`">TurnOffRequest </h3>
+<p>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xB044;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOffRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a></li>
+</ul>
+<h3 id="TurnOnConfirmation">TurnOnConfirmation </h3>
+<p><a href="#TurnOnRequest"><code>TurnOnRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xCF1C;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD55C; &#xACB0;&#xACFC;&#xB97C; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>&#xC5C6;&#xC74C;</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {}
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOnRequest"><code>TurnOnRequest</code></a></li>
+</ul>
+<h3 id="TurnOnRequest">TurnOnRequest </h3>
+<p>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xB97C; &#xCF1C;&#xB3C4;&#xB85D; Clova Home extension&#xC5D0;&#xAC8C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; <a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>IoT &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token. CEK&#xB294; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xC778;&#xC99D; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD68D;&#xB4DD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; access token&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="../Guides/LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;. <code>applianceId</code> &#xD544;&#xB4DC;&#xB294; &#xD544;&#xC218;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a></li>
+</ul>
+<h2 id="ErrorAPI">Error API </h2>
+<p>Clova Home extension&#xC774; CEK&#xC5D0;&#xAC8C; &#xC624;&#xB958;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; API&#xC785;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC774;&#xB984;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xD0C0;&#xC785;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DriverInternalError"><code>DriverInternalError</code></a></td>
+<td>Error Response</td>
+<td>&#xB0B4;&#xBD80;&#xC801;&#xC778; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; CEK&#xC5D0;&#xAC8C; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#TargetOfflineError"><code>TargetOfflineError</code></a></td>
+<td>Error Response</td>
+<td>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xC218; &#xC5C6;&#xC73C;&#xBA74;(offline) CEK&#xC5D0;&#xAC8C; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DriverInternalError">DriverInternalError </h3>
+<p>&#xB0B4;&#xBD80;&#xC801;&#xC778; &#xC624;&#xB958;&#xAC00; &#xBC1C;&#xC0DD;&#xD558;&#xBA74; CEK&#xC5D0;&#xAC8C; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. CEK&#xAC00; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC804;&#xB2EC;&#xBC1B;&#xC73C;&#xBA74; &#xBBF8;&#xB9AC; &#xC900;&#xBE44;&#xB41C; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>&#xC5C6;&#xC74C;</p>
+<h4 id="remarks">Remarks</h4>
+<ul>
+<li>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB3C4; &#xC815;&#xC0C1;&#xC801;&#xC778; HTTPS &#xC751;&#xB2F5;(200 OK)&#xC73C;&#xB85C; CEK&#xC5D0;&#xAC8C; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0C1;&#xD669;&#xC744; &#xD310;&#xB2E8;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBCC4;&#xB3C4;&#xC758; &#xBCF8;&#xBB38;(payload)&#xC774; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fef949b7-eb94-4bda-a417-2cfb604194c3&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DriverInternalError&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TargetOfflineError"><code>TargetOfflineError</code></a></li>
+</ul>
+<h3 id="TargetOfflineError">TargetOfflineError</h3>
+<p>&#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC5D0; &#xC811;&#xC18D;&#xD560; &#xC218; &#xC5C6;&#xC73C;&#xBA74;(offline) CEK&#xC5D0;&#xAC8C; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;. CEK&#xAC00; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC804;&#xB2EC;&#xBC1B;&#xC73C;&#xBA74; &#xBBF8;&#xB9AC; &#xC900;&#xBE44;&#xB41C; &#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>&#xC5C6;&#xC74C;</p>
+<h4 id="remarks">Remarks</h4>
+<ul>
+<li>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xB3C4; &#xC815;&#xC0C1;&#xC801;&#xC778; HTTPS &#xC751;&#xB2F5;(200 OK)&#xC73C;&#xB85C; CEK&#xC5D0;&#xAC8C; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xC624;&#xB958; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0C1;&#xD669;&#xC744; &#xD310;&#xB2E8;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xBCC4;&#xB3C4;&#xC758; &#xBCF8;&#xBB38;(payload)&#xC774; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fef949b7-eb94-4bda-a417-2cfb604194c3&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TargetOfflineError&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DriverInternalError"><code>DriverInternalError</code></a></li>
+</ul>
+<h2 id="SharedObjects">Shared objects </h2>
+<p>Clova Home API&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0BC; &#xB54C; &#xBA54;&#xC2DC;&#xC9C0; &#xBCF8;&#xBB38;(payload)&#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC1D;&#xCCB4;(shared objects)&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xAC1D;&#xCCB4; &#xC774;&#xB984;</th>
+<th>&#xAC1D;&#xCCB4; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>IoT &#xAE30;&#xAE30;&#xC758; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+</tr>
+<tr>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>&#xB09C;&#xBC29; &#xBAA8;&#xB4DC; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+</tr>
+<tr>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>&#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+</tr>
+<tr>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>&#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+</tr>
+<tr>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>TV &#xCC44;&#xB110; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+</tr>
+<tr>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>&#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ApplianceObject">ApplianceObject </h3>
+<p>IoT &#xAE30;&#xAE30;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; CEK&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD558;&#xAC70;&#xB098; &#xD2B9;&#xC815; &#xAE30;&#xAE30;&#xB97C; &#xB300;&#xC0C1;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; Clova Home extension&#xC5D0; &#xAE30;&#xAE30; &#xC81C;&#xC5B4;&#xB97C; &#xC694;&#xCCAD;&#xD560; &#xB54C; &#xC774; &#xAC1D;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>actions[]</code></td>
+<td>string array</td>
+<td>&#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xB3D9;&#xC791; &#xBAA9;&#xB85D;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xAE30;&#xAE30;&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xB3D9;&#xC791; &#xB0B4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; IoT &#xAE30;&#xAE30;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xB3C4;&#xB85D; &#xC81C;&#xD55C;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>additionalApplianceDetails</code></td>
+<td>object</td>
+<td>&#xC81C;&#xC870;&#xC0AC;&#xB098; IoT &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xD544;&#xB4DC;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>applianceId</code></td>
+<td>string</td>
+<td>&#xAE30;&#xAE30; ID</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>applianceTypes[]</code></td>
+<td>string array</td>
+<td>&#xAE30;&#xAE30; &#xD0C0;&#xC785;. <code>applicationType</code>&#xC5D0; &#xB530;&#xB77C; &#xD574;&#xB2F9; &#xAE30;&#xAE30;&#xAC00; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xB294; &#xB3D9;&#xC791;&#xC778; <code>actions</code> &#xD544;&#xB4DC;&#xC758; &#xAC12;&#xC774; &#xB2EC;&#xB77C;&#xC9D1;&#xB2C8;&#xB2E4;. IoT &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xAE30;&#xAE30;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC12; &#xC911; &#xD558;&#xB098;&#xB85C; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.<ul><li>AIRCONDITIONER : &#xB0C9;&#xB09C;&#xBC29;&#xAE30; &#xD0C0;&#xC785;</li><li>AIRPURIFIER : &#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30; &#xD0C0;&#xC785;</li><li>HUMIDIFIER : &#xAC00;&#xC2B5;&#xAE30; &#xD0C0;&#xC785;</li><li>LIGHT : &#xC870;&#xBA85; &#xAE30;&#xAE30; &#xD0C0;&#xC785;</li><li>SETTOPBOX : TV &#xC14B;&#xD1B1; &#xBC15;&#xC2A4; &#xD0C0;&#xC785;</li><li>SMARTPLUG : &#xAE30;&#xAE30; &#xC804;&#xC6D0;&#xC744; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xD50C;&#xB7EC;&#xADF8;</li><li>SWITCH : &#xAC00;&#xC815; &#xB0B4; &#xCF58;&#xC13C;&#xD2B8; &#xC804;&#xC6D0;&#xC744; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xC2A4;&#xC704;&#xCE58;</li><li>THERMOSTAT : &#xC628;&#xB3C4; &#xC870;&#xC808; &#xAE30;&#xAE30; &#xD0C0;&#xC785;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>friendlyName</code></td>
+<td>string</td>
+<td>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xBD99;&#xC5EC;&#xC900; &#xAE30;&#xAE30;&#xC758; &#xC774;&#xB984;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>friendlyDescription</code></td>
+<td>string</td>
+<td>&#xAE30;&#xAE30;&#xC5D0; &#xB300;&#xD55C; &#xC124;&#xBA85;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>isReachable</code></td>
+<td>boolean</td>
+<td>&#xC6D0;&#xACA9; &#xC81C;&#xC5B4; &#xAC00;&#xB2A5; &#xC5EC;&#xBD80; <ul><li>true: &#xC6D0;&#xACA9; &#xC81C;&#xC5B4; &#xAC00;&#xB2A5;</li><li>false: &#xC6D0;&#xACA9; &#xC81C;&#xC5B4; &#xBD88;&#xAC00;</li></ul></td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>manufacturerName</code></td>
+<td>string</td>
+<td>&#xAE30;&#xAE30; &#xC81C;&#xC870;&#xC0AC; &#xC774;&#xB984;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>modelName</code></td>
+<td>string</td>
+<td>&#xAE30;&#xAE30; &#xBAA8;&#xB378; &#xC774;&#xB984;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>string</td>
+<td>&#xC81C;&#xC870;&#xC0AC;&#xC758; &#xC18C;&#xD504;&#xD2B8;&#xC6E8;&#xC5B4; &#xBC84;&#xC804;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a> &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xC0AC;&#xC6A9;&#xC790; &#xAE30;&#xAE30; &#xBAA9;&#xB85D;&#xC744; &#xC694;&#xCCAD;&#xD558;&#xBA74; Clova Home extension&#xC740; <code>additionalApplianceDetails</code> &#xD544;&#xB4DC;&#xB97C; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; &#xD544;&#xB4DC;&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xCC44;&#xC6CC;&#xC11C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C;, <code>actions</code> &#xD544;&#xB4DC;&#xC758; &#xAC12;&#xC740; &#xBCF4;&#xD1B5; <code>applianceTypes</code> &#xD544;&#xB4DC;&#xC5D0; &#xC758;&#xD574; &#xACB0;&#xC815;&#xB418;&#xBA70;, <code>applianceTypes</code> &#xD544;&#xB4DC; &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>applianceTypes</th>
+<th>&#xD5C8;&#xC6A9;&#xB418;&#xB294; actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AIRCONDITIONER</strong></td>
+<td><ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>AIRPURIFIER</strong></td>
+<td><ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>HUMIDFIER</strong></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>LIGHT</strong></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>SETTOPBOX</strong></td>
+<td><ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>SMARTPLUG</strong></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>SWITCH</strong></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><strong>THERMOSTAT</strong></td>
+<td><ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>&#xC2E4;&#xC81C; &#xAE30;&#xAE30;&#xC758; &#xAE30;&#xB2A5; &#xC81C;&#xC57D;&#xC5D0; &#xB530;&#xB77C; &#xAE30;&#xAE30;&#xC758; applianceTypes&#xAC00; &#xD5C8;&#xC6A9;&#xD558;&#xB294; actions&#xBCF4;&#xB2E4; &#xC801;&#xC740; actions&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB3C4;&#xB85D; &#xC81C;&#xD55C;&#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; &#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;(`AIRPURIFIER` &#xD0C0;&#xC785;)&#xC5D0; &#xD32C; &#xC18D;&#xB3C4;&#xB97C; &#xC870;&#xC808;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xAE30;&#xAE30;&#xC5D0; &#xD5C8;&#xC6A9;&#xB418;&#xB294; actions&#xC5D0;&#xC11C; IncrementFanSpeed&#xC640; DecrementFanSpeed&#xB97C; &#xC81C;&#xC678;&#xD558;&#xACE0; DiscoverAppliancesResponse &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<p>&#xB2E4;&#xC74C; &#xD45C;&#xB294; &#xAC01; actions &#xD56D;&#xBAA9;&#xACFC; &#xAD00;&#xB828;&#xC774; &#xC788;&#xB294; Clova Home API&#xB97C; &#xB098;&#xC5F4;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>actions</th>
+<th>&#xAD00;&#xB828;&#xB41C; Clova Home API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DecrementFanSpeed</strong></td>
+<td><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a>, <a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>DecrementTargetTemperature</strong></td>
+<td><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a>, <a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>DecrementVolume</strong></td>
+<td><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a>, <a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>HealthCheck</strong></td>
+<td><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a>, <a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></td>
+</tr>
+<tr>
+<td><strong>IncrementFanSpeed</strong></td>
+<td><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a>, <a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>IncrementTargetTemperature</strong></td>
+<td><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a>, <a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>IncrementVolume</strong></td>
+<td><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a>, <a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>SetChannel</strong></td>
+<td><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a>, <a href="#SetChannelRequest"><code>SetChannelRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>SetMode</strong></td>
+<td><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a>, <a href="#SetModeRequest"><code>SetModeRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>TurnOff</strong></td>
+<td><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a>, <a href="#TurnOffRequest"><code>TurnOffRequest</code></a></td>
+</tr>
+<tr>
+<td><strong>TurnOn</strong></td>
+<td><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a>, <a href="#TurnOnRequest"><code>TurnOnRequest</code></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: DiscoverAppliancesResponse &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;99f9d8ff-9366-4cab-a90c-b4c7eca0abbe&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;discoveredAppliances&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xAC70;&#xC2E4; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0;&#xC73C;&#xB85C; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">&quot;actions&quot;</span>: [
+            <span class="hljs-string">&quot;HealthCheckt&quot;</span>,
+            <span class="hljs-string">&quot;TurnOn&quot;</span>,
+            <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;LIGHT&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      },
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-002&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xBD80;&#xC5CC; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC5D0;&#xB108;&#xC9C0;&#xB97C; &#xC808;&#xC57D;&#xD558;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;actions&quot;</span>: [
+          <span class="hljs-string">&quot;HealthCheckt&quot;</span>,
+          <span class="hljs-string">&quot;TurnOn&quot;</span>,
+          <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;SMARTPLUG&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      }
+    ]
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: TurnOnRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></li>
+<li><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></li>
+</ul>
+<h3 id="HeatingModeObject">HeatingModeObject </h3>
+<p>&#xB09C;&#xBC29; &#xBAA8;&#xB4DC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xBCC0;&#xACBD;&#xD560; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xC758; &#xC774;&#xB984;&#xC774;&#xB098; &#xBCC0;&#xACBD; &#xC804;&#xD6C4;&#xC758; &#xB09C;&#xBC29; &#xBAA8;&#xB4DC;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>string</td>
+<td>&#xB09C;&#xBC29; &#xBAA8;&#xB4DC;. <ul><li><strong>&quot;hotwater&quot;</strong> : &#xC628;&#xC218; &#xBAA8;&#xB4DC;</li><li><strong>&quot;away&quot;</strong> : &#xC678;&#xCD9C; &#xBAA8;&#xB4DC;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: SetModeRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: SetModeConfirmation &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></li>
+<li><a href="#SetModeRequest"><code>SetModeRequest</code></a></li>
+</ul>
+<h3 id="SpeedObject">SpeedObject </h3>
+<p>&#xC18D;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xBCC0;&#xACBD;&#xD560; &#xC18D;&#xB3C4;&#xC758; &#xD06C;&#xAE30;&#xB098; &#xBCC0;&#xACBD; &#xC804;&#xD6C4;&#xC758; &#xD76C;&#xB9DD; &#xC18D;&#xB3C4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xC815;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>&#xC18D;&#xB3C4; &#xAC12;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: IncrementFanSpeedRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: IncrementFanSpeedConfirmation &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></li>
+<li><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></li>
+<li><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></li>
+<li><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="TemperatureObject">TemperatureObject </h3>
+<p>&#xC628;&#xB3C4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xBCC0;&#xACBD;&#xD560; &#xC628;&#xB3C4;&#xC758; &#xD06C;&#xAE30;&#xB098; &#xBCC0;&#xACBD; &#xC804;&#xD6C4;&#xC758; &#xD76C;&#xB9DD; &#xC628;&#xB3C4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xC18C;&#xC218;&#xC810; &#xCCAB;&#xC9F8; &#xC790;&#xB9AC;&#xAE4C;&#xC9C0; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>&#xC628;&#xB3C4; &#xAC12;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: IncrementTargetTemperatureRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1.0</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: IncrementTargetTemperatureConfirmation &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">21.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></li>
+<li><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></li>
+<li><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></li>
+<li><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="TVChannelObject">TVChannelObject </h3>
+<p>TV &#xCC44;&#xB110; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xBCC0;&#xACBD;&#xD560; TV &#xCC44;&#xB110;&#xC758; &#xC774;&#xB984;&#xC774;&#xB098; &#xBCC0;&#xACBD; &#xC804;&#xD6C4;&#xC758; TV &#xCC44;&#xB110;&#xC744; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>TV &#xCC44;&#xB110; &#xBC88;&#xD638;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: SetChannelRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-007&quot;</span>
+    },
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">13</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: SetChannelConfirmation &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">13</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a></li>
+<li><a href="#SetChannelRequest"><code>SetChannelRequest</code></a></li>
+</ul>
+<h3 id="VolumeObject">VolumeObject </h3>
+<p>&#xC2A4;&#xD53C;&#xCEE4;&#xC758; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xBCC0;&#xACBD;&#xD560; &#xBCFC;&#xB968;&#xC758; &#xD06C;&#xAE30;&#xB098; &#xBCC0;&#xACBD; &#xC804;&#xD6C4;&#xC758; &#xBCFC;&#xB968; &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xBA70; &#xC815;&#xC218;&#xB85C; &#xD45C;&#xD604;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>&#xBCFC;&#xB968; &#xAC12;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xC608;&#xC81C; 1: IncrementVolumeRequest &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// &#xC608;&#xC81C; 2: IncrementVolumeConfirmation &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xB41C; &#xC608;</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></li>
+<li><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></li>
+<li><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></li>
+<li><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Clova_Home_Extension_Message_Format.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Clova Home extension 메시지">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Clova Home API","level":"3.7.1","depth":2,"previous":{"title":"Clova Home extension 메시지","level":"3.7","depth":1,"path":"CEK/References/Clova_Home_Extension_Message_Format.md","ref":"CEK/References/Clova_Home_Extension_Message_Format.md","articles":[{"title":"Clova Home API","level":"3.7.1","depth":2,"path":"CEK/References/Clova_Home_API.md","ref":"CEK/References/Clova_Home_API.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"ko-KR","DocOwner":"NAVER","OrientedService":"NAVER","TargetServiceForClientAuth":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/","AuthServerBaseURL":"https://auth.clova.ai"},"language":"ko","gitbook":"*"},"file":{"path":"CEK/References/Clova_Home_API.md","mtime":"2017-08-01T05:39:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-07T02:48:13.870Z"},"basePath":"../..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

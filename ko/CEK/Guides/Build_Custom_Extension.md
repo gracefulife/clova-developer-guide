@@ -6,9 +6,9 @@ Custom extension이란 Clova가 기본으로 제공하고 있는 기능이나 �
 
 1. [사전 준비사항](#Preparation)
 2. [Custom extension 요청 처리하기](#HandleCustomExtensionRequest)
-   * [LaunchRequest 요청 처리](#HandleLaunchRequest)
-   * [IntentRequest 요청 처리](#HandleIntentRequest)
-   * [SessionEndedRequest 요청 처리](#HandleSessionEndedRequest)
+   * [`LaunchRequest` 요청 처리](#HandleLaunchRequest)
+   * [`IntentRequest` 요청 처리](#HandleIntentRequest)
+   * [`SessionEndedRequest` 요청 처리](#HandleSessionEndedRequest)
 3. [Custom extension 응답 반환하기](#ReturnCustomExtensionResponse)
 
 {% include "./BuildCustomExtension/Preparation.md" %}
