@@ -2,7 +2,7 @@
 
 사용자는 "거실 전등 켜줘"와 같이 IoT 기기를 제어하도록 Clova에게 요청합니다(HTTPS Request). 사용자의 IoT 기기 제어 요청은 [Discovery 기능](#ProvideDeviceDiscovery)을 통해 확보된 기기 목록과 각 기기별 허용 동작을 보고 수행 가능한 요청인지 검증됩니다. 검증된 사용자 요청은 CEK를 통해 Clova Home extension으로 전달되며 이때, [Clova Home API](/CEK/References/Clova_Home_API.md)를 이용합니다.
 
-"거실 전등 켜줘"와 같은 요청은 다음과 같이 *[TurnOnRequest](/CEK/References/Clova_Home_API.md#TurnOnRequest)* 메시지로 전달됩니다.
+"거실 전등 켜줘"와 같은 요청은 다음과 같이 [`TurnOnRequest`](/CEK/References/Clova_Home_API.md#TurnOnRequest) 메시지로 전달됩니다.
 
 {% raw %}
 ```json

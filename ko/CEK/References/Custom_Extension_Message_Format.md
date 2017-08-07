@@ -2,7 +2,7 @@
 Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. custom extension 메시지는 [요청 메시지](#RequestMessage)와 [응답 메시지](#ResponseMessage)로 나뉩니다.
 
 ## 요청 메시지 {#RequestMessage}
-CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 *request* 필드에 대해 설명합니다.
+CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 `request` 필드에 대해 설명합니다.
 
 ### Message format
 
@@ -43,38 +43,38 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 ### Message field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| context                                  | object  | 클라이언트의 맥락 정보를 가지고 있는 객체                                | 필수 |
-| context.AudioPlayer                      | object  | 클라이언트가 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지고 있는 객체 | 선택 |
-| context.AudioPlayer.offsetInMilliseconds | number  | 최근 재생 미디어의 마지막 재생 지점(offset). 단위는 밀리초이며, *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                       | 선택 |
-| context.AudioPlayer.playerActivity       | string  | 플레이어의 상태를 나타내는 값이며 다음과 같은 값을 가집니다.<ul><li>IDLE: 비활성 상태</li><li>PLAYING: 재생 중인 상태</li><li>PAUSED: 일시 정지 상태</li><li>STOPPED: 중지 상태</li></ul> | 필수 |
-| context.AudioPlayer.stream               | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.    | 선택 |
-| context.AudioPlayer.totalInMilliseconds  | number  | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, *playerActivity* 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                                                  | 선택 |
-| context.System                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
-| context.System.device                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
-| context.System.device.deviceId           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 필수 |
-| context.System.user                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
-| context.System.user.userId               | string  | 기기 기본 사용자의 Clova ID                                    | 필수 |
-| context.System.user.accessToken          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수 |
-| request                                  | object  | 분석된 사용자의 발화 정보를 가지고 있는 객체. [요청 타입](#RequestType)에 따라 구성되는 필드가 달라집니다. | 필수 |
-| session                                  | object  | 세션 정보를 가지고 있는 객체. 여기서 세션은 사용자의 요청을 구분하는 논리적 단위입니다.     | 필수 |
-| session.new                              | boolean | 요청 메시지가 새로운 세션에 대한 것인지 아니면 기존 세션에 대한 것인지 구분합니다. <ul><li>true: 새로운 세션</li><li>false: 기존 세션</li></ul>  | 필수 |
-| session.sessionId                        | string  | 세션 ID                                                    | 필수 |
-| session.user                             | object  | 현재 사용자의 정보를 가지고 있는 객체.                             | 필수 |
-| session.user.userId                      | string  | 현재 사용자의 Clova ID. *context.System.user.userId* 값과 다를 수 있습니다. | 필수 |
-| session.user.accessToken                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.| 선택 |
-| version                                  | string  | 메시지 포맷의 버전 (CEK 버전)                          | 필수 |
+| `context`                                  | object  | 클라이언트의 맥락 정보를 가지고 있는 객체                                | 필수 |
+| `context.AudioPlayer`                      | object  | 클라이언트가 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지고 있는 객체 | 선택 |
+| `context.AudioPlayer.offsetInMilliseconds` | number  | 최근 재생 미디어의 마지막 재생 지점(offset). 단위는 밀리초이며, `playerActivity` 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                       | 선택 |
+| `context.AudioPlayer.playerActivity`       | string  | 플레이어의 상태를 나타내는 값이며 다음과 같은 값을 가집니다.<ul><li><strong>"IDLE"</strong> : 비활성 상태</li><li><strong>"PLAYING"</strong> : 재생 중인 상태</li><li><strong>"PAUSED"</strong> : 일시 정지 상태</li><li><strong>"STOPPED"</strong> : 중지 상태</li></ul> | 필수 |
+| `context.AudioPlayer.stream`               | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. `playerActivity` 값이 **"IDLE"**이면 이 필드 값이 비어 있을 수도 있습니다.    | 선택 |
+| `context.AudioPlayer.totalInMilliseconds`  | number  | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, `playerActivity` 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                                                  | 선택 |
+| `context.System`                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
+| `context.System.device`                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
+| `context.System.device.deviceId`           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 필수 |
+| `context.System.user`                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
+| `context.System.user.userId`               | string  | 기기 기본 사용자의 Clova ID                                    | 필수 |
+| `context.System.user.accessToken`          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수 |
+| `request`                                 | object  | 분석된 사용자의 발화 정보를 가지고 있는 객체. [요청 타입](#RequestType)에 따라 구성되는 필드가 달라집니다. | 필수 |
+| `session`                                  | object  | 세션 정보를 가지고 있는 객체. 여기서 세션은 사용자의 요청을 구분하는 논리적 단위입니다.     | 필수 |
+| `session.new`                              | boolean | 요청 메시지가 새로운 세션에 대한 것인지 아니면 기존 세션에 대한 것인지 구분합니다. <ul><li>true: 새로운 세션</li><li>false: 기존 세션</li></ul>  | 필수 |
+| `session.sessionId`                        | string  | 세션 ID                                                    | 필수 |
+| `session.user`                            | object  | 현재 사용자의 정보를 가지고 있는 객체.                             | 필수 |
+| `session.user.userId`                      | string  | 현재 사용자의 Clova ID. `context.System.user.userId` 값과 다를 수 있습니다. | 필수 |
+| `session.user.accessToken`                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.| 선택 |
+| `version`                                  | string  | 메시지 포맷의 버전 (CEK 버전)                          | 필수 |
 
 
 ### Request type {#RequestType}
-요청 메시지는 다음과 같이 3가지 요청 타입으로 나뉘며, 각 요청 타입마다 요청 메시지의 *request* 객체의 필드 구성이 달라집니다.
-* [LaunchRequest](#LaunchRequest)
-* [IntentRequest](#IntentRequest)
-* [SessionEndedRequest](#SessionEndedRequest)
+요청 메시지는 다음과 같이 3가지 요청 타입으로 나뉘며, 각 요청 타입마다 요청 메시지의 `request` 객체의 필드 구성이 달라집니다.
+* [`LaunchRequest`](#LaunchRequest)
+* [`IntentRequest`](#IntentRequest)
+* [`SessionEndedRequest`](#SessionEndedRequest)
 
 #### LaunchRequest {#LaunchRequest}
-*LaunchRequest* 타입은 사용자의 특정 extension 사용 시작을 알리는 요청 타입입니다. 예를 들면, 사용자가 "영어 대화 시작하자"라고 말한 것과 같이 특정 모드로 진입하겠다고 선언한 상황입니다. 주로 특정 모드로 진입해야 되는 서비스를 제공하는 extension이 이 타입의 메시지를 받게 됩니다.
+`LaunchRequest` 타입은 사용자의 특정 extension 사용 시작을 알리는 요청 타입입니다. 예를 들면, 사용자가 "영어 대화 시작하자"라고 말한 것과 같이 특정 모드로 진입하겠다고 선언한 상황입니다. 주로 특정 모드로 진입해야 되는 서비스를 제공하는 extension이 이 타입의 메시지를 받게 됩니다.
 
-*LaunchRequest* 타입 메시지의 *request* 객체 필드 구성은 다음과 같습니다.
+`LaunchRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
 {% raw %}
 ```json
@@ -86,19 +86,19 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| type          | string  | 요청 메시지의 타입. "LaunchRequest" 값으로 고정됩니다. | 필수 |
+| `type`          | string  | 요청 메시지의 타입. **"LaunchRequest"** 값으로 고정됩니다. | 필수 |
 
 다음은 LaunchRequest 타입의 요청 메시지 예제입니다.
 
 #### IntentRequest {#IntentRequest}
-*IntentRequest* 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받고 처리할지 Clova Developer Console을 이용하여 Interaction 모델을 등록해야 합니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, *intent* 필드를 통해 extension에게 전달됩니다.
+`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받고 처리할지 Clova Developer Console을 이용하여 Interaction 모델을 등록해야 합니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>현재 Clova Developer Console을 개발하는 중입니다. 따라서, Interaction 모델을 정의하려면 제휴 담당자와 협의하기 바랍니다.</p>
 </div>
 
-*IntentRequest* 타입 메시지의 *request* 객체 필드 구성은 다음과 같습니다.
+`IntentRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
 {% raw %}
 ```json
@@ -114,25 +114,25 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| type          | string  | 요청 메시지의 타입. "IntentRequest" 값으로 고정됩니다.                                                           | 필수 |
-| intent        | object  | 사용자의 요청을 분석한 정보가 저장된 객체 (intent)                                                                | 필수 |
-| intent.name   | string  | Intent 이름. Interaction 모델에 정의한 intent를 이 필드로 식별할 수 있다.                                          | 필수 |
-| intent.slots  | object  | Extension이 intent를 처리할 때 요구되는 정보(slot)가 저장된 객체. 이 필드는 *intent.name* 필드에 따라 구성이 달라질 수 있다. | 필수 |
+| `type`          | string  | 요청 메시지의 타입. **"IntentRequest"** 값으로 고정됩니다.                                                       | 필수 |
+| `intent`        | object  | 사용자의 요청을 분석한 정보가 저장된 객체 (intent)                                                                | 필수 |
+| `intent.name`   | string  | Intent 이름. Interaction 모델에 정의한 intent를 이 필드로 식별할 수 있다.                                          | 필수 |
+| `intent.slots`  | object  | Extension이 intent를 처리할 때 요구되는 정보(slot)가 저장된 객체. 이 필드는 `intent.name` 필드에 따라 구성이 달라질 수 있다. | 필수 |
 
 
 #### SessionEndedRequest {#SessionEndedRequest}
-*SessionEndedRequest* 타입은 사용자의 특정 extension 사용이 종료되었음을 알리는 요청입니다. 다음과 같은 상황에서 이 메시지를 받게 됩니다.
+`SessionEndedRequest` 타입은 사용자의 특정 extension 사용이 종료되었음을 알리는 요청입니다. 다음과 같은 상황에서 이 메시지를 받게 됩니다.
 * 사용자가 extension 종료를 요청한 경우
 * 특정 시간 동안 사용자의 입력이 없을 경우(Timeout)
 * 오류가 발생한 경우
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><a href="ResponseMessage">응답 메시지</a>의 <em>shouldEndSession</em> 필드를 사용하여 extension 쪽에서 먼저 종료를 선언한 경우 이 메시지를 수신하지 않습니다.</p>
+  <p><a href="ResponseMessage">응답 메시지</a>의 <code>shouldEndSession</code> 필드를 사용하여 extension 쪽에서 먼저 종료를 선언한 경우 이 메시지를 수신하지 않습니다.</p>
 </div>
 
 
-*SessionEndedRequest* 타입 메시지의 *request* 객체 필드 구성은 다음과 같습니다.
+`SessionEndedRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
 {% raw %}
 ```json
@@ -144,7 +144,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| type          | string  | 요청 메시지의 타입. "EndRequest" 값으로 고정됩니다. | 필수 |
+| `type`          | string  | 요청 메시지의 타입. **"EndRequest"** 값으로 고정됩니다. | 필수 |
 
 ### Message example
 {% raw %}
@@ -284,38 +284,38 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 ### Message field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| response                               | object       | Extension의 응답 정보가 담긴 객체                            | 필수 |
-| response.card                          | object       | [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.           | 필수 |
-| response.directives[]                  | object array | Extension이 CEK로 전달하는 지시 메시지입니다. *response.directives* 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다. | 필수 |
-| response.directives[].header           | object       | 지시 메시지의 헤더                                          | 필수 |
-| response.directives[].header.messageId | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다(UUID).   | 필수 |
-| response.directives[].header.name      | string       | 지시 메시지의 API 이름                                      | 필수 |
-| response.directives[].header.namespace | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
-| response.directives[].payload          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
-| response.outputSpeech                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달된다.              | 필수 |
-| response.outputSpeech.brief            | [SpeechObject](#SpeechObject) | 출력할 요약 음성 정보.                    | 선택 |
-| response.outputSpeech.type             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech" : 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체를 가져야 합니다.</li><li>"SpeechList" : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체 배열을 가져야 합니다.</li><li>"SpeechSet" : 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <em>response.outputSpeech.values</em> 필드 대신 <em>response.outputSpeech.brief</em>와 <em>response.outputSpeech.verbose</em> 필드를 가져야 합니다.</li></ul> | 필수 |
-| response.outputSpeech.values           | [SpeechObject](#SpeechObject) or [SpeechObject](#SpeechObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
-| response.outputSpeech.verbose          | object       | 스크린이 없는 클라이언트 기기에 전달할 때 사용되며, 상세 음성 정보를 가집니다. | 선택 |
-| response.outputSpeech.verbose.type     | string       | 출력할 음성 정보의 타입. 단문과 복문 형태의 음성 정보만 입력할 수 있습니다. <ul><li>"SimpleSpeech" : 단문 형태의 음성 정보입니다. 가장 기본적인 음성 정보를 전달할 때 사용되며, 이 값을 지정한 경우 <em>response.outputSpeech.verbose.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체를 가져야 합니다.</li><li>"SpeechList" : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <em>response.outputSpeech.verbose.values</em> 필드가 <a href="#SpeechObject">SpeechObject</a> 객체 배열을 가져야 합니다.</li></ul> | 필수 |
-| response.outputSpeech.verbose.values           | [SpeechObject](#SpeechObject) or [SpeechObject](#SpeechObject) array | 클라이언트 기기에서 출력할 상세 음성 정보를 담고 있는 객체 또는 객체 배열 | 필수 |
-| response.shouldEndSession              | boolean      | 세션 종료 플래그. 클라이언트에게 특정 extension 사용이 종료됨을 알리는 필드입니다. [SessionEndedRequest](#SessionEndedRequest) 타입의 요청 메시지를 받기 전에 extension이 먼저 사용 종료를 알릴 때 사용합니다.<ul><li>true : 사용 종료</li><li>false : 계속 사용</li></ul> | 필수 |
-| sessionAttributes                      | object       | 추후 확장을 위해 예약해 둔 필드                                 | 필수 |
-| version                                | string       | 메시지 포맷의 버전 (CEK 버전)                        | 필수 |
+| `response`                               | object       | Extension의 응답 정보가 담긴 객체                            | 필수 |
+| `response.card`                          | object       | [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.           | 필수 |
+| `response.directives[]`                  | object array | Extension이 CEK로 전달하는 지시 메시지입니다. `response.directives` 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다. | 필수 |
+| `response.directives[].header`           | object       | 지시 메시지의 헤더                                          | 필수 |
+| `response.directives[].header.messageId` | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다(UUID).   | 필수 |
+| `response.directives[].header.name`      | string       | 지시 메시지의 API 이름                                      | 필수 |
+| `response.directives[].header.namespace` | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
+| `response.directives[].payload`          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
+| `response.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달된다.              | 필수 |
+| `response.outputSpeech.brief`            | [SpeechObject](#SpeechObject) | 출력할 요약 음성 정보.                    | 선택 |
+| `response.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech" : 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체를 가져야 합니다.</li><li><strong>"SpeechList"</strong> : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체 배열을 가져야 합니다.</li><li><strong>"SpeechSet"</strong> : 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
+| `response.outputSpeech.values`           | [SpeechObject](#SpeechObject) or [`SpeechObject`](#SpeechObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
+| `response.outputSpeech.verbose`          | object       | 스크린이 없는 클라이언트 기기에 전달할 때 사용되며, 상세 음성 정보를 가집니다. | 선택 |
+| `response.outputSpeech.verbose.type`     | string       | 출력할 음성 정보의 타입. 단문과 복문 형태의 음성 정보만 입력할 수 있습니다. <ul><li><strong>"SimpleSpeech"</strong> : 단문 형태의 음성 정보입니다. 가장 기본적인 음성 정보를 전달할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체를 가져야 합니다.</li><li><strong>"SpeechList"</strong> : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체 배열을 가져야 합니다.</li></ul> | 필수 |
+| `response.outputSpeech.verbose.values`           | [SpeechObject](#SpeechObject) or [SpeechObject](#SpeechObject) array | 클라이언트 기기에서 출력할 상세 음성 정보를 담고 있는 객체 또는 객체 배열 | 필수 |
+| `response.shouldEndSession`              | boolean      | 세션 종료 플래그. 클라이언트에게 특정 extension 사용이 종료됨을 알리는 필드입니다. [`SessionEndedRequest`](#SessionEndedRequest) 타입의 요청 메시지를 받기 전에 extension이 먼저 사용 종료를 알릴 때 사용합니다.<ul><li>true : 사용 종료</li><li>false : 계속 사용</li></ul> | 필수 |
+| `sessionAttributes`                      | object       | 추후 확장을 위해 예약해 둔 필드                                 | 필수 |
+| `version`                                | string       | 메시지 포맷의 버전 (CEK 버전)                        | 필수 |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><em>response.directives</em> 필드를 통해 extension 임의의 지시 메시지를 전달해야 하는 경우 사용하려면 사전 협의가 필요합니다. 제휴 담당자와 협의하기 바랍니다.</p>
+  <p><code>response.directives</code> 필드를 통해 extension 임의의 지시 메시지를 전달해야 하는 경우 사용하려면 사전 협의가 필요합니다. 제휴 담당자와 협의하기 바랍니다.</p>
 </div>
 
 ### SpeechObject {#SpeechObject}
-SpeechObject 객체는 응답 메시지의 *response.outputSpeech*에서 재사용되는 객체이며, 사용자에게 출력하려는 음성 정보의 가장 작은 단위인 단문 수준의 발화 정보입니다. 이 객체는 다음과 같은 필드를 가집니다.
+SpeechObject 객체는 응답 메시지의 `response.outputSpeech`에서 재사용되는 객체이며, 사용자에게 출력하려는 음성 정보의 가장 작은 단위인 단문 수준의 발화 정보입니다. 이 객체는 다음과 같은 필드를 가집니다.
 
 | 필드 이름        | 자료형         | 설명                                                                | 필수 |
 |----------------|--------------|--------------------------------------------------------------------|-----|
-| lang           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li>"ko": 한국어</li><li>"en": 영어</li><li>"" : <em>type</em> 필드의 값이 "URL"이면 이 필드는 빈 문자열(empty string)을 가집니다.</li></ul>         | 필수 |
-| type           | string       | 재생할 음성의 타입. 이 필드의 값에 따라 value 값의 형태가 달라집니다. 현재는 다음과 같은 값을 가집니다.<ul><li>"PlainText": 일반 텍스트</li><li>"URL": 음성 및 음악을 재생할 수 있는 파일의 URI</li></ul>            | 필수 |
-| value          | string       | 음성 합성할 내용                                                       | 필수 |
+| `lang`           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li><strong>"ko"</strong>: 한국어</li><li><strong>"en"</strong>: 영어</li><li><strong>""</strong> : <code>type</code> 필드의 값이 <strong>"URL"</strong>이면 이 필드는 빈 문자열(empty string)을 가집니다.</li></ul>         | 필수 |
+| `type`           | string       | 재생할 음성의 타입. 이 필드의 값에 따라 `value` 필드 값의 형태가 달라집니다. 현재는 다음과 같은 값을 가집니다.<ul><li><strong>"PlainText"</strong>: 일반 텍스트</li><li><strong>"URL"</strong>: 음성 및 음악을 재생할 수 있는 파일의 URI</li></ul>            | 필수 |
+| `value`          | string       | 음성 합성할 내용                                                       | 필수 |
 
 ### Message example
 {% raw %}

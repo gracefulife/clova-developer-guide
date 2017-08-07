@@ -105,7 +105,8 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 [Intent](#Intent)에 선언된 요청을 처리할 때 필요한 정보이며, intent를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 됩니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조합니다.
 
 ### 대화 ID {#DialogID}
-대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Cconnect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다를 경우 수신한 지시 메시지를 무시해야 합니다.
+대화 ID는 사용자가 새로운 발화를 시작할 때마다 생성되며, 클라이언트가 [Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) [이벤트 메시지](#Event)를 [Clova Interface Cconnect](#CIC)에 전달할 때 포함됩니다. 대화 ID는 서버측 응답을 내려줄 때 어떤 이벤트 메시지에 대한 응답인지 연결할 때 사용되며, [지시 메시지](#Directive)에도 포함됩니다. 클라이언트는 지시 메시지에 포함된 대화 ID를 보고 어떤 이벤트 메시지의 응답인지 판단해야 하며, 만약 클라이언트가 현재 가지고 있는 대화 ID와 지시 메시지의 대화 ID가 다를 경우 수신한 지시 메시지를 무시해야 합니다. 자세한 내용은 [대화 모델](/CIC/CIC_Overview.html#DialogModel)을 참조합니다.</p>
+</div>
 
 ### 맥락 정보 (Context) {#Context}
 맥락 정보(Context)는 클라이언트의 다양한 상태 정보를 의미하며 [context objects](#ContextObjects)로 표현됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
@@ -121,7 +122,7 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. [Intent](#Intent)별로 복수의 사례를 정의할 수 있으며, 예문에는 [slot](#Slot)이 표시됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 참조합니다.
 
 ### 세션 ID {#SessionID}
-세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extension Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 *response.shouldEndSession* 필드를 **false**로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md)를 참조합니다.
+세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extension Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 **false**로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md)를 참조합니다.
 
 ### 이벤트 메시지 (Event) {#Event}
 이벤트 메시지는 클라이언트에서 [Clova Interface Cconnect](#CIC)로 전달하는 메시지이며, 사용자 요청(음성 입력)을 전달하거나 클라이언트의 상태 값이 변경된 것을 알릴 때 이 메시지를 전송합니다.

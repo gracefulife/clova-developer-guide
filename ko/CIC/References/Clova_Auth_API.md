@@ -25,13 +25,14 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 {% endraw %}
 
 ### Parameter
+
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| client_id     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
-| device_id     | string  | 생성한 클라이언트 기기의 UUID                                                                      | 필수 |
-| model_id      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
-| response_type | string  | 응답 유형. 현재는 "code"만 지원합니다.                                                               | 필수 |
-| state         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
+| `client_id`     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
+| `device_id`     | string  | 생성한 클라이언트 기기의 UUID. MAC 주소를 사용하거나 UUID 해쉬 값을 생성하면 됩니다.                          | 필수 |
+| `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
+| `response_type` | string  | 응답 유형. 현재는 **"code"**만 지원합니다.                                                           | 필수 |
+| `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
 
 ### Request Example
 
@@ -43,10 +44,11 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 </code></pre>
 
 ### Response field
+
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| code  | string | 인증 서버로부터 발급받은 authorization code                                                        |
-| state | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 토큰을 복호화한 값(URL 디코딩 적용) |
+| `code`  | string | 인증 서버로부터 발급받은 authorization code                                                        |
+| `state` | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 토큰을 복호화한 값(URL 디코딩 적용) |
 
 
 ### Response Example
@@ -62,11 +64,11 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 ### See also
 * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
 * [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [/token](#token)
+* [`/token`](#token)
 
 
 ## /token {#token}
-[/authorize](#authorize) API를 통해 발급받은 authorization code를 사용하여 Clova access token을 생성/갱신/삭제합니다. *grant_type* 파라미터의 값에 따라 동작이 구분되며 반환 값도 달라집니다.
+[/authorize](#authorize) API를 통해 발급받은 authorization code를 사용하여 Clova access token을 생성/갱신/삭제합니다. `grant_type` 파라미터의 값에 따라 동작이 구분되며 반환 값도 달라집니다.
 
 ### Scheme, method, path
 {% raw %}
@@ -78,17 +80,18 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 {% endraw %}
 
 ### Parameter
+
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| access_token  | string  | 인증 성공 후 발급받은 Clova access token. *grant_type* 필드 값이 "delete" 이면 필수입니다.                                   | 선택 |
-| client_id     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
-| client_secret | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| code          | string  | [/authorize](#authorize) API로 발급받은 authorization code. *grant_type* 필드 값이 "authorization_code" 이면 필수입니다.        | 선택 |
-| device_id     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
-| grant_type    | string  | 동작 구분자. <ul><li>"authorization_code": 토큰 발급</li><li>"refresh_token": 토큰 갱신</li><li>"delete": 토큰 삭제</li></ul> | 필수 |
-| model_id      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
-| refresh_token | string  | 인증 성공 후 발급받은 갱신 토큰. *grant_type* 필드 값이 "refresh_token" 이면 필수입니다.                                        | 선택 |
-| response_type | string  | 응답 유형. 현재는 "code"만 지원합니다.                                                                                      | 필수 |
+| `access_token`  | string  | 인증 성공 후 발급받은 Clova access token. `grant_type` 필드 값이 **"delete"** 이면 필수입니다.                                 | 선택 |
+| `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
+| `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
+| `code`          | string  | [/authorize](#authorize) API로 발급받은 authorization code. `grant_type` 필드 값이 **"authorization_code"** 이면 필수입니다.        | 선택 |
+| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
+| `grant_type`    | string  | 동작 구분자. <ul><li><strong>"authorization_code"</strong>: 토큰 발급</li><li><strong>"refresh_token"</strong>: 토큰 갱신</li><li><strong>"delete"</strong>: 토큰 삭제</li></ul> | 필수 |
+| `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
+| `refresh_token` | string  | 인증 성공 후 발급받은 갱신 토큰. `grant_type` 필드 값이 **"refresh_token"** 이면 필수입니다.                                      | 선택 |
+| `response_type` | string  | 응답 유형. 현재는 **"code"**만 지원합니다.                                                                                  | 필수 |
 
 ### Request Example
 
@@ -102,12 +105,13 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 
 
 ### Response field
+
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| access_token  | string  | Clova access token                               |
-| expires_in    | number  | Clova access token의 유효 기간(초 단위)              |
-| refresh_token | string  | Clova access token을 갱신하기 위한 갱신 토큰           |
-| token_type    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
+| `access_token`  | string  | Clova access token                               |
+| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 갱신 토큰           |
+| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
 
 ### Response Example
 {% raw %}
@@ -124,4 +128,4 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 ### See also
 * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
 * [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [/authorize](#authorize)
+* [`/authorize`](#authorize)

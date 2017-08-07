@@ -1,13 +1,14 @@
 # Clova
 
-클라이언트의 요청이 인식된 결과를 클라이언트로 전달하는 지시 메시지의 일부 집합입니다. 사용자의 요청이 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
+클라이언트의 요청이 인식된 결과를 클라이언트로 전달하는 지시 메시지의 일부 집합입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [FinishExtension](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
-| [RenderTemplate](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
-| [RenderText](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
-| [StartExtension](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
+| [`FinishExtension`](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
+| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
+| [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
+| [`RenderText`](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
+| [`StartExtension`](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
 
 ## FinishExtension directive {#FinishExtension}
 
@@ -17,11 +18,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| extension     | string  | 종료할 Extension 이름          | 필수     |
+| `extension`     | string  | 종료할 Extension 이름          | 필수     |
 
 ### Remarks
 
-현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "See you later" 발화로 모드 종료가 가능합니다. 이때, FinishExtension 지시 메시지의 *extension* 필드 값으로 "freetalking"이 전달됩니다.
+현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "See you later" 발화로 모드 종료가 가능합니다. 이때, FinishExtension 지시 메시지의 `extension` 필드 값으로 "freetalking"이 전달됩니다.
 
 ### Message example
 
@@ -46,14 +47,47 @@
 {% endraw %}
 
 ### See also
-* [Clova.StartExtension](#StartExtension)
+* [`Clova.StartExtension`](#StartExtension)
+
+## Hello directive {#Hello}
+
+클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다. 클라이언트는 이 지시 메시지를 통해 Clova 서비스에 대한 [접속 시도](/CIC/Guides/Interact_with_CIC.md#CreateConnection)가 제대로 수행되었는지 확인할 수 있습니다.
+
+### Payload field
+
+없음.
+
+### Remarks
+이 지시 메시지는 대화 ID(`dialogRequestId`)를 가지지 않습니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "Hello"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+* [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
 ## RenderTemplate directive {#RenderTemplate}
 
-클라이언트에게 데이터를 템플릿에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
+클라이언트에게 데이터를 content template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
 ### Payload field
-*payload* 필드는 [템플릿](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 템플릿을 제공하고 있습니다.
+`payload` 필드는 [content template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 content template을 제공하고 있습니다.
 
 * 콘텐츠 UI 유형별 템플릿
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
@@ -95,7 +129,7 @@
 {% endraw %}
 
 ### See also
-* [Clova.RenderText](#RenderText)
+* [`Clova.RenderText`](#RenderText)
 * [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
@@ -106,7 +140,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| text          | string  | 사용자에게 보여줄 텍스트          | 필수     |
+| `text`          | string  | 사용자에게 보여줄 텍스트          | 필수     |
 
 ### Message example
 
@@ -131,7 +165,7 @@
 {% endraw %}
 
 ### See also
-* [Clova.RenderTemplate](#RenderTemplate)
+* [`Clova.RenderTemplate`](#RenderTemplate)
 
 ## StartExtension directive {#StartExtension}
 
@@ -141,11 +175,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| extension     | string  | 시작할 Extension 이름          | 필수     |
+| `extension`     | string  | 시작할 Extension 이름          | 필수     |
 
 ### Remarks
 
-현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, StartExtension 지시 메시지의 *extension* 필드 값으로 "freetalking"이 전달됩니다.
+현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, `StartExtension` 지시 메시지의 `extension` 필드 값으로 **"freetalking"**이 전달됩니다.
 
 ### Message example
 
@@ -171,4 +205,4 @@
 
 ### See also
 
-- [Clova.FinishExtension](#FinishExtension)
+* [`Clova.FinishExtension`](#FinishExtension)

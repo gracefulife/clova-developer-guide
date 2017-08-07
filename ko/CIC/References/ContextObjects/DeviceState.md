@@ -20,7 +20,7 @@ DeviceState는 사용자 기기에 설정된 현지 시간 정보와 같이 클�
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| localTime     | string  | 클라이언트 기기에 설정된 현지 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수 |
+| `localTime`     | string  | 클라이언트 기기에 설정된 현지 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수 |
 
 
 ### Message example
@@ -39,4 +39,4 @@ DeviceState는 사용자 기기에 설정된 현지 시간 정보와 같이 클�
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)

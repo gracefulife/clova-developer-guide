@@ -10,20 +10,20 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| bgClipUrl                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경음 파일의 URL 정보가 담긴 객체 | 필수 |
-| highTemperature           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오후의 최고 기온 정보가 담긴 객체 | 필수 |
-| highTempWeather           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 높을 때의 날씨 정보가 담긴 객체  | 필수 |
-| houlyWeatherList[] | object array | 시간대별 날씨 정보를 가지는 객체 배열 | 필수 |
-| houlyWeatherList[].hourlyTemperature | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 시간대별 온도 정보가 담긴 객체 | 필수 |
-| houlyWeatherList[].hourlyTime | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 시간대 정보가 담긴 객체 | 필수 |
-| houlyWeatherList[].rainfallProbability | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | 강수 확률 정보가 담긴 객체 | 선택 |
-| houlyWeatherList[].temperatureImageCode | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 시간대별 [날씨 코드](#WeatherCode) 정보가 담긴 객체 | 필수 |
-| houlyWeatherList[].temperatureImageUrl | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 시간대별 날씨 이미지 파일의 URL 정보가 담긴 객체 | 필수 |
-| linkUrl                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체   | 선택 |
-| location                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 | 필수 |
-| lowTemperature           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오전의 최저 기온 정보가 담긴 객체 | 필수 |
-| lowTempWeather           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 낮을 때의 날씨 정보가 담긴 객체  | 필수 |
-| type                      | string | Content template 구분자. "TomorrowWeather"로 고정 | 필수 |
+| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경음 파일의 URL 정보가 담긴 객체 | 필수 |
+| `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오후의 최고 기온 정보가 담긴 객체 | 필수 |
+| `highTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 높을 때의 날씨 정보가 담긴 객체  | 필수 |
+| `houlyWeatherList[]` | object array | 시간대별 날씨 정보를 가지는 객체 배열 | 필수 |
+| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 시간대별 온도 정보가 담긴 객체 | 필수 |
+| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 시간대 정보가 담긴 객체 | 필수 |
+| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | 강수 확률 정보가 담긴 객체 | 선택 |
+| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 시간대별 [날씨 코드](#WeatherCode) 정보가 담긴 객체 | 필수 |
+| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 시간대별 날씨 이미지 파일의 URL 정보가 담긴 객체 | 필수 |
+| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체   | 선택 |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 | 필수 |
+| `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오전의 최저 기온 정보가 담긴 객체 | 필수 |
+| `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 낮을 때의 날씨 정보가 담긴 객체  | 필수 |
+| `type`                      | string | Content template 구분자. **"TomorrowWeather"**로 고정 | 필수 |
 
 {% include "./Shared_Weather_Code.md" %}
 

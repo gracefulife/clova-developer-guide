@@ -10,21 +10,21 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| bgUrl                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 백그라운드로 표시할 이미지의 URL 정보가 담긴 객체               | 선택 |
-| highlightText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) 또는 [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | 강조할 텍스트 또는 숫자 정보가 담긴 객체 숫자 정보의 경우 구분 단위 기호를 넣어 표현할 수 있습니다.  | 선택 |
-| imageUrl               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 이미지의 URL 정보가 담긴 객체                              | 선택 |
-| linkUrl                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 지도 이미지가 포함되었을 때 웹 지도로 이동하는 URL 정보가 담긴 객체 | 선택 |
-| mainText               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 메인 문구가 담긴 객체                                     | 선택 |
-| paragraphText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문단 형태의 문구가 담긴 객체                                | 선택 |
-| referenceText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체                               | 선택 |
-| referenceURL           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체                                | 선택 |
-| sentenceText           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문장 형태의 문구가 담긴 객체                                | 선택 |
-| subText                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 보조 문구가 담긴 객체                                     | 선택 |
-| tableList[]           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 열이 두 개인 표를 구성합니다.     | 선택 |
-| tableList[].item1     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
-| tableList[].item2     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
-| tableList[].item2Link | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 | 선택 |
-| type                   | string                                                                          | Content template 구분자. "ImageText"로 고정             | 필수 |
+| `bgUrl`                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 백그라운드로 표시할 이미지의 URL 정보가 담긴 객체               | 선택 |
+| `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) 또는 [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | 강조할 텍스트 또는 숫자 정보가 담긴 객체 숫자 정보의 경우 구분 단위 기호를 넣어 표현할 수 있습니다.  | 선택 |
+| `imageUrl`               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 이미지의 URL 정보가 담긴 객체                              | 선택 |
+| `linkUrl`                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 지도 이미지가 포함되었을 때 웹 지도로 이동하는 URL 정보가 담긴 객체 | 선택 |
+| `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 메인 문구가 담긴 객체                                     | 선택 |
+| `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문단 형태의 문구가 담긴 객체                                | 선택 |
+| `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체                               | 선택 |
+| `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체                                | 선택 |
+| `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문장 형태의 문구가 담긴 객체                                | 선택 |
+| `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 보조 문구가 담긴 객체                                     | 선택 |
+| `tableList[]`           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 열이 두 개인 표를 구성합니다.     | 선택 |
+| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
+| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
+| `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 | 선택 |
+| `type`                   | string                                                                          | Content template 구분자. **"ImageText"**로 고정             | 필수 |
 
 ## Template Example
 
