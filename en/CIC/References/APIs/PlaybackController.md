@@ -9,21 +9,21 @@ Plays audio and controls speaker output on a client.
 
 The PlaybackController API provides the following event and directive messages.
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [mute](#mute)                           | Directive | Instructs your client to mute speaker volume.                    |
-| [next](#next)                           | Directive | Instructs your client to start playback of a next audio stream in a playback queue.   |
-| [pause](#pause)                         | Directive | Instructs your client to pause playback of a current audio stream.        |
-| [previous](#previous)                   | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
-| [resume](#resume)                       | Directive | Instructs your client to resume playback of an audio stream.                |
-| [stop](#stop)                           | Directive | Instructs your client to stop playback of an audio stream.                |
-| [TurnOffRepeatMode](#TurnOffRepeatMode) | Directive | Instructs your client to turn off single track repeat mode.                  |
-| [TurnOnRepeatMode](#TurnOnRepeatMode)   | Directive | Instructs your client to turn on single track repeat mode.                  |
-| [unmute](#unmute)                       | Directive | Instructs your client to unmute speaker volume.              |
-| [volumeDown](#volumeDown)               | Directive | Instructs your client to turn down speaker volume.                      |
-| [volumeUp](#volumeUp)                   | Directive | Instructs your client to turn up speaker volume.                      |
+| [Mute](#Mute)  | Directive | Instructs your client to mute speaker volume.  |
+| [Next](#Next)  | Directive | Instructs your client to start playback of a next audio stream in a playback queue.  |
+| [Pause](#Pause)  | Directive | Instructs your client to pause playback of a current audio stream.  |
+| [Previous](#Previous)  | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
+| [Resume](#Resume)  | Directive | Instructs your client to resume playback of an audio stream.  |
+| [Stop](#Stop)  | Directive | Instructs your client to stop playback of an audio stream.  |
+| [TurnOffRepeatMode](#TurnOffRepeatMode) | Directive | Instructs your client to turn off single track repeat mode.  |
+| [TurnOnRepeatMode](#TurnOnRepeatMode)  | Directive | Instructs your client to turn on single track repeat mode.  |
+| [Unmute](#Unmute)  | Directive | Instructs your client to unmute speaker volume.  |
+| [VolumeDown](#VolumeDown)  | Directive | Instructs your client to turn down speaker volume.  |
+| [VolumeUp](#VolumeUp)  | Directive | Instructs your client to turn up speaker volume.  |
 
-## mute directive {#mute}
+## Mute directive {#Mute}
 Instructs your client to mute speaker volume.
 
 ### Payload field
@@ -36,7 +36,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "mute",
+            "name": "Mute",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -50,7 +50,7 @@ None
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## next directive {#next}
+## Next directive {#Next}
 Instructs your client to start playback of a next audio stream in a playback queue.
 
 ### Payload field
@@ -63,7 +63,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "next",
+            "name": "Next",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -74,10 +74,9 @@ None
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayNext](/CIC/References/APIs/AudioPlayer.md#PlayNext)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## pause directive {#pause}
+## Pause directive {#Pause}
 Instructs your client to pause playback of a current audio stream.
 
 ### Payload field
@@ -90,7 +89,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "pause",
+            "name": "Pause",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -104,7 +103,7 @@ None
 * [AudioPlayer.PlayPaused](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## previous directive {#previous}
+## Previous directive {#Previous}
 Instructs your client to start playback of a previous audio stream in a playback queue.
 
 ### Payload field
@@ -117,7 +116,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "previous",
+            "name": "Previous",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -131,7 +130,7 @@ None
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## resume directive {#resume}
+## Resume directive {#Resume}
 Instructs your client to resume playback of an audio stream.
 
 ### Payload field
@@ -144,7 +143,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "resume",
+            "name": "Resume",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -158,7 +157,7 @@ None
 * [AudioPlayer.PlayResumed](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## stop directive {#stop}
+## Stop directive {#Stop}
 Instructs your client to stop playback of an audio stream.
 
 ### Payload field
@@ -171,7 +170,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "stop",
+            "name": "Stop",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -237,7 +236,7 @@ None
 ### See also
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## unmute directive {#unmute}
+## Unmute directive {#Unmute}
 Instructs your client to unmute speaker volume.
 
 ### Payload field
@@ -250,7 +249,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "unmute",
+            "name": "Unmute",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -264,7 +263,7 @@ None
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneDown directive {#volumeDown}
+## VolumneDown directive {#VolumeDown}
 Instructs your client to turn down speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
@@ -277,7 +276,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "volumeDown",
+            "name": "VolumeDown",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },
@@ -291,7 +290,7 @@ None
 * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
-## volumneUp directive {#volumeUp}
+## VolumneUp directive {#VolumeUp}
 Instructs your client to turn up speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
@@ -304,7 +303,7 @@ None
     "directive": {
         "header": {
             "namespace": "PlaybackController",
-            "name": "volumeUp",
+            "name": "VolumeUp",
             "dialogRequestId": "dialog-id-here-1",
             "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
         },

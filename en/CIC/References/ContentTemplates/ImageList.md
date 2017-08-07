@@ -1,5 +1,5 @@
 # ImageList Template
-Displays one or more images with description for each. It displays a list of thumbnails, or, when a user selects one of the thumbnails, displays a large image.
+Provides information using one or more images with description for each. It is used to display a list of thumbnails or a large image when a user selects one of the thumbnails.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -8,16 +8,16 @@ Displays one or more images with description for each. It displays a list of thu
 
 ## Template field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| ImageList[]                | object array | An object array that displays a image list                        | Yes |
-| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains image source information      | No |
-| ImageList[].imageTitle     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains an image title           | No |
-| ImageList[].imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains an image URL      | No |
-| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains source text information      | No |
-| ImageList[].referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a source URL        | No |
-| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a thumbnail image URL | No |
-| type                       | string       | Content Template delimiter. The value is always "ImageList".        | Yes |
+| ImageList[]  | object array | An object array that displays a list of images | Yes  |
+| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains source information of an image  | No |
+| ImageList[].imageTitle  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains an image title  | No |
+| ImageList[].imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains an image URL  | No |
+| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text information of a source  | No |
+| ImageList[].referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a source URL  | No |
+| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a thumbnail image URL | No |
+| type  | string  | Content template delimiter. The value is always "ImageList".  | Yes |
 
 ## Template Example
 
@@ -88,9 +88,9 @@ Displays one or more images with description for each. It displays a list of thu
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-The following examples show how the ImageList template is presented on a screen of the Clova mobile app provided by NAVER.
+The following example shows how the ImageList template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
 
-| Thumbnail list | Displaying a selected image |
+| Thumbnail list | Selected image |
 |-------|-------|
 | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Thumbnail_List.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Original_Image.png" /></div> |
 

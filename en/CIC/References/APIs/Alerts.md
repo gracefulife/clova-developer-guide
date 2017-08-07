@@ -2,20 +2,20 @@
 
 Creates, looks up, deletes alarms or timers. To manage alarms and timers, have your client call a local app or provide an interface for the task. The Alerts API provides the following event and directive messages.
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [DeleteAlert](#DeleteAlert) | Directive | Instructs your client to delete an alarm or timer. |
-| [GetAlert](#GetAlert)       | Directive | Instructs your client to look up an alarm or timer. |
-| [SetAlert](#SetAlert)       | Directive | Instructs your client to set an alarm or timer. |
+| [DeleteAlert](#DeleteAlert) | Directive | Instructs your client to delete alarms or timers. |
+| [GetAlert](#GetAlert)  | Directive | Instructs your client to look up alarms or timers. |
+| [SetAlert](#SetAlert)  | Directive | Instructs your client to set alarms or timers. |
 
 ## DeleteAlert directive {#DeleteAlert}
-Instructs your client to delete an alarm or timer. To delete a user's alarm or timer, have your client call a local app or provide an interface for the task.
+Instructs your client to delete alarms or timers. To delete alarms or timers, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| type          | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul> | Yes    |
+| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul> | Yes  |
 
 ### Message example
 
@@ -48,9 +48,9 @@ Instructs your client to look up alarms or timers. To look up alarms or timers, 
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| type          | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>  | Yes    |
+| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>   | Yes  |
 
 ### Message example
 
@@ -79,17 +79,17 @@ Instructs your client to look up alarms or timers. To look up alarms or timers, 
 
 ## SetAlert directive {#SetAlert}
 
-Instructs your client to set an alarm. To set an alarm or timer, have your client call a local app or provide an interface for the task.
+Instructs your client to set alarms or timers. To set alarms or timers, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| currentTime   | string       | Current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). CIC returns a current time for timers.                | No    |
-| daysOfWeek[]  | string array | An array that contains recurring days of the week. You can use values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No    |
-| scheduledTime | string       | Scheduled time on an alarm or timer ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)                                        | Yes    |
-| token         | string       | The ID of an alarm or timer                                                                                                      | Yes    |
-| type          | string       | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>                                                             | Yes    |
+| currentTime  | string  | Current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). CIC returns current time for timers.  | No  |
+| daysOfWeek[]  | string array | An array that contains recurring days of the week. It can include values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No  |
+| scheduledTime | string  | The scheduled time of an alarm or timer ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes  |
+| token  | string  | The ID of an alarm or timer  | Yes  |
+| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>   | Yes  |
 
 ### Message example
 

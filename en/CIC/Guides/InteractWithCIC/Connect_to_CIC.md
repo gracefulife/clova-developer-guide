@@ -103,7 +103,7 @@ Every time you send a new request (event message), you must send a Clova access 
 
 ### Managing connection {#ManageConnection}
 
-Once you've established a connection between your client and CIC, manage the connection in the following manner.
+Once you have established a connection between your client and CIC, manage the connection in the following manner.
 
 | Task      | Description                               |
 |----------|-----------------------------------|

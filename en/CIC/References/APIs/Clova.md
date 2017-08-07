@@ -1,42 +1,42 @@
 # Clova
 
-The Clova API consists of a set of direct messages that returns recognition results of client requests. When Clova receives user requests sent through [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes the meaning. And CIC returns appropriate directive messages to your client, as specified by recognition results. Your client processes these directive messages and provides Clova functions for users.
+It consists of a set of direct messages that returns recognition results of client requests. When user requests are sent with [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes the meaning. And CIC returns appropriate directive messages to your client based on recognition results. Your client must process these directive messages and provide Clova functions to users.
 
-| Message name                             | Message type | Message description                      |
-| ---------------------------------------- | ------------ | ---------------------------------------- |
-| [AddMemo](#AddMemo)                      | Directive    | Instructs your client to add a new memo. |
-| [AddReminder](#AddReminder)              | Directive    | Instructs your client to add a new reminder. |
-| [AddSchedule](#AddSchedule)              | Directive    | Instructs your client to add a new schedule. |
-| [CountSchedule](#CountSchedule)          | Directive    | Instructs your client to count the number of schedules in a specified period. |
-| [DeleteMemo](#DeleteMemo)                | Directive    | Instructs your client to delete a memo.  |
-| [DeleteReminder](#DeleteReminder)        | Directive    | Instructs your client to delete a reminder. |
-| [DeleteSchedule](#DeleteSchedule)        | Directive    | Instructs your client to delete a schedule. |
-| [FinishExtension](#FinishExtension)      | Directive    | Instructs your client to finish a specified extension. |
-| [GetMemo](#GetMemo)                      | Directive    | Instructs your client to look up memos.  |
-| [GetReminder](#GetReminder)              | Directive    | Instructs your client to look up reminders. |
-| [GetSchedule](#GetSchedule)              | Directive    | Instructs your client to look up schedules. |
-| [RenderMemoList](#RenderMemoList)        | Directive    | Instructs your client to display a list of memos. |
-| [RenderReminderList](#RenderReminderList) | Directive    | Instructs your client to display a list of reminders. |
-| [RenderTemplate](#RenderTemplate)        | Directive    | Instructs your client to display templates. |
-| [RenderText](#RenderText)                | Directive    | Instructs your client to display text.   |
-| [StartExtension](#StartExtension)        | Directive    | Instructs your client to start a specified extension. |
+| Message name  | Message type  | Message description  |
+|------------------|-----------|---------------------------------------------|
+| [AddMemo](#AddMemo)  | Directive | Instructs your client to add new memos.  |
+| [AddReminder](#AddReminder)  | Directive | Instructs your client to add new reminders.  |
+| [AddSchedule](#AddSchedule)  | Directive | Instructs your client to add new schedules.  |
+| [CountSchedule](#CountSchedule)  | Directive | Instructs your client to count the number of schedules in a specified period. |
+| [DeleteMemo](#DeleteMemo)  | Directive | Instructs your client to delete memos.  |
+| [DeleteReminder](#DeleteReminder)  | Directive | Instructs your client to delete reminders.  |
+| [DeleteSchedule](#DeleteSchedule)  | Directive | Instructs your client to delete schedules.  |
+| [FinishExtension](#FinishExtension)  | Directive | Instructs your client to finish a specified extension.  |
+| [GetMemo](#GetMemo)  | Directive | Instructs your client to look up memos.  |
+| [GetReminder](#GetReminder)  | Directive | Instructs your client to look up reminders.  |
+| [GetSchedule](#GetSchedule)  | Directive | Instructs your client to look up schedules.  |
+| [RenderMemoList](#RenderMemoList)  | Directive | Instructs your client to display a list of memos.  |
+| [RenderReminderList](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.  |
+| [RenderTemplate](#RenderTemplate)  | Directive | Instructs your client to display templates.  |
+| [RenderText](#RenderText)  | Directive | Instructs your client to display text.  |
+| [StartExtension](#StartExtension)  | Directive | Instructs your client to start a specified extension.  |
 
 
 
 ## AddMemo directive {#AddMemo}
 
-Instructs your client to add a new memo. It also returns content of a memo recognized from user's speech input.
+Instructs your client to add new memos. It also returns content of the memos recognized from user's speech input.
 
 ### Payload field
 
-| Field name | Type   | Field description             | Required |
-| ---------- | ------ | ----------------------------- | -------- |
-| content    | string | Content of a memo to be added | Yes      |
-| id         | string | ID of a memo to be added      | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| content  | string  | Content of a memo to add  | Yes  |
+| id  | string  | ID of a memo to add  | Yes  |
 
 ### Remarks
 
-After successfully creating a new memo, you must send the result to CIC, using a [Memo.Created](/CIC/References/APIs/Memo.md#Created) event message.
+After successfully creating new memos, you must send the result to CIC, using a [Memo.Created](/CIC/References/APIs/Memo.md#Created) event message.
 
 ### Message example
 
@@ -69,18 +69,18 @@ After successfully creating a new memo, you must send the result to CIC, using a
 
 ## AddReminder directive {#AddReminder}
 
-Instructs your client to add a new reminder. It also returns content of a reminder recognized from user's speech input.
+Instructs your client to add new reminders. It also returns content of the reminders recognized from user's speech input.
 
 ### Payload field
 
-| Field name | Type   | Field description                 | Required |
-| ---------- | ------ | --------------------------------- | -------- |
-| content    | string | Content of a reminder to be added | Yes      |
-| id         | string | ID of a reminder to be added      | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| content  | string  | Content of a reminder to add  | Yes  |
+| id  | string  | ID of a reminder to add  | Yes  |
 
 ### Remarks
 
-After successfully creating a new reminder, you must send the result to CIC, using a [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) event message.
+After successfuly creating new reminders, you must send the result to CIC, using a [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) event message.
 
 ### Message example
 
@@ -113,21 +113,21 @@ After successfully creating a new reminder, you must send the result to CIC, usi
 
 ## AddSchedule directive {#AddSchedule}
 
-Instructs your client to add a new schedule. It also returns content of a schedule recognized from user's speech input. To manage schedules, have your client call a local app or provide an interface for the task.
+Instructs your client to add new schedules. It also returns content of the schedules recognized from user's speech input. To manage schedules, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name    | Type   | Field description                        | Required |
-| ------------- | ------ | ---------------------------------------- | -------- |
-| content       | string | Content of a schedule                    | No       |
-| id            | string | ID of a schedule to be added             | Yes      |
-| period        | string | The smallest unit of period recognized from user's speech input. Schedule end time is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
-| scheduledTime | string | Start time of a schedule to be added ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| content  | string | Content of a schedule  | No  |
+| id  | string | ID of a schedule to add  | Yes  |
+| period  | string | The smallest unit of period recognized from user's speech input. Schedule end time is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
+| scheduledTime | string | The start time of a schedule to add ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support adding of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is undetermined, as in "Add a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support adding of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is undetermined, as in "Add a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -162,18 +162,18 @@ Implement exception handling to deal with the situation of receiving a unit of p
 
 ## CountSchedule directive {#CountSchedule}
 
-Instructs your client to count the number of schedules that match specified lookup conditions. It also returns lookup conditions recognized from user's speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.
+Instructs your client to count the number of schedules that match specified lookup conditions. It also returns the lookup conditions recognized from user's speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.
 
 ### Payload field
 
-| Field name    | Type   | Field description                        | Required |
-| ------------- | ------ | ---------------------------------------- | -------- |
-| period        | string | The smallest unit of period recognized from user's speech input. End time of a lookup period is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
-| scheduledTime | string | Start time of a lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| period  | string  | The smallest unit of period recognized from user's speech input. The end time of a period specified for lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
+| scheduledTime | string  | The start time of a period specified for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is undetermined, as in "How many schedules are there", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is undetermined, as in "How many schedules are there", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 
 ### Message example
@@ -214,7 +214,7 @@ None
 
 ### Remarks
 
-After successfully deleting a memo, you must send the result to CIC, using a [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) event message.
+After successfully deleting memos, you must send the result to CIC, using a [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) event message.
 
 ### Message example
 
@@ -244,7 +244,7 @@ After successfully deleting a memo, you must send the result to CIC, using a [Me
 
 ## DeleteReminder directive {#DeleteReminder}
 
-Instructs your client to delete a reminder. When a DeleteReminder directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
+Instructs your client to delete reminders. When a DeleteReminder directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
 
 ### Payload field
 
@@ -252,7 +252,7 @@ None
 
 ### Remarks
 
-After successfully deleting a reminder, you must send the result to CIC, using a [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) event message.
+After successfully deleting reminders, you must send the result to CIC, using a [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) event message.
 
 ### Message example
 
@@ -282,18 +282,18 @@ After successfully deleting a reminder, you must send the result to CIC, using a
 
 ## DeleteSchedule directive {#DeleteSchedule}
 
-Instructs your client to delete a schedule. It also returns conditions recognized from user's speech input. To delete a schedule that matches specified conditions, have your client call a local app or provide an interface for the task.
+Instructs your client to delete schedules. It also returns the conditions recognized from user's speech input. To delete a schedule that matches specified conditions, have your client call a local app that manages schedules or provide an interface for the task.
 
 ### Payload field
 
-| Field name    | Type   | Field description                        | Required |
-| ------------- | ------ | ---------------------------------------- | -------- |
-| period        | string | The smallest unit of period recognized from user's speech input. End time of a period for schedule deletion is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
-| scheduledTime | string | Start time of a period for schedule deletion ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| period  | string  | The smallest unit of period recognized from user's speech input. The end time of a period specified for deletion is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
+| scheduledTime | string  | The start time of a period specified for schedule deletion ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support deleting of a weekly schedule but has received "week" for *period*, it must be handled as an exception. If a period is undetermined, as in "Delete a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received "week" for *period*, you must handle it an exception. If a period is undetermined, as in "Delete a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -326,13 +326,13 @@ Instructs your client to finish a specified extension. When a FinishExtension di
 
 ### Payload field
 
-| Field name | Type   | Field description                       | Required |
-| ---------- | ------ | --------------------------------------- | -------- |
-| extension  | string | The name of an extension to be finished | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| extension  | string  | The name of an extension to finish  | Yes  |
 
 ### Remarks
 
-Current servers provide an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". Then, the FinishExtension directive message passes "freetalking" as the parameter of *extension* field.
+By default, current servers provide an extension called Freetalk mode. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". At this point, a FinishExtension directive message returns "freetalking" in its *extension* field.
 
 ### Message example
 
@@ -430,17 +430,17 @@ None
 
 ## GetSchedule directive {#GetSchedule}
 
-Instructs your client to look up schedules. It also returns lookup conditions recognized from user's speech input. To look up reminders, have your client call a local app or provide an interface for the task.
+Instructs your client to look up schedules. It also returns the lookup conditions recognized from user's speech input. To look up reminders, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name    | Type   | Field description                        | Required |
-| ------------- | ------ | ---------------------------------------- | -------- |
-| period        | string | The smallest unit of period recognized from user's speech input. End time of a period to look up is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul> | Yes      |
-| scheduledTime | string | Start time of a period for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| period  | string  | The smallest unit of period recognized from user's speech input. The end time of period specified for lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
+| scheduledTime | string  | The start time of a period specified for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
-Implement exception handling to deal with the situation of receiving a unit of period not processable on your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, it must be handled as an exception. If a period is determined, as in "Look up my schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is determined, as in "Look up my schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
 
 ### Message example
 
@@ -476,12 +476,12 @@ Instructs your client to display a list of memos. It also returns a list of memo
 
 ### Payload field
 
-| Field name       | Type         | Field description                        | Required |
-| ---------------- | ------------ | ---------------------------------------- | -------- |
-| memo[]           | object array | An object array that contains a list of memos | Yes      |
-| memo[].content   | string       | Content of a memo to be displayed        | Yes      |
-| memo[].id        | string       | ID of a memo to be displayed             | Yes      |
-| memo[].timestamp | string       | Time of memo creation ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| memo[]  | object array | An object array that contains a list of memos  | Yes  |
+| memo[].content  | string  | Content of a memo to display  | Yes  |
+| memo[].id  | string  | ID of a memo to display  | Yes  |
+| memo[].timestamp | string  | The time of memo creation ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Message example
 
@@ -527,16 +527,16 @@ Instructs your client to display a list of memos. It also returns a list of memo
 
 ## RenderReminderList directive {#RenderReminderList}
 
-Instructs your client to display a list of reminders. It also returns a list of reminders obtained from recognizing user's speech input.
+Instructs your client to display a list of reminders. It also returns a list of reminders obtained by recognizing user's speech input.
 
 ### Payload field
 
-| Field name         | Type         | Field description                        | Required |
-| ------------------ | ------------ | ---------------------------------------- | -------- |
-| reminder[]         | object array | An object array that contains a list of reminders | Yes      |
-| reminder[].content | string       | Content of a reminder to be displayed    | Yes      |
-| reminder[].done    | boolean      | Whether the reminder was completed or not | Yes      |
-| reminder[].id      | string       | ID of a reminder to be displayed         | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| reminder[]  | object array | An object array that contains a list of reminders | Yes  |
+| reminder[].content | string  | Content of a reminder to display  | Yes  |
+| reminder[].done  | boolean  | Whether the reminder was completed or not  | Yes  |
+| reminder[].id  | string  | ID of a reminder to display  | Yes  |
 
 ### Message example
 
@@ -582,15 +582,27 @@ Instructs your client to display a list of reminders. It also returns a list of 
 
 ## RenderTemplate directive {#RenderTemplate}
 
-Instructs your client to display data using Content Templates. It also returns content obtained by recognizing user's speech input.
+Instructs your client to display data using templates. It also returns the content obtained by recognizing user's speech input.
 
 ### Payload field
-Formats of the *payload* field may vary depending on the types of [Content Template](/CIC/References/Content_Templates.md). Currently available Content Templates are as follows.
+The format of a *payload* field is determined by which [content template](/CIC/References/Content_Templates.md) is used. Currently available templates are as follows.
 
-* [Image List](/CIC/References/Content_Templates.md#ImageList)
-* [Image & Text](/CIC/References/Content_Templates.md#ImageText)
-* [Card List](/CIC/References/Content_Templates.md#CardList)
-* [Text](/CIC/References/Content_Templates.md#Text)
+* Templates for content UI types
+  * [CardList](/CIC/References/ContentTemplates/CardList.md)
+  * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
+  * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Text](/CIC/References/ContentTemplates/Text.md)
+
+* Templates for route directions
+  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
+  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
+
+* Templates for weather forecast
+  * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
+  * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
+  * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
+  * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
+  * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
 ### Message example
 
@@ -618,17 +630,17 @@ Formats of the *payload* field may vary depending on the types of [Content Templ
 * [Clova.RenderMemoList](#RenderMemoList)
 * [Clova.RenderReminderList](#RenderReminderList)
 * [Clova.RenderText](#RenderText)
-* [Content Template](/CIC/References/Content_Templates.md)
+* [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
 
-Instructs your client to display a text message. It also returns text to be displayed to the user.
+Instructs your client to display text messages. It also returns the text to be displayed to a user.
 
 ### Payload field
 
-| Field name | Type   | Field description                     | Required |
-| ---------- | ------ | ------------------------------------- | -------- |
-| text       | string | Text returned based on a user request | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| text  | string  | Text to display to a user  | Yes  |
 
 ### Message example
 
@@ -663,13 +675,13 @@ Instructs your client to start a specified extension. When a StartExtension dire
 
 ### Payload field
 
-| Field name | Type   | Field description                      | Required |
-| ---------- | ------ | -------------------------------------- | -------- |
-| extension  | string | The name of an extension to be started | Yes      |
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| extension  | string  | The name of an extension to start  | Yes  |
 
 ### Remarks
 
-Current servers provide an extension called Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the StartExtension directive message passes "freetalking" as the parameter of *extension* field.
+By default, current servers provide an extension called Freetalk mode. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". At this point, a StartExtension directive message returns "freetalking" in its *extension* field.
 
 ### Message example
 

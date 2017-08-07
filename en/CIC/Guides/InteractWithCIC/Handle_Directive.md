@@ -4,7 +4,7 @@ CIC returns directive messages to instruct your client to perform specific actio
 | Content type            | Description                                             |
 |---------------------|-------------------------------------------------|
 | Speech data            | Speech data to be synthesized for audio output through a device speaker                  |
-| JSON content data | <ul><li>Data to be displayed on a device screen (See <a href="/CIC/References/Content_Templates.md">Content Template</a>)</li><li>Content location (necessary for music playback, for example) and credential data</li></ul> |
+| JSON content data | <ul><li>Data to be displayed on a device screen (See <a href="/CIC/References/Content_Templates.md">Content Template</a>)</li><li>Content location (necessary for music playback, for example) and credentials</li></ul> |
 
 Implement your client to handle directive messages in the following steps.
 

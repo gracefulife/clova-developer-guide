@@ -1,5 +1,5 @@
 # Text Template
-Displays text data. It displays text with highlights, paragraph text or table text.
+Provides text data to display. It is used to display text with highlights, paragraph text or table text.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -8,23 +8,23 @@ Displays text data. It displays text with highlights, paragraph text or table te
 
 ## Template field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| bgUrl                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains an image URL to display in background               | No |
-| highlightText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) or [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | When the object contains text or number to highlight, you can add a digit grouping symbol to the number.  | No |
-| imageUrl               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains an image URL                              | No |
-| linkUrl                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a URL which directs a user to a web map when a map image is included | No |
-| mainText               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains main text                                     | No |
-| paragraphText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains paragraph text                                | No |
-| referenceText          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains source text information                               | No |
-| referenceURL           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object that contains a source URL                                | No |
-| sentenceText           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains sentence text                                | No |
-| subText                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains sub text                                     | No |
-| tablieList[]           | object array                                                                    | An object array that contains table text. The table has two columns.     | No |
-| tablieList[].item1     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text to display in a first column                    | No |
-| tablieList[].item2     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text to display in a second column                    | No |
-| tablieList[].item2Link | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | An object that contains a link URL or phone number of the text in a second column | No |
-| type                   | string                                                                          | Content Template delimiter. The value is always "ImageText".             | Yes |
+| bgUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL to an image to be displayed in background  | No |
+| highlightText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) or [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object that contains highlighted text or number with digit grouping symbols.  | No |
+| imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains an image URL  | No |
+| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a web map when a map image is included | No |
+| mainText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains main text  | No |
+| paragraphText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains paragraph text  | No |
+| referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text information of a source  | No |
+| referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a source URL  | No |
+| sentenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains sentence text  | No |
+| subText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contain sub text  | No |
+| tableList[]  | object array  | An object array that contains table text. The table has two columns.  | No |
+| tableList[].item1  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text to be displayed in the first column  | No |
+| tableList[].item2  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text to be displayed in the second column  | No |
+| tableList[].item2Link | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | An object that contains link URL or phone number of the text in the second column | No |
+| type  | string  | Content template delimiter. The value is always "ImageText".  | Yes |
 
 ## Template Example
 
@@ -229,7 +229,7 @@ Displays text data. It displays text with highlights, paragraph text or table te
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-The following examples show how the Text template is presented on a screen of the Clova mobile app for mobile provided by NAVER.
+The following example shows how the Text template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
 
 | Text with highlights | Paragraph text | Table text |
 |-------|-------|-------|

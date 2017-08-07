@@ -1,6 +1,6 @@
 # Summary
 
-## About this documentation
+## About This Document
 
 * [Documentation summary](/README.md)
 * [Copyright](/Copyright.md)
@@ -28,9 +28,9 @@
 * [Clova Auth API](/CIC/References/Clova_Auth_API.md)
   * [/authorize](/CIC/References/Clova_Auth_API.md#authorize)
   * [/token](/CIC/References/Clova_Auth_API.md#token)
-* [CIC message](/CIC/References/CIC_Message_Format.md)
-  * [Event message](/CIC/References/CIC_Message_Format.md#Event)
-  * [Directive message](/CIC/References/CIC_Message_Format.md#Directive)
+* [CIC message format](/CIC/References/CIC_Message_Format.md)
+  * [Event message \(Event\)](/CIC/References/CIC_Message_Format.md#Event)
+  * [Directive message \(Directive\)](/CIC/References/CIC_Message_Format.md#Directive)
 * [CIC API](/CIC/References/CIC_API.md)
   * [Alerts](/CIC/References/APIs/Alerts.md)
   * [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
@@ -49,12 +49,19 @@
   * [Clova.Location](/CIC/References/Context_Objects.md#Location)
   * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
   * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [Content Template](/CIC/References/Content_Templates.md)
+* [Content template](/CIC/References/Content_Templates.md)
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
+  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
+  * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
-  * [Shared Objects](/CIC/References/ContentTemplates/Shared_Objects.md)
+  * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
+  * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
+  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
+  * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
+  * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
+  * [Shared objects](/CIC/References/ContentTemplates/Shared_Objects.md)
 
 ## Clova Extension Kit
 
@@ -71,11 +78,11 @@
   * [Returning custom extension response](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
 * [Building Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)
   * [Preparation](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
-  * [Device discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
+  * [Providing discovery discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
   * [Handling Clova Home extension request](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
   * [Returning Clova Home extension response](/CEK/Guides/Build_Clova_Home_Extension.md#ReturnClovaHomeExtensionResponse)
 * [Linking user account](/CEK/Guides/LinkUserAccount.md)
-* [HTTP message format](/CEK/References/HTTP_Message_Format.md)
+* [HTTP message](/CEK/References/HTTP_Message_Format.md)
 * [Custom extension message](/CEK/References/Custom_Extension_Message_Format.md)
 * [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md)
   * [Clova Home API](/CEK/References/Clova_Home_API.md)

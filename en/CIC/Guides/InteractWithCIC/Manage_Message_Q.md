@@ -1,10 +1,10 @@
 ## Managing message queue {#ManageMessageQ}
 
-Sending and receiving messages to and from CIC occurs in a consecutive way. Directive messages returned from CIC may have the following characteristics.
-* CIC may return multiple directive messages and messages for additional information at one time.
-* CIC may return directive messages not only through a downchannel but also through a response message to an event message.
-* Directive messages may have different dialog IDs.
-* CIC may not return directive messages in a sequential order.
+Sending and receiving messages to and from CIC occurs in a consecutive way. Directive messages returned from CIC have the following characteristics.
+* CIC can return multiple directive messages and messages for additional information at one time.
+* CIC can return directive messages not only through a downchannel but also through a response message to an event message.
+* Directive messages can have different dialog IDs.
+* CIC does not return directive messages in a sequential order.
 
 Because of these characteristics, you must use a queue-based data structure to put in and take out response messages and downchannel messages in a sequential order. We call this data structure a "message queue."
 
@@ -14,4 +14,4 @@ Determine the following rules in consideration of your UX design plan.
 * The number of messages queues and their size
 * Processing priority of message queues
 
-If you want to provide UX that runs tasks seamlessly while your client is receiving speech input or generating speech output, such as music playback ([AudioPlayer](/CIC/References/APIs/AudioPlayer.md)), you must process such directive messages separately in the message queue. Also, there are some API namespaces that send a single directive message simultaneously. For such namespaces, you may not have to manage message queues separately.
+If you want to provide UX that runs tasks seamlessly while your client is receiving speech input or generating speech output, such as music playback ([AudioPlayer](/CIC/References/APIs/AudioPlayer.md)), you must process such directive messages separately in the message queue. Also, there are some API namespaces that send a single directive message simultaneously. For such namespaces, you do not have to manage message queues separately.

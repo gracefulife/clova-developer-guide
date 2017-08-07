@@ -142,7 +142,7 @@ If Clova has obtained an authorization code (authorization code grant), Clova re
 If Clova has obtained an access token directly (implicit grant), it does not receive a refresh token. Therefore, when the access token expires, the user must try account linking again.
 
 <div class="note">
-  
+
 <p><strong>Note!</strong></p>  <p>Clova Developer Console is still under development. Contact your counterpart contact personnel to ask for help with obtaining <em>Authorization URL</em>, <em>Access Token URI</em> or any other parameter values.</p>
 </div>
 
@@ -207,7 +207,7 @@ You must verify that the access token is present in the field and that it is val
 {% endraw %}
 
 <div class="note">
-  
+
 <p><strong>Note!</strong></p>  <p>If the access token is missing or invalid, you must return a response to CEK asking the client to retry account linking.</p>
 </div>
 
@@ -221,8 +221,8 @@ Once you are done with building an authorization server and applying account lin
 | Authorization URL | URL to access for [account authentication](#SetupAccountLinking)                            |
 | Client ID         | Unique ID used to identify a service when requesting [account authentication](#SetupAccountLinking) page    |
 | Authorization Grant Type | OAuth 2.0 authorization method. <ul><li>Implicit grant (applicable to custom extension)</li><li>Authorization code grant (applicable to custom extension and Clova Home extension)</li></ul>    |
-| Access Token URI  | Address for obtaining an access token using an authorization code. Enter an appropriate value when you've selected authorization code grant. |
-| Client Secret     | Secret which has to be passed along with *Client ID* when obtaining an access token using an authorization code. Enter an appropriate value when you've selected authorization code grant. |
+| Access Token URI  | Address for obtaining an access token using an authorization code. Enter an appropriate value when you have selected authorization code grant. |
+| Client Secret     | Secret which has to be passed along with *Client ID* when obtaining an access token using an authorization code. Enter an appropriate value when you have selected authorization code grant. |
 | Client Authentication Scheme | Scheme used when requesting an access token to Access Token URI              |
 | Privacy Policy URL | Page that provides privacy policy for the service. It is displayed on Clova App or paired app. |
 

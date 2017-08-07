@@ -1,10 +1,22 @@
-# Content Template
+# Content template
 
-Content Templates are standardized formats for displaying content returned from CIC. Sometimes you have to make your client display content provided by Clova on its screen, not just generating audio output. To help with displaying, Clova returns data in a pre-defined format using Content Templates. Content Templates help you focus on displaying in a proper manner.
+Content templates are standardized formats for displaying content returned from CIC. Sometimes you have to make your client display content provided by Clova on its screen, not just generating audio output. To help with displaying, Clova returns data in a pre-defined format using the content templates. The content templates help you focus on displaying information in a proper manner.
 
-Currently, Clova is providing the following Content Templates.
+Clova currently provides the following content templates.
 
-* [CardList](/CIC/References/ContentTemplates/CardList.md)
-* [ImageList](/CIC/References/ContentTemplates/ImageList.md)
-* [ImageText](/CIC/References/ContentTemplates/ImageText.md)
-* [Text](/CIC/References/ContentTemplates/Text.md)
+* Templates for content UI types
+  * [CardList](/CIC/References/ContentTemplates/CardList.md)
+  * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
+  * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Text](/CIC/References/ContentTemplates/Text.md)
+
+* Templates for weather forecast
+  * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
+  * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
+  * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
+  * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
+  * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
+
+* Templates for directions
+  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
+  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)

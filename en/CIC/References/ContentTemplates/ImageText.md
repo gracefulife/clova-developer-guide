@@ -1,5 +1,5 @@
 # ImageText Template
-This template displays an image with text. It displays a thumbnail image with text or a map with text.
+Provides information using an image with text. It is used to display a thumbnail image with text or a map with text.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -8,18 +8,18 @@ This template displays an image with text. It displays a thumbnail image with te
 
 ## Template field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| appLinkUrl     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a URL which directs a user to a map app when a map image is included  | No |
-| imageUrl       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains an image URL                                | No |
-| linkUrl        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a URL which directs a user to a web map when a map image is included   | No |
-| mainText       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains main text                                       | No |
-| referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains source text information                                | No |
-| referenceURL   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a source URL                                  | No |
-| subTextList    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An array that contains sub text                                       | No |
-| thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object that contains a thumbnail image URL                           | No |
-| thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object that contains a thumbnail image type. Available values are: <ul><li>"인물""</li><li>"책"</li><li>"앨범"</li></ul> | No |
-| type           | string  | Content Template delimiter. The value is always "ImageText".      | Yes      |
+| appLinkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a map app when a map image is included  | No |
+| imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains an image URL  | No |
+| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a web map when a map image is included  | No |
+| mainText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains main text  | No |
+| referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains text information of a source  | No |
+| referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a source URL  | 선택 |
+| subTextList  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An array that contains sub text  | No |
+| thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a thumbnail image URL  | No |
+| thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains type information of a thumbnail image. Available values are: <ul><li>"인물""</li><li>"책"</li><li>"앨범"</li></ul> | No |
+| type  | string  | Content template delimiter. The value is always "ImageText".  | Yes  |
 
 ## Template Example
 
@@ -100,7 +100,7 @@ This template displays an image with text. It displays a thumbnail image with te
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-The following examples show how the ImageText template is presented on a screen of the Clova mobile app provided by NAVER.
+The following example shows how the ImageText template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
 
 | Thumbnail image with text | Map image with text |
 |-------|-------|

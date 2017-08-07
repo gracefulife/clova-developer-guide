@@ -6,29 +6,29 @@ Processes user's speech input for speech recognition. Process speech input in th
 2. Continue to send the speech input to CIC by capturing it with the interval of 200ms.
 3. Repeat the step 2 until the user finishes speaking or a [StopCapture](#StopCapture) directive message is returned from CIC.
 
-The SpeechRecognizer API provides the following event and directive messages.
+The SpeechSynthesizer API provides the following event and directive messages.
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [ExpectSpeech](#ExpectSpeech)                 | Directive | Instructs your client to be ready to receive speech input from a user.      |
-| [ExpectSpeechTimedOut](#ExpectSpeechTimedOut) | Event     | Reports to CIC that the specified waiting time for speech input has timed out.           |
-| [Recognize](#Recognize)                       | Event     | Requests CIC to recognize speech input coming in from a user. |
-| [ShowRecognizedText](#ShowRecognizedText)     | Directive | Returns recognition results of captured speech to a client in real time, in the form of natural language.   |
-| [StopCapture](#StopCapture)                   | Directive | Instructs your client to stop capturing user's speech input.      |
+| [ExpectSpeech](#ExpectSpeech)  | Directive | Instructs your client to be ready to receive speech input from a user.  |
+| [ExpectSpeechTimedOut](#ExpectSpeechTimedOut) | Event  | Reports to CIC that the specified waiting time for speech input has timed out.  |
+| [Recognize](#Recognize)  | Event  | Requests CIC to recognize speech input coming in from a user. |
+| [ShowRecognizedText](#ShowRecognizedText)  | Directive | Returns speech recognition results in real time, in the form of natural language.  |
+| [StopCapture](#StopCapture)  | Directive | Instructs your client to stop capturing user's speech input.  |
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
-Instructs your client to activate a microphone and receive speech input from a user. CIC returns this directive message when the original user request does not provide enough information and so CIC wants to request more information. Or, CIC returns this message to continue conversation, for example, using the Freetalk mode. To send speech input to CIC, use a [SpeechRecognizer.Recognize](#Recognize) event message.
+Instructs your client to activate its microphone and receive speech input from a user. CIC returns this directive message to request more information when the original user request does not provide enough information. Or, CIC returns this message to engage conversation with a user, for example, in the Freetalk mode. To send speech input to CIC, use a [SpeechRecognizer.Recognize](#Recognize) event message.
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| timeoutInMilliseconds | integer | Time to wait until receiving speech input from a user (in milliseconds). | Yes    |
+| timeoutInMilliseconds | integer | The waiting time to receive user's speech input (in milliseconds). | Yes  |
 
 ### Remarks
-* When this directive message is returned, send user's input to CIC using a dialog ID (*dialogRequestId*) same as the dialog ID of a previous request message.
-* If you do not receive any speech input from a user for a specified timeoutInMilliseconds time,  send CIC a [SpeechRecognizer.ExpectSpeechTimedOut](#ExpectSpeechTimedOut) event message.
+* When this directive message is returned, send user's input to CIC, using the same dialog ID (*dialogRequestId*) as the previous request message.
+* If you do not receive any speech input from a user for a specified timeoutInMilliseconds time, send CIC a [SpeechRecognizer.ExpectSpeechTimedOut](#ExpectSpeechTimedOut) event message.
 
 ### Message example
 
@@ -59,7 +59,7 @@ Instructs your client to activate a microphone and receive speech input from a u
 
 ## ExpectSpeechTimedOut event {#ExpectSpeechTimedOut}
 
-Send this event message to CIC when you do not receive any speech input from a user for a specified waiting time, returned in a [SpeechRecognizer.ExpectSpeech](#ExpectSpeech) directive message.
+Send this event message to CIC if you do not receive any speech input from a user for a specified waiting time, which has been returned in a [SpeechRecognizer.ExpectSpeech](#ExpectSpeech) directive message.
 
 ### Context field
 
@@ -103,9 +103,9 @@ None
 * [SpeechRecognizer.ExpectSpeech](#ExpectSpeech)
 
 ## Recognize event {#Recognize}
-Sends user's speech input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret results and process user requests. Most of [directive messages](/CIC/References/CIC_Message_Format.md#Directives) are the messages returned from CIC after CIC recognizes user requests, which are sent through Recognize event messages.
+Sends user's speech input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. Most of [directive messages](/CIC/References/CIC_Message_Format.md#Directives) are the messages returned from CIC after CIC confirms user requests through Recognize event messages.
 
-Supported audio input formats are as follows.
+Processable audio input formats are as follows.
 * 16-bit Linear PCM
 * 16 kHz sample rate
 * Mono
@@ -117,11 +117,11 @@ Send the following [context information](/CIC/References/Context_Objects.md) alo
 * [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
 
 ### Payload field
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| format  | string | Audio data format. Always enter `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | No    |
-| lang    | string | Determines in which language user's speech input will be recognized. <ul><li>"ko": Korean</li><li>"en": English</li></ul> | Yes    |
-| profile | string | A field reserved for future use. Always enter `CLOSE_TALK`.                                     | No    |
+| format  | string | Audio data format. Always enter `AUDIO_L16_RATE_16000_CHANNELS_1`.  | No  |
+| lang  | string | Determines in which language user's speech input will be recognized. <ul><li>"ko": Korean</li><li>"en": English</li></ul>| Yes  |
+| profile | string | A field reserved for future use. Always enter `CLOSE_TALK`.  | No  |
 
 ### Remarks
 In general, user's speech is recognizable in Korean. However, be noted that the Freetalk mode may have to be recognized in English ("en").
@@ -172,13 +172,13 @@ While receiving speech input from users, through [SpeechRecognizer.Recognize](#R
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| text  | string | Contains recognition results of user's speech input in real time, in the form of natural language. | Yes    |
+| text  | string | Contains speech recognition results in real time, in the form of natural language. | Yes  |
 
 ### Remarks
 
-This directive message is returned through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that it is not a response to an event message.
+This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that the message is not a response to an event message.
 
 ### Message example
 
@@ -239,15 +239,15 @@ This directive message is returned through a [downchannel](/CIC/Guides/Interact_
 * [SpeechRecognizer.StopCapture](#StopCapture)
 
 ## StopCapture directive {#StopCapture}
-After receiving [SpeechRecognizer.Recognize](#Recognize) event messages, CIC returns a StopCapture directive message to your client when it decides that it does not need to receive recorded PCM data any longer. You must stop recording user's speech at once upon receiving this message. Although you can continue to receive user's speech even after receiving this message from CIC, the audio data will not be processed. Also, the StopCapture directive message will contain payload of lastly recognized speech input.
+After receiving [SpeechRecognizer.Recognize](#Recognize) event messages, CIC returns a StopCapture directive message to your client when it decides that it does not need to receive recorded PCM data any longer. You must stop recording user's speech immediately upon receiving this message. Although you can continue to receive user's speech even after receiving this message from CIC, the audio data will not be processed. Also, the StopCapture directive message will contain payload of lastly recognized speech input.
 
 ### Payload field
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| recognizedText | string | Contains recognition results of user's speech input. | Yes |
+| recognizedText | string | Contains speech recognition results. | Yes |
 
 ### Remarks
-This directive message is returned through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that it is not a response to an event message.
+This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that it is not a response to an event message.
 
 ### Message example
 {% raw %}
