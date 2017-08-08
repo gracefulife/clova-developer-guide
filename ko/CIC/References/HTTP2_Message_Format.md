@@ -148,6 +148,7 @@ Content-Type: application/octet-stream
 
 **사용자 요청을 전달할 때 요청 형식이 잘못되었거나 내부 서버 오류가 발생한 경우** 오류 상황에 해당하는 [HTTP 상태 코드](https://tools.ietf.org/html/rfc7231#section-6)(4XX 또는 5XX)와 함께 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)가 전달됩니다. 이 경우 하나의 메시지 블록이 전달되지만 `Content-Type`은 **multipart/form-data**를 사용합니다. 오류 메시지는 다음과 같은 구조를 가집니다.
 
+{% raw %}
 ```
 HTTP/2 400
 Content-Type: multipart/related; boundary=this-is-boundary-text;
@@ -167,6 +168,7 @@ Content-Type: application/json; charset=UTF-8
 }
 --this-is-boundary-text--
 ```
+{% endraw %}
 
 ## HTTP 메시지 예제 {#MessageExample}
 다음은 클라이언트와 CIC 사이에서 주고 받은 실제 HTTP 요청/응답 메시지입니다.
