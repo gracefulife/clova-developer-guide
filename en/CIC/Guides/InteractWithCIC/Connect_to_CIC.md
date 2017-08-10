@@ -60,11 +60,8 @@ Below are the steps to obtain a Clova access token.
 ### Creating CIC connection {#CreateConnection}
 To connect with CIC using the HTTP/2 protocol, use the following base URL.
 
-{% raw %}
-```
-https://prod-ni-cic.clova.ai/
-```
-{% endraw %}
+<pre><code>{{ book.CICBaseURL }}
+</code></pre>
 
 When your client attempts to establish an initial connection with CIC, the first thing to do is creating a "downchannel." A downchannel is used When CIC sends directive messages. These directive messages are not response messages prompted by event messages. They are messages initiated by CIC itself (cloud-initiated) when certain conditions are met or when any special needs arise. For example, when a new alarm (push) arrives, a directive message will be sent through a downchannel.
 

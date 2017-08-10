@@ -17,11 +17,8 @@ You usually use HTTP requests when sending user requests from your client to CIC
 ### CIC base URL {#BaseURL}
 Clova uses the following base URL.
 
-{% raw %}
-```
-https://prod-ni-cic.clova.ai/
-```
-{% endraw %}
+<pre><code>{{ book.CICBaseURL }}
+</code></pre>
 
 ### HTTP header {#Header}
 You require the following header fields when connecting with CIC.
