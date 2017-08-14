@@ -30,7 +30,7 @@
 | `places[]`             | object array | 미리 저장된 위치 정보를 가지고 있는 객체 배열                                          | 필수 |
 | `places[].latitude`    | string       | 위도                                                                          | 필수 |
 | `places[].longitude`   | string       | 경도                                                                          | 필수 |
-| `places[].name`        | string       | 저장된 위치의 이름. 다음 값을 입력할 수 있습니다. <ul><li><strong>"회사"</strong></li><li><strong>"집"</strong></li></ul>       | 필수 |
+| `places[].name`        | string       | 저장된 위치의 이름. 다음 값을 입력할 수 있습니다. <ul><li><code>"회사"</code></li><li><code>"집"</code></li></ul>       | 필수 |
 | `places[].refreshedAt` | string       | 위치 저장 시간(UTC 기준, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷)  | 필수 |
 
 

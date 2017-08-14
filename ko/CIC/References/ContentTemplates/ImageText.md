@@ -18,8 +18,8 @@
 | `referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체                                  | 선택 |
 | `subTextList`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 보조 문구가 담긴 배열                                       | 선택 |
 | `thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 썸네일 이미지의 URL 정보가 담긴 객체                           | 선택 |
-| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li><strong>"인물"</strong></li><li><strong>"책"</strong></li><li><strong>"앨범"</strong></li></ul> | 선택 |
-| `type`           | string  | Content template 구분자. **"ImageText"**로 고정      | 필수      |
+| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li><code>"인물"</code></li><li><code>"책"</code></li><li><code>"앨범"</code></li></ul> | 선택 |
+| `type`           | string  | Content template 구분자. `"ImageText"`로 고정      | 필수      |
 
 ## Template Example
 
@@ -104,7 +104,7 @@
 
 | 썸네일 이미지와 텍스트 | 지도 이미지와 텍스트 |
 |-------|-------|
-| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Thumbimage_and_Text.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Mapimage_and_Text.png" /></div> |
+| ![Thumbnail](/CIC/Resources/Images/Content_Template-Thumbimage_and_Text.png) | ![Map and text](/CIC/Resources/Images/Content_Template-Mapimage_and_Text.png) |
 
 ## See also
 * [CardList](/CIC/References/ContentTemplates/CardList.md)

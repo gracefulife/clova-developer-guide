@@ -20,7 +20,7 @@
 | `description`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 주간 날씨 정보임을 알리는 설명 문구가 포함된 객체  | 필수 |
 | `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체   | 선택 |
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 | 필수 |
-| `type`                      | string | Content template 구분자. **"WeeklyWeather"**로 고정 | 필수 |
+| `type`                      | string | Content template 구분자. `"WeeklyWeather"`로 고정 | 필수 |
 
 {% include "./Shared_Weather_Code.md" %}
 
@@ -204,7 +204,8 @@
 
 ## Screen UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 WeeklyWeather 템플릿의 내용을 표현한 UI 예제입니다.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-WeeklyWeather.png" /></div>
+
+![WeeklyWeather](/CIC/Resources/Images/Content-Template-WeeklyWeather.png)
 
 ## See also
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)

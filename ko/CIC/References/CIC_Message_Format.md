@@ -168,8 +168,8 @@
 |---------------|---------|-----------------------------|---------|
 | `header`                 | object | 오류 메시지의 헤더                                             | 필수 |
 | `header.messageId`       | string | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다.            | 필수 |
-| `header.name`            | string | 오류 메시지의 이름. **"Exception"**으로 고정됩니다.                | 필수 |
-| `header.namespace`       | string | 오류 메시지의 네임스페이스. **"System"**으로 고정됩니다.             | 필수 |
+| `header.name`            | string | 오류 메시지의 이름. `"Exception"`으로 고정됩니다.                | 필수 |
+| `header.namespace`       | string | 오류 메시지의 네임스페이스. `"System"`으로 고정됩니다.             | 필수 |
 | `payload`                | object | 오류와 관련된 정보를 담고 있는 객체                                | 필수 |
 | `payload.code`           | string | 오류 코드. 해당 메시지의 HTTP 응답 코드와 같은 값을 가집니다.           | 필수 |
 | `payload.description`    | string | 오류 메시지.                                                  | 필수 |

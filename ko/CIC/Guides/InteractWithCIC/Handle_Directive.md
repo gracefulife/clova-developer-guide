@@ -32,7 +32,7 @@
 }
 </code></pre>
 </li>
-<li>수신한 지시 메시지의 대화 ID(<code>dialogRequestId</code>)가 클라이언트가 보관하고 있는 대화 ID와 대응되는지 확인합니다.
+<li>수신한 지시 메시지의 <a href="CIC/CIC_Overview.html#DialogModel">대화 ID</a>(<code>dialogRequestId</code>)가 클라이언트가 보관하고 있는 대화 ID와 대응되는지 확인합니다.
 <ul>
 <li><strong>클라이언트가 보관하고 있는 대화 ID와 일치하면</strong>, API 명세에 따라 필요한 동작을 수행합니다. 일반적으로 지시 메시지의 <code>payload</code>에 포함된 <a href="/CIC/References/APIs/SpeechSynthesizer.html#Speak"><code>cid</code> 값을 이용</a>하여 클라이언트 동작에 필요한 부가 정보(음성 데이터)를 <a href="#ManageMessageQ">메시지 큐</a>에서 선별해 낼 수 있습니다.</li>
 <li><strong>클라이언트가 보관하고 있는 대화 ID와 일치하지 않으면</strong>, 해당 지시 메시지 그리고 관련된 부가 정보 메시지를 무시하고 큐에서 제거합니다.</li>

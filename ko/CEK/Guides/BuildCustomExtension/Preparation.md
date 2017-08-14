@@ -67,6 +67,7 @@ OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
   "version": "0.1.0",
   "session": {
     "new": false,
+    "sessionAttributes": {},
     "sessionId": "a29cfead-c5ba-474d-8745-6c1a6625f0c5",
     "user": {
       "userId": "V0qe",
@@ -87,7 +88,7 @@ OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "OrderPIzza",
+      "name": "OrderPizza",
       "slots": {
         "PizzaAmount": {
           "name": "PizzaAmount",

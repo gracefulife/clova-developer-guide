@@ -12,6 +12,17 @@
 | Clova              | [`RenderTemplate`](/CIC/References/APIs/Clova.md#RenderTemplate)        | 클라이언트에게 템플릿을 표시하도록 지시합니다.                                                     |
 | Clova              | [`RenderText`](/CIC/References/APIs/Clova.md#RenderText)                | 클라이언트에게 텍스트를 표시하도록 지시합니다.                                                     |
 | Clova              | [`StartExtension`](/CIC/References/APIs/Clova.md#StartExtension)        | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.                                             |
+| DeviceControl      | [`BtConnect`](/CIC/References/APIs/DeviceControl.md#BtConnect)          | 클라이언트에게 특정 블루투스 기기와 연결을 설정하도록 지시합니다. |
+| DeviceControl      | [`BtDisconnect`](/CIC/References/APIs/DeviceControl.md#BtDisconnect)    | 클라이언트에게 특정 블루투스 기기와 연결을 해제하도록 지시합니다. |
+| DeviceControl      | [`BtStartPairing`](/CIC/References/APIs/DeviceControl.md#BtStartPairing) | 클라이언트에게 블루투스 페어링 모드를 시작하도록 지시합니다. |
+| DeviceControl      | [`BtStopPairing`](/CIC/References/APIs/DeviceControl.md#BtStopPairing)   | 클라이언트에게 블루투스 페어링 모드로 중지하도록 지시합니다. |
+| DeviceControl      | [`Decrease`](/CIC/References/APIs/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다. |
+| DeviceControl      | [`Increase`](/CIC/References/APIs/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다. |
+| DeviceControl      | [`OpenScreen`](/CIC/References/APIs/DeviceControl.md#OpenScreen)         | 클라이언트에게 설정 화면을 열도록 지시합니다. |
+| DeviceControl      |  [`SetPoint`](/CIC/References/APIs/DeviceControl.md#SetPoint)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다. |
+| DeviceControl      | [`TurnOff`](/CIC/References/APIs/DeviceControl.md#TurnOff)               | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다. |
+| DeviceControl      | [`TurnOn`](/CIC/References/APIs/DeviceControl.md#TurnOn)                 | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다. |
+| DeviceControl      | [`UpdateDeviceState`](#UpdateDeviceState)                                | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.                     |
 | PlaybackController | [`Mute`](/CIC/References/APIs/PlaybackController.md#Mute)               | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                                                |
 | PlaybackController | [`Next`](/CIC/References/APIs/PlaybackController.md#Next)               | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.                               |
 | PlaybackController | [`Pause`](/CIC/References/APIs/PlaybackController.md#Pause)             | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.                                    |

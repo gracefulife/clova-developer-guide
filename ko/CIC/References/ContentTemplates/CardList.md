@@ -29,7 +29,7 @@
 | `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             | 선택 |
 | `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체    | 선택 |
 | `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
-| `type`                      | string  | Content template 구분자. **"CardList"**로 고정                                                                       | 필수 |
+| `type`                      | string  | Content template 구분자. `"CardList"`로 고정                                                                       | 필수 |
 
 ## Template Example
 
@@ -363,11 +363,11 @@
 
 | `Type1` | `Type2` |
 |-------|-------|
-| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Content_Card_with_Link_Type.png" /></div> |
+| ![Type1](/CIC/Resources/Images/Content_Template-Content_Card_Type.png) | ![Type2](/CIC/Resources/Images/Content_Template-Content_Card_with_Link_Type.png) |
 
 | `Type3` | `Type4` |
 |-------|-------|
-| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Video_Card_Type.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-News_Card_Type.png" /></div> |
+| ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
 
 ## See also
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)

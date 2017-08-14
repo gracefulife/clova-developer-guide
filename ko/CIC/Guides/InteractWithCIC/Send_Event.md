@@ -1,11 +1,6 @@
 ## 이벤트 메시지 전송하기 {#SendEvent}
 클라이언트는 CIC로 [이벤트 메시지](/CIC/References/Message_Format.md#Event)를 전송할 수 있습니다. 이벤트 메시지는 클라이언트 요청을 CIC로 전달할 때 사용됩니다. 메시지는 JSON 포맷의 이벤트 메시지뿐만 아니라 사용자 음성 입력이나 텍스트 입력을 [multipart 형태의 메시지](/CIC/References/HTTP2_Message_Format.md#MultipartMessage)로 전송합니다.
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>CIC는 사용자의 요청을 순서대로 처리합니다. 따라서 클라이언트가 이전 요청의 응답이 돌아오기 시작한 시점부터 사용자의 새로운 요청을 처리하도록 클라이언트를 구현해야 합니다.</p>
-</div>
-
 클라이언트에서 사용자의 음성 데이터를 CIC로 보낼 때 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지를 사용합니다. 다음은 `SpeechRecognizer.Recognize`를 이용해 CIC로 이벤트 메시지를 전송하는 방법을 설명합니다.
 
 <ol>
@@ -19,7 +14,7 @@ Authorization = Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 content-type = multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
-<li>이벤트 메시지에 포함시킬 대화 ID(<code>dialogRequestId</code>)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</li>
+<li>이벤트 메시지에 포함시킬 <a href="/CIC/CIC_Overview.html#DialogModel">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</li>
 <li>첫 번째 메시지 파트에 <a href="/CIC/References/APIs/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"

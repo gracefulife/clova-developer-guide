@@ -37,6 +37,11 @@
   * [Alerts](/CIC/References/APIs/Alerts.md)
   * [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
   * [Clova](/CIC/References/APIs/Clova.md)
+<<<<<<< HEAD
+=======
+  * [DeviceControl](/CIC/References/APIs/DeviceControl.md)
+  * [Memo](/CIC/References/APIs/Memo.md)
+>>>>>>> doc-KR
   * [PlaybackController](/CIC/References/APIs/PlaybackController.md)
   * [SpeechRecognizer](/CIC/References/APIs/SpeechRecognizer.md)
   * [SpeechSynthesizer](/CIC/References/APIs/SpeechSynthesizer.md)
@@ -76,6 +81,7 @@
     * [IntentRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
     * [SessionEndedRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
   * [Custom extension 응답 반환하기](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
+  * [Multi-turn 대화 수행하기](/CEK/Guides/Build_Custom_Extension.md#DoMultiturnDialog)
 * [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)
   * [사전 준비사항](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
   * [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
