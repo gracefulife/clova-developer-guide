@@ -15,7 +15,7 @@
 | [`GetMemo`](#GetMemo)                       | Directive | 클라이언트에게 메모를 조회하도록 지시합니다.                       |
 | [`GetReminder`](#GetReminder)               | Directive | 클라이언트에게 리마인더를 조회하도록 지시합니다.                    |
 | [`GetSchedule`](#GetSchedule)               | Directive | 클라이언트에게 일정을 조회하도록 지시합니다.                       |
-| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 일립니다.       |
+| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
 | [`RenderMemoList`](#RenderMemoList)         | Directive | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                   |
 | [`RenderReminderList`](#RenderReminderList) | Directive | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                |
 | [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
