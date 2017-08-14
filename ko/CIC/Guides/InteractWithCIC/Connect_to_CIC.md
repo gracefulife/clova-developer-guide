@@ -15,10 +15,10 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 <ol>
 <li><p>사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기 SDK</a>). 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 클라이언트 앱이나 페어링 앱을 사용해야 합니다.</p>
 </li>
-<li><p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 인증 토큰을 획득합니다.</p>
+<li><p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득합니다.</p>
 </li>
 <li><p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/Clova_Auth_API.html#authorize">/authorize</a> API의 파라미터로 입력하여 authorization code를 획득합니다. 다음은 authorization code를 요청한 예입니다.</p>
-<pre><code>{{ book.AuthServerBaseURL }}/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
                                &amp;device_id=test_device
                                &amp;model_id=test_model
                                &amp;response_type=code
@@ -33,7 +33,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 <li><p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
 </li>
 <li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API의 파라미터로 입력하여 Clova access token을 획득합니다. 다음은 Clova access token을 요청한 예입니다.</p>
-<pre><code>{{ book.AuthServerBaseURL }}/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
                            &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
                            &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
                            &amp;device_id=test_device
@@ -60,11 +60,8 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 ### CIC 연결하기 {#CreateConnection}
 CIC는 HTTP/2 프로토콜을 사용하며, CIC에 연결할 때 사용하는 base URL은 다음과 같습니다.
 
-{% raw %}
-```
-https://prod-ni-cic.clova.ai/
-```
-{% endraw %}
+<pre><code>{{ book.CICBaseURL }}
+</code></pre>
 
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
 

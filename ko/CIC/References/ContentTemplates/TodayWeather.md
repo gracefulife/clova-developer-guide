@@ -22,7 +22,7 @@
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 | 필수 |
 | `nowTemperature`            | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 현재 온도 정보가 담긴 객체 | 필수 |
 | `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 날씨 정보가 담긴 객체  | 필수 |
-| `type`                      | string | Content template 구분자. **"TodayWeather"**로 고정 | 필수 |
+| `type`                      | string | Content template 구분자. `"TodayWeather"`로 고정 | 필수 |
 
 {% include "./Shared_Weather_Code.md" %}
 
@@ -280,7 +280,8 @@
 
 ## Screen UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 TodayWeather 템플릿의 내용을 표현한 UI 예제입니다.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-TodayWeather.png" /></div>
+
+![TodayWeather](/CIC/Resources/Images/Content-Template-TodayWeather.png)
 
 ## See also
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

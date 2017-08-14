@@ -15,6 +15,7 @@
     "OrientedService": "NAVER",
     "TargetServiceForClientAuth": "NAVER",
     "LoginAPIofTargetService": "https://developers.naver.com/docs/login/overview/",
-    "AuthServerBaseURL" : "https://auth.clova.ai"
+    "AuthServerBaseURL" : "https://auth.clova.ai/",
+    "CICBaseURL" : "https://prod-ni-cic.clova.ai/"
   }
 }

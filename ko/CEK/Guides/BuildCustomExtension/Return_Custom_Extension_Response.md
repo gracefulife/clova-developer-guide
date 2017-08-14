@@ -68,16 +68,16 @@
 
 각 `response.outputSpeech` 필드를 설명하면 다음과 같습니다.
 
-* *response.outputSpeech.type* : 복문 타입(SpeechList)의 음성 정보입니다.
-* *response.outputSpeech.values[0]* : 일반 텍스트 형태의 음성 정보이며, 한국어로 "노래를 불러볼게요"라고 발화하도록 설정했습니다.
-* *response.outputSpeech.values[1]* : URL 형태의 음성 정보이며, *value* 필드에 입력된 URL의 파일을 재생하도록 설정했습니다.
+* `response.outputSpeech.type` : 복문 타입(SpeechList)의 음성 정보입니다.
+* `response.outputSpeech.values[0]` : 일반 텍스트 형태의 음성 정보이며, 한국어로 "노래를 불러볼게요"라고 발화하도록 설정했습니다.
+* `response.outputSpeech.values[1]` : URL 형태의 음성 정보이며, `value` 필드에 입력된 URL의 파일을 재생하도록 설정했습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>단문이나 복문 형태의 음성 정보 외에도 스크린 없는 기기와 같이 상세 내용을 GUI로 표현하기 힘든 클라이언트를 위해 복합 형태(SpeechSet)의 음성 정보도 지원하고 있습니다. 자세한 사항은 custom extension 메시지 포맷의 <a href="/CEK/References/Custom_Extension_Message_Format.md#ResponseMessage">응답 메시지</a>를 참조합니다.</p>
 </div>
 
-음성 출력뿐만 아니라 클라이언트 기기의 화면이나 클라이언트 앱 화면에 원하는 데이터를 출력해야 한다면 다음과 같이 *response.card* 필드에 [content template](/CIC/References/Content_Templates.md)에 맞춰 표시할 콘텐츠를 채우면 됩니다.
+음성 출력뿐만 아니라 클라이언트 기기의 화면이나 클라이언트 앱 화면에 원하는 데이터를 출력해야 한다면 다음과 같이 `response.card` 필드에 [content template](/CIC/References/Content_Templates.md)에 맞춰 표시할 콘텐츠를 채우면 됩니다.
 
 {% raw %}
 ```json
@@ -198,32 +198,6 @@
     },
     "directives": [],
     "shouldEndSession": true
-  }
-}
-```
-{% endraw %}
-
-
-
-참고로 *response.shouldEndSession*을 **false**로 설정하면, 부족한 정보를 추가로 확인하기 위해 연속된 대화를 시도할 수 있습니다. 예를 들어, 사용자가 "페퍼로니 피자 주문해줘"라고 했는데 extension 쪽에서 해당 내용을 처리하기 위해 수량과 같은 추가 정보가 필요할 수 있습니다. 그럴 경우 아래와 같이 응답하면 사용자에게 수량과 관련된 추가 정보를 얻을 수 있습니다. 이때 Clova 플랫폼은 대화 엔진을 활용하여 사용자의 이전 요청인 "페퍼로니 피자 주문해줘"와 추가로 얻은 수량 정보를 조합하여 "페퍼로니 피자 2판 주문해줘"와 같은 요청이 입력된 것처럼 정보를 분석하여 전달할 것입니다.
-
-{% raw %}
-```json
-{
-  "version": "0.1.0",
-  "sessionAttributes": {},
-  "response": {
-    "outputSpeech": {
-      "type": "SimpleSpeech",
-      "values" : {
-          "type": "PlainText",
-          "lang": "ko",
-          "value": "몇 판 주문할까요?"
-      }
-    },
-    "card": {},
-    "directives": [],
-    "shouldEndSession": false
   }
 }
 ```

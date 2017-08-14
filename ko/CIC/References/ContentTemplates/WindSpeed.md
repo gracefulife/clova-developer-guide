@@ -40,7 +40,8 @@
 
 ## Screen UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 WindSpeed 템플릿의 내용을 표현한 UI 예제입니다.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-WindSpeed.png" /></div>
+
+![WindSpeed](/CIC/Resources/Images/Content-Template-WindSpeed.png)
 
 ## See also
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)

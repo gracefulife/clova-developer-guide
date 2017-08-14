@@ -32,14 +32,14 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 | applianceTypes | 허용되는 actions                                |
 |----------------|-----------------------------------------------|
-| **AIRCONDITIONER** | <ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **AIRPURIFIER**    | <ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul>                   |
-| **HUMIDFIER**      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **LIGHT**          | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SETTOPBOX**      | <ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SMARTPLUG**      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SWITCH**         | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **THERMOSTAT**     | <ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `AIRCONDITIONER` | <ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `AIRPURIFIER`    | <ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul>                   |
+| `HUMIDFIER`      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `LIGHT`          | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SETTOPBOX`      | <ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SMARTPLUG`      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SWITCH`         | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `THERMOSTAT`     | <ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul> |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -50,17 +50,17 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 | actions                    | 관련된 Clova Home API                      |
 |----------------------------|------------------------------------------|
-| **DecrementFanSpeed**          | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) |
-| **DecrementTargetTemperature** | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) |
-| **DecrementVolume**            | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](#DecrementVolumeRequest) |
-| **HealthCheck**                | [`HealthCheckRequest`](#HealthCheckRequest), [`HealthCheckResponse`](#HealthCheckResponse) |
-| **IncrementFanSpeed**          | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) |
-| **IncrementTargetTemperature** | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureConfirmation) |
-| **IncrementVolume**            | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](#IncrementVolumeRequest) |
-| **SetChannel**                 | [`SetChannelConfirmation`](#SetChannelConfirmation), [`SetChannelRequest`](#SetChannelRequest) |
-| **SetMode**                    | [`SetModeConfirmation`](#SetModeConfirmation), [`SetModeRequest`](#SetModeRequest) |
-| **TurnOff**                    | [`TurnOffConfirmation`](#TurnOffConfirmation), [`TurnOffRequest`](#TurnOffRequest) |
-| **TurnOn**                     | [`TurnOnConfirmation`](#TurnOnConfirmation), [`TurnOnRequest`](#TurnOnRequest) |
+| `DecrementFanSpeed`          | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) |
+| `DecrementTargetTemperature` | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) |
+| `DecrementVolume`            | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](#DecrementVolumeRequest) |
+| `HealthCheck`                | [`HealthCheckRequest`](#HealthCheckRequest), [`HealthCheckResponse`](#HealthCheckResponse) |
+| `IncrementFanSpeed`          | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) |
+| `IncrementTargetTemperature` | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureConfirmation) |
+| `IncrementVolume`            | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](#IncrementVolumeRequest) |
+| `SetChannel`                 | [`SetChannelConfirmation`](#SetChannelConfirmation), [`SetChannelRequest`](#SetChannelRequest) |
+| `SetMode`                    | [`SetModeConfirmation`](#SetModeConfirmation), [`SetModeRequest`](#SetModeRequest) |
+| `TurnOff`                    | [`TurnOffConfirmation`](#TurnOffConfirmation), [`TurnOffRequest`](#TurnOffRequest) |
+| `TurnOn`                     | [`TurnOnConfirmation`](#TurnOnConfirmation), [`TurnOnRequest`](#TurnOnRequest) |
 
 #### Object Example
 {% raw %}
@@ -139,7 +139,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | string  | 난방 모드. <ul><li><strong>"hotwater"</strong> : 온수 모드</li><li><strong>"away"</strong> : 외출 모드</li></ul>   | 필수     |
+| `value`       | string  | 난방 모드. <ul><li><code>"hotwater"</code> : 온수 모드</li><li><code>"away"</code> : 외출 모드</li></ul>   | 필수     |
 
 #### Object Example
 {% raw %}

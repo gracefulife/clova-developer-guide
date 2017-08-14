@@ -120,11 +120,11 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `format`  | string | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
-| `lang`    | string | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><strong>"ko"</strong> : 한국어</li><li><strong>"en"</strong> : 영어</li></ul> | 필수    |
+| `lang`    | string | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li></ul> | 필수    |
 | `profile` | string | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
 
 ### Remarks
-일반적으로 사용자 음성을 한국어로 인식하지만 대화 모드(Freetalk mode)의 경우 사용자 음성을 영어(**"en"**)로 인식해야 할 수 있습니다.
+일반적으로 사용자 음성을 한국어로 인식하지만 대화 모드(Freetalk mode)의 경우 사용자 음성을 영어(`"en"`)로 인식해야 할 수 있습니다.
 
 ### Message example
 {% raw %}

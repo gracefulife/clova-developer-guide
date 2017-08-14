@@ -31,12 +31,12 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 | `client_id`     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID. MAC 주소를 사용하거나 UUID 해쉬 값을 생성하면 됩니다.                          | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
-| `response_type` | string  | 응답 유형. 현재는 **"code"**만 지원합니다.                                                           | 필수 |
+| `response_type` | string  | 응답 유형. 현재는 `"code"`만 지원합니다.                                                           | 필수 |
 | `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
 
 ### Request Example
 
-<pre><code>{{ book.AuthServerBaseURL }}/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
                                &amp;device_id=test_device
                                &amp;model_id=test_model
                                &amp;response_type=code
@@ -83,19 +83,19 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `access_token`  | string  | 인증 성공 후 발급받은 Clova access token. `grant_type` 필드 값이 **"delete"** 이면 필수입니다.                                 | 선택 |
+| `access_token`  | string  | 인증 성공 후 발급받은 Clova access token. `grant_type` 필드 값이 `"delete"`이면 필수입니다.                                 | 선택 |
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `code`          | string  | [/authorize](#authorize) API로 발급받은 authorization code. `grant_type` 필드 값이 **"authorization_code"** 이면 필수입니다.        | 선택 |
+| `code`          | string  | [/authorize](#authorize) API로 발급받은 authorization code. `grant_type` 필드 값이 `"authorization_code"`이면 필수입니다.        | 선택 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
-| `grant_type`    | string  | 동작 구분자. <ul><li><strong>"authorization_code"</strong>: 토큰 발급</li><li><strong>"refresh_token"</strong>: 토큰 갱신</li><li><strong>"delete"</strong>: 토큰 삭제</li></ul> | 필수 |
+| `grant_type`    | string  | 동작 구분자. <ul><li><code>"authorization_code"</code>: 토큰 발급</li><li><code>"refresh_token"</code>: 토큰 갱신</li><li><code>"delete"</code>: 토큰 삭제</li></ul> | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
-| `refresh_token` | string  | 인증 성공 후 발급받은 갱신 토큰. `grant_type` 필드 값이 **"refresh_token"** 이면 필수입니다.                                      | 선택 |
-| `response_type` | string  | 응답 유형. 현재는 **"code"**만 지원합니다.                                                                                  | 필수 |
+| `refresh_token` | string  | 인증 성공 후 발급받은 갱신 토큰. `grant_type` 필드 값이 `"refresh_token"`이면 필수입니다.                                      | 선택 |
+| `response_type` | string  | 응답 유형. 현재는 `"code"`만 지원합니다.                                                                                  | 필수 |
 
 ### Request Example
 
-<pre><code>{{ book.AuthServerBaseURL }}/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
                            &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
                            &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
                            &amp;device_id=test_device

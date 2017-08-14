@@ -29,7 +29,7 @@ Clova Home extension 메시지는 IoT 기기를 제어하는 extension이 CEK와
 | `header`                 | object | Clova Home extension 메시지의 헤더                                          | 필수     |
 | `header.messageId`       | string | 메시지 ID. 개별 메시지를 구분하기 위해 Clova에서 생성한 식별자입니다(UUID).               | 필수     |
 | `header.name`            | string | Clova Home extension 메시지의 API 이름                                      | 필수     |
-| `header.namespace`       | string | 이 필드는 **"ClovaHome"**으로 고정됩니다.                                          | 필수     |
+| `header.namespace`       | string | 이 필드는 `"ClovaHome"`으로 고정됩니다.                                          | 필수     |
 | `header.payloadVersion`  | string | `header.name`에 명시된 Clova Home API의 버전. 이 버전에 따라 `payload` 필드의 구성이 달라질 수 있습니다.                                   | 필수     |
 | `payload`                | object | `header.name`에 지정된 [Clova Home API](/CEK/References/Clova_Home_API.md)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수     |
 
