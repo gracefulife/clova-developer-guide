@@ -17,7 +17,7 @@
 | `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체      | 선택 |
 | `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체        | 선택 |
 | `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 썸네일 이미지의 URL 정보가 담긴 객체 | 선택 |
-| `type`                       | string       | Content template 구분자. **"ImageList"**로 고정        | 필수 |
+| `type`                       | string       | Content template 구분자. `"ImageList"`로 고정        | 필수 |
 
 ## Template Example
 
@@ -92,7 +92,7 @@
 
 | 썸네일 목록 | 선택한 이미지 표시 |
 |-------|-------|
-| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Thumbnail_List.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Original_Image.png" /></div> |
+| ![Thumbnail](/CIC/Resources/Images/Content_Template-Thumbnail_List.png) | ![Original](/CIC/Resources/Images/Content_Template-Original_Image.png) |
 
 ## See also
 * [CardList](/CIC/References/ContentTemplates/ImageList.md)

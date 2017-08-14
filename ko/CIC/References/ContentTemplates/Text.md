@@ -24,7 +24,7 @@
 | `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
 | `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체                    | 선택 |
 | `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 | 선택 |
-| `type`                   | string                                                                          | Content template 구분자. **"ImageText"**로 고정             | 필수 |
+| `type`                   | string                                                                          | Content template 구분자. `"ImageText"`로 고정             | 필수 |
 
 ## Template Example
 
@@ -233,7 +233,7 @@
 
 | 강조하는 형태의 텍스트 | 문단 형태의 텍스트 | 표 형태의 텍스트 |
 |-------|-------|-------|
-| <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Highlight_Text.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Paragragh_Text.png" /></div> | <div class="midAlign"><img src="/CIC/Resources/Images/Content_Template-Table_Text.png" /></div> |
+| ![Highlight](/CIC/Resources/Images/Content_Template-Highlight_Text.png) | ![Paragraph](/CIC/Resources/Images/Content_Template-Paragragh_Text.png) | ![Table](/CIC/Resources/Images/Content_Template-Table_Text.png) |
 
 ## See also
 * [CardList](/CIC/References/ContentTemplates/CardList.md)

@@ -26,14 +26,14 @@
 | `summary.roadSummary[].point`          | object | 도로 진입 좌표 정보를 담고 있는 객체 | 필수 |
 | `summary.roadSummary[].point.x`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 네이버 지도에서 도로 진입 지점의 X 좌표 정보를 가진 객체 | 필수 |
 | `summary.roadSummary[].point.y`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 네이버 지도에서 도로 진입 지점의 Y 좌표 정보를 가진 객체 | 필수 |
-| `summary.roadSummary[].roadCongestion` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 상황 정보가 담긴 객체. `summary.roadSummary.roadCongestion.value`는 다음과 같은 값을 가질 수 있습니다. <ul><li><strong>"0"</strong> : 미수신</li><li><strong>"1"</strong> : 원활</li><li><strong>"2"</strong> : 서행</li><li><strong>"3"</strong> : 지체</li><li><strong>"4"</strong> : 정체</li></ul> | 필수 |
+| `summary.roadSummary[].roadCongestion` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 상황 정보가 담긴 객체. `summary.roadSummary.roadCongestion.value`는 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"0"</code> : 미수신</li><li><code>"1"</code> : 원활</li><li><code>"2"</code> : 서행</li><li><code>"3"</code> : 지체</li><li><code>"4"</code> : 정체</li></ul> | 필수 |
 | `summary.roadSummary[].speed`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 구간의 평균 속도 정보가 담긴 객체 | 필수 |
 | `summary.start`                        | object | 출발지 정보를 담고 있는 객체 | 필수 |
 | `summary.start.lat`                    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 위도 정보가 담긴 객체 | 필수 |
 | `summary.start.lon`                    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 경도 정보가 담긴 객체 | 필수 |
 | `summary.start.name`                   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 이름 정보가 담긴 객체 | 필수 |
 | `summary.time`                         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 예상 이동 시간 정보가 담긴 객체. 단위는 분입니다. | 필수 |
-| `type`                                 | string | Content template 구분자. **"CarRoute"**로 고정 | 필수 |
+| `type`                                 | string | Content template 구분자. `"CarRoute"`로 고정 | 필수 |
 
 ## Template Example
 
@@ -137,7 +137,8 @@
 
 ## Screen UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 CarRoute 템플릿의 내용을 표현한 UI 예제입니다.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-CarRoute.png" /></div>
+
+![CarRoute](/CIC/Resources/Images/Content-Template-CarRoute.png)
 
 ## See also
 * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)

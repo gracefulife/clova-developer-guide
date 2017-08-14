@@ -4,7 +4,7 @@
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`AddMemo`](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                   |
+| [`AddMemo`](#AddMemo)                       | Directive | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                  |
 | [`AddReminder`](#AddReminder)               | Directive | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.               |
 | [`AddSchedule`](#AddSchedule)               | Directive | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                  |
 | [`CountSchedule`](#CountSchedule)           | Directive | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다. |
@@ -122,13 +122,13 @@
 |---------------|---------|-----------------------------|---------|
 | `content`       | string | 일정 내용                                                                    | 선택    |
 | `id`            | string | 추가할 일정의 ID                                                              | 필수    |
-| `period`        | string | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 일정 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>          | 필수    |
+| `period`        | string | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 일정 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><code>"none"</code> : 기간 없음</li><li><code>"year"</code> : 1년</li><li><code>"month"</code> : 1개월</li><li><code>"week"</code> : 1주</li><li><code>"day"</code> : 1일</li><li><code>"hour"</code> : 1시간</li><li><code>"minute"</code> : 1분</li></ul>          | 필수    |
 | `scheduledTime` | string | 추가할 일정의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 
 ### Remarks
 
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 등록을 지원하지 않는데 `period` 값으로 **"year"**를 수신하면 예외 처리를 해야 합니다. "일정 추가해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 등록을 지원하지 않는데 `period` 값으로 `"year"`를 수신하면 예외 처리를 해야 합니다. "일정 추가해줘"처럼 기간을 알 수 없다면 `period`는 `"none"`, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -289,12 +289,12 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 삭제할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>                | 필수    |
+| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 삭제할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><code>"none"</code> : 기간 없음</li><li><code>"year"</code> : 1년</li><li><code>"month"</code> : 1개월</li><li><code>"week"</code> : 1주</li><li><code>"day"</code> : 1일</li><li><code>"hour"</code> : 1시간</li><li><code>"minute"</code> : 1분</li></ul>                | 필수    |
 | `scheduledTime` | string  | 일정을 삭제할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Remarks
 
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 주간 일정 삭제를 지원하지 않는데 `period` 값으로 **"week"**를 수신하면 예외 처리를 해야 합니다. "일정 삭제해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 주간 일정 삭제를 지원하지 않는데 `period` 값으로 `"week"`를 수신하면 예외 처리를 해야 합니다. "일정 삭제해줘"처럼 기간을 알 수 없다면 `period`는 `"none"`, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -437,11 +437,11 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><strong>"none"</strong> : 기간 없음</li><li><strong>"year"</strong> : 1년</li><li><strong>"month"</strong> : 1개월</li><li><strong>"week"</strong> : 1주</li><li><strong>"day"</strong> : 1일</li><li><strong>"hour"</strong> : 1시간</li><li><strong>"minute"</strong> : 1분</li></ul>                | 필수    |
+| `period`        | string  | 사용자의 음성 인식으로 파악된 가장 작은 단위의 기간입니다. 조회할 범위의 종료 시간은 `scheduledTime`에 `period` 만큼 더한 값으로 설정합니다. <ul><li><code>"none"</code> : 기간 없음</li><li><code>"year"</code> : 1년</li><li><code>"month"</code> : 1개월</li><li><code>"week"</code> : 1주</li><li><code>"day"</code> : 1일</li><li><code>"hour"</code> : 1시간</li><li><code>"minute"</code> : 1분</li></ul>                | 필수    |
 | `scheduledTime` | string  | 일정을 조회할 범위의 시작 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수    |
 
 ### Remarks
-클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 `period` 값으로 **"year"**를 수신하면 예외 처리를 해야 합니다. "일정 조회해줘"처럼 기간을 알 수 없다면 `period`는 **"none"**, `scheduledTime`은 현재 시간이 전달됩니다.
+클라이언트가 처리할 수 없는 기간 단위를 전달받으면, 적절한 예외 처리를 구현해야 합니다. 예를 들어, 클라이언트가 연간 일정 조회를 지원하지 않는데 `period` 값으로 `"year"`를 수신하면 예외 처리를 해야 합니다. "일정 조회해줘"처럼 기간을 알 수 없다면 `period`는 `"none"`, `scheduledTime`은 현재 시간이 전달됩니다.
 
 ### Message example
 
@@ -715,7 +715,7 @@
 
 ### Remarks
 
-현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, `StartExtension` 지시 메시지의 `extension` 필드 값으로 **"freetalking"**이 전달됩니다.
+현재 서버에서 기본적으로 제공하는 Extension으로는 대화 모드(Freetalk mode)가 있습니다. 대화 모드는 현재 영어 버전만 제공하고 있으며, "영어 대화 시작"과 같은 발화로 모드 시작이 가능합니다. 이때, `StartExtension` 지시 메시지의 `extension` 필드 값으로 `"freetalking"`이 전달됩니다.
 
 ### Message example
 

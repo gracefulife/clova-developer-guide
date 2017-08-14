@@ -1,0 +1,2065 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>AudioPlayer · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Clova.html" />
+    
+    
+    <link rel="prev" href="Alerts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Copyright.html">
+            
+                <a href="../../../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Terms.html">
+            
+                <a href="../../../Terms.html">
+            
+                    
+                    용어집
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP 응답
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP 메시지 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#authorize">
+            
+                    
+                    /authorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#token">
+            
+                    
+                    /token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html">
+            
+                    
+                    CIC 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC_API.html">
+            
+                <a href="../CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="Alerts.html">
+            
+                <a href="Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.2" data-path="AudioPlayer.html">
+            
+                <a href="AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="Clova.html">
+            
+                <a href="Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="DeviceControl.html">
+            
+                <a href="DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="Memo.html">
+            
+                <a href="Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="PlaybackController.html">
+            
+                <a href="PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="Reminder.html">
+            
+                <a href="Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="SpeechRecognizer.html">
+            
+                <a href="SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="SpeechSynthesizer.html">
+            
+                <a href="SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="Index_for_Events.html">
+            
+                <a href="Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="Index_for_Directives.html">
+            
+                <a href="Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Content_Templates.html">
+            
+                <a href="../Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ContentTemplates/CardList.html">
+            
+                <a href="../ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ContentTemplates/CarRoute.html">
+            
+                <a href="../ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ContentTemplates/Humidity.html">
+            
+                <a href="../ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ContentTemplates/ImageList.html">
+            
+                <a href="../ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ContentTemplates/ImageText.html">
+            
+                <a href="../ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ContentTemplates/Text.html">
+            
+                <a href="../ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ContentTemplates/TodayWeather.html">
+            
+                <a href="../ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../ContentTemplates/TransportationRoute.html">
+            
+                <a href="../ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../ContentTemplates/WindSpeed.html">
+            
+                <a href="../ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../ContentTemplates/Shared_Objects.html">
+            
+                <a href="../ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Multi-turn 대화 수행하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../../../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../CEK/References/HTTP_Message_Format.html">
+            
+                <a href="../../../CEK/References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../../CEK/References/Clova_Home_API.html">
+            
+                <a href="../../../CEK/References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >AudioPlayer</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="audioplayer">AudioPlayer</h1>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC694;&#xCCAD;&#xD558;&#xAC70;&#xB098; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xB294; &#xC911;&#xC5D0; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; API&#xC785;&#xB2C8;&#xB2E4;. AudioPlayer API&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC640; &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC774;&#xB984;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xD0C0;&#xC785;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Play"><code>Play</code></a></td>
+<td>Directive</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xD2B9;&#xC815; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xAC70;&#xB098; &#xC7AC;&#xC0DD; &#xB300;&#xAE30;&#xC5F4;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#PlayFinished"><code>PlayFinished</code></a></td>
+<td>Event</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC644;&#xB8CC;&#xD560; &#xB54C; &#xC7AC;&#xC0DD; &#xC644;&#xB8CC;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#PlayPaused"><code>PlayPaused</code></a></td>
+<td>Event</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xD560; &#xB54C; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#PlayResumed"><code>PlayResumed</code></a></td>
+<td>Event</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC7AC;&#xAC1C;&#xD560; &#xB54C; &#xC7AC;&#xAC1C;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#PlayStarted"><code>PlayStarted</code></a></td>
+<td>Event</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#PlayStopped"><code>PlayStopped</code></a></td>
+<td>Event</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC911;&#xC9C0;&#xD560; &#xB54C; &#xC7AC;&#xC0DD;&#xC774; &#xC911;&#xC9C0;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportDelayPassed</code></a></td>
+<td>Event</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xC9C0;&#xC5F0; &#xC2DC;&#xAC04;&#xB9CC;&#xD07C; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB0AC;&#xC744; &#xB54C; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xC9C0;&#xC5F0; &#xC2DC;&#xAC04;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportIntervalPassed</code></a></td>
+<td>Event</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xAC04;&#xACA9;&#xB9C8;&#xB2E4; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xBCF4;&#xACE0; &#xAC04;&#xACA9;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportPositionPassed</code></a></td>
+<td>Event</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xBCF4;&#xACE0; &#xC2DC;&#xC810;&#xC5D0; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xBCF4;&#xACE0; &#xC2DC;&#xC810;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#StreamDeliver"><code>StreamDeliver</code></a></td>
+<td>Directive</td>
+<td><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xC751;&#xB2F5;&#xC774;&#xBA70;, &#xC2E4;&#xC81C; &#xC74C;&#xC545; &#xC7AC;&#xC0DD;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xC218;&#xC2E0;&#xD574;&#xC57C; &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#StreamRequested"><code>StreamRequested</code></a></td>
+<td>Event</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC704;&#xD574; CIC&#xB85C; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; URL&#xACFC; &#xAC19;&#xC740; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Play">Play directive </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xD2B9;&#xC815; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xAC70;&#xB098; &#xC7AC;&#xC0DD; &#xB300;&#xAE30;&#xC5F4;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItem</code></td>
+<td>object</td>
+<td>&#xC7AC;&#xC0DD;&#xD560; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xBA54;&#xD0C0; &#xC815;&#xBCF4;&#xC640; &#xC7AC;&#xC0DD;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioItem.audioItemId</code></td>
+<td>string</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294; ID. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC774; &#xAC12;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC911;&#xBCF5;&#xB41C; Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioItem.stream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>&#xC7AC;&#xC0DD;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioItem.type</code></td>
+<td>string</td>
+<td>&#xC74C;&#xC545; &#xC11C;&#xBE44;&#xC2A4; &#xAD6C;&#xBD84;&#xC790;. &#xC74C;&#xC545; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC0AC;&#xC5C5;&#xC790;&#xB098; &#xC11C;&#xBE44;&#xC2A4; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC; &#xAC12;&#xC740; &#xAC01; &#xC11C;&#xBE44;&#xC2A4;&#xB9C8;&#xB2E4; &#xB2EC;&#xB77C;&#xC9C0;&#xB294; audioItem &#xAC1D;&#xCCB4;&#xC758; &#xD544;&#xB4DC;&#xB97C; &#xD30C;&#xC545;&#xD558;&#xACE0; &#xC774;&#xB97C; &#xBD84;&#xC11D;&#xD558;&#xB294; &#xD30C;&#xC11C;(parser)&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xB294;&#xB370; &#xC774;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioItem.[CustomField]</code></td>
+<td>any</td>
+<td>&#xC7AC;&#xC0DD;&#xD560; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC5D0; &#xCCA8;&#xBD80;&#xD560; &#xBA54;&#xD0C0; &#xC815;&#xBCF4;&#xB97C; &#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xC784;&#xC758;&#xB300;&#xB85C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>playBehavior</code></td>
+<td>string</td>
+<td>&#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC5B8;&#xC81C; &#xC7AC;&#xC0DD;&#xD560;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xB294; &#xAD6C;&#xBD84;&#xC790; <ul><li><code>&quot;REPLACE_ALL&quot;</code> : &#xC7AC;&#xC0DD; &#xB300;&#xAE30;&#xC5F4;&#xC744; &#xBAA8;&#xB450; &#xBE44;&#xC6B0;&#xACE0;, &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC989;&#xC2DC; &#xC7AC;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</li><li><code>&quot;ENQUEUE&quot;</code> : &#xC7AC;&#xC0DD; &#xB300;&#xAE30;&#xC5F4;&#xC5D0; &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;.</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>&#xC74C;&#xC545; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xACFC;&#xAE08; &#xBB38;&#xC81C; &#xB4F1;&#xC73C;&#xB85C; &#xC778;&#xD574; &#xC2E4;&#xC81C; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC815;&#xBCF4;, &#xC989; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; URL&#xACFC; &#xAC19;&#xC740; &#xC815;&#xBCF4;&#xB294; &#xC7AC;&#xC0DD; &#xC9C1;&#xC804;&#xC5D0; &#xD68D;&#xB4DD;&#xD560; &#xC218; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; <code>audioItem.stream.urlPlayable</code> &#xD544;&#xB4DC; &#xAC12;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xAD6C;&#xBD84;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>urlPlayable</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>true</code>&#xC774;&#xBA74; <code>audioItem.stream.url</code> &#xD544;&#xB4DC;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; URL&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xBC14;&#xB85C; &#xC7AC;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>urlPlayable</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>false</code>&#xC774;&#xBA74; <code>audioItem.stream.url</code> &#xD544;&#xB4DC;&#xC5D0; &#xD3EC;&#xD568;&#xB41C; URL&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xBC14;&#xB85C; &#xC7AC;&#xC0DD;&#xD560; &#xC218; &#xC5C6;&#xACE0; <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xC694;&#xCCAD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xBC14;&#xB85C; &#xC7AC;&#xC0DD; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xC608;&#xC81C;</span>
+{
+  <span class="hljs-string">&quot;audioItem&quot;</span>: {
+    <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;90b77646-93ab-444f-acd9-60f9f278ca38&quot;</span>,
+    <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+    <span class="hljs-string">&quot;stream&quot;</span>: {
+      <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+      <span class="hljs-string">&quot;playType&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>,
+      <span class="hljs-string">&quot;podcastId&quot;</span>: <span class="hljs-number">12548</span>,
+      <span class="hljs-string">&quot;progressReport&quot;</span>: {
+        <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>,
+        <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>
+      },
+      <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://steaming.example.com/1212334548/2231122&quot;</span>,
+      <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;podcast&quot;</span>
+  },
+  <span class="hljs-string">&quot;playBehavior&quot;</span>: <span class="hljs-string">&quot;REPLACE_ALL&quot;</span>
+}
+
+<span class="hljs-comment">// &#xBC14;&#xB85C; &#xC7AC;&#xC0DD; &#xAC00;&#xB2A5;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xC608;&#xC81C;</span>
+{
+  <span class="hljs-string">&quot;audioItem&quot;</span>: {
+    <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201&quot;</span>,
+    <span class="hljs-string">&quot;album&quot;</span>: {
+      <span class="hljs-string">&quot;albumId&quot;</span>: <span class="hljs-string">&quot;2000240&quot;</span>,
+      <span class="hljs-string">&quot;genres&quot;</span>: [
+        <span class="hljs-string">&quot;&#xBC1C;&#xB77C;&#xB4DC;&quot;</span>,
+        <span class="hljs-string">&quot;&#xC54C;&#xC564;&#xBE44;/&#xC5B4;&#xBC18;&quot;</span>
+      ],
+      <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Palette&quot;</span>
+    },
+    ...
+    <span class="hljs-string">&quot;stream&quot;</span>: {
+      <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;progressReport&quot;</span>: {
+        <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>
+      },
+      <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-17716562&quot;</span>,
+      <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-17716562&quot;</span>,
+      <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#xC774; &#xC9C0;&#xAE08;&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;navermusic&quot;</span>
+  },
+  <span class="hljs-string">&quot;playBehavior&quot;</span>: <span class="hljs-string">&quot;REPLACE_ALL&quot;</span>
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#PlayPaused"><code>AudioPlayer.PlayPaused</code></a></li>
+<li><a href="#PlayResumed"><code>AudioPlayer.PlayResumed</code></a></li>
+<li><a href="#PlayStarted"><code>AudioPlayer.PlayStarted</code></a></li>
+<li><a href="#PlayStopped"><code>AudioPlayer.PlayStopped</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+<h2 id="PlayFinished">PlayFinished event </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC644;&#xB8CC;&#xD560; &#xB54C; &#xC7AC;&#xC0DD; &#xC644;&#xB8CC;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayFinished&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+</ul>
+<h2 id="PlayPaused">PlayPaused event </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xD560; &#xB54C; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0B4;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xC0AC;&#xC804; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xD558;&#xB3C4;&#xB85D; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC74C;&#xC131;&#xC744; CIC&#xB85C; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>CIC&#xB294; Clova &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C; &#xC778;&#xC2DD;&#xB41C; &#xC77C;&#xC2DC; &#xC815;&#xC9C0; &#xC694;&#xCCAD;&#xC744; <a href="PlaybackController.html#Pause"><code>PlaybackController.Pause</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC77C;&#xC2DC; &#xC815;&#xC9C0;&#xD558;&#xACE0; PlayPaused &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; CIC&#xC5D0; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayPaused&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayResumed"><code>AudioPlayer.PlayResumed</code></a></li>
+<li><a href="PlaybackController.html#Pause"><code>PlaybackController.Pause</code></a></li>
+</ul>
+<h2 id="PlayResuemd">PlayResumed event </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC7AC;&#xAC1C;&#xD560; &#xB54C; &#xC7AC;&#xAC1C;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0B4;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xC0AC;&#xC804; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC7AC;&#xAC1C;&#xD558;&#xB3C4;&#xB85D; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC74C;&#xC131;&#xC744; CIC&#xB85C; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>CIC&#xB294; Clova &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C; &#xC778;&#xC2DD;&#xB41C; &#xC7AC;&#xC0DD; &#xC7AC;&#xAC1C; &#xC694;&#xCCAD;&#xC744; <a href="PlaybackController.html#Resume"><code>PlaybackController.Resume</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC7AC;&#xAC1C;&#xD558;&#xACE0; PlayResumed &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; CIC&#xC5D0; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayResumed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayPaused"><code>AudioPlayer.PlayPaused</code></a></li>
+<li><a href="PlaybackController.html#Resume"><code>PlaybackController.Resume</code></a></li>
+</ul>
+<h2 id="PlayStarted">PlayStarted event </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC2DC;&#xC791;&#xD560; &#xB54C; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayStarted&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayStopped"><code>AudioPlayer.PlayStopped</code></a></li>
+</ul>
+<h2 id="PlayStopped">PlayStopped event </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC911;&#xC9C0;&#xD560; &#xB54C; &#xC7AC;&#xC0DD;&#xC774; &#xC911;&#xC9C0;&#xB41C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0B4;&#xAE30; &#xC704;&#xD574; &#xD544;&#xC694;&#xD55C; &#xC0AC;&#xC804; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC911;&#xC9C0;&#xD558;&#xB3C4;&#xB85D; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC74C;&#xC131;&#xC744; CIC&#xB85C; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>CIC&#xB294; Clova &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0;&#xC11C; &#xC778;&#xC2DD;&#xB41C; &#xC911;&#xC9C0; &#xC694;&#xCCAD;&#xC744; <a href="PlaybackController.html#Stop"><code>PlaybackController.Stop</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC911;&#xC9C0;&#xD558;&#xACE0; PlayStopped &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; CIC&#xC5D0; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayStopped&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayStarted"><code>AudioPlayer.PlayStarted</code></a></li>
+<li><a href="PlaybackController.html#Stop"><code>PlaybackController.Stop</code></a></li>
+</ul>
+<h2 id="ProgressReportDelayPassed">ProgressReportDelayPassed event </h2>
+<p>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xC9C0;&#xC5F0; &#xC2DC;&#xAC04;&#xB9CC;&#xD07C; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB0AC;&#xC744; &#xB54C; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xC9C0;&#xC5F0; &#xC2DC;&#xAC04;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportDelayPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+</ul>
+<h2 id="ProgressReportIntervalPassed">ProgressReportIntervalPassed event </h2>
+<p>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xAC04;&#xACA9;&#xB9C8;&#xB2E4; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xBCF4;&#xACE0; &#xAC04;&#xACA9;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportIntervalPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+</ul>
+<h2 id="ProgressReportPositionPassed">ProgressReportPositionPassed event </h2>
+<p>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC774; &#xC2DC;&#xC791;&#xB41C; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xBCF4;&#xACE0; &#xC2DC;&#xC810;&#xC5D0; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;(<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>)&#xB97C; CIC&#xB85C; &#xBCF4;&#xACE0;&#xD558;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xAC01; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xBCF4;&#xACE0; &#xC2DC;&#xC810;&#xC740; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB85C; &#xC804;&#xB2EC;&#xB420; &#xB54C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; <a href="../Context_Objects.html">&#xB9E5;&#xB77D; &#xC815;&#xBCF4;(Context)</a>&#xB97C; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportPositionPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+</ul>
+<h2 id="StreamDeliver">StreamDeliver directive </h2>
+<p><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xC751;&#xB2F5;&#xC774;&#xBA70;, &#xC2E4;&#xC81C; &#xC74C;&#xC545; &#xC7AC;&#xC0DD;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xC218;&#xC2E0;&#xD574;&#xC57C; &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC74C;&#xC545;&#xC744; &#xC7AC;&#xC0DD;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xC5D0; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D;&#xD560; &#xC218; &#xC788;&#xB294; URL &#xC815;&#xBCF4;&#xAC00; &#xD544;&#xC218;&#xB85C; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItemId</code></td>
+<td>string</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294; &#xAC12;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC774; &#xAC12;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC911;&#xBCF5;&#xB41C; Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioStream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>&#xC7AC;&#xC0DD;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>StreamDeliver &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC640; &#xC774;&#xBBF8; &#xC218;&#xC2E0;&#xD55C; <a href="#Play">Play</a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xBCF8;&#xBB38;&#xC778; <code>payload.audioStream</code>&#xC744; &#xC870;&#xD569;&#xD558;&#xB294; &#xD615;&#xD0DC;&#xB85C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC;, &#xAE30;&#xC874; Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xAC12;&#xC744; <code>StreamDeliver</code> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xC0C8;&#xB85C; &#xC804;&#xB2EC;&#xD55C; &#xAC12;&#xC73C;&#xB85C; &#xCE58;&#xD658;&#xD558;&#xBA74; &#xC548; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8; &#xC774;&#xC720;&#xB294; <code>StreamDeliver</code> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; <code>AudioStreamObject&#xC758;</code> &#xB0B4;&#xC6A9;&#xC774; &#xC774;&#xBBF8; <a href="#Play"><code>AudioPlayer.Play</code></a> &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB85C; &#xC804;&#xB2EC;&#xB41C; &#xB0B4;&#xC6A9;&#xACFC; &#xC911;&#xBCF5;&#xB41C; &#xBD80;&#xBD84;&#xC774; &#xC788;&#xC73C;&#xBA74; &#xD574;&#xB2F9; &#xB0B4;&#xC6A9;&#xC774; &#xC0DD;&#xB7B5;&#xB420; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xBC18;&#xBCF5; &#xC7AC;&#xC0DD;&#xC774;&#xB098; &#xC774;&#xC804; &#xACE1; &#xC7AC;&#xC0DD; &#xB4F1; &#xB3D9;&#xC77C;&#xD55C; Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xB450; &#xBC88; &#xC774;&#xC0C1; &#xCC98;&#xB9AC;&#xD560; &#xB54C; &#xAE30;&#xB300;&#xC640; &#xB2E4;&#xB978; &#xB3D9;&#xC791;&#xC744; &#xC720;&#xBC1C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;StreamDeliver&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;5313c879-25bb-461c-93fc-f85d95edf2a0&quot;</span>,
+        <span class="hljs-string">&quot;stream&quot;</span>: {
+            <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;b767313e-6790-4c28-ac18-5d9f8e432248&quot;</span>,
+            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://aod.musicservice.net/b767313e.mp3&quot;</span>
+        }
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+<h2 id="StreamRequested">StreamRequested event </h2>
+<p>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD;&#xC744; &#xC704;&#xD574; CIC&#xB85C; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; URL&#xACFC; &#xAC19;&#xC740; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC694;&#xCCAD;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<h3 id="context-field">Context field</h3>
+<p>&#xC5C6;&#xC74C;</p>
+<h3 id="events-field">Events field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItemId</code></td>
+<td>string</td>
+<td>Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; <code>audioItemId</code></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>audioStream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>Play &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; <code>audioItem.stream</code></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>&#xC74C;&#xC545; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xACFC;&#xAE08; &#xB4F1;&#xC744; &#xACE0;&#xB824;&#xD558;&#xC5EC; &#xC2E4;&#xC81C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4; &#xBC1C;&#xAE09;&#xC744; &#xC7AC;&#xC0DD; &#xC9C1;&#xC804;&#xC73C;&#xB85C; &#xC9C0;&#xC5F0; &#xD574;&#xC57C; &#xD560; &#xB54C;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xC774;&#xCC98;&#xB7FC; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xBBF8;&#xB9AC; &#xC900;&#xBE44;&#xD558;&#xBA74; &#xC548;&#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xC704;&#xD574; &#xC124;&#xACC4;&#xB41C; API&#xC774;&#xBA70;, &#xB530;&#xB77C;&#xC11C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC774; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC7AC;&#xC0DD; &#xC9C1;&#xC804; &#xC2DC;&#xC810;&#xBCF4;&#xB2E4; &#xC77C;&#xCC0D; &#xC804;&#xB2EC;&#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;StreamRequested&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;msg-id-here-1&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;dialog-id-here-1&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;audioStream&quot;</span>: {
+            <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-4435786&quot;</span>,
+            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-4435786&quot;</span>
+        }
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a></li>
+</ul>
+<h2 id="shared-objects">Shared objects</h2>
+<p>AudioPlayer API&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB098; &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0BC; &#xB54C; &#xBA54;&#xC2DC;&#xC9C0; &#xBCF8;&#xBB38;(<code>payload</code>)&#xC5D0; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC1D;&#xCCB4;(shared objects)&#xB97C; &#xACF5;&#xC720;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xAC1D;&#xCCB4; &#xC774;&#xB984;</th>
+<th>&#xAC1D;&#xCCB4; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>&#xC7AC;&#xC0DD;&#xD560; &#xC74C;&#xC545;&#xC758; &#xC7AC;&#xC0DD; &#xC815;&#xBCF4;(&#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC8FC;&#xC18C;, &#xC778;&#xC99D; &#xC815;&#xBCF4; &#xB4F1;)&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="AudioStreamObject">AudioStreamObject </h3>
+<p>&#xC7AC;&#xC0DD;&#xD560; &#xC74C;&#xC545;&#xC758; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC758; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC7AC;&#xC0DD;&#xD560; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xAC70;&#xB098; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; CIC&#xB85C; &#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC74C;&#xC545;&#xC758; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D; &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beginAtInMilliseconds</code></td>
+<td>number</td>
+<td>&#xC7AC;&#xC0DD;&#xC744; &#xC2DC;&#xC791;&#xD560; &#xC9C0;&#xC810;. &#xB2E8;&#xC704;&#xB294; &#xBC00;&#xB9AC;&#xCD08;&#xC774;&#xBA70;, &#xC774; &#xAC12;&#xC774; &#xC9C0;&#xC815;&#xB41C; &#xACBD;&#xC6B0; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xD574;&#xB2F9; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xC9C0;&#xC815;&#xB41C; &#xC704;&#xCE58;&#xBD80;&#xD130; &#xC7AC;&#xC0DD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xAC12;&#xC774; 0&#xC774;&#xBA74; &#xD574;&#xB2F9; &#xC2A4;&#xD2B8;&#xB9BC;&#xC744; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xC7AC;&#xC0DD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>progressReport</code></td>
+<td>object</td>
+<td>&#xC7AC;&#xC0DD; &#xD6C4; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xACE0; &#xBC1B;&#xAE30; &#xC704;&#xD574; &#xBCF4;&#xACE0; &#xC2DC;&#xAC04;&#xC744; &#xC815;&#xD574;&#xB454; &#xAC1D;&#xCCB4;</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportDelayInMilliseconds</code></td>
+<td>number</td>
+<td>&#xC7AC;&#xC0DD; &#xC2DC;&#xC791; &#xD6C4; &#xC9C0;&#xC815;&#xB41C; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB0AC;&#xC744; &#xB54C; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xACE0;&#xBC1B;&#xAE30; &#xC704;&#xD574; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; null &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportIntervalInMilliseconds</code></td>
+<td>number</td>
+<td>&#xC7AC;&#xC0DD; &#xC911; &#xC9C0;&#xC815;&#xB41C; &#xC2DC;&#xAC04; &#xAC04;&#xACA9;&#xC73C;&#xB85C; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xACE0;&#xBC1B;&#xAE30; &#xC704;&#xD574; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; null &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportPositionInMilliseconds</code></td>
+<td>number</td>
+<td>&#xC7AC;&#xC0DD; &#xC911; &#xC9C0;&#xC815;&#xB41C; &#xC2DC;&#xC810;&#xC744; &#xC9C0;&#xB0A0; &#xB54C;&#xB9C8;&#xB2E4; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xACE0;&#xBC1B;&#xAE30; &#xC704;&#xD574; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; null &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>string</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; toekn.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>urlPlayable</code></td>
+<td>boolean</td>
+<td><code>url</code> &#xD544;&#xB4DC;&#xC758; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL&#xC774; &#xBC14;&#xB85C; &#xC7AC;&#xC0DD; &#xAC00;&#xB2A5;&#xD55C; &#xD615;&#xD0DC;&#xC778;&#xC9C0; &#xAD6C;&#xBD84;&#xD558;&#xB294; &#xAC12;. <ul><li><code>true</code> : &#xBC14;&#xB85C; &#xC7AC;&#xC0DD;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xD615;&#xD0DC;&#xC758; URL</li><li><code>false</code> : &#xBC14;&#xB85C; &#xC7AC;&#xC0DD;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C; &#xD615;&#xD0DC;&#xC758; URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC815;&#xBCF4;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xC694;&#xCCAD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>[Custom Field]</code></td>
+<td>any</td>
+<td>&#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; &#xC7AC;&#xC0DD; &#xBB38;&#xB9E5;&#xC5D0; &#xCD94;&#xAC00;&#xB85C; &#xD544;&#xC694;&#xD55C; &#xAC12;&#xC744; &#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC790; &#xC784;&#xC758;&#xB300;&#xB85C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// &#xBC14;&#xB85C; &#xC7AC;&#xC0DD; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</span>
+{
+  <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+  <span class="hljs-string">&quot;playType&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>,
+  <span class="hljs-string">&quot;podcastId&quot;</span>: <span class="hljs-number">12548</span>,
+  <span class="hljs-string">&quot;progressReport&quot;</span>: {
+    <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>,
+    <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>
+  },
+  <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://api-ex.podbbang.com/file/12548/22346122&quot;</span>,
+  <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">true</span>
+}
+
+<span class="hljs-comment">// &#xBC14;&#xB85C; &#xC7AC;&#xC0DD; &#xAC00;&#xB2A5;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xC624;&#xB514;&#xC624; &#xC2A4;&#xD2B8;&#xB9BC; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xC608;&#xC81C;</span>
+{
+  <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;progressReport&quot;</span>: {
+      <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>
+  },
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-4435786&quot;</span>,
+  <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-4435786&quot;</span>
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Alerts.html" class="navigation navigation-prev " aria-label="Previous page: Alerts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Clova.html" class="navigation navigation-next " aria-label="Next page: Clova">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AudioPlayer","level":"2.6.2","depth":2,"next":{"title":"Clova","level":"2.6.3","depth":2,"path":"CIC/References/APIs/Clova.md","ref":"CIC/References/APIs/Clova.md","articles":[]},"previous":{"title":"Alerts","level":"2.6.1","depth":2,"path":"CIC/References/APIs/Alerts.md","ref":"CIC/References/APIs/Alerts.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"ko-KR","DocOwner":"NAVER","OrientedService":"NAVER","TargetServiceForClientAuth":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/","AuthServerBaseURL":"https://auth.clova.ai/","CICBaseURL":"https://prod-ni-cic.clova.ai/"},"language":"ko","gitbook":"*"},"file":{"path":"CIC/References/APIs/AudioPlayer.md","mtime":"2017-08-11T06:35:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-14T02:15:06.573Z"},"basePath":"../../..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

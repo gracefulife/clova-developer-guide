@@ -17,11 +17,8 @@ CIC와 연동할 때 [HTTP/2 프로토콜](https://tools.ietf.org/html/rfc7540)�
 ### CIC base URL {#BaseURL}
 Clova는 아래 URL을 base URL로 사용합니다.
 
-{% raw %}
-```
-https://prod-ni-cic.clova.ai/
-```
-{% endraw %}
+<pre><code>{{ book.CICBaseURL }}
+</code></pre>
 
 ### HTTP 헤더 {#Header}
 CIC와 연결할 때 다음과 같은 필드가 HTTP 헤더로 필요합니다.
@@ -46,11 +43,11 @@ Content-Type = multipart/form-data; boundary={{boundary_term}}
 ## Multipart 메시지 {#MultipartMessage}
 클라이언트는 HTTP/2를 이용해 [이벤트 메시지](/CIC/References/CIC_Message_Format.md#Event)를 주로 multipart 메시지로 전송하게 됩니다.
 
-예를 들면, 사용자의 음성 입력을 CIC로 전달하려면 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지와 함께 녹음한 사용자의 음성 데이터를 함께 전송해야 합니다. 클라이언트는 `Content-Type`을 **multipart/form-data**로 설정하고 첫 번째 메시지 블록에는 이벤트 메시지 정보가 담긴 JSON 데이터를 두 번째 메시지 블록에는 사용자의 음성이 담긴 바이너리 데이터를 담아서 보낼 수 있습니다.
+예를 들면, 사용자의 음성 입력을 CIC로 전달하려면 [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지와 함께 녹음한 사용자의 음성 데이터를 함께 전송해야 합니다. 클라이언트는 `Content-Type`을 `multipart/form-data`로 설정하고 첫 번째 메시지 블록에는 이벤트 메시지 정보가 담긴 JSON 데이터를 두 번째 메시지 블록에는 사용자의 음성이 담긴 바이너리 데이터를 담아서 보낼 수 있습니다.
 
 이때, 메시지를 구분하기 위해 `boundary`에 경계 문구를 지정해야 합니다. 경계 문구는 메시지 블록 사이에 사용될 경우 경계 문구 왼쪽에 이중의 하이픈(-) 기호를 붙여야 하며, 마지막 메시지 블록 이후에는 경계 문구 양쪽에 이중의 하이픈(-) 기호를 붙여야 합니다. 또한, 경계 문구는 각 메시지 블록의 본문에서 나타나지 않아야 합니다.
 
-다음은 클라이언트가 CIC로 사용자 요청을 이벤트 메시지를 보낼 때 갖추게 되는 일반적인 메시지 형태입니다.
+다음은 클라이언트가 CIC로 사용자 요청(이벤트 메시지)을 보낼 때 갖추게 되는 일반적인 메시지 형태입니다.
 
 {% raw %}
 ```
@@ -135,7 +132,7 @@ Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
 [ PCM Audio Attachment ]
-{{ Binary audio attachment }}
+[[ Binary audio attachment ]]
 
 --this-is-boundary-text
 
@@ -146,7 +143,7 @@ Content-Type: application/octet-stream
 ```
 {% endraw %}
 
-**사용자 요청을 전달할 때 요청 형식이 잘못되었거나 내부 서버 오류가 발생한 경우** 오류 상황에 해당하는 [HTTP 상태 코드](https://tools.ietf.org/html/rfc7231#section-6)(4XX 또는 5XX)와 함께 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)가 전달됩니다. 이 경우 하나의 메시지 블록이 전달되지만 `Content-Type`은 **multipart/form-data**를 사용합니다. 오류 메시지는 다음과 같은 구조를 가집니다.
+**사용자 요청을 전달할 때 요청 형식이 잘못되었거나 내부 서버 오류가 발생한 경우** 오류 상황에 해당하는 [HTTP 상태 코드](https://tools.ietf.org/html/rfc7231#section-6)(4XX 또는 5XX)와 함께 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)가 전달됩니다. 이 경우 하나의 메시지 블록이 전달되지만 `Content-Type`은 `multipart/form-data`를 사용합니다. 오류 메시지는 다음과 같은 구조를 가집니다.
 
 {% raw %}
 ```
@@ -164,7 +161,7 @@ Content-Type: application/json; charset=UTF-8
     "name": "Exception",
     "messageId": {{string}}
   },
-  "payload": {{object}
+  "payload": {{object}}
 }
 --this-is-boundary-text--
 ```
@@ -174,10 +171,9 @@ Content-Type: application/json; charset=UTF-8
 다음은 클라이언트와 CIC 사이에서 주고 받은 실제 HTTP 요청/응답 메시지입니다.
 
 ### Request Example
-{% raw %}
-```
+<pre><code>
 POST /v1/events HTTP/2
-Host: https://prod-ni-cic.clova.ai/
+Host: {{ book.CICBaseURL }}
 Accept: */*
 Authorization: Bearer {{clova-access-token}}
 > Content-Length: 456
@@ -217,11 +213,11 @@ Content-Type: application/json; charset=UTF-8
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
-{{binary audio attachment}}
+[[ binary audio attachment ]]
 --920d6335ba920d6337a319f--
 
 ```
-{% endraw %}
+</code></pre>
 
 ### Response Example - 요청 성공
 {% raw %}

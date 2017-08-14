@@ -1,0 +1,1559 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Alerts · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="AudioPlayer.html" />
+    
+    
+    <link rel="prev" href="../CIC_API.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Copyright.html">
+            
+                <a href="../../../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Terms.html">
+            
+                <a href="../../../Terms.html">
+            
+                    
+                    용어집
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP 응답
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP 메시지 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#authorize">
+            
+                    
+                    /authorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#token">
+            
+                    
+                    /token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html">
+            
+                    
+                    CIC 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC_API.html">
+            
+                <a href="../CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.6.1" data-path="Alerts.html">
+            
+                <a href="Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="AudioPlayer.html">
+            
+                <a href="AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="Clova.html">
+            
+                <a href="Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="DeviceControl.html">
+            
+                <a href="DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="Memo.html">
+            
+                <a href="Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="PlaybackController.html">
+            
+                <a href="PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="Reminder.html">
+            
+                <a href="Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="SpeechRecognizer.html">
+            
+                <a href="SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="SpeechSynthesizer.html">
+            
+                <a href="SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="Index_for_Events.html">
+            
+                <a href="Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="Index_for_Directives.html">
+            
+                <a href="Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Content_Templates.html">
+            
+                <a href="../Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ContentTemplates/CardList.html">
+            
+                <a href="../ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ContentTemplates/CarRoute.html">
+            
+                <a href="../ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ContentTemplates/Humidity.html">
+            
+                <a href="../ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ContentTemplates/ImageList.html">
+            
+                <a href="../ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ContentTemplates/ImageText.html">
+            
+                <a href="../ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ContentTemplates/Text.html">
+            
+                <a href="../ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ContentTemplates/TodayWeather.html">
+            
+                <a href="../ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../ContentTemplates/TransportationRoute.html">
+            
+                <a href="../ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../ContentTemplates/WindSpeed.html">
+            
+                <a href="../ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../ContentTemplates/Shared_Objects.html">
+            
+                <a href="../ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Multi-turn 대화 수행하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../../../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../CEK/References/HTTP_Message_Format.html">
+            
+                <a href="../../../CEK/References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../../CEK/References/Clova_Home_API.html">
+            
+                <a href="../../../CEK/References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Alerts</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="alerts">Alerts</h1>
+<p>&#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC0DD;&#xC131;/&#xC870;&#xD68C;/&#xC0AD;&#xC81C;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; API&#xC785;&#xB2C8;&#xB2E4;. &#xC54C;&#xB78C;&#xACFC; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC704;&#xD574; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB098; &#xC54C;&#xB78C;&#xC744; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xB85C;&#xCEEC; &#xC571;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098; &#xBCC4;&#xB3C4;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. Alerts API&#xAC00; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xBA54;&#xC2DC;&#xC9C0;&#xC640; &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC774;&#xB984;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xD0C0;&#xC785;</th>
+<th>&#xBA54;&#xC2DC;&#xC9C0; &#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DeleteAlert"><code>DeleteAlert</code></a></td>
+<td>Directive</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xD639;&#xC740; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#GetAlert"><code>GetAlert</code></a></td>
+<td>Directive</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xD639;&#xC740; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC870;&#xD68C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td><a href="#SetAlert"><code>SetAlert</code></a></td>
+<td>Directive</td>
+<td>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xD639;&#xC740; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC124;&#xC815;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="DeleteAlert">DeleteAlert directive </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC0AD;&#xC81C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC0AD;&#xC81C;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB85C;&#xCEEC; &#xC571;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098; &#xBCC4;&#xB3C4;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>&#xD0C0;&#xC785; &#xAD6C;&#xBD84;&#xC790; <ul><li><code>&quot;ALARM&quot;</code> : &#xC54C;&#xB78C;</li><li><code>&quot;TIMER&quot;</code> : &#xD0C0;&#xC774;&#xBA38;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Alerts&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DeleteAlert&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;795251cd-de1b-43d9-9fcd-36d07f12d549&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;afc4c163-a14a-4f3e-93db-38ce36531785&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;ALARM&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a></li>
+</ul>
+<h2 id="GetAlert">GetAlert directive </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC870;&#xD68C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC54C;&#xB78C; &#xD639;&#xC740; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC870;&#xD68C;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB85C;&#xCEEC; &#xC571;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098; &#xBCC4;&#xB3C4;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>&#xD0C0;&#xC785; &#xAD6C;&#xBD84;&#xC790; <ul><li><code>&quot;ALARM&quot;</code> : &#xC54C;&#xB78C;</li><li><code>&quot;TIMER&quot;</code> : &#xD0C0;&#xC774;&#xBA38;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Alerts&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;GetAlert&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fa87aa2e-0825-427d-ab11-c3684b662861&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;185424fd-ce63-4f08-9965-86f7baea856e&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;ALARM&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a></li>
+</ul>
+<h2 id="SetAlert">SetAlert directive </h2>
+<p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC124;&#xC815;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC54C;&#xB78C; &#xD639;&#xC740; &#xD0C0;&#xC774;&#xBA38;&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB85C;&#xCEEC; &#xC571;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xAC70;&#xB098; &#xBCC4;&#xB3C4;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>currentTime</code></td>
+<td>string</td>
+<td>&#xD604;&#xC7AC; &#xC2DC;&#xAC04; (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> &#xD3EC;&#xB9F7;). &#xD0C0;&#xC774;&#xBA38;&#xC758; &#xACBD;&#xC6B0; CIC&#xB85C;&#xBD80;&#xD130; &#xD604;&#xC7AC; &#xC2DC;&#xAC04;&#xC774; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>daysOfWeek[]</code></td>
+<td>string array</td>
+<td>&#xBC18;&#xBCF5; &#xC694;&#xC77C;&#xC774; &#xD3EC;&#xD568;&#xB41C; &#xBC30;&#xC5F4;. &quot;monday&quot;, &quot;tuesday&quot;, &quot;wednesday&quot;, &quot;thursday&quot;, &quot;friday&quot;, &quot;saturday&quot;, &quot;sunday&quot;&#xC640; &#xAC19;&#xC740; &#xAC12;&#xC774; &#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>scheduledTime</code></td>
+<td>string</td>
+<td>&#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xC758; &#xC124;&#xC815; &#xC2DC;&#xAC04; (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> &#xD3EC;&#xB9F7;)</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>string</td>
+<td>&#xC54C;&#xB78C; &#xB610;&#xB294; &#xD0C0;&#xC774;&#xBA38;&#xC758; ID</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>&#xD0C0;&#xC785; &#xAD6C;&#xBD84;&#xC790; <ul><li><code>&quot;ALARM&quot;</code> : &#xC54C;&#xB78C;</li><li><code>&quot;TIMER&quot;</code> : &#xD0C0;&#xC774;&#xBA38;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Alerts&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetAlert&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;9f73fad4-f33c-49e3-927f-9c98892936fb&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;f9210731-1657-48b5-bd74-eccbb46452fb&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;test:test_device:1495785482&quot;</span>,
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;ALARM&quot;</span>,
+      <span class="hljs-string">&quot;scheduledTime&quot;</span>: <span class="hljs-string">&quot;2017-05-27T15:00:00+09:00&quot;</span>,
+      <span class="hljs-string">&quot;daysOfWeek&quot;</span>: [<span class="hljs-string">&quot;saturday&quot;</span>, <span class="hljs-string">&quot;sunday&quot;</span>]
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../CIC_API.html" class="navigation navigation-prev " aria-label="Previous page: CIC API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="AudioPlayer.html" class="navigation navigation-next " aria-label="Next page: AudioPlayer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Alerts","level":"2.6.1","depth":2,"next":{"title":"AudioPlayer","level":"2.6.2","depth":2,"path":"CIC/References/APIs/AudioPlayer.md","ref":"CIC/References/APIs/AudioPlayer.md","articles":[]},"previous":{"title":"CIC API","level":"2.6","depth":1,"path":"CIC/References/CIC_API.md","ref":"CIC/References/CIC_API.md","articles":[{"title":"Alerts","level":"2.6.1","depth":2,"path":"CIC/References/APIs/Alerts.md","ref":"CIC/References/APIs/Alerts.md","articles":[]},{"title":"AudioPlayer","level":"2.6.2","depth":2,"path":"CIC/References/APIs/AudioPlayer.md","ref":"CIC/References/APIs/AudioPlayer.md","articles":[]},{"title":"Clova","level":"2.6.3","depth":2,"path":"CIC/References/APIs/Clova.md","ref":"CIC/References/APIs/Clova.md","articles":[]},{"title":"DeviceControl","level":"2.6.4","depth":2,"path":"CIC/References/APIs/DeviceControl.md","ref":"CIC/References/APIs/DeviceControl.md","articles":[]},{"title":"Memo","level":"2.6.5","depth":2,"path":"CIC/References/APIs/Memo.md","ref":"CIC/References/APIs/Memo.md","articles":[]},{"title":"PlaybackController","level":"2.6.6","depth":2,"path":"CIC/References/APIs/PlaybackController.md","ref":"CIC/References/APIs/PlaybackController.md","articles":[]},{"title":"Reminder","level":"2.6.7","depth":2,"path":"CIC/References/APIs/Reminder.md","ref":"CIC/References/APIs/Reminder.md","articles":[]},{"title":"SpeechRecognizer","level":"2.6.8","depth":2,"path":"CIC/References/APIs/SpeechRecognizer.md","ref":"CIC/References/APIs/SpeechRecognizer.md","articles":[]},{"title":"SpeechSynthesizer","level":"2.6.9","depth":2,"path":"CIC/References/APIs/SpeechSynthesizer.md","ref":"CIC/References/APIs/SpeechSynthesizer.md","articles":[]},{"title":"이벤트 메시지 색인","level":"2.6.10","depth":2,"path":"CIC/References/APIs/Index_for_Events.md","ref":"CIC/References/APIs/Index_for_Events.md","articles":[]},{"title":"지시 메시지 색인","level":"2.6.11","depth":2,"path":"CIC/References/APIs/Index_for_Directives.md","ref":"CIC/References/APIs/Index_for_Directives.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"ko-KR","DocOwner":"NAVER","OrientedService":"NAVER","TargetServiceForClientAuth":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/","AuthServerBaseURL":"https://auth.clova.ai/","CICBaseURL":"https://prod-ni-cic.clova.ai/"},"language":"ko","gitbook":"*"},"file":{"path":"CIC/References/APIs/Alerts.md","mtime":"2017-08-10T09:14:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-14T02:15:06.573Z"},"basePath":"../../..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

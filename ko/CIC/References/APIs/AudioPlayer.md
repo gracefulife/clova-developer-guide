@@ -27,12 +27,12 @@
 | `audioItem.stream`        | [AudioStreamObject](#AudioStreamObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                        | 필수 |
 | `audioItem.type`          | string | 음악 서비스 구분자. 음악 스트리밍 서비스를 제공하는 사업자나 서비스 이름입니다. 이 필드 값은 각 서비스마다 달라지는 audioItem 객체의 필드를 파악하고 이를 분석하는 파서(parser)를 선택하는데 이용될 수 있습니다. | 필수 |
 | `audioItem.[CustomField]` | any    | 재생할 오디오 스트림에 첨부할 메타 정보를 서비스 제공자 임의대로 추가할 수 있습니다.                     | 선택 |
-| `playBehavior`            | string | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li><strong>"REPLACE_ALL"</strong> : 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li><strong>"ENQUEUE"</strong> : 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 필수 |
+| `playBehavior`            | string | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li><code>"REPLACE_ALL"</code> : 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li><code>"ENQUEUE"</code> : 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 필수 |
 
 ### Remarks
 음악 서비스의 과금 문제 등으로 인해 실제 스트리밍 정보, 즉 스트리밍 URL과 같은 정보는 재생 직전에 획득할 수 있는 경우가 있습니다. 이는 `audioItem.stream.urlPlayable` 필드 값에 따라 다음과 같이 구분됩니다.
-* `urlPlayable` 필드 값이 **true**이면 `audioItem.stream.url` 필드에 포함된 URL로 오디오 스트림을 바로 재생할 수 있습니다.
-* `urlPlayable` 필드 값이 **false**이면 `audioItem.stream.url` 필드에 포함된 URL로 오디오 스트림을 바로 재생할 수 없고 [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.
+* `urlPlayable` 필드 값이 `true`이면 `audioItem.stream.url` 필드에 포함된 URL로 오디오 스트림을 바로 재생할 수 있습니다.
+* `urlPlayable` 필드 값이 `false`이면 `audioItem.stream.url` 필드에 포함된 URL로 오디오 스트림을 바로 재생할 수 없고 [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.
 
 ### Message example
 {% raw %}
@@ -40,13 +40,8 @@
 // 바로 재생 가능한 오디오 스트림 URL 정보가 담긴 예제
 {
   "audioItem": {
-    "bgImageUrl": "https://api-ex.podbbang.com/img/12548/b",
+    "audioItemId": "90b77646-93ab-444f-acd9-60f9f278ca38",
     "episodeId": 22346122,
-    "episodeTitle": "0803 뉴스공장 1-2부 (김성태, 안민석)",
-    "playImageUrl": "https://api-ex.podbbang.com/img/12548",
-    "podcastId": 12548,
-    "podcastTitle": "tbs 김어준의 뉴스공장",
-    "skipFullscreen": false,
     "stream": {
       "beginAtInMilliseconds": 0,
       "episodeId": 22346122,
@@ -57,11 +52,10 @@
         "progressReportIntervalInMilliseconds": 60000,
         "progressReportPositionInMilliseconds": null
       },
-      "url": "https://api-ex.podbbang.com/file/12548/22346122",
+      "url": "https://steaming.example.com/1212334548/2231122",
       "urlPlayable": true
     },
-    "type": "podcast",
-    "updatedDate": "2017.08.03"
+    "type": "podcast"
   },
   "playBehavior": "REPLACE_ALL"
 }
@@ -69,68 +63,18 @@
 // 바로 재생 가능하지 않은 오디오 스트림 URL 정보가 담긴 예제
 {
   "audioItem": {
+    "audioItemId": "9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201",
     "album": {
       "albumId": "2000240",
-      "fullImageUrl": "http://musicmeta.phinf.naver.net/album/002/000/2000240.jpg?type=r1440Fll&v=20170622114402",
       "genres": [
         "발라드",
         "알앤비/어반"
       ],
-      "id": "AL-NM-2000240",
-      "imageUrl": "http://musicmeta.phinf.naver.net/album/002/000/2000240.jpg?type=r204Fll&v=20170622114402",
-      "isAdult": false,
-      "isRegular": false,
-      "title": "Palette",
-      "url": "http://nozzle.naver.com:10080/1/catalog/AL-NM-2000240/"
+      "title": "Palette"
     },
-    "arrangers": [
-      {
-        "name": "김제휘"
-      }
-    ],
-    "artists": [
-      {
-        "artistId": "112579",
-        "id": "AR-NM-112579",
-        "imageUrl": "http://musicmeta.phinf.naver.net/artist/000/112/112579.jpg?type=r240",
-        "isGroup": false,
-        "name": "아이유(IU)",
-        "url": "http://nozzle.naver.com:10080/1/catalog/AR-NM-112579/"
-      }
-    ],
-    "audioItemId": "9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201",
-    "discNo": 1,
-    "hasLyrics": true,
-    "hasNaverSyncLyrics": true,
-    "hasVideo": false,
-    "id": "TR-NM-17716562",
-    "isAdult": false,
-    "isRepresent": false,
-    "isStreaming": true,
-    "lyricists": [
-      {
-        "name": "아이유(IU)"
-      }
-    ],
-    "lyrics": "이건 비밀이야 \n아무에게도 고백하지 않았던\n이야기를 들려주면\n큰 눈으로 너는 묻지\nHow wow wow\nWhatever\n\n나 실은 말이야\n저기 아득한 \n미래로부터 날아왔어\n쏟아질 듯이 빼곡한 \n별들 사이를 지나 \nFly fly fly\n\n있지 그곳도 사실 \n바보들투성이야\n아니 매우 반짝이는 건 오히려 \nNow now now\n\n이 하루 이 지금 우리 \n눈부셔 아름다워\n이 불꽃놀이는 끝나지 않을 거야 \nOoh Whatever\n\n흐린 날이면\n거짓말처럼 무섭게 깜깜했지\n새침데기 태양은 \n뜨겁기는 커녕 Peacoke\nBlue blue blue Whatever\n\n매일매일\n제멋대로인 바람결을 땋아서 만든\n이 나침반이 가리킨 그곳에서 발견!\nOh That's you you yes, you \n\n있지 저런 건 \n그저 자그만 돌멩이야\n빛이 나는 건 여기 있잖아\nLife is cool cool cool\n\n시간은 많아 이대로면 아마 \n영원히 살 수 있지 않을까\n안녕 나의 주인공 그래 \n너를 만나러 나\n짜잔 우아하게 등장!\n\n바로 이 하루 이 지금 우리\n눈부셔 아름다워  \n나는 확실히 알아 \n오늘의 불꽃놀이는 \n끝나지 않을 거야 \n우우우 우우우\n우우우 우우우\n\n더 놀라운 건 지금부터야",
-    "naverSyncLyrics": "0|이건 비밀이야\n#2|아무에게도 고백하지 않았던\n#8|이야기를 들려주면\n#10|큰 눈으로 너는 묻지\n#13|How wow wow Whatever\n#17|나 실은 말이야\n#19|저기 아득한 미래로부터 날아왔어\n#24|쏟아질 듯이 빼곡한 별들 사이를 지나 Fly fly fly\n#32|있지 그곳도 사실 바보들투성이야\n#40|아니 매우 반짝이는 건 오히려 Now now now\n#48|이 하루 이 지금 우리\n#52|눈부셔 아름다워\n#54|이 불꽃놀이는 끝나지 않을 거야 Ooh Whatever\n#65|흐린 날이면\n#66|거짓말처럼 무섭게 깜깜했지\n#72|새침데기 태양은 뜨겁기는 커녕 Peacoke\n#76|Blue blue blue Whatever\n#81|매일매일\n#82|제멋대로인 바람결을 땋아서 만든\n#89|이 나침반이 가리킨 그곳에서 발견\n#92|Oh That's you you yes you\n#96|있지 저런 건 그저 자그만 돌멩이야\n#104|빛이 나는 건 여기 있잖아\n#107|Life is cool cool cool\n#110|시간은 많아 이대로면 아마\n#116|영원히 살 수 있지 않을까\n#120|안녕 나의 주인공 그래 너를 만나러 나\n#124|짜잔 우아하게 등장\n#127|바로 이 하루 이 지금 우리\n#132|눈부셔 아름다워\n#134|나는 확실히 알아 오늘의 불꽃놀이는\n#140|끝나지 않을 거야\n#144|우우우 우우우 우우우 우우우\n#160|더 놀라운 건 지금부터야\n#500|#@500|#@",
-    "nozzle": {
-      "likedByMe": false
-    },
-    "score": 0.8217,
-    "songwriters": [
-      {
-        "name": "김제휘"
-      }
-    ],
-    "station": {
-      "title": "아이유 스테이션"
-    },
+    ...
     "stream": {
       "beginAtInMilliseconds": 0,
-      "p3TapCursor": "c1862201",
-      "p3TapId": "9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1",
-      "p3TapNextCursor": "c1867299",
       "progressReport": {
         "progressReportDelayInMilliseconds": null,
         "progressReportIntervalInMilliseconds": null,
@@ -141,11 +85,7 @@
       "urlPlayable": false
     },
     "title": "이 지금",
-    "totalArtistCount": 1,
-    "trackId": "17716562",
-    "trackNo": 1,
-    "type": "navermusic",
-    "url": "http://nozzle.naver.com:10080/1/catalog/TR-NM-17716562/"
+    "type": "navermusic"
   },
   "playBehavior": "REPLACE_ALL"
 }
@@ -560,7 +500,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 | `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다. | 선택 |
 | `token`             | string  | 오디오 스트림 toekn.                                                                                  | 필수 |
 | `url`               | string  | 오디오 스트림 URL                                                                                     | 필수 |
-| `urlPlayable`       | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><strong>true</strong> : 바로 재생이 가능한 형태의 URL</li><li><strong>false</strong> : 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
+| `urlPlayable`       | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code> : 바로 재생이 가능한 형태의 URL</li><li><code>false</code> : 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
 | `[Custom Field]`    | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.                                | 선택 |
 
 #### Object Example
@@ -598,8 +538,8 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 
 #### See also
 * [`AudioPlayer.Play`](#Play)
-* [`AudioPlayer.progressReportDelayInMilliseconds`](#progressReportDelayInMilliseconds)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
+* [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
