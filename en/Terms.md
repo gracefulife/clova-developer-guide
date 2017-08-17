@@ -27,7 +27,7 @@ Credential information obtained by registering a client in [Clova Developer Cons
 [Clova](http://clova.ai) is an AI (artificial intelligence) platform developed and serviced by {{ book.TargetServiceForClientAuth }}. Clova recognizes user's speech input or images, analyzes them, and provides information or service as requested by the user. 3rd party developers, by leveraging the Clova technologies, can make a device or home appliance that provides an AI service. They can also offer their content or services to users through Clova.
 
 ### Clova access token {#ClovaAccessToken}
-A means used by Clova to authorize a client when the client tries to send an [event message](#Event) to [Clova Interface Cconnect](#CIC). See [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) for more details.
+A means used by Clova to authorize a client when the client tries to send an [event message](#Event) to [Clova Interface Connect](#CIC). See [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) for more details.
 
 ### Clova Developer Console {#ClovaDeveloperConsole}
 The web tool that provides the following features for a client device that interacts with the Clova platform or for developers who build [Clova extension](#ClovaExtension).
@@ -60,7 +60,7 @@ The extension that provides a service for controlling IoT devices. See [Building
 ### Clova Home extension message {#ClovaHomeExtensionMessage}
 A message used by a [Clova Home extension](#ClovaHomeExtension) when communicating information with [Clova Extensino Kit](#CEK) to control IoT devices. See [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md) for more details.
 
-### Clova Interface Connection (CIC) {#CIC}
+### Clova Interface Connect (CIC) {#CIC}
 The platform that serves as an interface to Clova. It supports various types of clients which aim to provide an AI assistant service, including PC/mobile app, mobile device, or home appliances. See [CIC overview](/CIC/CIC_Overview.md) for more details.
 
 ### Clova Auth API {#ClovaAuthAPI}

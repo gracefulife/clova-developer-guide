@@ -120,7 +120,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) alo
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
 | format  | string | Audio data format. Always enter `AUDIO_L16_RATE_16000_CHANNELS_1`.  | No  |
-| lang  | string | Determines in which language user's speech input will be recognized. <ul><li>"ko": Korean</li><li>"en": English</li></ul>| Yes  |
+| lang  | string | Determines in which language user's speech input will be recognized. <ul><li>"ko": Korean</li><li>"ja": Japanese</li><li>"en": English</li></ul>| Yes  |
 | profile | string | A field reserved for future use. Always enter `CLOSE_TALK`.  | No  |
 
 ### Remarks
