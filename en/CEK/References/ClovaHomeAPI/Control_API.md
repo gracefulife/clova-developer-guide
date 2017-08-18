@@ -1,36 +1,81 @@
 ## Control API {#ControlAPI}
 
-This API is used for requests and responses related to obtaining information of IoT appliances or controlling IoT appliances.
+Processes requests and responses related to obtaining information of IoT appliances or controlling IoT appliances.
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [DecrementTargetTemperatureRequest](#DecrementTargetTemperatureRequest)     | Request | Requests Clova Home extension to decrease temperature by a specified value on the target appliance.      |
-| [DecrementTargetTemperatureConfirmation](#DecrementTargetTemperatureConfirmation) | Response | Returns the result of setting the target appliance to decrease temperature in response to the [DecrementTargetTemperatureRequest](#DecrementTargetTemperatureRequest) message sent from CEK. |
-| [GetLockStateRequest](#GetLockStateRequest)                                 | Request  | Requests Clova Home extension to provide the current lock state of the target appliance.            |
-| [GetLockStateResponse](#GetLockStateResponse)                               | Response | Returns the current lock state of the target appliance in response to the [GetLockStateRequest](#GetLockStateRequest) message sent from CEK. |
-| [GetTargetTemperatureRequest](#GetTargetTemperatureRequest)                 | Request  | Requests Clova Home extension to provide the current target temperature set on the target appliance.            |
-| [GetTargetTemperatureResponse](#GetTargetTemperatureResponse)               | Response | Returns the current target temperature set on the target appliance in response to the [GetTargetTemperatureRequest](#GetTargetTemperatureRequest) message sent from CEK. |
-| [HealthCheckRequest](#HealthCheckRequest)                                   | Request  Clova sends health check request to Clova Home extension periodically to check connectivity with user appliance. |
-| [HealthCheckResponse](#HealthCheckResponse)                                 | Response | Returns a list of appliance IDs that are currently reachable in response to the [HealthCheckRequest](#HealthCheckRequest) message sent from CEK. |
-| [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest)     | Request  | Requests Clova Home extension to increase temperature by a specified value on the target appliance.     |
-| [IncrementTargetTemperatureConfirmation](#IncrementTargetTemperatureConfirmation) | Response | Returns the result of setting the target appliance to increase temperature in response to the [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest) message sent from CEK. |
-| [SetLockStateRequest](#SetLockStateRequest)                                 | Request  | Requests Clova Home extension to lock or unlock the target appliance.                 |
-| [SetLockStateConfirmation](#SetLockStateConfirmation)                       | Response | Returns the result of setting the target appliance to lock or unlock in response to the [SetLockStateRequest](#SetLockStateRequest) message sent from CEK. |
-| [TurnOffRequest](#TurnOffRequest)                                           | Request  | Requests Clova Home extension to turn off the target appliance.                        |
-| [TurnOffConfirmation](#TurnOffConfirmation)                                 | Response | Returns the result of setting the target appliance to turn off in response to the [TurnOffRequest](#TurnOffRequest) message sent from CEK. |
-| [TurnOnRequest](#TurnOnRequest)                                             | Request  | Requests Clova Home extension to turn on the target appliance.                        |
-| [TurnOnConfirmation](#TurnOnConfirmation)                                   | Response | Returns the result of setting the target appliance to turn on in response to the [TurnOnRequest](#TurnOnRequest) message sent from CEK. |
+| [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)  | Response | Returns CEK the result of setting the target appliance to reduce the fan speed, in response to a [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) message. |
+| [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)  | Response | Requests your Clova Home extension to set the target appliance to reduce the fan speed by a specified value. |
+| [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | Returns CEK the result of setting the target appliance to reduce the temperature, in response to a [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) message. |
+| [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)  | Request | Requests your Clova Home extension to set the target appliance to reduce the temperature by a specified value.  |
+| [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)  | Response | Returns CEK the result of setting the target appliance to turn down the speaker volume, in response to a [`DecrementVolumeRequest`](#DecrementVolumeRequest) message. |
+| [`DecrementVolumeRequest`](#DecrementVolumeRequest)  | Response | Requests your Clova Home extension to set the target appliance to turn down the speaker volume by a specified value. |
+| [`HealthCheckRequest`](#HealthCheckRequest)  | Request  | Requests your Clova Home extension to check the state of the target appliance. |
+| [`HealthCheckResponse`](#HealthCheckResponse)  | Response | Returns CEK the state of the target appliance, in response to a [`HealthCheckRequest`](#HealthCheckRequest) message. |
+| [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)  | Response | Returns CEK the result of setting the target appliance to raise the fan speed, in response to a[`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) message. |
+| [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)  | Response | Requests your Clova Home extension to set the target appliance to raise the fan speed by a specified value. |
+| [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) | Response | Returns CEK the result of setting the target appliance to raise the temperature, in response to a [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) message. |
+| [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)  | Request  | Requests your Clova Home extension to set the target appliance to raise the temperature by a specified value.  |
+| [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)  | Response | Returns CEK the result of setting the target appliance to turn up the speaker volume, in response to a [`IncrementVolumeRequest`](#IncrementVolumeRequest) message. |
+| [`IncrementVolumeRequest`](#IncrementVolumeRequest)  | Response | Requests your Clova Home extension to set the target appliance to turn up the speaker volume by a specified value. |
+| [`SetChannelConfirmation`](#SetChannelConfirmation)  | Request  | Returns CEK the result of setting the target appliance to change the TV channel, in response to a [`SetChannelRequest`](#SetChannelRequest) message. |
+| [`SetChannelRequest`](#SetChannelRequest)  | Request  | Requests your Clova Home extension to set the target appliance to change to a specified TV channel. |
+| [`SetModeConfirmation`](#SetModeConfirmation)  | Request  | Returns CEK the result of setting the heating system to change the mode, in response to a [`SetModeRequest`](#SetModeRequest) message. |
+| [`SetModeRequest`](#SetModeRequest)  | Request  | Requests your Clova Home extension to set the target appliace to change to a specified heating mode. |
+| [`TurnOffConfirmation`](#TurnOffConfirmation)  | Response | Returns CEK the result of setting the target appliance to turn off, in response to a [`TurnOffRequest`](#TurnOffRequest) message. |
+| [`TurnOffRequest`](#TurnOffRequest)  | Request  | Requests your Clova Home extension to turn off the target appliance.  |
+| [`TurnOnConfirmation`](#TurnOnConfirmation)  | Response | Returns CEK the result of setting the target appliance to turn on, in response to a [`TurnOnRequest`](#TurnOnRequest) message. |
+| [`TurnOnRequest`](#TurnOnRequest)  | Request  | Requests your Clova Home extension to turn on the target appliance.  |
 
-### DecrementTargetTemperatureRequest {#DecrementTargetTemperatureRequest}
-Requests Clova Home extension to decrease temperature by a specified value on the target appliance. It is usually used to controls appliances such as an air conditioner. Use a *[DecrementTargetTemperatureConfirmation](#DecrementTargetTemperatureConfirmation)* message to respond to this request.
+### DecrementFanSpeedConfirmation {#DecrementFanSpeedConfirmation}
+Returns CEK the result of setting the target appliance to reduce the fan speed, in response to a [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
-| deltaTemperature | [TemperatureObject](#TemperatureObject) | Object containing the expected change in temperature.                              | Yes    |
+| `targetFanSpeed`  | [SpeedObject](#SpeedObject)  | An object containing the current speed  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.targetFanSpeed` | [SpeedObject](#SpeedObject)  | An object containing the previous speed  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "DecrementFanSpeedConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "targetFanSpeed": {
+      "value": 2
+    },
+    "previousState": {
+      "targetFanSpeed": {
+        "value": 4
+      }
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)
+
+### DecrementFanSpeedRequest {#DecrementFanSpeedRequest}
+Requests your Clova Home extension to set the target appliance to reduce the fan speed by a specified value. It is usually used to control appliances such as an air purifier. To respond to this request, use a [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field.  | Yes  |
+| `deltaFanSpeed`  | [SpeedObject](#SpeedObject)  | An object containing the expected change in the value of the speed.  | Yes  |
 
 #### Message example
 
@@ -39,17 +84,17 @@ Requests Clova Home extension to decrease temperature by a specified value on th
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
-    "name": "DecrementTargetTemperatureRequest",
+    "name": "DecrementFanSpeedRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
     "accessToken": "92ebcb67fe33",
     "appliance": {
-      "applianceId": "device-001"
+      "applianceId": "device-004"
     },
-    "deltaTemperature": {
-      "value": 2.0
+    "deltaFanSpeed": {
+      "value": 2
     }
   }
 }
@@ -57,20 +102,18 @@ Requests Clova Home extension to decrease temperature by a specified value on th
 {% endraw %}
 
 #### See also
-* [DecrementTargetTemperatureConfirmation](#DecrementTargetTemperatureConfirmation)
+* [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)
 
 ### DecrementTargetTemperatureConfirmation {#DecrementTargetTemperatureConfirmation}
-Returns the result of setting the target appliance to decrease temperature in response to the [DecrementTargetTemperatureRequest](#DecrementTargetTemperatureRequest) message sent from CEK.
+Returns CEK the result of setting the target appliance to reduce the temperature, in response to a [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken       | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance         | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
-| targetTemperature | [TemperatureObject](#TemperatureObject) | Object containing the current target temperature                            | Yes    |
-| previousState     | object                                  | Object containing previous state of the appliance                           | Yes    |
-| previousState.targetTemperature | [TemperatureObject](#TemperatureObject) | Object containing previous target temperature              | Yes    |
+| `targetTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the current target temperature  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.targetTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the previous target temperature  | Yes  |
 
 #### Message example
 
@@ -98,17 +141,18 @@ Returns the result of setting the target appliance to decrease temperature in re
 {% endraw %}
 
 #### See also
-* [DecrementTargetTemperatureRequest](#DecrementTargetTemperatureRequest)
+* [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)
 
-### GetLockStateRequest {#GetLockStateRequest}
-Requests Clova Home extension to provide the current lock state of the target appliance. It is usually used to check state of appliances such as a door lock. Use a *[GetLockStateResponse](#GetLockStateResponse)* message to respond to this request.
+### DecrementTargetTemperatureRequest {#DecrementTargetTemperatureRequest}
+Requests Clova Home extension to set the target appliance to reduce the temperature by a specified value. It is usually used to control appliances such as an air conditioner. To respond to this request, use a [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                              | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject) | Object containing information of the target appliance. applianceId is a required field. | Yes    |
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `deltaTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the expected change in the value of the temperature.  | Yes  |
 
 #### Message example
 
@@ -116,8 +160,8 @@ Requests Clova Home extension to provide the current lock state of the target ap
 ```json
 {
   "header": {
-    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetLockStateRequest",
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "DecrementTargetTemperatureRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -125,123 +169,104 @@ Requests Clova Home extension to provide the current lock state of the target ap
     "accessToken": "92ebcb67fe33",
     "appliance": {
       "applianceId": "device-001"
-    }
-  }
-}
-```
-{% endraw %}
-
-#### See also
-* [GetLockStateResponse](#GetLockStateResponse)
-
-### GetLockStateResponse {#GetLockStateResponse}
-Returns the current lock state of a target appliance in response to a [GetLockStateRequest](#GetLockStateRequest) message sent from CEK.
-
-#### Payload field
-
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| lockState                    | string  | Current lock state of the appliance. Available values are: <ul><li>"LOCKED"</li><li>"UNLOCKED"</li></ul>             | Yes    |
-| applicanceResponseTimestamp  | string  | Time when lock state of the appliance was checked (Timestamp, [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601))  | Yes    |
-
-#### Message example
-
-{% raw %}
-```json
-{
-  "header":{
-    "messageId":"19b29d5e-04b3-4524-a538-35ae77ea2618",
-    "name":"GetLockStateResponse",
-    "namespace":"ClovaHome",
-    "payloadVersion":"1.0"
-  },
-  "payload":{
-    "lockState":"LOCKED",
-    "applianceResponseTimestamp":"2017-05-29T23:20:50.52Z"
-  }
-}
-```
-{% endraw %}
-
-#### See also
-* [GetLockStateRequest](#GetLockStateRequest)
-
-### GetTargetTemperatureRequest {#GetTargetTemperatureRequest}
-Requests Clova Home extension to provide the current target temperature set on the appliance. It is usually used to check state of appliances such as an air conditioner. Use a *[GetTargetTemperatureResponse](#GetTargetTemperatureResponse)* message to respond to this request.
-
-#### Payload field
-
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| accessToken      | string                              | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject) | Object containing information of the target appliance. applianceId is a required field. | Yes    |
-
-#### Message example
-
-{% raw %}
-```json
-{
-  "header": {
-    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetTargetTemperatureRequest",
-    "namespace": "ClovaHome",
-    "payloadVersion": "1.0"
-  },
-  "payload": {
-    "accessToken": "92ebcb67fe33",
-    "appliance": {
-      "applianceId": "device-001"
-    }
-  }
-}
-```
-{% endraw %}
-
-#### See also
-* [GetTargetTemperatureResponse](#GetTargetTemperatureResponse)
-
-### GetTargetTemperatureResponse {#GetTargetTemperatureResponse}
-Returns the current target temperature set on a target appliance in response to the [GetTargetTemperatureRequest](#GetTargetTemperatureRequest) message sent from CEK.
-
-#### Payload field
-
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| targetTemperature            | [TemperatureObject](#TemperatureObject)  | Object containing the current target temperature                                  | Yes    |
-| applicanceResponseTimestamp  | string  | Time when the target temperature on the appliance was checked (Timestamp, [ISO 8061](https://en.wikipedia.org/wiki/ISO_8601))  | Yes    |
-
-#### Message example
-
-{% raw %}
-```json
-{
-  "header":{
-    "messageId":"19b29d5e-04b3-4524-a538-35ae77ea2618",
-    "name":"GetTargetTemperatureResponse",
-    "namespace":"ClovaHome",
-    "payloadVersion":"1.0"
-  },
-  "payload":{
-    "targetTemperature": {
-      "value": 24.0
     },
-    "applianceResponseTimestamp":"2017-05-29T23:20:50.52Z"
+    "deltaTemperature": {
+      "value": 2.0
+    }
   }
 }
 ```
 {% endraw %}
 
 #### See also
-* [GetTargetTemperatureRequest](#GetTargetTemperatureRequest)
+* [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation)
+
+### DecrementVolumeConfirmation {#DecrementVolumeConfirmation}
+Returns CEK the result of setting the target appliance to turn down the speaker volume, in response to a [`DecrementVolumeRequest`](#DecrementVolumeRequest) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `targetVolume`  | [VolumeObject](#SpeedObject)  | An object containing the current volume  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.targetVolume` | [VolumeObject](#SpeedObject)  | An object containing the previous volume  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "DecrementVolumeConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "targetVolume": {
+      "value": 10
+    },
+    "previousState": {
+      "targetVolume": {
+        "value": 20
+      }
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`DecrementVolumeRequest`](#DecrementVolumeRequest)
+
+### DecrementVolumeRequest {#DecrementVolumeRequest}
+Requests your Clova Home extension to set the target appliance to turn down the speaker volume. It is usually used to control appliances such as a TV set-top box. To respond to this request, use a [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`  | string  | The access token for user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field.  | Yes  |
+| `deltaVolume`  | [VolumeObject](#VolumeObject)  | An object containing the expected change in the value of the volume.  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "DecrementVolumeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-005"
+    },
+    "deltaVolume": {
+      "value": 10
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)
 
 ### HealthCheckRequest {#HealthCheckRequest}
-Clova sends this message to Clova Home extension periodically to check the connectivity with user appliance. Use a *[HealthCheckResponse](#HealthCheckResponse)* message to respond to this request.
+Requests your Clova Home extension to check the state of the target appliance. To respond to this request, use a [`HealthCheckResponse`](#HealthCheckResponse) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken   | string  | Access token for Clova Home extension | Yes    |
+| `accessToken`  | string  | The access token for the Clova Home extension | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field.  | Yes  |
 
 #### Message example
 
@@ -255,58 +280,99 @@ Clova sends this message to Clova Home extension periodically to check the conne
     "payloadVersion": "1.0"
   },
   "payload": {
-    "accessToken": "92ebcb67fe33"
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-001"
+    }
   }
 }
 ```
 {% endraw %}
 
 #### See also
-* [HealthCheckResponse](#HealthCheckResponse)
+* [`HealthCheckResponse`](#HealthCheckResponse)
 
 ### HealthCheckResponse {#HealthCheckResponse}
-Returns a list of appliance IDs that are currently reachable in response to the [HealthCheckRequest](#HealthCheckRequest) message sent from CEK.
+Returns CEK the state of the target appliance, in response to a [`HealthCheckRequest`](#HealthCheckRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| reachableAppliances[] | string array  | Array containing a list of appliance IDs that are currently reachable | Yes    |
+| `isReachable` | boolean | A value that indicates whether the target appliance is reachable through network. <ul><li><strong>true</strong>: Reachable (online)</li><li><strong>false</strong>: Not reachable (offline)</li></ul> | Yes  |
+| `isTurnOn`  | boolean | A value that indicates the working state of the target appliance. <ul><li><strong>true</strong>: Idle</li><li><strong>false</strong>: Working</li></ul>  | Yes  |
 
 #### Message example
 
 {% raw %}
 ```json
 {
-  "header":{
-    "messageId":"19b29d5e-04b3-4524-a538-35ae77ea2618",
-    "name":"HealthCheckResponse",
-    "namespace":"ClovaHome",
-    "payloadVersion":"1.0"
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "HealthCheckResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
   },
-  "payload":{
-    "reachableAppliances": [
-        "devicd-001",
-        "devicd-002"
-    ]
+  "payload": {
+    "isReachable": true,
+    "isTurnOn": false
   }
 }
 ```
 {% endraw %}
 
 #### See also
-* [GetLockStateRequest](#GetLockStateRequest)
+* [`HealthCheckRequest`](#HealthCheckRequest)
 
-### IncrementTargetTemperatureRequest {#IncrementTargetTemperatureRequest}
-Requests Clova Home extension to increase temperature by a specified value on the target appliance. It is usually used to control appliances such as an air conditioner. Use a *[IncrementTargetTemperatureConfirmation](#IncrementTargetTemperatureConfirmation)* message to respond to this request.
+### IncrementFanSpeedConfirmation {#IncrementFanSpeedConfirmation}
+Returns CEK the result of setting the target appliance to raise the fan speed, in response to a [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
-| deltaTemperature | [TemperatureObject](#TemperatureObject) | Object containing the expected change in temperature.                              | Yes    |
+| `targetFanSpeed`  | [SpeedObject](#SpeedObject) | An object containing the current fan speed  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.FanSpeed` | [SpeedObject](#SpeedObject) | An object containing the previous fan speed  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "IncrementFanSpeedConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "targetFanSpeed": {
+      "value": 3
+    },
+    "previousState": {
+      "targetFanSpeed": {
+        "value": 2
+      }
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)
+
+### IncrementFanSpeedRequest {#IncrementFanSpeedRequest}
+Requests your Clova Home extension to set the target appliance to raise the fan speed by a specified value. It is usually used to control appliances such as an air purifier. To respond to this request, use a [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `deltaFanSpeed` | [SpeedObject](#SpeedObject) | An object containing the expected change in the value of the speed.  | Yes  |
 
 #### Message example
 
@@ -315,17 +381,17 @@ Requests Clova Home extension to increase temperature by a specified value on th
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
-    "name": "IncrementTargetTemperatureRequest",
+    "name": "IncrementFanSpeedRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
     "accessToken": "92ebcb67fe33",
     "appliance": {
-      "applianceId": "device-001"
+      "applianceId": "device-004"
     },
-    "deltaTemperature": {
-      "value": 3.0
+    "deltaFanSpeed": {
+      "value": 1
     }
   }
 }
@@ -333,20 +399,18 @@ Requests Clova Home extension to increase temperature by a specified value on th
 {% endraw %}
 
 #### See also
-* [IncrementTargetTemperatureConfirmation](#IncrementTargetTemperatureConfirmation)
+* [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)
 
 ### IncrementTargetTemperatureConfirmation {#IncrementTargetTemperatureConfirmation}
-Returns the result of setting the temperature to increase on the target appliance in response to the [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest) message sent from CEK.
+Returns CEK the result of setting the target appliance to raise the temperature, in response to a [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                   | Access token for Clova Home extension                               | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)      | Object containing information of the target appliance. applianceId is a required field.    | Yes    |
-| targetTemperature | [TemperatureObject](#TemperatureObject) | Object containing the current target temperature                               | Yes    |
-| previousState     | object                                  | Object containing previous state of the appliance                              | Yes    |
-| previousState.targetTemperature | [TemperatureObject](#TemperatureObject) | Object containing previous target temperature                 | Yes    |
+| `targetTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the current target temperature  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.targetTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the previous target temperature  | Yes  |
 
 #### Message example
 
@@ -374,18 +438,18 @@ Returns the result of setting the temperature to increase on the target applianc
 {% endraw %}
 
 #### See also
-* [IncrementTargetTemperatureRequest](#IncrementTargetTemperatureRequest)
+* [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)
 
-### SetLockStateRequest {#SetLockStateRequest}
-Requests Clova Home extension to lock or unlock the target appliance. It is usually used to control appliances such as a door lock. Use a *[SetLockStateConfirmation](#SetLockStateConfirmation)* message to respond to this request.
+### IncrementTargetTemperatureRequest {#IncrementTargetTemperatureRequest}
+Requests your Clova Home extension to set the target appliance to raise the temperature by a specified value. It is usually used to control appliances such as an air conditioner. To respond to this request, use an [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
-| lockState        | string                                  | Current lock state of the appliance. Available values are: <ul><li>"LOCKED"</li><li>"UNLOCKED"</li></ul> | Yes    |
+| `accessToken`  | string | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details. | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `deltaTemperature` | [TemperatureObject](#TemperatureObject) | An object containing the expected change in the value of the temperature.  | Yes  |
 
 #### Message example
 
@@ -394,7 +458,7 @@ Requests Clova Home extension to lock or unlock the target appliance. It is usua
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
-    "name": "SetLockStateRequest",
+    "name": "IncrementTargetTemperatureRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -403,23 +467,27 @@ Requests Clova Home extension to lock or unlock the target appliance. It is usua
     "appliance": {
       "applianceId": "device-001"
     },
-    "lockState": "LOCKED"
+    "deltaTemperature": {
+      "value": 3.0
+    }
   }
 }
 ```
 {% endraw %}
 
 #### See also
-* [SetLockStateConfirmation](#SetLockStateConfirmation)
+* [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation)
 
-### SetLockStateConfirmation {#SetLockStateConfirmation}
-Returns the result of setting to lock or unlock the target appliance in response to the [SetLockStateRequest](#SetLockStateRequest) message sent from CEK.
+### IncrementVolumeConfirmation {#IncrementVolumeConfirmation}
+Returns CEK the result of setting the target appliance to turn up the speaker volume, in response to an [`IncrementVolumeRequest`](#IncrementVolumeRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| lockState     | string  | Current lock state of the appliance. Available values are: <ul><li>"LOCKED"</li><li>"UNLOCKED"</li></ul> | Yes    |
+| `targetVolume` | [VolumeObject](#VolumeObject)  | An object containing the current volume  | Yes  |
+| `previousState`  | object  | An object containing the previous state of the appliance  | Yes  |
+| `previousState.targetVolume` | [VolumeObject](#VolumeObject) | An object containing the previous volume  | Yes  |
 
 #### Message example
 
@@ -428,29 +496,239 @@ Returns the result of setting to lock or unlock the target appliance in response
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
-    "name": "SetLockStateConfirmation",
+    "name": "IncrementVolumeConfirmation",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
-    "lockState": "LOCKED"
+    "targetVolume": {
+      "value": 20
+    },
+    "previousState": {
+      "targetVolume": {
+        "value": 10
+      }
+    }
   }
 }
 ```
 {% endraw %}
 
 #### See also
-* [SetLockStateRequest](#SetLockStateRequest)
+* [`IncrementVolumeRequest`](#IncrementVolumeRequest)
 
-### TurnOffRequest {#TurnOffRequest}
-Requests Clova Home extension to turn off the target appliance. Use a *[TurnOffConfirmation](#TurnOffConfirmation)* message to respond to this request.
+### IncrementVolumeRequest {#IncrementVolumeRequest}
+Requests your Clova Home extension to set the target appliance to turn up the speaker volume by a specified value. It is usually used to control appliances such as a TV set-top box. To respond to this request, use an [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `deltaVolume` | [VolumeObject](#VolumeObject)  | An object containing the expected change in the value of the temperature.  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "IncrementVolumeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-005"
+    },
+    "deltaVolume": {
+      "value": 10
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)
+
+### SetChannelConfirmation {#SetChannelConfirmation}
+Returns CEK the result of setting the target appliance to change the TV channel, in response to a [`SetChannelRequest`](#SetChannelRequest) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `channel`  | [TVChannelObject](#TVChannelObject)  | An object containing the TV channel set on the target appliance.  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "SetChannelConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "channel": {
+      "value":15
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`SetChannelRequest`](#SetChannelRequest)
+
+### SetChannelRequest {#SetChannelRequest}
+Requests your Clova Home extension to set the target appliance to change to a specified channel. It is usually used to control appliances such as a TV set-top box. To respond to this request, use a [`SetChannelConfirmation`](#SetChannelConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`  | string | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject) | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `channel`  | [TVChannelObject](#TVChannelObject) | An object containing the TV channel to set on the target appliance.  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "SetChannelRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-006"
+    },
+    "channel": {
+      "value": 15
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`SetChannelConfirmation`](#SetChannelConfirmation)
+
+### SetModeConfirmation {#SetModeConfirmation}
+Returns CEK the result of setting the target appliance to change the heating mode, in response to a [`SetModeRequest`](#SetModeRequest) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `mode`  | [HeatingModeObject](#HeatingModeObject)  | An object containing the heating mode set on the target appliance.  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "SetModeConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "mode": {
+      "value": "hotwater"
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`SetModeRequest`](#SetModeRequest)
+
+### SetModeRequest {#SetModeRequest}
+Requests your Clova Home extension to change the heating mode to a specified value. It is usually used to control appliances such as a heating system. To respond to this request, use a [`SetModeConfirmation`](#SetModeConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`| string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details. | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
+| `mode`  | [HeatingModeObject](#HeatingModeObject) | An object containing the heating mode to set on the target appliance  | Yes  |
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "SetModeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-006"
+    },
+    "mode": {
+        "value": "hotwater"
+    }
+  }
+}
+```
+{% endraw %}
+
+#### See also
+* [`SetModeConfirmation`](#SetModeConfirmation)
+
+### TurnOffConfirmation {#TurnOffConfirmation}
+Returns CEK the result of setting the target appliance to turn off, in response to a [TurnOffRequest](#TurnOffRequest) message.
+
+#### Payload field
+None
+
+#### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "TurnOffConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+#### See also
+* [`TurnOffRequest`](#TurnOffRequest)
+
+### TurnOffRequest {#`TurnOffRequest`}
+Requests your Clova Home extension to turn off the target appliance. To respond to this request, use a [`TurnOffConfirmation`](#TurnOffConfirmation) message.
+
+#### Payload field
+
+| Field name  | Type  | Field description  | Required |
+|---------------|---------|-----------------------------|---------|
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
 
 #### Message example
 
@@ -474,10 +752,10 @@ Requests Clova Home extension to turn off the target appliance. Use a *[TurnOffC
 {% endraw %}
 
 #### See also
-* [TurnOffConfirmation](#TurnOffConfirmation)
+* [`TurnOffConfirmation`](#TurnOffConfirmation)
 
-### TurnOffConfirmation {#TurnOffConfirmation}
-Returns the result of setting the target appliance turn off in response to the [TurnOffRequest](#TurnOffRequest) message sent from CEK.
+### TurnOnConfirmation {#TurnOnConfirmation}
+Returns CEK the result of setting the target appliance to turn on, in response to a [`TurnOnRequest`](#TurnOnRequest) message.
 
 #### Payload field
 None
@@ -489,7 +767,7 @@ None
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
-    "name": "TurnOffConfirmation",
+    "name": "TurnOnConfirmation",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -499,17 +777,17 @@ None
 {% endraw %}
 
 #### See also
-* [TurnOffRequest](#TurnOffRequest)
+* [`TurnOnRequest`](#TurnOnRequest)
 
 ### TurnOnRequest {#TurnOnRequest}
-Requests Clova Home extension to turn on the target appliance. Use a *[TurnOnConfirmation](#TurnOnConfirmation)* message to respond to this request.
+Requests your Clova Home extension to turn on the target appliance. To respond to this request, use a [`TurnOnConfirmation`](#TurnOnConfirmation) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken      | string                                  | Access token for the user account of IoT service. CEK forwards the access token obtained from the authorization server of 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.                          | Yes    |
-| appliance        | [ApplianceObject](#ApplianceObject)     | Object containing information of the target appliance. applianceId is a required field. | Yes    |
+| `accessToken`  | string  | The access token for the user's IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.  | Yes  |
+| `appliance`  | [ApplianceObject](#ApplianceObject)  | An object containing information of the target appliance. `applianceId` is a required field. | Yes  |
 
 #### Message example
 
@@ -533,30 +811,4 @@ Requests Clova Home extension to turn on the target appliance. Use a *[TurnOnCon
 {% endraw %}
 
 #### See also
-* [TurnOnConfirmation](#TurnOnConfirmation)
-
-
-### TurnOnConfirmation {#TurnOnConfirmation}
-Returns the result of setting the target appliance to turn on in response to the [TurnOnRequest](#TurnOnRequest) message sent from CEK.
-
-#### Payload field
-None
-
-#### Message example
-
-{% raw %}
-```json
-{
-  "header": {
-    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
-    "name": "TurnOnConfirmation",
-    "namespace": "ClovaHome",
-    "payloadVersion": "1.0"
-  },
-  "payload": {}
-}
-```
-{% endraw %}
-
-#### See also
-* [TurnOnRequest](#TurnOnRequest)
+* [`TurnOnConfirmation`](#TurnOnConfirmation)

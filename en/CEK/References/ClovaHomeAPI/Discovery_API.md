@@ -1,20 +1,20 @@
 ## Discovery API {#DiscoveryAPI}
 
-Use this API to obtain a list of IoT appliances registered to a user account.
+Obtains a list of IoT appliances registered to a user account.
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [DiscoverAppliancesRequest](#DiscoverAppliancesRequest)                     | Request  | Requests Clova Home extension to provide a list of IoT appliances registered to the user.             |
-| [DiscoverAppliancesResponse](#DiscoverAppliancesResponse)                   | Response | Returns a list of IoT appliances registered to the user back to CEK as a response to the [DiscoverAppliancesRequest](#DiscoverAppliancesRequest) message. |
+| [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)  | Request  | Requests your Clova Home extension to provide a list of IoT appliances registered to a user.  |
+| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)  | Response | Responds to a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message by returning CEK a list of IoT appliances registered to a user. |
 
 ### DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
-Requests Clova Home extension to provide a list of appliances registered to the user. Use a *[ClovaHome.DiscoverAppliancesResponse](DiscoverAppliancesResponse)* message to respond to the request.
+Requests your Clova Home extension to provide a list of appliances registered to a user. To respond to the request, use a [`ClovaHome.DiscoverAppliancesResponse`](DiscoverAppliancesResponse) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| accessToken   | string  | Access token for Clova Home extension  | Yes     |
+| `accessToken`  | string  | The access token for the Clova Home extension  | Yes  |
 
 #### Message example
 
@@ -35,19 +35,19 @@ Requests Clova Home extension to provide a list of appliances registered to the 
 {% endraw %}
 
 #### See also
-* [ClovaHome.DiscoverAppliancesResponse](DiscoverAppliancesResponse)
+* [`DiscoverAppliancesResponse`](DiscoverAppliancesResponse)
 
 ### DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
-Returns a list of appliances registered to the user back to CEK. Use this message to respond to a *[ClovaHome.DiscoverAppliancesRequest](DiscoverAppliancesRequest)* message.
+Returns CEK a list of appliances registered to a user. Use this message to respond to a [`ClovaHome.DiscoverAppliancesRequest`](DiscoverAppliancesRequest) message.
 
 #### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| discoveredAppliances[]  | [ApplianceObject](#ApplianceObject) array  | Object array displaying the list of appliances registered to the user account          | Yes    |
+| `discoveredAppliances[]`  | [ApplianceObject](#ApplianceObject) array  | An object array displaying a list of appliances registered to a user account  | Yes  |
 
 #### Remarks
-When providing an IoT service, it is required to provide a list of appliances registered to each user account.
+When providing IoT services, you must provide a list of appliances registered to each user account.
 
 #### Message example
 
@@ -75,8 +75,7 @@ When providing an IoT service, it is required to provide a list of appliances re
             "TurnOff"
         ],
         "applianceTypes": ["LIGHT"],
-        "additionalApplianceDetails": {
-        }
+        "additionalApplianceDetails": {}
       },
       {
         "applianceId": "device-002",
@@ -91,8 +90,7 @@ When providing an IoT service, it is required to provide a list of appliances re
           "TurnOff"
         ],
         "applianceTypes": ["SMARTPLUG"],
-        "additionalApplianceDetails": {
-        }
+        "additionalApplianceDetails": {}
       }
     ]
   }
@@ -101,4 +99,4 @@ When providing an IoT service, it is required to provide a list of appliances re
 {% endraw %}
 
 #### See also
-* [ClovaHome.DiscoverAppliancesRequest](DiscoverAppliancesRequest)
+* [`DiscoverAppliancesRequest`](DiscoverAppliancesRequest)

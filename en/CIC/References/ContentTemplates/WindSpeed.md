@@ -1,5 +1,5 @@
-# WindSpeed Template
-Provides information on wind speeds. It is used to display wind speeds on a screen.
+# WindSpeed template
+Provides wind speeds. It is used to display wind speeds on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,11 +10,11 @@ Provides information on wind speeds. It is used to display wind speeds on a scre
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| bgClipUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to a background sound file | Yes |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a link path to content  | No |
-| location  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains location data | Yes |
-| type  | string | Content template delimiter. The value is always "WindSpeed" | Yes |
-| windSpeed  | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object that contains wind speed data | No |
+| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
+| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
+| `type`  | string | A content template delimiter. The value is always "WindSpeed". | Yes |
+| `windSpeed`  | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds | No |
 
 ## Template Example
 

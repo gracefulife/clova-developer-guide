@@ -5,15 +5,15 @@ To develop a custom extension, prepare the following.
 * (Optional) [Authorization server](#AuthServer)
 
 ### Interaction model {#InteractionModel}
-When you develop a custom extension, the first thing to do is defining an interaction model on how your extension will receive requests from users. An interaction model is a schema standardizing each type of request that your custom extension will be receiving. Once the interaction model is defined, register the model in Clova Developer Console with the following information.
+When you develop a custom extension, the first thing to do is defining an interaction model on how your extension will receive requests from users. An interaction model is a schema standardizing each type of request that your custom extension will be receiving. Once the interaction model is defined, register following information in the Clova Developer Console.
 
-| Element         | Description                            |
+| Task  | Description  |
 |-------------|--------------------------------|
-| Intent              | Specification that defines different types of user requests. Your custom extension must have its own interaction model consisting of a set of *intents*. CEK sends an [IntentRequest](/CEK/References/Custom_Extension_Message_Format.md#IntentRequest) message to your extension containing analysis details of user's speech input. The message is constructed referencing the *intent* defined in the interaction model. |
-| slot | A slot contains necessary information for processing a request declared in *intent*. Slots are to be defined along with its corresponding *intent*. Clova analyzes a user request and extracts information related to slots. CEK includes the extracted slot information in an *IntentRequest* message in the form of key-value pairs and sends it to your extension.  |
-| Examples of user's speech input        | List of examples showing how a user's spoken request can be put in. You can define several example sentences for each *intent*. Example sentences are denoted with slots. Clova uses this information to analyze user requests. |
+| `Intent`  | A specification that defines different types of user requests. Your custom extension must have its own interaction model consisting of a set of `intent`. CEK sends analysis details of user's speech input to your extension, using an [`IntentRequest`](/CEK/References/Custom_Extension_Message_Format.md#IntentRequest) message. The message is constructed based on the `intent` defined in the interaction model. |
+| `slot` | Slots are information necessary for processing a request declared in `intent`. You must define slots when defining an `intent`. Clova analyzes a user request and extracts information specific to slots. When CEK sends an `IntentRequest` message to your extension, the `slot` information is also sent in key-value pairs.  |
+| User speech examples  | A list of examples showing how a user's spoken request can be put in. You can define multiple example sentences for each `Intent`. Example sentences are denoted with `slot`. Clova uses this information when it analyzes user requests. |
 
-Assume a custom extension that provides a pizza ordering service. When it receives a request from a user saying, "I'd like to order two pepperoni pizzas", it can define the user request to an intent as follows.
+Assume your custom extension provides a pizza ordering service and it has received a request from a user saying, "I'd like to order two pepperoni pizzas". The user request can be defined into an intent as follows.
 
 ![](/CEK/Resources/Images/CEK_Interaction_Model_Analysis_Diagram.png)
 
@@ -47,7 +47,7 @@ This is an interaction model defined in JSON format.
 ```
 {% endraw %}
 
-The example shows how a user's spoken request is mapped to pre-defined *intent* and *slot*. You can use this information to process other user requests which have the same intentions but are expressed in different ways.
+The example shows how a user's request is mapped to pre-defined `intent` and `slot`. You can use this information to process other user requests that have the same intention but are expressed in different ways.
 
 {% raw %}
 ```
@@ -59,7 +59,7 @@ OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
 ```
 {% endraw %}
 
-Your custom extension can receive a message as below based on the interaction model defined as above.
+Your custom extension receives a message as below based on the pre-defined interaction model.
 
 {% raw %}
 ```json
@@ -106,9 +106,9 @@ Your custom extension can receive a message as below based on the interaction mo
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova Developer Console is still under development. Contact your counterpart contact personnel to ask for help with defining an interaction model.</p>
+  <p>The Clova Developer Console is currently under development. Contact your counterpart contact personnel to ask for help with defining an interaction model.</p>
 </div>
 
 
 ### Authorization server {#AuthServer}
-If your custom extension provides a 3rd party service that requires user account authentication such as music, shopping or banking, account linking is necessary. To do so, you have to set up an authorization server. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.
+If your custom extension provides a 3rd party service that requires users to authenticate their account, such as music, shopping or banking, account linking is necessary. To do so, you must set up an authorization server. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.

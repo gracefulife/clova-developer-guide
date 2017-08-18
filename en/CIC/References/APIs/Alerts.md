@@ -4,9 +4,9 @@ Creates, looks up, deletes alarms or timers. To manage alarms and timers, have y
 
 | Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [DeleteAlert](#DeleteAlert) | Directive | Instructs your client to delete alarms or timers. |
-| [GetAlert](#GetAlert)  | Directive | Instructs your client to look up alarms or timers. |
-| [SetAlert](#SetAlert)  | Directive | Instructs your client to set alarms or timers. |
+| [`DeleteAlert`](#DeleteAlert) | Directive | Instructs your client to delete alarms or timers. |
+| [`GetAlert`](#GetAlert)  | Directive | Instructs your client to look up alarms or timers. |
+| [`SetAlert`](#SetAlert)  | Directive | Instructs your client to set alarms or timers. |
 
 ## DeleteAlert directive {#DeleteAlert}
 Instructs your client to delete alarms or timers. To delete alarms or timers, have your client call a local app or provide an interface for the task.
@@ -15,7 +15,7 @@ Instructs your client to delete alarms or timers. To delete alarms or timers, ha
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul> | Yes  |
+| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul> | Yes  |
 
 ### Message example
 
@@ -40,7 +40,7 @@ Instructs your client to delete alarms or timers. To delete alarms or timers, ha
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## GetAlert directive {#GetAlert}
 
@@ -50,7 +50,7 @@ Instructs your client to look up alarms or timers. To look up alarms or timers, 
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>   | Yes  |
+| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul>  | Yes  |
 
 ### Message example
 
@@ -75,7 +75,7 @@ Instructs your client to look up alarms or timers. To look up alarms or timers, 
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## SetAlert directive {#SetAlert}
 
@@ -85,11 +85,11 @@ Instructs your client to set alarms or timers. To set alarms or timers, have you
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| currentTime  | string  | Current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). CIC returns current time for timers.  | No  |
-| daysOfWeek[]  | string array | An array that contains recurring days of the week. It can include values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No  |
-| scheduledTime | string  | The scheduled time of an alarm or timer ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes  |
-| token  | string  | The ID of an alarm or timer  | Yes  |
-| type  | string  | Type delimiter <ul><li>ALARM: Alarm</li><li>TIMER: Timer</li></ul>   | Yes  |
+| `currentTime`  | string  | Current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). Timers receive a current time from CIC.  | No  |
+| `daysOfWeek[]`  | string array | An array containing recurring days of the week. It can have values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No  |
+| `scheduledTime` | string  | The time that the alarm or timer is set for ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes  |
+| `token`  | string  | The ID of the alarm or timer  | Yes  |
+| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul>  | Yes  |
 
 ### Message example
 
@@ -117,4 +117,4 @@ Instructs your client to set alarms or timers. To set alarms or timers, have you
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)

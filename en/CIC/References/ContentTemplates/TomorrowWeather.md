@@ -1,5 +1,5 @@
-# TomorrowWeather Template
-Provides weather information for tomorrow. It is used to display tomorrow's weather on a screen.
+# TomorrowWeather template
+Provides weather forecasts for tomorrow. It is used to display tomorrow's weather on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,20 +10,20 @@ Provides weather information for tomorrow. It is used to display tomorrow's weat
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| bgClipUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to a background sound file | Yes |
-| highTemperature  | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object that contains the highest temperature tomorrow afternoon | Yes |
-| highTempWeather  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains weather data when the temperature is at the highest  | Yes |
-| houlyWeatherList[] | object array | An object array that contains hourly weather data | Yes |
-| houlyWeatherList[].hourlyTemperature | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object that contains hourly temperature data | Yes |
-| houlyWeatherList[].hourlyTime | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object that contains time data | Yes |
-| houlyWeatherList[].rainfallProbability | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object that contains rainfall probability | No |
-| houlyWeatherList[].temperatureImageCode | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains hourly [weather code](#WeatherCode) | Yes |
-| houlyWeatherList[].temperatureImageUrl | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to image files for hourly weather | Yes |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a link path to content  | No |
-| location  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains location data | Yes |
-| lowTemperature  | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object that contains the lowest temperature tomorrow morning | Yes |
-| lowTempWeather  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains weather data when the temperature is at the lowest  | Yes |
-| type  | string | Content template delimiter. The value is always "TomorrowWeather" | Yes |
+| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `highTemperature`  | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the highest temperature tomorrow afternoon | Yes |
+| `highTempWeather`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing weather when the temperature is at the highest  | Yes |
+| `houlyWeatherList[]` | object array | An object array containing hourly weather | Yes |
+| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing hourly temperature | Yes |
+| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing time slots | Yes |
+| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing rainfall probability | No |
+| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather code](#WeatherCode) for hourly weather | Yes |
+| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing the URL of the image file for hourly weather | Yes |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
+| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
+| `lowTemperature`  | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the lowest temperature tomorrow morning | Yes |
+| `lowTempWeather`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing weather when the temperature is at the lowest  | Yes |
+| `type`  | string | A content template delimiter. The value is always **"TomorrowWeather"**. | Yes |
 
 {% include "./Shared_Weather_Code.md" %}
 

@@ -1,5 +1,5 @@
 # CIC API
-CIC categorizes [event messages](/CIC/References/Message_Format.md#Event) and [directive messages](CIC/References/Message_Format.md#Directive) into namespaces by their functions and provides them as the CIC APIs. You use these APIs to create event messages to send to CIC or to interpret messages returned from CIC.
+CIC categorizes [event messages](/CIC/References/Message_Format.md#Event) and [directive messages](CIC/References/Message_Format.md#Directive) into namespace by their functions and provide them as the CIC APIs. You use these APIs to create event messages to send to CIC or to interpret messages returned from CIC.
 
 CIC provides the following namespaces.
 

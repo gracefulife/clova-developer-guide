@@ -1,61 +1,59 @@
-# TransportationRoute Template
-Provides route directions by public transportation. It is used to display public transportation routes on a screen. TransportationRoute has routes types as follows. For each route type, the *trafficType* object has different field configuration.
+# TransportationRoute template
+Provides route directions for public transportations. It is used to display public transportation routes on a screen. TransportationRoute has routes types as follows. For each route type, the `trafficType` object has different field configuration.
 
-| Section type  | Type description  | *subPath* object fields  |
+| Section type  | Type description  | `subPath` object fields  |
 |---------------------|---------------------------------------------|-----------------------------|
-| Subway section(1)  | Displays routes that use subways only.  | lane, name, endID, endName, endX, endY, startID, startName, startX, startY, subwayCode |
-| Bus section(2)  | Displays routes that use buses only.  | bus ID, busNo, endID, endName, endX, endY, startID, startName, startX, startY, type  |
-| Walking section(3)  | Displays routes that use both subways and buses. | distance, sectionTime  |
-
-To display public transportation routes with this template, you must understand how to use the {{book.OrientedService}} map API. Use data returned from the template together with the {{book.OrientedService}} map API to display directions on a map. See [{{book.OrientedService}} map API documentation](https://navermaps.github.io/maps.js/docs/) for more details on the NAVER map API. See [Screen UI example](#UIExample) for an example of how directions are displayed.
+| Subway section(1)  | Displays routes that use subways only.  | `lane`, `name`, `endID`, `endName`, `endX`, `endY`, `startID`, `startName`, `startX`, `startY`, `subwayCode` |
+| Bus section(2)  | Displays routes that use buses only.  | `busID`, `busNo`, `endID`, `endName`, `endX`, `endY`, `startID`, `startName`, `startX`, `startY`, `type`  |
+| Walking section(3)  | Displays routes that use both subways and buses. | `distance`, `sectionTime`  |
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>To use the TransportationRoute template, prior consultation is necessary with {{ book.OrientedService }}.</p>
+<p>To display public transportation routes with this template, you must understand how to use the {{book.OrientedService}} map API. Use data returned from the template together with the {{book.OrientedService}} map API to display directions on a map. See <a href="https://navermaps.github.io/maps.js/docs/">{{book.OrientedService}} map API documentation</a> for more details on the NAVER map API. See <a href="#UIExample">Screen UI example</a> for an example of how route directions are displayed.</p>
 </div>
 
 ## Template field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| appLinkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a map app  | Yes |
-| boundary  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object representing a rectangualr area (MBR, Minimum Bounding Rectangle) that includes all of interpolated points, in the form of "left,top,right,bottom" string. | Yes |
-| busStationCount  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The total number of stations to pass through when traveling by bus | Yes |
-| end  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object that contains coordinates of a destination point | Yes |
-| endName  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the place name of a destination | Yes |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a web map  | Yes |
-| lanes[]  | object array | An object that contains interpolated points on all routes found | Yes |
-| lanes[].create  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that determines whether this object's *section* field represents interpolated points for drawing bus/subway sections. If this field does not exist, the *section* field contains interpolated points for drawing bus/subway sections. If this field does exist and *create.value* is "1", the *section* field contains interpolated points for drawing polylines. | No |
-| lanes[].section[]  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) array | An object array that contains interpolated points for drawing bug/subway sections. | No |
-| pathType  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the route type of a direction. The *pathType.value* field has the following values. | <ul><li>"1": Routes that use only subways</li><li>"2": Routes that use only buses</li><li>"3": Routes that use both subways and buses</li></ul> |
-| start  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object that contains coordinates of a departure point | Yes |
-| startName  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains the place name of a departure point | Yes |
-| subPath[]  | object array | An object array that contains information on sections on each route | Yes |
-| subPath[].distance  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains a travel distance of a specified section. This field is used to show information on walking sections (when *subPath[].trafficType.value* is "3"). | No |
-| subPath[].endID  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the IDs of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].endName  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the names of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].endX  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains X coordinates of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].endY  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains Y coordinates of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].lane  | object | An object that contains information on lanes in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].lane.busID  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains bus IDs. This field is used to show information on bus sections (when *subPath[].trafficType.value* is "2"). | No |
-| subPath[].lane.busNo  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains bus numbers. This field is used to show information on bus sections (when *subPath[].trafficType.value* is "2"). | No |
-| subPath[].lane.name  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains information on subway lanes. This field is used to show information on subway sections (when *subPath[].trafficType.value* is "1"). | No |
-| subPath[].lane.subwayCode | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains [subway line codes](#CodeReference). This field is used to show information on subway sections (when *subPath[].trafficType.value* is "1"). | No |
-| subPath[].lane.type  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains [bus types](#CodeReference). This field is used to show information on bus sections (when *subPath[].trafficType.value* is "2"). | No |
-| subPath[].sectionTime  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the estimated travel time of a specified section. Unit is minute. This field is used to show information on walking sections (when *subPath[].trafficType.value* is "3"). | No |
-| subPath[].startID  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains IDs of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].startName  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains names of subway stations/bus stops to get off in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].startX  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains X coordinates of subway stations/bus stops to get in in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].startY  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains Y coordinates of subway stations/bus stops to get in in a specified section. This field is used to show information on subway or bus sections (when *subPath[].trafficType.value* is "1" or "2"). | No |
-| subPath[].trafficType  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Section type. It is an identifier for travel methods in a specified section. Dependding on the value of this field, the *subPath* field may have different sub objects. Available values are: | <ul><li>"1": Subway sections</li><li>"2": Bus sections</li><li>"3": Walking sections</li></ul> |
-| SubwayStationCount  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the total number of subway stations to pass through when traveling by subway | Yes |
-| totalDistance  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains a total travel distance. Unit is meter. | Yes |
-| totalStationCount  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the total number of bus stops and subway stations to pass through when traveling by bus and subway | Yes |
-| totalTime  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains a total travel time. Unit is minute. | Yes |
-| type  | string | Content template delimiter. The value is always "TransportationRoute" | Yes |
+| `appLinkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a map app  | Yes |
+| `boundary`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object representing a rectangular area (MBR, Minimum Bounding Rectangle) that includes all of interpolated points, in the form of "left,top,right,bottom" sting. | Yes |
+| `busStationCount`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The total number of stations to pass through when traveling by bus | Yes |
+| `end`  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object containing coordinates of the destination point | Yes |
+| `endName`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the name of the destination point | Yes |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a web map  | Yes |
+| `lanes[]`  | object array | An object containing interpolated points on all routes found | Yes |
+| `lanes[].create`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that decides the type of its `section` field. <ul><li><strong>If this field does not exist,</strong> the <code>section</code> field contains interpolated points for drawing bus/subway sections.</li><li><strong>If this field does exist and <code>create.value</code> is set to "1",</strong> the <code>section</code> field contains interpolated points for drawing polylines.</ul> | No |
+| `lanes[].section[]`  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) array | An object array containing interpolated points for drawing bus/subway sections or polylines between sections. | No |
+| `pathType`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the route type of the direction. The `pathType.value` field has the following values. <ul><li><strong>"1"</strong>: Routes that use subways only</li><li><strong>"2"</strong>: Routes that use buses only</li><li><strong>"3"</strong>: Routes that use both subways and buses</li></ul>| Yes |
+| `start`  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object containing coordinates of the departure point | Yes |
+| `startName`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object containing the place name of the departure point | Yes |
+| `subPath[]`  | object array | An object array containing information of sections on each route | Yes |
+| `subPath[].distance`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a travel distance of a given section. This field shows information on walking sections (When the `subPath[].trafficType.value` field is set to **"3"**). | No |
+| `subPath[].endID`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing IDs of subway stations/bus stops to get off in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].endName`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing names of subway stations/bus stops to get off in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].endX`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing X coordinates of subway stations/bus stops to get off in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].endY`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing Y coordinates of subway stations/bus stops to get off in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].lane`  | object | An object containing information on lanes in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].lane.busID`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing bus IDs. This field shows information on bus sections (When the `subPath[].trafficType.value` field is set to **"2"**). | No |
+| `subPath[].lane.busNo`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing bus numbers. This field shows information on bus sections (When the `subPath[].trafficType.value` field is set to **"2"**). | No |
+| `subPath[].lane.name`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing information on subway lanes. This field shows information on subway sections (When the `subPath[].trafficType.value` field is set to **"1"**). | No |
+| `subPath[].lane.subwayCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [subway codes](#CodeReference). This field shows information on subway sections (When the `subPath[].trafficType.value` field is set to **"1"**). | No |
+| `subPath[].lane.type`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [bus types](#CodeReference). This field shows information on bus sections (When the `subPath[].trafficType.value` field is set to **"2"**). | No |
+| `subPath[].sectionTime`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing an estimated travel time at a given section. Unit is minute. This field shows information on walking sections (When the `subPath[].trafficType.value` field is set to **"3"**). | No |
+| `subPath[].startID`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing IDs of subway stations/bus stops to get on in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].startName`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing names of subway stations/bus stops to get on in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].startX`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing X coordinates of subway stations/bus stops to get on in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].startY`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing Y coordinates of subway stations/bus stops to get on in a given section. This field shows information on subway or bus sections (When the `subPath[].trafficType.value` field is set to **"1"** or **"2"**). | No |
+| `subPath[].trafficType`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Section type. It is an identifier for distinguishing travel methods at a given section. Depending on the value of this field, configuration of sub objects in the `subPath` field can change. Available values are: <ul><li><strong>"1"</strong>: Subway section</li><li><strong>"2"</strong>: Bus section</li><li><strong>"3"</strong>: Walking section</li></ul> | No |
+| `SubwayStationCount`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the total number of subway stations to pass through when traveling by subway | Yes |
+| `totalDistance`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a total travel distance. Unit is meter. | Yes |
+| `totalStationCount`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the total number of bus stops and subway stations to pass through when traveling by bus and subway | Yes |
+| `totalTime`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing an estimated total travle time. Unit is minute. | Yes |
+| `type`  | string | A content template delimiter. The value is always **"TransportationRoute"** | Yes |
 
 
-## Subway line and bus type codes {#CodeReference}
+## Subway line codes and bus type codes {#CodeReference}
 
 | Subway line code | Description  | Bus type code  | Description  |
 |--------------|---------------|--------------|--------------|
@@ -357,7 +355,7 @@ To display public transportation routes with this template, you must understand 
 ## Screen UI example {#UIExample}
 The following example shows how the TransportationRoute template is presented for each type in the Clova mobile app distributed by {{ book.OrientedService }}.
 
-| Subway | Bus |
+| Using subway | Using bus |
 |----------|---------|
 | <div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-TransportationRoute-Use_Only_Subway.png" /></div> | <div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-TransportationRoute-Use_Only_Bus.png" /></div> |
 

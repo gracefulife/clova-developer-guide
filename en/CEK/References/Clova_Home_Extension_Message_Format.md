@@ -1,9 +1,9 @@
 # Clova Home extension message
-A Clova Home extension message is used when your extension sends and receives messages to and from CEK to control IoT devices. A Clova Home extension message, whether it is a request or response, consists of *header* field and *payload* field. Configuration of the *payload* field can differ depending on which [Clova Home API](/CEK/References/Clova_Home_API.md) is used. The following explains the common format of a Clova Home extension message.
+When your extension exchange information with CEK to control IoT devices, it uses Clova Home extension messages. A Clova Home extension message consists of `header` field and `payload` field. This is same for both request and response messages. And the `payload` field can have different configuration depending on which [Clova Home API](/CEK/References/Clova_Home_API.md) is used. The following explains the common format of a Clova Home extension message.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova Home extension message is divided to a request message and response message according to the API. A request message is sent from CEK to your extension using API with the name format, XxxxRequest. A response message is returned from your extension to CEK; its name format is either XxxxConfirmation or XxxxResponse. Also, return 200 OK HTTPS response even when an error occurs using API with the name format, XxxxError.</p>
+  <p>A Clova Home extension message is divided into a request message and a response message according to the API. A request message is sent from CEK to your extension and uses APIs that has the name of `XxxxRequest`. A response message is sent from your extension to CEK and its name format is `XxxxConfirmation` or `XxxxResponse`. Also, even when an error occurs, you must return a 200 OK HTTPS response using `XxxxError` APIs.</p>
 </div>
 
 ## Message format
@@ -24,14 +24,14 @@ A Clova Home extension message is used when your extension sends and receives me
 
 
 ## Message field
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| header                 | object | Header of the Clova Home extension message                                          | Yes     |
-| header.messageId       | string | Message ID. It is created by Clova to identify individual messages (UUID).               | Yes     |
-| header.name            | string | API name of the Clova Home extension message                                      | Yes     |
-| header.namespace       | string | This field is fixed to "ClovaHome".                                          | Yes     |
-| header.payloadVersion  | string | Clova Home API version specified in *header.name*. Configuration of the *payload* field can differ depending on the version.                                   | Yes     |
-| payload                | object | Configuration and field values of the payload object can differ depending on which [Clova Home API](/CEK/References/Clova_Home_API.md) is specified in *header.name*. | Yes     |
+| `header`  | object | The header of the Clova Home extension message  | Yes  |
+| `header.messageId`  | string | The message ID. An identifier (UUID) created by Clova to distinguish individual messages.  | Yes  |
+| `header.name`  | string | The API name of the Clova Home extension message  | Yes  |
+| `header.namespace`  | string | The value is always **"ClovaHome"**.  | Yes  |
+| `header.payloadVersion`  | string | The Clova Home API version specified in `header.name`. Configuration of the `payload` field can change depending on this version.  | Yes  |
+| `payload`  | object | The configuration and field values of the payload object can change depending on the [Clova Home API](/CEK/References/Clova_Home_API.md) specified in `header.name`. | Yes  |
 
 ## Message example
 {% raw %}
@@ -115,7 +115,7 @@ Example 3: IncrementTargetTemperatureConfirmation API - response message
   }
 }
 
-Example 4: TargetOffLineError API - Error response message
+Example 4: TargetOffLineError API - error response message
 {
   "header": {
     "messageId": "fef949b7-eb94-4bda-a417-2cfb604194c3",

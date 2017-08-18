@@ -1,5 +1,5 @@
 ## Speaker.VolumeState {#VolumeState}
-Message format that contains speaker information at the time when a user has spoken, such as volume size or whether speaker is muted or unmuted.
+A message format that contains client's speaker volume information at the time when the user has spoken, such as how high/low its volume is or whether the speaker is in mute.
 
 ### Message format
 {% raw %}
@@ -19,10 +19,10 @@ Message format that contains speaker information at the time when a user has spo
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| muted         | boolean | Whether muted or unmuted                    | Yes     |
-| volume        | number  | Speaker's current volume size (0-10)     | Yes     |
+| `muted`  | boolean | Whether the speaker is in mute  | Yes  |
+| `volume`  | number  | Current speaker volume (0-10)  | Yes  |
 
 ### Message example
 {% raw %}
@@ -41,4 +41,4 @@ Message format that contains speaker information at the time when a user has spo
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)

@@ -1,14 +1,14 @@
 ## Error API {#ErrorAPI}
-Use this API when your Clova Home extension returns an error to CEK.
+Use this API to have your Clova Home extension return errors to CEK.
 
 
-| Message name         | Message type  | Message description                                   |
+| Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [DriverInternalError](#DriverInternalError)                                 | Error Response | Return this response message to CEK when an internal error occurs.             |
-| [TargetOfflineError](#TargetOfflineError)                                   | Error Response | Return this response response to CEK when the target appliance is not accessible (offline). |
+| [`DriverInternalError`](#DriverInternalError)  | Error response | Return this response message to CEK when an internal error has occurred.  |
+| [`TargetOfflineError`](#TargetOfflineError)  | Error response | Return this response message to CEK when the target appliance is not accessible (offline). |
 
 ### DriverInternalError {#DriverInternalError}
-Return this response message to CEK when an internal error occurs. When CEK receives this message, it forwards a pre-defined error message to a client.
+Return this response message to CEK when an internal error has occurred. When CEK receives this message, it forwards a pre-defined error message to the client.
 
 #### Payload field
 
@@ -16,7 +16,7 @@ None
 
 #### Remarks
 * Return 200 OK HTTP response to CEK even when it is an error message.
-* Error messages do not require a body (payload) because you can understand the situation from their names.
+* Error messages do not need a body (payload) because their names clearly express situations.
 
 #### Message example
 
@@ -36,10 +36,10 @@ None
 {% endraw %}
 
 #### See also
-* [TargetOfflineError](#TargetOfflineError)
+* [`TargetOfflineError`](#TargetOfflineError)
 
 ### TargetOfflineError{#TargetOfflineError}
-Return this error response to CEK when the target appliance is not accessible (offline). When CEK receives this message, it forwards a pre-defined error message to a client.
+Return this error response to CEK when the target appliance is not accessible (offline). When CEK receives this message, it forwards a pre-defined error message to the client.
 
 #### Payload field
 
@@ -47,7 +47,7 @@ None
 
 #### Remarks
 * Return 200 OK HTTP response to CEK even when it is an error message.
-* Error messages do not require a body (payload) because you can understand the situation from their names.
+* Error messages do not need a body (payload) because their names clearly express situations.
 
 #### Message example
 
@@ -67,4 +67,4 @@ None
 {% endraw %}
 
 #### See also
-* [DriverInternalError](#DriverInternalError)
+* [`DriverInternalError`](#DriverInternalError)

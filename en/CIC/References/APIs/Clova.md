@@ -1,25 +1,26 @@
 # Clova
 
-It consists of a set of direct messages that returns recognition results of client requests. When user requests are sent with [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes the meaning. And CIC returns appropriate directive messages to your client based on recognition results. Your client must process these directive messages and provide Clova functions to users.
+It consists of a set of direct messages that return recognition results of client requests. When user requests are sent through [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. And CIC returns appropriate directive messages to your client based on recognition results. Your client must process these directive messages and provide Clova functions to users.
 
 | Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [AddMemo](#AddMemo)  | Directive | Instructs your client to add new memos.  |
-| [AddReminder](#AddReminder)  | Directive | Instructs your client to add new reminders.  |
-| [AddSchedule](#AddSchedule)  | Directive | Instructs your client to add new schedules.  |
-| [CountSchedule](#CountSchedule)  | Directive | Instructs your client to count the number of schedules in a specified period. |
-| [DeleteMemo](#DeleteMemo)  | Directive | Instructs your client to delete memos.  |
-| [DeleteReminder](#DeleteReminder)  | Directive | Instructs your client to delete reminders.  |
-| [DeleteSchedule](#DeleteSchedule)  | Directive | Instructs your client to delete schedules.  |
-| [FinishExtension](#FinishExtension)  | Directive | Instructs your client to finish a specified extension.  |
-| [GetMemo](#GetMemo)  | Directive | Instructs your client to look up memos.  |
-| [GetReminder](#GetReminder)  | Directive | Instructs your client to look up reminders.  |
-| [GetSchedule](#GetSchedule)  | Directive | Instructs your client to look up schedules.  |
-| [RenderMemoList](#RenderMemoList)  | Directive | Instructs your client to display a list of memos.  |
-| [RenderReminderList](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.  |
-| [RenderTemplate](#RenderTemplate)  | Directive | Instructs your client to display templates.  |
-| [RenderText](#RenderText)  | Directive | Instructs your client to display text.  |
-| [StartExtension](#StartExtension)  | Directive | Instructs your client to start a specified extension.  |
+| [`AddMemo`](#AddMemo)  | Directive | Instructs your client to add new memos.  |
+| [`AddReminder`](#AddReminder)  | Directive | Instructs your client to add new reminders.  |
+| [`AddSchedule`](#AddSchedule)  | Directive | Instructs your client to add new schedules.  |
+| [`CountSchedule`](#CountSchedule)  | Directive | Instructs your client to count the number of schedules within a specified period. |
+| [`DeleteMemo`](#DeleteMemo)  | Directive | Instructs your client to delete memos.  |
+| [`DeleteReminder`](#DeleteReminder)  | Directive | Instructs your client to delete reminders.  |
+| [`DeleteSchedule`](#DeleteSchedule)  | Directive | Instructs your client to delete schedules.  |
+| [`FinishExtension`](#FinishExtension)  | Directive | Instructs your client to finish a specified extension.  |
+| [`GetMemo`](#GetMemo)  | Directive | Instructs your client to look up memos.  |
+| [`GetReminder`](#GetReminder)  | Directive | Instructs your client to look up reminders.  |
+| [`GetSchedule`](#GetSchedule)  | Directive | Instructs your client to look up schedules.  |
+| [`Hello`](#Hello)  | Directive | Notifies your client that a downchannel connection has been established.  |
+| [`RenderMemoList`](#RenderMemoList)  | Directive | Instructs your client to display a list of memos.  |
+| [`RenderReminderList`](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.  |
+| [`RenderTemplate`](#RenderTemplate)  | Directive | Instructs your client to display templates.  |
+| [`RenderText`](#RenderText)  | Directive | Instructs your client to display text.  |
+| [`StartExtension`](#StartExtension)  | Directive | Instructs your client to start a specified extension.  |
 
 
 
@@ -31,12 +32,12 @@ Instructs your client to add new memos. It also returns content of the memos rec
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | Content of a memo to add  | Yes  |
-| id  | string  | ID of a memo to add  | Yes  |
+| `content`  | string  | Content of the memo to add  | Yes  |
+| `id`  | string  | The ID of the memo to add  | Yes  |
 
 ### Remarks
 
-After successfully creating new memos, you must send the result to CIC, using a [Memo.Created](/CIC/References/APIs/Memo.md#Created) event message.
+After successfully creating new memos, you must send the result to CIC, using a [`Memo.Created`](/CIC/References/APIs/Memo.md#Created) event message.
 
 ### Message example
 
@@ -62,10 +63,10 @@ After successfully creating new memos, you must send the result to CIC, using a 
 {% endraw %}
 
 ### See also
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Created](/CIC/References/APIs/Memo.md#Created)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Created`](/CIC/References/APIs/Memo.md#Created)
 
 ## AddReminder directive {#AddReminder}
 
@@ -75,12 +76,12 @@ Instructs your client to add new reminders. It also returns content of the remin
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | Content of a reminder to add  | Yes  |
-| id  | string  | ID of a reminder to add  | Yes  |
+| `content`  | string  | Content of the reminder to add  | Yes  |
+| `id`  | string  | The ID of the reminder to add  | Yes  |
 
 ### Remarks
 
-After successfuly creating new reminders, you must send the result to CIC, using a [Reminder.Created](/CIC/References/APIs/Reminder.md#Created) event message.
+After successfully creating new reminders, you must send the result to CIC, using a [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created) event message.
 
 ### Message example
 
@@ -106,10 +107,10 @@ After successfuly creating new reminders, you must send the result to CIC, using
 {% endraw %}
 
 ### See also
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Created](/CIC/References/APIs/Reminder.md#Created)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created)
 
 ## AddSchedule directive {#AddSchedule}
 
@@ -119,15 +120,15 @@ Instructs your client to add new schedules. It also returns content of the sched
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string | Content of a schedule  | No  |
-| id  | string | ID of a schedule to add  | Yes  |
-| period  | string | The smallest unit of period recognized from user's speech input. Schedule end time is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string | The start time of a schedule to add ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `content`  | string | Content of the schedule  | No  |
+| `id`  | string | The ID of the schedule to add  | Yes  |
+| `period`  | string | The smallest unit of period recognized from user's speech input. The end time of the schedule is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
+| `scheduledTime` | string | The start time of the schedule ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support adding of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is undetermined, as in "Add a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support adding of a yearly schedule but has received **"year"** for `period`, you must handle it as an exception. If the period is undertermined, as in "Add a schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -156,24 +157,24 @@ Implement exception handling to deal with the situation of receiving a unit of p
 
 ### See also
 
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## CountSchedule directive {#CountSchedule}
 
-Instructs your client to count the number of schedules that match specified lookup conditions. It also returns the lookup conditions recognized from user's speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.
+Instructs your client to count the number of schedules that match specified conditions. It also returns the lookup conditions recognized from user's speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of a period specified for lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of a period specified for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| period  | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
+| scheduledTime | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is undetermined, as in "How many schedules are there", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for `period`, you must handle it as an exception. If the period is undetermined, as in "How many schedules are there", `period` is set to "none" and `scheduledTime` is set to a current time.
 
 
 ### Message example
@@ -200,13 +201,13 @@ Implement exception handling to deal with the situation of receiving a unit of p
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## DeleteMemo directive {#DeleteMemo}
 
-Instructs your client to delete a memo. When a DeleteMemo directive message is returned, have your client provide a proper interface for users so that they can delete memos.
+Instructs your client to delete memos. When a `DeleteMemo` directive message is returned, have your client provide a proper interface for users so that they can delete memos.
 
 ### Payload field
 
@@ -214,7 +215,7 @@ None
 
 ### Remarks
 
-After successfully deleting memos, you must send the result to CIC, using a [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted) event message.
+After successfully deleting memos, you must send the result to CIC, using a [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted) event message.
 
 ### Message example
 
@@ -237,14 +238,14 @@ After successfully deleting memos, you must send the result to CIC, using a [Mem
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Deleted](/CIC/References/APIs/Memo.md#Deleted)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted)
 
 ## DeleteReminder directive {#DeleteReminder}
 
-Instructs your client to delete reminders. When a DeleteReminder directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
+Instructs your client to delete reminders. When a `DeleteReminder` directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
 
 ### Payload field
 
@@ -252,7 +253,7 @@ None
 
 ### Remarks
 
-After successfully deleting reminders, you must send the result to CIC, using a [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted) event message.
+After successfully deleting reminders, you must send the result to CIC, using a [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted) event message.
 
 ### Message example
 
@@ -275,25 +276,25 @@ After successfully deleting reminders, you must send the result to CIC, using a 
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Deleted](/CIC/References/APIs/Reminder.md#Deleted)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted)
 
 ## DeleteSchedule directive {#DeleteSchedule}
 
-Instructs your client to delete schedules. It also returns the conditions recognized from user's speech input. To delete a schedule that matches specified conditions, have your client call a local app that manages schedules or provide an interface for the task.
+Instructs your client to delete schedules. It also returns the conditions recognized from user's speech input. To delete schedules that match specified conditions, have your client call a local app that manages schedules or provide an interface for the task.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of a period specified for deletion is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of a period specified for schedule deletion ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `period`  | string  | The smallest unit of period recognized from user's speech input. The end time of the deletion period is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
+| `scheduledTime` | string  | The start time of the deletion period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received "week" for *period*, you must handle it an exception. If a period is undetermined, as in "Delete a schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received **"week"** for `period`, you must handle it as an exception. If the period is undertermined, as in "Delete a schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -316,23 +317,23 @@ Implement exception handling to deal with the situation of receiving a unit of p
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.GetSchedule](#GetSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.GetSchedule`](#GetSchedule)
 
 ## FinishExtension directive {#FinishExtension}
 
-Instructs your client to finish a specified extension. When a FinishExtension directive message is returned, have your client finish the extension that corresponds to a specified value.
+Instructs your client to finish a specified extension. When a FinishExtension directive message is returned, have your client finish the extension that match a specified value.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| extension  | string  | The name of an extension to finish  | Yes  |
+| `extension`  | string  | The name of the extension to finish  | Yes  |
 
 ### Remarks
 
-By default, current servers provide an extension called Freetalk mode. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". At this point, a FinishExtension directive message returns "freetalking" in its *extension* field.
+The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". Then, the FinishExtension directive message returns "freetalking" in the `extension` field.
 
 ### Message example
 
@@ -357,7 +358,7 @@ By default, current servers provide an extension called Freetalk mode. The Freet
 {% endraw %}
 
 ### See also
-* [Clova.StartExtension](#StartExtension)
+* [`Clova.StartExtension`](#StartExtension)
 
 ## GetMemo directive {#GetMemo}
 
@@ -388,11 +389,11 @@ None
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Memo.Get](/CIC/References/APIs/Memo.md#Get)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
 
 ## GetReminder directive {#GetReminder}
 
@@ -423,24 +424,24 @@ None
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
 
 ## GetSchedule directive {#GetSchedule}
 
-Instructs your client to look up schedules. It also returns the lookup conditions recognized from user's speech input. To look up reminders, have your client call a local app or provide an interface for the task.
+Instructs your client to look up schedules. It also returns the lookup conditions recognized from user's speech input. To look up schedules, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of period specified for lookup is set to the value of *scheduledTime* added by *period*. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of a period specified for schedule lookup ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `period`  | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
+| `scheduledTime` | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Remarks
-Implement exception handling to deal with the situation of receiving a unit of period not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received "year" for *period*, you must handle it as an exception. If a period is determined, as in "Look up my schedule", *period* is set to "none" and *scheduledTime* is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received **"year"** for `period`, you must handle it as an exception. If the period is undetermined, as in "Look up my schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -466,9 +467,42 @@ Implement exception handling to deal with the situation of receiving a unit of p
 {% endraw %}
 
 ### See also
-* [Clova.AddSchedule](#AddSchedule)
-* [Clova.CountSchedule](#CountSchedule)
-* [Clova.DeleteSchedule](#DeleteSchedule)
+* [`Clova.AddSchedule`](#AddSchedule)
+* [`Clova.CountSchedule`](#CountSchedule)
+* [`Clova.DeleteSchedule`](#DeleteSchedule)
+
+## Hello directive {#Hello}
+
+Notifies your client that a downchannel connection has been established. This directive message lets you confirm that the [connection attempt](/CIC/Guides/Interact_with_CIC.md#CreateConnection) has succeeded for the Clova service.
+
+### Payload field
+
+None.
+
+### Remarks
+This directive message does not have a dialog ID(`dialogRequestId`).
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "Hello"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+* [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
 ## RenderMemoList directive {#RenderMemoList}
 
@@ -478,10 +512,10 @@ Instructs your client to display a list of memos. It also returns a list of memo
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| memo[]  | object array | An object array that contains a list of memos  | Yes  |
-| memo[].content  | string  | Content of a memo to display  | Yes  |
-| memo[].id  | string  | ID of a memo to display  | Yes  |
-| memo[].timestamp | string  | The time of memo creation ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `memo[]`  | object array | An object array containing a list of memos  | Yes  |
+| `memo[].content`  | string  | Content of the memo to display  | Yes  |
+| `memo[].id`  | string  | The ID of the memo to display  | Yes  |
+| `memo[].timestamp` | string  | The time when the memo was created ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
 
 ### Message example
 
@@ -517,13 +551,13 @@ Instructs your client to display a list of memos. It also returns a list of memo
 {% endraw %}
 
 ### See also
-* [Clova.AddMemo](#AddMemo)
-* [Clova.DeleteMemo](#DeleteMemo)
-* [Clova.GetMemo](#GetMemo)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderTemplate](#RenderTemplate)
-* [Clova.RenderText](#RenderText)
-* [Memo.Get](/CIC/References/APIs/Memo.md#Get)
+* [`Clova.AddMemo`](#AddMemo)
+* [`Clova.DeleteMemo`](#DeleteMemo)
+* [`Clova.GetMemo`](#GetMemo)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
+* [`Clova.RenderText`](#RenderText)
+* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
 
 ## RenderReminderList directive {#RenderReminderList}
 
@@ -533,10 +567,10 @@ Instructs your client to display a list of reminders. It also returns a list of 
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| reminder[]  | object array | An object array that contains a list of reminders | Yes  |
-| reminder[].content | string  | Content of a reminder to display  | Yes  |
-| reminder[].done  | boolean  | Whether the reminder was completed or not  | Yes  |
-| reminder[].id  | string  | ID of a reminder to display  | Yes  |
+| `reminder[]`  | object array | An object array containing a list of reminders | Yes  |
+| `reminder[].content` | string  | Content of the reminder to display  | Yes  |
+| `reminder[].done`  | boolean  | Whether the reminder was completed or not  | Yes  |
+| `reminder[].id`  | string  | The ID of the reminder to display  | Yes  |
 
 ### Message example
 
@@ -572,20 +606,20 @@ Instructs your client to display a list of reminders. It also returns a list of 
 {% endraw %}
 
 ### See also
-* [Clova.AddReminder](#AddReminder)
-* [Clova.DeleteReminder](#DeleteReminder)
-* [Clova.GetReminder](#GetReminder)
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderTemplate](#RenderTemplate)
-* [Clova.RenderText](#RenderText)
-* [Reminder.Get](/CIC/References/APIs/Reminder.md#Get)
+* [`Clova.AddReminder`](#AddReminder)
+* [`Clova.DeleteReminder`](#DeleteReminder)
+* [`Clova.GetReminder`](#GetReminder)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
+* [`Clova.RenderText`](#RenderText)
+* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
 
 ## RenderTemplate directive {#RenderTemplate}
 
-Instructs your client to display data using templates. It also returns the content obtained by recognizing user's speech input.
+Instructs your client to display data using a content template. It also returns the content obtained by recognizing user's speech input.
 
 ### Payload field
-The format of a *payload* field is determined by which [content template](/CIC/References/Content_Templates.md) is used. Currently available templates are as follows.
+The format of the `payload` field can change depending which type of [content template](/CIC/References/Content_Templates.md) is used. Available content templates are as follows.
 
 * Templates for content UI types
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
@@ -627,20 +661,20 @@ The format of a *payload* field is determined by which [content template](/CIC/R
 {% endraw %}
 
 ### See also
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderText](#RenderText)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderText`](#RenderText)
 * [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
 
-Instructs your client to display text messages. It also returns the text to be displayed to a user.
+Instructs your client to display text messages. It also returns text to display to a user.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| text  | string  | Text to display to a user  | Yes  |
+| `text`  | string  | Text to display to a user  | Yes  |
 
 ### Message example
 
@@ -665,23 +699,23 @@ Instructs your client to display text messages. It also returns the text to be d
 {% endraw %}
 
 ### See also
-* [Clova.RenderMemoList](#RenderMemoList)
-* [Clova.RenderReminderList](#RenderReminderList)
-* [Clova.RenderTemplate](#RenderTemplate)
+* [`Clova.RenderMemoList`](#RenderMemoList)
+* [`Clova.RenderReminderList`](#RenderReminderList)
+* [`Clova.RenderTemplate`](#RenderTemplate)
 
 ## StartExtension directive {#StartExtension}
 
-Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that corresponds to a specified value.
+Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that matches to a specified value.
 
 ### Payload field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| extension  | string  | The name of an extension to start  | Yes  |
+| `extension`  | string  | The name of the extension to start  | Yes  |
 
 ### Remarks
 
-By default, current servers provide an extension called Freetalk mode. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". At this point, a StartExtension directive message returns "freetalking" in its *extension* field.
+The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the `StartExtension` directive message returns **"freetalking"** in the `extension` field.
 
 ### Message example
 
@@ -707,4 +741,4 @@ By default, current servers provide an extension called Freetalk mode. The Freet
 
 ### See also
 
-- [Clova.FinishExtension](#FinishExtension)
+* [`Clova.FinishExtension`](#FinishExtension)

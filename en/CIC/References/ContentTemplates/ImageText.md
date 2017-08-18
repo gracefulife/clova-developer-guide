@@ -1,5 +1,5 @@
-# ImageText Template
-Provides information using an image with text. It is used to display a thumbnail image with text or a map with text.
+# ImageText template
+Displays an image with text on a screen. It is used to display a thumbnail image with text or a map with text.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,16 +10,16 @@ Provides information using an image with text. It is used to display a thumbnail
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| appLinkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a map app when a map image is included  | No |
-| imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains an image URL  | No |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a web map when a map image is included  | No |
-| mainText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains main text  | No |
-| referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains text information of a source  | No |
-| referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a source URL  | 선택 |
-| subTextList  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An array that contains sub text  | No |
-| thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a thumbnail image URL  | No |
-| thumbImageType | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object that contains type information of a thumbnail image. Available values are: <ul><li>"인물""</li><li>"책"</li><li>"앨범"</li></ul> | No |
-| type  | string  | Content template delimiter. The value is always "ImageText".  | Yes  |
+| `appLinkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a map app when a map image is included  | No |
+| `imageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the image  | No |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a web map when a map image is included  | No |
+| `mainText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object containing main text  | No |
+| `referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object containing text data of the source  | No |
+| `referenceURL`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the source  | No |
+| `subTextList`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An array containing sub text  | No |
+| `thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the thumbnail image  | No |
+| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | An object containing the type of the thumbnail image. Available values are: <ul><li><strong>"인물"</strong></li><li><strong>"책"</strong></li><li><strong>"앨범"</strong></li></ul> | No |
+| `type`  | string  | A content template delimiter. The value is always **"ImageText"**.  | Yes  |
 
 ## Template Example
 

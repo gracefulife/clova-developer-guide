@@ -1,5 +1,5 @@
-# WeeklyWeather Template
-Provides weather information for the week. It is used to display weekly weather on a screen.
+# WeeklyWeather template
+Provides weather forecasts for the week. It is used to display weekly weather on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,17 +10,17 @@ Provides weather information for the week. It is used to display weekly weather 
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| bgClipUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to a background sound file | Yes |
-| dailyWeatherList[]  | object array | An object array that contains daily weather data | Yes |
-| dailyWeatherList[].date  | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | An object that contains the date of the day | Yes |
-| dailyWeatherList[].highTemperature | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object that contains the highest temperature in the afternoon of the day | Yes |
-| dailyWeatherList[].iconImageCode | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains hourly [weather code](#WeatherCode) | Yes |
-| dailyWeatherList[].iconImageUrl | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to weather icons | Yes |
-| dailyWeatherList[].lowTemperature  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object that contains the lowest temperature in the morning of the day | Yes |
-| description  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains a brief explanation that this is weekly weather  | Yes |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a link path to content  | No |
-| location  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains location data | Yes |
-| type  | string | Content template delimiter. The value is always "WeeklyWeather" | Yes |
+| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `dailyWeatherList[]`  | object array | An object array containing daily weather | Yes |
+| `dailyWeatherList[].date`  | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | An object containing the date of the day | Yes |
+| `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the highest temperature in the afternoon of the day | Yes |
+| `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather code](#WeatherCode) for hourly weather | Yes |
+| `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the image icon for displaying weather of the day | Yes |
+| `dailyWeatherList[].lowTemperature`  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the lowest temperature in the morning of the day | Yes |
+| `description`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a brief explanation that this is weekly weather forecasts  | Yes |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
+| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
+| `type`  | string | A content template delimiter. The value is always **"WeeklyWeather"**. | Yes |
 
 {% include "./Shared_Weather_Code.md" %}
 

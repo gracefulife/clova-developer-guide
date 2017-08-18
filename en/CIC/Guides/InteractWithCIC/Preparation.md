@@ -1,30 +1,30 @@
 ## Preparation {#Preparation}
-To connect your client with CIC using the HTTP/2 protocol, prepare the following.
+Make your client connect with CIC using the HTTP/2 protocol. Before trying to connect with CIC, prepare the following.
 
 * [Libraries](#RequiredLibrary) for HTTP/2 protocol connection
-* [Client credentials](#ClientAuthInfo) necessary for Clova access token creation
+* [Client credentials](#ClientAuthInfo) necessary for creation of Clova access tokens
 
 
 ### Required library {#RequiredLibrary}
-You are recommended to use the following libraries when developing the client part to enable communications over the HTTP/2 protocol connection.
+To enable communications over the HTTP/2 protocol, use the libraries recommended below.
 
-| Programming language | Library                            |
+| Programming language | Library  |
 |---------|------------------------------------|
-| C/C++   | [nghttp2](https://nghttp2.org/), [libcurl](https://curl.haxx.se/libcurl/) |
-| Java    | [OkHttp](http://square.github.io/okhttp/), [Netty](http://netty.io/), [Jetty](http://www.eclipse.org/jetty/) |
+| C/C++  | [nghttp2](https://nghttp2.org/), [libcurl](https://curl.haxx.se/libcurl/) |
+| Java  | [OkHttp](http://square.github.io/okhttp/), [Netty](http://netty.io/), [Jetty](http://www.eclipse.org/jetty/) |
 
 
 ### Client credentials {#ClientAuthInfo}
-To use any services provided by Clova, a user must authenticate his or her {{ book.ko.TargetServiceForClientAuth }} account on your client. Using the {{ book.ko.TargetServiceForClientAuth }} account information provided from the user, your client obtains an access token for the {{ book.ko.TargetServiceForClientAuth }} account. The token is in turn sent to a Clova authorization server, then the server issues a Clova access token (See [Creating Clova access token](#CreateClovaAccessToken)).
+To use any services provided by Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on your client. Using the {{ book.TargetServiceForClientAuth }} account information entered by a user, you can obtain an access token for the user's {{ book.TargetServiceForClientAuth }} account. Then, you send the token to the Clova authorization server and proceed to [creating Clova access tokens](#CreateClovaAccessToken).
 
-When sending a {{ book.ko.TargetServiceForClientAuth }} account access token to an authorization server, you must send client credentials as well, which you have obtained in Clova Developer Console (using [Clova Auth API](/CIC/References/Clova_Auth_API.md)). Therefore, you must obtain client credentials in Clova Developer Console and have them ready in advance. Client credentials include the following.
+When sending the {{ book.TargetServiceForClientAuth }} account access token to the authorization server, make sure to send client credentials as well, which you have obtained from the Clova Developer Console (using [Clova Auth API](/CIC/References/Clova_Auth_API.md)). Get client credentials from the Clova Developer Console and have them ready in advance. Client credentials provide following information.
 
-| Credentials                   | Description                                              |
+| Credentials  | Description  |
 |---------------------------|--------------------------------------------------|
-| CLOVA_OAUTH_CLIENT_ID     | The client ID registered in Clova Developer Console        |
-| CLOVA_OAUTH_CLIENT_SECRET | The client authentication key obtained in Clova Developer Console |
+| `CLOVA_OAUTH_CLIENT_ID`  | The client ID registered at the Clova Developer Console  |
+| `CLOVA_OAUTH_CLIENT_SECRET` | The client authentication key obtained from the Clova Developer Console |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova Developer Console is still under development. Contact your counterpart contact personnel to ask for help with obtaining client credentials.</p>
+  <p>The Clova Developer Console is currently under development. Contact your counterpart contact personnel to ask for help with obtaining client credentials.</p>
 </div>

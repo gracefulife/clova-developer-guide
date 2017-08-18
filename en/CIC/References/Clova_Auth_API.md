@@ -1,5 +1,5 @@
 # Clova Auth API
-To connect your client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). This section explains the Clova Auth API, which is provided by the Clova authorization server to help you with the token creation.
+To connect your client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). In the following, we will explain the Clova Auth API, which is provided by the Clova authorization server to help you with the token creation.
 
 ## Base URL
 The base URL of the Clova authorization server is as follows.
@@ -8,11 +8,11 @@ The base URL of the Clova authorization server is as follows.
 </code></pre>
 
 ## /authorize {#authorize}
-Returns an authorization code by receiving a {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. An authorization code is credential information necessary for requesting issuance of a Clova access token.
+Returns an authorization code by receiving {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. An authorization code is credential information necessary for requesting issuance of a Clova access token.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Typically, user authentication is handled on an app paired with a client device. However, having a paired app return a Clova access token to a client may have a security issue. As such, it returns an authorization code instead. Once an authorization code is returned to a client, the client passes the code to the parameter of <a href="#token">/token</a> API and obtains a Clova access token.</p>
+  <p>Typically, user authentication is handled by an app paired with a client device. However, transferring a Clova access token from paired app to client may have a potential security issue. As such, the paired app returns an authorization code instead. Then, the client passes the authorization code to the parameter of the <a href="#token">/token</a> API and obtains a Clova access token.</p>
 </div>
 
 ### Scheme, method, path
@@ -25,13 +25,14 @@ Returns an authorization code by receiving a {{ book.TargetServiceForClientAuth 
 {% endraw %}
 
 ### Parameter
-| Field name       | Type    | Field description                     | Required |
+
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| client_id     | string  | Client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))          | Yes |
-| device_id     | string  | The UUID of a client device created                                                                      | Yes |
-| model_id      | string  | The model ID of a client device                                                                          | No |
-| response_type | string  | Response type. Only "code" is supported at the moment.                                                               | Yes |
-| state         | string  | The value of a state token (URL encoding applied) used by a client to prevent cross-site request forgery attacks | Yes |
+| `client_id`  | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))  | Yes |
+| `device_id`  | string  | The UUID of the client device. Use a MAC address or create a UUID hash value.  | Yes |
+| `model_id`  | string  | The model ID of the client device  | No |
+| `response_type` | string  | The response type. Only **"code"** is supported at the moment.  | Yes |
+| `state`  | string  | The state token value (URL encoding applied) used by the client to prevent cross-site request forgery attacks | Yes |
 
 ### Request Example
 
@@ -43,10 +44,11 @@ Returns an authorization code by receiving a {{ book.TargetServiceForClientAuth 
 </code></pre>
 
 ### Response field
-| Field name       | Type    | Field description                     |
+
+| Field name  | Type  | Field description  |
 |---------------|---------|-----------------------------|
-| code  | string | An authorization code issued from an authorization server                                                        |
-| state | string | The value of a decrypted state token (URL decoding applied) passed from a client to prevent cross-site request forgery attacks |
+| `code`  | string | The authorization code issued from the authorization server  |
+| `state` | string | The decrypted state token value (URL decoding applied) passed from the client to prevent cross-site request forgery attacks |
 
 
 ### Response Example
@@ -62,11 +64,11 @@ Returns an authorization code by receiving a {{ book.TargetServiceForClientAuth 
 ### See also
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
 * [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [/token](#token)
+* [`/token`](#token)
 
 
 ## /token {#token}
-Creates, refreshes or deletes a Clova access token, using an authorization code issued with the [/authorize](#authorize) API. Depending on the *grant_type* parameter value, it performs different actions and returns different values.
+Creates, refreshes or deletes Clova access tokens using authorization codes issued through the [/authorize](#authorize) API. Depending on the `grant_type` parameter value, it performs different actions and returns different values.
 
 ### Scheme, method, path
 {% raw %}
@@ -78,17 +80,18 @@ Creates, refreshes or deletes a Clova access token, using an authorization code 
 {% endraw %}
 
 ### Parameter
-| Field name       | Type    | Field description                     | Required |
+
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| access_token  | string  | A Clova access token issued when authorization succeeds. This field is required when *grant_type* is "delete".                                   | No |
-| client_id     | string  | Client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Yes |
-| client_secret | string  | Client Secret (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Yes |
-| code          | string  | An authorization code issued with the [/authorize](#authorize) API. This field is required when *grant_type* is "authorization_code".        | No |
-| device_id     | string  | The UUID of a client device created                                                                                              | Yes |
-| grant_type    | string  | Action identifier. <ul><li>"authorization_code": Issues a token</li><li>"refresh_token": Refreshes a token</li><li>"delete": Deletes a token</li></ul> | Yes |
-| model_id      | string  | The model ID of a client device                                                                                                 | No |
-| refresh_token | string  | A refresh token issued when authorization succeeds. This field is required when *grant_type* is "refresh_token".                                        | No |
-| response_type | string  | Response type. Only "code" is supported at the moment.                                                                                      | Yes |
+| `access_token`  | string  | The Clova access token issued after authorization succeeds. This field is required when `grant_type` is set to **"delete"**.  | No |
+| `client_id`  | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))  | Yes |
+| `client_secret` | string  | The client secret (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))  | Yes |
+| `code`  | string  | The authorization code issued through the [/authorize](#authorize) API. This field is required when `grant_type` is set to **"authorization_code"**.  | No |
+| `device_id`  | string  | The UUID of the client device  | Yes |
+| `grant_type`  | string  | An action identifier. <ul><li><strong>"authorization_code"</strong>: Issues a token</li><li><strong>"refresh_token"</strong>: Refreshes a token</li><li><strong>"delete"</strong>: Deletes a token</li></ul> | Yes |
+| `model_id`  | string  | The model ID of the client device  | No |
+| `refresh_token` | string  | The refresh token issued when authorization succeeds. This field is required when `grant_type` is set to **"refresh_token"**.  | No |
+| `response_type` | string  | The response type. Only **"code"** is supported at the moment.  | Yes |
 
 ### Request Example
 
@@ -102,12 +105,13 @@ Creates, refreshes or deletes a Clova access token, using an authorization code 
 
 
 ### Response field
-| Field name       | Type    | Field description                     |
+
+| Field name  | Type  | Field description  |
 |---------------|---------|-----------------------------|
-| access_token  | string  | Clova access token                               |
-| expires_in    | number  | The time that a Clova access token remains valid (in seconds)              |
-| refresh_token | string  | A refresh token for refreshing a Clova access token           |
-| token_type    | string  | The type of a Clova access token. Always returns "Bearer". |
+| `access_token`  | string  | The Clova access token  |
+| `expires_in`  | number  | The amount of time that the Clova access token is deemed to be valid (in seconds)  |
+| `refresh_token` | string  | The refresh token to refresh the Clova access token  |
+| `token_type`  | string  | The type of the Clova access token. Always returns "Bearer". |
 
 ### Response Example
 {% raw %}
@@ -124,4 +128,4 @@ Creates, refreshes or deletes a Clova access token, using an authorization code 
 ### See also
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
 * [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [/authorize](#authorize)
+* [`/authorize`](#authorize)

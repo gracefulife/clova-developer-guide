@@ -1,5 +1,5 @@
-# ImageList Template
-Provides information using one or more images with description for each. It is used to display a list of thumbnails or a large image when a user selects one of the thumbnails.
+# ImageList template
+Displays one or more images with description on a screen. It is used to display a list of thumbnails or a large image when a user selects one of the thumbnails.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,14 +10,14 @@ Provides information using one or more images with description for each. It is u
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| ImageList[]  | object array | An object array that displays a list of images | Yes  |
-| ImageList[].imageReference | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains source information of an image  | No |
-| ImageList[].imageTitle  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains an image title  | No |
-| ImageList[].imageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains an image URL  | No |
-| ImageList[].referenceText  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains text information of a source  | No |
-| ImageList[].referenceURL  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a source URL  | No |
-| ImageList[].thumbImageUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a thumbnail image URL | No |
-| type  | string  | Content template delimiter. The value is always "ImageList".  | Yes |
+| `ImageList[]`  | object array | An object array that displays a list of images  | Yes |
+| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing source information of the image  | No |
+| `ImageList[].imageTitle`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the title of the image  | No |
+| `ImageList[].imageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the image  | No |
+| `ImageList[].referenceText`| [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md StringObject) #| An object containing text data of the source  | No |
+| `ImageList[].referenceURL`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the source  | No |
+| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing the URL of the thumbnail image | No |
+| `type`  | string  | A content template delimiter. The value is always **"ImageList"**.  | Yes |
 
 ## Template Example
 

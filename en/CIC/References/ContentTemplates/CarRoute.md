@@ -1,40 +1,39 @@
-# CarRoute Template
-Provides route directions by driving. It is used to display driving routes on a screen. To display driving routes with this template, you must understand how to use the {{book.OrientedService}} map API. Use data returned from the template together with the {{book.OrientedService}} map API to display directions on a map. See [{{book.OrientedService}} map API documentation](https://navermaps.github.io/maps.js/docs/) for more details on the NAVER map API. See [Screen UI example](#UIExample) for an example of how route directions are displayed.
+# CarRoute template
+Provides route directions by driving. It is used to display driving routes on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>To use the CarRoute template, Prior consultation is necessary with {{ book.OrientedService }}.</p>
+<p>To display driving routes with this template, you must understand how to use the {{book.OrientedService}} map API. Use data returned from the template together with the {{book.OrientedService}} map API to display directions on a map. See <a href="https://navermaps.github.io/maps.js/docs/">{{book.OrientedService}} map API documentation</a> for more details on the NAVER map API. See <a href="#UIExample">Screen UI example</a> for an example of how route directions are displayed.</p>
 </div>
-
 
 ## Template field
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| appLinkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a map app  | Yes |
-| boundary  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object representing a rectangular area (MBR, Minimum Bounding Rectangle) that includes all of interpolated points, in the form of "left,top,right,bottom" string | Yes |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object that contains a URL which directs users to a web map  | Yes |
-| pathList  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object array that contains road segment points along the route | yes |
-| summary  | object | An object that contains summary of driving routes | Yes |
-| summary.distance  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains a travel distance from a departure point to a destination point. Unit is meter. | Yes |
-| summary.destination  | object | An object that contains information on a destination point | Yes |
-| summary.destination.lat  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the latitude of a destination point | Yes |
-| summary.destination.lon  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the longitude of a destination point | Yes |
-| summary.destination.name  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the place name of a destination | Yes |
-| summary.roadSummary[]  | object array | An object array that contains summary of roads along the route | Yes |
-| summary.roadSummary[].length  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the length of a road segment. Unit is meter. | Yes |
-| summary.roadSummary[].name  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the name of a road | Yes |
-| summary.roadSummary[].point  | object | An object that contains coordinates of a road entry point | Yes |
-| summary.roadSummary[].point.x  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the X coordinate of a road entry point on the NAVER map | Yes |
-| summary.roadSummary[].point.y  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the Y coordinate of a road entry point on the NAVER map | Yes |
-| summary.roadSummary[].roadCongestion | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains traffic conditions. *summary.roadSummary.roadCongestion.value* can have the following values. <ul><li>"0": Data was not received</li><li>"1": Free flow of traffic</li><li>"2": Sluggish flow of traffic</li><li>"3": Slow flow of traffic</li><li>"4": Traffic stopped flowing</li></ul> | Yes |
-| summary.roadSummary[].speed  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the average driving speed of a road segment | Yes |
-| summary.start  | object | An object that contains information on a departure point | Yes |
-| summary.start.lat  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the latitude of a departure point | Yes |
-| summary.start.lon  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the longitude of a departure point | Yes |
-| summary.start.name  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains the place name of a departure point | Yes |
-| summary.time  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains an estimated travel time. Unit is minute. | Yes |
-| type  | string | Content template delimiter. The value is always "CarRoute" | Yes |
+| `appLinkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a map app  | Yes |
+| `boundary`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object representing a rectangular area (MBR, Minimum Bounding Rectangle) that includes all of interpolated points, in the form of "left,top,right,bottom" string | Yes |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | An object containing a URL which directs users to a web map  | Yes |
+| `pathList`  | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object array containing road segment points along the route | Yes |
+| `summary`  | object | An object containing summary of driving routes | Yes |
+| `summary.distance`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a travel distance from a departure point to a destination point. Unit is meter. | Yes |
+| `summary.destination`  | object | An object containing information of the destination point | Yes |
+| `summary.destination.lat`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the latitude of the destination point | Yes |
+| `summary.destination.lon`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the longitude of the destination point | Yes |
+| `summary.destination.name`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the name of the destination point | Yes |
+| `summary.roadSummary[]`  | object array | An object array containing summary of roads along the route | Yes |
+| `summary.roadSummary[].length`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the length of the road segment. Unit is meter. | Yes |
+| `summary.roadSummary[].name`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the name of the road | Yes |
+| `summary.roadSummary[].point`  | object | An object containing coordinates of the road entry point | Yes |
+| `summary.roadSummary[].point.x`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the X coordinate of the road entry point on the NAVER map | Yes |
+| `summary.roadSummary[].point.y`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the Y coordinate of the road entry point on the NAVER map | Yes |
+| `summary.roadSummary[].roadCongestion` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing traffic conditions on the road. `summary.roadSummary.roadCongestion.value` can have the following values. <ul><li><strong>"0"</strong>: Data was not received</li><li><strong>"1"</strong>: Smooth</li><li><strong>"2"</strong>: Slow</li><li><strong>"3"</strong>: Stagnant</li><li><strong>"4"</strong>: Stopped</li></ul> | Yes |
+| `summary.roadSummary[].speed`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing an average driving speed of the road segment | Yes |
+| `summary.start`  | object | An object containing information of the departure point | Yes |
+| `summary.start.lat`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the latitude of the departure point | Yes |
+| `summary.start.lon`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the longitude of the departure point | Yes |
+| `summary.start.name`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the name of the departure point | Yes |
+| `summary.time`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the estimated travel time. Unit is minute. | Yes |
+| `type`  | string | A content template delimiter. The value is always **"CarRoute"**. | Yes |
 
 ## Template Example
 

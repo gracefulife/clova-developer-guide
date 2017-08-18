@@ -1,8 +1,8 @@
 # HTTP message
-CEK and your extension communicates over the HTTP/1.1 protocols, sending and receiving simple HTTPS requests and responses. When CEK and your extension communicates with each other, a JSON format message is included in the body of the HTTP message. The following explains how an HTTP message is constructed for communication between CEK and your extension.
+CEK and your extension communicates over the HTTP/1.1 protocol, sending HTTPS requests and responses back and forth. When CEK and your extension communicates with each other, a JSON format message is included in the HTTP message body. The following explains how an HTTP message is constructed when CEK and your extension exchange messages.
 
 ## HTTP header {#HTTPHeader}
-An HTTPS request is used when CEK sends analysis details of user's speech input to your extension. The header of an HTTPS request is constructed as follows.
+When CEK sends analysis details of user's speech input to your extension, it uses an HTTPS request. The header of an HTTPS request is constructed as follows.
 
 {% raw %}
 ```
@@ -14,20 +14,20 @@ Accept-Charset : utf-8
 ```
 {% endraw %}
 
-* Use HTTPS connection (HTTP/1.1 version) and POST method.
-* Fill the host and target path with a pre-defined URI.
-* Message body is in JSON format and uses UTF-8 encoding.
+* Uses HTTPS connection (HTTP/1.1 version) and POST method.
+* The host and target path is filled with a pre-defined URI.
+* The body uses a JSON format and UTF-8 encoding.
 
 
-Conversely, an HTTPS response is used when your extension returns processing results to CEK. You only need to include the very basics in the header of an HTTPS response as follows.
+Conversely, when your extension returns processing results back to CEK, it uses an HTTPS response. The header of an HTTPS response consists of basic entries as follows.
 {% raw %}
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json;charset-UTF-8
 ```
 {% endraw %}
-* Return processing results in response to an HTTPS request sent from CEK.
-* Message body is in JSON format and uses UTF-8 encoding.
+* Returns processing results in response to HTTPS requests sent from CEK.
+* The body uses a JSON format and UTF-8 encoding.
 
 ## HTTP body {#HTTPBody}
-For both request and response, the HTTP body is in JSON format and contains analysis details of user's speech input or processing results from your extension. Each message is constructed in different ways depending on which type of extension you use. See [custom extension message](/CEK/References/Custom_Extension_Message_Format.md) and [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md) for more details on constructing a message.
+For both request and response, the HTTPS message body uses a JSON format, and it contains analysis details of user's speech input or processing results of your extension. Messages are constructed differently depending on which type of extension is used. See [custom extension message](/CEK/References/Custom_Extension_Message_Format.md) and [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md) for more details on constructing a message.

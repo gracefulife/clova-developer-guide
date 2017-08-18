@@ -1,5 +1,5 @@
 ## Device.DeviceState {#DeviceState}
-DeviceState is a message format that sends device state information, such as a current local time in a user's device.
+DeviceState is a message format that sends device states of a client, such as a current local time set in a user's device.
 
 ### Message format
 {% raw %}
@@ -18,9 +18,9 @@ DeviceState is a message format that sends device state information, such as a c
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| localTime     | string  | Current time set in a client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
+| `localTime`  | string  | Current local time set in the client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
 
 
 ### Message example
@@ -39,4 +39,4 @@ DeviceState is a message format that sends device state information, such as a c
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)

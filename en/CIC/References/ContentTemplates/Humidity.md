@@ -1,5 +1,5 @@
-# Humidity Template
-Provides information on humidity. It is used to display humidity readings on a screen.
+# Humidity template
+Provides humidity information. It is used to display humidity readings on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -10,11 +10,11 @@ Provides information on humidity. It is used to display humidity readings on a s
 
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| bgClipUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a URL to a background sound file | Yes |
-| humidity  | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object that contains humidity data | No |
-| linkUrl  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object that contains a link path to content  | No |
-| location  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that contains location data | Yes |
-| type  | string | Content template delimiter. The value is always "Humidity" | Yes |
+| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `humidity`  | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing humidity data | No |
+| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
+| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
+| `type`  | string | A content template delimiter. The value is always **"Humidity"**. | Yes |
 
 ## Template Example
 

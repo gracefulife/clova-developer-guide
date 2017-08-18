@@ -1,30 +1,23 @@
 # PlaybackController
 
-Plays audio and controls speaker output on a client.
-
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>The PlaybackController was deprecated and is not supported any more. All the APIs which used to be provided by this namespace will be migrated to the <a href="/CIC/References/APIs/AudioPlayer.html">AudioPlayer</a> namespace.</p>
-</div>
-
-The PlaybackController API provides the following event and directive messages.
+Plays audio and controls speaker output on a client. The PlaybackController API provides the following event and directive messages.
 
 | Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [Mute](#Mute)  | Directive | Instructs your client to mute speaker volume.  |
-| [Next](#Next)  | Directive | Instructs your client to start playback of a next audio stream in a playback queue.  |
-| [Pause](#Pause)  | Directive | Instructs your client to pause playback of a current audio stream.  |
-| [Previous](#Previous)  | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
-| [Resume](#Resume)  | Directive | Instructs your client to resume playback of an audio stream.  |
-| [Stop](#Stop)  | Directive | Instructs your client to stop playback of an audio stream.  |
-| [TurnOffRepeatMode](#TurnOffRepeatMode) | Directive | Instructs your client to turn off single track repeat mode.  |
-| [TurnOnRepeatMode](#TurnOnRepeatMode)  | Directive | Instructs your client to turn on single track repeat mode.  |
-| [Unmute](#Unmute)  | Directive | Instructs your client to unmute speaker volume.  |
-| [VolumeDown](#VolumeDown)  | Directive | Instructs your client to turn down speaker volume.  |
-| [VolumeUp](#VolumeUp)  | Directive | Instructs your client to turn up speaker volume.  |
+| [`Mute`](#Mute)  | Directive | Instructs your client to mute its speaker volume.  |
+| [`Next`](#Next)  | Directive | Instructs your client to start playback of a next audio stream in a playback queue.  |
+| [`Pause`](#Pause)  | Directive | Instructs your client to pause playback of a current audio stream.  |
+| [`Previous`](#Previous)  | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
+| [`Resume`](#Resume)  | Directive | Instructs your client to resume playback of an audio stream.  |
+| [`Stop`](#Stop)  | Directive | Instructs your client to stop playback of an audio stream.  |
+| [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | Instructs your client to turn off the single track repeat mode.  |
+| [`TurnOnRepeatMode`](#TurnOnRepeatMode)  | Directive | Instructs your client to turn on the single track repeat mode.  |
+| [`Unmute`](#Unmute)  | Directive | Instructs your client to unmute its speaker volume.  |
+| [`VolumeDown`](#VolumeDown)  | Directive | Instructs your client to turn down its speaker volume.  |
+| [`VolumeUp`](#VolumeUp)  | Directive | Instructs your client to turn up its speaker volume.  |
 
 ## Mute directive {#Mute}
-Instructs your client to mute speaker volume.
+Instructs your client to mute its speaker volume.
 
 ### Payload field
 None
@@ -47,8 +40,8 @@ None
 {% endraw %}
 
 ### See also
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Next directive {#Next}
 Instructs your client to start playback of a next audio stream in a playback queue.
@@ -74,7 +67,7 @@ None
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Pause directive {#Pause}
 Instructs your client to pause playback of a current audio stream.
@@ -100,8 +93,8 @@ None
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayPaused](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayPaused`](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Previous directive {#Previous}
 Instructs your client to start playback of a previous audio stream in a playback queue.
@@ -127,8 +120,8 @@ None
 {% endraw %}
 
 ### See also
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Resume directive {#Resume}
 Instructs your client to resume playback of an audio stream.
@@ -154,8 +147,8 @@ None
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayResumed](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayResumed`](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Stop directive {#Stop}
 Instructs your client to stop playback of an audio stream.
@@ -181,11 +174,11 @@ None
 {% endraw %}
 
 ### See also
-* [AudioPlayer.PlayStopped](/CIC/References/APIs/AudioPlayer.md#PlayStopped)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayStopped`](/CIC/References/APIs/AudioPlayer.md#PlayStopped)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
- Instructs your client to turn off single track repeat mode.
+ Instructs your client to turn off the single track repeat mode.
 
 ### Payload field
 None
@@ -208,10 +201,10 @@ None
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
-Instructs your client to turn on single track repeat mode.
+Instructs your client to turn on the single track repeat mode.
 
 ### Payload field
 None
@@ -234,10 +227,10 @@ None
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
-Instructs your client to unmute speaker volume.
+Instructs your client to unmute its speaker volume.
 
 ### Payload field
 None
@@ -260,11 +253,11 @@ None
 {% endraw %}
 
 ### See also
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## VolumneDown directive {#VolumeDown}
-Instructs your client to turn down speaker volume. The volume adjustment level is determined by your UX standard.
+Instructs your client to turn down its speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
 None
@@ -287,11 +280,11 @@ None
 {% endraw %}
 
 ### See also
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## VolumneUp directive {#VolumeUp}
-Instructs your client to turn up speaker volume. The volume adjustment level is determined by your UX standard.
+Instructs your client to turn up its speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
 None
@@ -314,5 +307,5 @@ None
 {% endraw %}
 
 ### See also
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)

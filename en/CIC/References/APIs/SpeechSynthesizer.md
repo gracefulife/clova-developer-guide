@@ -4,8 +4,8 @@ Requests CIC to synthesize text into a TTS (text-to-speech) audio file or return
 
 | Message name  | Message type  | Message description  |
 |------------------|-----------|---------------------------------------------|
-| [Request](#Request) | Event  | Requests CIC to synthesize specified text into a TTS audio file. |
-| [Speak](#Speak)  | Directive | Instructs your client to play a synthesized TTS audio file through its speaker. |
+| [`Request`](#Request) | Event  | Requests CIC to synthesize specified text into a TTS audio file. |
+| [`Speak`](#Speak)  | Directive | Instructs your client to play the synthesized TTS audio file through its speaker. |
 
 
 ## Request event {#Request}
@@ -19,8 +19,8 @@ None
 ### Payload field
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| text  | string | The text to synthesize into TTS  | Yes  |
-| lang  | string | The language used for speech synthesis. <ul><li>"ko": Korean</li><li>"en": English</li><li>"ja": Japanese</li><li>"zh": Chinese</li></ul>| Yes  |
+| `text`  | string | The text to synthesize into TTS  | Yes  |
+| `lang`  | string | The language used for speech synthesis. <ul><li><strong>"ko"</strong>: Korean</li><li><strong>"en"</strong>: English</li><li><strong>"ja"</strong>: Japanese</li><li><strong>"zh"</strong>: Chinese</li></ul> | Yes  |
 
 ### Message example
 {% raw %}
@@ -44,36 +44,36 @@ None
 {% endraw %}
 
 ### See also
-* [SpeechSynthesizer.Speak](/CIC/References/APIs/SpeechSynthesizer.md#Speak)
+* [`SpeechSynthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak)
 
 ## Speak directive {#Speak}
-Instructs your client to play a synthesized TTS audio file through its speaker. It can return multiple Speak directive messages in response to a single request. As such, your client must play audio files in the same order it has received messages. Audio files can be returned in the form of either an [HTTP multipart message](/CIC/References/HTTP2_Message_Format.md#MultipartMessage)(multipart) or an audio streaming address.
+Instructs your client to play a synthesized TTS audio file through its speaker. It can return multiple Speak directive messages in response to a single request. As such, your client must play audio files in the same order it has received messages. Audio files can be returned in the form of either an [HTTP multipart message](/CIC/References/HTTP2_Message_Format.md#MultipartMessage) or an audio streaming address.
 
 ### Payload field
 | Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| format  | string  | File format. Currently returns "AUDIO_MPEG". | Yes  |
-| url  | string  | URL of an audio file to play  | Yes  |
-| token  | string  | A token value for identifying TTS files  | Yes  |
-| ttsLang  | string  | The language used for speech synthesis. <ul><li>"ko": Korean</li><li>"en": English</li><li>"ja": Japanese</li><li>"zh": Chinese</li></ul>| No  |
-| ttsText  | string  | TTS text of a synthesized file  | No  |
-| x-clova-pause-before | integer | Idle time before playing a file. Unit is millisecond.  | No  |
+| `format`  | string  | File format. Currently returns **"AUDIO_MPEG"**. | Yes  |
+| `url`  | string  | The URL of the audio file to play  | Yes  |
+| `token`  | string  | A token value for identifying TTS files  | Yes  |
+| `ttsLang`  | string  | The language used for speech synthesis. <ul><li><strong>"ko"</strong>: Korean</li><li><strong>"en"</strong>: English</li><li><strong>"ja"</strong>: Japanese</li><li><strong>"zh"</strong>: Chinese</li></ul> | No  |
+| `ttsText`  | string  | TTS text in the synthesized file  | No  |
+| `x-clova-pause-before` | integer | Idle time before playing the file. Unit is millisecond.  | No  |
 
 ### Remarks
 
-A *url* can have two formats as below. Process audio output appropriately for each format.
+The `url` can be either one of the two formats. Process audio output appropriately for each format.
 
 | Format | Description |
 |---------|-------------------------------|
-| cid:{Content-Id} format | If the format of the *url* value is cid:{Content-Id}, the synthesized audio is returned in a multipart message. You must play audio data (binary type) that has the same *Content-Id* message header. Since messages that contain audio data are not returned sequentially, you must play audio data based on the Content-ID of the directive messages returned. |
-| URL format | Play the audio stream from the *url* returned.  |
+| `cid:{Content-ID}` format | If the format of the `url` is `cid:{Content-ID}`, the synthesized audio is returned in a multipart message. You must play audio data (binary type) that has the same `Content-ID` message header. Since messages that contain audio data are not returned sequentially, you must play audio data based on the `Content-ID` of the directive messages returned. |
+| URL format | Play the audio stream from the `url` returned.  |
 
 ### Message example
 
 {% raw %}
 ```
 // cid:{Content-Id} format
-// Plays audio data which has the message Content-Id, 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369.
+// Plays audio data with Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 
 --Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"
@@ -130,4 +130,4 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ### See also
-* [SpeechSynthesizer.Request](/CIC/References/APIs/SpeechSynthesizer.md#Request)
+* [`SpeechSynthesizer.Request`](/CIC/References/APIs/SpeechSynthesizer.md#Request)

@@ -1,5 +1,5 @@
 ## Clova.Location {#Location}
-Message format that sends client's current location information. You can obtain location information from GPS, base stations or network devices and send it to CIC.
+A message format that sends client's current location information. You can obtain location information from GPS, base stations or network devices and send it to CIC.
 
 ### Message format
 {% raw %}
@@ -20,11 +20,11 @@ Message format that sends client's current location information. You can obtain 
 
 ### Payload field
 
-| Field name       | Type    | Field description                     | Required |
+| Field name  | Type  | Field description  | Required |
 |---------------|---------|-----------------------------|---------|
-| latitude      | string  | Latitude                                                                                     | Yes |
-| longitude     | string  | Longitude                                                                                     | Yes |
-| refreshedAt   | string  | The time when the location was last checked (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
+| `latitude`  | string  | Latitude  | Yes |
+| `longitude`  | string  | Longitude  | Yes |
+| `refreshedAt`  | string  | The time when the location was last checked (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
 
 ### Message example
 {% raw %}
@@ -44,4 +44,4 @@ Message format that sends client's current location information. You can obtain 
 {% endraw %}
 
 ### See also
-* [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)

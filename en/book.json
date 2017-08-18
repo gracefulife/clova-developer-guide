@@ -10,7 +10,8 @@
     "paperSize": "a3"
   },
   "variables": {
-    "DocVersion": "en-JP",
+    "DocVersion": "v0.8",
+    "Locale": "en-JP",
     "DocOwner": "LINE",
     "OrientedService": "LINE",
     "TargetServiceForClientAuth": "LINE",
