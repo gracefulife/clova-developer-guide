@@ -171,10 +171,9 @@ Content-Type: application/json; charset=UTF-8
 These are examples of HTTP request/response sent and received between a client and CIC.
 
 ### Request Example
-{% raw %}
-```
+<pre><code>
 POST /v1/events HTTP/2
-Host: https://prod-ni-cic.clova.ai/
+Host: {{ book.CICBaseURL }}
 Accept: */*
 Authorization: Bearer {{clova-access-token}}
 > Content-Length: 456
@@ -214,11 +213,11 @@ Content-Type: application/json; charset=UTF-8
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
-{{binary audio attachment}}
+[[ binary audio attachment ]]
 --920d6335ba920d6337a319f--
 
 ```
-{% endraw %}
+</code></pre>
 
 ### Response Example - When a request succeeds
 {% raw %}
