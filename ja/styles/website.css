@@ -27,7 +27,7 @@
 }
 
 .book-body .body-inner .page-wrapper .page-inner {
-	max-width: 880px;
+	max-width: 1000px;
 }
 
 .book-summary .summary .divider {
@@ -52,4 +52,25 @@
 
 .book-summary ul.summary {
     margin-bottom: 30px;
+}
+
+.markdown-section code {
+    padding: 1px;
+    margin: 0;
+    font-size: .85em;
+    color: lightcoral;
+    background-color: #f7f7f7;
+    border-width: thin;
+}
+
+.markdown-section pre>code {
+    color: #333333;
+}
+
+a.btn.pull-right.js-toolbar-action {
+    display: none;
+}
+
+.dropdown.pull-right.js-toolbar-action {
+    display: none;
 }

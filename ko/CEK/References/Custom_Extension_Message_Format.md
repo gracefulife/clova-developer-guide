@@ -297,7 +297,7 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | `response.directives[].header.name`      | string       | 지시 메시지의 API 이름                                      | 필수 |
 | `response.directives[].header.namespace` | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
 | `response.directives[].payload`          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
-| `response.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달된다.              | 필수 |
+| `response.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달됩니다.              | 필수 |
 | `response.outputSpeech.brief`            | [SpeechObject](#SpeechObject) | 출력할 요약 음성 정보.                    | 선택 |
 | `response.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech" : 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code> : 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#SpeechObject"><code>SpeechObject</code></a> 객체 배열을 가져야 합니다.</li><li><code>"SpeechSet"</code> : 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
 | `response.outputSpeech.values`           | [SpeechObject](#SpeechObject) or [SpeechObject](#SpeechObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |

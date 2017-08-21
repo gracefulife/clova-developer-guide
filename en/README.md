@@ -9,9 +9,9 @@ This documentation provides developer guides as well as API references for CIC a
 ## Contact point
 If you have any questions regarding the documentation, contact designated Clova personnel.
 
-## Documentation revision history
+## Documentation version and revision history
 
-The current version of this documentation is {{ book.DocVersion}}.
+The current version of this documentation is {{ book.DocVersion}} and the following table shows revision history of this documentation.
 
 | Version | Publishing date  | Revision history  | Author  | Approver  |
 |-----|----------------|---------------------------|----------|----------|

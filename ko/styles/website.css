@@ -66,3 +66,11 @@
 .markdown-section pre>code {
     color: #333333;
 }
+
+a.btn.pull-right.js-toolbar-action {
+    display: none;
+}
+
+.dropdown.pull-right.js-toolbar-action {
+    display: none;
+}

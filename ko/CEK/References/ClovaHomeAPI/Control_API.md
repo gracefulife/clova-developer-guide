@@ -4,8 +4,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`DecrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)             | Response | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 설정한 결과를 CEK에게 전달합니다. |
-| [`DecrementFanSpeedRequest`](#IncrementFanSpeedRequest)                       | Response | 대상 기기가 지정한 값만큼 팬 속도를 낮추도록 Clova Home extension에게 요청합니다. |
+| [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)             | Response | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)                       | Response | 대상 기기가 지정한 값만큼 팬 속도를 낮추도록 Clova Home extension에게 요청합니다. |
 | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
 | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)     | Request | 대상 기기가 지정한 값만큼 온도를 낮추도록 Clova Home extension에게 요청합니다.      |
 | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                     | Response | [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 설정한 결과를 CEK에게 전달합니다. |
@@ -18,8 +18,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)     | Request  | 대상 기기가 지정한 값만큼 온도를 높이도록 Clova Home extension에게 요청합니다.     |
 | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)                     | Response | [`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 설정한 결과를 CEK에게 전달합니다. |
 | [`IncrementVolumeRequest`](#IncrementVolumeRequest)                           | Response | 대상 기기가 지정한 값만큼 볼륨 크기를 높이도록 Clova Home extension에게 요청합니다. |
-| [`SetChannelConfirmation`](#SetModeConfirmation)                              | Request  | [`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
-| [`SetChannelRequest`](#SetModeRequest)                                        | Request  | 대상 기기가 지정한 채널로 TV 채널을 변경하도록 Clova Home extension에게 요청합니다. |
+| [`SetChannelConfirmation`](#SetChannelConfirmation)                              | Request  | [`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetChannelRequest`](#SetChannelRequest)                                        | Request  | 대상 기기가 지정한 채널로 TV 채널을 변경하도록 Clova Home extension에게 요청합니다. |
 | [`SetModeConfirmation`](#SetModeConfirmation)                                 | Request  | [`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 난방 모드를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
 | [`SetModeRequest`](#SetModeRequest)                                           | Request  | 대상 기기가 지정한 모드로 난방 모드를 변경하도록 Clova Home extension에게 요청합니다. |
 | [`TurnOffConfirmation`](#TurnOffConfirmation)                                 | Response | [`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다. |
@@ -28,7 +28,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`TurnOnRequest`](#TurnOnRequest)                                             | Request  | 대상 기기를 켜도록 Clova Home extension에게 요청합니다.                        |
 
 ### DecrementFanSpeedConfirmation {#DecrementFanSpeedConfirmation}
-[`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 설정한 결과를 CEK에게 전달합니다.
+[`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
 #### Payload field
 
@@ -299,7 +299,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `isReachable` | boolean | 네트워크를 통해 대상 기기에 접근 가능하지를 나타내는 값. <ul><li><code>true</code> : 접근 가능(online)</li><li><code>false</code> : 접근 불가(offline)</li></ul> | 필수    |
+| `isReachable` | boolean | 네트워크를 통해 대상 기기에 접근 가능한지 나타내는 값. <ul><li><code>true</code> : 접근 가능(online)</li><li><code>false</code> : 접근 불가(offline)</li></ul> | 필수    |
 | `isTurnOn`    | boolean | 대상 기기의 동작 상태를 나타내는 값. <ul><li><code>true</code> : 대기 상태(idle)</li><li><code>false</code> : 동작 상태(working)</li></ul>                  | 필수    |
 
 #### Message example
