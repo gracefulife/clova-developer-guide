@@ -15,7 +15,7 @@
 | [`GetMemo`](#GetMemo)                       | Directive | 클라이언트에게 메모를 조회하도록 지시합니다.                       |
 | [`GetReminder`](#GetReminder)               | Directive | 클라이언트에게 리마인더를 조회하도록 지시합니다.                    |
 | [`GetSchedule`](#GetSchedule)               | Directive | 클라이언트에게 일정을 조회하도록 지시합니다.                       |
-| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 일립니다.       |
+| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
 | [`RenderMemoList`](#RenderMemoList)         | Directive | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                   |
 | [`RenderReminderList`](#RenderReminderList) | Directive | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                |
 | [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
@@ -431,7 +431,7 @@
 
 ## GetSchedule directive {#GetSchedule}
 
-클라이언트에게 일정 조회를 진행하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 조회 조건으로 함께 전달됩니다. 클라이언트는 리마인더를 조회할 수 있는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
+클라이언트에게 일정 조회를 진행하도록 지시합니다. 사용자의 음성 인식으로 파악된 결과가 조회 조건으로 함께 전달됩니다. 클라이언트는 일정 조회할 수 있는 로컬 앱을 호출하거나 별도의 인터페이스를 제공해야 합니다.
 
 ### Payload field
 

@@ -10,7 +10,8 @@
     "paperSize": "a3"
   },
   "variables": {
-    "DocVersion": "ko-KR",
+    "DocVersion": "v1.0",
+    "Locale": "ko-KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
     "TargetServiceForClientAuth": "NAVER",

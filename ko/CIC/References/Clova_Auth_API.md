@@ -36,7 +36,7 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 
 ### Request Example
 
-<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
                                &amp;device_id=test_device
                                &amp;model_id=test_model
                                &amp;response_type=code
@@ -53,7 +53,7 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 
 ### Response Example
 {% raw %}
-```
+```json
 {
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
     "state": "95/KjaJfMlakjdfTVbES5ccZQ=="
@@ -95,11 +95,28 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 
 ### Request Example
 
-<pre><code>{{ book.AuthServerBaseURL }}token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+<pre><code>// 예제 1 : grant_type이 authorization_code인 경우
+{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
                            &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
                            &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
                            &amp;device_id=test_device
                            &amp;grant_type=authorization_code
+                           &amp;model_id=test_model
+
+// 예제 2 : grant_type이 refresh_token인 경우
+{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
+                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                           &amp;refresh_token=GW-Ipsdfasdfdfs3IbHFBA
+                           &amp;device_id=test_device
+                           &amp;grant_type=refresh_token
+                           &amp;model_id=test_model
+
+// 예제 3 : grant_type이 delete인 경우
+{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
+                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                           &amp;access_token=xFcH08vYQcahQWouqIzWOw
+                           &amp;device_id=test_device
+                           &amp;grant_type=delete
                            &amp;model_id=test_model
 </code></pre>
 
@@ -109,18 +126,35 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `access_token`  | string  | Clova access token                               |
+| `client_id`     | string  | 클라이언트 ID. `grant_type` 필드 값이 `"delete"`이면 응답 데이터에 포함됩니다. |
 | `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
-| `refresh_token` | string  | Clova access token을 갱신하기 위한 갱신 토큰           |
-| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 갱신 토큰. `grant_type` 필드 값이 `"delete"`이면 응답 데이터에 포함되지 않습니다. |
+| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. `grant_type` 필드 값이 `"delete"`이면 응답 데이터에 포함되지 않습니다. |
 
 ### Response Example
 {% raw %}
-```
+```json
+// 예제 1 : grant_type이 authorization_code일 경우 응답
 {
     "access_token": "XHapQasdfsdfFsdfasdflQQ7w",
     "expires_in": 332000,
     "refresh_token": "GW-Ipsdfasdfdfs3IbHFBA",
     "token_type": "Bearer"
+}
+
+// 예제 2 : grant_type이 refresh_token일 경우 응답
+{
+    "access_token": "xFcH08vYQcahQWouqIzWOw",
+    "expires_in": 12960000,
+    "refresh_token": "drJK-soIQI6vqEukqsLU2g",
+    "token_type": "Bearer"
+}
+
+// 예제 3 : grant_type이 delete일 경우 응답
+{
+    "access_token": "xFcH08vYQcahQWouqIzWOw",
+    "expires_in": 12960000,
+    "client_id": "c2Rmc2Rmc2FkZ2FzZnNhZGZ"
 }
 ```
 {% endraw %}
