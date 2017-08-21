@@ -409,7 +409,7 @@
 | `audioStream` | [AudioStreamObject](#AudioStreamObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체               | 필수 |
 
 ### Remarks
-StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시지의 본문인 `payload.audioStream`을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 `StreamDeliver` 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 `StreamDeliver` 지시 메시지의 `AudioStreamObject의` 내용이 이미 [`AudioPlayer.Play`](#Play) 지시 메시지로 전달된 내용과 중복된 부분이 있으면 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
+StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시지의 본문인 `payload.audioStream`을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 `StreamDeliver` 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 `StreamDeliver` 지시 메시지의 `AudioStreamObject`의 내용이 이미 [`AudioPlayer.Play`](#Play) 지시 메시지로 전달된 내용과 중복된 부분이 있으면 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
 
 ### Message example
 {% raw %}
@@ -498,7 +498,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 | `progressReport.progressReportDelayInMilliseconds` | number | 재생 시작 후 지정된 시간이 지났을 때 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다.  | 선택 |
 | `progressReport.progressReportIntervalInMilliseconds` | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다.     | 선택 |
 | `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다. | 선택 |
-| `token`             | string  | 오디오 스트림 toekn.                                                                                  | 필수 |
+| `token`             | string  | 오디오 스트림 token.                                                                                  | 필수 |
 | `url`               | string  | 오디오 스트림 URL                                                                                     | 필수 |
 | `urlPlayable`       | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code> : 바로 재생이 가능한 형태의 URL</li><li><code>false</code> : 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
 | `[Custom Field]`    | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.                                | 선택 |
