@@ -31,7 +31,7 @@
 | DeviceControl      | [`Decrease`](/CIC/References/APIs/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다. |
 | DeviceControl      | [`Increase`](/CIC/References/APIs/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다. |
 | DeviceControl      | [`OpenScreen`](/CIC/References/APIs/DeviceControl.md#OpenScreen)         | 클라이언트에게 설정 화면을 열도록 지시합니다. |
-| DeviceControl      |  [`SetPoint`](/CIC/References/APIs/DeviceControl.md#SetPoint)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다. |
+| DeviceControl      | [`SetValue`](/CIC/References/APIs/DeviceControl.md#SetValue)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다. |
 | DeviceControl      | [`TurnOff`](/CIC/References/APIs/DeviceControl.md#TurnOff)               | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다. |
 | DeviceControl      | [`TurnOn`](/CIC/References/APIs/DeviceControl.md#TurnOn)                 | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다. |
 | DeviceControl      | [`UpdateDeviceState`](#UpdateDeviceState)                                | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.                     |
@@ -47,6 +47,6 @@
 | PlaybackController | [`VolumeDown`](/CIC/References/APIs/PlaybackController.md#VolumeDown)   | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                                                   |
 | PlaybackController | [`VolumeUp`](/CIC/References/APIs/PlaybackController.md#VolumeUp)       | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                                                   |
 | SpeechRecognizer   | [`ExpectSpeech`](/CIC/References/APIs/SpeechRecognizer.md#ExpectSpeech) | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.                                            |
-| SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/APIs/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 음성으로 인식된 자연어를 실시간으로 전달합니다.                             |
+| SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/APIs/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                             |
 | SpeechRecognizer   | [`StopCapture`](/CIC/References/APIs/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
 | SpeechSynthesizer  | [`Speak`](/CIC/References/APIs/SpeechSynthesizer#Speak)                 | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다.                                   |

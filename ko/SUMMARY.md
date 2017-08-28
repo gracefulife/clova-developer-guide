@@ -27,8 +27,10 @@
   * [HTTP 응답](/CIC/References/HTTP2_Message_Format.md#Response)
   * [HTTP 메시지 예제](/CIC/References/HTTP2_Message_Format.md#MessageExample)
 * [Clova 인증 API](/CIC/References/Clova_Auth_API.md)
-  * [/authorize](/CIC/References/Clova_Auth_API.md#authorize)
-  * [/token](/CIC/References/Clova_Auth_API.md#token)
+  * [Authorization code 요청](/CIC/References/Clova_Auth_API.md#RequestAuthorizationCode)
+  * [Clova access token 요청](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken)
+  * [Clova access token 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)
+  * [Clova access token 삭제](/CIC/References/Clova_Auth_API.md#DeleteClovaAccessToken)
 * [CIC 메시지](/CIC/References/CIC_Message_Format.md)
   * [이벤트 메시지 \(Event\)](/CIC/References/CIC_Message_Format.md#Event)
   * [지시 메시지 \(Directive\)](/CIC/References/CIC_Message_Format.md#Directive)
@@ -47,10 +49,10 @@
   * [지시 메시지 색인](/CIC/References/APIs/Index_for_Directives.md)
 * [맥락 정보(Context)](/CIC/References/Context_Objects.md)
   * [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
-  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
   * [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
   * [Clova.Location](/CIC/References/Context_Objects.md#Location)
   * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
+  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
   * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [Content template](/CIC/References/Content_Templates.md)
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
@@ -64,7 +66,7 @@
   * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
-  * [Shared objects](/CIC/References/ContentTemplates/Shared_Objects.md)
+  * [공유 객체](/CIC/References/ContentTemplates/Shared_Objects.md)
 
 ## Clova Extension Kit
 

@@ -21,7 +21,7 @@ FreetalkState는 Clova의 대화 모드(Freetalk mode) 서비스가 클라이언
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `foreground`    | boolean | 대화 모드(Freetalk mode)의 활성화 여부 <ul><li><code>true</code>: 활성화됨.</li><li><code>false</strong>: 비활성화됨.</li></ul>  | 필수 |
+| `foreground`    | boolean | 대화 모드(Freetalk mode)의 활성화 여부 <ul><li><code>true</code>: 활성화됨.</li><li><code>false</code>: 비활성화됨.</li></ul>  | 필수 |
 | `reprompt`      | boolean | 사용자 응답 재요청 여부. 일정 시간 동안 사용자 입력이 없어 한번 더 사용자에게 입력을 요청했는지 확인하는 상태 값입니다. <ul><li><code>true</code> : 사용자에게 응답을 재요청한 상황이며, 대화 모드(Freetalk mode)가 종료됩니다.</li><li><code>false</code> : 사용자에게 응답을 재요청하지 않은 상황이며, 응답 대기 상태입니다.</li></ul> | 필수 |
 
 ### Remarks
