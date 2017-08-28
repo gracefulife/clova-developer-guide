@@ -22,15 +22,7 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 ```
 {% endraw %}
 
-만약, 특정 IoT 기기에 연결할 수 없거나 다른 내부적인 오류가 발생한 경우 다음과 같은 API를 이용하여 오류를 CEK에게 전달해야 합니다. Clova는 수신된 API에 따라 그에 상응하는 오류 처리를 수행합니다.
-
-* [DriverInternalError](#DriverInternalError)
-* [TargetOfflineError](#TargetOfflineError)
-
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>오류 메시지 종류를 계속 추가할 예정입니다.</p>
-</div>
+만약, 사용자 요청을 수행하는데 오류가 발생한 경우 [Error API](/CEK/References/Clova_Home_API.md#ErrorAPI)를 이용하여 오류를 CEK에게 전달해야 합니다. Clova는 수신된 API에 따라 그에 상응하는 오류 처리를 수행합니다.
 
 다음은 기기에 접속할 수 없어 `TargetOfflineError` 오류 메시지를 전달한 예제입니다.
 

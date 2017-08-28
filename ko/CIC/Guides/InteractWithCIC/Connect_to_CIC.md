@@ -6,7 +6,7 @@
 * [연결 관리하기](#ManageConnection)
 
 ### Clova access token 생성하기 {#CreateClovaAccessToken}
-사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된  Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
+사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
@@ -17,12 +17,14 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 </li>
 <li><p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득합니다.</p>
 </li>
-<li><p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/Clova_Auth_API.html#authorize">/authorize</a> API의 파라미터로 입력하여 authorization code를 획득합니다. 다음은 authorization code를 요청한 예입니다.</p>
-<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                               &amp;device_id=test_device
-                               &amp;model_id=test_model
-                               &amp;response_type=code
-                               &amp;state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
+<li><p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 다음은 authorization code를 요청한 예입니다.</p>
+<pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJAS123scjaf123klv'
+       {{ book.AuthServerBaseURL }}authorize \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
+       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'model_id=test_model' \
+       --data-urlencode 'response_type=code' \
+       --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
 </code></pre>
 <p>다음과 같은 authorization code가 반환됩니다.</p>
 <pre><code>{
@@ -32,13 +34,12 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 </code></pre></li>
 <li><p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
 </li>
-<li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API의 파라미터로 입력하여 Clova access token을 획득합니다. 다음은 Clova access token을 요청한 예입니다.</p>
-<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                           &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
-                           &amp;device_id=test_device
-                           &amp;grant_type=authorization_code
-                           &amp;model_id=test_model
+<li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+       --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
+       --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
+       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'model_id=test_model'
 </code></pre>
 <p>다음과 같은 Clova access token이 반환됩니다.</p>
 <pre><code>{
@@ -142,12 +143,12 @@ Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 
 #### Access token 갱신 {#RefreshAccessToken}
 
-클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)를 받은 경우 access token을 갱신해야 합니다. 아래와 같이 [`/token`](/CIC/References/Clova_Auth_API.md#token) API로 access token을 획득할 때 받았던 갱신용 token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 새로운 Clova access token을 획득할 수 있습니다.
+클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)를 받은 경우 access token을 갱신해야 합니다. 아래와 같이 [Clova access token을 획득](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken)할 때 받았던 refresh token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 [Clova access token을 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)할 수 있습니다.
 
-<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                           &amp;refresh_token=GW-Ipsdfasdfdfs3IbHFBA
-                           &amp;device_id=test_device
-                           &amp;grant_type=refresh_token
-                           &amp;model_id=test_model
+<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
+       --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
+       --data-urlencode 'refresh_token=GW-Ipsdfasdfdfs3IbHFBA' \
+       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'model_id=test_model'
 </code></pre>
