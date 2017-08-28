@@ -10,6 +10,9 @@
 문서와 관련하여 궁금한 사항은 지정된 Clova 협업 담당자에게 문의합니다.
 
 ## 문서 이력
+
+현재 이 문서의 버전은 {{ book.DocVersion }} 이며, 변경 이력은 다음과 같습니다.
+
 | 버전 | 배포 일자         | 이력 사항                   |
 |-----|----------------|---------------------------|
 | v1.1  | 2017-08-28   | <ul><li>[CIC] 셋톱박스용 TV 채널 정보 스펙과 전원 상태 정보 스펙을 <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>와 <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>에 추가</li><li>[CIC] <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>에서 target으로 사용되는 값 일부 추가 및 변경 : power, energysave, screenbrightness</li><li>[CIC] <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>의 SetPoint를 <a href="/CIC/References/APIs/DeviceControl.html#SetValue">SetValue</a>로 이름 변경</li><li>[CIC] <a href="/CIC/References/Clova_Auth_API.html">Clova 인증 API</a> 내용 업데이트 - 요청/응답 헤더와 Status code 추가, REST API reference 문서 포맷 적용</li><li>[CEK] <a href="/CEK/References/Clova_Home_API.html#ValueOutOfRangeError">ValueOutOfRangeError</a>를 Clova Home API에 추가</li></ul> |
