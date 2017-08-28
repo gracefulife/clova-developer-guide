@@ -1,0 +1,1439 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <title>Clova 개발자 가이드</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="NAVER Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CEK_Overview.html" />
+    
+    
+    <link rel="prev" href="../CIC/References/ContentTemplates/Shared_Objects.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Copyright.html">
+            
+                <a href="../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Terms.html">
+            
+                <a href="../Terms.html">
+            
+                    
+                    용어 및 약어
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CIC/CIC_Overview.html">
+            
+                <a href="../CIC/CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../CIC/CIC_Overview.html">
+            
+                <a href="../CIC/CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../CIC/CIC_Overview.html">
+            
+                <a href="../CIC/CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../CIC/CIC_Overview.html">
+            
+                <a href="../CIC/CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../CIC/Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../CIC/References/HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../CIC/References/HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../CIC/References/HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP 응답
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../CIC/References/HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP 메시지 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../CIC/References/Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">
+            
+                    
+                    Authorization code 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">
+            
+                    
+                    Clova access token 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../CIC/References/Clova_Auth_API.html#RefreshClovaAccessToken">
+            
+                    
+                    Clova access token 갱신
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../CIC/References/Clova_Auth_API.html#DeleteClovaAccessToken">
+            
+                    
+                    Clova access token 삭제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../CIC/References/CIC_Message_Format.html">
+            
+                    
+                    CIC 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../CIC/References/CIC_Message_Format.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../CIC/References/CIC_Message_Format.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../CIC/References/CIC_Message_Format.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC/References/CIC_API.html">
+            
+                <a href="../CIC/References/CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../CIC/References/APIs/Alerts.html">
+            
+                <a href="../CIC/References/APIs/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../CIC/References/APIs/AudioPlayer.html">
+            
+                <a href="../CIC/References/APIs/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../CIC/References/APIs/Clova.html">
+            
+                <a href="../CIC/References/APIs/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../CIC/References/APIs/DeviceControl.html">
+            
+                <a href="../CIC/References/APIs/DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../CIC/References/APIs/Memo.html">
+            
+                <a href="../CIC/References/APIs/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../CIC/References/APIs/PlaybackController.html">
+            
+                <a href="../CIC/References/APIs/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../CIC/References/APIs/Reminder.html">
+            
+                <a href="../CIC/References/APIs/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../CIC/References/APIs/SpeechRecognizer.html">
+            
+                <a href="../CIC/References/APIs/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                <a href="../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../CIC/References/APIs/Index_for_Events.html">
+            
+                <a href="../CIC/References/APIs/Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../CIC/References/APIs/Index_for_Directives.html">
+            
+                <a href="../CIC/References/APIs/Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../CIC/References/Context_Objects.html">
+            
+                <a href="../CIC/References/Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../CIC/References/Content_Templates.html">
+            
+                <a href="../CIC/References/Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../CIC/References/ContentTemplates/CardList.html">
+            
+                <a href="../CIC/References/ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../CIC/References/ContentTemplates/CarRoute.html">
+            
+                <a href="../CIC/References/ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../CIC/References/ContentTemplates/Humidity.html">
+            
+                <a href="../CIC/References/ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../CIC/References/ContentTemplates/ImageList.html">
+            
+                <a href="../CIC/References/ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../CIC/References/ContentTemplates/ImageText.html">
+            
+                <a href="../CIC/References/ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../CIC/References/ContentTemplates/Text.html">
+            
+                <a href="../CIC/References/ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                <a href="../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                <a href="../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                <a href="../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                <a href="../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                    
+                    공유 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="CEK_Overview.html">
+            
+                <a href="CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="CEK_Overview.html">
+            
+                <a href="CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="CEK_Overview.html">
+            
+                <a href="CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="CEK_Overview.html">
+            
+                <a href="CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="Guides/Build_Custom_Extension.html">
+            
+                <a href="Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Multi-turn 대화 수행하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="Guides/LinkUserAccount.html">
+            
+                <a href="Guides/LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="References/HTTP_Message_Format.html">
+            
+                <a href="References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="References/Custom_Extension_Message_Format.html">
+            
+                <a href="References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="References/Clova_Home_API.html">
+            
+                <a href="References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CEK 개요</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cek-&#xAC1C;&#xC694;">CEK &#xAC1C;&#xC694;</h1>
+<p>&#xC774; &#xBB38;&#xC11C;&#xB294; Clova Extension Kit(&#xC774;&#xD558; CEK)&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBB38;&#xC11C;&#xB97C; &#xD1B5;&#xD574; CEK&#xAC00; &#xBB34;&#xC5C7;&#xC774;&#xACE0; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB294;&#xC9C0; &#xD30C;&#xC545;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;, CEK&#xC640; &#xAD00;&#xB828;&#xB41C; &#xAC00;&#xC774;&#xB4DC;&#xB098; &#xB808;&#xD37C;&#xB7F0;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h2 id="WhatisCEK">CEK&#xB780;? </h2>
+<p>Clova extension(&#xC774;&#xD558; extension)&#xC740; &#xC74C;&#xC545;, &#xC1FC;&#xD551;, &#xAE08;&#xC735; &#xB4F1;&#xACFC; &#xAC19;&#xC740; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;(3rd party service)&#xB098; &#xC9D1;&#xC548;&#xC758; IoT &#xAE30;&#xAE30; &#xC81C;&#xC5B4; &#xB4F1; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; Clova&#xB97C; &#xD1B5;&#xD574; &#xB2E4;&#xC591;&#xD55C; &#xACBD;&#xD5D8;&#xC744; &#xC81C;&#xACF5;&#xBC1B;&#xC744; &#xC218; &#xC788;&#xB3C4;&#xB85D; Clova&#xC5D0;&#xAC8C; &#xD655;&#xC7A5;&#xB41C; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC6F9; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC785;&#xB2C8;&#xB2E4;. CEK&#xB294; extension&#xC744; &#xAC1C;&#xBC1C;&#xD560; &#xB54C; &#xD544;&#xC694;&#xD55C; &#xB3C4;&#xAD6C;&#xC640; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD50C;&#xB7AB;&#xD3FC;&#xC73C;&#xB85C; Clova&#xC640; extension &#xC0AC;&#xC774;&#xC758; &#xCEE4;&#xBBA4;&#xB2C8;&#xCF00;&#xC774;&#xC158;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="Resources/Images/CEK_Concept_Diagram.png" alt=""></p>
+<p>CEK&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li>Interaction &#xBAA8;&#xB378; &#xAD00;&#xB9AC;(Clova Developer Console &#xC81C;&#xACF5;)</li>
+<li>Clova&#xC640; extension &#xAC04; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xC81C;&#xACF5;</li>
+</ul>
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>&#xD604;&#xC7AC; Clova Developer Console&#xC744; &#xAC1C;&#xBC1C;&#xD558;&#xB294; &#xC911;&#xC785;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C;, Interaction &#xBAA8;&#xB378;&#xC744; &#xC815;&#xC758;&#xD558;&#xB824;&#xBA74; &#xC81C;&#xD734; &#xB2F4;&#xB2F9;&#xC790;&#xC640; &#xD611;&#xC758;&#xD558;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<h2 id="CEKInteractionStructure">CEK &#xB3D9;&#xC791; &#xAD6C;&#xC870; </h2>
+<p>Clova&#xB294; CIC&#xB85C;&#xBD80;&#xD130; &#xC785;&#xB825;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xB97C; &#xC778;&#xC2DD;&#xD558;&#xBA70;, CEK&#xB97C; &#xD1B5;&#xD574; &#xBBF8;&#xB9AC; &#xB4F1;&#xB85D;&#xB41C; <a href="Guides/Build_Custom_Extension.html#InteractionModel">Interaction &#xBAA8;&#xB378;</a>&#xC744; &#xCC38;&#xC870;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xB97C; &#xBD84;&#xC11D;&#xD569;&#xB2C8;&#xB2E4;. CEK&#xB294; &#xBD84;&#xC11D;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654; &#xC815;&#xBCF4;&#xB97C; extension&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xD558;&#xBA70;, extension&#xC740; &#xC0AC;&#xC6A9;&#xC790; &#xC694;&#xCCAD;&#xC5D0; &#xB300;&#xD55C; &#xCC98;&#xB9AC; &#xACB0;&#xACFC;&#xB97C; &#xC751;&#xB2F5;&#xC73C;&#xB85C; &#xB3CC;&#xB824;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xB41C; &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC5D0; &#xB9DE;&#xAC8C; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC8FC;&#xACE0; &#xBC1B;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; Clova &#xD50C;&#xB7AB;&#xD3FC;&#xACFC; extension &#xC0AC;&#xC774;&#xC758; &#xB3D9;&#xC791; &#xAD6C;&#xC870;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xB2E4;&#xC774;&#xC5B4;&#xADF8;&#xB7A8;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p><img src="Resources/Images/CEK_Interaction_Structure.png" alt=""></p>
+<h2 id="ExtensionType">Extension &#xC885;&#xB958; </h2>
+<p>Clova &#xD50C;&#xB7AB;&#xD3FC;&#xC740; &#xD604;&#xC7AC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xB450; &#xC885;&#xB958;&#xC758; extension&#xC744; &#xC9C0;&#xC6D0; &#xBC0F; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="Guides/Build_Custom_Extension.html">Custom extension</a> : &#xC784;&#xC758;&#xC758; &#xD655;&#xC7A5;&#xB41C; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; extension&#xC785;&#xB2C8;&#xB2E4;. Custom extension&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBA74; &#xC74C;&#xC545;, &#xC1FC;&#xD551;, &#xAE08;&#xC735;&#xACFC; &#xAC19;&#xC740; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><a href="Guides/Build_Clova_Home_Extension.html">Clova Home extension</a> : IoT &#xAE30;&#xAE30; &#xC81C;&#xC5B4; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAE30; &#xC704;&#xD55C; extension&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../CIC/References/ContentTemplates/Shared_Objects.html" class="navigation navigation-prev " aria-label="Previous page: 공유 객체">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CEK_Overview.html#WhatisCEK" class="navigation navigation-next " aria-label="Next page: CEK란?">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CEK 개요","level":"3.1","depth":1,"next":{"title":"CEK란?","level":"3.1.1","depth":2,"anchor":"#WhatisCEK","path":"CEK/CEK_Overview.md","ref":"CEK/CEK_Overview.md#WhatisCEK","articles":[]},"previous":{"title":"공유 객체","level":"2.8.12","depth":2,"path":"CIC/References/ContentTemplates/Shared_Objects.md","ref":"CIC/References/ContentTemplates/Shared_Objects.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"NAVER Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v1.1","CICBaseURL":"https://prod-ni-cic.clova.ai/","ClassifiedInfo":"대외비","OrientedService":"NAVER","AuthServerBaseURL":"https://auth.clova.ai/","TargetServiceForClientAuth":"NAVER","Locale":"ko-KR","DocOwner":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/"},"title":"Clova 개발자 가이드","language":"ko","gitbook":"*","description":"이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.","direction":"ltr"},"file":{"path":"CEK/CEK_Overview.md","mtime":"2017-08-28T07:59:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-28T09:48:13.790Z"},"basePath":"..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

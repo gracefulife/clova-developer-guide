@@ -1,0 +1,2255 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <title>Clova Developer Guide</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LINE Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="DeviceControl.html" />
+    
+    
+    <link rel="prev" href="AudioPlayer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Documentation summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Copyright.html">
+            
+                <a href="../../../Copyright.html">
+            
+                    
+                    Copyright
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Terms.html">
+            
+                <a href="../../../Terms.html">
+            
+                    
+                    Terms and abbreviations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html">
+            
+                    
+                    CIC overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#WhatisCIC">
+            
+                    
+                    What is CIC?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#DialogModel">
+            
+                    
+                    Dialog model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html">
+            
+                    
+                    Interacting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    Connecting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Creating Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    Creating connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    Getting authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    Managing connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    Sending event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    Handling directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    Managing message queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP message example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html">
+            
+                    
+                    Clova Auth API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#authorize">
+            
+                    
+                    /authorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#token">
+            
+                    
+                    /token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html">
+            
+                    
+                    CIC message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Event">
+            
+                    
+                    Event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Directive">
+            
+                    
+                    Directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Error">
+            
+                    
+                    Error message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC_API.html">
+            
+                <a href="../CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="Alerts.html">
+            
+                <a href="Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="AudioPlayer.html">
+            
+                <a href="AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.3" data-path="Clova.html">
+            
+                <a href="Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="DeviceControl.html">
+            
+                <a href="DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="Memo.html">
+            
+                <a href="Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="PlaybackController.html">
+            
+                <a href="PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="Reminder.html">
+            
+                <a href="Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="SpeechRecognizer.html">
+            
+                <a href="SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="SpeechSynthesizer.html">
+            
+                <a href="SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="Index_for_Events.html">
+            
+                <a href="Index_for_Events.html">
+            
+                    
+                    Event messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="Index_for_Directives.html">
+            
+                <a href="Index_for_Directives.html">
+            
+                    
+                    Directive messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html">
+            
+                    
+                    Context information
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Content_Templates.html">
+            
+                <a href="../Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ContentTemplates/CardList.html">
+            
+                <a href="../ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ContentTemplates/CarRoute.html">
+            
+                <a href="../ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ContentTemplates/Humidity.html">
+            
+                <a href="../ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ContentTemplates/ImageList.html">
+            
+                <a href="../ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ContentTemplates/ImageText.html">
+            
+                <a href="../ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ContentTemplates/Text.html">
+            
+                <a href="../ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ContentTemplates/TodayWeather.html">
+            
+                <a href="../ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../ContentTemplates/TransportationRoute.html">
+            
+                <a href="../ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../ContentTemplates/WindSpeed.html">
+            
+                <a href="../ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../ContentTemplates/Shared_Objects.html">
+            
+                <a href="../ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html">
+            
+                    
+                    CEK overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    What is CEK?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension type
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Building custom extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Handling custom extension request
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    Handling LaunchRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    Handling IntentRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    Handling SessionEndedRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Returning custom extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Having multi-turn dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Building Clova Home extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Providing device discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Handling Clova Home extension request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Returning Clova Home extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../../../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    Linking user account
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../CEK/References/HTTP_Message_Format.html">
+            
+                <a href="../../../CEK/References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../../CEK/References/Clova_Home_API.html">
+            
+                <a href="../../../CEK/References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >Clova</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="clova">Clova</h1>
+<p>It consists of a set of directive messages that return recognition results for client requests. When user requests are sent by <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> event messages, Clova analyzes their meaning. And CIC returns appropriate directive messages to your client based on recognition results. Then, your client processes the directive messages and provide requested Clova functions to users.</p>
+<table>
+<thead>
+<tr>
+<th>Message name</th>
+<th>Message type</th>
+<th>Message description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#AddMemo"><code>AddMemo</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to add new memos.</td>
+</tr>
+<tr>
+<td><a href="#AddReminder"><code>AddReminder</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to add new reminders.</td>
+</tr>
+<tr>
+<td><a href="#AddSchedule"><code>AddSchedule</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to add new schedules.</td>
+</tr>
+<tr>
+<td><a href="#CountSchedule"><code>CountSchedule</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to count the number of schedules within a specified period.</td>
+</tr>
+<tr>
+<td><a href="#DeleteMemo"><code>DeleteMemo</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to delete memos.</td>
+</tr>
+<tr>
+<td><a href="#DeleteReminder"><code>DeleteReminder</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to delete reminders.</td>
+</tr>
+<tr>
+<td><a href="#DeleteSchedule"><code>DeleteSchedule</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to delete schedules.</td>
+</tr>
+<tr>
+<td><a href="#FinishExtension"><code>FinishExtension</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to finish a specified extension.</td>
+</tr>
+<tr>
+<td><a href="#GetMemo"><code>GetMemo</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to look up memos.</td>
+</tr>
+<tr>
+<td><a href="#GetReminder"><code>GetReminder</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to look up reminders.</td>
+</tr>
+<tr>
+<td><a href="#GetSchedule"><code>GetSchedule</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to look up schedules.</td>
+</tr>
+<tr>
+<td><a href="#Hello"><code>Hello</code></a></td>
+<td>Directive</td>
+<td>Notifies your client that a downchannel connection has been established.</td>
+</tr>
+<tr>
+<td><a href="#RenderMemoList"><code>RenderMemoList</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to display a list of memos.</td>
+</tr>
+<tr>
+<td><a href="#RenderReminderList"><code>RenderReminderList</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to display a list of reminders.</td>
+</tr>
+<tr>
+<td><a href="#RenderTemplate"><code>RenderTemplate</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to display templates.</td>
+</tr>
+<tr>
+<td><a href="#RenderText"><code>RenderText</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to display text.</td>
+</tr>
+<tr>
+<td><a href="#StartExtension"><code>StartExtension</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to start a specified extension.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="AddMemo">AddMemo directive </h2>
+<p>Instructs your client to add new memos. It also returns content of the memos recognized from user&apos;s speech input.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td>string</td>
+<td>Content of the memo to add</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The ID of the memo to add</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>After successfully creating new memos, you must send the result to CIC, using a <a href="Memo.html#Created"><code>Memo.Created</code></a> event message.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;AddMemo&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;23bdfff7-b655-46d4-8655-8bb473bf2bf5&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;3c6eef8b-8427-4b46-a367-0a7a46432519&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;8f88daef-ebc9-4b44-b46f-3c875c6981b7&quot;</span>,
+      <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xC640;&#xC774;&#xD30C;&#xC774; &#xBE44;&#xBC00;&#xBC88;&#xD638; 1234&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#DeleteMemo"><code>Clova.DeleteMemo</code></a></li>
+<li><a href="#GetMemo"><code>Clova.GetMemo</code></a></li>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="Memo.html#Created"><code>Memo.Created</code></a></li>
+</ul>
+<h2 id="AddReminder">AddReminder directive </h2>
+<p>Instructs your client to add new reminders. It also returns content of the reminders recognized from user&apos;s speech input.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td>string</td>
+<td>Content of the reminder to add</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The ID of the reminder to add</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>After successfully creating new reminders, you must send the result to CIC, using a <a href="Reminder.html#Created"><code>Reminder.Created</code></a> event message.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;AddReminder&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4fef1142-99f5-4cf4-a2ac-8658c2dbef4d&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;6b4061db-fbc1-45a2-9c54-b7c62d366b98&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;f8747f49-4082-416d-b53e-f9a6069ed5e4&quot;</span>,
+      <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xBE44;&#xD0C0;&#xBBFC; &#xBA39;&#xAE30;&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#DeleteReminder"><code>Clova.DeleteReminder</code></a></li>
+<li><a href="#GetReminder"><code>Clova.GetReminder</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="Reminder.html#Created"><code>Reminder.Created</code></a></li>
+</ul>
+<h2 id="AddSchedule">AddSchedule directive </h2>
+<p>Instructs your client to add new schedules. It also returns content of the schedules recognized from user&apos;s speech input. To manage schedules, have your client call a local app or provide an interface for the task.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td>string</td>
+<td>Content of the schedule</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The ID of the schedule to add</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>period</code></td>
+<td>string</td>
+<td>The smallest unit of period recognized from user&apos;s speech input. The end time of the schedule is set to the value of <code>scheduledTime</code> added by <code>period</code>. <ul><li><code>&quot;none&quot;</code>: No period</li><li><code>&quot;year&quot;</code>: 1 year</li><li><code>&quot;month&quot;</code>: 1 month</li><li><code>&quot;week&quot;</code>: 1 week</li><li><code>&quot;day&quot;</code>: 1 day</li><li><code>&quot;hour&quot;</code>: 1 hour</li><li><code>&quot;minute&quot;</code>: 1 minute</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>scheduledTime</code></td>
+<td>string</td>
+<td>The start time of the schedule (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support adding of a yearly schedule but has received <code>&quot;year&quot;</code> for <code>period</code>, you must handle it as an exception. If the period is undetermined, as in &quot;Add a schedule&quot;, <code>period</code> is set to <code>&quot;none&quot;</code> and <code>scheduledTime</code> is set to a current time.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;AddSchedule&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;d53b1251-91f8-48da-bff4-bc49fe024cfe&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;4f63b5dd-282a-4876-b588-ae41c707e6cd&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;69385086-4bb6-46ae-a547-f8c24046b4dd&quot;</span>,
+      <span class="hljs-string">&quot;scheduledTime&quot;</span>: <span class="hljs-string">&quot;2017-05-28T06:00:00Z&quot;</span>,
+      <span class="hljs-string">&quot;period&quot;</span>: <span class="hljs-string">&quot;hour&quot;</span>,
+      <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xCE5C;&#xAD6C; &#xACB0;&#xD63C;&#xC2DD;&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#CountSchedule"><code>Clova.CountSchedule</code></a></li>
+<li><a href="#DeleteSchedule"><code>Clova.DeleteSchedule</code></a></li>
+<li><a href="#GetSchedule"><code>Clova.GetSchedule</code></a></li>
+</ul>
+<h2 id="CountSchedule">CountSchedule directive </h2>
+<p>Instructs your client to count the number of schedules that match specified conditions. It also returns the lookup conditions recognized from user&apos;s speech input. Have your client call a local app that manages schedules and find out how many schedules match specified conditions.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>period</td>
+<td>string</td>
+<td>The smallest unit of period recognized from user&apos;s speech input. The end time of the lookup period is set to the value of <code>scheduledTime</code> added by <code>period</code>. <ul><li>&quot;none&quot;: No period</li><li>&quot;year&quot;: 1 year</li><li>&quot;month&quot;: 1 month</li><li>&quot;week&quot;: 1 week</li><li>&quot;day&quot;: 1 day</li><li>&quot;hour&quot;: 1 hour</li><li>&quot;minute&quot;: 1 minute</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>scheduledTime</td>
+<td>string</td>
+<td>The start time of the lookup period (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received &quot;year&quot; for <code>period</code>, you must handle it as an exception. If the period is undetermined, as in &quot;How many schedules are there&quot;, <code>period</code> is set to &quot;none&quot; and <code>scheduledTime</code> is set to a current time.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;CountSchedule&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;17c6bad6-da9b-4489-88f9-9017141e9fbe&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;00fb1927-35d2-4a83-9c8f-4c141db36d86&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;scheduledTime&quot;</span>: <span class="hljs-string">&quot;2017-05-23T15:00:00Z&quot;</span>,
+      <span class="hljs-string">&quot;period&quot;</span>: <span class="hljs-string">&quot;day&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddSchedule"><code>Clova.AddSchedule</code></a></li>
+<li><a href="#DeleteSchedule"><code>Clova.DeleteSchedule</code></a></li>
+<li><a href="#GetSchedule"><code>Clova.GetSchedule</code></a></li>
+</ul>
+<h2 id="DeleteMemo">DeleteMemo directive </h2>
+<p>Instructs your client to delete memos. When a <code>DeleteMemo</code> directive message is returned, have your client provide a proper interface with which users can delete memos.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="remarks">Remarks</h3>
+<p>After successfully deleting memos, you must send the result to CIC, using a <a href="Memo.html#Deleted"><code>Memo.Deleted</code></a> event message.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DeleteMemo&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;8c831d6d-b610-40a7-bd8d-845bccd991f3&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;890a7a00-8481-4875-8e13-cd94e53e596b&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddMemo"><code>Clova.AddMemo</code></a></li>
+<li><a href="#GetMemo"><code>Clova.GetMemo</code></a></li>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="Memo.html#Deleted"><code>Memo.Deleted</code></a></li>
+</ul>
+<h2 id="DeleteReminder">DeleteReminder directive </h2>
+<p>Instructs your client to delete reminders. When a <code>DeleteReminder</code> directive message is returned, have your client provide a proper interface with which users can delete reminders.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="remarks">Remarks</h3>
+<p>After successfully deleting reminders, you must send the result to CIC, using a <a href="Reminder.html#Deleted"><code>Reminder.Deleted</code></a> event message.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DeleteReminder&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;39dc5dc0-194b-40af-be5e-b1155447f800&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;988f347b-9b98-421a-8779-47a753b8fba9&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddReminder"><code>Clova.AddReminder</code></a></li>
+<li><a href="#GetReminder"><code>Clova.GetReminder</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="Reminder.html#Deleted"><code>Reminder.Deleted</code></a></li>
+</ul>
+<h2 id="DeleteSchedule">DeleteSchedule directive </h2>
+<p>Instructs your client to delete schedules. It also returns the conditions recognized from user&apos;s speech input. To delete schedules that match specified conditions, have your client call a local app that manages schedules or provide an interface for the task.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period</code></td>
+<td>string</td>
+<td>The smallest unit of period recognized from user&apos;s speech input. The end time of the deletion period is set to the value of <code>scheduledTime</code> added by <code>period</code>. <ul><li><code>&quot;none&quot;</code>: No period</li><li><code>&quot;year&quot;</code>: 1 year</li><li><code>&quot;month&quot;</code>: 1 month</li><li><code>&quot;week&quot;</code>: 1 week</li><li><code>&quot;day&quot;</code>: 1 day</li><li><code>&quot;hour&quot;</code>: 1 hour</li><li><code>&quot;minute&quot;</code>: 1 minute</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>scheduledTime</code></td>
+<td>string</td>
+<td>The start time of the deletion period (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received <code>&quot;week&quot;</code> for <code>period</code>, you must handle it as an exception. If the period is undetermined, as in &quot;Delete a schedule&quot;, <code>period</code> is set to <code>&quot;none&quot;</code> and <code>scheduledTime</code> is set to a current time.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DeleteReminder&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;39dc5dc0-194b-40af-be5e-b1155447f800&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;988f347b-9b98-421a-8779-47a753b8fba9&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddSchedule"><code>Clova.AddSchedule</code></a></li>
+<li><a href="#CountSchedule"><code>Clova.CountSchedule</code></a></li>
+<li><a href="#GetSchedule"><code>Clova.GetSchedule</code></a></li>
+</ul>
+<h2 id="FinishExtension">FinishExtension directive </h2>
+<p>Instructs your client to finish a specified extension. When a FinishExtension directive message is returned, have your client finish the extension that match a specified value.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extension</code></td>
+<td>string</td>
+<td>The name of the extension to finish</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, &quot;See you later&quot;. Then, the FinishExtension directive message returns &quot;freetalking&quot; in the <code>extension</code> field.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;FinishExtension&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;80855309-77b8-403f-bec5-b50f565d24a2&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;3db18cee-caac-4101-891f-b5f5c2e7fa9c&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;extension&quot;</span>: <span class="hljs-string">&quot;freetalking&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#StartExtension"><code>Clova.StartExtension</code></a></li>
+</ul>
+<h2 id="GetMemo">GetMemo directive </h2>
+<p>Instructs your client to look up memos. To look up memos, have your client call a local app or provide an interface for the task.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;GetMemo&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;73b838e6-133d-4819-a6d2-39f1920d860c&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;aa2b33da-0f7a-4138-b0e1-bfa4bca8f1f8&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddMemo"><code>Clova.AddMemo</code></a></li>
+<li><a href="#DeleteMemo"><code>Clova.DeleteMemo</code></a></li>
+<li><a href="#GetMemo"><code>Clova.GetMemo</code></a></li>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="Memo.html#Get"><code>Memo.Get</code></a></li>
+</ul>
+<h2 id="GetReminder">GetReminder directive </h2>
+<p>Instructs your client to look up reminders. To look up reminders, have your client call a local app or provide an interface for the task.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;GetReminder&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;13b501b0-2da8-4634-b36e-3126d2855c2f&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;c406adb7-c4da-4c7f-89eb-d4596e011bfb&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddReminder"><code>Clova.AddReminder</code></a></li>
+<li><a href="#DeleteReminder"><code>Clova.DeleteReminder</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="Reminder.html#Get"><code>Reminder.Get</code></a></li>
+</ul>
+<h2 id="GetSchedule">GetSchedule directive </h2>
+<p>Instructs your client to look up schedules. It also returns the lookup conditions recognized from user&apos;s speech input. To look up schedules, have your client call a local app or provide an interface for the task.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period</code></td>
+<td>string</td>
+<td>The smallest unit of period recognized from user&apos;s speech input. The end time of the lookup period is set to the value of <code>scheduledTime</code> added by <code>period</code>. <ul><li><code>&quot;none&quot;</code>: No period</li><li><code>&quot;year&quot;</code>: 1 year</li><li><code>&quot;month&quot;</code>: 1 month</li><li><code>&quot;week&quot;</code>: 1 week</li><li><code>&quot;day&quot;</code>: 1 day</li><li><code>&quot;hour&quot;</code>: 1 hour</li><li><code>&quot;minute&quot;</code>: 1 minute</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>scheduledTime</code></td>
+<td>string</td>
+<td>The start time of the lookup period (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received <code>&quot;year&quot;</code> for <code>period</code>, you must handle it as an exception. If the period is undetermined, as in &quot;Look up my schedule&quot;, <code>period</code> is set to<code>&quot;none&quot;</code> and <code>scheduledTime</code> is set to a current time.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;GetSchedule&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;7c2acf9a-6e5b-4012-9221-9162992aa0a6&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;bfd2b60f-4369-445e-b30b-ac0ebd2ef66d&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;scheduledTime&quot;</span>: <span class="hljs-string">&quot;2017-05-24T15:00:00Z&quot;</span>,
+      <span class="hljs-string">&quot;period&quot;</span>: <span class="hljs-string">&quot;day&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddSchedule"><code>Clova.AddSchedule</code></a></li>
+<li><a href="#CountSchedule"><code>Clova.CountSchedule</code></a></li>
+<li><a href="#DeleteSchedule"><code>Clova.DeleteSchedule</code></a></li>
+</ul>
+<h2 id="Hello">Hello directive </h2>
+<p>Notifies your client that a downchannel connection has been established. This directive message lets you confirm that the <a href="../../Guides/Interact_with_CIC.html#CreateConnection">connection attempt</a> has succeeded for the Clova service.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>None.</p>
+<h3 id="remarks">Remarks</h3>
+<p>This directive message does not have a dialog ID(<code>dialogRequestId</code>).</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;directive&quot;</span>: {
+        <span class="hljs-string">&quot;header&quot;</span>: {
+            <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;2ca2ec70-c39d-4741-8a34-8aedd3b24760&quot;</span>,
+            <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Hello&quot;</span>
+        },
+        <span class="hljs-string">&quot;payload&quot;</span>: {}
+    }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">Connecting with CIC</a></li>
+</ul>
+<h2 id="RenderMemoList">RenderMemoList directive </h2>
+<p>Instructs your client to display a list of memos. It also returns a list of memos obtained by recognizing user&apos;s speech input.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>memo[]</code></td>
+<td>object array</td>
+<td>An object array containing a list of memos</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>memo[].content</code></td>
+<td>string</td>
+<td>Content of the memo to display</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>memo[].id</code></td>
+<td>string</td>
+<td>The ID of the memo to display</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>memo[].timestamp</code></td>
+<td>string</td>
+<td>The time when the memo was created (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;RenderMemoList&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;18e242fb-fca3-4e42-b226-bc0130e94698&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;c8736000-b929-4000-aba3-6fbf008c81a8&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;memo&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;105ab3125-bb08-4b36-980a-47fb46c25fc&quot;</span>,
+          <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xD64D;&#xAE38;&#xB3D9; &#xD0A4;&#xB294; 175cm&quot;</span>,
+          <span class="hljs-string">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2017-05-22T11:13:49Z&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;b3637783-2357-4a78-906b-ba765b125eeb&quot;</span>,
+          <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xC640;&#xC774;&#xD30C;&#xC774; &#xBE44;&#xBC00;&#xBC88;&#xD638; 1234&quot;</span>,
+          <span class="hljs-string">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2017-05-22T11:12:12Z&quot;</span>
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddMemo"><code>Clova.AddMemo</code></a></li>
+<li><a href="#DeleteMemo"><code>Clova.DeleteMemo</code></a></li>
+<li><a href="#GetMemo"><code>Clova.GetMemo</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="#RenderTemplate"><code>Clova.RenderTemplate</code></a></li>
+<li><a href="#RenderText"><code>Clova.RenderText</code></a></li>
+<li><a href="Memo.html#Get"><code>Memo.Get</code></a></li>
+</ul>
+<h2 id="RenderReminderList">RenderReminderList directive </h2>
+<p>Instructs your client to display a list of reminders. It also returns a list of reminders obtained by recognizing user&apos;s speech input.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reminder[]</code></td>
+<td>object array</td>
+<td>An object array containing a list of reminders</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>reminder[].content</code></td>
+<td>string</td>
+<td>Content of the reminder to display</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>reminder[].done</code></td>
+<td>boolean</td>
+<td>Whether the reminder was completed or not</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>reminder[].id</code></td>
+<td>string</td>
+<td>The ID of the reminder to display</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;RenderReminderList&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;0a44ccbb-7a62-4599-ab73-a07fcdef2f51&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;8d6556b1-31a7-4a7d-a00b-097be11906a4&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;reminder&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;100ab3901-bb08-4b36-980a-47fb46c25fc&quot;</span>,
+          <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xBE44;&#xD0C0;&#xBBFC; &#xBA39;&#xAE30;&quot;</span>,
+          <span class="hljs-string">&quot;done&quot;</span>: <span class="hljs-literal">false</span>
+        },
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;266008ed-2ec2-45f1-bdad-5c8ece8fff50&quot;</span>,
+          <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;&#xACC4;&#xC88C;&#xC774;&#xCCB4;&#xD558;&#xAE30;&quot;</span>,
+          <span class="hljs-string">&quot;done&quot;</span>: <span class="hljs-literal">false</span>
+        }
+      ]
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#AddReminder"><code>Clova.AddReminder</code></a></li>
+<li><a href="#DeleteReminder"><code>Clova.DeleteReminder</code></a></li>
+<li><a href="#GetReminder"><code>Clova.GetReminder</code></a></li>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="#RenderTemplate"><code>Clova.RenderTemplate</code></a></li>
+<li><a href="#RenderText"><code>Clova.RenderText</code></a></li>
+<li><a href="Reminder.html#Get"><code>Reminder.Get</code></a></li>
+</ul>
+<h2 id="RenderTemplate">RenderTemplate directive </h2>
+<p>Instructs your client to display data using a content template. It also returns the content obtained by recognizing user&apos;s speech input.</p>
+<h3 id="payload-field">Payload field</h3>
+<p>The format of the <code>payload</code> field can change depending which type of <a href="../Content_Templates.html">content template</a> is used. Available content templates are as follows.</p>
+<ul>
+<li><p>Templates for content UI types</p>
+<ul>
+<li><a href="../ContentTemplates/CardList.html">CardList</a></li>
+<li><a href="../ContentTemplates/ImageList.html">ImageList</a></li>
+<li><a href="../ContentTemplates/ImageText.html">ImageText</a></li>
+<li><a href="../ContentTemplates/Text.html">Text</a></li>
+</ul>
+</li>
+<li><p>Templates for route directions</p>
+<ul>
+<li><a href="../ContentTemplates/CarRoute.html">CarRoute</a></li>
+<li><a href="../ContentTemplates/TransportationRoute.html">TransportationRoute</a></li>
+</ul>
+</li>
+<li><p>Templates for weather forecast</p>
+<ul>
+<li><a href="../ContentTemplates/Humidity.html">Humidity</a></li>
+<li><a href="../ContentTemplates/TodayWeather.html">TodayWeather</a></li>
+<li><a href="../ContentTemplates/TomorrowWeather.html">TomorrowWeather</a></li>
+<li><a href="../ContentTemplates/WeeklyWeather.html">WeeklyWeather</a></li>
+<li><a href="../ContentTemplates/WindSpeed.html">WindSpeed</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;RenderTemplate&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;c7b9882e-d3bf-45b6-b6f4-2fc47d04e60e&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;ca10e609-1d24-4418-bc2a-21b70c5ea1a7&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        {{TemplateFormat}}
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="#RenderText"><code>Clova.RenderText</code></a></li>
+<li><a href="../Content_Templates.html">Content template</a></li>
+</ul>
+<h2 id="RenderText">RenderText directive </h2>
+<p>Instructs your client to display text messages. It also returns text to display to a user.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>string</td>
+<td>Text to display to a user</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;RenderText&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6f9d8b54-21dc-4811-8e14-b9b60717cbd4&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;5690395e-8c0d-4123-9d3f-937eaa9285dd&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;text&quot;</span>: <span class="hljs-string">&quot;&#xC2E0;&#xB098;&#xB294; &#xB178;&#xB798; &#xB4E4;&#xB824;&#xB4DC;&#xB9B4;&#xAC8C;&#xC694;.&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#RenderMemoList"><code>Clova.RenderMemoList</code></a></li>
+<li><a href="#RenderReminderList"><code>Clova.RenderReminderList</code></a></li>
+<li><a href="#RenderTemplate"><code>Clova.RenderTemplate</code></a></li>
+</ul>
+<h2 id="StartExtension">StartExtension directive </h2>
+<p>Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that matches to a specified value.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extension</code></td>
+<td>string</td>
+<td>The name of the extension to start</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as &quot;Start a conversation in English&quot;. Then, the <code>StartExtension</code> directive message returns <code>&quot;freetalking&quot;</code> in the <code>extension</code> field.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;Clova&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;StartExtension&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;103b8847-9109-42a5-8d3f-fc370a243d6f&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;8b509a36-9081-4783-b1cd-58d406205956&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+      <span class="hljs-string">&quot;extension&quot;</span>: <span class="hljs-string">&quot;freetalking&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#FinishExtension"><code>Clova.FinishExtension</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="AudioPlayer.html" class="navigation navigation-prev " aria-label="Previous page: AudioPlayer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="DeviceControl.html" class="navigation navigation-next " aria-label="Next page: DeviceControl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Clova","level":"2.6.3","depth":2,"next":{"title":"DeviceControl","level":"2.6.4","depth":2,"path":"CIC/References/APIs/DeviceControl.md","ref":"CIC/References/APIs/DeviceControl.md","articles":[]},"previous":{"title":"AudioPlayer","level":"2.6.2","depth":2,"path":"CIC/References/APIs/AudioPlayer.md","ref":"CIC/References/APIs/AudioPlayer.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"LINE Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v1.0","CICBaseURL":"https://clova-cic.line-apps.com/","ClassifiedInfo":"Confidential","OrientedService":"LINE","AuthServerBaseURL":"https://clova-authgw.line-apps.com","TargetServiceForClientAuth":"LINE","Locale":"en-JP","DocOwner":"LINE","LoginAPIofTargetService":"https://developers.line.me/line-login/overview"},"title":"Clova Developer Guide","language":"en","gitbook":"*","description":"This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.","direction":"ltr"},"file":{"path":"CIC/References/APIs/Clova.md","mtime":"2017-08-28T08:00:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-28T09:48:13.790Z"},"basePath":"../../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
