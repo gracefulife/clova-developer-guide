@@ -33,10 +33,10 @@ GET|POST /authorize
 
 ### Request Example
 
-<pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJAS123scjaf123klv'
+<pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
        {{ book.AuthServerBaseURL }}authorize \
-       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
-       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model' \
        --data-urlencode 'response_type=code' \
        --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
@@ -68,7 +68,7 @@ GET|POST /authorize
 ```json
 {
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
-    "state": "95/KjaJfMlakjdfTVbES5ccZQ=="
+    "state": "FKjaJfMlakjdfTVbES5ccZ"
 }
 ```
 {% endraw %}
@@ -107,9 +107,10 @@ GET|POST /token?grant_type=authorization_code
 ### Request Example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
-       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model'
 </code></pre>
 
@@ -181,7 +182,7 @@ GET|POST /token?grant_type=refresh_token
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'refresh_token=GW-Ipsdfasdfdfs3IbHFBA' \
-       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model'
 </code></pre>
 
@@ -250,9 +251,9 @@ GET|POST /token?grant_type=delete
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=delete \
        --data-urlencode 'access_token=xFcH08vYQcahQWouqIzWOw' \
-       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
-       --data-urlencode 'device_id=test_device' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model'
 </code></pre>
 
