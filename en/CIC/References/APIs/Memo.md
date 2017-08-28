@@ -1,8 +1,8 @@
 # Memo
 
-Creates, looks up or deletes user's memos. The Memo API provides the following event and directive messages.
+Creates, looks up, deletes user's memos. The Memo API provides the following event and directive messages.
 
-| Message name  | Message type  | Message description  |
+| Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
 | [`Created`](#Created) | Event  | Requests CIC to create a specified memo. |
 | [`Deleted`](#Deleted) | Event  | Requests CIC to delete a specified memo. |
@@ -16,19 +16,19 @@ Requests CIC to create a specified memo. Send this event message in the followin
 2. The Clova platform recognizes the memo creation request and CIC returns it to your client, using a [`Clova.AddMemo`](/CIC/References/APIs/Clova.md#AddMemo) directive message.
 3. Your client displays the memo creation request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-   * **When the user accepts memo creation,** you send a `Memo.Created` event message to CIC.
-   * **When the user rejects memo creation,** you do not have to send any event message.
+   * **When the user accepts the memo creation,** you send a `Memo.Created` event message to CIC.
+   * **When the user rejects the memo creation,** you do not have to send any event message.
 
 ### Context field
 
-None
+There is no required state information
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `content`  | string  | Content of the memo to add  | Yes  |
-| `id`  | string  | The ID of the memo to add  | Yes  |
+| `content`       | string  | Content of the memo to add              | Yes     |
+| `id`            | string  | The ID of the memo to add               | Yes     |
 
 ### Remarks
 * Depending on your UX design (usability), you may skip the scenario step 3, 4 and directly proceed to the step of sending the event message to CIC.
@@ -71,18 +71,18 @@ Requests CIC to delete a specified memo. Send this event message in the followin
 2. The Clova platform recognizes the memo deletion request and CIC returns it to your client, using a [`Clova.DeleteMemo`](/CIC/References/APIs/Clova.md#DeleteMemo) directive message.
 3. Your client displays the memo deletion request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-  * **When the user accepts memo deletion,** you send a `Memo.Deleted` event message to CIC.
-  * **When the user rejects the memo deletion,** you do not have to send any event message.
+   * **When the user accepts the memo deletion,** you send a `Memo.Deleted` event message to CIC.
+   * **When the user rejects the memo deletion,** you do not have to send any event message.
 
 ### Context field
 
-None
+There is no required state information
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `id`  | string  | The ID of the memo to delete  | Yes  |
+| `id`            | string  | The ID of the memo to delete               | Yes     |
 
 ### Remarks
 * Depending on your UX design (usability), you may skip the scenario step 3, 4 and directly proceed to the step of sending the event message to CIC.
@@ -127,12 +127,12 @@ Requests CIC for information of all memos. Send this event message in the follow
 2. The Clova platform recognizes the memo lookup request and CIC returns it to your client, using a [`Clova.GetMemo`](/CIC/References/APIs/Clova.md#GetMemo) directive message.
 3. Your client displays the memo lookup request to confirm the intent of the user.
 4. Your client receives final confirmation from the user.
-   * **When the user accepts memo lookup,** you send a `Memo.Get` event message to CIC.
-   * **When the user rejects memo lookup,** you do not have to send any event message.
+   * **When the user accepts the memo lookup,** you send a `Memo.Get` event message to CIC.
+   * **When the user rejects the memo lookup,** you do not have to send any event message.
 
 ### Context field
 
-None
+There is no required state information
 
 ### Payload field
 
@@ -143,7 +143,7 @@ None
 
 * You must return execution results when sending this event message to CIC. For example, display messages such as "Looking up memos" or "Canceled memo lookup."
 
-* After you send the `Memo.Get` event message to CIC, the user's list of memos are returned through a [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) directive message.
+* After you send the `Memo.Get` event message to CIC, the user's list of memos are returned by a [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) directive message.
 
 ### Message example
 
@@ -177,20 +177,20 @@ Requests CIC to update a specified memo.
 
 ### Context field
 
-None
+There is no required state information
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| content  | string  | Content of the memo to update  | Yes  |
-| id  | string  | The ID of the memo to update  | Yes  |
+| content       | string  | Content of the memo to update                | Yes     |
+| id            | string  | ID of the memo to update               | Yes     |
 
 ### Remarks
 
-* To update a memo, the user must make changes to the memo on a UI screen, not with speech input. This means that the request does not require a preceding scenario, such as [memo creation](#Created) or [memo deletion](#Deleted).
+* To update a memo, users must make changes to the memo on a UI screen, not with speech input. This means that the request does not require a preceding scenario, such as [memo creation](#Created) or [memo deletion](#Deleted).
 
-* A `Memo.Updated` event message changes the entire `payload`. This means that, if the message has any field left empty, such field will be replaced with an empty value. Make sure not to send only thos fields to update.
+* A `Memo.Updated` event message changes the entire `payload`. This means that, if the message has any field left empty, such field will be replaced with an empty value. Make sure not to send only those fields to update.
 
 * You can check field values for each memo when a [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) directive message is returned in response to the [`Memo.Get`](#Get) event message.
 

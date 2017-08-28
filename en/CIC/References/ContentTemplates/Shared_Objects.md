@@ -1,34 +1,34 @@
 # Shared Objects
 Content templates use the following shared objects.
 
-| Object name  | Object description  |
+| Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [CurrencyObject](#CurrencyObject)  | An object containing currency and amount data  |
-| [DateObject](#DateObject)  | An object containing weather data  |
-| [DateTimeObject](#DateTimeObject)  | An object containing date and time  |
-| [LocationObject](#LocationObject)  | An object containing coordinates (UTMK) of a map  |
-| [NumberObject](#NumberObject)  | An object containing a number, separated by thousands |
-| [PercentageObject](#PercentageObject)  | An object containing percentage data  |
-| [PhoneNumberObject](#PhoneNumberObject)  | An object containing phone number  |
-| [StringObject](#StringObject)  | An object containing text  |
-| [TemperatureCObject](#TemperatureCObject) | An object containing temperature data (Celsius)  |
-| [TemperatureFObject](#TemperatureFObject) | An object containing temperature data (Fahrenheit)  |
-| [URLObject](#URLObject)  | An object containing a URL  |
+| [CurrencyObject](#CurrencyObject)         | An object containing currency and amount                   |
+| [DateObject](#DateObject)                 | An object containing date                         |
+| [DateTimeObject](#DateTimeObject)         | An object containing date and time                    |
+| [LocationObject](#LocationObject)         | An object containing coordinates (UTMK) of a map           |
+| [NumberObject](#NumberObject)             | An object containing a number, separated by thousands |
+| [PercentageObject](#PercentageObject)     | An object containing a percentage                        |
+| [PhoneNumberObject](#PhoneNumberObject)   | An object containing a phone number                     |
+| [StringObject](#StringObject)             | An object containing text                        |
+| [TemperatureCObject](#TemperatureCObject) | An object containing a temperature (Celsius)                    |
+| [TemperatureFObject](#TemperatureFObject) | An object containing a temperature (Fahrenheit)                    |
+| [URLObject](#URLObject)                   | An object containing a URL                         |
 
 # CurrencyObject {#CurrencyObject}
-An object that contains currency and amount data.
+An object that contains currency and amount.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"currency"**.  | Yes  |
-| `value`  | string  | Data in combination of currency and amount  | Yes  |
+| `type`          | string  | The value is always `"currency"`.  | Yes     |
+| `value`         | string  | Data in combination of currency and amount             | Yes     |
 
 ### Object Example
 {% raw %}
 ```json
 {
-    "type": "date",
+    "type": "currency",
     "value": "KRW500000"
 }
 ```
@@ -38,10 +38,10 @@ An object that contains currency and amount data.
 An object that contains a date.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"date"**.  | Yes  |
-| `value`  | string  | A date (YYYY-MM-DD format)  | Yes  |
+| `type`          | string  | The value is always `"date"`.  | Yes     |
+| `value`         | string  | A date (YYYY-MM-DD format)     | Yes     |
 
 ### Object Example
 {% raw %}
@@ -57,10 +57,10 @@ An object that contains a date.
 An object that contains date and time.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"datetime"**.  | Yes  |
-| `value`  | string  | Date and time (YYYY-MM-DDThh:mm:ssZ format) | Yes  |
+| `type`          | string  | The value is always `"datetime"`.   | Yes     |
+| `value`         | string  | Date and time (YYYY-MM-DDThh:mm:ssZ format) | Yes     |
 
 ### Object Example
 {% raw %}
@@ -76,10 +76,10 @@ An object that contains date and time.
 An object that contains map coordinates.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"location"**.  | Yes  |
-| `value`  | string  | Map coordinates ({{book.OrientedService}} UTMK). The value is a pair of latitude and longitude.  | Yes  |
+| `type`          | string  | The value is always `"location"`.                  | Yes     |
+| `value`         | string  | Map coordinates ({{book.OrientedService}} UTMK). The value is a pair of latitude and longitude.  | Yes     |
 
 ### Object Example
 {% raw %}
@@ -95,10 +95,10 @@ An object that contains map coordinates.
 An object that contains a number separated by thousands.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"number"**.  | Yes  |
-| `value`  | string  | A number separated by thousands | Yes  |
+| `type`          | string  | The value is always `"number"`.    | Yes     |
+| `value`         | string  | A number separated by thousands | Yes     |
 
 ### Object Example
 {% raw %}
@@ -111,13 +111,13 @@ An object that contains a number separated by thousands.
 {% endraw %}
 
 ## PercentageObject {#PercentageObject}
-An object that contains percentage data.
+An object that contains a percentage.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"percentage"**. | Yes  |
-| `value`  | number  | Percentage data  | Yes  |
+| `type`          | string  | The value is always `"percentage"`. | Yes     |
+| `value`         | number  | A percentage                         | Yes     |
 
 ### Object Example
 {% raw %}
@@ -133,10 +133,10 @@ An object that contains percentage data.
 An object that contains a phone number.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"phoneNum"**. | Yes  |
-| `value`  | string  | A phone number  | Yes  |
+| `type`          | string  | The value is always `"phoneNum"`. | Yes     |
+| `value`         | string  | A phone number                    | Yes     |
 
 ### Object Example
 {% raw %}
@@ -152,10 +152,10 @@ An object that contains a phone number.
 An object that contains text.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"string"**.  | Yes  |
-| `value`  | string  | Text  | Yes  |
+| `type`          | string  | The value is always `"string"`.  | Yes     |
+| `value`         | string  | Text                      | Yes     |
 
 ### Object Example
 {% raw %}
@@ -175,13 +175,13 @@ An object that contains text.
 {% endraw %}
 
 ## TemperatureCObject {#TemperatureCObject}
-An object that contains temperature data in Celsius.
+An object that contains a temperature in Celsius.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"temperature-c"**.  | Yes  |
-| `value`  | number  | Temperature data in Celsius  | Yes  |
+| `type`          | string  | The value is always `"temperature-c"`.   | Yes     |
+| `value`         | number  | A temperature in Celsius                      | Yes     |
 
 ### Object Example
 {% raw %}
@@ -194,13 +194,13 @@ An object that contains temperature data in Celsius.
 {% endraw %}
 
 ## TemperatureFObject {#TemperatureFObject}
-An object that contains temperature data in Fahrenheit.
+An object that contains a temperature in Fahrenheit.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"temperature-f"**.  | Yes  |
-| `value`  | number  | Temperature data in Fahrenheit  | Yes  |
+| `type`          | string  | The value is always `"temperature-f"`.   | Yes     |
+| `value`         | number  | A temperature in Fahrenheit                      | Yes     |
 
 ### Object Example
 {% raw %}
@@ -216,10 +216,10 @@ An object that contains temperature data in Fahrenheit.
 An object that contains a URL.
 
 ### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | The value is always **"url"**.  | Yes  |
-| `value`  | string  | A URL  | Yes  |
+| `type`          | string  | The value is always `"url"`.   | Yes     |
+| `value`         | string  | A URL                        | Yes     |
 
 ### Object Example
 {% raw %}

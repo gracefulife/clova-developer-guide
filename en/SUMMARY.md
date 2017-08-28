@@ -4,7 +4,7 @@
 
 * [Documentation summary](/README.md)
 * [Copyright](/Copyright.md)
-* [Glossary](/Terms.md)
+* [Terms and abbreviations](/Terms.md)
 
 ## Clova Interface Connect
 
@@ -37,6 +37,7 @@
   * [Alerts](/CIC/References/APIs/Alerts.md)
   * [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
   * [Clova](/CIC/References/APIs/Clova.md)
+  * [DeviceControl](/CIC/References/APIs/DeviceControl.md)
   * [Memo](/CIC/References/APIs/Memo.md)
   * [PlaybackController](/CIC/References/APIs/PlaybackController.md)
   * [Reminder](/CIC/References/APIs/Reminder.md)
@@ -78,6 +79,7 @@
     * [Handling IntentRequest](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)
     * [Handling SessionEndedRequest](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
   * [Returning custom extension response](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
+  * [Having multi-turn dialog](/CEK/Guides/Build_Custom_Extension.md#DoMultiturnDialog)
 * [Building Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)
   * [Preparation](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
   * [Providing device discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)

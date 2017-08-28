@@ -1,66 +1,66 @@
 ## Shared objects {#SharedObjects}
 When sending messages using the Clova Home API, the following shared objects are included in a message body (payload).
 
-| Object name  | Object description  |
+| Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [ApplianceObject](#ApplianceObject)  | An object containing information of an IoT appliance  |
-| [HeatingModeObject](#HeatingModeObject) | An object containing heating mode information  |
-| [SpeedObject](#SpeedObject)  | An object containing speed information  |
-| [TemperatureObject](#TemperatureObject) | An object containing temperature information  |
-| [TVChannelObject](#TVChannelObject)  | An object containing TV channel information  |
-| [VolumeObject](#VolumeObject)  | An object containing volume information  |
+| [ApplianceObject](#ApplianceObject)     | An object containing details of an IoT appliance        |
+| [HeatingModeObject](#HeatingModeObject) | An object containing a heating mode          |
+| [SpeedObject](#SpeedObject)             | An object containing a speed              |
+| [TemperatureObject](#TemperatureObject) | An object containing a temperature          |
+| [TVChannelObject](#TVChannelObject)     | An object containing a TV channel           |
+| [VolumeObject](#VolumeObject)           | An object containing a volume          |
 
 ### ApplianceObject {#ApplianceObject}
-An object that contains information of an IoT appliance. This object is used when returning CEK a list of appliances registered to a user account or when requesting a Clova Home extension to control a specified appliance.
+An object that contains details of an IoT appliance. This object is used when returning CEK a list of appliances registered to a user account or when requesting a Clova Home extension to control a specified appliance.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `actions[]`  | string array  | A list of actions supported by the appliance. You must limit the allowed actions to those supported by the appliance. | No  |
-| `additionalApplianceDetails` | object  | A field containing additional details of the appliance provided from a manufacturer or IoT service  | No  |
-| `applianceId`  | string  | The appliance ID  | Yes  |
-| `applianceTypes[]`  | string array  | The appliance type. `applicationType` determines allowed actions you can specify in the `actions` field. For the appliances registered to the IoT service's user account, specify their type as one of the following values.<ul><li>AIRCONDITIONER: Air conditioning or heating system type</li><li>AIRPURIFIER: Air purifier type</li><li>HUMIDIFIER: Humidifier type</li><li>LIGHT: Lighting appliance type</li><li>SETTOPBOX: TV set-top box type</li><li>SMARTPLUG: Plugs that control power supply of an appliance</li><li>SWITCH: Switches that control household power sockets</li><li>THERMOSTAT: Thermostat type</li></ul>  | Yes  |
-| `friendlyName`  | string  | The appliance name specified by a user  | No  |
-| `friendlyDescription`  | string  | A description of the appliance  | No  |
-| `isReachable`  | boolean  | Whether remotely controllable or not <ul><li>true: Remotely controllable</li><li>false: Remotely uncontrollable</li></ul> | No  |
-| `manufacturerName`  | string  | The name of the appliance manufacturer  | No  |
-| `modelName`  | string  | The name of the appliance model  | No  |
-| `version`  | string  | The software version of the manufacturer  | No  |
+| `actions[]`                  | string array  | A list of actions supported by the appliance. You must limit the allowed actions to those supported by the appliance. | No    |
+| `additionalApplianceDetails` | object        | A field containing additional details of the appliance provided from the manufacturer or IoT service                                 | No    |
+| `applianceId`                | string        | The appliance ID                                                                        | Yes    |
+| `applianceTypes[]`           | string array  | The appliance type. Allowed actions you can specify in the `actions` field are determined by `applicationType`. Specify types as one of the following values for the appliances registered to the user's IoT service account.<ul><li>AIRCONDITIONER: Air conditioning or heating system type</li><li>AIRPURIFIER: Air purifier type</li><li>HUMIDIFIER: Humidifier type</li><li>LIGHT: Lighting appliance type</li><li>SETTOPBOX: TV set-top box type</li><li>SMARTPLUG: Plugs that control power supply of an appliance</li><li>SWITCH: Switches that control household power sockets</li><li>THERMOSTAT: Thermostat type</li></ul>          | Yes    |
+| `friendlyName`               | string        | The appliance name specified by the user                                                           | No    |
+| `friendlyDescription`        | string        | A description of the appliance                                                                  | No    |
+| `isReachable`                | boolean       | Whether remotely controllable or not <ul><li>true: Remotely controllable</li><li>false: Remotely uncontrollable</li></ul> | No    |
+| `manufacturerName`           | string        | The name of the appliance manufacturer                                                                  | No    |
+| `modelName`                  | string        | The name of the appliance model                                                                   | No    |
+| `version`                    | string        | The version of the manufacturer software                                                            | No    |
 
 ### Remarks
-When your Clova Home extension receives a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message, you must return a list of appliances by filling in all fields except for `additionalApplianceDetails`. Available values for the `actions` field are determined by the `applianceTypes` field. Available values are as follows for each `applianceTypes` value.
+When your Clova Home extension receives a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message, you must return a list of appliances by filling in all fields except for `additionalApplianceDetails`. Allowed `actions` are determined by `applianceTypes`. Available values are as follows for each `applianceTypes`.
 
-| applianceTypes | Allowed actions  |
+| applianceTypes | Allowed actions                                |
 |----------------|-----------------------------------------------|
-| **AIRCONDITIONER** | <ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **AIRPURIFIER**  | <ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul>  |
-| **HUMIDFIER**  | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **LIGHT**  | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SETTOPBOX**  | <ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SMARTPLUG**  | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **SWITCH**  | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
-| **THERMOSTAT**  | <ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `AIRCONDITIONER` | <ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `AIRPURIFIER`    | <ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul>                   |
+| `HUMIDFIER`      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `LIGHT`          | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SETTOPBOX`      | <ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SMARTPLUG`      | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `SWITCH`         | <ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul> |
+| `THERMOSTAT`     | <ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul> |
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>If the actual appliance supports fewer features than those allowed by applianceTypes, you can limit it to use less actions. For example, if your user registered an air purifier (`AIRPURIFIER` type) that does not have a feature to adjust fan speeds, exclude IncrementFanSpeed and DecrementFanSpeed from the allowed actions when returning a DiscoverAppliancesResponse message.</p>
+<p>If an actual appliance supports fewer features than those allowed by applianceTypes, you can limit it to use less actions. For example, if your user registered an air purifier (`AIRPURIFIER` type) that does not have a feature to adjust fan speeds, exclude IncrementFanSpeed and DecrementFanSpeed from the allowed actions when returning DiscoverAppliancesResponse messages.</p>
 </div>
 
 This table lists the Clova Home APIs related to actions.
 
-| actions  | Related Clova Home API  |
+| actions                    | Related Clova Home API                      |
 |----------------------------|------------------------------------------|
-| **DecrementFanSpeed**  | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) |
-| **DecrementTargetTemperature** | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) |
-| **DecrementVolume**  | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](#DecrementVolumeRequest) |
-| **HealthCheck**  | [`HealthCheckRequest`](#HealthCheckRequest), [`HealthCheckResponse`](#HealthCheckResponse) |
-| **IncrementFanSpeed**  | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) |
-| **IncrementTargetTemperature** | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureConfirmation) |
-| **IncrementVolume**  | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](#IncrementVolumeRequest) |
-| **SetChannel**  | [`SetChannelConfirmation`](#SetChannelConfirmation), [`SetChannelRequest`](#SetChannelRequest) |
-| **SetMode**  | [`SetModeConfirmation`](#SetModeConfirmation), [`SetModeRequest`](#SetModeRequest) |
-| **TurnOff**  | [`TurnOffConfirmation`](#TurnOffConfirmation), [`TurnOffRequest`](#TurnOffRequest) |
-| **TurnOn**  | [`TurnOnConfirmation`](#TurnOnConfirmation), [`TurnOnRequest`](#TurnOnRequest) |
+| `DecrementFanSpeed`          | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) |
+| `DecrementTargetTemperature` | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) |
+| `DecrementVolume`            | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](#DecrementVolumeRequest) |
+| `HealthCheck`                | [`HealthCheckRequest`](#HealthCheckRequest), [`HealthCheckResponse`](#HealthCheckResponse) |
+| `IncrementFanSpeed`          | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) |
+| `IncrementTargetTemperature` | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureConfirmation) |
+| `IncrementVolume`            | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](#IncrementVolumeRequest) |
+| `SetChannel`                 | [`SetChannelConfirmation`](#SetChannelConfirmation), [`SetChannelRequest`](#SetChannelRequest) |
+| `SetMode`                    | [`SetModeConfirmation`](#SetModeConfirmation), [`SetModeRequest`](#SetModeRequest) |
+| `TurnOff`                    | [`TurnOffConfirmation`](#TurnOffConfirmation), [`TurnOffRequest`](#TurnOffRequest) |
+| `TurnOn`                     | [`TurnOnConfirmation`](#TurnOnConfirmation), [`TurnOnRequest`](#TurnOnRequest) |
 
 #### Object Example
 {% raw %}
@@ -134,12 +134,12 @@ This table lists the Clova Home APIs related to actions.
 * [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)
 
 ### HeatingModeObject {#HeatingModeObject}
-An object that contains heating mode information. It displays the name of the heating mode to change to or the heating mode before and after change. It is expressed as strings.
+An object that contains a heating mode. It displays the name of the heating mode to change to or the heating mode before and after change. It is expressed as a string.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`  | string  | A heating mode. <ul><li><strong>"hotwater"</strong>: Hot water mode</li><li><strong>"away"</strong>: Absence mode</li></ul>  | Yes  |
+| `value`       | string  | A heating mode. <ul><li><code>"hotwater"</code>: Hot water mode</li><li><code>"away"</code>: Absence mode</li></ul>   | Yes     |
 
 #### Object Example
 {% raw %}
@@ -185,12 +185,12 @@ An object that contains heating mode information. It displays the name of the he
 * [`SetModeRequest`](#SetModeRequest)
 
 ### SpeedObject {#SpeedObject}
-An object that contains speed information. It displays an expected change in the value of a speed or a target speed before and after change. It is is expressed as integers.
+An object that contains a speed. It displays an expected change in the value of a speed or a target speed before and after change. It is expressed as an integer.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`  | number  | Speed value  | Yes  |
+| `value`       | number  | A speed value                       | Yes     |
 
 #### Object Example
 {% raw %}
@@ -243,12 +243,12 @@ An object that contains speed information. It displays an expected change in the
 * [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)
 
 ### TemperatureObject {#TemperatureObject}
-An object that contains temperature information. It displays an expected change in the value of a temperature or a target temperature before and after change. It is expressed to one decimal point.
+An object that contains a temperature. It displays an expected change in the value of a temperature or a target temperature before and after change. It is expressed to one decimal point.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`  | number  | Temperature value  | Yes  |
+| `value`       | number  | A temperature value                       | Yes     |
 
 #### Object Example
 {% raw %}
@@ -301,12 +301,12 @@ An object that contains temperature information. It displays an expected change 
 * [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)
 
 ### TVChannelObject {#TVChannelObject}
-An object that contains TV channel information. It displays the TV channel to change to or a TV channel before and after change. It is expressed in strings.
+An object that contains a TV channel. It displays a TV channel to change to or a TV channel before and after change. It is expressed as a string.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`  | number  | TV channel number  | Yes  |
+| `value`       | number  | A TV channel number                  | Yes     |
 
 #### Object Example
 {% raw %}
@@ -352,12 +352,12 @@ An object that contains TV channel information. It displays the TV channel to ch
 * [`SetChannelRequest`](#SetChannelRequest)
 
 ### VolumeObject {#VolumeObject}
-An object that contains speaker volume information. It displays an expected change in the value of the volume or a volume before and after change. It is expressed as integers.
+An object that contains a speaker volume. It displays an expected change in the value of a volume or a volume before and after change. It is expressed as an integer.
 
 #### Object field
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`  | number  | Volume value  | Yes  |
+| `value`       | number  | A volume value                       | Yes     |
 
 #### Object Example
 {% raw %}

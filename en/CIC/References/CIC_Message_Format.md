@@ -1,5 +1,5 @@
 # CIC message
-You use event and directive messages to exchange data with CIC. In the following, we will explain the format for each message and how these messages are structured.
+Your client uses event and directive messages to exchange data with CIC. The following explains the format and configuration of each message.
 
 * [Event message](#Event)
 * [Directive message](#Directive)
@@ -35,16 +35,16 @@ Event messages are used when your client sends user's speech input or text input
 
 ### Message field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `context`  | object array | An array containing client states to send to CIC. You can include the following [context](/CIC/References/Context_Objects.md) objects in the array. Include them in event messages as necessary.<ul><li><a href="/CIC/References/Context.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback details</li><li><a href="/CIC/References/Context.html#DeviceState"><code>Device.DeviceState</code></a>: Device details</li><li><a href="/CIC/References/Context.html#FreetalkState"><code>Clova.FreetalkState</code></a>: Freetalk mode details</li><li><a href="/CIC/References/Context.html#Location"><code>Clova.Location</code></a>: Device location details</li><li><a href="/CIC/References/Context.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Pre-defined location details</li><li><a href="/CIC/References/Context.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker details</li></ul> | Yes |
-| `event`  | object  | An object containing the header and necessary data (payload) of the event message  | Yes |
-| `event.header`  | object  | The header of the event message  | Yes |
-| `event.header.dialogRequestId` | string  | The dialog ID. It is used at a CIC side to figure out which dialog is associated with which response. You must enter a value in this field when sending [`SpeechRecognizer.Regcognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages. | No |
-| `event.header.messageId`  | string  | The message ID. This is an identifier for distinguishing individual messages.  | Yes |
-| `event.header.name`  | string  | The API name of the event message  | Yes |
-| `event.header.namespace`  | string  | The API namespace of the event message | Yes |
-| `event.payload`  | object  | An object containing details of the event message. Configuration of the payload object and its field values can change depending on which [CIC API](/CIC/References/CIC_API.md) is in use. | Yes |
+| `context`                      | object array | An array containing client states to send to CIC. You can include the following [context](/CIC/References/Context_Objects.md) objects in the array. Include them in event messages as necessary.<ul><li><a href="/CIC/References/Context.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback details</li><li><a href="/CIC/References/Context.html#DeviceState"><code>Device.DeviceState</code></a>: Device details</li><li><a href="/CIC/References/Context.html#FreetalkState"><code>Clova.FreetalkState</code></a>: Freetalk mode details</li><li><a href="/CIC/References/Context.html#Location"><code>Clova.Location</code></a>: Device location details</li><li><a href="/CIC/References/Context.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Pre-defined location details</li><li><a href="/CIC/References/Context.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker details</li></ul> | Yes |
+| `event`                        | object       | An object containing the header and necessary data (payload) of the event message                                                                 | Yes |
+| `event.header`                 | object       | The header of the event message                                                                                                 | Yes |
+| `event.header.dialogRequestId` | string       | The dialog ID. It is used at a CIC side to figure out which dialog is associated with which response. You must enter a value in this field when sending [`SpeechRecognizer.Regcognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages. | No |
+| `event.header.messageId`       | string       | The message ID. This is an identifier for distinguishing individual messages.                                                                 | Yes |
+| `event.header.name`            | string       | The API name of the event message                                                                                             | Yes |
+| `event.header.namespace`       | string       | The API namespace of the event message                                                                                       | Yes |
+| `event.payload`                | object       | An object containing details of the event message. Configuration of the payload object and its field values can change depending on which [CIC API](/CIC/References/CIC_API.md) is in use. | Yes |
 
 ### Message example
 {% raw %}
@@ -104,15 +104,15 @@ Directive messages are used when CIC returns responses for event messages (clien
 
 ### Message field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `directive`  | object | An object containing the header and necessary data (`payload`) of the directive message  | Yes  |
-| `directive.header`  | object | The header of the directive message  | Yes  |
+| `directive`                        | object | An object containing the header and necessary data (`payload`) of the directive message                                                                 | Yes     |
+| `directive.header`                 | object | The header of the directive message                                                                                                 | Yes     |
 | `directive.header.dialogRequestId` | string | The dialog ID. It is used at a client side to figure out which dialog is associated with which response. A directive message may not includ this field if the directive message is not a response to a [`SpeechRecognizer.Regcognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.  | No  |
-| `directive.header.messageId`  | string | The message ID. This is an identifier for distinguishing individual messages.  | Yes  |
-| `directive.header.name`  | string | The API name of the directive message  | Yes  |
-| `directive.header.namespace`  | string | The API namespace of the directive message  | Yes  |
-| `directive.payload`  | object | An object containing details of the directive message. Configuration of the `payload` object and its field values can change depending on which [CIC API](/CIC/References/CIC_API.md) is in use. | Yes  |
+| `directive.header.messageId`       | string | The message ID. This is an identifier for distinguishing individual messages.                                                                | Yes     |
+| `directive.header.name`            | string | The API name of the directive message                                                                                             | Yes     |
+| `directive.header.namespace`       | string | The API namespace of the directive message                                                                                       | Yes     |
+| `directive.payload`                | object | An object containing details of the directive message. Configuration of the `payload` object and its field values can change depending on which [CIC API](/CIC/References/CIC_API.md) is in use. | Yes     |
 
 ### Message example
 {% raw %}
@@ -164,23 +164,23 @@ If you send event messages using incorrect methods or wrong formats, or if inter
 
 ### Message field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `header`  | object | The header of the error message  | Yes |
-| `header.messageId`  | string | The message ID. This is an identifier for distinguishing individual messages.  | Yes |
-| `header.name`  | string | The name of the error message. The value is always **"Exception"**.  | Yes |
-| `header.namespace`  | string | The namespace of the error message. The value is always **"System"**.  | Yes |
-| `payload`  | object | An object containing details of the error  | Yes |
-| `payload.code`  | string | The error code. It has the same value as the HTTP response code of the message.  | Yes |
-| `payload.description`  | string | The error message.  | Yes |
+| `header`                 | object | The header of the error message                                             | Yes |
+| `header.messageId`       | string | The message ID. This is an identifier for distinguishing individual messages.            | Yes |
+| `header.name`            | string | The name of the error message. The value is always `"Exception"`.                | Yes |
+| `header.namespace`       | string | The namespace of the error message. The value is always `"System"`.             | Yes |
+| `payload`                | object | An object containing details of the error                                | Yes |
+| `payload.code`           | string | The error code. It has the same value as the HTTP response code of the message.           | Yes |
+| `payload.description`    | string | The error message.                                                  | Yes |
 
 ### Error code reference
 
-| Error code | Description  |
+| Error code | Description                             |
 |---------|---------------------------------|
-| 400  | The user request was sent in a wrong format.  |
-| 401  | Failed to authenticate the user. Check if the access token is valid. |
-| 500  | An internal server error occurred.  |
+| 400     | The user request was sent in a wrong format.                       |
+| 401     | Failed to authenticate the user. Check if the access token is valid. |
+| 500     | An internal server error occurred.                                                      |
 
 <div class="note">
   <p><strong>Note!</strong></p>

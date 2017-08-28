@@ -20,12 +20,14 @@ Accept-Charset : utf-8
 
 
 Conversely, when your extension returns processing results back to CEK, it uses an HTTPS response. The header of an HTTPS response consists of basic entries as follows.
+
 {% raw %}
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json;charset-UTF-8
 ```
 {% endraw %}
+
 * Returns processing results in response to HTTPS requests sent from CEK.
 * The body uses a JSON format and UTF-8 encoding.
 

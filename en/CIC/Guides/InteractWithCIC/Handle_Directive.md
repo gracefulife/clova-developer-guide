@@ -1,9 +1,9 @@
 ## Handling directive message {#HandleDirective}
 CIC returns directive messages to instruct your client to perform specific actions. A directive message is either a response to an [event message](#SendEvent) or a message sent through a downchannel created at an initial connection with CIC. Responses usually take the form of [multipart message](/CIC/References/HTTP2_Message_Format.md#MultipartMessage). A JSON-format [directive message](/CIC/CIC_Message_Format.md#Directive) is returned first, followed by subsequent messages containing additional information (speech data, content details) depending on which [API](/CIC/References/CIC_API.md) is in use.
 
-| Content type  | Description  |
+| Content type            | Description                                             |
 |---------------------|-------------------------------------------------|
-| Speech data  | Speech audio to play through a device speaker  |
+| Speech data            | Speech audio to play through a device speaker                  |
 | JSON content data | <ul><li>Data to be displayed on a device screen (See <a href="/CIC/References/Content_Templates.md">Content template</a>)</li><li>Data that contains content's location (for example, music to play) and its credentials</li></ul> |
 
 Implement your client to handle directive messages in the following steps.
@@ -32,7 +32,7 @@ Implement your client to handle directive messages in the following steps.
 }
 </code></pre>
 </li>
-<li>Check whether the dialog ID(<code>dialogRequestId</code>) of the directive message matches the dialog ID stored in your client.
+<li>Check whether the <a href="CIC/CIC_Overview.html#DialogModel">dialog ID</a>(<code>dialogRequestId</code>) of the directive message matches the dialog ID stored in your client.
 <ul>
 <li><strong>If they match</strong>, perform necessary actions as specified by the API. Usually, you can pick out additional necessary information (speech data) from <a href="#ManageMessageQ">message queues</a>, <a href="/CIC/References/APIs/SpeechSynthesizer.html#Speak">using the<code>cid</code> value</a> contained in <code>payload</code> of the directive message.</li>
 <li><strong>If they do not match</strong>, disregard the directive message and related messages for additional information and remove them from the queue.</li>

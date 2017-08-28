@@ -22,12 +22,12 @@ PlaybackState is a message format that contains details of media currently playi
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `offsetInMilliseconds` | number | The last playback point (offset) of the recently played media. Unit is millisecond. You do not have to enter a value in this field if `playerActivity` is **"IDLE"**.  | No |
-| `playerActivity`  | string | Indicates a state of the player. Available values are:<ul><li><strong>"IDLE"</strong>: Player is idle</li><li><strong>"PLAYING"</strong>: Player is playing</li><li><strong>"PAUSED"</strong>: Player paused playing</li><li><strong>"STOPPED"</strong>: Player stopped playing</li></ul> | Yes |
-| `stream`  | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | An object containing details of the currently playing media. You do not have to enter a value in this field if `playerActivity` is **"IDLE"**. Enter media details (`stream` object) returned from [`AudioPlayer.Play`](/CIC/References/APIs/AudioPlayer.md#Play) or [`AudioPlayer.StreamDelivered`](/CIC/References/APIs/AudioPlayer.md#StreamDelivered) directive messages. | No |
-| `totalInMilliseconds`  | number | The total length of the recently played media. Unit is millisecond. You do not have to enter a value in this field if `playerActivity` is **"IDLE"**.  | No |
+| `offsetInMilliseconds` | number | The last playback point (offset) of the recently played media. Unit is millisecond. You do not have to enter a value in this field if `playerActivity` is set to `"IDLE"`.                                                  | No |
+| `playerActivity`       | string | Indicates a state of the player. Available values are:<ul><li><code>"IDLE"</code>: Player is idle</li><li><code>"PLAYING"</code>: Player is playing</li><li><code>"PAUSED"</code>: Player paused playing</li><li><code>"STOPPED"</code>: Player stopped playing</li></ul> | Yes |
+| `stream`               | [AudioStreamObject](/CIC/References/APIs/AudioPlayer.md#AudioStreamObject) | An object containing details of the currently playing media. You do not have to enter a value in this field if `playerActivity` is set to `"IDLE"`. Enter media details (`stream` object) returned from [`AudioPlayer.Play`](/CIC/References/APIs/AudioPlayer.md#Play) or [`AudioPlayer.StreamDelivered`](/CIC/References/APIs/AudioPlayer.md#StreamDelivered) directive message. | No |
+| `totalInMilliseconds`  | number | The total length of the recently played media. Unit is millisecond. You do not have to enter a value in this field if `playerActivity` is set to `"IDLE"`.                                                               | No |
 
 ### Message example
 #### Example 1: When playback has stopped

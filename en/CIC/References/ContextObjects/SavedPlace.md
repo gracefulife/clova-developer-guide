@@ -25,13 +25,13 @@ A message format that sends client's pre-saved location information.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `places[]`  | object array | An object array containing pre-saved location information  | Yes |
-| `places[].latitude`  | string  | Latitude  | Yes |
-| `places[].longitude`  | string  | Longitude  | Yes |
-| `places[].name`  | string  | The name of the location saved. Available values are: <ul><li><strong>"회사"</strong></li><li><strong>"집"</strong></li></ul>  | Yes |
-| `places[].refreshedAt` | string  | The time when the location was saved (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes |
+| `places[]`             | object array | An object array containing pre-saved location information                                          | Yes |
+| `places[].latitude`    | string       | Latitude                                                                          | Yes |
+| `places[].longitude`   | string       | Longitude                                                                          | Yes |
+| `places[].name`        | string       | The name of the location saved. Available values are: <ul><li><code>"회사"</code></li><li><code>"집"</code></li></ul>       | Yes |
+| `places[].refreshedAt` | string       | The time when the location was saved (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes |
 
 
 ### Message example

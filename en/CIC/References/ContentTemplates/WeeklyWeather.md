@@ -3,24 +3,24 @@ Provides weather forecasts for the week. It is used to display weekly weather on
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for an example of displaying weekly weather.</p>
+<p>See <a href="#UIExample">Screen UI example</a> on how weekly weather is displayed.</p>
 </div>
 
 ## Template field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
-| `dailyWeatherList[]`  | object array | An object array containing daily weather | Yes |
-| `dailyWeatherList[].date`  | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | An object containing the date of the day | Yes |
+| `bgClipUrl`                       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `dailyWeatherList[]`              | object array | An object array containing daily weather | Yes |
+| `dailyWeatherList[].date`         | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | An object containing the date of the day | Yes |
 | `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the highest temperature in the afternoon of the day | Yes |
 | `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather code](#WeatherCode) for hourly weather | Yes |
 | `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the image icon for displaying weather of the day | Yes |
 | `dailyWeatherList[].lowTemperature`  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the lowest temperature in the morning of the day | Yes |
-| `description`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a brief explanation that this is weekly weather forecasts  | Yes |
-| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
-| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
-| `type`  | string | A content template delimiter. The value is always **"WeeklyWeather"**. | Yes |
+| `description`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a brief explanation that this is weekly weather forecasts  | Yes |
+| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content   | No |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location | Yes |
+| `type`                      | string | A content template delimiter. The value is always `"WeeklyWeather"`. | Yes |
 
 {% include "./Shared_Weather_Code.md" %}
 
@@ -204,7 +204,8 @@ Provides weather forecasts for the week. It is used to display weekly weather on
 
 ## Screen UI example {#UIExample}
 The following example shows how the WeeklyWeather template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-WeeklyWeather.png" /></div>
+
+![WeeklyWeather](/CIC/Resources/Images/Content-Template-WeeklyWeather.png)
 
 ## See also
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)

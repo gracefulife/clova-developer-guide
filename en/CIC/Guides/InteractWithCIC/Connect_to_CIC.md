@@ -6,7 +6,7 @@ To connect your client with CIC, complete the following steps.
 * [Managing connection](#ManageConnection)
 
 ### Creating Clova access token {#CreateClovaAccessToken}
-To use Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on your client (device of app). And, to attempt to connect your client with CIC, you must obtain a Clova access token, which has been completed with authorization of its {{ book.TargetServiceForClientAuth }} account.  You use [Clova Auth API](/CIC/References/Clova_Auth_API.md) for this process.
+To use Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on your client (device or app). And, to attempt to connect your client with CIC, you must obtain a Clova access token, which has been authorized with its {{ book.TargetServiceForClientAuth }} account credentials. You use [Clova Auth API](/CIC/References/Clova_Auth_API.md) for this process.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
@@ -15,10 +15,10 @@ Below are the steps to obtain a Clova access token.
 <ol>
 <li><p>In your client app or app paired with a client device, add an interface for users to authenticate their {{ book.TargetServiceForClientAuth }} account (<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} Login SDK</a>). You must use client app or paired app because user's speech input alone cannot handle account authentication.</p>
 </li>
-<li><p>Obtain an account access token for the {{ book.TargetServiceForClientAuth }}, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
+<li><p>Obtain an an account token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
 </li>
 <li><p>Pass the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a> as parameters of the <a href="/CIC/Clova_Auth_API.html#authorize">/authorize</a> API and obtain an authorization code. Below is an example of requesting an authorization code.</p>
-<pre><code>{{ book.AuthServerBaseURL }}/authorize?client_id=7Jlaksjdflq1rOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
                                &amp;device_id=test_device
                                &amp;model_id=test_model
                                &amp;response_type=code
@@ -33,7 +33,7 @@ Below are the steps to obtain a Clova access token.
 <li><p>(If it is a paired app) Forward the authorization code to the client device.</p>
 </li>
 <li><p>Pass the authorization code and <a href="#ClientAuthInfo">client credentials</a> as parameters of the <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API and obtain a Clova access token. Below is an example of requesting a Clova access token.</p>
-<pre><code>{{ book.AuthServerBaseURL }}/token?client_id=7JWI64WVIsdfasdfrOuTpA%3D%3D
+<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
                            &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
                            &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
                            &amp;device_id=test_device
@@ -117,20 +117,37 @@ Every time you send a new request (event message), you must send a Clova access 
 
 ### Managing connection {#ManageConnection}
 
-Once a connection is established between your client and CIC, manage the connection in the following manner.
+Once a connection is established between your client and CIC, manage the connection by running the following tasks.
 
-| Task  | Description  |
-|----------|-----------------------------------|
-| Maintaining downchannel | When an existing downchannel is closed or disconnected, [create a new downchannel](#CreateConnection) immediately to prevent from failing to receive directive messages from CIC. |
-| Performing ping-pong | Send HTTP/2 PING frames to CIC in every 1 minute to confirm connectivity with CIC. When failing to receive HTTP/2 PING ACK responses from CIC, establish a new connection immediately to maintain a connection between your client and CIC. Refer to [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12) for more details on the HTTP/2 PING frame. |
+* [Maintaining downchannel](#KeepDownchannel)
+* [Performing ping-pong](#DoPingpong)
+* [Refreshing access token](#RefreshAccessToken)
+
+#### Maintaining downchannel {#KeepDownchannel}
+When an existing downchannel is closed or disconnected, [create a new downchannel](#CreateConnection) immediately to prevent from failing to receive directive messages from CIC.
+
+#### Performing ping-pong {#DoPingpong}
+
+Send HTTP/2 PING frames to CIC in every 1 minute to confirm connectivity with CIC. When failing to receive HTTP/2 PING ACK responses from CIC, establish a new connection immediately to maintain a connection between your client and CIC. Refer to [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12) for more details on the HTTP/2 PING frame.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>If your client cannot send HTTP/2 PING frames, it must send <code>GET</code> requests to <code>/ping</code> every 1 minute, at which points, it will receive an HTTP 204 No Content response. As is the case with HTTP/2 PING frames, if it fails to receive responses, establish a new connection immediately.</p>
-<p>This is an example of sending a <code>GET</code> request to <code>/ping</code>.</p>
+<p>If your client cannot send HTTP/2 PING frames, it must send <code>GET</code> requests to <code>/ping</code> every 1 minute, at which points, it will receive an HTTP 204 No Content response. As is the case with HTTP/2 PING frames, if it fails to receive responses, establish a new connection immediately.</p><p>This is an example of sending a <code>GET</code> request to <code>/ping</code>.</p>
 <pre><code>:method = GET
 :scheme = https
 :path = /ping
 Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 </code></pre>
 </div>
+
+#### Refreshing access token {#RefreshAccessToken}
+
+When obtaining an access token, you can know its expiry time by checking the `expires_in` field. If the time expires, or if you receive an [error message](/CIC/References/CIC_Message_Format.md#Error) that reads, "HTTP 401 Unauthorized", you must refresh the access token. As shown below, pass the refresh token (`refresh_token`) you have received through the [`/token`](/CIC/References/Clova_Auth_API.md#token) API and other necessary parameters and obtain a new Clova access token.
+
+<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
+                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
+                           &amp;refresh_token=GW-Ipsdfasdfdfs3IbHFBA
+                           &amp;device_id=test_device
+                           &amp;grant_type=refresh_token
+                           &amp;model_id=test_model
+</code></pre>

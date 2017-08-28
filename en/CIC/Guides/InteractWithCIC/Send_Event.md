@@ -1,11 +1,6 @@
 ## Sending event message {#SendEvent}
 Clients can send [event messages](/CIC/References/Message_Format.md#Event) to CIC. You use event messages to send client requests to CIC. You can send JSON-format event messages or [multipart messages](/CIC/References/HTTP2_Message_Format.md#MultipartMessage) carrying user's speech input or text input.
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>CIC processes user requests in the order they come in. Therefore, implement your client to process a new request from the point when a response to a previous request begins to return.</p>
-</div>
-
 To send user's speech data to CIC, use a [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message. The following explains how to send event messages to CIC using `SpeechRecognizer.Recognize`.
 
 <ol>
@@ -19,8 +14,8 @@ Authorization = Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 content-type = multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
-<li>Create dialog ID (<code>dialogRequestId</code>) and message ID (messageId) in UUID format to include in the event message. You create and send uniquely identifiable dialog ID and message ID to find corresponding directive messages from <a href="#ManageMessageQ">message queues</a> later.</li>
-<li>In the first message part, write JSON-format event message and message header as described in the <a href="/CIC/References/APIs/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API and send it to CIC.
+<li><p>Create <a href="/CIC/CIC_Overview.html#DialogModel">dialog ID</a>(<code>dialogRequestId</code>) and message ID(messageId) in UUID format to include in the event message. You create and send uniquely identifiable dialog ID and message ID to find matching directive messages from <a href="#ManageMessageQ">message queues</a> later.</p></li>
+<li><p>In the first message part, write JSON-format event message and message header as described in the <a href="/CIC/References/APIs/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API and send it to CIC.</p>
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8

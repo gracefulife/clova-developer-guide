@@ -3,7 +3,7 @@ Use the [HTTP/2 protocol](https://tools.ietf.org/html/rfc7540) when interacting 
 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 
-In the following, we will explain:
+The following explains:
 * [HTTP request](#request)
   * [CIC base URL](#BaseURL)
   * [HTTP header](#Header)
@@ -33,17 +33,17 @@ Content-Type = multipart/form-data; boundary={{boundary_term}}
 ```
 {% endraw %}
 
-| Field name  | Message description  |
+| Field name          | Message description                                    |
 |------------------|---------------------------------------------|
-| :method  | CIC supports the following methods. <ul><li><code>GET</code>: Use when creating a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">downchannel</a></li><li><code>POST</code>: Use when sending an <a href="/CIC/References/CIC_Message_Format.html#Event">event message</a></li></ul> |
-| :scheme  | The CIC APIs support HTTPS communication.  |
-| :path  | Use the following paths. <ul><li><code>/v1/directives</code>: Use when creating a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">downchannel</a></li><li><code>/v1/events</code>: Use when sending an <a href="/CIC/References/CIC_Message_Format.html#Event">event message</a></li></ul> |
-| authorization  | Enter an authorization token obtained from a Clova authorization server. You must include an authorization token in all request headers.  |
+| :method        | CIC supports the following methods. <ul><li><code>GET</code>: Use when creating a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">downchannel</a></li><li><code>POST</code>: Use when sending an <a href="/CIC/References/CIC_Message_Format.html#Event">event message</a></li></ul> |
+| :scheme        | The CIC APIs support HTTPS communication.                                                                            |
+| :path          | Use the following paths. <ul><li><code>/v1/directives</code>: Use when creating a <a href="/CIC/Guides/Interact_with_CIC.html#CreateConnection">downchannel</a></li><li><code>/v1/events</code>: Use when sending an <a href="/CIC/References/CIC_Message_Format.html#Event">event message</a></li></ul> |
+| authorization  | Enter an authorization token obtained from a Clova authorization server. You must include an authorization token in all request headers.                     |
 
 ## Multipart message {#MultipartMessage}
 Usually, [event messages](/CIC/References/CIC_Message_Format.md#Event) are sent in the form of a multipart message.
 
-For example, to send user's speech input to CIC, you send a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message, and along with the message, recorded speech data of a user. Set the `Content-Type` to **multipart/form-data**. Fill in the first message block with JSON-formatted data of an event message and fill in the second message block with binary data containing user's speech.
+For example, to send user's speech input to CIC, you send a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message, and along with the message, recorded speech data of the user. Set the `Content-Type` to `multipart/form-data`. Fill in the first message block with JSON-formatted data of an event message and fill in the second message block with binary data containing user's speech audio.
 
 Also, specify a message boundary term in `boundary` to separate messages. When adding a boundary term between message blocks, put two consecutive hyphens (-) on the left of the boundary term. At the end of the last message block, add a boundary term and put two consecutive hyphens (-) on both sides of the term. Also, make the boundary term invisible in the body of each message block.
 
@@ -100,7 +100,7 @@ HTTP responses return directive messages or error messages from CIC. Usually, re
 * [`Synthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak) directive message that plays speech audio. It returns speech data additionally.
 * Along with a `Synthesizer.Speak` directive message, other directive messages containing additional information can be returned. For example, an [`AudioPlayer.Play`](/CIC/References/APIs/AudioPlayer.md#Play) directive message returns streaming details.
 
-As explained above, when responses are returned from CIC to your client, they take the form of a [multipart message](#MultipartMessage), consisting of multiple directive messages and speech data. Their structure is as follows.
+As explained above, when responses are returned from CIC to your client, they take the form of a [multipart message](#MultipartMessage), consisting of multiple directive messages and speech data. The structure is as follows.
 
 {% raw %}
 ```
@@ -132,7 +132,7 @@ Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
 [ PCM Audio Attachment ]
-{{ Binary audio attachment }}
+[[ Binary audio attachment ]]
 
 --this-is-boundary-text
 
@@ -143,7 +143,7 @@ Content-Type: application/octet-stream
 ```
 {% endraw %}
 
-**If you send a user request in an inaccurate format or if an internal server error occurs,** you will receive an [error message](/CIC/References/CIC_Message_Format.md#Error) along with a corresponding [HTTP status code](https://tools.ietf.org/html/rfc7231#section-6) (4XX or 5XX). Although a single message block is sent in this case, `Content-Type` is still set to **multipart/form-data**. The structure of an error message is as follows.
+**If you send a user request in an inaccurate format or if an internal server error occurs,** you will receive an [error message](/CIC/References/CIC_Message_Format.md#Error) along with a corresponding [HTTP status code](https://tools.ietf.org/html/rfc7231#section-6) (4XX or 5XX). In this case, only one message block is returned but its `Content-Type` is `multipart/form-data`. The structure of an error message is as follows.
 
 {% raw %}
 ```
@@ -161,7 +161,7 @@ Content-Type: application/json; charset=UTF-8
     "name": "Exception",
     "messageId": {{string}}
   },
-  "payload": {{object}
+  "payload": {{object}}
 }
 --this-is-boundary-text--
 ```
@@ -219,7 +219,7 @@ Content-Type: application/octet-stream
 ```
 </code></pre>
 
-### Response Example - When a request succeeds
+### Response Example - Request succeeded
 {% raw %}
 ```
 HTTP/2 200
@@ -278,7 +278,7 @@ Content-Type: application/json; charset=utf-8
 ```
 {% endraw %}
 
-### Response Example - When a request fails
+### Response Example - Request failed
 {% raw %}
 ```
 HTTP/2 400

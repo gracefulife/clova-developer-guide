@@ -20,11 +20,11 @@ A message format that sends client's current location information. You can obtai
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `latitude`  | string  | Latitude  | Yes |
-| `longitude`  | string  | Longitude  | Yes |
-| `refreshedAt`  | string  | The time when the location was last checked (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
+| `latitude`      | string  | Latitude                                                                                     | Yes |
+| `longitude`     | string  | Longitude                                                                                     | Yes |
+| `refreshedAt`   | string  | The time when the location was last checked (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
 
 ### Message example
 {% raw %}

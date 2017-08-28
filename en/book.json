@@ -6,7 +6,7 @@
   "author": "LINE Corp.",
   "variables": {
     "ClassifiedInfo": "Confidential",
-    "DocVersion": "v0.8",
+    "DocVersion": "v1.0",
     "Locale": "en-JP",
     "DocOwner": "LINE",
     "OrientedService": "LINE",

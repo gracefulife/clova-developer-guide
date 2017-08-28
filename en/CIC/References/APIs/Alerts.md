@@ -2,20 +2,20 @@
 
 Creates, looks up, deletes alarms or timers. To manage alarms and timers, have your client call a local app or provide an interface for the task. The Alerts API provides the following event and directive messages.
 
-| Message name  | Message type  | Message description  |
+| Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
 | [`DeleteAlert`](#DeleteAlert) | Directive | Instructs your client to delete alarms or timers. |
-| [`GetAlert`](#GetAlert)  | Directive | Instructs your client to look up alarms or timers. |
-| [`SetAlert`](#SetAlert)  | Directive | Instructs your client to set alarms or timers. |
+| [`GetAlert`](#GetAlert)       | Directive | Instructs your client to look up alarms or timers. |
+| [`SetAlert`](#SetAlert)       | Directive | Instructs your client to set alarms or timers. |
 
 ## DeleteAlert directive {#DeleteAlert}
 Instructs your client to delete alarms or timers. To delete alarms or timers, have your client call a local app or provide an interface for the task.
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul> | Yes  |
+| `type`          | string  | A type delimiter <ul><li><code>"ALARM"</code>: Alarm</li><li><code>"TIMER"</code>: Timer</li></ul> | Yes    |
 
 ### Message example
 
@@ -48,9 +48,9 @@ Instructs your client to look up alarms or timers. To look up alarms or timers, 
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul>  | Yes  |
+| `type`          | string  | A type delimiter <ul><li><code>"ALARM"</code>: Alarm</li><li><code>"TIMER"</code>: Timer</li></ul>  | Yes    |
 
 ### Message example
 
@@ -83,13 +83,13 @@ Instructs your client to set alarms or timers. To set alarms or timers, have you
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `currentTime`  | string  | Current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). Timers receive a current time from CIC.  | No  |
-| `daysOfWeek[]`  | string array | An array containing recurring days of the week. It can have values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No  |
-| `scheduledTime` | string  | The time that the alarm or timer is set for ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)  | Yes  |
-| `token`  | string  | The ID of the alarm or timer  | Yes  |
-| `type`  | string  | A type delimiter <ul><li><strong>"ALARM"</strong>: Alarm</li><li><strong>"TIMER"</strong>: Timer</li></ul>  | Yes  |
+| `currentTime`   | string       | The current time ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format). Timers receive a current time from CIC.                | No    |
+| `daysOfWeek[]`  | string array | An array containing recurring days of the week. It can have values such as "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday". | No    |
+| `scheduledTime` | string       | The time that the alarm or timer is set for ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)                                        | Yes    |
+| `token`         | string       | The ID of the alarm or timer                                                                                                      | Yes    |
+| `type`          | string       | A type delimiter <ul><li><code>"ALARM"</code>: Alarm</li><li><code>"TIMER"</code>: Timer</li></ul>                     | Yes    |
 
 ### Message example
 

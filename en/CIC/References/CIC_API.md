@@ -6,6 +6,7 @@ CIC provides the following namespaces.
 * [Alerts](/CIC/References/APIs/Alerts.md)
 * [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
 * [Clova](/CIC/References/APIs/Clova.md)
+* [DeviceControl](/CIC/References/APIs/DeviceControl.md)
 * [Memo](/CIC/References/APIs/Memo.md)
 * [PlaybackController](/CIC/References/APIs/PlaybackController.md)
 * [Reminder](/CIC/References/APIs/Reminder.md)

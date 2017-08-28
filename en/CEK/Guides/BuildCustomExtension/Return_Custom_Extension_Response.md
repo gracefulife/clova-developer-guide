@@ -28,7 +28,7 @@ The meaning of each field is as follows.
 * `version`: The message format version of the current custom extension is v0.1.0.
 * `response.outputSpeech`: Set to speak in English, "Hi, nice to meet you".
 * `response.card`: There is no data to display on a client screen. Data format follows [content templates](/CIC/References/Content_Templates.md). You can use this field to return content to display on a client screen.
-* `response.shouldEndSession`: The current session does not end and continues to receive user input. If this field is set to true, your extension can end the session before receiving a [`SessionEndedRequest`](#SessionEndedRequest) request.
+* `response.shouldEndSession`: The current session does not end and continues to receive user input. If this field is set to true, your extension can end the session before receiving a [`SessionEndedRequest`](#SessionEndedRequest).
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -68,16 +68,16 @@ As shown below, you can write a response message for speaking several sentences 
 
 Each `response.outputSpeech` field indicates the following.
 
-* *response.outputSpeech.type*: The type of the speech data in SpeechList.
-* *response.outputSpeech.values[0]*: The speech data is plain text. It is set to speak in Korean, "노래를 불러볼게요".
-* *response.outputSpeech.values[1]*: The speech data is a URL. It is set to play a file from the URL entered in the *value* field.
+* `response.outputSpeech.type`: The speech data is a complex sentence (SpeechList).
+* `response.outputSpeech.values[0]`: The speech data is plain text. It is set to speak in Korean, "노래를 불러볼게요".
+* `response.outputSpeech.values[1]`: The speech data is a URL. It is set to play a file from the URL in the `value` field.
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>In addition to simple or complex sentence format, we also support a combined format (SpeechSet) for a client device which does not have a screen or does not provide GUI for displaying detailed information. See <a href="/CEK/References/Custom_Extension_Message_Format.md#ResponseMessage">Response message</a> in "Custom extension message" for more details.</p>
 </div>
 
-To display data on a screen of client device or client app in addition to generating audio output, fill in content in the *response.card* field as follows, using an appropriate [content template](/CIC/References/Content_Templates.md).
+To display data on a screen of client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CIC/References/Content_Templates.md).
 
 {% raw %}
 ```json
@@ -198,32 +198,6 @@ To display data on a screen of client device or client app in addition to genera
     },
     "directives": [],
     "shouldEndSession": true
-  }
-}
-```
-{% endraw %}
-
-
-
-When *response.shouldEndSession* is set to **false**, your extension can try to continue conversation with the user to obtain more information. For example, if a user requested, "Order pepperoni pizza", the extension may require additional information such as how many pizzas the user wants to order. In this case, your extension can request additional information from the user by responding as follows. Then, the dialog engine in the Clova platform combines the user's original request, "Order pepperoni pizza" and required quantity of pizza additionally obtained from the user and delivers the final analysis result, "order two pepperoni pizzas".
-
-{% raw %}
-```json
-{
-  "version": "0.1.0",
-  "sessionAttributes": {},
-  "response": {
-    "outputSpeech": {
-      "type": "SimpleSpeech",
-      "values" : {
-          "type": "PlainText",
-          "lang": "ko",
-          "value": "몇 판 주문할까요?"
-      }
-    },
-    "card": {},
-    "directives": [],
-    "shouldEndSession": false
   }
 }
 ```

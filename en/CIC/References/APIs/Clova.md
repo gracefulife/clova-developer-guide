@@ -1,26 +1,26 @@
 # Clova
 
-It consists of a set of direct messages that return recognition results of client requests. When user requests are sent through [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. And CIC returns appropriate directive messages to your client based on recognition results. Your client must process these directive messages and provide Clova functions to users.
+It consists of a set of directive messages that return recognition results for client requests. When user requests are sent by [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. And CIC returns appropriate directive messages to your client based on recognition results. Then, your client processes the directive messages and provide requested Clova functions to users.
 
-| Message name  | Message type  | Message description  |
+| Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`AddMemo`](#AddMemo)  | Directive | Instructs your client to add new memos.  |
-| [`AddReminder`](#AddReminder)  | Directive | Instructs your client to add new reminders.  |
-| [`AddSchedule`](#AddSchedule)  | Directive | Instructs your client to add new schedules.  |
-| [`CountSchedule`](#CountSchedule)  | Directive | Instructs your client to count the number of schedules within a specified period. |
-| [`DeleteMemo`](#DeleteMemo)  | Directive | Instructs your client to delete memos.  |
-| [`DeleteReminder`](#DeleteReminder)  | Directive | Instructs your client to delete reminders.  |
-| [`DeleteSchedule`](#DeleteSchedule)  | Directive | Instructs your client to delete schedules.  |
-| [`FinishExtension`](#FinishExtension)  | Directive | Instructs your client to finish a specified extension.  |
-| [`GetMemo`](#GetMemo)  | Directive | Instructs your client to look up memos.  |
-| [`GetReminder`](#GetReminder)  | Directive | Instructs your client to look up reminders.  |
-| [`GetSchedule`](#GetSchedule)  | Directive | Instructs your client to look up schedules.  |
-| [`Hello`](#Hello)  | Directive | Notifies your client that a downchannel connection has been established.  |
-| [`RenderMemoList`](#RenderMemoList)  | Directive | Instructs your client to display a list of memos.  |
-| [`RenderReminderList`](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.  |
-| [`RenderTemplate`](#RenderTemplate)  | Directive | Instructs your client to display templates.  |
-| [`RenderText`](#RenderText)  | Directive | Instructs your client to display text.  |
-| [`StartExtension`](#StartExtension)  | Directive | Instructs your client to start a specified extension.  |
+| [`AddMemo`](#AddMemo)                       | Directive | Instructs your client to add new memos.                  |
+| [`AddReminder`](#AddReminder)               | Directive | Instructs your client to add new reminders.               |
+| [`AddSchedule`](#AddSchedule)               | Directive | Instructs your client to add new schedules.                  |
+| [`CountSchedule`](#CountSchedule)           | Directive | Instructs your client to count the number of schedules within a specified period. |
+| [`DeleteMemo`](#DeleteMemo)                 | Directive | Instructs your client to delete memos.                       |
+| [`DeleteReminder`](#DeleteReminder)         | Directive | Instructs your client to delete reminders.                    |
+| [`DeleteSchedule`](#DeleteSchedule)         | Directive | Instructs your client to delete schedules.                       |
+| [`FinishExtension`](#FinishExtension)       | Directive | Instructs your client to finish a specified extension.             |
+| [`GetMemo`](#GetMemo)                       | Directive | Instructs your client to look up memos.                       |
+| [`GetReminder`](#GetReminder)               | Directive | Instructs your client to look up reminders.                    |
+| [`GetSchedule`](#GetSchedule)               | Directive | Instructs your client to look up schedules.                       |
+| [`Hello`](#Hello)                           | Directive | Notifies your client that a downchannel connection has been established.       |
+| [`RenderMemoList`](#RenderMemoList)         | Directive | Instructs your client to display a list of memos.                   |
+| [`RenderReminderList`](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.                |
+| [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs your client to display templates.                     |
+| [`RenderText`](#RenderText)                 | Directive | Instructs your client to display text.                     |
+| [`StartExtension`](#StartExtension)         | Directive | Instructs your client to start a specified extension.            |
 
 
 
@@ -30,10 +30,10 @@ Instructs your client to add new memos. It also returns content of the memos rec
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `content`  | string  | Content of the memo to add  | Yes  |
-| `id`  | string  | The ID of the memo to add  | Yes  |
+| `content`       | string  | Content of the memo to add              | Yes     |
+| `id`            | string  | The ID of the memo to add               | Yes     |
 
 ### Remarks
 
@@ -74,10 +74,10 @@ Instructs your client to add new reminders. It also returns content of the remin
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `content`  | string  | Content of the reminder to add  | Yes  |
-| `id`  | string  | The ID of the reminder to add  | Yes  |
+| `content`       | string  | Content of the reminder to add           | Yes     |
+| `id`            | string  | The ID of the reminder to add            | Yes     |
 
 ### Remarks
 
@@ -118,17 +118,17 @@ Instructs your client to add new schedules. It also returns content of the sched
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `content`  | string | Content of the schedule  | No  |
-| `id`  | string | The ID of the schedule to add  | Yes  |
-| `period`  | string | The smallest unit of period recognized from user's speech input. The end time of the schedule is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
-| `scheduledTime` | string | The start time of the schedule ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `content`       | string | Content of the schedule                                                                    | No    |
+| `id`            | string | The ID of the schedule to add                                                              | Yes    |
+| `period`        | string | The smallest unit of period recognized from user's speech input. The end time of the schedule is set to the value of `scheduledTime` added by `period`. <ul><li><code>"none"</code>: No period</li><li><code>"year"</code>: 1 year</li><li><code>"month"</code>: 1 month</li><li><code>"week"</code>: 1 week</li><li><code>"day"</code>: 1 day</li><li><code>"hour"</code>: 1 hour</li><li><code>"minute"</code>: 1 minute</li></ul>          | Yes    |
+| `scheduledTime` | string | The start time of the schedule ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support adding of a yearly schedule but has received **"year"** for `period`, you must handle it as an exception. If the period is undertermined, as in "Add a schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support adding of a yearly schedule but has received `"year"` for `period`, you must handle it as an exception. If the period is undetermined, as in "Add a schedule", `period` is set to `"none"` and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -167,10 +167,10 @@ Instructs your client to count the number of schedules that match specified cond
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| period  | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>  | Yes  |
-| scheduledTime | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| period        | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li>"none": No period</li><li>"year": 1 year</li><li>"month": 1 month</li><li>"week": 1 week</li><li>"day": 1 day</li><li>"hour": 1 hour</li><li>"minute": 1 minute</li></ul>                | Yes    |
+| scheduledTime | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
 ### Remarks
 
@@ -207,7 +207,7 @@ Implement exception handling to deal with the situation of receiving a unit of p
 
 ## DeleteMemo directive {#DeleteMemo}
 
-Instructs your client to delete memos. When a `DeleteMemo` directive message is returned, have your client provide a proper interface for users so that they can delete memos.
+Instructs your client to delete memos. When a `DeleteMemo` directive message is returned, have your client provide a proper interface with which users can delete memos.
 
 ### Payload field
 
@@ -245,7 +245,7 @@ After successfully deleting memos, you must send the result to CIC, using a [`Me
 
 ## DeleteReminder directive {#DeleteReminder}
 
-Instructs your client to delete reminders. When a `DeleteReminder` directive message is returned, have your client provide a proper interface for users so that they can delete reminders.
+Instructs your client to delete reminders. When a `DeleteReminder` directive message is returned, have your client provide a proper interface with which users can delete reminders.
 
 ### Payload field
 
@@ -287,14 +287,14 @@ Instructs your client to delete schedules. It also returns the conditions recogn
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `period`  | string  | The smallest unit of period recognized from user's speech input. The end time of the deletion period is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
-| `scheduledTime` | string  | The start time of the deletion period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `period`        | string  | The smallest unit of period recognized from user's speech input. The end time of the deletion period is set to the value of `scheduledTime` added by `period`. <ul><li><code>"none"</code>: No period</li><li><code>"year"</code>: 1 year</li><li><code>"month"</code>: 1 month</li><li><code>"week"</code>: 1 week</li><li><code>"day"</code>: 1 day</li><li><code>"hour"</code>: 1 hour</li><li><code>"minute"</code>: 1 minute</li></ul>                | Yes    |
+| `scheduledTime` | string  | The start time of the deletion period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
 ### Remarks
 
-Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received **"week"** for `period`, you must handle it as an exception. If the period is undertermined, as in "Delete a schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support deleting of a weekly schedule but has received `"week"` for `period`, you must handle it as an exception. If the period is undetermined, as in "Delete a schedule", `period` is set to `"none"` and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -327,9 +327,9 @@ Instructs your client to finish a specified extension. When a FinishExtension di
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `extension`  | string  | The name of the extension to finish  | Yes  |
+| `extension`     | string  | The name of the extension to finish          | Yes     |
 
 ### Remarks
 
@@ -435,13 +435,13 @@ Instructs your client to look up schedules. It also returns the lookup condition
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `period`  | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li><strong>"none"</strong>: No period</li><li><strong>"year"</strong>: 1 year</li><li><strong>"month"</strong>: 1 month</li><li><strong>"week"</strong>: 1 week</li><li><strong>"day"</strong>: 1 day</li><li><strong>"hour"</strong>: 1 hour</li><li><strong>"minute"</strong>: 1 minute</li></ul>  | Yes  |
-| `scheduledTime` | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `period`        | string  | The smallest unit of period recognized from user's speech input. The end time of the lookup period is set to the value of `scheduledTime` added by `period`. <ul><li><code>"none"</code>: No period</li><li><code>"year"</code>: 1 year</li><li><code>"month"</code>: 1 month</li><li><code>"week"</code>: 1 week</li><li><code>"day"</code>: 1 day</li><li><code>"hour"</code>: 1 hour</li><li><code>"minute"</code>: 1 minute</li></ul>                | Yes    |
+| `scheduledTime` | string  | The start time of the lookup period ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
 ### Remarks
-Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received **"year"** for `period`, you must handle it as an exception. If the period is undetermined, as in "Look up my schedule", `period` is set to **"none"** and `scheduledTime` is set to a current time.
+Implement exception handling to deal with the situation of receiving a unit of period that is not processable by your client. For example, if your client does not support looking up of a yearly schedule but has received `"year"` for `period`, you must handle it as an exception. If the period is undetermined, as in "Look up my schedule", `period` is set to`"none"` and `scheduledTime` is set to a current time.
 
 ### Message example
 
@@ -510,12 +510,12 @@ Instructs your client to display a list of memos. It also returns a list of memo
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `memo[]`  | object array | An object array containing a list of memos  | Yes  |
-| `memo[].content`  | string  | Content of the memo to display  | Yes  |
-| `memo[].id`  | string  | The ID of the memo to display  | Yes  |
-| `memo[].timestamp` | string  | The time when the memo was created ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes  |
+| `memo[]`           | object array | An object array containing a list of memos                                         | Yes    |
+| `memo[].content`   | string  |     Content of the memo to display                                                      | Yes    |
+| `memo[].id`        | string       | The ID of the memo to display                                                       | Yes    |
+| `memo[].timestamp` | string       | The time when the memo was created ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
 ### Message example
 
@@ -565,12 +565,12 @@ Instructs your client to display a list of reminders. It also returns a list of 
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `reminder[]`  | object array | An object array containing a list of reminders | Yes  |
-| `reminder[].content` | string  | Content of the reminder to display  | Yes  |
-| `reminder[].done`  | boolean  | Whether the reminder was completed or not  | Yes  |
-| `reminder[].id`  | string  | The ID of the reminder to display  | Yes  |
+| `reminder[]`         | object array | An object array containing a list of reminders | Yes    |
+| `reminder[].content` | string       | Content of the reminder to display              | Yes    |
+| `reminder[].done`    | boolean      | Whether the reminder was completed or not           | Yes    |
+| `reminder[].id`      | string       | The ID of the reminder to display               | Yes    |
 
 ### Message example
 
@@ -672,9 +672,9 @@ Instructs your client to display text messages. It also returns text to display 
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `text`  | string  | Text to display to a user  | Yes  |
+| `text`          | string  | Text to display to a user          | Yes     |
 
 ### Message example
 
@@ -709,13 +709,13 @@ Instructs your client to start a specified extension. When a StartExtension dire
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `extension`  | string  | The name of the extension to start  | Yes  |
+| `extension`     | string  | The name of the extension to start          | Yes     |
 
 ### Remarks
 
-The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the `StartExtension` directive message returns **"freetalking"** in the `extension` field.
+The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the `StartExtension` directive message returns `"freetalking"` in the `extension` field.
 
 ### Message example
 

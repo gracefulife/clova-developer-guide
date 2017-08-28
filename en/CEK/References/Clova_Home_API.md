@@ -1,6 +1,6 @@
 # Clova Home API
 
-This API controls IoT appliances. Its message header (`header`) is set to **"ClovaHome"**. Your Clova Home extension uses this API to provide a list of controllable appliances or to control IoT appliances registered to a user. The Clova Home API is divided into following APIs.
+This API controls IoT appliances. Its message header (`header`) is set to `"ClovaHome"`. Clova Home extensions use this API to provide a list of controllable appliances or to control IoT appliances registered to a user. The Clova Home API is divided into following APIs.
 
 * [Discovery API](#DiscoveryAPI)
 * [Control API](#ControlAPI)

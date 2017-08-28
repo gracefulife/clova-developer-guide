@@ -19,10 +19,10 @@ A message format that contains client's speaker volume information at the time w
 
 ### Payload field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `muted`  | boolean | Whether the speaker is in mute  | Yes  |
-| `volume`  | number  | Current speaker volume (0-10)  | Yes  |
+| `muted`         | boolean | Whether the speaker is in mute                    | Yes     |
+| `volume`        | number  | Current speaker volume (0-10)     | Yes     |
 
 ### Message example
 {% raw %}

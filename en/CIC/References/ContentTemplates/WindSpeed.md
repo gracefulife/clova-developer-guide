@@ -3,18 +3,18 @@ Provides wind speeds. It is used to display wind speeds on a screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for an example of displaying wind speeds.</p>
+<p>See <a href="#UIExample">Screen UI example</a> on how wind speeds are displayed.</p>
 </div>
 
 ## Template field
 
-| Field name  | Type  | Field description  | Required |
+| Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `bgClipUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
-| `linkUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content  | No |
-| `location`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing location information | Yes |
-| `type`  | string | A content template delimiter. The value is always "WindSpeed". | Yes |
-| `windSpeed`  | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds | No |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content   | No |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location | Yes |
+| `type`          | string | A content template delimiter. The value is always "WindSpeed". | Yes |
+| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds | No |
 
 ## Template Example
 
@@ -40,7 +40,8 @@ Provides wind speeds. It is used to display wind speeds on a screen.
 
 ## Screen UI example {#UIExample}
 The following example shows how the WindSpeed template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
-<div class="midAlign"><img style="width: 300px !important" src="/CIC/Resources/Images/Content-Template-WindSpeed.png" /></div>
+
+![WindSpeed](/CIC/Resources/Images/Content-Template-WindSpeed.png)
 
 ## See also
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)

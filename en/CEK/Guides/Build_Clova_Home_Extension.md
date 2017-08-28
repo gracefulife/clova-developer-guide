@@ -1,10 +1,10 @@
 # Building Clova Home extension
 
-Clova Home extension lets you provide remote control capabilities for home IoT devices through a 3rd party service. Clova Home extension must provide CEK with information on which IoT devices are controllable by a user. Also, when it receives IoT device control requests from CEK, it must perform appropriate actions and return results. This picture shows how Clova Home extension works.
+Clova Home extension lets you provide remote control capabilities for home IoT devices through a 3rd party service. Clova Home extensions must provide CEK with information on which IoT devices are controllable by a user. Also, when it receives IoT device control requests from CEK, it must perform appropriate actions and return results. This picture shows how a Clova Home extension works.
 
 ![](/CEK/Resources/Images/CEK_Clova_Home_Extension_Operation_Structure.png)
 
-In the following, we will explain what preparations are required before you start building your Clova Home extension, and which messages your extension exchanges with CEK and how it performs necessary actions during the process.
+The following explains what preparations are required before you start building your Clova Home extension, and which messages your extension exchanges with CEK and how it performs necessary actions during the process.
 
 The following topics provide essential information for Clova Home extension developers.
 
