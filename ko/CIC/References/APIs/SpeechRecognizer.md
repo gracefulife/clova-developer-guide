@@ -13,7 +13,7 @@
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.      |
 | [`ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) | Event     | 음성 입력 대기 시간이 초과했음을 CIC에 보고합니다.           |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
-| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 음성으로 인식된 자연어를 실시간으로 전달합니다.   |
+| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.   |
 | [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.      |
 
 ## ExpectSpeech directive {#ExpectSpeech}
@@ -168,13 +168,13 @@ Content-Type: application/octet-stream
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
-Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지로 전달받고 있는 사용자의 음성 입력을 분석하여 인식 결과를 제공합니다. CIC는 `SpeechRecognizer.ShowRecognizedText` 지시 메시지로 자연어 인식의 중간 처리 결과를 클라이언트로 전달합니다. 클라이언트는 이를 바탕으로 처리 과정을 사용자에게 실시간으로 보여 줄 수 있습니다.
+Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지로 전달받고 있는 사용자의 음성 입력을 분석하여 인식 결과를 제공합니다. CIC는 `SpeechRecognizer.ShowRecognizedText` 지시 메시지로 사용자 음성 인식의 중간 처리 결과를 클라이언트로 전달합니다. 클라이언트는 이를 바탕으로 처리 과정을 사용자에게 실시간으로 보여 줄 수 있습니다.
 
 ### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `text`  | string | 입력된 사용자 음성이 어떤 자연어로 인식이 되고 있는지 그 결과를 실시간으로 담고 있습니다. | 필수    |
+| `text`  | string | 입력된 사용자 음성이 어떤 어떻게 인식이 되고 있는지 그 결과를 실시간으로 담고 있습니다. | 필수    |
 
 ### Remarks
 

@@ -20,3 +20,6 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
+
+* 공유 객체
+  * [공유 객체](/CIC/References/ContentTemplates/Shared_Objects.md)
