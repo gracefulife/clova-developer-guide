@@ -39,11 +39,7 @@
   * [Alerts](/CIC/References/APIs/Alerts.md)
   * [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
   * [Clova](/CIC/References/APIs/Clova.md)
-<<<<<<< HEAD
-=======
   * [DeviceControl](/CIC/References/APIs/DeviceControl.md)
-  * [Memo](/CIC/References/APIs/Memo.md)
->>>>>>> doc-KR
   * [PlaybackController](/CIC/References/APIs/PlaybackController.md)
   * [SpeechRecognizer](/CIC/References/APIs/SpeechRecognizer.md)
   * [SpeechSynthesizer](/CIC/References/APIs/SpeechSynthesizer.md)
