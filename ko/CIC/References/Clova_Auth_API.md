@@ -4,11 +4,11 @@
 ## Base URL
 Clova 인증 서버의 base URL은 다음과 같습니다.
 
-<pre><code>{{ book.AuthServerBaseURL }}
+<pre><code>https://auth.clova.ai/
 </code></pre>
 
 ## Authorization code 요청 {#RequestAuthorizationCode}
-{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
+NAVER 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
 
 ```
 GET|POST /authorize
@@ -18,8 +18,8 @@ GET|POST /authorize
 
 * Accept
   * application/json
-* Authorization - [획득한 {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)을 입력합니다.
-  * Bearer [{{ book.TargetServiceForClientAuth }} access token]
+* Authorization - [획득한 NAVER access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)을 입력합니다.
+  * Bearer [NAVER access token]
 
 ### Query parameter
 
@@ -34,7 +34,7 @@ GET|POST /authorize
 ### Request Example
 
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
-       {{ book.AuthServerBaseURL }}authorize \
+       https://auth.clova.ai/authorize \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model' \
@@ -60,7 +60,7 @@ GET|POST /authorize
 |---------------|-------------------------|
 | 200 OK           | 요청 처리 성공                      |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 403 Forbidden    | 헤더에 포함 시킨 {{ book.TargetServiceForClientAuth }} access token이 유효하지 않은 경우 |
+| 403 Forbidden    | 헤더에 포함 시킨 NAVER access token이 유효하지 않은 경우 |
 | 500 Server Internal Error | 서버 내부 오류로 인한 authorization code 발급 실패 |
 
 ### Response Example
@@ -106,7 +106,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request Example
 
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+<pre><code>$ curl https://auth.clova.ai/token?grant_type=authorization_code \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
@@ -178,7 +178,7 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request Example
 
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
+<pre><code>$ curl https://auth.clova.ai/token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'refresh_token=GW-Ipsdfasdfdfs3IbHFBA' \
@@ -249,7 +249,7 @@ GET|POST /token?grant_type=delete
 
 ### Request Example
 
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=delete \
+<pre><code>$ curl https://auth.clova.ai/token?grant_type=delete \
        --data-urlencode 'access_token=xFcH08vYQcahQWouqIzWOw' \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \

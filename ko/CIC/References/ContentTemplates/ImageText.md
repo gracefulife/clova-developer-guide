@@ -100,7 +100,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 NAVER가 배포한 모바일용 Clova 앱에서 ImageText 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 썸네일 이미지와 텍스트 | 지도 이미지와 텍스트 |
 |-------|-------|

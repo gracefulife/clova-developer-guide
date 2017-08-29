@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html lang="{{ config.language }}" {% if page.dir == "rtl" %}dir="rtl"{% endif %}>
+<html lang="ko" {% if page.dir == "rtl" %}dir="rtl"{% endif %}>
     <head>
-        <title>{{ config.title }}</title>
+        <title>Clova 개발자 가이드</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="{{ config.description }}">
+        <meta name="description" content="이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.">
         <meta name="generator" content="GitBook {{ gitbook.version }}">
-        {% if config.author %}<meta name="author" content="{{ config.author }}">{% endif %}
+        {% if config.author %}<meta name="author" content="NAVER Corp.">{% endif %}
         {% if config.isbn %}<meta name="identifier" content="{{ config.isbn }}" scheme="ISBN">{% endif %}
         {% block style %}
             {% for resource in plugins.resources.css %}

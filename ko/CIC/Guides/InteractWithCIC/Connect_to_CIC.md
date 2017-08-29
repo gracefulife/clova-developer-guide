@@ -6,20 +6,20 @@
 * [연결 관리하기](#ManageConnection)
 
 ### Clova access token 생성하기 {#CreateClovaAccessToken}
-사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
+사용자는 NAVER 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. NAVER 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
 Clova access token을 획득하는 절차는 다음과 같습니다.
 
 <ol>
-<li><p>사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기 SDK</a>). 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 클라이언트 앱이나 페어링 앱을 사용해야 합니다.</p>
+<li><p>사용자가 NAVER 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다(<a href="https://developers.naver.com/docs/login/overview/" target="_blank">NAVER 아이디로 로그인하기 SDK</a>). 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 클라이언트 앱이나 페어링 앱을 사용해야 합니다.</p>
 </li>
-<li><p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득합니다.</p>
+<li><p>사용자가 입력한 NAVER 계정 정보를 이용하여 NAVER 계정 access token을 획득합니다.</p>
 </li>
-<li><p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 다음은 authorization code를 요청한 예입니다.</p>
+<li><p>획득한 NAVER 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 다음은 authorization code를 요청한 예입니다.</p>
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
-       {{ book.AuthServerBaseURL }}authorize \
+       https://auth.clova.ai/authorize \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
        --data-urlencode 'model_id=test_model' \
@@ -35,7 +35,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 <li><p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
 </li>
 <li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+<pre><code>$ curl https://auth.clova.ai/token?grant_type=authorization_code \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
@@ -55,14 +55,14 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>{{ book.TargetServiceForClientAuth }} 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
+<p>NAVER 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
 </div>
 
 
 ### CIC 연결하기 {#CreateConnection}
 CIC는 HTTP/2 프로토콜을 사용하며, CIC에 연결할 때 사용하는 base URL은 다음과 같습니다.
 
-<pre><code>{{ book.CICBaseURL }}
+<pre><code>https://prod-ni-cic.clova.ai/
 </code></pre>
 
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
@@ -146,7 +146,7 @@ Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 
 클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)를 받은 경우 access token을 갱신해야 합니다. 아래와 같이 [Clova access token을 획득](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken)할 때 받았던 refresh token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 [Clova access token을 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)할 수 있습니다.
 
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
+<pre><code>$ curl https://auth.clova.ai/token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
        --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
        --data-urlencode 'refresh_token=GW-Ipsdfasdfdfs3IbHFBA' \

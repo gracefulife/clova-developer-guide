@@ -359,7 +359,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
+다음은 NAVER가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
 | `Type1` | `Type2` |
 |-------|-------|

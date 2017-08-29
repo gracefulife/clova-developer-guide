@@ -18,7 +18,7 @@ Clova가 제공하는 기능에 따라 네임스페이스로 분류하여 제공
 클라이언트와 [Clova Interface Connect](#CIC)와 데이터를 주고받을 때 사용되는 [이벤트 메시지](#Event)와 [지시 메시지](#Directive)를 통칭하는 용어입니다.
 
 ### Clova {#Clova}
-[Clova](http://clova.ai)는 {{ book.TargetServiceForClientAuth }}가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
+[Clova](http://clova.ai)는 NAVER가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
 
 ### Clova access token {#ClovaAccessToken}
 클라이언트가 [Clova Interface Connect](#CIC)로 [이벤트 메시지](#Event)를 보낼 때 Clova가 클라이언트를 인증하는 수단입니다. 자세한 내용은 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)를 참조합니다.

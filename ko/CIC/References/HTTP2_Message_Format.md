@@ -17,7 +17,7 @@ CIC와 연동할 때 [HTTP/2 프로토콜](https://tools.ietf.org/html/rfc7540)�
 ### CIC base URL {#BaseURL}
 Clova는 아래 URL을 base URL로 사용합니다.
 
-<pre><code>{{ book.CICBaseURL }}
+<pre><code>https://prod-ni-cic.clova.ai/
 </code></pre>
 
 ### HTTP 헤더 {#Header}
@@ -173,7 +173,7 @@ Content-Type: application/json; charset=UTF-8
 ### Request Example
 <pre><code>
 POST /v1/events HTTP/2
-Host: {{ book.CICBaseURL }}
+Host: https://prod-ni-cic.clova.ai/
 Accept: */*
 Authorization: Bearer {{clova-access-token}}
 > Content-Length: 456

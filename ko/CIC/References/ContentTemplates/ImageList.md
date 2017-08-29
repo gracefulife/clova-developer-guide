@@ -88,7 +88,7 @@
 {% endraw %}
 
 ## Screen UI example {#UIExample}
-다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
+다음은 NAVER가 배포한 모바일용 Clova 앱에서 ImageList 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 썸네일 목록 | 선택한 이미지 표시 |
 |-------|-------|
