@@ -13,8 +13,8 @@
 
 현재 이 문서의 버전은 v1.1 이며, 변경 이력은 다음과 같습니다.
 
-| 버전 | 배포 일자    | 이력 사항                         |
-|-----|-----------|---------------------------------|
+| 버전 | 배포 일자 | 이력 사항                              |
+|-----|---------|-------------------------------------|
 | v1.1  | 2017-08-28   | <ul><li>[CIC] 셋톱박스용 TV 채널 정보 스펙과 전원 상태 정보 스펙을 <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>와 <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>에 추가</li><li>[CIC] <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>에서 target으로 사용되는 값 일부 추가 및 변경 : power, energysave, screenbrightness</li><li>[CIC] <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl API</a>의 SetPoint를 <a href="/CIC/References/APIs/DeviceControl.html#SetValue">SetValue</a>로 이름 변경</li><li>[CIC] <a href="/CIC/References/Clova_Auth_API.html">Clova 인증 API</a> 내용 업데이트 - 요청/응답 헤더와 Status code 추가, REST API reference 문서 포맷 적용</li><li>[CEK] <a href="/CEK/References/Clova_Home_API.html#ValueOutOfRangeError">ValueOutOfRangeError</a>를 Clova Home API에 추가</li></ul> |
 | v1.0  | 2017-08-21   | [CIC] <a href="/CIC/Guides/Interact_with_CIC.html#ManageConnection">Access token 갱신</a>절 추가 및 <a href="CIC/References/Clova_Auth_API.html#token">/token</a> 내용 업데이트 |
 | v0.9  | 2017-08-14   | <ul><li>[CIC] <a href="/CIC/CIC_Overview.html#DialogModel">대화 모델</a> 설명 추가</li><li>[CIC] <a href="/CIC/References/APIs/DeviceControl.html">DeviceControl</a> API 추가</li><li>[CIC] <a href="/CIC/References/Context_Objects.html">Device.DeviceState</a> payload 필드 추가 : airplane, battery, bluetooth, brightness, flashLight, gps, powerSavingMode, soundMode, volume, wifi</li><li>[CEK] <a href="/CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">Multi-turn 대화 수행하기</a>절 추가 및 sessionAttributes 필드 설명 업데이트</li></ul> |
