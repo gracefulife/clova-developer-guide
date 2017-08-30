@@ -18,8 +18,7 @@ content-type = multipart/form-data; boundary=Boundary-Text
 <li><p>첫 번째 메시지 파트에 <a href="/CIC/References/APIs/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.</p>
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
-Content-Type: application/json; charset=UTF-8
-
+Content-Type: application/json; charset=UTF-8<br />
 {
   "context": [
     {
@@ -51,8 +50,7 @@ Content-Type: application/json; charset=UTF-8
 <li>두 번째 메시지 파트부터 사용자가 입력한 음성 데이터를 200ms 간격으로 끊어서 전송합니다. 데이터 형식 변경에 따라 메시지 헤더도 아래와 같이 작성합니다.
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="audio"
-Content-Type: application/octet-stream
-
+Content-Type: application/octet-stream<br />
 { PCM Audio Attachment }
 --Boundary-Text--
 </code></pre>
