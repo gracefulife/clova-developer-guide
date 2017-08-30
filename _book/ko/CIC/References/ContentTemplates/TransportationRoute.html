@@ -1,0 +1,2135 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <title>Clova 개발자 가이드</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="NAVER Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="WeeklyWeather.html" />
+    
+    
+    <link rel="prev" href="TomorrowWeather.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Copyright.html">
+            
+                <a href="../../../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Terms.html">
+            
+                <a href="../../../Terms.html">
+            
+                    
+                    용어 및 약어
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP 응답
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP 메시지 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#RequestAuthorizationCode">
+            
+                    
+                    Authorization code 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#RequestClovaAccessToken">
+            
+                    
+                    Clova access token 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#RefreshClovaAccessToken">
+            
+                    
+                    Clova access token 갱신
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#DeleteClovaAccessToken">
+            
+                    
+                    Clova access token 삭제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html">
+            
+                    
+                    CIC 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC_API.html">
+            
+                <a href="../CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../APIs/Alerts.html">
+            
+                <a href="../APIs/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../APIs/AudioPlayer.html">
+            
+                <a href="../APIs/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../APIs/Clova.html">
+            
+                <a href="../APIs/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../APIs/DeviceControl.html">
+            
+                <a href="../APIs/DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../APIs/Memo.html">
+            
+                <a href="../APIs/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../APIs/PlaybackController.html">
+            
+                <a href="../APIs/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../APIs/Reminder.html">
+            
+                <a href="../APIs/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../APIs/SpeechRecognizer.html">
+            
+                <a href="../APIs/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../APIs/SpeechSynthesizer.html">
+            
+                <a href="../APIs/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../APIs/Index_for_Events.html">
+            
+                <a href="../APIs/Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../APIs/Index_for_Directives.html">
+            
+                <a href="../APIs/Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Content_Templates.html">
+            
+                <a href="../Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="CardList.html">
+            
+                <a href="CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="CarRoute.html">
+            
+                <a href="CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="Humidity.html">
+            
+                <a href="Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="ImageList.html">
+            
+                <a href="ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="ImageText.html">
+            
+                <a href="ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="Text.html">
+            
+                <a href="Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="TodayWeather.html">
+            
+                <a href="TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="TomorrowWeather.html">
+            
+                <a href="TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.8.9" data-path="TransportationRoute.html">
+            
+                <a href="TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="WeeklyWeather.html">
+            
+                <a href="WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="WindSpeed.html">
+            
+                <a href="WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="Shared_Objects.html">
+            
+                <a href="Shared_Objects.html">
+            
+                    
+                    공유 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Multi-turn 대화 수행하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../../../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../CEK/References/HTTP_Message_Format.html">
+            
+                <a href="../../../CEK/References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../../CEK/References/Clova_Home_API.html">
+            
+                <a href="../../../CEK/References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >TransportationRoute</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="transportationroute-template">TransportationRoute Template</h1>
+<p>&#xB300;&#xC911; &#xAD50;&#xD1B5; &#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD15C;&#xD50C;&#xB9BF;&#xC785;&#xB2C8;&#xB2E4;. &#xD654;&#xBA74;&#xC5D0; &#xB300;&#xC911; &#xAD50;&#xD1B5; &#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC;&#xB97C; &#xD45C;&#xC2DC;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. TransportationRoute&#xB294; &#xB2E4;&#xC2DC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xACBD;&#xB85C; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. &#xAC01; &#xACBD;&#xB85C; &#xD0C0;&#xC785;&#xC5D0; &#xB530;&#xB77C; <code>trafficType</code> &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC131; &#xD544;&#xB4DC;&#xAC00; &#xB2EC;&#xB77C;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xAD6C;&#xAC04; &#xD0C0;&#xC785;</th>
+<th>&#xD0C0;&#xC785; &#xC124;&#xBA85;</th>
+<th><code>subPath</code> &#xAC1D;&#xCCB4; &#xAD6C;&#xC131; &#xD544;&#xB4DC;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04;(1)</td>
+<td>&#xC9C0;&#xD558;&#xCCA0;&#xB9CC; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td><code>lane</code>, <code>name</code>, <code>endID</code>, <code>endName</code>, <code>endX</code>, <code>endY</code>, <code>startID</code>, <code>startName</code>, <code>startX</code>, <code>startY</code>, <code>subwayCode</code></td>
+</tr>
+<tr>
+<td>&#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(2)</td>
+<td>&#xBC84;&#xC2A4;&#xB9CC; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td><code>busID</code>, <code>busNo</code>, <code>endID</code>, <code>endName</code>, <code>endX</code>, <code>endY</code>, <code>startID</code>, <code>startName</code>, <code>startX</code>, <code>startY</code>, <code>type</code></td>
+</tr>
+<tr>
+<td>&#xB3C4;&#xBCF4; &#xAD6C;&#xAC04;(3)</td>
+<td>&#xC9C0;&#xD558;&#xCCA0;&#xACFC; &#xBC84;&#xC2A4;&#xB97C; &#xBCF5;&#xD569; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;&#xB97C; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xD0C0;&#xC785;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td><code>distance</code>, <code>sectionTime</code></td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>&#xB300;&#xC911; &#xAD50;&#xD1B5; &#xAE38;&#xCC3E;&#xAE30; &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xB824;&#xBA74; NAVER &#xC9C0;&#xB3C4; API&#xC5D0; &#xB300;&#xD55C; &#xC774;&#xD574;&#xAC00; &#xD544;&#xC694;&#xD558;&#xBA70;, &#xD15C;&#xD50C;&#xB9BF;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB41C; &#xB370;&#xC774;&#xD130;&#xC640; NAVER &#xC9C0;&#xB3C4; API&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC;&#xB97C; &#xC9C0;&#xB3C4;&#xC5D0; &#xD45C;&#xC2DC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB124;&#xC774;&#xBC84; &#xC9C0;&#xB3C4; API&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xC124;&#xBA85;&#xC740; <a href="https://navermaps.github.io/maps.js/docs/" target="_blank">NAVER &#xC9C0;&#xB3C4; API &#xBB38;&#xC11C;</a>&#xB97C; &#xCC38;&#xACE0;&#xD569;&#xB2C8;&#xB2E4;. &#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC;&#xB97C; &#xD45C;&#xC2DC;&#xD55C; &#xC608;&#xB294; <a href="#UIExample">Screen UI example</a>&#xC744; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<h2 id="template-field">Template field</h2>
+<table>
+<thead>
+<tr>
+<th>&#xD544;&#xB4DC; &#xC774;&#xB984;</th>
+<th>&#xC790;&#xB8CC;&#xD615;</th>
+<th>&#xD544;&#xB4DC; &#xC124;&#xBA85;</th>
+<th>&#xD544;&#xC218; &#xC5EC;&#xBD80;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>appLinkUrl</code></td>
+<td><a href="Shared_Objects.html#URLObject">URLObject</a></td>
+<td>&#xC9C0;&#xB3C4; &#xC571;&#xC73C;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB294; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>boundary</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xC804;&#xCCB4; &#xBCF4;&#xAC04;&#xC810;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xB294; &#xC0AC;&#xAC01;&#xC758; &#xC601;&#xC5ED;(MBR, Minimum Bounding Rectangle)&#xC744; &quot;left,top,right,bottom&quot; &#xD615;&#xD0DC;&#xC758; &#xBB38;&#xC790;&#xC5F4;&#xB85C; &#xD45C;&#xD604;&#xD55C; &#xAC1D;&#xCCB4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>busStationCount</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xBC84;&#xC2A4;&#xB85C; &#xC774;&#xB3D9;&#xD560; &#xB54C; &#xC9C0;&#xB098;&#xC57C;&#xD558;&#xB294; &#xCD1D; &#xC815;&#xB958;&#xC7A5; &#xC218;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td><a href="Shared_Objects.html#LocationObject">LocationObject</a></td>
+<td>&#xB3C4;&#xCC29;&#xC9C0; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>endName</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xB3C4;&#xCC29;&#xC9C0; &#xC774;&#xB984; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>linkUrl</code></td>
+<td><a href="Shared_Objects.html#URLObject">URLObject</a></td>
+<td>&#xC6F9; &#xC9C0;&#xB3C4;&#xB85C; &#xC774;&#xB3D9;&#xD558;&#xB294; URL &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>lanes[]</code></td>
+<td>object array</td>
+<td>&#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC;&#xC758; &#xBAA8;&#xB4E0; &#xACBD;&#xB85C;&#xC5D0; &#xB300;&#xD55C; &#xBCF4;&#xAC04;&#xC810; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>lanes[].create</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD574;&#xB2F9; &#xAC1D;&#xCCB4;&#xC758; <code>section</code> &#xD544;&#xB4DC;&#xAC00; &#xC5B4;&#xB5A4; &#xC720;&#xD615;&#xC758; &#xC815;&#xBCF4;&#xC778;&#xC9C0; &#xD310;&#xB2E8;&#xD558;&#xB294; &#xAC1D;&#xCCB4;. <ul><li><strong>&#xC774; &#xD544;&#xB4DC;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;</strong> &#xBC84;&#xC2A4;/&#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04;&#xC744; &#xADF8;&#xB9AC;&#xB294; &#xBCF4;&#xAC04;&#xC810; &#xC815;&#xBCF4;&#xB97C; <code>section</code> &#xD544;&#xB4DC;&#xAC00; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</li><li><strong>&#xB9CC;&#xC57D;, &#xC774; &#xD544;&#xB4DC;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xACE0; <code>create.value</code> &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xBA74;,</strong> <code>section</code> &#xD544;&#xB4DC;&#xB294; &#xC5F0;&#xACB0;&#xC120;&#xC744; &#xADF8;&#xB9AC;&#xB294; &#xBCF4;&#xAC04;&#xC810; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</li></ul></td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>lanes[].section[]</code></td>
+<td><a href="Shared_Objects.html#LocationObject">LocationObject</a> array</td>
+<td>&#xBC84;&#xC2A4;/&#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04; &#xB610;&#xB294; &#xAD6C;&#xAC04; &#xC0AC;&#xC774;&#xC758; &#xC5F0;&#xACB0;&#xC120;&#xC744; &#xADF8;&#xB9AC;&#xB294; &#xBCF4;&#xAC04;&#xC810; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4; &#xBC30;&#xC5F4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>pathType</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xAE38;&#xCC3E;&#xAE30; &#xACB0;&#xACFC;&#xC758; &#xACBD;&#xB85C; &#xAD6C;&#xC131; &#xD0C0;&#xC785;&#xC744; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4;. <code>pathType.value</code> &#xD544;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. <ul><li><code>&quot;1&quot;</code> : &#xC9C0;&#xD558;&#xCCA0;&#xB9CC; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;</li><li><code>&quot;2&quot;</code> : &#xBC84;&#xC2A4;&#xB9CC; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;</li><li><code>&quot;3&quot;</code> : &#xC9C0;&#xD558;&#xCCA0;&#xACFC; &#xBC84;&#xC2A4;&#xB97C; &#xBCF5;&#xD569; &#xC774;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xB85C;</li></ul></td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td><a href="Shared_Objects.html#LocationObject">LocationObject</a></td>
+<td>&#xCD9C;&#xBC1C;&#xC9C0; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>startName</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xCD9C;&#xBC1C;&#xC9C0; &#xC774;&#xB984; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>subPath[]</code></td>
+<td>object array</td>
+<td>&#xAC01; &#xACBD;&#xB85C;&#xBCC4; &#xC138;&#xBD80; &#xAD6C;&#xAC04; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4; &#xBC30;&#xC5F4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>subPath[].distance</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC758; &#xC774;&#xB3D9; &#xAC70;&#xB9AC; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xB3C4;&#xBCF4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;3&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].endID</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xD558;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; ID &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].endName</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xD558;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; &#xC774;&#xB984; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].endX</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xD558;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; X&#xCD95; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].endY</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xD558;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; Y&#xCD95; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane</code></td>
+<td>object</td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xC774;&#xC6A9;&#xD574;&#xC57C; &#xD560; &#xB178;&#xC120; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane.busID</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xBC84;&#xC2A4; ID &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane.busNo</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xBC84;&#xC2A4; &#xBC88;&#xD638; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane.name</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xC9C0;&#xD558;&#xCCA0; &#xB178;&#xC120; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane.subwayCode</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td><a href="#CodeReference">&#xC9C0;&#xD558;&#xCCA0; &#xCF54;&#xB4DC; &#xC815;&#xBCF4;</a>&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].lane.type</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td><a href="#CodeReference">&#xBC84;&#xC2A4; &#xD0C0;&#xC785;</a> &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].sectionTime</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC758; &#xC608;&#xC0C1; &#xC774;&#xB3D9; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xB2E8;&#xC704;&#xB294; &#xBD84;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xB3C4;&#xBCF4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;3&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].startID</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xC2B9;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; ID &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].startName</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xC2B9;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; &#xC774;&#xB984; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].startX</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xC2B9;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; X&#xCD95; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].startY</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC5D0;&#xC11C; &#xC2B9;&#xCC28;&#xD574;&#xC57C; &#xD558;&#xB294; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED;/&#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xC758; Y&#xCD95; &#xC88C;&#xD45C; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xC774; &#xD544;&#xB4DC;&#xB294; &#xC9C0;&#xD558;&#xCCA0; &#xB610;&#xB294; &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;(<code>subPath[].trafficType.value</code> &#xD544;&#xB4DC; &#xAC12;&#xC774; <code>&quot;1&quot;</code>&#xC774;&#xAC70;&#xB098; <code>&quot;2&quot;</code>&#xC77C; &#xB54C;) &#xC815;&#xBCF4;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>subPath[].trafficType</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xAD6C;&#xAC04; &#xD0C0;&#xC785;. &#xD2B9;&#xC815; &#xAD6C;&#xAC04;&#xC758; &#xC774;&#xB3D9; &#xC218;&#xB2E8;&#xC744; &#xAD6C;&#xBCC4;&#xD558;&#xB294; &#xC2DD;&#xBCC4;&#xC790;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC; &#xAC12;&#xC5D0; &#xB530;&#xB77C; <code>subPath</code> &#xD544;&#xB4DC;&#xC758; &#xD558;&#xC704; &#xAC1D;&#xCCB4;&#xC758; &#xAD6C;&#xC131;&#xC774; &#xB2EC;&#xB77C;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <ul><li><code>&quot;1&quot;</code> : &#xC9C0;&#xD558;&#xCCA0; &#xAD6C;&#xAC04;</li><li><code>&quot;2&quot;</code> : &#xBC84;&#xC2A4; &#xAD6C;&#xAC04;</li><li><code>&quot;3&quot;</code> : &#xB3C4;&#xBCF4; &#xAD6C;&#xAC04;</li></ul></td>
+<td>&#xC120;&#xD0DD;</td>
+</tr>
+<tr>
+<td><code>SubwayStationCount</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xC9C0;&#xD558;&#xCCA0;&#xB85C; &#xC774;&#xB3D9;&#xD560; &#xB54C; &#xC9C0;&#xB098;&#xC57C;&#xD558;&#xB294; &#xCD1D; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED; &#xC218; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>totalDistance</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xC804;&#xCCB4; &#xC774;&#xB3D9; &#xAC70;&#xB9AC; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xB2E8;&#xC704;&#xB294; &#xBBF8;&#xD130;(m)&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>totalStationCount</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xBC84;&#xC2A4; &#xBC0F; &#xC9C0;&#xD558;&#xCCA0;&#xB85C; &#xC774;&#xB3D9;&#xD560; &#xB54C; &#xC9C0;&#xB098;&#xC57C;&#xD558;&#xB294; &#xCD1D; &#xBC84;&#xC2A4; &#xC815;&#xB958;&#xC7A5;&#xACFC; &#xC9C0;&#xD558;&#xCCA0;&#xC5ED; &#xC218;&#xC758; &#xD569; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>totalTime</code></td>
+<td><a href="Shared_Objects.html#StringObject">StringObject</a></td>
+<td>&#xC804;&#xCCB4; &#xC608;&#xC0C1; &#xC774;&#xB3D9; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xAE34; &#xAC1D;&#xCCB4;. &#xB2E8;&#xC704;&#xB294; &#xBD84;&#xC785;&#xB2C8;&#xB2E4;.</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>Content template &#xAD6C;&#xBD84;&#xC790;. <code>&quot;TransportationRoute&quot;</code>&#xB85C; &#xACE0;&#xC815;</td>
+<td>&#xD544;&#xC218;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CodeReference">&#xC9C0;&#xD558;&#xCCA0; &#xB178;&#xC120; &#xCF54;&#xB4DC; &#xBC0F; &#xBC84;&#xC2A4; &#xD0C0;&#xC785; &#xCF54;&#xB4DC; </h2>
+<table>
+<thead>
+<tr>
+<th>&#xC9C0;&#xD558;&#xCCA0; &#xB178;&#xC120; &#xCF54;&#xB4DC;</th>
+<th>&#xC124;&#xBA85;</th>
+<th>&#xBC84;&#xC2A4; &#xD0C0;&#xC785; &#xCF54;&#xB4DC;</th>
+<th>&#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_1&#xD638;&#xC120;</td>
+<td>1</td>
+<td>&#xC77C;&#xBC18;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_2&#xD638;&#xC120;</td>
+<td>2</td>
+<td>&#xC88C;&#xC11D;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_3&#xD638;&#xC120;</td>
+<td>3</td>
+<td>&#xB9C8;&#xC744;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_4&#xD638;&#xC120;</td>
+<td>4</td>
+<td>&#xC9C1;&#xD589;&#xC88C;&#xC11D;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_5&#xD638;&#xC120;</td>
+<td>5</td>
+<td>&#xACF5;&#xD56D;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_6&#xD638;&#xC120;</td>
+<td>6</td>
+<td>&#xAC04;&#xC120;&#xAE09;&#xD589;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_7&#xD638;&#xC120;</td>
+<td>10</td>
+<td>&#xC678;&#xACFD;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_8&#xD638;&#xC120;</td>
+<td>11</td>
+<td>&#xAC04;&#xC120;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&#xC218;&#xB3C4;&#xAD8C;_9&#xD638;&#xC120;</td>
+<td>12</td>
+<td>&#xC9C0;&#xC120;</td>
+</tr>
+<tr>
+<td>21</td>
+<td>&#xC778;&#xCC9C;_1&#xD638;&#xC120;</td>
+<td>13</td>
+<td>&#xC21C;&#xD658;</td>
+</tr>
+<tr>
+<td>31</td>
+<td>&#xB300;&#xC804;_1&#xD638;&#xC120;</td>
+<td>14</td>
+<td>&#xAD11;&#xC5ED;</td>
+</tr>
+<tr>
+<td>41</td>
+<td>&#xB300;&#xAD6C;_1&#xD638;&#xC120;</td>
+<td>15</td>
+<td>&#xAE09;&#xD589;</td>
+</tr>
+<tr>
+<td>42</td>
+<td>&#xB300;&#xAD6C;_2&#xD638;&#xC120;</td>
+<td>20</td>
+<td>&#xB18D;&#xC5B4;&#xCD0C;</td>
+</tr>
+<tr>
+<td>51</td>
+<td>&#xAD11;&#xC8FC;_1&#xD638;&#xC120;</td>
+<td>21</td>
+<td>&#xC81C;&#xC8FC;&#xC2DC;&#xC678;</td>
+</tr>
+<tr>
+<td>71</td>
+<td>&#xBD80;&#xC0B0;_1&#xD638;&#xC120;</td>
+<td>22</td>
+<td>&#xC2DC;&#xC678;</td>
+</tr>
+<tr>
+<td>72</td>
+<td>&#xBD80;&#xC0B0;_2&#xD638;&#xC120;</td>
+<td>26</td>
+<td>&#xAE09;&#xD589;&#xAC04;&#xC120;</td>
+</tr>
+<tr>
+<td>73</td>
+<td>&#xBD80;&#xC0B0;_3&#xD638;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>74</td>
+<td>&#xBD80;&#xC0B0;_4&#xD638;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>78</td>
+<td>&#xBD80;&#xC0B0;_&#xB3D9;&#xD574;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>79</td>
+<td>&#xBD80;&#xC0B0;_&#xBD80;&#xC0B0;&#xAE40;&#xD574;&#xACBD;&#xC804;&#xCCA0;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>100</td>
+<td>&#xBD84;&#xB2F9;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td>&#xACF5;&#xD56D;&#xCCA0;&#xB3C4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>103</td>
+<td>&#xC911;&#xC559;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>104</td>
+<td>&#xACBD;&#xC758;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>107</td>
+<td>&#xC5D0;&#xBC84;&#xB77C;&#xC778;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>108</td>
+<td>&#xACBD;&#xCD98;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>109</td>
+<td>&#xC2E0;&#xBD84;&#xB2F9;&#xC120;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>110</td>
+<td>&#xC758;&#xC815;&#xBD80;&#xACBD;&#xC804;&#xCCA0;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>111</td>
+<td>&#xC218;&#xC778;&#xC120;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="template-example">Template Example</h2>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;TransportationRoute&quot;</span>,
+  <span class="hljs-string">&quot;pathType&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+  },
+  <span class="hljs-string">&quot;subPath&quot;</span> : [
+    {
+      <span class="hljs-string">&quot;trafficType&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+      },
+      <span class="hljs-string">&quot;distance&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;179&quot;</span>
+      },
+      <span class="hljs-string">&quot;sectionTime&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+      }
+    },
+    {
+      <span class="hljs-string">&quot;trafficType&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;1&quot;</span>
+      },
+      <span class="hljs-string">&quot;lane&quot;</span> : {
+        <span class="hljs-string">&quot;name&quot;</span> : {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;5&#xD638;&#xC120;&quot;</span>
+        },
+        <span class="hljs-string">&quot;subwayCode&quot;</span> : {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;5&quot;</span>
+        }
+      },
+      <span class="hljs-string">&quot;startX&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;126.9764454&quot;</span>
+      },
+      <span class="hljs-string">&quot;startY&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;37.5716197&quot;</span>
+      },
+      <span class="hljs-string">&quot;startID&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;533&quot;</span>
+      },
+      <span class="hljs-string">&quot;startName&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xAD11;&#xD654;&#xBB38;&quot;</span>
+      },
+      <span class="hljs-string">&quot;endX&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;127.0053025&quot;</span>
+      },
+      <span class="hljs-string">&quot;endY&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;37.5646938&quot;</span>
+      },
+      <span class="hljs-string">&quot;endID&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;536&quot;</span>
+      },
+      <span class="hljs-string">&quot;endName&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xB3D9;&#xB300;&#xBB38;&#xC5ED;&#xC0AC;&#xBB38;&#xD654;&#xACF5;&#xC6D0;&quot;</span>
+      }
+    },
+    {
+      <span class="hljs-string">&quot;trafficType&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+      },
+      <span class="hljs-string">&quot;distance&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;26&quot;</span>
+      },
+      <span class="hljs-string">&quot;sectionTime&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;1&quot;</span>
+      }
+    },
+    {
+      <span class="hljs-string">&quot;trafficType&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;2&quot;</span>
+      },
+      <span class="hljs-string">&quot;lane&quot;</span> : {
+        <span class="hljs-string">&quot;busNo&quot;</span> : {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;301&quot;</span>
+        },
+        <span class="hljs-string">&quot;type&quot;</span> : {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;11&quot;</span>
+        },
+        <span class="hljs-string">&quot;busID&quot;</span> : {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;1006&quot;</span>
+        }
+      },
+      <span class="hljs-string">&quot;startX&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;127.0072774&quot;</span>
+      },
+      <span class="hljs-string">&quot;startY&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;37.5651429&quot;</span>
+      },
+      <span class="hljs-string">&quot;startID&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;105343&quot;</span>
+      },
+      <span class="hljs-string">&quot;startName&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xAD11;&#xD76C;&#xB3D9;&quot;</span>
+      },
+      <span class="hljs-string">&quot;endX&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;127.0611357&quot;</span>
+      },
+      <span class="hljs-string">&quot;endY&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;37.511781&quot;</span>
+      },
+      <span class="hljs-string">&quot;endID&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;123460&quot;</span>
+      },
+      <span class="hljs-string">&quot;endName&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xBB34;&#xC5ED;&#xC13C;&#xD0C0;&quot;</span>
+      }
+    },
+    {
+      <span class="hljs-string">&quot;trafficType&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+      },
+      <span class="hljs-string">&quot;distance&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;373&quot;</span>
+      },
+      <span class="hljs-string">&quot;sectionTime&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;6&quot;</span>
+      }
+    }
+  ],
+  <span class="hljs-string">&quot;busStationCount&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;17&quot;</span>
+  },
+  <span class="hljs-string">&quot;subwayStationCount&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;3&quot;</span>
+  },
+  <span class="hljs-string">&quot;totalStationCount&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;20&quot;</span>
+  },
+  <span class="hljs-string">&quot;totalTime&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;55&quot;</span>
+  },
+  <span class="hljs-string">&quot;totalDistance&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;13284&quot;</span>
+  },
+  <span class="hljs-string">&quot;lanes&quot;</span> : [
+    {
+      <span class="hljs-string">&quot;create&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;1&quot;</span>
+      },
+      <span class="hljs-string">&quot;section&quot;</span> : [
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349538037, 149527412&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543351, 149521660&quot;</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-string">&quot;section&quot;</span> : [
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543351, 149521660&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543376, 149522540&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543354, 149522879&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543478, 149524090&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349543584, 149524790&quot;</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-string">&quot;create&quot;</span> : {
+        <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;1&quot;</span>
+      },
+      <span class="hljs-string">&quot;section&quot;</span> : [
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349600453, 149466463&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349610861, 149458583&quot;</span>
+        }
+      ]
+    }
+  ],
+  <span class="hljs-string">&quot;boundary&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349532874,149530952,349610861,149451998&quot;</span>
+  },
+  <span class="hljs-string">&quot;start&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349538036,149527412&quot;</span>
+  },
+  <span class="hljs-string">&quot;startName&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xAD11;&#xD654;&#xBB38;&#xC0BC;&#xAC70;&#xB9AC;&quot;</span>
+  },
+  <span class="hljs-string">&quot;end&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;location&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;349610861,149458582&quot;</span>
+  },
+  <span class="hljs-string">&quot;endName&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;&#xCF54;&#xC5D1;&#xC2A4;&quot;</span>
+  },
+  <span class="hljs-string">&quot;linkUrl&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;url&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;https://...&quot;</span>
+  },
+  <span class="hljs-string">&quot;appLinkUrl&quot;</span> : {
+    <span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;url&quot;</span>,
+    <span class="hljs-string">&quot;value&quot;</span> : <span class="hljs-string">&quot;https://...&quot;</span>
+  }
+}
+</code></pre>
+<h2 id="UIExample">Screen UI example </h2>
+<p>&#xB2E4;&#xC74C;&#xC740; NAVER&#xAC00; &#xBC30;&#xD3EC;&#xD55C; &#xBAA8;&#xBC14;&#xC77C;&#xC6A9; Clova &#xC571;&#xC5D0;&#xC11C; TransportationRoute &#xD15C;&#xD50C;&#xB9BF;&#xC758; &#xB0B4;&#xC6A9;&#xC744; &#xD0C0;&#xC785;&#xBCC4;&#xB85C; &#xD45C;&#xD604;&#xD55C; UI &#xC608;&#xC81C;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xC9C0;&#xD558;&#xCCA0; &#xC774;&#xC6A9;</th>
+<th>&#xBC84;&#xC2A4; &#xC774;&#xC6A9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../../Resources/Images/Content-Template-TransportationRoute-Use_Only_Subway.png" alt="Subway"></td>
+<td><img src="../../Resources/Images/Content-Template-TransportationRoute-Use_Only_Bus.png" alt="Bus"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="CarRoute.html">CarRoute</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="TomorrowWeather.html" class="navigation navigation-prev " aria-label="Previous page: TomorrowWeather">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="WeeklyWeather.html" class="navigation navigation-next " aria-label="Next page: WeeklyWeather">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TransportationRoute","level":"2.8.9","depth":2,"next":{"title":"WeeklyWeather","level":"2.8.10","depth":2,"path":"CIC/References/ContentTemplates/WeeklyWeather.md","ref":"CIC/References/ContentTemplates/WeeklyWeather.md","articles":[]},"previous":{"title":"TomorrowWeather","level":"2.8.8","depth":2,"path":"CIC/References/ContentTemplates/TomorrowWeather.md","ref":"CIC/References/ContentTemplates/TomorrowWeather.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"NAVER Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v1.1","CICBaseURL":"https://prod-ni-cic.clova.ai/","ClassifiedInfo":"대외비","OrientedService":"NAVER","AuthServerBaseURL":"https://auth.clova.ai/","TargetServiceForClientAuth":"NAVER","Locale":"ko-KR","DocOwner":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/"},"title":"Clova 개발자 가이드","language":"ko","gitbook":"*","description":"이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.","direction":"ltr"},"file":{"path":"CIC/References/ContentTemplates/TransportationRoute.md","mtime":"2017-08-30T01:22:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T01:23:43.792Z"},"basePath":"../../..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

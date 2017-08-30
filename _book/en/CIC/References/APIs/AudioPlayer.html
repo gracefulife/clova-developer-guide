@@ -1,0 +1,2069 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <title>Clova Developer Guide</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LINE Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Clova.html" />
+    
+    
+    <link rel="prev" href="Alerts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Documentation summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Copyright.html">
+            
+                <a href="../../../Copyright.html">
+            
+                    
+                    Copyright
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Terms.html">
+            
+                <a href="../../../Terms.html">
+            
+                    
+                    Terms and abbreviations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html">
+            
+                    
+                    CIC overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#WhatisCIC">
+            
+                    
+                    What is CIC?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC_Overview.html">
+            
+                <a href="../../CIC_Overview.html#DialogModel">
+            
+                    
+                    Dialog model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html">
+            
+                    
+                    Interacting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    Connecting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Creating Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    Creating connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    Getting authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    Managing connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    Sending event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    Handling directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Guides/Interact_with_CIC.html">
+            
+                <a href="../../Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    Managing message queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../HTTP2_Message_Format.html">
+            
+                <a href="../HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP message example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html">
+            
+                    
+                    Clova Auth API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#authorize">
+            
+                    
+                    /authorize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../Clova_Auth_API.html">
+            
+                <a href="../Clova_Auth_API.html#token">
+            
+                    
+                    /token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html">
+            
+                    
+                    CIC message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Event">
+            
+                    
+                    Event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Directive">
+            
+                    
+                    Directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../CIC_Message_Format.html">
+            
+                <a href="../CIC_Message_Format.html#Error">
+            
+                    
+                    Error message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../CIC_API.html">
+            
+                <a href="../CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="Alerts.html">
+            
+                <a href="Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6.2" data-path="AudioPlayer.html">
+            
+                <a href="AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="Clova.html">
+            
+                <a href="Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="DeviceControl.html">
+            
+                <a href="DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="Memo.html">
+            
+                <a href="Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="PlaybackController.html">
+            
+                <a href="PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="Reminder.html">
+            
+                <a href="Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="SpeechRecognizer.html">
+            
+                <a href="SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="SpeechSynthesizer.html">
+            
+                <a href="SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="Index_for_Events.html">
+            
+                <a href="Index_for_Events.html">
+            
+                    
+                    Event messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="Index_for_Directives.html">
+            
+                <a href="Index_for_Directives.html">
+            
+                    
+                    Directive messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html">
+            
+                    
+                    Context information
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../Context_Objects.html">
+            
+                <a href="../Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Content_Templates.html">
+            
+                <a href="../Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../ContentTemplates/CardList.html">
+            
+                <a href="../ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../ContentTemplates/CarRoute.html">
+            
+                <a href="../ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../ContentTemplates/Humidity.html">
+            
+                <a href="../ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../ContentTemplates/ImageList.html">
+            
+                <a href="../ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../ContentTemplates/ImageText.html">
+            
+                <a href="../ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../ContentTemplates/Text.html">
+            
+                <a href="../ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../ContentTemplates/TodayWeather.html">
+            
+                <a href="../ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../ContentTemplates/TransportationRoute.html">
+            
+                <a href="../ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../ContentTemplates/WindSpeed.html">
+            
+                <a href="../ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../ContentTemplates/Shared_Objects.html">
+            
+                <a href="../ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html">
+            
+                    
+                    CEK overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    What is CEK?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../../CEK/CEK_Overview.html">
+            
+                <a href="../../../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension type
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Building custom extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Handling custom extension request
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    Handling LaunchRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    Handling IntentRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    Handling SessionEndedRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Returning custom extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Having multi-turn dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Building Clova Home extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Providing device discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Handling Clova Home extension request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../../../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Returning Clova Home extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../../../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    Linking user account
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../../CEK/References/HTTP_Message_Format.html">
+            
+                <a href="../../../CEK/References/HTTP_Message_Format.html">
+            
+                    
+                    HTTP message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                <a href="../../../CEK/References/Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.7.1" data-path="../../../CEK/References/Clova_Home_API.html">
+            
+                <a href="../../../CEK/References/Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >AudioPlayer</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="audioplayer">AudioPlayer</h1>
+<p>Instructs your client to play an audio stream or reports to CIC on events that occur during playback. The AudioPlayer API provides the following event and directive messages.</p>
+<table>
+<thead>
+<tr>
+<th>Message name</th>
+<th>Message type</th>
+<th>Message description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Play"><code>Play</code></a></td>
+<td>Directive</td>
+<td>Instructs your client to start playback of a specified audio stream or add it to a playback queue.</td>
+</tr>
+<tr>
+<td><a href="#PlayFinished"><code>PlayFinished</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on audio stream details when your client finishes playback of an audio stream.</td>
+</tr>
+<tr>
+<td><a href="#PlayPaused"><code>PlayPaused</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on audio stream details when your client pauses playback of an audio stream.</td>
+</tr>
+<tr>
+<td><a href="#PlayResumed"><code>PlayResumed</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on audio stream details when your client resumes playback of an audio stream.</td>
+</tr>
+<tr>
+<td><a href="#PlayStarted"><code>PlayStarted</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on audio stream details when your client starts playback of an audio stream.</td>
+</tr>
+<tr>
+<td><a href="#PlayStopped"><code>PlayStopped</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on audio stream details when your client stops playback of an audio stream.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportDelayPassed</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) when a specified delay time has passed after playback has started. You can check the delay time for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportIntervalPassed</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) regularly at a specified interval of time after playback has started. You can check the reporting interval for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</td>
+</tr>
+<tr>
+<td><a href="#ProgressReportPositionPassed"><code>ProgressReportPositionPassed</code></a></td>
+<td>Event</td>
+<td>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) at a specified reporting point after playback has started. You can check the reporting point for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</td>
+</tr>
+<tr>
+<td><a href="#StreamDeliver"><code>StreamDeliver</code></a></td>
+<td>Directive</td>
+<td>Returns audio stream details necessary for playback. This is a response message to an <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message.</td>
+</tr>
+<tr>
+<td><a href="#StreamRequested"><code>StreamRequested</code></a></td>
+<td>Event</td>
+<td>Requests CIC for additional audio stream details necessary for playback, such as a streaming URL.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Play">Play directive </h2>
+<p>Instructs your client to start playback of a specified audio stream or add it to a playback queue.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItem</code></td>
+<td>object</td>
+<td>An object containing metadata of an audio stream and audio stream details necessary for playback</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioItem.audioItemId</code></td>
+<td>string</td>
+<td>The ID for distinguishing audio stream details. You can remove redundant Play directive messages based on this value.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioItem.stream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>An object containing audio stream details necessary for playback</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioItem.type</code></td>
+<td>string</td>
+<td>A music service delimiter. It is the name of a business entity or service that provides a music streaming service. You can use this value to figure out fields of the audioItem object for each different service and select an appropriate parser to analyze them.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioItem.[CustomField]</code></td>
+<td>any</td>
+<td>Service providers can add extra metadata to the audio stream for playback.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>playBehavior</code></td>
+<td>string</td>
+<td>A delimiter that determines when your client will play the audio stream included in the directive message <ul><li><code>&quot;REPLACE_ALL&quot;</code>: Clears all existing playback queues and play this audio stream immediately.</li><li><code>&quot;ENQUEUE&quot;</code>: Adds this audio stream to a playback queue.</li></ul></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Sometimes, due to the way music services charge users, streaming details such as a streaming URL can only be obtained right before playback. Depending on the value of the <code>audioItem.stream.urlPlayable</code> field, it can be either one of the following.</p>
+<ul>
+<li>If <code>urlPlayable</code> is set to <code>true</code>, you can play the audio stream directly from the URL in the <code>audioItem.stream.url</code> field.</li>
+<li>If <code>urlPlayable</code> is set to <code>false</code>, you cannot play the audio stream directly from the URL in the <code>audioItem.stream.url</code> field. Instead, you must request additional audio stream details by sending an <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message.</li>
+</ul>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json"><span class="hljs-comment">// Example of an audio stream URL which you can play from directly</span>
+{
+  <span class="hljs-string">&quot;audioItem&quot;</span>: {
+    <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;90b77646-93ab-444f-acd9-60f9f278ca38&quot;</span>,
+    <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+    <span class="hljs-string">&quot;stream&quot;</span>: {
+      <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+      <span class="hljs-string">&quot;playType&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>,
+      <span class="hljs-string">&quot;podcastId&quot;</span>: <span class="hljs-number">12548</span>,
+      <span class="hljs-string">&quot;progressReport&quot;</span>: {
+        <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>,
+        <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>
+      },
+      <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://steaming.example.com/1212334548/2231122&quot;</span>,
+      <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;podcast&quot;</span>
+  },
+  <span class="hljs-string">&quot;playBehavior&quot;</span>: <span class="hljs-string">&quot;REPLACE_ALL&quot;</span>
+}
+
+<span class="hljs-comment">// Example of an audio stream URL which you cannot play from directly</span>
+{
+  <span class="hljs-string">&quot;audioItem&quot;</span>: {
+    <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201&quot;</span>,
+    <span class="hljs-string">&quot;album&quot;</span>: {
+      <span class="hljs-string">&quot;albumId&quot;</span>: <span class="hljs-string">&quot;2000240&quot;</span>,
+      <span class="hljs-string">&quot;genres&quot;</span>: [
+        <span class="hljs-string">&quot;&#xBC1C;&#xB77C;&#xB4DC;&quot;</span>,
+        <span class="hljs-string">&quot;&#xC54C;&#xC564;&#xBE44;/&#xC5B4;&#xBC18;&quot;</span>
+      ],
+      <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Palette&quot;</span>
+    },
+    ...
+    <span class="hljs-string">&quot;stream&quot;</span>: {
+      <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">&quot;progressReport&quot;</span>: {
+        <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>
+      },
+      <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-17716562&quot;</span>,
+      <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-17716562&quot;</span>,
+      <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;&#xC774; &#xC9C0;&#xAE08;&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;navermusic&quot;</span>
+  },
+  <span class="hljs-string">&quot;playBehavior&quot;</span>: <span class="hljs-string">&quot;REPLACE_ALL&quot;</span>
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#PlayPaused"><code>AudioPlayer.PlayPaused</code></a></li>
+<li><a href="#PlayResumed"><code>AudioPlayer.PlayResumed</code></a></li>
+<li><a href="#PlayStarted"><code>AudioPlayer.PlayStarted</code></a></li>
+<li><a href="#PlayStopped"><code>AudioPlayer.PlayStopped</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+<h2 id="PlayFinished">PlayFinished event </h2>
+<p>Reports to CIC on audio stream details when your client finishes playback of an audio stream.</p>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayFinished&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+</ul>
+<h2 id="PlayPaused">PlayPaused event </h2>
+<p>Reports to CIC on audio stream details when your client pauses playback of an audio stream. Send this event message in the following scenario.</p>
+<ol>
+<li>Your client sends CIC a user&apos;s spoken request to pause playback of an audio stream, using a <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> event message.</li>
+<li>The Clova platform recognizes the pause request and CIC returns it to your client, using a <a href="PlaybackController.html#Pause"><code>PlaybackController.Pause</code></a> directive message.</li>
+<li>Your client pauses playback of the audio stream and sends CIC a PlayPaused event message.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayPaused&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayResumed"><code>AudioPlayer.PlayResumed</code></a></li>
+<li><a href="PlaybackController.html#Pause"><code>PlaybackController.Pause</code></a></li>
+</ul>
+<h2 id="PlayResuemd">PlayResumed event </h2>
+<p>Reports to CIC on audio stream details when your client resumes playback of an audio stream. Send this event message in the following scenario.</p>
+<ol>
+<li>Your client sends CIC a user&apos;s spoken request to resume playback of an audio stream, using a <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> event message.</li>
+<li>The Clova platform recognizes the resume request and CIC sends it to your client, using a <a href="PlaybackController.html#Resume"><code>PlaybackController.Resume</code></a> directive message.</li>
+<li>Your client resumes playback of the audio stream and sends CIC a PlayResumed event message.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayResumed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayPaused"><code>AudioPlayer.PlayPaused</code></a></li>
+<li><a href="PlaybackController.html#Resume"><code>PlaybackController.Resume</code></a></li>
+</ul>
+<h2 id="PlayStarted">PlayStarted event </h2>
+<p>Reports to CIC on audio stream details when your client starts playback of an audio stream.</p>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayStarted&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayStopped"><code>AudioPlayer.PlayStopped</code></a></li>
+</ul>
+<h2 id="PlayStopped">PlayStopped event </h2>
+<p>Reports to CIC on audio stream details when your client stops playback of an audio stream. Send this event message in the following scenario.</p>
+<ol>
+<li>Your client sends CIC a user&apos;s spoken request to stop playback of an audio stream, using a <a href="SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> event message.</li>
+<li>The Clova platform recognizes the stop request and CIC returns it to your client, using a <a href="PlaybackController.html#Stop"><code>PlaybackController.Stop</code></a> directive message.</li>
+<li>Your client stops playback of the audio stream and sends CIC a PlayStopped event message.</li>
+</ol>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;PlayStopped&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#PlayStarted"><code>AudioPlayer.PlayStarted</code></a></li>
+<li><a href="PlaybackController.html#Stop"><code>PlaybackController.Stop</code></a></li>
+</ul>
+<h2 id="ProgressReportDelayPassed">ProgressReportDelayPassed event </h2>
+<p>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) when a specified delay time has passed after playback has started. You can check the delay time for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</p>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportDelayPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+</ul>
+<h2 id="ProgressReportIntervalPassed">ProgressReportIntervalPassed event </h2>
+<p>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) regularly at a specified interval of time after playback has started. You can check the reporting interval for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</p>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportIntervalPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+</ul>
+<h2 id="ProgressReportPositionPassed">ProgressReportPositionPassed event </h2>
+<p>Reports to CIC on a current playback state (<a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>) at a specified reporting point after playback has started. You can check the reporting point for each audio stream when an <a href="#Play"><code>AudioPlayer.Play</code></a> directive message is returned to your client.</p>
+<h3 id="context-field">Context field</h3>
+<p>Send the following <a href="../Context_Objects.html">context information</a> together.</p>
+<ul>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+</ul>
+<h3 id="payload-field">Payload field</h3>
+<p>None</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ProgressReportPositionPassed&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+</ul>
+<h2 id="StreamDeliver">StreamDeliver directive </h2>
+<p>Returns audio stream details necessary for playback. This is a response message to an <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message. It contain a streaming URL in audio stream details from which your client can play music.</p>
+<h3 id="payload-field">Payload field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItemId</code></td>
+<td>string</td>
+<td>A value for distinguishing audio stream details. You can remove redundant Play directive messages based on this value.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioStream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>An object containing audio stream details necessary for playback</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>You can implement audio stream playback by combining the StreamDeliver directive message with <code>payload.audioStream</code> of the previously received <a href="#Play">Play</a> directive message. However, you must not replace the values of the previous Play directive message with the new values passed through the <code>StreamDeliver</code> directive message. The reason is that, if any content of <code>AudioStreamObject</code> in the <code>StreamDeliver</code> directive message overlaps with the content of the previous <a href="#Play"><code>AudioPlayer.Play</code></a> directive message, that overlapping content might be omitted. This may cause unexpected behaviors when you handle the same Play directive message more than once, for example, to play a track repeatedly or to play a previous track.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;directive&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;StreamDeliver&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;277b40c3-b046-4f61-a551-783b1547e7b7&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4e4080d6-c440-498a-bb73-ae86c6312806&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;audioItemId&quot;</span>: <span class="hljs-string">&quot;5313c879-25bb-461c-93fc-f85d95edf2a0&quot;</span>,
+        <span class="hljs-string">&quot;stream&quot;</span>: {
+            <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;b767313e-6790-4c28-ac18-5d9f8e432248&quot;</span>,
+            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://aod.musicservice.net/b767313e.mp3&quot;</span>
+        }
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+<h2 id="StreamRequested">StreamRequested event </h2>
+<p>Requests CIC for additional audio stream details necessary for playback, such as a streaming URL.</p>
+<h3 id="context-field">Context field</h3>
+<p>None</p>
+<h3 id="events-field">Events field</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>audioItemId</code></td>
+<td>string</td>
+<td><code>audioItemId</code> of the Play directive message</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>audioStream</code></td>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td><code>audioItem.stream</code> of the Play directive message</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>Sometimes, due to the way music services charge users, obtaining specific streaming details must be delayed until right before playback. This event message API is designed for cases where you must not prepare audio stream details in advance. You must implement your client not to send this event message earlier than right before playback.</p>
+<h3 id="message-example">Message example</h3>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;context&quot;</span>: [],
+  <span class="hljs-string">&quot;event&quot;</span>: {
+    <span class="hljs-string">&quot;header&quot;</span>: {
+      <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;AudioPlayer&quot;</span>,
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;StreamRequested&quot;</span>,
+      <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;msg-id-here-1&quot;</span>,
+      <span class="hljs-string">&quot;dialogRequestId&quot;</span>: <span class="hljs-string">&quot;dialog-id-here-1&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;audioStream&quot;</span>: {
+            <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-4435786&quot;</span>,
+            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-4435786&quot;</span>
+        }
+    }
+  }
+}
+</code></pre>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#StreamDeliver"><code>AudioPlayer.StreamDeliver</code></a></li>
+</ul>
+<h2 id="shared-objects">Shared objects</h2>
+<p>Shared objects are included in a message body (<code>payload</code>) of event or directive messages when they are sent with the AudioPlayer API.</p>
+<table>
+<thead>
+<tr>
+<th>Object name</th>
+<th>Object description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#AudioStreamObject">AudioStreamObject</a></td>
+<td>An object containing playback details of an audio stream, such as streaming address or credentials</td>
+</tr>
+</tbody>
+</table>
+<h3 id="AudioStreamObject">AudioStreamObject </h3>
+<p>Contains streaming details of an audio stream. It is used when CIC returns playback streaming details to your client or when your client sends streaming details of a currently playing music to CIC.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beginAtInMilliseconds</code></td>
+<td>number</td>
+<td>A starting point of playback. Unit is millisecond. If this field is specified as a non-zero value, play the audio stream from the specified point. If this field is specified as 0, play the audio stream from the beginning.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>progressReport</code></td>
+<td>object</td>
+<td>An object that specifies the time to report on a playback state after playback has started</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportDelayInMilliseconds</code></td>
+<td>number</td>
+<td>Specify this value to report on a playback state when a specified time has passed after playback has started. This field can have a null value.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportIntervalInMilliseconds</code></td>
+<td>number</td>
+<td>Specify this value to report on a playback state regularly at a specified interval of time during playback. This field can have a null value.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>progressReport.progressReportPositionInMilliseconds</code></td>
+<td>number</td>
+<td>Specify this value to report on a playback state at each specified point during playback. This field can have a null value.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>string</td>
+<td>An audio stream token.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>An audio stream URL</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>urlPlayable</code></td>
+<td>boolean</td>
+<td>A value for determining whether the audio stream URL in the <code>url</code> field is playable or not. <ul><li><code>true</code>: Can play directly from the URL.</li><li><code>false</code>: Cannot play directly from the URL. Send an <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message to request for audio stream details.</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>[Custom Field]</code></td>
+<td>any</td>
+<td>Service providers can add context information necessary for playback.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// An object containing an audio stream URL which you can play from directly</span>
+{
+  <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;episodeId&quot;</span>: <span class="hljs-number">22346122</span>,
+  <span class="hljs-string">&quot;playType&quot;</span>: <span class="hljs-string">&quot;NONE&quot;</span>,
+  <span class="hljs-string">&quot;podcastId&quot;</span>: <span class="hljs-number">12548</span>,
+  <span class="hljs-string">&quot;progressReport&quot;</span>: {
+    <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>,
+    <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>
+  },
+  <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://api-ex.podbbang.com/file/12548/22346122&quot;</span>,
+  <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">true</span>
+}
+
+<span class="hljs-comment">// Example of an audio stream URL which you cannot play from directly</span>
+{
+  <span class="hljs-string">&quot;beginAtInMilliseconds&quot;</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">&quot;progressReport&quot;</span>: {
+      <span class="hljs-string">&quot;progressReportDelayInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;progressReportIntervalInMilliseconds&quot;</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">&quot;progressReportPositionInMilliseconds&quot;</span>: <span class="hljs-number">60000</span>
+  },
+  <span class="hljs-string">&quot;token&quot;</span>: <span class="hljs-string">&quot;TR-NM-4435786&quot;</span>,
+  <span class="hljs-string">&quot;urlPlayable&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;clova:TR-NM-4435786&quot;</span>
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#Play"><code>AudioPlayer.Play</code></a></li>
+<li><a href="#ProgressReportDelayPassed"><code>AudioPlayer.ProgressReportDelayPassed</code></a></li>
+<li><a href="#ProgressReportIntervalPassed"><code>AudioPlayer.ProgressReportIntervalPassed</code></a></li>
+<li><a href="#ProgressReportPositionPassed"><code>AudioPlayer.ProgressReportPositionPassed</code></a></li>
+<li><a href="../Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a></li>
+<li><a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Alerts.html" class="navigation navigation-prev " aria-label="Previous page: Alerts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Clova.html" class="navigation navigation-next " aria-label="Next page: Clova">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"AudioPlayer","level":"2.6.2","depth":2,"next":{"title":"Clova","level":"2.6.3","depth":2,"path":"CIC/References/APIs/Clova.md","ref":"CIC/References/APIs/Clova.md","articles":[]},"previous":{"title":"Alerts","level":"2.6.1","depth":2,"path":"CIC/References/APIs/Alerts.md","ref":"CIC/References/APIs/Alerts.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"LINE Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v1.0","CICBaseURL":"https://clova-cic.line-apps.com/","ClassifiedInfo":"Confidential","OrientedService":"LINE","AuthServerBaseURL":"https://clova-authgw.line-apps.com/","TargetServiceForClientAuth":"LINE","Locale":"en-JP","DocOwner":"LINE","LoginAPIofTargetService":"https://developers.line.me/line-login/overview/"},"title":"Clova Developer Guide","language":"en","gitbook":"*","description":"This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.","direction":"ltr"},"file":{"path":"CIC/References/APIs/AudioPlayer.md","mtime":"2017-08-29T05:15:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-30T01:23:43.792Z"},"basePath":"../../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
