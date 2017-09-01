@@ -20,3 +20,6 @@ Clova currently provides the following content templates.
   * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
+
+* Shared objects
+  * [Shared objects](/CIC/References/ContentTemplates/Shared_Objects.md)

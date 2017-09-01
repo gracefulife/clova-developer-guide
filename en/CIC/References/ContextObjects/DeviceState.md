@@ -13,12 +13,14 @@ DeviceState is a message format that sends device states of a client.
     "airplane": {{AirplaneInfoObject}},
     "battery": {{BatteryInfoObject}},
     "bluetooth": {{BluetoothInfoObject}},
-    "screenBrightness": {{ScreenBrightnessInfoObject}},
     "cellular": {{CellularInfoObject}},
+    "channel": {{ChannelInfoObject}},
+    "energySavingMode": {{EnergySavingModeInfoObject}},
     "flashLight" {{FlashLightInfoObject}},
     "gps": {{GPSInfoObject}},
     "localTime": {{string}},
-    "powerSavingMode": {{PowerSavingModeInfoObject}},
+    "power": {{{PowerInforObject}},
+    "screenBrightness": {{ScreenBrightnessInfoObject}},
     "soundMode": {{SoundModeInfoObject}},
     "volume": {{VolumeInfoObject}},
     "wifi": {{WifiInfoObject}}
@@ -34,12 +36,14 @@ DeviceState is a message format that sends device states of a client.
 | `airplane`        | [AirplaneInfoObject](#AirplaneInfoObject)               | An object containing an airplane mode setting of a client device      | No |
 | `battery`         | [BatteryInfoObject](#BatteryInfoObject)                 | An object containing a battery state of a client device              | No |
 | `bluetooth`       | [BluetoothInfoObject](#BluetoothInfoObject)             | An object containing a Bluetooth state of a client device, whether it is enabled and connected       | No |
-| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject)           | An object containing screen brightness of a client device            | No |
 | `cellular`        | [CellularInfoObject](#CellularInfoObject)               | An object containing a celluar activation state of a client device | No |
+| `channel`         | [ChannelInfoObject](#ChannelInfoObject)                 | An object containing a TV channel setting of a client device         | No |
+| `energySavingMode` | [EnergySavingModeInfoObject](#EnergySavingModeInfoObject) | An object containing an energy saving mode of a client device     | No |
 | `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | An object containing a flashlight setting of a client device       | No |
 | `gps`             | [GPSInfoObject](#GPSInfoObject)                         | An object containing a GPS setting of a client device            | No |
 | `localTime`       | string | Current local time set in the client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)              | No |
-| `powerSavingMode` | [PowerSavingModeInfoObject](#powerSavingModeInfoObject) | An object containing a power saving mode setting of a client device        | No |
+| `power`           | [PowerInfoObject](#PowerModeInfoObject)                 | An object containing a power state of a client device            | No |
+| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | An object containing screen brightness of a client device            | No |
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | An object containing a sound output setting of a client device        | No |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | An object containing a speaker volume level of a client device           | No |
 | `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | An object containing a wireless network (Wi-Fi) state of a client device, whether it is enabled and connected    | No |
@@ -154,7 +158,7 @@ An object containing a battery state of a client device.
 |---------------|---------|-----------------------------|---------|
 | actions[]     | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for battery. No actions are currently supported. | Yes |
 | value         | number | Remaining battery. Enter a number between 0 and 100. Unit is percentage (%). | Yes |
-| charging      | boolean | Whether charging the battery or not.<ul><li><code>true</code>: Charging</li><li><code>false</code>: Not charing</li></ul> | Yes |
+| charging      | boolean | Whether charging the battery or not.<ul><li><code>true</code>: Charging</li><li><code>false</code>: Not charging</li></ul> | Yes |
 
 #### Object example
 
@@ -232,45 +236,6 @@ An object containing a Bluetooth state of a client device, whether it is enabled
 ```
 {% endraw %}
 
-### ScreenBrightnessInfoObject {#ScreenBrightnessInfoObject}
-An object containing screen brightness of a client device.
-
-#### Object field
-
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for screen brightness. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetPoint"</li></ul> | Yes |
-| min                | number       | Minimum screen brightness of the client device    | Yes |
-| max                | number       | Maximum screen brightness of the client device    | Yes |
-| value              | number       | Current screen brightness of the client device                   | Yes |
-
-#### Object example
-
-{% raw %}
-```json
-{
-  "header": {
-    "namespace": "Device",
-    "name": "DeviceState"
-  },
-  "payload": {
-    ...
-    "screenBrightness": {
-        "actions": [
-            "Decrease",
-            "Increse",
-            "SetPoint"
-        ],
-        "min": 0,
-        "max": 100,
-        "value": 70
-    },
-    ...
-  }
-}
-```
-{% endraw %}
-
 ### CellularInfoObject {#CellularInfoObject}
 An object containing a cellular state of a client device, whether mobile communication is enabled or not.
 
@@ -304,6 +269,75 @@ An object containing a cellular state of a client device, whether mobile communi
 }
 ```
 {% endraw %}
+
+### ChannelInfoObject {#ChannelInfoObject}
+An object containing a TV channel setting of a client device.
+
+#### Object field
+
+| Field name       | Type    | Field description                     | Required |
+|---------------|---------|-----------------------------|---------|
+| actions[]     | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for TV channel settings. Enter the following values if your client device can execute them.<ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
+
+#### Object example
+
+{% raw %}
+```json
+{
+  "header": {
+    "namespace": "Device",
+    "name": "DeviceState"
+  },
+  "payload": {
+    ...
+    "channel": {
+        "actions": [
+            "Decrease",
+            "Increase",
+            "SetValue"
+        ]
+    },
+    ...
+  }
+}
+```
+{% endraw %}
+
+
+### EnergySavingModeInfoObject {#EnergySavingModeInfoObject}
+An object containing an energy saving mode of a client device.
+
+#### Object field
+
+| Field name       | Type    | Field description                     | Required |
+|---------------|---------|-----------------------------|---------|
+| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for a power saving mode. Enter the following values if your client device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
+| state              | string       | The state of the power saving mode. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+
+#### Object example
+
+{% raw %}
+```json
+{
+  "header": {
+    "namespace": "Device",
+    "name": "DeviceState"
+  },
+  "payload": {
+    ...
+    "energySavingMode": {
+        "actions": [
+            "TurnOff",
+            "TurnOn"
+        ],
+        "state": "off"
+    },
+    ...
+  }
+}
+```
+{% endraw %}
+
 
 ### FlashLightInfoObject {#FlashLightInfoObject}
 An object containing a flashlight setting of a client device.
@@ -373,15 +407,15 @@ An object containing a GPS state of a client device.
 ```
 {% endraw %}
 
-### PowerSavingModeInfoObject {#PowerSavingModeInfoObject}
-An object containing a power saving mode of a client device.
+### PowerInfoObject {#PowerInfoObject}
+An object containing a power state of a client device.
 
 #### Object field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for a power saving mode. Enter the following values if your client device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| state              | string       | The state of the power saving mode. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for power states. Enter the following values if your client device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
+| state              | string       | The power state. <ul><li><code>"active"</code>: The client device is turned on</li><li><code>"idle"</code>: The client device is turned off</li></ul> | Yes |
 
 #### Object example
 
@@ -394,12 +428,51 @@ An object containing a power saving mode of a client device.
   },
   "payload": {
     ...
-    "powerSavingMode": {
+    "power": {
         "actions": [
             "TurnOff",
             "TurnOn"
         ],
-        "state": "off"
+        "state": "active"
+    },
+    ...
+  }
+}
+```
+{% endraw %}
+
+### ScreenBrightnessInfoObject {#ScreenBrightnessInfoObject}
+An object containing screen brightness of a client device.
+
+#### Object field
+
+| Field name       | Type    | Field description                     | Required |
+|---------------|---------|-----------------------------|---------|
+| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for screen brightness. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
+| min                | number       | Minimum screen brightness of the client device    | Yes |
+| max                | number       | Maximum screen brightness of the client device    | Yes |
+| value              | number       | Current screen brightness of the client device                   | Yes |
+
+#### Object example
+
+{% raw %}
+```json
+{
+  "header": {
+    "namespace": "Device",
+    "name": "DeviceState"
+  },
+  "payload": {
+    ...
+    "screenBrightness": {
+        "actions": [
+            "Decrease",
+            "Increse",
+            "SetValue"
+        ],
+        "min": 0,
+        "max": 100,
+        "value": 70
     },
     ...
   }
@@ -448,7 +521,7 @@ An object containing a speaker volume level of a client device.
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for a speaker volume level. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetPoint"</li></ul> | Yes |
+| actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for a speaker volume level. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
 | min                | number       | Minimum speaker volume of the client device    | Yes |
 | max                | number       | Maximum speaker volume of the client device    | Yes |
 | value              | number       | Current speaker volume of the client device               | Yes |
@@ -468,7 +541,7 @@ An object containing a speaker volume level of a client device.
         "actions": [
             "Decrease",
             "Increse",
-            "SetPoint"
+            "SetValue"
         ],
         "min": 0,
         "max": 60,
@@ -491,7 +564,7 @@ An object containing a wireless network (Wi-Fi) state of a client device, whethe
 | networks[]           | object array | An object array containing details of wireless network found | Yes |
 | networks[].name      | string       | The name of the wireless network                     | Yes |
 | networks[].connected | boolean      | Whether the wireless network is connected or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
-| state                | string       | Whether the wireless network is enabled or not. <ul><li><code>"off"</code>: Enabled</li><li><code>"on"</code>: Disabled</li></ul> | Yes |
+| state                | string       | Whether the wireless network is enabled or not. <ul><li><code>"off"</code>: Disabled</li><li><code>"on"</code>: Enabled</li></ul> | Yes |
 
 #### Object example
 

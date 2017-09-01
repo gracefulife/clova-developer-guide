@@ -1,5 +1,5 @@
 # Shared Objects
-Content templates use the following shared objects.
+Content templates use the following shared objects to display repetitive data types.
 
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|

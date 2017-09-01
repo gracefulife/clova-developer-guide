@@ -15,30 +15,32 @@ Below are the steps to obtain a Clova access token.
 <ol>
 <li><p>In your client app or app paired with a client device, add an interface for users to authenticate their {{ book.TargetServiceForClientAuth }} account (<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} Login SDK</a>). You must use client app or paired app because user's speech input alone cannot handle account authentication.</p>
 </li>
-<li><p>Obtain an an account token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
+<li><p>Obtain an account token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
 </li>
-<li><p>Pass the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a> as parameters of the <a href="/CIC/Clova_Auth_API.html#authorize">/authorize</a> API and obtain an authorization code. Below is an example of requesting an authorization code.</p>
-<pre><code>{{ book.AuthServerBaseURL }}authorize?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                               &amp;device_id=test_device
-                               &amp;model_id=test_model
-                               &amp;response_type=code
-                               &amp;state=95%2FKjaJfMlakjdfTVbES5ccZQ%3D%3D
+<li><p><a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">Request an authorization code</a> by providing the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a>. Below is an example of requesting an authorization code.</p>
+<pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
+       {{ book.AuthServerBaseURL }}authorize \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
+       --data-urlencode 'model_id=test_model' \
+       --data-urlencode 'response_type=code' \
+       --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
 </code></pre>
 <p>The authorization code is returned as follows.</p>
 <pre><code>{
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
-    "state": "95/KjaJfMlakjdfTVbES5ccZQ=="
+    "state": "FKjaJfMlakjdfTVbES5ccZ"
 }
 </code></pre></li>
 <li><p>(If it is a paired app) Forward the authorization code to the client device.</p>
 </li>
-<li><p>Pass the authorization code and <a href="#ClientAuthInfo">client credentials</a> as parameters of the <a href="/CIC/References/Clova_Auth_API.html#token">/token</a> API and obtain a Clova access token. Below is an example of requesting a Clova access token.</p>
-<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                           &amp;code=cnl__eCSTdsdlkjfweyuxXvnlA
-                           &amp;device_id=test_device
-                           &amp;grant_type=authorization_code
-                           &amp;model_id=test_model
+<li><p>Pass the authorization code and <a href="#ClientAuthInfo">client credentials</a> as parameters and <a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">request a Clova access token</a>. Below is an example of requesting a Clova access token.</p>
+<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
+       --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
+       --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
+       --data-urlencode 'model_id=test_model'
 </code></pre>
 <p>The Clova access token is returned as follows.</p>
 <pre><code>{
@@ -142,12 +144,12 @@ Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 
 #### Refreshing access token {#RefreshAccessToken}
 
-When obtaining an access token, you can know its expiry time by checking the `expires_in` field. If the time expires, or if you receive an [error message](/CIC/References/CIC_Message_Format.md#Error) that reads, "HTTP 401 Unauthorized", you must refresh the access token. As shown below, pass the refresh token (`refresh_token`) you have received through the [`/token`](/CIC/References/Clova_Auth_API.md#token) API and other necessary parameters and obtain a new Clova access token.
+When your client obtains an access token, you can know its expiry time by checking the `expires_in` field. If the time expires, or if you receive an [error message](/CIC/References/CIC_Message_Format.md#Error) that reads, "HTTP 401 Unauthorized", you must refresh the access token. To [refresh the Clova access token](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken), send the refresh token (`refresh_token`) received during [obtaining the Clova access token](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken) and pass parameters required to refersh the token, as shown below.
 
-<pre><code>{{ book.AuthServerBaseURL }}token?client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ
-                           &amp;client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D
-                           &amp;refresh_token=GW-Ipsdfasdfdfs3IbHFBA
-                           &amp;device_id=test_device
-                           &amp;grant_type=refresh_token
-                           &amp;model_id=test_model
+<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
+       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
+       --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
+       --data-urlencode 'refresh_token=GW-Ipsdfasdfdfs3IbHFBA' \
+       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
+       --data-urlencode 'model_id=test_model'
 </code></pre>

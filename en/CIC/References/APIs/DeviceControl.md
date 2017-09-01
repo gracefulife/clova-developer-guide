@@ -8,7 +8,7 @@ The DeviceControl API provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ActionExecuted`](#ActionExecuted)         | Event     | Send this event message to CIC after your client executes device control.           |
+| [`ActionExecuted`](#ActionExecuted)       | Event     | Send this event message to CIC after your client executes device control.           |
 | [`ActionFailed`](#ActionFailed)           | Event     | Send this event message to CIC if your client cannot or fails to execute device control. |
 | [`BtConnect`](#BtConnect)                 | Directive | Instructs your client to connect a specified Bluetooth device.                             |
 | [`BtDisconnect`](#BtDisconnect)           | Directive | Instructs your client to disconnect a specified Bluetooth device.                             |
@@ -17,7 +17,7 @@ The DeviceControl API provides the following event and directive messages.
 | [`Decrease`](#Decrease)                   | Directive | Instructs your client to turn down speaker volume or decrease screen brightness by a value of default unit.                   |
 | [`Increase`](#Increase)                   | Directive | Instructs your client to turn up speaker volume or increase screen brightness by a value of default unit.                   |
 | [`OpenScreen`](#OpenScreen)               | Directive | Instructs your client to open the settings screen.                                            |
-| [`SetPoint`](#SetPoint)                   | Directive | Instructs your client to set speaker volume or screen brightness to a specified value.                  |
+| [`SetValue`](#SetValue)                   | Directive | Instructs your client to set speaker volume or screen brightness to a specified value.                  |
 | [`TurnOff`](#TurnOff)                     | Directive | Instructs your client to turn off or disable a specified feature or mode.                         |
 | [`TurnOn`](#TurnOn)                       | Directive | Instructs your client to turn on or enable a specified feature or mode.                                 |
 | [`UpdateDeviceState`](#UpdateDeviceState) | Directive | Instructs your client to update states of other client devices registered to a user account.       |
@@ -35,8 +35,8 @@ Send this event message to CIC after your client executes device control.
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"screenBrightness"</code>: Screen brightness</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions executed.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetPoint</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| `command`     | string  | Actions executed.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
 
 ### Remarks
 
@@ -74,7 +74,7 @@ When CIC receives this event message, it sends a [`UpdateDeviceState`](#UpdateDe
 * [`Decrease`](#Decrease)
 * [`Increase`](#Increase)
 * [`OpenScreen`](#OpenScreen)
-* [`SetPoint`](#SetPoint)
+* [`SetValue`](#SetValue)
 * [`TurnOff`](#TurnOff)
 * [`TurnOn`](#TurnOn)
 
@@ -86,8 +86,8 @@ Send this event message to CIC if your client cannot or fails to execute device 
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"screenBrightness"</code>: Screen brightness</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions failed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetPoint</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| `command`     | string  | Actions failed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
 
 ### Remarks
 
@@ -125,7 +125,7 @@ When CIC receives this event message, it sends a [`UpdateDeviceState`](#UpdateDe
 * [`Decrease`](#Decrease)
 * [`Increase`](#Increase)
 * [`OpenScreen`](#OpenScreen)
-* [`SetPoint`](#SetPoint)
+* [`SetValue`](#SetValue)
 * [`TurnOff`](#TurnOff)
 * [`TurnOn`](#TurnOn)
 
@@ -303,13 +303,13 @@ None
 
 ## Decrease directive {#Decrease}
 
-Instructs your client to turn down speaker volume or decrease screen brightness by a value of default unit.
+Instructs your client to turn down speaker volume or decrease screen brightness by a value of default unit, or change the TV channel to a previous channel.
 
 ### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"screenBrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
 
 ### Remarks
 
@@ -331,7 +331,7 @@ Instructs your client to turn down speaker volume or decrease screen brightness 
       "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
     },
     "payload": {
-      "target": "screenBrightness"
+      "target": "screenbrightness"
     }
   }
 }
@@ -343,17 +343,17 @@ Instructs your client to turn down speaker volume or decrease screen brightness 
 * [`ActionExecuted`](#ActionExecuted)
 * [`ActionFailed`](#ActionFailed)
 * [`Increase`](#Increase)
-* [`SetPoint`](#SetPoint)
+* [`SetValue`](#SetValue)
 
 ## Increase directive {#Increase}
 
-Instructs your client to turn up speaker volume or increase screen brightness by a value of default unit.
+Instructs your client to turn up speaker volume or increase screen brightness by a value of default unit, or change the TV channel to a next channel.
 
 ### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"screenBrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
 
 ### Remarks
 
@@ -375,7 +375,7 @@ Instructs your client to turn up speaker volume or increase screen brightness by
       "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
     },
     "payload": {
-      "target": "screenBrightness"
+      "target": "screenbrightness"
     }
   }
 }
@@ -387,7 +387,7 @@ Instructs your client to turn up speaker volume or increase screen brightness by
 * [`ActionExecuted`](#ActionExecuted)
 * [`ActionFailed`](#ActionFailed)
 * [`Decrease`](#Decrease)
-* [`SetPoint`](#SetPoint)
+* [`SetValue`](#SetValue)
 
 ## OpenScreen directive {#OpenScreen}
 
@@ -429,16 +429,16 @@ After your client processes this directive message, it must send the result to C
 * [`ActionExecuted`](#ActionExecuted)
 * [`ActionFailed`](#ActionFailed)
 
-## SetPoint directive {#SetPoint}
+## SetValue directive {#SetValue}
 
-Instructs your client to set speaker volume or screen brightness to a specified value.
+Instructs your client to set speaker volume or screen brightness to a specified value, or change to a specified TV channel.
 
 ### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"screenBrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
-| `value`       | number  | A value to change                       | Yes     |
+| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| `value`       | string  | The value or TV channel number to change to       | Yes     |
 
 ### Remarks
 
@@ -454,13 +454,13 @@ Instructs your client to set speaker volume or screen brightness to a specified 
   "directive": {
     "header": {
       "namespace": "DeviceControl",
-      "name": "SetPoint",
+      "name": "SetValue",
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
       "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
     },
     "payload": {
       "target": "volume",
-      "value": 30
+      "value": "30"
     }
   }
 }
@@ -473,7 +473,7 @@ Instructs your client to set speaker volume or screen brightness to a specified 
 * [`ActionFailed`](#ActionFailed)
 * [`Decrease`](#Decrease)
 * [`Increase`](#Increase)
-* [`SetPoint`](#SetPoint)
+* [`SetValue`](#SetValue)
 
 ## TurnOff directive {#TurnOff}
 
@@ -483,13 +483,18 @@ Instructs your client to turn off or disable a specified feature or mode. For ex
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
 
 ### Remarks
 
 * When turning off or disabling a certain control target, you must follow policies of the client device and execute device control appropriately to situations. For example, to disable a ring mode, you may have to implement to enter a vibration mode or mute mode depending on the client device.
 * Your client must send CIC states of features or modes frequently using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
 * After your client processes this directive message, it must send the result to CIC, using [`ActionExecuted`](#ActionExecuted) or [`ActionFailed`](#ActionFailed) event message.
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>A client device must be turned off when its <code>target</code> field is set to <code>"power"</code>.</p>
+</div>
 
 ### Message example
 
@@ -526,7 +531,7 @@ Instructs your client to turn on or enable a specified feature or mode. For exam
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
 
 ### Remarks
 

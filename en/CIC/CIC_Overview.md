@@ -34,18 +34,18 @@ Usually, users can have a dialog with Clova in the following steps.
 
 1. A user starts speech input.
 2. Your client records the user's speech and sends it to CIC.
-3. Your client receives results from CIC and provides to the user by playing them or displaying on a screen.
+3. CIC returns results and your client presents those results to the user by playing them or displaying on a screen.
 
 Due to the indirect nature of the dialog structure, dialogs between users and Clova have the following characteristics.
 
 * It takes more time than direct dialogs to send requests or receive responses.
 * It is difficult to respond promptly when users attempt to open a new topic (request).
 
-For example, a user asks Clova, "How's the weather today?". Then, while Clova is preparing to respond, the user makes another request by saying, "Play some upbeat music." In this case, the user is not expecting to receive a response for weather anymore. If it were a direct dialog, you would easily stop or cancel responding. However, since dialogs need to be relayed by your client, you must make your client perceive the situation and perform appropriate actions.
+For example, a user asks Clova, "How's the weather today?". Then, while Clova is preparing to respond, the user makes another request by saying, "Play some upbeat music." In this case, the user is not expecting to receive a response for weather anymore. If it were a direct dialog, you would easily stop or cancel responding. However, since dialogs need to be relayed by your client, you must make your client recognize the situation and perform appropriate actions.
 
 ### Dialog ID and client behavior {#DialogIDandClientOP}
 
-To solve the issue of indirect dialog structure, we use a **dialog ID**. To identify user requests, a **dialog ID** is created every time a user make speech input. Your client must keep the dialog ID of the last user request it has sent to CIC. Also, it must update the last dialog ID every time it sends a user request.
+To solve the issue of indirect dialog structure, we use a **dialog ID**. To identify user requests, a **dialog ID** is created every time a user makes speech input. Your client must keep the dialog ID of the last user request it has sent to CIC. Also, it must update the last dialog ID every time it sends a user request.
 
 When CIC returns a directive message to your client to respond to the user request, the message includes the dialog ID which is the same as the one it has received for the user request. In short, dialog IDs help you confirm that results returned from CIC correspond to their original user requests. Implement your client to perform the following actions.
 

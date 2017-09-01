@@ -174,7 +174,7 @@ While receiving speech input from users through [`SpeechRecognizer.Recognize`](#
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `text`  | string | Contains results of natural language recognition for user's speech input. | Yes    |
+| `text`  | string | Contains recognition results of user speech in real time. | Yes    |
 
 ### Remarks
 

@@ -31,7 +31,7 @@
 | DeviceControl      | [`Decrease`](/CIC/References/APIs/DeviceControl.md#Decrease)             | Instructs your client to turn down speaker volume or decrease screen brightness by a value of default unit. |
 | DeviceControl      | [`Increase`](/CIC/References/APIs/DeviceControl.md#Increase)             | Instructs your client to turn up speaker volume or increase screen brightness by a value of default unit. |
 | DeviceControl      | [`OpenScreen`](/CIC/References/APIs/DeviceControl.md#OpenScreen)         | Instructs your client to open the settings screen. |
-| DeviceControl      |  [`SetPoint`](/CIC/References/APIs/DeviceControl.md#SetPoint)            | Instructs your client to set speaker volume or screen brightness to a specified value. |
+| DeviceControl      | [`SetValue`](/CIC/References/APIs/DeviceControl.md#SetValue)            | Instructs your client to set speaker volume or screen brightness to a specified value. |
 | DeviceControl      | [`TurnOff`](/CIC/References/APIs/DeviceControl.md#TurnOff)               | Instructs your client to turn off or disable a specified feature or mode. |
 | DeviceControl      | [`TurnOn`](/CIC/References/APIs/DeviceControl.md#TurnOn)                 | Instructs your client to turn on or enable a specified feature or mode. |
 | DeviceControl      | [`UpdateDeviceState`](#UpdateDeviceState)                                | Instructs your client to update states of other client devices registered to a user account.                     |
