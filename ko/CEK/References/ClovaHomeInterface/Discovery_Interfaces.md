@@ -1,4 +1,4 @@
-## Discovery API {#DiscoveryAPI}
+# Discovery API
 
 사용자 계정에 등록된 IoT 기기 목록을 확인할 때 사용되는 API입니다.
 
@@ -7,16 +7,16 @@
 | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)                     | Request  | 사용자가 등록한 IoT 기기 목록을 Clova Home extension에게 요청합니다.             |
 | [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)                   | Response | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용자가 등록한 IoT 기기 목록을 CEK에게 전달합니다. |
 
-### DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
-사용자가 등록한 기기 목록을 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`ClovaHome.DiscoverAppliancesResponse`](DiscoverAppliancesResponse) 메시지를 사용해야 합니다.
+## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
+사용자가 등록한 기기 목록을 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) 메시지를 사용해야 합니다.
 
-#### Payload field
+### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `accessToken`   | string  | Clova Home extension의 access token  | 필수     |
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -34,22 +34,22 @@
 ```
 {% endraw %}
 
-#### See also
-* [`DiscoverAppliancesResponse`](DiscoverAppliancesResponse)
+### See also
+* [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)
 
-### DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
-사용자가 등록한 기기 목록을 CEK에게 전달합니다. 이 메시지는 [`ClovaHome.DiscoverAppliancesRequest`](DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용됩니다.
+## DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
+사용자가 등록한 기기 목록을 CEK에게 전달합니다. 이 메시지는 [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용됩니다.
 
-#### Payload field
+### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `discoveredAppliances[]`  | [ApplianceObject](#ApplianceObject) array  | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
+| `discoveredAppliances[]`  | [ApplianceObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceObject) array  | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
 
-#### Remarks
+### Remarks
 IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록을 제공해야 합니다.
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -98,5 +98,5 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
 ```
 {% endraw %}
 
-#### See also
-* [`DiscoverAppliancesRequest`](DiscoverAppliancesRequest)
+### See also
+* [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)

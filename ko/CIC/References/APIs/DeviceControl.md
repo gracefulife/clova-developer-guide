@@ -1,26 +1,27 @@
 # DeviceControl
 
-클라이언트 기기를 제어하거나 클라이언트 기기 제어 수행 결과를 CIC로 보고할 때 사용하는 API입니다.
+DeviceControl은 클라이언트 기기를 제어하거나 클라이언트 기기 제어 수행 결과를 CIC로 보고할 때 사용되는 네임스페이스입니다.
 
 일부 사용자의 요청은 클라이언트 기기를 제어하는 요청일 수 있습니다. 분석된 사용자의 요청이 클라이언트 기기를 제어하는 요청이면 네임스페이스 `DeviceControl`인 지시 메시지를 받게 되며 클라이언트는 수신한 지시 메시지에 맞게 클라이언트 기기를 제어해야 합니다. 클라이언트 기기 제어를 수행한 후 그 결과를 이벤트 메시지를 사용하여 CIC에 전송해야 합니다.
 
-DeviceControl API가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
+DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
 | [`ActionExecuted`](#ActionExecuted)       | Event     | 클라이언트는 기기 제어를 정상적으로 수행한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다.           |
 | [`ActionFailed`](#ActionFailed)           | Event     | 클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다. |
-| [`BtConnect`](#BtConnect)                 | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 설정하도록 지시합니다.                             |
-| [`BtDisconnect`](#BtDisconnect)           | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 해제하도록 지시합니다.                             |
-| [`BtStartPairing`](#BtStartPairing)       | Directive | 클라이언트에게 블루투스 페어링 모드를 시작하도록 지시합니다.                                 |
-| [`BtStopPairing`](#BtStopPairing)         | Directive | 클라이언트에게 블루투스 페어링 모드로 중지하도록 지시합니다.                                 |
-| [`Decrease`](#Decrease)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                   |
-| [`Increase`](#Increase)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                   |
-| [`OpenScreen`](#OpenScreen)               | Directive | 클라이언트에게 설정 화면을 열도록 지시합니다.                                            |
-| [`SetValue`](#SetValue)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                  |
-| [`TurnOff`](#TurnOff)                     | Directive | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                         |
-| [`TurnOn`](#TurnOn)                       | Directive | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                 |
-| [`UpdateDeviceState`](#UpdateDeviceState) | Directive | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.       |
+| [`BtConnect`](#BtConnect)                 | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 설정하도록 지시합니다.                               |
+| [`BtDisconnect`](#BtDisconnect)           | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 해제하도록 지시합니다.                               |
+| [`BtStartPairing`](#BtStartPairing)       | Directive | 클라이언트에게 블루투스 페어링 모드를 시작하도록 지시합니다.                                   |
+| [`BtStopPairing`](#BtStopPairing)         | Directive | 클라이언트에게 블루투스 페어링 모드로 중지하도록 지시합니다.                                   |
+| [`Decrease`](#Decrease)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                     |
+| [`Increase`](#Increase)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                     |
+| [`LaunchApp`](#LaunchApp)                 | Directive | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                             |
+| [`OpenScreen`](#OpenScreen)               | Directive | 클라이언트에게 설정 화면을 열도록 지시합니다.                                              |
+| [`SetValue`](#SetValue)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                    |
+| [`TurnOff`](#TurnOff)                     | Directive | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                           |
+| [`TurnOn`](#TurnOn)                       | Directive | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                   |
+| [`UpdateDeviceState`](#UpdateDeviceState) | Directive | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.         |
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -29,7 +30,7 @@ DeviceControl API가 제공하는 이벤트 메시지와 지시 메시지는 다
 
 ## ActionExecuted event {#ActionExecuted}
 
-클라이언트는 기기 제어를 정상적으로 수행한 경우 이 지시 메시지를 CIC로 전송해야 합니다.
+클라이언트는 기기 제어를 정상적으로 수행한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다.
 
 ### Payload field
 
@@ -80,18 +81,19 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ## ActionFailed event {#ActionFailed}
 
-클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패한 경우 이 지시 메시지를 CIC로 전송해야 합니다.
+클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다.
 
 ### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
-| `command`     | string  | 실패한 동작. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
+| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"app"</code> : 앱</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
+| `command`     | string  | 실패한 동작. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
 ### Remarks
 
-CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`UpdateDeviceState`](#UpdateDeviceState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
+* CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`UpdateDeviceState`](#UpdateDeviceState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
+* [`LaunchApp`](#LaunchApp) 지시 메시지를 수신한 후 앱 실행에 실패하면 `target` 필드는 `"app"`으로 설정합니다.
 
 ### Message example
 
@@ -124,6 +126,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`BtStopPairing`](#BtStopPairing)
 * [`Decrease`](#Decrease)
 * [`Increase`](#Increase)
+* [`LaunchApp`](#LaunchApp)
 * [`OpenScreen`](#OpenScreen)
 * [`SetValue`](#SetValue)
 * [`TurnOff`](#TurnOff)
@@ -389,6 +392,45 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`Decrease`](#Decrease)
 * [`SetValue`](#SetValue)
 
+## LaunchApp directive {#LaunchApp}
+
+클라이언트에게 특정 앱을 실행하도록 지시합니다. 앱을 지정하는 값으로 앱의 custom URL scheme나 중계 페이지 URL 또는 앱 이름이 전달됩니다.
+
+### Payload field
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|---------|
+| `target`      | string  | 대상 앱에 대한 정보. 다음과 같은 타입의 앱 정보를 가질 수 있습니다.<ul><li>custom URL scheme : 대상 앱의 custom URL scheme (예, <code>"naversearchapp://..."</code>)</li><li>중계 페이지 URL : 설치된 대상 앱이 있을 경우 해당 앱을 실행하는 중계 페이지 URL(예, <code>"http://naverapp.naver.com/..."</code>)</li><li>앱 이름 : 사용자의 발화를 인식한 앱의 이름 (예, <code>"네이버앱"</code>)</li></ul> | 필수     |
+
+### Remarks
+
+* 앱을 실행할 수 없거나 앱 실행에 실패한 경우 [`ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "LaunchApp",
+      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
+      "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
+    },
+    "payload": {
+      "target": "naversearchapp://..."
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`ActionFailed`](#ActionFailed)
+
 ## OpenScreen directive {#OpenScreen}
 
 클라이언트에게 설정 화면을 열도록 지시합니다.
@@ -492,7 +534,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`ActionExecuted`](#ActionExecuted) 또는 [`ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
 
 <div class="danger">
-  <p><strong>Cautiona!</strong></p>
+  <p><strong>Caution!</strong></p>
   <p><code>target</code> 필드의 값이 <code>"power"</code>일 경우 클라이언트 기기의 전원을 꺼야 합니다.</p>
 </div>
 
