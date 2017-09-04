@@ -1,0 +1,3504 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <title>Clova Developer Guide</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LINE Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Clova_Home_Extension_Message_Format.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Documentation summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Copyright.html">
+            
+                <a href="../../Copyright.html">
+            
+                    
+                    Copyright
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Terms.html">
+            
+                <a href="../../Terms.html">
+            
+                    
+                    Terms and abbreviations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html">
+            
+                    
+                    CIC overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#WhatisCIC">
+            
+                    
+                    What is CIC?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#DialogModel">
+            
+                    
+                    Dialog model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html">
+            
+                    
+                    Interacting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    Connecting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Creating Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    Creating connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    Getting authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    Managing connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    Sending event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    Handling directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    Managing message queue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html">
+            
+                    
+                    HTTP/2 message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#Request">
+            
+                    
+                    HTTP request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#Response">
+            
+                    
+                    HTTP response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../CIC/References/HTTP2_Message_Format.html">
+            
+                <a href="../../CIC/References/HTTP2_Message_Format.html#MessageExample">
+            
+                    
+                    HTTP message example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html">
+            
+                    
+                    Clova Auth API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">
+            
+                    
+                    Requesting authorization code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">
+            
+                    
+                    Requesting Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RefreshClovaAccessToken">
+            
+                    
+                    Refreshing Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#DeleteClovaAccessToken">
+            
+                    
+                    Deleting Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html">
+            
+                    
+                    CIC message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Event">
+            
+                    
+                    Event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Directive">
+            
+                    
+                    Directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../CIC/References/CIC_Message_Format.html">
+            
+                <a href="../../CIC/References/CIC_Message_Format.html#Error">
+            
+                    
+                    Error message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html">
+            
+                    
+                    CIC API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../../CIC/References/APIs/Alerts.html">
+            
+                <a href="../../CIC/References/APIs/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../../CIC/References/APIs/AudioPlayer.html">
+            
+                <a href="../../CIC/References/APIs/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../../CIC/References/APIs/Clova.html">
+            
+                <a href="../../CIC/References/APIs/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../../CIC/References/APIs/DeviceControl.html">
+            
+                <a href="../../CIC/References/APIs/DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../../CIC/References/APIs/Memo.html">
+            
+                <a href="../../CIC/References/APIs/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../../CIC/References/APIs/PlaybackController.html">
+            
+                <a href="../../CIC/References/APIs/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../../CIC/References/APIs/Reminder.html">
+            
+                <a href="../../CIC/References/APIs/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../../CIC/References/APIs/SpeechRecognizer.html">
+            
+                <a href="../../CIC/References/APIs/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                <a href="../../CIC/References/APIs/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../../CIC/References/APIs/Index_for_Events.html">
+            
+                <a href="../../CIC/References/APIs/Index_for_Events.html">
+            
+                    
+                    Event messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../../CIC/References/APIs/Index_for_Directives.html">
+            
+                <a href="../../CIC/References/APIs/Index_for_Directives.html">
+            
+                    
+                    Directive messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html">
+            
+                    
+                    Context information
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#FreetalkState">
+            
+                    
+                    Clova.FreetalkState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.5" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.6" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../../CIC/References/Content_Templates.html">
+            
+                <a href="../../CIC/References/Content_Templates.html">
+            
+                    
+                    Content template
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../../CIC/References/ContentTemplates/CardList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../../CIC/References/ContentTemplates/CarRoute.html">
+            
+                <a href="../../CIC/References/ContentTemplates/CarRoute.html">
+            
+                    
+                    CarRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.6" data-path="../../CIC/References/ContentTemplates/Text.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.7" data-path="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.8" data-path="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.9" data-path="../../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TransportationRoute.html">
+            
+                    
+                    TransportationRoute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.10" data-path="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.11" data-path="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.12" data-path="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extension Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html">
+            
+                    
+                    CEK overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#WhatisCEK">
+            
+                    
+                    What is CEK?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension type
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html">
+            
+                    
+                    Building custom extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Handling custom extension request
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    Handling LaunchRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    Handling IntentRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    Handling SessionEndedRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Returning custom extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../Guides/Build_Custom_Extension.html">
+            
+                <a href="../Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Having multi-turn dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Building Clova Home extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Providing device discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Handling Clova Home extension request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Returning Clova Home extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../Guides/LinkUserAccount.html">
+            
+                <a href="../Guides/LinkUserAccount.html">
+            
+                    
+                    Linking user account
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="HTTP_Message_Format.html">
+            
+                <a href="HTTP_Message_Format.html">
+            
+                    
+                    HTTP message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="Custom_Extension_Message_Format.html">
+            
+                <a href="Custom_Extension_Message_Format.html">
+            
+                    
+                    Custom extension message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="Clova_Home_Extension_Message_Format.html">
+            
+                <a href="Clova_Home_Extension_Message_Format.html">
+            
+                    
+                    Clova Home extension message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.7.1" data-path="Clova_Home_API.html">
+            
+                <a href="Clova_Home_API.html">
+            
+                    
+                    Clova Home API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Clova Home API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="clova-home-api">Clova Home API</h1>
+<p>This API controls IoT appliances. Its message header (<code>header</code>) is set to <code>&quot;ClovaHome&quot;</code>. Clova Home extensions use this API to provide a list of controllable appliances or to control IoT appliances registered to a user. The Clova Home API is divided into following APIs.</p>
+<ul>
+<li><a href="#DiscoveryAPI">Discovery API</a></li>
+<li><a href="#ControlAPI">Control API</a></li>
+<li><a href="#ErrorAPI">Error API</a></li>
+<li><a href="#SharedObjects">Shared objects</a></li>
+</ul>
+<h2 id="DiscoveryAPI">Discovery API </h2>
+<p>Obtains a list of IoT appliances registered to a user account.</p>
+<table>
+<thead>
+<tr>
+<th>Message name</th>
+<th>Message type</th>
+<th>Message description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to provide a list of IoT appliances registered to a user.</td>
+</tr>
+<tr>
+<td><a href="#DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></td>
+<td>Response</td>
+<td>Responds to a <a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a> message by returning CEK a list of IoT appliances registered to a user.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DiscoverAppliancesRequest">DiscoverAppliancesRequest </h3>
+<p>Requests your Clova Home extension to provide a list of appliances registered to a user. To respond to the request, use a <a href="DiscoverAppliancesResponse"><code>ClovaHome.DiscoverAppliancesResponse</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the Clova Home extension</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;header&quot;</span>: {
+        <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;8ddd7f05-7703-4cb4-a6dd-93c209c6647b&quot;</span>,
+        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesRequest&quot;</span>,
+        <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+        <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+    },
+    <span class="hljs-string">&quot;payload&quot;</span>: {
+        <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>
+    }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></li>
+</ul>
+<h3 id="DiscoverAppliancesResponse">DiscoverAppliancesResponse </h3>
+<p>Returns CEK a list of appliances registered to a user. Use this message to respond to a <a href="DiscoverAppliancesRequest"><code>ClovaHome.DiscoverAppliancesRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>discoveredAppliances[]</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a> array</td>
+<td>An object array displaying a list of appliances registered to a user account</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remarks">Remarks</h4>
+<p>When providing IoT services, you must provide a list of appliances registered to each user account.</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;99f9d8ff-9366-4cab-a90c-b4c7eca0abbe&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;discoveredAppliances&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xAC70;&#xC2E4; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0;&#xC73C;&#xB85C; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">&quot;actions&quot;</span>: [
+            <span class="hljs-string">&quot;TurnOn&quot;</span>,
+            <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;LIGHT&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      },
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-002&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xBD80;&#xC5CC; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC5D0;&#xB108;&#xC9C0;&#xB97C; &#xC808;&#xC57D;&#xD558;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;actions&quot;</span>: [
+          <span class="hljs-string">&quot;TurnOn&quot;</span>,
+          <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;SMARTPLUG&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      }
+    ]
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></li>
+</ul>
+<h2 id="ControlAPI">Control API </h2>
+<p>Processes requests and responses related to obtaining information of IoT appliances or controlling IoT appliances.</p>
+<table>
+<thead>
+<tr>
+<th>Message name</th>
+<th>Message type</th>
+<th>Message description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to reduce the fan speed, in response to a <a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></td>
+<td>Response</td>
+<td>Requests your Clova Home extension to set the target appliance to reduce the fan speed by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to reduce the temperature, in response to a <a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to set the target appliance to reduce the temperature by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to turn down the speaker volume, in response to a <a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></td>
+<td>Response</td>
+<td>Requests your Clova Home extension to set the target appliance to turn down the speaker volume by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to check and report the state of the target appliance.</td>
+</tr>
+<tr>
+<td><a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></td>
+<td>Response</td>
+<td>Returns CEK the state of the target appliance, in response to a <a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to raise the fan speed, in response to an <a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></td>
+<td>Response</td>
+<td>Requests your Clova Home extension to set the target appliance to raise the fan speed by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to raise the temperature, in response to an <a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to set the target appliance to raise the temperature by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to turn up the speaker volume, in response to an <a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></td>
+<td>Response</td>
+<td>Requests your Clova Home extension to set the target appliance to turn up the speaker volume by a specified value.</td>
+</tr>
+<tr>
+<td><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a></td>
+<td>Request</td>
+<td>Returns CEK the result of setting the target appliance to change the TV channel, in response to a <a href="#SetChannelRequest"><code>SetChannelRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#SetChannelRequest"><code>SetChannelRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to set the target appliance to change to a specified TV channel.</td>
+</tr>
+<tr>
+<td><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></td>
+<td>Request</td>
+<td>Returns CEK the result of setting the target appliance to change the heating mode, in response to a <a href="#SetModeRequest"><code>SetModeRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#SetModeRequest"><code>SetModeRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to set the target appliance to change the heating mode to a specified mode.</td>
+</tr>
+<tr>
+<td><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns CEK the result of setting the target appliance to turn off, in response to a <a href="#TurnOffRequest"><code>TurnOffRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#TurnOffRequest"><code>TurnOffRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to turn off the target appliance.</td>
+</tr>
+<tr>
+<td><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a></td>
+<td>Response</td>
+<td>Returns the result of setting the target appliance to turn on in response to a <a href="#TurnOnRequest"><code>TurnOnRequest</code></a> message.</td>
+</tr>
+<tr>
+<td><a href="#TurnOnRequest"><code>TurnOnRequest</code></a></td>
+<td>Request</td>
+<td>Requests your Clova Home extension to turn on the target appliance.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DecrementFanSpeedConfirmation">DecrementFanSpeedConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to reduce the fan speed, in response to a <a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the current speed</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the previous speed</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">4</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="DecrementFanSpeedRequest">DecrementFanSpeedRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to reduce the fan speed by a specified value. It is usually used to control appliances such as an air purifier. To respond to this request, use a <a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the expected change in the value of the speed.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></li>
+</ul>
+<h3 id="DecrementTargetTemperatureConfirmation">DecrementTargetTemperatureConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to reduce the temperature, in response to a <a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the current target temperature</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the previous target temperature</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">23.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="DecrementTargetTemperatureRequest">DecrementTargetTemperatureRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to reduce the temperature by a specified value. It is usually used to control appliances such as an air conditioner. To respond to this request, use a <a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the expected change in the value of the temperature.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2.0</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></li>
+</ul>
+<h3 id="DecrementVolumeConfirmation">DecrementVolumeConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to turn down the speaker volume, in response to a <a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetVolume</code></td>
+<td><a href="#SpeedObject">VolumeObject</a></td>
+<td>An object containing the current volume</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.targetVolume</code></td>
+<td><a href="#SpeedObject">VolumeObject</a></td>
+<td>An object containing the previous volume</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></li>
+</ul>
+<h3 id="DecrementVolumeRequest">DecrementVolumeRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to turn down the speaker volume by a specified value. It is usually used to control appliances such as a TV set-top box. To respond to this request, use a <a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>An object containing the expected change in the value of the volume.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DecrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></li>
+</ul>
+<h3 id="HealthCheckRequest">HealthCheckRequest </h3>
+<p>Requests your Clova Home extension to check and report the state of the target appliance. To respond to this request, use a <a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the Clova Home extension</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;HealthCheckRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></li>
+</ul>
+<h3 id="HealthCheckResponse">HealthCheckResponse </h3>
+<p>Returns CEK the state of the target appliance, in response to a <a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isReachable</code></td>
+<td>boolean</td>
+<td>A value that indicates whether the target appliance is reachable over a network. <ul><li><code>true</code>: Reachable (online)</li><li><code>false</code>: Not reachable (offline)</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>isTurnOn</code></td>
+<td>boolean</td>
+<td>A value that indicates the working state of the target appliance. <ul><li><code>true</code>: Idle</li><li><code>false</code>: Working</li></ul></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;HealthCheckResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;isTurnOn&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a></li>
+</ul>
+<h3 id="IncrementFanSpeedConfirmation">IncrementFanSpeedConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to raise the fan speed, in response to an <a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the current fan speed</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.FanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the previous fan speed</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="IncrementFanSpeedRequest">IncrementFanSpeedRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to raise the fan speed by a specified value. It is usually used to control appliances such as an air purifier. To respond to this request, use an <a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaFanSpeed</code></td>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing the expected change in the value of the speed.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></li>
+</ul>
+<h3 id="IncrementTargetTemperatureConfirmation">IncrementTargetTemperatureConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to raise the temperature, in response to an <a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the current target temperature</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.targetTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the previous target temperature</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">22.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="IncrementTargetTemperatureRequest">IncrementTargetTemperatureRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to raise the temperature by a specified value. It is usually used to control appliances such as an air conditioner. To respond to this request, use an <a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaTemperature</code></td>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing the expected change in the value of the temperature.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3.0</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></li>
+</ul>
+<h3 id="IncrementVolumeConfirmation">IncrementVolumeConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to turn up the speaker volume, in response to an <a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>An object containing the current volume</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState</code></td>
+<td>object</td>
+<td>An object containing the previous state of the appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>previousState.targetVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>An object containing the previous volume</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></li>
+</ul>
+<h3 id="IncrementVolumeRequest">IncrementVolumeRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to turn up the speaker volume by a specified value. It is usually used to control appliances such as a TV set-top box. To respond to this request, use an <a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>deltaVolume</code></td>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>An object containing the expected change in the value of the volume.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></li>
+</ul>
+<h3 id="SetChannelConfirmation">SetChannelConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to change the TV channel, in response to a <a href="#SetChannelRequest"><code>SetChannelRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>channel</code></td>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>An object containing the TV channel set on the target appliance.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>:<span class="hljs-number">15</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelRequest"><code>SetChannelRequest</code></a></li>
+</ul>
+<h3 id="SetChannelRequest">SetChannelRequest </h3>
+<p>Requests your Clova Home extension to set the target appliance to change to a specified channel. It is usually used to control appliances such as a TV set-top box. To respond to this request, use a <a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>channel</code></td>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>An object containing the TV channel to set on the target appliance.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">15</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a></li>
+</ul>
+<h3 id="SetModeConfirmation">SetModeConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to change the heating mode, in response to a <a href="#SetModeRequest"><code>SetModeRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>An object containing the heating mode set on the target appliance.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeRequest"><code>SetModeRequest</code></a></li>
+</ul>
+<h3 id="SetModeRequest">SetModeRequest </h3>
+<p>Requests your Clova Home extension to change the heating mode to a specified value. It is usually used to control appliances such as a heating system. To respond to this request, use a <a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>An object containing the heating mode to set on the target appliance</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></li>
+</ul>
+<h3 id="TurnOffConfirmation">TurnOffConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to turn off, in response to a <a href="#TurnOffRequest">TurnOffRequest</a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>None</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOffConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {}
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOffRequest"><code>TurnOffRequest</code></a></li>
+</ul>
+<h3 id="`TurnOffRequest`">TurnOffRequest </h3>
+<p>Requests your Clova Home extension to turn off the target appliance. To respond to this request, use a <a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOffRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a></li>
+</ul>
+<h3 id="TurnOnConfirmation">TurnOnConfirmation </h3>
+<p>Returns CEK the result of setting the target appliance to turn on, in response to a <a href="#TurnOnRequest"><code>TurnOnRequest</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>None</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {}
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOnRequest"><code>TurnOnRequest</code></a></li>
+</ul>
+<h3 id="TurnOnRequest">TurnOnRequest </h3>
+<p>Requests your Clova Home extension to turn on the target appliance. To respond to this request, use a <a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a> message.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessToken</code></td>
+<td>string</td>
+<td>The access token for the user&apos;s IoT service account. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See <a href="../Guides/LinkUserAccount.html">Linking user account</a> for more details.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>appliance</code></td>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of the target appliance. <code>applianceId</code> is a required field.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a></li>
+</ul>
+<h2 id="ErrorAPI">Error API </h2>
+<p>Use this API to have your Clova Home extension return errors to CEK.</p>
+<table>
+<thead>
+<tr>
+<th>Message name</th>
+<th>Message type</th>
+<th>Message description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#DriverInternalError"><code>DriverInternalError</code></a></td>
+<td>Error Response</td>
+<td>Return this response message to CEK when an internal error occurs.</td>
+</tr>
+<tr>
+<td><a href="#TargetOfflineError"><code>TargetOfflineError</code></a></td>
+<td>Error Response</td>
+<td>Return this response message to CEK when the target appliance is not accessible (offline).</td>
+</tr>
+<tr>
+<td><a href="#ValueOutOfRangeError"><code>ValueOutOfRangeError</code></a></td>
+<td>Error Resposne</td>
+<td>Return this response message to CEK when a user requests an action which is out of range on the target appliance.</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>Other types of error messages will be added going forward.</p>
+</div>
+
+<h3 id="DriverInternalError">DriverInternalError </h3>
+<p>Return this response message to CEK when an internal error occurs. When CEK receives this message, it forwards a pre-defined error message to the client.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>None</p>
+<h4 id="remarks">Remarks</h4>
+<ul>
+<li>Return a 200 OK HTTP response to CEK even when it is an error message.</li>
+<li>Error messages do not require a body (payload) because their names clearly express situations.</li>
+</ul>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fef949b7-eb94-4bda-a417-2cfb604194c3&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DriverInternalError&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#TargetOfflineError"><code>TargetOfflineError</code></a></li>
+</ul>
+<h3 id="TargetOfflineError">TargetOfflineError </h3>
+<p>Return this response message to CEK when the target appliance is not accessible (offline). When CEK receives this message, it forwards a pre-defined error message to the client.</p>
+<h4 id="payload-field">Payload field</h4>
+<p>None</p>
+<h4 id="remarks">Remarks</h4>
+<ul>
+<li>Return a 200 OK HTTP response to CEK even when it is an error message.</li>
+<li>Error messages do not require a body (payload) because their names clearly express situations.</li>
+</ul>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fef949b7-eb94-4bda-a417-2cfb604194c3&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TargetOfflineError&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DriverInternalError"><code>DriverInternalError</code></a></li>
+</ul>
+<h3 id="ValueOutOfRangeError">ValueOutOfRangeError </h3>
+<p>Return this response message to CEK when a user requests an action which is out of range on the target appliance. For example, if an air conditioner allows a temperature range of 18 to 28 and a user requests to set it to 16 or 30, you can return this message. The <code>payload</code> field must have the maximum and minimum values allowed on the target appliance.</p>
+<h4 id="payload-field">Payload field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maximumValue</code></td>
+<td>number</td>
+<td>The maximum value allowed on the target appliance</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>minimumValue</code></td>
+<td>number</td>
+<td>The minimum value allowed on the target appliance</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remarks">Remarks</h4>
+<p>You can use values of <code>payload</code> to guide users.</p>
+<h4 id="message-example">Message example</h4>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;fef949b7-eb94-4bda-a417-2cfb604194c3&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;ValueOutOfRangeError&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;minimumValue&quot;</span>:<span class="hljs-number">18.0</span>,
+    <span class="hljs-string">&quot;maximumValue&quot;</span>:<span class="hljs-number">30.0</span>
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DriverInternalError"><code>DriverInternalError</code></a></li>
+</ul>
+<h2 id="SharedObjects">Shared objects </h2>
+<p>When sending messages using the Clova Home API, the following shared objects are included in a message body (payload).</p>
+<table>
+<thead>
+<tr>
+<th>Object name</th>
+<th>Object description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#ApplianceObject">ApplianceObject</a></td>
+<td>An object containing details of an IoT appliance</td>
+</tr>
+<tr>
+<td><a href="#HeatingModeObject">HeatingModeObject</a></td>
+<td>An object containing a heating mode</td>
+</tr>
+<tr>
+<td><a href="#SpeedObject">SpeedObject</a></td>
+<td>An object containing a speed</td>
+</tr>
+<tr>
+<td><a href="#TemperatureObject">TemperatureObject</a></td>
+<td>An object containing a temperature</td>
+</tr>
+<tr>
+<td><a href="#TVChannelObject">TVChannelObject</a></td>
+<td>An object containing a TV channel</td>
+</tr>
+<tr>
+<td><a href="#VolumeObject">VolumeObject</a></td>
+<td>An object containing a volume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ApplianceObject">ApplianceObject </h3>
+<p>An object that contains details of an IoT appliance. This object is used when returning CEK a list of appliances registered to a user account or when requesting a Clova Home extension to control a specified appliance.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>actions[]</code></td>
+<td>string array</td>
+<td>A list of actions supported by the appliance. You must limit the allowed actions to those supported by the appliance.</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>additionalApplianceDetails</code></td>
+<td>object</td>
+<td>A field containing additional details of the appliance provided from the manufacturer or IoT service</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>applianceId</code></td>
+<td>string</td>
+<td>The appliance ID</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>applianceTypes[]</code></td>
+<td>string array</td>
+<td>The appliance type. Allowed actions you can specify in the <code>actions</code> field are determined by <code>applicationType</code>. Specify types as one of the following values for the appliances registered to the user&apos;s IoT service account.<ul><li>AIRCONDITIONER: Air conditioning or heating system type</li><li>AIRPURIFIER: Air purifier type</li><li>HUMIDIFIER: Humidifier type</li><li>LIGHT: Lighting appliance type</li><li>SETTOPBOX: TV set-top box type</li><li>SMARTPLUG: Plugs that control power supply of an appliance</li><li>SWITCH: Switches that control household power sockets</li><li>THERMOSTAT: Thermostat type</li></ul></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>friendlyName</code></td>
+<td>string</td>
+<td>The appliance name specified by the user</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>friendlyDescription</code></td>
+<td>string</td>
+<td>A description of the appliance</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>isReachable</code></td>
+<td>boolean</td>
+<td>Whether remotely controllable or not <ul><li>true: Remotely controllable</li><li>false: Remotely uncontrollable</li></ul></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>manufacturerName</code></td>
+<td>string</td>
+<td>The name of the appliance manufacturer</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>modelName</code></td>
+<td>string</td>
+<td>The name of the appliance model</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>string</td>
+<td>The version of the manufacturer software</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remarks">Remarks</h3>
+<p>When your Clova Home extension receives a <a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a> message, you must return a list of appliances by filling in all fields except for <code>additionalApplianceDetails</code>. Allowed <code>actions</code> are determined by <code>applianceTypes</code>. Available values are as follows for each <code>applianceTypes</code>.</p>
+<table>
+<thead>
+<tr>
+<th>applianceTypes</th>
+<th>Allowed actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AIRCONDITIONER</code></td>
+<td><ul><li>DecrementTargetTemperature</li><li>HealthCheck</li><li>IncrementTargetTemperature</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>AIRPURIFIER</code></td>
+<td><ul><li>DecrementFanSpeed</li><li>HealthCheck</li><li>IncrementFanSpeed</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>HUMIDFIER</code></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>LIGHT</code></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>SETTOPBOX</code></td>
+<td><ul><li>DecrementVolume</li><li>HealthCheck</li><li>IncrementVolume</li><li>SetChannel</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>SMARTPLUG</code></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>SWITCH</code></td>
+<td><ul><li>HealthCheck</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+<tr>
+<td><code>THERMOSTAT</code></td>
+<td><ul><li>HealthCheck</li><li>SetMode</li><li>TurnOff</li><li>TurnOn</li></ul></td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>If an actual appliance supports fewer features than those allowed by applianceTypes, you can limit it to use less actions. For example, if your user registered an air purifier (`AIRPURIFIER` type) that does not have a feature to adjust fan speeds, exclude IncrementFanSpeed and DecrementFanSpeed from the allowed actions when returning DiscoverAppliancesResponse messages.</p>
+</div>
+
+<p>This table lists the Clova Home APIs related to actions.</p>
+<table>
+<thead>
+<tr>
+<th>actions</th>
+<th>Related Clova Home API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DecrementFanSpeed</code></td>
+<td><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a>, <a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></td>
+</tr>
+<tr>
+<td><code>DecrementTargetTemperature</code></td>
+<td><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a>, <a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></td>
+</tr>
+<tr>
+<td><code>DecrementVolume</code></td>
+<td><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a>, <a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></td>
+</tr>
+<tr>
+<td><code>HealthCheck</code></td>
+<td><a href="#HealthCheckRequest"><code>HealthCheckRequest</code></a>, <a href="#HealthCheckResponse"><code>HealthCheckResponse</code></a></td>
+</tr>
+<tr>
+<td><code>IncrementFanSpeed</code></td>
+<td><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a>, <a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></td>
+</tr>
+<tr>
+<td><code>IncrementTargetTemperature</code></td>
+<td><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a>, <a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureRequest</code></a></td>
+</tr>
+<tr>
+<td><code>IncrementVolume</code></td>
+<td><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a>, <a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></td>
+</tr>
+<tr>
+<td><code>SetChannel</code></td>
+<td><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a>, <a href="#SetChannelRequest"><code>SetChannelRequest</code></a></td>
+</tr>
+<tr>
+<td><code>SetMode</code></td>
+<td><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a>, <a href="#SetModeRequest"><code>SetModeRequest</code></a></td>
+</tr>
+<tr>
+<td><code>TurnOff</code></td>
+<td><a href="#TurnOffConfirmation"><code>TurnOffConfirmation</code></a>, <a href="#TurnOffRequest"><code>TurnOffRequest</code></a></td>
+</tr>
+<tr>
+<td><code>TurnOn</code></td>
+<td><a href="#TurnOnConfirmation"><code>TurnOnConfirmation</code></a>, <a href="#TurnOnRequest"><code>TurnOnRequest</code></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: DiscoverAppliancesResponse message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;99f9d8ff-9366-4cab-a90c-b4c7eca0abbe&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;DiscoverAppliancesResponse&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;discoveredAppliances&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xAC70;&#xC2E4; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8;&#xD3F0;&#xC73C;&#xB85C; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xC804;&#xB4F1;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">&quot;actions&quot;</span>: [
+            <span class="hljs-string">&quot;HealthCheckt&quot;</span>,
+            <span class="hljs-string">&quot;TurnOn&quot;</span>,
+            <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;LIGHT&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      },
+      {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-002&quot;</span>,
+        <span class="hljs-string">&quot;manufacturerName&quot;</span>: <span class="hljs-string">&quot;device-manufacturer-name&quot;</span>,
+        <span class="hljs-string">&quot;modelName&quot;</span>: <span class="hljs-string">&quot;&#xC2A4;&#xB9C8;&#xD2B8; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;v1.0&quot;</span>,
+        <span class="hljs-string">&quot;friendlyName&quot;</span>: <span class="hljs-string">&quot;&#xBD80;&#xC5CC; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;friendlyDescription&quot;</span>: <span class="hljs-string">&quot;&#xC5D0;&#xB108;&#xC9C0;&#xB97C; &#xC808;&#xC57D;&#xD558;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&quot;</span>,
+        <span class="hljs-string">&quot;isReachable&quot;</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">&quot;actions&quot;</span>: [
+          <span class="hljs-string">&quot;HealthCheckt&quot;</span>,
+          <span class="hljs-string">&quot;TurnOn&quot;</span>,
+          <span class="hljs-string">&quot;TurnOff&quot;</span>
+        ],
+        <span class="hljs-string">&quot;applianceTypes&quot;</span>: [<span class="hljs-string">&quot;SMARTPLUG&quot;</span>],
+        <span class="hljs-string">&quot;additionalApplianceDetails&quot;</span>: {}
+      }
+    ]
+  }
+}
+
+<span class="hljs-comment">// Example 2: TurnOnRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;TurnOnRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a></li>
+<li><a href="#DiscoverAppliancesRequest"><code>DiscoverAppliancesRequest</code></a></li>
+</ul>
+<h3 id="HeatingModeObject">HeatingModeObject </h3>
+<p>An object that contains a heating mode. It displays the name of the heating mode to change to or the heating mode before and after change. It is expressed as a string.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>string</td>
+<td>A heating mode. <ul><li><code>&quot;hotwater&quot;</code>: Hot water mode</li><li><code>&quot;away&quot;</code>: Absence mode</li></ul></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: SetModeRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-006&quot;</span>
+    },
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// Example 2: SetModeConfirmation message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetModeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;mode&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;hotwater&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetModeConfirmation"><code>SetModeConfirmation</code></a></li>
+<li><a href="#SetModeRequest"><code>SetModeRequest</code></a></li>
+</ul>
+<h3 id="SpeedObject">SpeedObject </h3>
+<p>An object that contains a speed. It displays an expected change in the value of a speed or a target speed before and after change. It is expressed as an integer.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>A speed value</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: IncrementFanSpeedRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-004&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// Example 2: IncrementFanSpeedConfirmation message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementFanSpeedConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">3</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetFanSpeed&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">2</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementFanSpeedConfirmation"><code>DecrementFanSpeedConfirmation</code></a></li>
+<li><a href="#DecrementFanSpeedRequest"><code>DecrementFanSpeedRequest</code></a></li>
+<li><a href="#IncrementFanSpeedConfirmation"><code>IncrementFanSpeedConfirmation</code></a></li>
+<li><a href="#IncrementFanSpeedRequest"><code>IncrementFanSpeedRequest</code></a></li>
+</ul>
+<h3 id="TemperatureObject">TemperatureObject </h3>
+<p>An object that contains a temperature. It displays an expected change in the value of a temperature or a target temperature before and after change. It is expressed to one decimal point.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>A temperature value</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: IncrementTargetTemperatureRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-001&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">1.0</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// Example 2: IncrementTargetTemperatureConfirmation message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementTargetTemperatureConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">25.0</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetTemperature&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">21.0</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementTargetTemperatureConfirmation"><code>DecrementTargetTemperatureConfirmation</code></a></li>
+<li><a href="#DecrementTargetTemperatureRequest"><code>DecrementTargetTemperatureRequest</code></a></li>
+<li><a href="#IncrementTargetTemperatureConfirmation"><code>IncrementTargetTemperatureConfirmation</code></a></li>
+<li><a href="#IncrementTargetTemperatureRequest"><code>IncrementTargetTemperatureRequest</code></a></li>
+</ul>
+<h3 id="TVChannelObject">TVChannelObject </h3>
+<p>An object that contains a TV channel. It displays a TV channel to change to or a TV channel before and after change. It is expressed as a string.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>A TV channel number</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: SetChannelRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;33da6561-0149-4532-a30b-e0de8f75c4cf&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+        <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-007&quot;</span>
+    },
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">13</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// Example 2: SetChannelConfirmation message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;SetChannelConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;channel&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">13</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#SetChannelConfirmation"><code>SetChannelConfirmation</code></a></li>
+<li><a href="#SetChannelRequest"><code>SetChannelRequest</code></a></li>
+</ul>
+<h3 id="VolumeObject">VolumeObject </h3>
+<p>An object that contains a speaker volume. It displays an expected change in the value of a volume or a volume before and after change. It is expressed as an integer.</p>
+<h4 id="object-field">Object field</h4>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Type</th>
+<th>Field description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td>number</td>
+<td>A volume value</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="object-example">Object Example</h4>
+<pre><code class="lang-json"><span class="hljs-comment">// Example 1: IncrementVolumeRequest message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeRequest&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;92ebcb67fe33&quot;</span>,
+    <span class="hljs-string">&quot;appliance&quot;</span>: {
+      <span class="hljs-string">&quot;applianceId&quot;</span>: <span class="hljs-string">&quot;device-005&quot;</span>
+    },
+    <span class="hljs-string">&quot;deltaVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+    }
+  }
+}
+
+<span class="hljs-comment">// Example 2: IncrementVolumeConfirmation message</span>
+{
+  <span class="hljs-string">&quot;header&quot;</span>: {
+    <span class="hljs-string">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;4ec35000-88ce-4724-b7e4-7f52050558fd&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;IncrementVolumeConfirmation&quot;</span>,
+    <span class="hljs-string">&quot;namespace&quot;</span>: <span class="hljs-string">&quot;ClovaHome&quot;</span>,
+    <span class="hljs-string">&quot;payloadVersion&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>
+  },
+  <span class="hljs-string">&quot;payload&quot;</span>: {
+    <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+      <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">20</span>
+    },
+    <span class="hljs-string">&quot;previousState&quot;</span>: {
+      <span class="hljs-string">&quot;targetVolume&quot;</span>: {
+        <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-number">10</span>
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="see-also">See also</h4>
+<ul>
+<li><a href="#DecrementVolumeConfirmation"><code>DecrementVolumeConfirmation</code></a></li>
+<li><a href="#DecrementVolumeRequest"><code>DecrementVolumeRequest</code></a></li>
+<li><a href="#IncrementVolumeConfirmation"><code>IncrementVolumeConfirmation</code></a></li>
+<li><a href="#IncrementVolumeRequest"><code>IncrementVolumeRequest</code></a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Clova_Home_Extension_Message_Format.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Clova Home extension message">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Clova Home API","level":"3.7.1","depth":2,"previous":{"title":"Clova Home extension message","level":"3.7","depth":1,"path":"CEK/References/Clova_Home_Extension_Message_Format.md","ref":"CEK/References/Clova_Home_Extension_Message_Format.md","articles":[{"title":"Clova Home API","level":"3.7.1","depth":2,"path":"CEK/References/Clova_Home_API.md","ref":"CEK/References/Clova_Home_API.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"LINE Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v1.1","CICBaseURL":"https://clova-cic.line-apps.com/","ClassifiedInfo":"Confidential","OrientedService":"LINE","AuthServerBaseURL":"https://clova-authgw.line-apps.com/","TargetServiceForClientAuth":"LINE","Locale":"en-JP","DocOwner":"LINE","LoginAPIofTargetService":"https://developers.line.me/line-login/overview/"},"title":"Clova Developer Guide","language":"en","gitbook":"*","description":"This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.","direction":"ltr"},"file":{"path":"CEK/References/Clova_Home_API.md","mtime":"2017-09-04T04:40:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-04T04:41:33.281Z"},"basePath":"../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
