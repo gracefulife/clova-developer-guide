@@ -1,7 +1,7 @@
 ## Clova.FreetalkState {#FreetalkState}
 FreetalkState는 Clova의 대화 모드(Freetalk mode) 서비스가 클라이언트 측에서 어떤 상태인지 나타내는 메시지 포맷입니다.
 
-### Message format
+### Message structure
 {% raw %}
 ```json
 {

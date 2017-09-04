@@ -1,12 +1,12 @@
 # SpeechRecognizer
 
-사용자의 음성 인식을 위해 사용자 음성 입력을 처리하는 API입니다. 사용자의 음성 입력은 다음과 같이 수행되어야 합니다.
+SpeechRecognizer는 사용자의 음성 인식을 위해 사용되는 네임스페이스입니다. 사용자의 음성 입력은 다음과 같이 수행되어야 합니다.
 
 1. 클라이언트는 사용자의 음성이 입력될 때 CIC로 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 전송합니다.
 2. 클라이언트는 입력되는 사용자의 음성을 200ms 단위로 계속 CIC에 전송해야 합니다.
 3. 클라이언트는 사용자의 음성 입력이 끝나거나 CIC로부터 [StopCapture](#StopCapture) 지시 메시지를 받기 전까지 2번 단계를 계속 수행해야 합니다.
 
-이 API가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
+SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
@@ -103,7 +103,7 @@
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_Message_Format.md#Directives)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
+`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directives)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
 다음과 같은 기준의 음성 입력을 처리할 수 있습니다.
 * 16-bit Linear PCM
