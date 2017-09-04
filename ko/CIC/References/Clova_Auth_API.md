@@ -1,5 +1,5 @@
-# Clova 인증 API
-클라이언트가 CIC에 연결하려면 [Clova access token을 생성](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)해야 합니다. Clova 인증 서버는 위 단계에 필요한 API를 제공하고 있으며, 이 문서는 Clova 인증 API에 대해 설명합니다.
+# Clova 인증 API 레퍼런스
+클라이언트가 CIC에 연결하려면 [Clova access token을 생성](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)해야 합니다. Clova 인증 서버는 Clova access token 생성 및 관리에 필요한 Clova 인증 API를 제공하고 있으며, 여기에서는 Clova 인증 API에 대해 설명합니다.
 
 ## Base URL
 Clova 인증 서버의 base URL은 다음과 같습니다.
@@ -8,17 +8,17 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 </code></pre>
 
 ## Authorization code 요청 {#RequestAuthorizationCode}
-{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등의 정보를 파라미터로 입력받아 authorization code를 응답 메시지로 반환합니다. authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
+{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등을 파라미터로 전달해 authorization code를 요청합니다. Authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
 
 ```
 GET|POST /authorize
 ```
 
-### Request headers
+### Request header
 
 * Accept
   * application/json
-* Authorization - [획득한 {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)을 입력합니다.
+* Authorization : [획득한 {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)을 입력합니다.
   * Bearer [{{ book.TargetServiceForClientAuth }} access token]
 
 ### Query parameter
@@ -31,7 +31,7 @@ GET|POST /authorize
 | `response_type` | string  | 응답 유형. 현재는 `"code"`만 지원합니다.                                                             | 필수 |
 | `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
        {{ book.AuthServerBaseURL }}authorize \
@@ -60,10 +60,10 @@ GET|POST /authorize
 |---------------|-------------------------|
 | 200 OK           | 요청 처리 성공                      |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 403 Forbidden    | 헤더에 포함 시킨 {{ book.TargetServiceForClientAuth }} access token이 유효하지 않은 경우 |
+| 403 Forbidden    | 헤더에 포함된 {{ book.TargetServiceForClientAuth }} access token이 유효하지 않은 경우 |
 | 500 Server Internal Error | 서버 내부 오류로 인한 authorization code 발급 실패 |
 
-### Response Example
+### Response example
 {% raw %}
 ```json
 {
@@ -104,7 +104,7 @@ GET|POST /token?grant_type=authorization_code
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
@@ -134,9 +134,9 @@ GET|POST /token?grant_type=authorization_code
 |---------------|-------------------------|
 | 200 OK        | 요청 처리 성공                      |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 500 Interal Server Error | 서버 내부 오류로 인한 access token 발급 실패 |
+| 500 Internal Server Error | 서버 내부 오류로 인한 access token 발급 실패 |
 
-### Response Example
+### Response example
 {% raw %}
 ```json
 {
@@ -176,7 +176,7 @@ GET|POST /token?grant_type=refresh_token
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 | `refresh_token` | string  | 인증 성공 후 발급받은 refresh token.                                            | 필수 |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
@@ -208,7 +208,7 @@ GET|POST /token?grant_type=refresh_token
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
 | 500 Internal Server Error | 서버 내부 오류로 인한 access token 갱신 실패 |
 
-### Response Example
+### Response example
 {% raw %}
 ```json
 {
@@ -237,7 +237,7 @@ GET|POST /token?grant_type=delete
 * Accept
   * application/json
 
-### Query Parameter
+### Query parameter
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -247,7 +247,7 @@ GET|POST /token?grant_type=delete
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=delete \
        --data-urlencode 'access_token=xFcH08vYQcahQWouqIzWOw' \
@@ -279,7 +279,7 @@ GET|POST /token?grant_type=delete
 | 401 Unauthorized | 유효하지 않은 클라이언트 인증 정보(`client_id` 또는 `client_secret`) 또는 사용자 정보(`device_id` 또는 `model_id`)를 파라미터로 전달한 경우 발생하는 실패 |
 | 500 Internal Server Error | 서버 내부 오류로 인한 access token 삭제 실패 |
 
-### Response Example
+### Response example
 {% raw %}
 ```json
 {

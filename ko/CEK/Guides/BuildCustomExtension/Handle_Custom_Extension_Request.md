@@ -1,5 +1,5 @@
 ## Custom extension 요청 처리하기 {#HandleCustomExtensionRequest}
-Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/Custom_Extension_Message_Format.md) 형태의 사용자 요청을 수신합니다(HTTPS Request). Custom extension은 일반적으로 다음과 같이 요청을 처리하고 응답해야 합니다.
+Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 형태의 사용자 요청을 수신합니다(HTTPS Request). Custom extension은 일반적으로 다음과 같이 요청을 처리하고 응답해야 합니다.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png)
 
@@ -14,7 +14,7 @@ Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/Cu
 * [SessionEndedRequest 요청을 받은 경우](#HandleSessionEndedRequest)
 
 ### LaunchRequest 요청 처리 {#HandleLaunchRequest}
-[`LaunchRequest` 타입 요청](/CEK/References/Custom_Extension_Message_Format.md#LaunchRequest)은 사용자가 특정 모드나 특정 custom extension을 사용하기로 선언한 것을 알릴 때 사용됩니다. 예를 들면, "영어 대화하자"와 같은 명령을 사용자가 내린 경우 클라이언트는 대화 모드(Freetalk mode)를 수행하며, CEK는 영어 대화 서비스를 제공하는 extension에게 `LaunchRequest` 타입 요청을 전달합니다.
+[`LaunchRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtLaunchRequest)은 사용자가 특정 모드나 특정 custom extension을 사용하기로 선언한 것을 알릴 때 사용됩니다. 예를 들면, "영어 대화하자"와 같은 명령을 사용자가 내린 경우 클라이언트는 대화 모드(Freetalk mode)를 수행하며, CEK는 영어 대화 서비스를 제공하는 extension에게 `LaunchRequest` 타입 요청을 전달합니다.
 
 LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라는 값을 가지며 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 사전 준비 사항을 처리하거나 사용자에게 서비스를 제공할 준비가 되었다는 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -61,7 +61,7 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 * `request` : `LaunchRequest` 타입 요청으로 현재 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
-[`IntentRequest` 타입 요청](/CEK/References/Custom_Extension_Message_Format.md#IntentRequest)은 미리 정의해 둔 [Interaction 모델](#InteractionModel)에 따라 CEK로부터 요청 메시지를 받습니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
+[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 미리 정의해 둔 [Interaction 모델](#InteractionModel)에 따라 CEK로부터 요청 메시지를 받습니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
 
 IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 `request.intent` 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -121,7 +121,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 ### SessionEndedRequest 요청 처리 {#HandleSessionEndedRequest}
 
-[`SessionEndedRequest` 타입 요청](/CEK/References/Custom_Extension_Message_Format.md#SessionEndedRequest)은 사용자가 특정 모드나 특정 custom extension의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. "See you later"와 같은 명령을 사용자가 내린 경우 클라이언트는 대화 모드(Freetalk mode)를 중지하며, CEK는 대화 서비스를 제공하는 extension에게 `SessionEndedRequest` 타입 요청을 전달합니다.
+[`SessionEndedRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest)은 사용자가 특정 모드나 특정 custom extension의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. "See you later"와 같은 명령을 사용자가 내린 경우 클라이언트는 대화 모드(Freetalk mode)를 중지하며, CEK는 대화 서비스를 제공하는 extension에게 `SessionEndedRequest` 타입 요청을 전달합니다.
 
 `SessionEndedReqeust` 타입 메시지는 `request.type` 필드에 `"EndRequest"`라는 값을 가지며 `LaunchRequest` 타입과 마찬가지로 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 서비스 제공을 종료하고 사용자에게 사용 종료 상황의 인사 정도를 [응답 메시지](#ReturnCustomExtensionResponse)로 보내면 됩니다.
 

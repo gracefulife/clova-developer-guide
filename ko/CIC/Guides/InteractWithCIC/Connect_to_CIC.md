@@ -60,12 +60,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 
 
 ### CIC 연결하기 {#CreateConnection}
-CIC는 HTTP/2 프로토콜을 사용하며, CIC에 연결할 때 사용하는 base URL은 다음과 같습니다.
-
-<pre><code>{{ book.CICBaseURL }}
-</code></pre>
-
-클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 downchannel을 구성하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
+클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 [downchannel을 구성](/CIC/References/CIC_API.md#EstablishDownchannel)하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC가 주도(Cloud-initiated)하여 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.
 
 Downchannel은 `/v1/directives` 경로로 `GET` 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
 
@@ -102,13 +97,13 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 
 ### 인증하기 {#Authorization}
-클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. HTTP 포맷에 대한 자세한 설명은 [HTTP/2 메시지](/CIC/References/HTTP2_Message_Format.md)을 참조합니다.
+클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. 자세한 설명은 [CIC API](/CIC/References/CIC_API.md)를 참조합니다.
 
 {% raw %}
 ```
 :method: {{GET|POST}}
 :scheme: https
-:path = /v1/events
+:path = {{/v1/events|/v1/directives}}
 Authorization: Bearer {{ClovaAccessToken}}
 ```
 {% endraw %}
@@ -144,7 +139,7 @@ Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 
 #### Access token 갱신 {#RefreshAccessToken}
 
-클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/CIC/References/CIC_Message_Format.md#Error)를 받은 경우 access token을 갱신해야 합니다. 아래와 같이 [Clova access token을 획득](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken)할 때 받았던 refresh token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 [Clova access token을 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)할 수 있습니다.
+클라이언트는 access token을 획득할 때 해당 access token이 언제 만료되는지 `expires_in` 필드에 명시된 만료 시간을 보고 파악해낼 수 있습니다. 이 시간이 만료되거나 만료된 access token을 사용하여 HTTP 401 Unauthorized의 상태 값을 가진 [오류 메시지](/CIC/References/CIC_API.md#Error)를 받은 경우 access token을 갱신해야 합니다. 아래와 같이 [Clova access token을 획득](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken)할 때 받았던 refresh token (`refresh_token`)과 갱신에 필요한 파라미터를 전달하면 [Clova access token을 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)할 수 있습니다.
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \

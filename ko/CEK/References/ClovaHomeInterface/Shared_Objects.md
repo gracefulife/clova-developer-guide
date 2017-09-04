@@ -1,5 +1,5 @@
 ## Shared objects {#SharedObjects}
-Clova Home API를 이용하여 메시지를 보낼 때 메시지 본문(payload)에 다음과 같은 객체(shared objects)가 사용됩니다.
+[Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 본문(payload)에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
@@ -28,7 +28,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `version`                    | string        | 제조사의 소프트웨어 버전                                                            | 선택    |
 
 ### Remarks
-[`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지를 통해 사용자 기기 목록을 요청하면 Clova Home extension은 `additionalApplianceDetails` 필드를 제외한 모든 필드의 정보를 채워서 전달해야 합니다. 이때, `actions` 필드의 값은 보통 `applianceTypes` 필드에 의해 결정되며, `applianceTypes` 필드 값에 따라 다음과 같은 값을 가질 수 있습니다.
+[`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) 메시지를 통해 사용자 기기 목록을 요청하면 Clova Home extension은 `additionalApplianceDetails` 필드를 제외한 모든 필드의 정보를 채워서 전달해야 합니다. 이때, `actions` 필드의 값은 보통 `applianceTypes` 필드에 의해 결정되며, `applianceTypes` 필드 값에 따라 다음과 같은 값을 가질 수 있습니다.
 
 | applianceTypes | 허용되는 actions                                |
 |----------------|-----------------------------------------------|
@@ -46,21 +46,21 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 <p>실제 기기의 기능 제약에 따라 기기의 applianceTypes가 허용하는 actions보다 적은 actions을 사용하도록 제한할 수 있다. 예를 들면, 사용자가 등록한 공기청정기(`AIRPURIFIER` 타입)에 팬 속도를 조절할 수 있는 기능이 없을 경우 해당 기기에 허용되는 actions에서 IncrementFanSpeed와 DecrementFanSpeed를 제외하고 DiscoverAppliancesResponse 메시지를 보내야 합니다.</p>
 </div>
 
-다음 표는 각 actions 항목과 관련이 있는 Clova Home API를 나열하고 있습니다.
+다음 표는 각 actions 항목과 관련이 있는 [인터페이스](/CEK/References/CEK_API.md#ClovaHomeExtInterface)를 나열하고 있습니다.
 
-| actions                    | 관련된 Clova Home API                      |
+| actions                    | 관련된 인터페이스                            |
 |----------------------------|------------------------------------------|
-| `DecrementFanSpeed`          | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) |
-| `DecrementTargetTemperature` | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) |
-| `DecrementVolume`            | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](#DecrementVolumeRequest) |
-| `HealthCheck`                | [`HealthCheckRequest`](#HealthCheckRequest), [`HealthCheckResponse`](#HealthCheckResponse) |
-| `IncrementFanSpeed`          | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) |
-| `IncrementTargetTemperature` | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureConfirmation) |
-| `IncrementVolume`            | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](#IncrementVolumeRequest) |
-| `SetChannel`                 | [`SetChannelConfirmation`](#SetChannelConfirmation), [`SetChannelRequest`](#SetChannelRequest) |
-| `SetMode`                    | [`SetModeConfirmation`](#SetModeConfirmation), [`SetModeRequest`](#SetModeRequest) |
-| `TurnOff`                    | [`TurnOffConfirmation`](#TurnOffConfirmation), [`TurnOffRequest`](#TurnOffRequest) |
-| `TurnOn`                     | [`TurnOnConfirmation`](#TurnOnConfirmation), [`TurnOnRequest`](#TurnOnRequest) |
+| `DecrementFanSpeed`          | [`DecrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedConfirmation), [`DecrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedRequest) |
+| `DecrementTargetTemperature` | [`DecrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureRequest) |
+| `DecrementVolume`            | [`DecrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest) |
+| `HealthCheck`                | [`HealthCheckRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#HealthCheckRequest), [`HealthCheckResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#HealthCheckResponse) |
+| `IncrementFanSpeed`          | [`IncrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedConfirmation), [`IncrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedRequest) |
+| `IncrementTargetTemperature` | [`IncrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation), [`IncrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation) |
+| `IncrementVolume`            | [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation), [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest) |
+| `SetChannel`                 | [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation), [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest) |
+| `SetMode`                    | [`SetModeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeConfirmation), [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest) |
+| `TurnOff`                    | [`TurnOffConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOffConfirmation), [`TurnOffRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOffRequest) |
+| `TurnOn`                     | [`TurnOnConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnConfirmation), [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) |
 
 #### Object Example
 {% raw %}
@@ -130,8 +130,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 #### See also
-* [`DiscoverAppliancesResponse`](DiscoverAppliancesResponse)
-* [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)
+* [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)
+* [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
 ### HeatingModeObject {#HeatingModeObject}
 난방 모드 정보를 담고 있는 객체입니다. 변경할 난방 모드의 이름이나 변경 전후의 난방 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -181,8 +181,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 #### See also
-* [`SetModeConfirmation`](#SetModeConfirmation)
-* [`SetModeRequest`](#SetModeRequest)
+* [`SetModeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeConfirmation)
+* [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest)
 
 ### SpeedObject {#SpeedObject}
 속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.
@@ -237,10 +237,10 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 #### See also
-* [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)
-* [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)
-* [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)
-* [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)
+* [`DecrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedConfirmation)
+* [`DecrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedRequest)
+* [`IncrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedConfirmation)
+* [`IncrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedRequest)
 
 ### TemperatureObject {#TemperatureObject}
 온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기나 변경 전후의 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리까지 표현됩니다.
@@ -295,10 +295,10 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 #### See also
-* [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation)
-* [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)
-* [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation)
-* [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)
+* [`DecrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureConfirmation)
+* [`DecrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureRequest)
+* [`IncrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation)
+* [`IncrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureRequest)
 
 ### TVChannelObject {#TVChannelObject}
 TV 채널 정보를 담고 있는 객체입니다. 변경할 TV 채널의 이름이나 변경 전후의 TV 채널을 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -348,8 +348,8 @@ TV 채널 정보를 담고 있는 객체입니다. 변경할 TV 채널의 이름
 {% endraw %}
 
 #### See also
-* [`SetChannelConfirmation`](#SetChannelConfirmation)
-* [`SetChannelRequest`](#SetChannelRequest)
+* [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation)
+* [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
 ### VolumeObject {#VolumeObject}
 스피커의 볼륨 정보를 담고 있는 객체입니다. 변경할 볼륨의 크기나 변경 전후의 볼륨 정보를 나타낼 때 사용되며 정수로 표현됩니다.
@@ -404,7 +404,7 @@ TV 채널 정보를 담고 있는 객체입니다. 변경할 TV 채널의 이름
 {% endraw %}
 
 #### See also
-* [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)
-* [`DecrementVolumeRequest`](#DecrementVolumeRequest)
-* [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)
-* [`IncrementVolumeRequest`](#IncrementVolumeRequest)
+* [`DecrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeConfirmation)
+* [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest)
+* [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation)
+* [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest)
