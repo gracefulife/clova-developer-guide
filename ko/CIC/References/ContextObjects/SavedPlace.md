@@ -1,7 +1,7 @@
 ## Clova.SavedPlace {#SavedPlace}
 클라이언트에 미리 저장되어 있는 위치 정보를 전송할 때 사용하는 메시지 포맷입니다.
 
-### Message format
+### Message structure
 {% raw %}
 ```json
 {
