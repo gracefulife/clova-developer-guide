@@ -63,4 +63,4 @@
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)

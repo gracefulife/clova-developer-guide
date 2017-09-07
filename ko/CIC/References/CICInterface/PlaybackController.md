@@ -41,7 +41,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Next directive {#Next}
 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.
@@ -67,7 +67,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Pause directive {#Pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.
@@ -93,8 +93,8 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`AudioPlayer.PlayPaused`](/CIC/References/APIs/AudioPlayer.md#PlayPaused)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayPaused`](/CIC/References/CICInterface/AudioPlayer.md#PlayPaused)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Previous directive {#Previous}
 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다.
@@ -121,7 +121,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Resume directive {#Resume}
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.
@@ -147,8 +147,8 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`AudioPlayer.PlayResumed`](/CIC/References/APIs/AudioPlayer.md#PlayResumed)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayResumed`](/CIC/References/CICInterface/AudioPlayer.md#PlayResumed)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Stop directive {#Stop}
 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.
@@ -174,8 +174,8 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`AudioPlayer.PlayStopped`](/CIC/References/APIs/AudioPlayer.md#PlayStopped)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`AudioPlayer.PlayStopped`](/CIC/References/CICInterface/AudioPlayer.md#PlayStopped)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
  클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.
@@ -201,7 +201,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
 클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다.
@@ -227,7 +227,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.
@@ -254,7 +254,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## VolumneDown directive {#VolumeDown}
 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
@@ -281,7 +281,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## VolumneUp directive {#VolumeUp}
 클라이언트에게 스피커 볼륨을 높이도록 지시합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
@@ -308,4 +308,4 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

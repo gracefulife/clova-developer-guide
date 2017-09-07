@@ -44,7 +44,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak)
+* [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)
 
 ## Speak directive {#Speak}
 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage)로 전달될 수도 있고 오디오 스트리밍 주소 형태로 전달될 수도 있습니다.
@@ -130,4 +130,4 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Request`](/CIC/References/APIs/SpeechSynthesizer.md#Request)
+* [`SpeechSynthesizer.Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)

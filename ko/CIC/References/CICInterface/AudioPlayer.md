@@ -139,8 +139,8 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ## PlayPaused event {#PlayPaused}
 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/CIC/References/APIs/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayPaused 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -174,13 +174,13 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
-* [`PlaybackController.Pause`](/CIC/References/APIs/PlaybackController.md#Pause)
+* [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)
 
 ## PlayResumed event {#PlayResuemd}
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/APIs/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -214,7 +214,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
-* [`PlaybackController.Resume`](/CIC/References/APIs/PlaybackController.md#Resume)
+* [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)
 
 ## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
@@ -254,8 +254,8 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ## PlayStopped event {#PlayStopped}
 클라이언트가 오디오 스트림 재생을 중지할 때 재생이 중지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/CIC/References/APIs/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 중지하고 PlayStopped 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -289,7 +289,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
-* [`PlaybackController.Stop`](/CIC/References/APIs/PlaybackController.md#Stop)
+* [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
