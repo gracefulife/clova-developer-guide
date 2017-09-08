@@ -1,5 +1,5 @@
 ## Handling directive message {#HandleDirective}
-CIC returns directive messages to instruct your client to perform specific actions. A directive message is either a response to an [event message](#SendEvent) or a message sent through a downchannel created at an initial connection with CIC. Responses usually take the form of [multipart message](/CIC/References/HTTP2_Message_Format.md#MultipartMessage). A JSON-format [directive message](/CIC/CIC_Message_Format.md#Directive) is returned first, followed by subsequent messages containing additional information (speech data, content details) depending on which [API](/CIC/References/CIC_API.md) is in use.
+CIC returns directive messages to instruct your client to perform specific actions. A directive message is either a response to an [event message](#SendEvent) or a message sent through a downchannel created at an initial connection with CIC. Responses are usually a [multipart message](/CIC/References/CIC_API.md#MultipartMessage). A JSON-format [directive message](/CIC/References/CIC_API.md#Directive) is returned first, followed by subsequent messages containing additional information (speech data, content details) as specified by the [CIC messages](/CIC/References/CIC_API.md).
 
 | Content type            | Description                                             |
 |---------------------|-------------------------------------------------|
@@ -11,7 +11,7 @@ Implement your client to handle directive messages in the following steps.
 <ol>
 <li><p>When a directive message is returned in response to an event message or is sent through a downchannel, store the message in a preset <a href="#ManageMessageQ">message queue</a>.</p>
 </li>
-<li><p>Parse the message header of the <a href="/CIC/References/CIC_Message_Format.html#Directive">directive message</a>. Generally, use <code>dialogRequestId</code> to find the user request, and <code>namespace</code> and <code>name</code> to distinguish which <a href="/CIC/References/CIC_API.html">API</a> is used. Below is an example of a directive message received.</p>
+<li><p>Parse the message header of the <a href="/CIC/References/CIC_API.html#Directive">directive message</a>. Generally, use <code>dialogRequestId</code> to find the user request, and <code>namespace</code> and <code>name</code> to determine which <a href="/CIC/References/CIC_API.html">API</a> is used. Below is an example of a directive message received.</p>
 <pre><code>{
   "directive": {
     "header": {
@@ -32,10 +32,18 @@ Implement your client to handle directive messages in the following steps.
 }
 </code></pre>
 </li>
-<li>Check whether the <a href="CIC/CIC_Overview.html#DialogModel">dialog ID</a>(<code>dialogRequestId</code>) of the directive message matches the dialog ID stored in your client.
+<li>Check whether the <a href="/CIC/CIC_Overview.html#DialogModel">dialog ID</a>(<code>dialogRequestId</code>) of the directive message matches the dialog ID kept on the client.
 <ul>
-<li><strong>If they match</strong>, perform necessary actions as specified by the API. Usually, you can pick out additional necessary information (speech data) from <a href="#ManageMessageQ">message queues</a>, <a href="/CIC/References/APIs/SpeechSynthesizer.html#Speak">using the<code>cid</code> value</a> contained in <code>payload</code> of the directive message.</li>
-<li><strong>If they do not match</strong>, disregard the directive message and related messages for additional information and remove them from the queue.</li>
+<li><p><strong>If it matches the dialog ID kept on the client</strong>, perform necessary actions as specified by the API. Usually, you can pick out additional necessary information (speech data) from <a href="#ManageMessageQ">message queues</a>, <a href="/CIC/References/APIs/SpeechSynthesizer.html#Speak">using the<code>cid</code> value</a> contained in <code>payload</code> of the directive message. <code>cid</code> indicates a `Content-Id` message header of speech data returned in a multipart message, as shown below.</p>
+<pre><code>--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
+Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
+Content-Id: d329085c-379e-48aa-b871-7ecebdbe831d
+Content-Type: application/octet-stream<br />
+[[ binary audio attachment ]]<br />
+--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
+</code></pre>
+</li>
+<li><strong>If it does not match the dialog ID kept on the client</strong>, disregard the directive message and all related messages and remove them from the queue.</li>
 </ul>
 </li>
 </ol>

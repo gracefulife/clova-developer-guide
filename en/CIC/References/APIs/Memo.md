@@ -1,6 +1,6 @@
 # Memo
 
-Creates, looks up, deletes user's memos. The Memo API provides the following event and directive messages.
+Creates, looks up or deletes user's memos. Memo provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
@@ -143,7 +143,7 @@ None
 
 * You must return execution results when sending this event message to CIC. For example, display messages such as "Looking up memos" or "Canceled memo lookup."
 
-* After you send the `Memo.Get` event message to CIC, the user's list of memos are returned by a [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) directive message.
+* After you send the `Memo.Get` event message to CIC, the user's list of memos are returned in a [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) directive message.
 
 ### Message example
 

@@ -1,7 +1,8 @@
 ## Speaker.VolumeState {#VolumeState}
 A message format that contains client's speaker volume information at the time when the user has spoken, such as how high/low its volume is or whether the speaker is in mute.
 
-### Message format
+### Message structure
+
 {% raw %}
 ```json
 {
@@ -25,6 +26,7 @@ A message format that contains client's speaker volume information at the time w
 | `volume`        | number  | Current speaker volume (0-10)     | Yes     |
 
 ### Message example
+
 {% raw %}
 ```json
 {

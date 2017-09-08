@@ -1,6 +1,6 @@
 # AudioPlayer
 
-Instructs your client to play an audio stream or reports to CIC on events that occur during playback. The AudioPlayer API provides the following event and directive messages.
+Instructs your client to play an audio stream or reports to CIC on events that occur during playback. AudioPlayer provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
@@ -23,9 +23,9 @@ Instructs your client to start playback of a specified audio stream or add it to
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `audioItem`               | object | An object containing metadata of an audio stream and audio stream details necessary for playback                     | Yes |
-| `audioItem.audioItemId`   | string | The ID for distinguishing audio stream details. You can remove redundant Play directive messages based on this value. | Yes |
+| `audioItem.audioItemId`   | string | The ID for distinguishing audio streams. You can remove redundant Play directive messages based on this value. | Yes |
 | `audioItem.stream`        | [AudioStreamObject](#AudioStreamObject) | An object containing audio stream details necessary for playback                        | Yes |
-| `audioItem.type`          | string | A music service delimiter. It is the name of a business entity or service that provides a music streaming service. You can use this value to figure out fields of the audioItem object for each different service and select an appropriate parser to analyze them. | Yes |
+| `audioItem.type`          | string | A music service delimiter. It is the name of a business entity or service that provides a music streaming service. You can use this value to figure out which fields are used for the audioItem object in different services and select an appropriate parser to analyze them. | Yes |
 | `audioItem.[CustomField]` | any    | Service providers can add extra metadata to the audio stream for playback.                     | No |
 | `playBehavior`            | string | A delimiter that determines when your client will play the audio stream included in the directive message <ul><li><code>"REPLACE_ALL"</code>: Clears all existing playback queues and play this audio stream immediately.</li><li><code>"ENQUEUE"</code>: Adds this audio stream to a playback queue.</li></ul> | Yes |
 
@@ -409,7 +409,7 @@ Returns audio stream details necessary for playback. This is a response message 
 | `audioStream` | [AudioStreamObject](#AudioStreamObject) | An object containing audio stream details necessary for playback               | Yes |
 
 ### Remarks
-You can implement audio stream playback by combining the StreamDeliver directive message with `payload.audioStream` of the previously received [Play](#Play) directive message. However, you must not replace the values of the previous Play directive message with the new values passed through the `StreamDeliver` directive message. The reason is that, if any content of `AudioStreamObject` in the `StreamDeliver` directive message overlaps with the content of the previous [`AudioPlayer.Play`](#Play) directive message, that overlapping content might be omitted. This may cause unexpected behaviors when you handle the same Play directive message more than once, for example, to play a track repeatedly or to play a previous track.
+You can implement audio stream playback by combining ㅁ StreamDeliver directive message with `payload.audioStream` of a previously received [Play](#Play) directive message. However, you must not replace the values of the previous Play directive message with the new values passed through the `StreamDeliver` directive message. The reason is that, if any content of `AudioStreamObject` in the `StreamDeliver` directive message overlaps with the content of the previous [`AudioPlayer.Play`](#Play) directive message, that overlapping content might be omitted. This may cause unexpected behaviors when you process a same Play directive message more than once, for example, to play a track repeatedly or to play a previous track.
 
 ### Message example
 {% raw %}
@@ -485,7 +485,7 @@ Shared objects are included in a message body (`payload`) of event or directive 
 
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [AudioStreamObject](#AudioStreamObject) | An object containing playback details of an audio stream, such as streaming address or credentials |
+| [AudioStreamObject](#AudioStreamObject) | An object containing playback details of an audio stream, such as a streaming address or credentials |
 
 ### AudioStreamObject {#AudioStreamObject}
 Contains streaming details of an audio stream. It is used when CIC returns playback streaming details to your client or when your client sends streaming details of a currently playing music to CIC.

@@ -36,7 +36,7 @@ Assume a user requested, "Order pepperoni pizza", and CEK sent a request message
 ```
 {% endraw %}
 
-In addition to a pizza type, the custom extension may require order quantity. If you set `response.shouldEndSession` to `false` in a [response message](/CEK/References/Custom_Extension_Message_Format.md#ResponseMessage), it can attempt to have a multi-turn dialog. Also, you can store the original details in the `sessionAttributes` field in a key-value pair.
+In addition to a pizza type, the custom extension may require order quantity. If `response.shouldEndSession` is set to `false` in a [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage), it can attempt to have a multi-turn dialog. Also, you can store the original details in the `sessionAttributes` field in a key-value pair.
 
 If you respond as follows, you can request Clova to keep the previously sent `intent` and `PizzaType` and also request the user to provide quantity.
 
@@ -65,7 +65,7 @@ If you respond as follows, you can request Clova to keep the previously sent `in
 ```
 {% endraw %}
 
-When the user provides required quantity, the Clova platform adds the quantity, include the `sessionAttributes` object in the `session.sessionAttributes` field and send a [request message](/CEK/References/Custom_Extension_Message_Format.md#RequestMessage) again. This subsequent message has the same `session.sessionId` as the previous message and your custom extension can now perform next actions.
+When the user provides required quantity, the Clova platform adds the quantity data, includes the `sessionAttributes` object in the `session.sessionAttributes` field and sends a [request message](/CEK/References/CEK_API.md#CustomExtRequestMessage) again. This subsequent message has the same `session.sessionId` as the previous message and your custom extension can now perform next actions.
 
 {% raw %}
 ```json

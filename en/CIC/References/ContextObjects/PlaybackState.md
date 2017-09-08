@@ -1,7 +1,8 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-PlaybackState is a message format that contains details of media currently playing or previously played. The details can be sent to an [extension](/CEK/References/Custom_Extension_Message_Format.md) that provides a music streaming service.
+PlaybackState is a message format that contains details of media currently playing or previously played. The details can be sent to an [extension](/CEK/References/CEK_API.md#CustomExtMessage) that provides a music streaming service.
 
-### Message format
+### Message structure
+
 {% raw %}
 ```json
 {
@@ -31,6 +32,7 @@ PlaybackState is a message format that contains details of media currently playi
 
 ### Message example
 #### Example 1: When playback has stopped
+
 {% raw %}
 ```json
 // Case 1: Playback has stopped
@@ -60,6 +62,7 @@ PlaybackState is a message format that contains details of media currently playi
 {% endraw %}
 
 #### Example 2: When a player is inactivated
+
 {% raw %}
 ```json
 {

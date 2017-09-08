@@ -8,16 +8,16 @@ Displays one or more images with description on a screen. It is used to display 
 
 ## Template field
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `ImageList[]`                | object array | An object array that displays a list of images                        | Yes |
-| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the source of the image      | No |
-| `ImageList[].imageTitle`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the title of the image           | No |
-| `ImageList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image      | No |
-| `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text data of the source      | No |
-| `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source        | No |
-| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the thumbnail image | No |
-| `type`                       | string       | A content template delimiter. The value is always `"ImageList"`.        | Yes |
+| Field name       | Type    | Field description                     |
+|---------------|---------|-----------------------------|
+| `ImageList[]`                | object array | An object array that displays a list of images                        |
+| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the source of the image. The `value` field of this object can have an empty string (`""`).      |
+| `ImageList[].imageTitle`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the title of the image. The `value` field of this object can have an empty string (`""`).           |
+| `ImageList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image. The `value` field of this object can have an empty string (`""`).      |
+| `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).      |
+| `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).      |
+| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the thumbnail image. The `value` field of this object can have an empty string (`""`).      |
+| `type`                       | string       | A content template delimiter. The value is always `"ImageList"`.        |
 
 ## Template Example
 

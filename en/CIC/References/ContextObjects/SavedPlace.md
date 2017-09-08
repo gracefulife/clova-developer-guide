@@ -1,7 +1,8 @@
 ## Clova.SavedPlace {#SavedPlace}
 A message format that sends client's pre-saved location information.
 
-### Message format
+### Message structure
+
 {% raw %}
 ```json
 {
@@ -35,6 +36,7 @@ A message format that sends client's pre-saved location information.
 
 
 ### Message example
+
 {% raw %}
 ```json
 {

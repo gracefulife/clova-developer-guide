@@ -1,6 +1,6 @@
 # Reminder
 
-Creates, looks up or deletes user's reminders. The Reminder API provides the following event and directive messages.
+Creates, looks up or deletes user's reminders. Reminder provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|

@@ -1,7 +1,8 @@
 ## Device.DeviceState {#DeviceState}
 DeviceState is a message format that sends device states of a client.
 
-### Message format
+### Message structure
+
 {% raw %}
 ```json
 {
@@ -35,8 +36,8 @@ DeviceState is a message format that sends device states of a client.
 |---------------|---------|-----------------------------|---------|
 | `airplane`        | [AirplaneInfoObject](#AirplaneInfoObject)               | An object containing an airplane mode setting of a client device      | No |
 | `battery`         | [BatteryInfoObject](#BatteryInfoObject)                 | An object containing a battery state of a client device              | No |
-| `bluetooth`       | [BluetoothInfoObject](#BluetoothInfoObject)             | An object containing a Bluetooth state of a client device, whether it is enabled and connected       | No |
-| `cellular`        | [CellularInfoObject](#CellularInfoObject)               | An object containing a celluar activation state of a client device | No |
+| `bluetooth`       | [BluetoothInfoObject](#BluetoothInfoObject)             | An object containing a Bluetooth state of a client device, whether it is turned on and connected       | No |
+| `cellular`        | [CellularInfoObject](#CellularInfoObject)               | An object containing a cellular state of a client device | No |
 | `channel`         | [ChannelInfoObject](#ChannelInfoObject)                 | An object containing a TV channel setting of a client device         | No |
 | `energySavingMode` | [EnergySavingModeInfoObject](#EnergySavingModeInfoObject) | An object containing an energy saving mode of a client device     | No |
 | `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | An object containing a flashlight setting of a client device       | No |
@@ -46,9 +47,10 @@ DeviceState is a message format that sends device states of a client.
 | `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | An object containing screen brightness of a client device            | No |
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | An object containing a sound output setting of a client device        | No |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | An object containing a speaker volume level of a client device           | No |
-| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | An object containing a wireless network (Wi-Fi) state of a client device, whether it is enabled and connected    | No |
+| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | An object containing a wireless network (Wi-Fi) state of a client device, whether it is turned on and connected    | No |
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -183,7 +185,7 @@ An object containing a battery state of a client device.
 {% endraw %}
 
 ### BluetoothInfoObject {#BluetoothInfoObject}
-An object containing a Bluetooth state of a client device, whether it is enabled and connected.
+An object containing a Bluetooth state of a client device, whether it is turned on and connected.
 
 #### Object field
 
@@ -194,7 +196,7 @@ An object containing a Bluetooth state of a client device, whether it is enabled
 | btlist[].name      | string       | The name of the Bluetooth device                      | Yes |
 | btlist[].address   | string       | The MAC address of the Bluetooth device                  | Yes |
 | btlist[].connected | boolean      | Whether the Bluetooth device is connected or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
-| state              | string       | Whether Bluetooth is enabled or not. <ul><li><code>"off"</code>: Disabled</li><li><code>"on"</code>: Enabled</li></ul> | Yes |
+| state              | string       | Whether Bluetooth is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
 
 #### Object example
 
@@ -237,14 +239,14 @@ An object containing a Bluetooth state of a client device, whether it is enabled
 {% endraw %}
 
 ### CellularInfoObject {#CellularInfoObject}
-An object containing a cellular state of a client device, whether mobile communication is enabled or not.
+An object containing a cellular state of a client device, whether mobile communication is turned on or not.
 
 #### Object field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for mobile data communication. Enter the following values if your client device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| state              | string       | Whether mobile data communication is enabled or not. <ul><li><code>"off"</code>: Disabled</li><li><code>"on"</code>: Enabled</li></ul> | Yes |
+| state              | string       | Whether mobile data communication is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
 
 #### Object example
 
@@ -449,9 +451,9 @@ An object containing screen brightness of a client device.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for screen brightness. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
-| min                | number       | Minimum screen brightness of the client device    | Yes |
-| max                | number       | Maximum screen brightness of the client device    | Yes |
-| value              | number       | Current screen brightness of the client device                   | Yes |
+| min                | number       | The minimum screen brightness of the client device    | Yes |
+| max                | number       | The maximum screen brightness of the client device    | Yes |
+| value              | number       | The current screen brightness of the client device                   | Yes |
 
 #### Object example
 
@@ -522,9 +524,9 @@ An object containing a speaker volume level of a client device.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | actions[]          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/APIs/DeviceControl.md) for a speaker volume level. Enter the following values if your client device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
-| min                | number       | Minimum speaker volume of the client device    | Yes |
-| max                | number       | Maximum speaker volume of the client device    | Yes |
-| value              | number       | Current speaker volume of the client device               | Yes |
+| min                | number       | The minimum speaker volume of the client device    | Yes |
+| max                | number       | The maximum speaker volume of the client device    | Yes |
+| value              | number       | The current speaker volume of the client device               | Yes |
 
 #### Object example
 
@@ -554,7 +556,7 @@ An object containing a speaker volume level of a client device.
 {% endraw %}
 
 ### WifiInfoObject {#WifiInfoObject}
-An object containing a wireless network (Wi-Fi) state of a client device, whether the wireless network is enabled and connected.
+An object containing a wireless network (Wi-Fi) state of a client device, whether the wireless network is turned on and connected.
 
 #### Object field
 
@@ -564,7 +566,7 @@ An object containing a wireless network (Wi-Fi) state of a client device, whethe
 | networks[]           | object array | An object array containing details of wireless network found | Yes |
 | networks[].name      | string       | The name of the wireless network                     | Yes |
 | networks[].connected | boolean      | Whether the wireless network is connected or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
-| state                | string       | Whether the wireless network is enabled or not. <ul><li><code>"off"</code>: Disabled</li><li><code>"on"</code>: Enabled</li></ul> | Yes |
+| state                | string       | Whether the wireless network is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
 
 #### Object example
 

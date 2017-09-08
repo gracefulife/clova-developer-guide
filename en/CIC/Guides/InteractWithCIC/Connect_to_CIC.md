@@ -15,7 +15,7 @@ Below are the steps to obtain a Clova access token.
 <ol>
 <li><p>In your client app or app paired with a client device, add an interface for users to authenticate their {{ book.TargetServiceForClientAuth }} account (<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} Login SDK</a>). You must use client app or paired app because user's speech input alone cannot handle account authentication.</p>
 </li>
-<li><p>Obtain an account token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
+<li><p>Obtain an access token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
 </li>
 <li><p><a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">Request an authorization code</a> by providing the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a>. Below is an example of requesting an authorization code.</p>
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
@@ -60,14 +60,9 @@ Below are the steps to obtain a Clova access token.
 
 
 ### Creating CIC connection {#CreateConnection}
-To connect with CIC using the HTTP/2 protocol, use the following base URL.
+To establish an initial connection between your client and CIC, the first thing to do is [creating a downchannel](/CIC/References/CIC_API.md#EstablishDownchannel). A downchannel is used when you receive directive messages from CIC. These directive messages are not responses prompted by event messages. They are messages initiated exclusively by CIC (cloud-initiated) when certain conditions are met or when any needs arise. For example, when a new alarm (push) arrives, a directive message will be sent through a downchannel.
 
-<pre><code>{{ book.CICBaseURL }}
-</code></pre>
-
-To establish an initial connection between your client and CIC, the first thing to do is creating a "downchannel." A downchannel is used when you receive directive messages from CIC. These directive messages are not response messages prompted by event messages. They are messages initiated exclusively by CIC (cloud-initiated) when certain conditions are met or when any needs arise. For example, when a new alarm (push) arrives, a directive message will be sent through a downchannel.
-
-To create a downchannel, send a `GET` request to `/v1/directives`. Once a downchannel is established, CIC maintains the connection.
+To create a downchannel, send a `GET` request to `/v1/directives`. Once a downchannel is established, CIC keeps the connection open.
 
 {% raw %}
 ```
@@ -78,7 +73,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 ```
 {% endraw %}
 
-When the connection request is successfully completed, CIC returns a [`Clova.Hello`](/CIC/References/APIs/Clova.md#Hello) directive message as a response. It indicates that CIC is ready to send more directive messages through the downchannel.
+When the connection request is processed successfully, CIC returns a [`Clova.Hello`](/CIC/References/APIs/Clova.md#Hello) directive message as a response. It indicates that CIC is ready to send more directive messages through the downchannel.
 
 {% raw %}
 ```
@@ -97,18 +92,18 @@ When the connection request is successfully completed, CIC returns a [`Clova.Hel
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<ul><li>After a client app or device has started, it must always maintain one active downchannel with CIC. If any new request is sent to <code>/v1/directives</code> when an active downchannel already exists, that existing downchannel will be closed.</li><li>See <a href="#Authorization">Getting authorization</a> for more details on filling in the Authorization header field.</li></ul>
+<ul><li>Once a client app or device has started, it must always maintain one active downchannel with CIC. If any new request is sent to <code>/v1/directives</code> when an active downchannel already exists, that existing downchannel will be closed.</li><li>See <a href="#Authorization">Getting authorization</a> for more details on filling in the Authorization header field.</li></ul>
 </div>
 
 
 ### Getting authorization {#Authorization}
-When sending requests to CIC, you must send [Clova access tokens](#CreateClovaAccessToken) along with the requests. Enter Clova access token's type and value, separated by a space, in the Authorization header field as follows. See [HTTP/2 message](/CIC/References/HTTP2_Message_Format.md) for more details on the HTTP format.
+When sending requests to CIC, you must send [Clova access tokens](#CreateClovaAccessToken) along with the requests. Enter Clova access token's type and value, separated by a space, in the Authorization header field as follows. See [CIC API reference](/CIC/References/CIC_API.md) for more details.
 
 {% raw %}
 ```
 :method: {{GET|POST}}
 :scheme: https
-:path = /v1/events
+:path = {{/v1/events|/v1/directives}}
 Authorization: Bearer {{ClovaAccessToken}}
 ```
 {% endraw %}
@@ -144,7 +139,7 @@ Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
 
 #### Refreshing access token {#RefreshAccessToken}
 
-When your client obtains an access token, you can know its expiry time by checking the `expires_in` field. If the time expires, or if you receive an [error message](/CIC/References/CIC_Message_Format.md#Error) that reads, "HTTP 401 Unauthorized", you must refresh the access token. To [refresh the Clova access token](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken), send the refresh token (`refresh_token`) received during [obtaining the Clova access token](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken) and pass parameters required to refersh the token, as shown below.
+When obtaining an access token, you can check its expiry time from the `expires_in` field. If the time expires, or if you receive an [error message](/CIC/References/CIC_API.md#Error) that reads, "HTTP 401 Unauthorized", you must refresh the access token. [To refresh the Clova access token](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken), send the refresh token (`refresh_token`) you have received when [obtaining the Clova access token](/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken) and pass required parameters, as shown below.
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \

@@ -1,5 +1,5 @@
 ## Returning custom extension response {#ReturnCustomExtensionResponse}
-After [handling a request message](#HandleCustomExtensionRequest) is done, you must return a [response message](/CEK/References/Custom_Extension_Message_Format.md#ResponseMessage) back to CEK (HTTPS response). Although details of response can change depending on the request type, all response messages have a similar structure. Below is a response message returned after a LaunchRequest was processed (user request: "Let's talk in English").
+[After processing a request message](#HandleCustomExtensionRequest), you must return a [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) back to CEK (HTTPS response). Although details of response can vary depending on the request type, all response messages have a similar structure. Below is a response message returned after a LaunchRequest was processed (user request: "Let's talk in English").
 
 {% raw %}
 ```json
@@ -26,9 +26,9 @@ After [handling a request message](#HandleCustomExtensionRequest) is done, you m
 The meaning of each field is as follows.
 
 * `version`: The message format version of the current custom extension is v0.1.0.
-* `response.outputSpeech`: Set to speak in English, "Hi, nice to meet you".
-* `response.card`: There is no data to display on a client screen. Data format follows [content templates](/CIC/References/Content_Templates.md). You can use this field to return content to display on a client screen.
-* `response.shouldEndSession`: The current session does not end and continues to receive user input. If this field is set to true, your extension can end the session before receiving a [`SessionEndedRequest`](#SessionEndedRequest).
+* `response.outputSpeech`: It is set to speak in English, "Hi, nice to meet you".
+* `response.card`: There is no data to display on a client screen. It provides content to be displayed on a client screen using a [content template](/CEK/References/Content_Templates.md).
+* `response.shouldEndSession`: The current session does not end and continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -74,10 +74,10 @@ Each `response.outputSpeech` field indicates the following.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>In addition to simple or complex sentence format, we also support a combined format (SpeechSet) for a client device which does not have a screen or does not provide GUI for displaying detailed information. See <a href="/CEK/References/Custom_Extension_Message_Format.md#ResponseMessage">Response message</a> in "Custom extension message" for more details.</p>
+  <p>In addition to simple or complex sentence format, we also support a combined format (SpeechSet) for a client device which does not have a screen or does not provide GUI for displaying detailed information. See <a href="/CEK/References/CEK_API.md#CustomExtResponseMessage">Response message</a> in "Custom extension message" for more details.</p>
 </div>
 
-To display data on a screen of client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CIC/References/Content_Templates.md).
+To display data on a screen of a client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CEK/References/Content_Templates.md).
 
 {% raw %}
 ```json

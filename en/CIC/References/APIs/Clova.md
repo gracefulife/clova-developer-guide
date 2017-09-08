@@ -1,6 +1,6 @@
 # Clova
 
-It consists of a set of directive messages that return recognition results for client requests. When user requests are sent by [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. And CIC returns appropriate directive messages to your client based on recognition results. Then, your client processes the directive messages and provide requested Clova functions to users.
+Returns recognition results of user requests to your client. When user requests are sent in [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. Based on the recognition results, CIC returns appropriate directive messages to your client. Your client processes the directive messages and provide requested Clova functions to users.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
@@ -16,6 +16,7 @@ It consists of a set of directive messages that return recognition results for c
 | [`GetReminder`](#GetReminder)               | Directive | Instructs your client to look up reminders.                    |
 | [`GetSchedule`](#GetSchedule)               | Directive | Instructs your client to look up schedules.                       |
 | [`Hello`](#Hello)                           | Directive | Notifies your client that a downchannel connection has been established.       |
+| [`Help`](#Help)                             | Directive | Instructs your client to give pre-made help.       |
 | [`RenderMemoList`](#RenderMemoList)         | Directive | Instructs your client to display a list of memos.                   |
 | [`RenderReminderList`](#RenderReminderList) | Directive | Instructs your client to display a list of reminders.                |
 | [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs your client to display templates.                     |
@@ -333,7 +334,7 @@ Instructs your client to finish a specified extension. When a FinishExtension di
 
 ### Remarks
 
-The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". Then, the FinishExtension directive message returns "freetalking" in the `extension` field.
+The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". A FinishExtension directive message returns "freetalking" in the `extension` field.
 
 ### Message example
 
@@ -477,10 +478,10 @@ Notifies your client that a downchannel connection has been established. This di
 
 ### Payload field
 
-None.
+None
 
 ### Remarks
-This directive message does not have a dialog ID(`dialogRequestId`).
+This directive message does not have a dialog ID (`dialogRequestId`).
 
 ### Message example
 
@@ -504,6 +505,36 @@ This directive message does not have a dialog ID(`dialogRequestId`).
 ### See also
 * [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
+## Help directive {#Hello}
+
+Instructs your client to give help for users. This directive message is returned when a user requests for help. Have your client deliver help by playing audio help or displaying help UI on a screen.
+
+### Payload field
+
+None
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "Help"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+None
+
 ## RenderMemoList directive {#RenderMemoList}
 
 Instructs your client to display a list of memos. It also returns a list of memos obtained by recognizing user's speech input.
@@ -513,7 +544,7 @@ Instructs your client to display a list of memos. It also returns a list of memo
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `memo[]`           | object array | An object array containing a list of memos                                         | Yes    |
-| `memo[].content`   | string  |     Content of the memo to display                                                      | Yes    |
+| `memo[].content`   | string       | Content of the memo to display                                                      | Yes    |
 | `memo[].id`        | string       | The ID of the memo to display                                                       | Yes    |
 | `memo[].timestamp` | string       | The time when the memo was created ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes    |
 
@@ -619,7 +650,7 @@ Instructs your client to display a list of reminders. It also returns a list of 
 Instructs your client to display data using a content template. It also returns the content obtained by recognizing user's speech input.
 
 ### Payload field
-The format of the `payload` field can change depending which type of [content template](/CIC/References/Content_Templates.md) is used. Available content templates are as follows.
+The format of the `payload` field can vary depending on which type of [content template](/CIC/References/Content_Templates.md) is used. Available content templates are as follows.
 
 * Templates for content UI types
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
@@ -705,7 +736,7 @@ Instructs your client to display text messages. It also returns text to display 
 
 ## StartExtension directive {#StartExtension}
 
-Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that matches to a specified value.
+Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that matches a specified value.
 
 ### Payload field
 
@@ -715,7 +746,7 @@ Instructs your client to start a specified extension. When a StartExtension dire
 
 ### Remarks
 
-The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". Then, the `StartExtension` directive message returns `"freetalking"` in the `extension` field.
+The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". A `StartExtension` directive message returns `"freetalking"` in the `extension` field.
 
 ### Message example
 

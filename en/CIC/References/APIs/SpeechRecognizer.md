@@ -1,12 +1,12 @@
 # SpeechRecognizer
 
-Processes user's speech input for speech recognition. Process speech input in the following steps.
+Processes recognition of user speech. To process speech input, perform the following steps.
 
 1. Send CIC a [`SpeechRecognizer.Recognize`](#Recognize) event message while speech input is coming in from a user.
 2. Continue to send the speech input to CIC by capturing it with the interval of 200ms.
-3. Repeat the step 2 until the user finishes speaking or a [StopCapture](#StopCapture) directive message is returned from CIC.
+3. Repeat the step 2 until the user finishes speech input or a [StopCapture](#StopCapture) directive message is returned from CIC.
 
-This API provides the following event and directive messages.
+SpeechRecognizer provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
@@ -103,7 +103,7 @@ None
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` event message sends user's speech input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. Most of the [directive message](/CIC/References/CIC_Message_Format.md#Directives) are messages returned from CIC after CIC confirms the user request through a `SpeechRecognizer.Recognize` event message.
+`SpeechRecognizer.Recognize` event message sends user's speech input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. Most of [directive messages](/CIC/References/CIC_API.md#Directives) are returned from CIC after CIC confirms user requests which are sent in `SpeechRecognizer.Recognize` event messages.
 
 Processable audio input formats are as follows.
 * 16-bit Linear PCM
@@ -120,7 +120,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) alo
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `format`  | string | Speech audio data format. The value is always `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | No    |
-| `lang`    | string | Determines in which language user's speech input will be recognized. <ul><li>"ko": Korean</li><li>"ja": Japanese</li><li>"en": English</li></ul> | Yes    |
+| `lang`    | string | Determines in which language user's speech input will be recognized. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Yes    |
 | `profile` | string | A field reserved for future use. The value is always `CLOSE_TALK`.                                     | No    |
 
 ### Remarks
@@ -152,7 +152,8 @@ In general, user's speech is recognizable in Korean. However, when in the Freeta
 {% endraw %}
 
 ### Audio Data
-After sending a `SpeechRecognizer.Recognize` event message, continue to send the audio data as follows until the user finishes speaking or a [StopCapture](#StopCapture) directive message is returned. You must keep streaming it in a same message part, not separate message parts.
+After sending a `SpeechRecognizer.Recognize` event message, continue to send the audio data as follows until the user finishes speech input or a [StopCapture](#StopCapture) directive message is returned. You must keep streaming it in a same message part, not separate message parts.
+
 ```
 [ Message Header ]
 Content-Disposition: form-data; name="audio"
@@ -168,7 +169,7 @@ Content-Type: application/octet-stream
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
-While receiving speech input from users through [`SpeechRecognizer.Recognize`](#Recognize) event messages, Clova's speech recognition system analyzes it and provides analysis results. During the process, CIC returns intermediate recognition results of user speech to your client in `SpeechRecognizer.ShowRecognizedText` directive messages. Therefore, you can make your client display ongoing processing for users in real time.
+While receiving speech input from users in [`SpeechRecognizer.Recognize`](#Recognize) event messages, Clova's speech recognition system analyzes it and provides analysis results. During the process, CIC returns intermediate recognition results to your client in `SpeechRecognizer.ShowRecognizedText` directive messages. You can make your client display the progress of recognition processing in real time.
 
 ### Payload field
 
@@ -239,7 +240,7 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
 ## StopCapture directive {#StopCapture}
-After receiving [`SpeechRecognizer.Recognize`](#Recognize) event messages, CIC returns a `SpeechRecognizer.StopCapture` directive message to your client when it decides that it does not need to receive recorded PCM data any longer. You must stop recording user's speech immediately upon receiving this message. Although you can continue to receive user's speech even after receiving this message from CIC, the speech audio data will not be processed. Also, the `SpeechRecognizer.StopCapture` directive message will contain the last recognition result of the user's speech input in the `payload` field.
+After receiving a [`SpeechRecognizer.Recognize`](#Recognize) event message, CIC returns a `SpeechRecognizer.StopCapture` directive message to your client when it decides that it does not need to receive recorded PCM data any longer. You must stop recording user's speech immediately upon receiving this message. Although you can continue to receive user's speech even after CIC returns this message, the speech audio data will not be processed. Also, the `SpeechRecognizer.StopCapture` directive message will contain the last recognition result of the user's speech input in the `payload` field.
 
 ### Payload field
 | Field name       | Type    | Field description                     | Required |

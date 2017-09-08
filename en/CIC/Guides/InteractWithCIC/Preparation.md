@@ -15,9 +15,9 @@ To enable communications over the HTTP/2 protocol, use the libraries recommended
 
 
 ### Client credentials {#ClientAuthInfo}
-To use any services provided by Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on your client. By using the {{ book.TargetServiceForClientAuth }} account information entered by a user, you can obtain an access token for the user's {{ book.TargetServiceForClientAuth }} account. Then, you send the token to a Clova authorization server and [create a Clova access token](#CreateClovaAccessToken).
+To use any services provided by Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on your client. By using the {{ book.TargetServiceForClientAuth }} account information entered by a user, you can obtain an access token for the user's {{ book.TargetServiceForClientAuth }} account. Then, you send the token to a Clova authorization server and [obtain a Clova access token](#CreateClovaAccessToken).
 
-When sending the {{ book.TargetServiceForClientAuth }} account access token to the authorization server, make sure to send client credentials as well, which you have obtained from the Clova Developer Console (using [Clova Auth API](/CIC/References/Clova_Auth_API.md)). Get client credentials from the Clova Developer Console and have them ready in advance. Client credentials provide following information.
+When sending a {{ book.TargetServiceForClientAuth }} account access token to an authorization server, make sure to send client credentials as well, which you have obtained from the Clova Developer Console (using [Clova Auth API](/CIC/References/Clova_Auth_API.md)). Get client credentials from the Clova Developer Console and have them ready in advance. Client credentials provide following information.
 
 | Credentials                   | Description                                              |
 |---------------------------|--------------------------------------------------|

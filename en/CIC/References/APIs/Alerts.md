@@ -1,6 +1,6 @@
 # Alerts
 
-Creates, looks up, deletes alarms or timers. To manage alarms and timers, have your client call a local app or provide an interface for the task. The Alerts API provides the following event and directive messages.
+Creates, looks up or deletes alarms or timers. To manage alarms or timers, have your client call a local app or provide an interface for the task. Alerts provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|

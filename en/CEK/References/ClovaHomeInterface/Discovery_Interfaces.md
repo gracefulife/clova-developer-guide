@@ -1,4 +1,4 @@
-## Discovery API {#DiscoveryAPI}
+# Discovery API
 
 Obtains a list of IoT appliances registered to a user account.
 
@@ -7,16 +7,16 @@ Obtains a list of IoT appliances registered to a user account.
 | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)                     | Request  | Requests your Clova Home extension to provide a list of IoT appliances registered to a user.             |
 | [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)                   | Response | Responds to a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message by returning CEK a list of IoT appliances registered to a user. |
 
-### DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
-Requests your Clova Home extension to provide a list of appliances registered to a user. To respond to the request, use a [`ClovaHome.DiscoverAppliancesResponse`](DiscoverAppliancesResponse) message.
+## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
+Requests your Clova Home extension to provide a list of appliances registered to a user. To respond to the request, use a [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) message.
 
-#### Payload field
+### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `accessToken`   | string  | The access token for the Clova Home extension  | Yes     |
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -34,22 +34,22 @@ Requests your Clova Home extension to provide a list of appliances registered to
 ```
 {% endraw %}
 
-#### See also
-* [`DiscoverAppliancesResponse`](DiscoverAppliancesResponse)
+### See also
+* [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)
 
-### DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
-Returns CEK a list of appliances registered to a user. Use this message to respond to a [`ClovaHome.DiscoverAppliancesRequest`](DiscoverAppliancesRequest) message.
+## DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
+Returns CEK a list of appliances registered to a user. Use this message to respond to a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message.
 
-#### Payload field
+### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `discoveredAppliances[]`  | [ApplianceObject](#ApplianceObject) array  | An object array displaying a list of appliances registered to a user account          | Yes    |
+| `discoveredAppliances[]`  | [ApplianceObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceObject) array  | An object array displaying a list of appliances registered to a user account          | Yes    |
 
-#### Remarks
-When providing IoT services, you must provide a list of appliances registered to each user account.
+### Remarks
+When providing an IoT service, you must provide a list of appliances registered to each user account.
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -98,5 +98,5 @@ When providing IoT services, you must provide a list of appliances registered to
 ```
 {% endraw %}
 
-#### See also
-* [`DiscoverAppliancesRequest`](DiscoverAppliancesRequest)
+### See also
+* [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)

@@ -6,7 +6,7 @@ Clova Home extension lets you provide remote control capabilities for home IoT d
 
 The following explains what preparations are required before you start building your Clova Home extension, and which messages your extension exchanges with CEK and how it performs necessary actions during the process.
 
-The following topics provide essential information for Clova Home extension developers.
+The following topics provide essential information for building a Clova Home extension.
 
 1. [Preparation](#Preparation)
 2. [Providing device discovery](#ProvideDeviceDiscovery)

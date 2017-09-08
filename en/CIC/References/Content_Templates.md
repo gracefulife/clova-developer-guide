@@ -1,4 +1,4 @@
-# Content template
+# Content template reference
 
 Content templates are standardized formats for displaying content returned from CIC. Sometimes you have to make your client receive content from Clova and display it on its screen in addition to playing speech audio. To help with displaying, Clova returns data in a pre-defined format using the content templates. The content templates let you focus on displaying data in a proper manner.
 

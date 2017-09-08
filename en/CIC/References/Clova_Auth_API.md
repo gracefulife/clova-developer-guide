@@ -1,5 +1,5 @@
-# Clova Auth API
-To connect your client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). In the following, we will explain the Clova Auth API, which is provided by a Clova authorization server to help you with the token creation.
+# Clova Auth API reference
+To connect your client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). The following explains the Clova Auth API, which is provided by a Clova authorization server to help you with generating and managing Clova access tokens.
 
 ## Base URL
 The base URL of the Clova authorization server is as follows.
@@ -8,17 +8,17 @@ The base URL of the Clova authorization server is as follows.
 </code></pre>
 
 ## Requesting authorization code {#RequestAuthorizationCode}
-Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters.
+Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. An authorization code is credential information necessary for generation of a Clova access token.
 
 ```
 GET|POST /authorize
 ```
 
-### Request headers
+### Request header
 
 * Accept
   * application/json
-* Authorization - Enter a [{{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) previously obtained.
+* Authorization: Enter an [obtained {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken).
   * Bearer [{{ book.TargetServiceForClientAuth }} access token]
 
 ### Query parameter
@@ -29,9 +29,9 @@ GET|POST /authorize
 | `device_id`     | string  | The UUID of the client device. Use a MAC address or create a UUID hash value.                          | Yes |
 | `model_id`      | string  | The model ID of the client device                                                                          | No |
 | `response_type` | string  | The response type. Only `"code"` is supported at the moment.                                                             | Yes |
-| `state`         | string  | The state token value (URL encoding applied) used by the client to prevent cross-site request forgery) attacks | Yes |
+| `state`         | string  | The state token (URL encoding applied) used by the client to prevent cross-site request forgery attacks | Yes |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
        {{ book.AuthServerBaseURL }}authorize \
@@ -52,7 +52,7 @@ GET|POST /authorize
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
 | `code`  | string | The authorization code generated from the authorization server                                                                 |
-| `state` | string | The decrypted state token value (URL decoding applied) passed from the client to prevent cross-site request forgery attacks |
+| `state` | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks |
 
 ### Status codes
 
@@ -63,7 +63,8 @@ GET|POST /authorize
 | 403 Forbidden    | The {{ book.TargetServiceForClientAuth }} access token contained in the header is invalid |
 | 500 Server Internal Error | Failed to generate an authorization code due to an internal server error |
 
-### Response Example
+### Response example
+
 {% raw %}
 ```json
 {
@@ -74,7 +75,7 @@ GET|POST /authorize
 {% endraw %}
 
 ### Remarks
-Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue, so it returns an authorization code instead. The client receives the authorization code, passes it to a Clova authorization server and [requests a Clova access token](#RequestClovaAccessToken).
+Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue, so the app forwards an authorization code instead. The client receives the authorization code, passes it to a Clova authorization server and [requests a Clova access token](#RequestClovaAccessToken).
 
 ### See also
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
@@ -104,7 +105,7 @@ GET|POST /token?grant_type=authorization_code
 | `device_id`     | string  | The UUID of the client device                                                                                              | Yes |
 | `model_id`      | string  | The model ID of the client device                                                                                                 | No |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
@@ -136,7 +137,8 @@ GET|POST /token?grant_type=authorization_code
 | 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
 | 500 Internal Server Error | Failed to generate an access token due to an internal server error |
 
-### Response Example
+### Response example
+
 {% raw %}
 ```json
 {
@@ -176,7 +178,7 @@ GET|POST /token?grant_type=refresh_token
 | `model_id`      | string  | The model of the client device                                                           | No |
 | `refresh_token` | string  | The refresh token generated after authorization succeeds.                                            | Yes |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=refresh_token \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2FzZnNhZGZ' \
@@ -208,7 +210,8 @@ GET|POST /token?grant_type=refresh_token
 | 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
 | 500 Internal Server Error | Failed to refresh the access token due to an internal server error |
 
-### Response Example
+### Response example
+
 {% raw %}
 ```json
 {
@@ -237,7 +240,7 @@ GET|POST /token?grant_type=delete
 * Accept
   * application/json
 
-### Query Parameter
+### Query parameter
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
@@ -247,7 +250,7 @@ GET|POST /token?grant_type=delete
 | `device_id`     | string  | The UUID of the client device                                                     | Yes |
 | `model_id`      | string  | The model of the client device                                                           | No |
 
-### Request Example
+### Request example
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=delete \
        --data-urlencode 'access_token=xFcH08vYQcahQWouqIzWOw' \
@@ -279,7 +282,8 @@ GET|POST /token?grant_type=delete
 | 401 Unauthorized | The client credentials (`client_id` or `client_secret`) or user information (`device_id` or `model_id`) which were passed as parameters are invalid |
 | 500 Internal Server Error | Failed to delete the access token due to an internal server error |
 
-### Response Example
+### Response example
+
 {% raw %}
 ```json
 {

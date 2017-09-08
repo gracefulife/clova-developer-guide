@@ -1,7 +1,7 @@
-# HTTP message
-CEK and your extension communicates over the HTTP/1.1 protocol, sending HTTPS requests and responses back and forth. When CEK and your extension communicates with each other, a JSON format message is included in the HTTP message body. The following explains how an HTTP message is constructed when CEK and your extension exchange messages.
+## HTTP message {#HTTPMessage}
+CEK and your extension communicates over the HTTP/1.1 protocol, sending HTTP requests and responses back and forth. When CEK and your extension communicates with each other, a JSON format message is included in the HTTP message body. The following explains how an HTTP message is constructed when CEK and your extension exchange messages.
 
-## HTTP header {#HTTPHeader}
+### HTTP header {#HTTPHeader}
 When CEK sends analysis details of user's speech input to your extension, it uses an HTTPS request. The header of an HTTPS request is constructed as follows.
 
 {% raw %}
@@ -31,5 +31,5 @@ Content-Type: application/json;charset-UTF-8
 * Returns processing results in response to HTTPS requests sent from CEK.
 * The body uses a JSON format and UTF-8 encoding.
 
-## HTTP body {#HTTPBody}
-For both request and response, the HTTPS message body uses a JSON format, and it contains analysis details of user's speech input or processing results of your extension. Messages are constructed differently depending on which type of extension is used. See [custom extension message](/CEK/References/Custom_Extension_Message_Format.md) and [Clova Home extension message](/CEK/References/Clova_Home_Extension_Message_Format.md) for more details on constructing a message.
+### HTTP body {#HTTPBody}
+For both request and response, the HTTPS message body uses a JSON format, and it contains analysis details of user's speech input or processing results of your extension. Messages are constructed differently depending on which type of extension is used. See [Custom extension message](#CustomExtMessage) and [Clova Home extension message](#ClovaHomeExtMessage) for more details on constructing a message.

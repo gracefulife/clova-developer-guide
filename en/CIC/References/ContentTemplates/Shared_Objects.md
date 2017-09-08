@@ -4,7 +4,7 @@ Content templates use the following shared objects to display repetitive data ty
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
 | [CurrencyObject](#CurrencyObject)         | An object containing currency and amount                   |
-| [DateObject](#DateObject)                 | An object containing date                         |
+| [DateObject](#DateObject)                 | An object containing a date                         |
 | [DateTimeObject](#DateTimeObject)         | An object containing date and time                    |
 | [LocationObject](#LocationObject)         | An object containing coordinates (UTMK) of a map           |
 | [NumberObject](#NumberObject)             | An object containing a number, separated by thousands |
@@ -16,7 +16,7 @@ Content templates use the following shared objects to display repetitive data ty
 | [URLObject](#URLObject)                   | An object containing a URL                         |
 
 # CurrencyObject {#CurrencyObject}
-An object that contains currency and amount.
+An object containing currency and amount.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -25,6 +25,7 @@ An object that contains currency and amount.
 | `value`         | string  | Data in combination of currency and amount             | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -35,7 +36,7 @@ An object that contains currency and amount.
 {% endraw %}
 
 ## DateObject {#DateObject}
-An object that contains a date.
+An object containing a date.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -44,6 +45,7 @@ An object that contains a date.
 | `value`         | string  | A date (YYYY-MM-DD format)     | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -54,7 +56,7 @@ An object that contains a date.
 {% endraw %}
 
 ## DateTimeObject {#DateTimeObject}
-An object that contains date and time.
+An object containing date and time.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -63,6 +65,7 @@ An object that contains date and time.
 | `value`         | string  | Date and time (YYYY-MM-DDThh:mm:ssZ format) | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -73,7 +76,7 @@ An object that contains date and time.
 {% endraw %}
 
 ## LocationObject {#LocationObject}
-An object that contains map coordinates.
+An object containing map coordinates.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -82,6 +85,7 @@ An object that contains map coordinates.
 | `value`         | string  | Map coordinates ({{book.OrientedService}} UTMK). The value is a pair of latitude and longitude.  | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -92,7 +96,7 @@ An object that contains map coordinates.
 {% endraw %}
 
 ## NumberObject {#NumberObject}
-An object that contains a number separated by thousands.
+An object containing a number separated by thousands.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -101,6 +105,7 @@ An object that contains a number separated by thousands.
 | `value`         | string  | A number separated by thousands | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -111,7 +116,7 @@ An object that contains a number separated by thousands.
 {% endraw %}
 
 ## PercentageObject {#PercentageObject}
-An object that contains a percentage.
+An object containing a percentage.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -120,6 +125,7 @@ An object that contains a percentage.
 | `value`         | number  | A percentage                         | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -130,7 +136,7 @@ An object that contains a percentage.
 {% endraw %}
 
 ## PhoneNumberObject {#PhoneNumberObject}
-An object that contains a phone number.
+An object containing a phone number.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -139,6 +145,7 @@ An object that contains a phone number.
 | `value`         | string  | A phone number                    | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -149,7 +156,7 @@ An object that contains a phone number.
 {% endraw %}
 
 ## StringObject {#StringObject}
-An object that contains text.
+An object containing text.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -158,6 +165,7 @@ An object that contains text.
 | `value`         | string  | Text                      | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 // Example 1
@@ -175,7 +183,7 @@ An object that contains text.
 {% endraw %}
 
 ## TemperatureCObject {#TemperatureCObject}
-An object that contains a temperature in Celsius.
+An object containing a temperature in Celsius.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -184,6 +192,7 @@ An object that contains a temperature in Celsius.
 | `value`         | number  | A temperature in Celsius                      | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -194,7 +203,7 @@ An object that contains a temperature in Celsius.
 {% endraw %}
 
 ## TemperatureFObject {#TemperatureFObject}
-An object that contains a temperature in Fahrenheit.
+An object containing a temperature in Fahrenheit.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -203,6 +212,7 @@ An object that contains a temperature in Fahrenheit.
 | `value`         | number  | A temperature in Fahrenheit                      | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 {
@@ -213,7 +223,7 @@ An object that contains a temperature in Fahrenheit.
 {% endraw %}
 
 ## URLObject {#URLObject}
-An object that contains a URL.
+An object containing a URL.
 
 ### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -222,6 +232,7 @@ An object that contains a URL.
 | `value`         | string  | A URL                        | Yes     |
 
 ### Object Example
+
 {% raw %}
 ```json
 // Example 1

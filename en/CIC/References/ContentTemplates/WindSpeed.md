@@ -8,13 +8,13 @@ Provides wind speeds. It is used to display wind speeds on a screen.
 
 ## Template field
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file | Yes |
-| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content   | No |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location | Yes |
-| `type`          | string | A content template delimiter. The value is always "WindSpeed". | Yes |
-| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds | No |
+| Field name       | Type    | Field description                     |
+|---------------|---------|-----------------------------|
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).   |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location. The `value` field of this object can have an empty string (`""`).   |
+| `type`          | string | A content template delimiter. The value is always "WindSpeed". |
+| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds. The `value` field of this object can have a `null` value.   |
 
 ## Template Example
 

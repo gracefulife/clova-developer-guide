@@ -1,4 +1,4 @@
-## Error API {#ErrorAPI}
+# Error API
 Use this API to have your Clova Home extension return errors to CEK.
 
 
@@ -13,18 +13,18 @@ Use this API to have your Clova Home extension return errors to CEK.
 <p>Other types of error messages will be added going forward.</p>
 </div>
 
-### DriverInternalError {#DriverInternalError}
+## DriverInternalError {#DriverInternalError}
 Return this response message to CEK when an internal error occurs. When CEK receives this message, it forwards a pre-defined error message to the client.
 
-#### Payload field
+### Payload field
 
 None
 
-#### Remarks
+### Remarks
 * Return a 200 OK HTTP response to CEK even when it is an error message.
 * Error messages do not require a body (payload) because their names clearly express situations.
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -41,21 +41,21 @@ None
 ```
 {% endraw %}
 
-#### See also
+### See also
 * [`TargetOfflineError`](#TargetOfflineError)
 
-### TargetOfflineError {#TargetOfflineError}
+## TargetOfflineError {#TargetOfflineError}
 Return this response message to CEK when the target appliance is not accessible (offline). When CEK receives this message, it forwards a pre-defined error message to the client.
 
-#### Payload field
+### Payload field
 
 None
 
-#### Remarks
+### Remarks
 * Return a 200 OK HTTP response to CEK even when it is an error message.
 * Error messages do not require a body (payload) because their names clearly express situations.
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -72,23 +72,23 @@ None
 ```
 {% endraw %}
 
-#### See also
+### See also
 * [`DriverInternalError`](#DriverInternalError)
 
-### ValueOutOfRangeError {#ValueOutOfRangeError}
+## ValueOutOfRangeError {#ValueOutOfRangeError}
 Return this response message to CEK when a user requests an action which is out of range on the target appliance. For example, if an air conditioner allows a temperature range of 18 to 28 and a user requests to set it to 16 or 30, you can return this message. The `payload` field must have the maximum and minimum values allowed on the target appliance.
 
-#### Payload field
+### Payload field
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `maximumValue` | number | The maximum value allowed on the target appliance | Yes    |
 | `minimumValue` | number | The minimum value allowed on the target appliance | Yes    |
 
-#### Remarks
+### Remarks
 You can use values of `payload` to guide users.
 
-#### Message example
+### Message example
 
 {% raw %}
 ```json
@@ -107,5 +107,5 @@ You can use values of `payload` to guide users.
 ```
 {% endraw %}
 
-#### See also
+### See also
 * [`DriverInternalError`](#DriverInternalError)

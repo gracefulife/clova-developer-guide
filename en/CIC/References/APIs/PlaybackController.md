@@ -1,10 +1,10 @@
 # PlaybackController
 
-Plays audio and controls speaker output on a client. The PlaybackController API provides the following event and directive messages.
+Plays audio and controls speaker output on a client. PlaybackController provides the following event and directive messages.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Mute`](#Mute)                           | Directive | Instructs your client to mute its speaker volume.                    |
+| [`Mute`](#Mute)                           | Directive | Instructs your client to mute the speaker.                    |
 | [`Next`](#Next)                           | Directive | Instructs your client to start playback of a next audio stream in a playback queue.   |
 | [`Pause`](#Pause)                         | Directive | Instructs your client to pause playback of a current audio stream.        |
 | [`Previous`](#Previous)                   | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
@@ -12,12 +12,12 @@ Plays audio and controls speaker output on a client. The PlaybackController API 
 | [`Stop`](#Stop)                           | Directive | Instructs your client to stop playback of an audio stream.                |
 | [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | Instructs your client to turn off the single track repeat mode.                  |
 | [`TurnOnRepeatMode`](#TurnOnRepeatMode)   | Directive | Instructs your client to turn on the single track repeat mode.                  |
-| [`Unmute`](#Unmute)                       | Directive | Instructs your client to unmute its speaker volume.              |
-| [`VolumeDown`](#VolumeDown)               | Directive | Instructs your client to turn down its speaker volume.                      |
-| [`VolumeUp`](#VolumeUp)                   | Directive | Instructs your client to turn up its speaker volume.                      |
+| [`Unmute`](#Unmute)                       | Directive | Instructs your client to unmute the speaker.              |
+| [`VolumeDown`](#VolumeDown)               | Directive | Instructs your client to turn down the speaker volume.                      |
+| [`VolumeUp`](#VolumeUp)                   | Directive | Instructs your client to turn up the speaker volume.                      |
 
 ## Mute directive {#Mute}
-Instructs your client to mute its speaker volume.
+Instructs your client to mute the speaker.
 
 ### Payload field
 None
@@ -230,7 +230,7 @@ None
 * [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
-Instructs your client to unmute its speaker volume.
+Instructs your client to unmute the speaker.
 
 ### Payload field
 None
@@ -257,7 +257,7 @@ None
 * [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## VolumneDown directive {#VolumeDown}
-Instructs your client to turn down its speaker volume. The volume adjustment level is determined by your UX standard.
+Instructs your client to turn down the speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
 None
@@ -284,7 +284,7 @@ None
 * [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
 
 ## VolumneUp directive {#VolumeUp}
-Instructs your client to turn up its speaker volume. The volume adjustment level is determined by your UX standard.
+Instructs your client to turn up the speaker volume. The volume adjustment level is determined by your UX standard.
 
 ### Payload field
 None
