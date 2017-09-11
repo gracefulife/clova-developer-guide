@@ -13,21 +13,22 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.      |
 | [`ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) | Event     | 음성 입력 대기 시간이 초과했음을 CIC에 보고합니다.           |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
-| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.   |
 | [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.      |
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
-클라이언트에게 마이크를 활성화하여 사용자의 음성 입력을 받도록 지시합니다. 해당 지시 메시지는 CIC가 먼저 사용자의 요청에서 불충분한 정보를 추가로 요구하거나 대화 모드(Freetalk mode)와 같이 대화를 계속 진행하기 위해 전달됩니다. 입력된 사용자 음성은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 통해 CIC로 전달합니다.
+클라이언트에게 마이크를 활성화하여 사용자의 음성 입력을 받도록 지시합니다. 해당 지시 메시지는 CIC가 먼저 사용자의 요청에서 불충분한 정보를 추가로 요구하는 multi-turn 대화를 수행하거나 대화 모드(Freetalk mode)와 같이 대화를 계속 진행하기 위해 전달됩니다. 입력된 사용자 음성은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 통해 CIC로 전달합니다.
 
 ### Payload field
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `timeoutInMilliseconds` | integer | 사용자의 음성 입력을 받기 위해 대기하는 시간으로 단위는 밀리초(millisecond) 입니다. | 필수    |
+| `explicit`              | boolean | 사용자 음성 입력의 필수 여부.`explicit`는 주로 `true`로 설정되며, 사용자로부터 필수 정보를 추가로 알아내야 할 때 사용됩니다.<ul><li><code>true</code> : 필수</li><li><code>false</code> : 선택</li></ul>예를 들면, 사용자가 "피자 주문해줘."와 같은 요청을 했고 CIC는 수량과 같은 필수 정보를 얻기 위해 "몇 판 주문할까요?"라는 음성과 함께 `explicit` 필드가 `true`로 설정된 `SpeechRecognizer.ExpectSpeech` 지시 메시지를 보낼 수 있습니다.  이 경우 사용자로부터 수량 정보를 입력받지 않는다면 주문을 제대로 수행할 수 없게 됩니다. 따라서, `explicit` 필드가 `true`인 경우 반드시 사용자 음성 입력을 받아야 합니다. | 필수  |
+| `timeoutInMilliseconds` | number  | 사용자의 음성 입력을 받기 위해 대기하는 시간으로 정수 형태 값이며, 단위는 밀리초(millisecond) 입니다. | 필수    |
 
 ### Remarks
 * 이 지시 메시지를 받으면 클라이언트는 사용자의 입력을 CIC로 전달할 때 이전 요청 메시지와 같은 대화 ID(`dialogRequestId`)를 사용해서 전송해야 합니다.
+* `explicit` 필드가 `false`인 경우는 클라이언트가 가지고 있는 정책이나 조건에 따라 사용자의 음성 입력을 받지 않을 수도 있습니다.
 * `timeoutInMilliseconds` 시간 동안 사용자의 음성 데이터 입력이 없으면  [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) 이벤트 메시지를 CIC로 전달해야 합니다.
 
 ### Message example
@@ -88,7 +89,6 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
     "header": {
       "namespace": "SpeechRecognizer",
       "name": "ExpectSpeechTimedOut",
-      "dialogRequestId": "bc834682-6d22-4bbb-8352-4a49df2ed3d7",
       "messageId": "56dcd20e-7fdc-4294-b6d9-a4b960d72df8"
     },
     "payload": {}
@@ -166,85 +166,11 @@ Content-Type: application/octet-stream
 * [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
-## ShowRecognizedText directive {#ShowRecognizedText}
-
-Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지로 전달받고 있는 사용자의 음성 입력을 분석하여 인식 결과를 제공합니다. CIC는 `SpeechRecognizer.ShowRecognizedText` 지시 메시지로 사용자 음성 인식의 중간 처리 결과를 클라이언트로 전달합니다. 클라이언트는 이를 바탕으로 처리 과정을 사용자에게 실시간으로 보여 줄 수 있습니다.
-
-### Payload field
-
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `text`  | string | 입력된 사용자 음성이 어떤 어떻게 인식이 되고 있는지 그 결과를 실시간으로 담고 있습니다. | 필수    |
-
-### Remarks
-
-해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
-
-### Message example
-
-{% raw %}
-
-```json
-// 중간 인식 결과 1
-{
-  "directive": {
-    "header": {
-      "namespace": "SpeechRecognizer",
-      "name": "ShowRecognizedText",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "ceb4c638-d817-4a65-977d-03726d72cb91"
-    },
-    "payload": {
-      "text": "오늘"
-    }
-  }
-}
-
-// 중간 인식 결과 2
-{
-  "directive": {
-    "header": {
-      "namespace": "SpeechRecognizer",
-      "name": "ShowRecognizedText",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "fab4c638-d8df7-4adf-977d-adf72cb91"
-    },
-    "payload": {
-      "text": "오늘 날씨"
-    }
-  }
-}
-
-// 중간 인식 결과 3
-{
-  "directive": {
-    "header": {
-      "namespace": "SpeechRecognizer",
-      "name": "ShowRecognizedText",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "efac233-8df7d-14df-d37d-72f72cb91"
-    },
-    "payload": {
-      "text": "오늘 날씨 알려줘"
-    }
-  }
-}
-
-```
-{% endraw %}
-
-### See also
-
-* [`SpeechRecognizer.Recognize`](#Recognize)
-* [`SpeechRecognizer.StopCapture`](#StopCapture)
-
 ## StopCapture directive {#StopCapture}
-CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 후 더 이상 녹음 데이터(PCM)를 수신할 필요가 없다고 판단한 경우 `SpeechRecognizer.StopCapture` 지시 메시지를 클라이언트에 전달합니다. 클라이언트는 이 메시지를 수신한 즉시 사용자 음성 녹음을 중지해야 합니다. CIC가 이 메시지를 보낸 후에도 사용자 음성 정보를 수신할 수 있지만 해당 음성 정보는 처리되지 않습니다. 또한, `SpeechRecognizer.StopCapture` 지시 메시지는 사용자의 음성 입력이 마지막까지 인식된 결과를 `payload` 필드에 포함하고 있습니다.
+CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 후 더 이상 녹음 데이터(PCM)를 수신할 필요가 없다고 판단한 경우 `SpeechRecognizer.StopCapture` 지시 메시지를 클라이언트에 전달합니다. 클라이언트는 이 메시지를 수신한 즉시 사용자 음성 녹음을 중지해야 합니다. CIC가 이 메시지를 보낸 후에도 사용자 음성 정보를 수신할 수 있지만 해당 음성 정보는 처리되지 않습니다.
 
 ### Payload field
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `recognizedText` | string | 입력된 사용자 음성이 어떻게 인식이 되었는지 그 결과를 담고 있습니다. | 필수 |
+없음
 
 ### Remarks
 해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
@@ -261,7 +187,6 @@ CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "recognizedText": "오늘 날씨 알려줘"
     }
   }
 }
@@ -270,4 +195,3 @@ CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 
 
 ### See also
 * [`SpeechRecognizer.Recognize`](#Recognize)
-* [`SpeechRecognizer.ShowRecognizedText`](#ShowRecognizedText)

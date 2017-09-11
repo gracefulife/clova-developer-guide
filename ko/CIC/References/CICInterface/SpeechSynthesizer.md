@@ -31,7 +31,6 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
     "header": {
       "namespace": "SpeechSynthesizer",
       "name": "Request",
-      "dialogRequestId": "caa7862a-3566-4aef-98de-489be0973e18",
       "messageId": "ab63d4cb-49f0-4a92-94fc-5ee356193551"
     },
     "payload": {
@@ -57,7 +56,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 | `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 필수    |
 | `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li><li><code>"ja"</code> : 일본어</li><li><code>"zh"</code> : 중국어</li></ul> | 선택    |
 | `ttsText`              | string  | 합성된 파일의 TTS 텍스트                      | 선택    |
-| `x-clova-pause-before` | integer | 파일 재생 전 유휴 시간. 단위는 밀리초(millisecond)입니다.        | 선택    |
+| `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 선택    |
 
 ### Remarks
 

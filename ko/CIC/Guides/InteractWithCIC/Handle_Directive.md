@@ -43,7 +43,7 @@ Content-Type: application/octet-stream<br />
 --b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 </code></pre>
 </li>
-<li><strong>클라이언트가 보관하고 있는 대화 ID와 일치하지 않으면</strong>, 해당 지시 메시지와 관련된 모 메시지를 무시하고 큐에서 제거합니다.</li>
+<li><strong>클라이언트가 보관하고 있는 대화 ID와 일치하지 않으면</strong>, 해당 지시 메시지와 관련된 모든 메시지를 무시하고 큐에서 제거합니다.</li>
 </ul>
 </li>
 </ol>

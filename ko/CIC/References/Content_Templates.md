@@ -21,5 +21,6 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
-* 공유 객체
+* 공통 필드 및 공유 객체
+  * [공통 필드](CIC/References/ContentTemplates/Common_Fields.md)
   * [공유 객체](/CIC/References/ContentTemplates/Shared_Objects.md)

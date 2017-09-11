@@ -182,7 +182,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation)
 
 ## DecrementVolumeConfirmation {#DecrementVolumeConfirmation}
-[`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 설정한 결과를 CEK에게 전달합니다.
+[`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
 ### Payload field
 

@@ -153,7 +153,7 @@ CIC는 HTTP 응답으로 클라이언트에게 [Clova.Hello](/CIC/References/CIC
 
 | 상태 코드       | 설명                     |
 |---------------|-------------------------|
-| 200 OK                    | Downchannel이 정상적으로 연결 및 설정되었었을 때 반환되는 상태 코드입니다. 이후 CIC 주도(Cloud-initiated) 지시 메시지가 수신될 것입니다.        |
+| 200 OK                    | Downchannel이 정상적으로 연결 및 설정되었을 때 반환되는 상태 코드입니다. 이후 CIC 주도(Cloud-initiated) 지시 메시지가 수신될 것입니다.        |
 | 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                       |
 | 401 Unauthorized          | 사용자 인증에 실패한 경우 발생하는 오류입니다. access token이 유효한지 확인해야 합니다. |
 | 500 Internal Server Error | 서버 내부 오류입니다.                                                      |
@@ -329,7 +329,7 @@ Content-Type: application/json; charset=utf-8
       "namespace":"SpeechSynthesizer",
       "name":"Speak",
       "messageId":"dd4d463e-85a3-4514-927e-c90103c2dd02",
-      "dialogRequestId":"dialog-id-here-1"
+      "dialogRequestId":"4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload":{
       "format":"AUDIO_MPEG",
@@ -359,7 +359,7 @@ Content-Type: application/json; charset=utf-8
       "namespace":"Clova",
       "name":"RenderText",
       "messageId":"0fa1b36f-e86c-4979-9494-b00a162c4515",
-      "dialogRequestId":"dialog-id-here-1"
+      "dialogRequestId":"4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload":{
       "text":"만나서 반가워요"
@@ -435,11 +435,11 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 | `context`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a> : 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a> : 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a> : 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a> : 기기 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a> : 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a> : 스피커 정보</li></ul> | 필수 |
 | `event`                        | object       | 이벤트 메시지의 헤더와 필요한 데이터(payload)를 가지고 있는 객체                                                                 | 필수 |
 | `event.header`                 | object       | 이벤트 메시지의 헤더                                                                                                 | 필수 |
-| `event.header.dialogRequestId` | string       | 대화 ID(Dialog ID). CIC 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다. [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지를 전송할 때 반드시 이 필드 값을 입력해야 합니다.| 선택 |
+| `event.header.dialogRequestId` | string       | 대화 ID(Dialog ID). 클라이언트는 [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)와 [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) 이벤트 메시지를 전송할 때 반드시 [대화 ID](/CIC/CIC_Overview.md#DialogIDandClientOP)를 생성하여 이 필드에 입력해야 합니다.| 선택 |
 | `event.header.messageId`       | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다.                                                                 | 필수 |
 | `event.header.name`            | string       | 이벤트 메시지의 API 이름                                                                                             | 필수 |
 | `event.header.namespace`       | string       | 이벤트 메시지의 API 네임스페이스                                                                                       | 필수 |
-| `event.payload`                | object       | 이벤트 메시지와 관련된 정보를 담고 있는 객체. 사용하는 [CIC 시지 인터페이스](#CICInterface)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수 |
+| `event.payload`                | object       | 이벤트 메시지와 관련된 정보를 담고 있는 객체. 사용하는 [CIC 메시지 인터페이스](#CICInterface)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수 |
 
 #### Message example
 {% raw %}
@@ -611,6 +611,7 @@ CIC 메시지는 기능과 용도에 따라 각각의 인터페이스로 정의�
 * [Alerts](/CIC/References/CICInterface/Alerts.md)
 * [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)
 * [Clova](/CIC/References/CICInterface/Clova.md)
+* [DeviceControl](/CIC/References/CICInterface/DeviceControl.md)
 * [PlaybackController](/CIC/References/CICInterface/PlaybackController.md)
 * [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
 * [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md)

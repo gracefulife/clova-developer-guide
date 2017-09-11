@@ -3,6 +3,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
+| [ActionObject](#ActionObject)             | 클라이언트가 수행할 수 있는 동작 정보를 가지는 객체          |
 | [CurrencyObject](#CurrencyObject)         | 통화와 금액 정보를 가지는 객체                   |
 | [DateObject](#DateObject)                 | 날짜 정보를 가지는 객체                         |
 | [DateTimeObject](#DateTimeObject)         | 날짜와 시간 정보를 가지는 객체                    |
@@ -15,6 +16,26 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 | [TemperatureFObject](#TemperatureFObject) | 온도 정보(화씨)를 가지는 객체                    |
 | [URLObject](#URLObject)                   | URL 정보를 가지는 객체                         |
 
+
+# ActionObject {#ActionObject}
+클라이언트가 수행할 수 있는 동작 정보를 가지는 객체입니다.
+
+### Object field
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|---------|
+| `type`          | string  | `"action"` 값으로 고정되어 있습니다.  | 필수     |
+| `value`         | string  | [Action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme) 형태의 동작 정보 | 필수     |
+
+### Object Example
+{% raw %}
+```json
+{
+    "type": "action",
+    "value": "clova://naverSearch?query=이태원맛집"
+}
+```
+{% endraw %}
+
 # CurrencyObject {#CurrencyObject}
 통화와 금액 정보를 가지는 객체입니다.
 
@@ -22,7 +43,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"currency"` 값으로 고정되어 있습니다.  | 필수     |
-| `value`         | string  | 통화와 금액이 조합된 정보             | 필수     |
+| `value`         | string  | 통화와 금액이 조합된 정보               | 필수     |
 
 ### Object Example
 {% raw %}

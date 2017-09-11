@@ -467,7 +467,7 @@ DeviceState는 클라이언트의 기기의 상태 정보를 전송할 때 사�
     "screenBrightness": {
         "actions": [
             "Decrease",
-            "Increse",
+            "Increase",
             "SetValue"
         ],
         "min": 0,
@@ -540,7 +540,7 @@ DeviceState는 클라이언트의 기기의 상태 정보를 전송할 때 사�
     "volume": {
         "actions": [
             "Decrease",
-            "Increse",
+            "Increase",
             "SetValue"
         ],
         "min": 0,
