@@ -39,55 +39,75 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ```json
 // 바로 재생 가능한 오디오 스트림 URL 정보가 담긴 예제
 {
-  "audioItem": {
-    "audioItemId": "90b77646-93ab-444f-acd9-60f9f278ca38",
-    "episodeId": 22346122,
-    "stream": {
-      "beginAtInMilliseconds": 0,
-      "episodeId": 22346122,
-      "playType": "NONE",
-      "podcastId": 12548,
-      "progressReport": {
-        "progressReportDelayInMilliseconds": null,
-        "progressReportIntervalInMilliseconds": 60000,
-        "progressReportPositionInMilliseconds": null
-      },
-      "url": "https://steaming.example.com/1212334548/2231122",
-      "urlPlayable": true
+  "directive": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "StreamDeliver",
+      "dialogRequestId": "34abac3-cb46-611c-5111-47eab87b7",
+      "messageId": "ad13f0d6-bb11-ca23-99aa-312a0b213805"
     },
-    "type": "podcast"
-  },
-  "playBehavior": "REPLACE_ALL"
+    "payload": {
+      "audioItem": {
+        "audioItemId": "90b77646-93ab-444f-acd9-60f9f278ca38",
+        "episodeId": 22346122,
+        "stream": {
+          "beginAtInMilliseconds": 0,
+          "episodeId": 22346122,
+          "playType": "NONE",
+          "podcastId": 12548,
+          "progressReport": {
+            "progressReportDelayInMilliseconds": null,
+            "progressReportIntervalInMilliseconds": 60000,
+            "progressReportPositionInMilliseconds": null
+          },
+          "url": "https://steaming.example.com/1212334548/2231122",
+          "urlPlayable": true
+        },
+        "type": "podcast"
+      },
+      "playBehavior": "REPLACE_ALL"
+    }
+  }
 }
 
 // 바로 재생 가능하지 않은 오디오 스트림 URL 정보가 담긴 예제
 {
-  "audioItem": {
-    "audioItemId": "9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201",
-    "album": {
-      "albumId": "2000240",
-      "genres": [
-        "발라드",
-        "알앤비/어반"
-      ],
-      "title": "Palette"
+  "directive": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "StreamDeliver",
+      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    ...
-    "stream": {
-      "beginAtInMilliseconds": 0,
-      "progressReport": {
-        "progressReportDelayInMilliseconds": null,
-        "progressReportIntervalInMilliseconds": null,
-        "progressReportPositionInMilliseconds": 60000
+    "payload": {
+      "audioItem": {
+        "audioItemId": "9CPWU-8362fe7c-f75c-42c6-806b-6f3e00aba8f1-c1862201",
+        "album": {
+          "albumId": "2000240",
+          "genres": [
+            "발라드",
+            "알앤비/어반"
+          ],
+          "title": "Palette"
+        },
+        ...
+        "stream": {
+          "beginAtInMilliseconds": 0,
+          "progressReport": {
+            "progressReportDelayInMilliseconds": null,
+            "progressReportIntervalInMilliseconds": null,
+            "progressReportPositionInMilliseconds": 60000
+          },
+          "token": "TR-NM-17716562",
+          "url": "clova:TR-NM-17716562",
+          "urlPlayable": false
+        },
+        "title": "이 지금",
+        "type": "navermusic"
       },
-      "token": "TR-NM-17716562",
-      "url": "clova:TR-NM-17716562",
-      "urlPlayable": false
-    },
-    "title": "이 지금",
-    "type": "navermusic"
-  },
-  "playBehavior": "REPLACE_ALL"
+      "playBehavior": "REPLACE_ALL"
+    }
+  }
 }
 ```
 {% endraw %}
@@ -124,7 +144,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "PlayFinished",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -139,8 +158,8 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ## PlayPaused event {#PlayPaused}
 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/CIC/References/APIs/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 일시 정지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayPaused 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -162,7 +181,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "PlayPaused",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -174,13 +192,13 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
-* [`PlaybackController.Pause`](/CIC/References/APIs/PlaybackController.md#Pause)
+* [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)
 
 ## PlayResumed event {#PlayResuemd}
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/APIs/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -202,7 +220,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "PlayResumed",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -214,7 +231,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
-* [`PlaybackController.Resume`](/CIC/References/APIs/PlaybackController.md#Resume)
+* [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)
 
 ## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
@@ -238,7 +255,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "PlayStarted",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -254,8 +270,8 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ## PlayStopped event {#PlayStopped}
 클라이언트가 오디오 스트림 재생을 중지할 때 재생이 중지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/CIC/References/APIs/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 중지하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 중지하고 PlayStopped 이벤트 메시지를 CIC에 전송합니다.
 
 ### Context field
@@ -277,7 +293,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "PlayStopped",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -289,7 +304,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 ### See also
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
-* [`PlaybackController.Stop`](/CIC/References/APIs/PlaybackController.md#Stop)
+* [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
@@ -313,7 +328,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "ProgressReportDelayPassed",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -349,7 +363,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "ProgressReportIntervalPassed",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -385,7 +398,6 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
     "header": {
       "namespace": "AudioPlayer",
       "name": "ProgressReportPositionPassed",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {}
@@ -462,8 +474,7 @@ StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시�
     "header": {
       "namespace": "AudioPlayer",
       "name": "StreamRequested",
-      "messageId": "msg-id-here-1",
-      "dialogRequestId": "dialog-id-here-1"
+      "messageId": "198cf12-4020-b98a-b73b-1234ab312806",
     },
     "payload": {
         "audioStream": {

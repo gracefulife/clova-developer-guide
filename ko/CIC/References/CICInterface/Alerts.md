@@ -40,7 +40,7 @@ Alerts는 알람 또는 타이머를 생성/조회/삭제할 때 사용되는 �
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## GetAlert directive {#GetAlert}
 
@@ -75,7 +75,7 @@ Alerts는 알람 또는 타이머를 생성/조회/삭제할 때 사용되는 �
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## SetAlert directive {#SetAlert}
 
@@ -117,4 +117,4 @@ Alerts는 알람 또는 타이머를 생성/조회/삭제할 때 사용되는 �
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

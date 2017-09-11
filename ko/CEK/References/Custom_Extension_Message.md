@@ -1,6 +1,5 @@
 ## Custom extension 메시지 {#CustomExtMessage}
-Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. custom extension 메시지는 [요청 메시지](#CustomExtRequestMessage)와 [응답 메시지](#CustomExtResponseMessage)로 나뉩니다. 요청 메시지는 다시 [요청 타입](#CustomExtRequestType)에 따라 `LaunchRequest`,
-`IntentRequest`, `SessionEndedRequest`과 같이 3가지 타입으로 구분됩니다.
+Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. Custom extension 메시지는 [요청 메시지](#CustomExtRequestMessage)와 [응답 메시지](#CustomExtResponseMessage)로 나뉩니다. 요청 메시지는 다시 [요청 타입](#CustomExtRequestType)에 따라 `LaunchRequest`, `IntentRequest`, `SessionEndedRequest`과 같이 3가지 타입으로 구분됩니다.
 
 ### 요청 메시지 {#CustomExtRequestMessage}
 CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 `request` 필드에 대해 설명합니다.
@@ -49,7 +48,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `context.AudioPlayer`                      | object  | 클라이언트가 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지고 있는 객체 | 선택 |
 | `context.AudioPlayer.offsetInMilliseconds` | number  | 최근 재생 미디어의 마지막 재생 지점(offset). 단위는 밀리초이며, `playerActivity` 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                       | 선택 |
 | `context.AudioPlayer.playerActivity`       | string  | 플레이어의 상태를 나타내는 값이며 다음과 같은 값을 가집니다.<ul><li><code>"IDLE"</code> : 비활성 상태</li><li><code>"PLAYING"</code> : 재생 중인 상태</li><li><code>"PAUSED"</code> : 일시 정지 상태</li><li><code>"STOPPED"</code> : 중지 상태</li></ul> | 필수 |
-| `context.AudioPlayer.stream`               | [AudioStreamObject](/CEK/References/APIs/AudioPlayer.md#AudioStreamObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. `playerActivity` 값이 `"IDLE"`이면 이 필드 값이 비어 있을 수도 있습니다.    | 선택 |
+| `context.AudioPlayer.stream`               | [AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. `playerActivity` 값이 `"IDLE"`이면 이 필드 값이 비어 있을 수도 있습니다.    | 선택 |
 | `context.AudioPlayer.totalInMilliseconds`  | number  | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, `playerActivity` 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                                                  | 선택 |
 | `context.System`                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
 | `context.System.device`                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
@@ -167,7 +166,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 
 #### See also
 * [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
-* [AudioStreamObject](/CEK/References/APIs/AudioPlayer.md#AudioStreamObject)
+* [AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject)
 
 ### 요청 타입 {#CustomExtRequestType}
 요청 메시지는 다음과 같이 3가지 요청 타입으로 나뉘며, 각 요청 타입마다 요청 메시지의 `request` 객체의 필드 구성이 달라집니다.

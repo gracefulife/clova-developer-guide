@@ -12,8 +12,8 @@ Memo는 사용자의 메모를 생성/조회/삭제할 때 사용되는 네임�
 ## Created event {#Created}
 CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 생성을 요청한 사용자 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 메모 생성 요청을 [`Clova.AddMemo`](/CIC/References/APIs/Clova.md#AddMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 생성을 요청한 사용자 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 메모 생성 요청을 [`Clova.AddMemo`](/CIC/References/CICInterface/Clova.md#AddMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 메모 생성 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 메모 생성을 수락하면** `Memo.Created` 이벤트 메시지를 CIC에 전송합니다.
@@ -46,7 +46,6 @@ CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지
     "header": {
       "namespace": "Memo",
       "name": "Created",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
@@ -59,16 +58,16 @@ CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지
 {% endraw %}
 
 ### See also
-* [`Clova.AddMemo`](/CIC/References/APIs/Clova.md#AddMemo)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Clova.AddMemo`](/CIC/References/CICInterface/Clova.md#AddMemo)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 
 ## Deleted event {#Deleted}
 
 CIC에 특정 메모를 삭제하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 삭제를 요청한 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 메모 삭제 요청을 [`Clova.DeleteMemo`](/CIC/References/APIs/Clova.md#DeleteMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 삭제를 요청한 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 메모 삭제 요청을 [`Clova.DeleteMemo`](/CIC/References/CICInterface/Clova.md#DeleteMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 메모 삭제 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 메모 삭제를 수락하면** `Memo.Deleted` 이벤트 메시지를 CIC에 전송합니다.
@@ -102,7 +101,6 @@ CIC에 특정 메모를 삭제하도록 요청합니다. 이 이벤트 메시지
     "header": {
       "namespace": "Memo",
       "name": "Deleted",
-      "dialogRequestId": "4cc0d166-7580-4158-bfbc-1b9234b9995f",
       "messageId": "c7dd9664-7594-4a17-ad58-c88fdaf80e61"
     },
     "payload": {
@@ -115,16 +113,16 @@ CIC에 특정 메모를 삭제하도록 요청합니다. 이 이벤트 메시지
 {% endraw %}
 
 ### See also
-* [`Clova.DeleteMemo`](/CIC/References/APIs/Clova.md#DeleteMemo)
+* [`Clova.DeleteMemo`](/CIC/References/CICInterface/Clova.md#DeleteMemo)
 * [`Memo.Get`](#Get)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Get event {#Get}
 
 CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 조회를 요청한 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 메모 조회 요청을 [`Clova.GetMemo`](/CIC/References/APIs/Clova.md#GetMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 메모 조회를 요청한 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 메모 조회 요청을 [`Clova.GetMemo`](/CIC/References/CICInterface/Clova.md#GetMemo) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 메모 조회 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 메모 조회를 수락하면** `Memo.Get` 이벤트 메시지를 CIC에 전송합니다.
@@ -143,7 +141,7 @@ CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 �
 
 * 클라이언트는 이 이벤트 메시지를 CIC로 보낼 때 수행 결과에 대한 피드백을 돌려줘야 합니다. 예를 들면, "메모를 조회합니다." 또는 "메모 조회가 취소되었습니다."와 같은 메시지를 표시해야 합니다.
 
-* `Memo.Get` 이벤트 메시지를 CIC로 보내면 해당 사용자의 메모 목록을 [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) 지시 메시지를 통해 전달합니다.
+* `Memo.Get` 이벤트 메시지를 CIC로 보내면 해당 사용자의 메모 목록을 [`Clova.RenderMemoList`](/CIC/References/CICInterface/Clova.md#RenderMemoList) 지시 메시지를 통해 전달합니다.
 
 ### Message example
 
@@ -156,7 +154,6 @@ CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 �
     "header": {
       "namespace": "Memo",
       "name": "Get",
-      "dialogRequestId": "2315186e-7242-47f0-9673-b4a84118d513",
       "messageId": "c6c5cbf2-8452-49cd-8af4-6437183cbf30"
     },
     "payload": {}
@@ -167,9 +164,9 @@ CIC에 모든 메모의 정보를 요청합니다. 이 이벤트 메시지를 �
 {% endraw %}
 
 ### See also
-* [`Clova.GetMemo`](/CIC/References/APIs/Clova.md#GetMemo)
-* [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Clova.GetMemo`](/CIC/References/CICInterface/Clova.md#GetMemo)
+* [`Clova.RenderMemoList`](/CIC/References/CICInterface/Clova.md#RenderMemoList)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Updated event {#Updated}
 
@@ -192,7 +189,7 @@ CIC에 특정 메모의 갱신을 요청합니다.
 
 * `Memo.Updated` 이벤트 메시지는 `payload` 전체를 변경하므로 어떤 필드 값이 비어 있으면 해당 필드는 빈 값으로 변경되므로 갱신하고자 하는 특정 필드만 보내지 않도록 유의합니다.
 
-* 각 메모의 필드 값은 [`Memo.Get`](#Get) 이벤트 메시지의 응답으로 전달되는 [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList) 지시 메시지를 통해 확인할 수 있습니다.
+* 각 메모의 필드 값은 [`Memo.Get`](#Get) 이벤트 메시지의 응답으로 전달되는 [`Clova.RenderMemoList`](/CIC/References/CICInterface/Clova.md#RenderMemoList) 지시 메시지를 통해 확인할 수 있습니다.
 
 ### Message example
 
@@ -205,7 +202,6 @@ CIC에 특정 메모의 갱신을 요청합니다.
     "header": {
       "namespace": "Memo",
       "name": "Updated",
-      "dialogRequestId": "ec270ebc-7329-4c7c-9440-1d9ceb73e345",
       "messageId": "9c5a243f-21ed-4c37-bfd3-986bea8aab62"
     },
     "payload": {
@@ -220,4 +216,4 @@ CIC에 특정 메모의 갱신을 요청합니다.
 
 ### See also
 * [`Memo.Get`](#Get)
-* [`Clova.RenderMemoList`](/CIC/References/APIs/Clova.md#RenderMemoList)
+* [`Clova.RenderMemoList`](/CIC/References/CICInterface/Clova.md#RenderMemoList)

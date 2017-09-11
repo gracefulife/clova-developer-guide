@@ -1,6 +1,6 @@
 # Clova
 
-Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전달할 때 사용하는 네임스페이스입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
+Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전달할 때 사용하는 네임스페이스입니다. 사용자의 요청이 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 전달되면 Clova에서 그 의미를 분석합니다. CIC는 인식된 결과에 따라 아래 지시 메시지를 클라이언트에게 전달합니다. 클라이언트는 아래 지시 메시지들을 처리하여 Clova에서 제공하는 기능을 사용자에게 제공해야 합니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
@@ -38,7 +38,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 
 ### Remarks
 
-새로운 메모 생성이 완료되면 그 결과를 [`Memo.Created`](/CIC/References/APIs/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 메모 생성이 완료되면 그 결과를 [`Memo.Created`](/CIC/References/CICInterface/Memo.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -67,7 +67,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.DeleteMemo`](#DeleteMemo)
 * [`Clova.GetMemo`](#GetMemo)
 * [`Clova.RenderMemoList`](#RenderMemoList)
-* [`Memo.Created`](/CIC/References/APIs/Memo.md#Created)
+* [`Memo.Created`](/CIC/References/CICInterface/Memo.md#Created)
 
 ## AddReminder directive {#AddReminder}
 
@@ -82,7 +82,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 
 ### Remarks
 
-새로운 리마인더 생성이 완료되면 그 결과를 [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+새로운 리마인더 생성이 완료되면 그 결과를 [`Reminder.Created`](/CIC/References/CICInterface/Reminder.md#Created) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -111,7 +111,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.DeleteReminder`](#DeleteReminder)
 * [`Clova.GetReminder`](#GetReminder)
 * [`Clova.RenderReminderList`](#RenderReminderList)
-* [`Reminder.Created`](/CIC/References/APIs/Reminder.md#Created)
+* [`Reminder.Created`](/CIC/References/CICInterface/Reminder.md#Created)
 
 ## AddSchedule directive {#AddSchedule}
 
@@ -216,7 +216,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 
 ### Remarks
 
-메모 삭제가 완료되면 그 결과를 [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+메모 삭제가 완료되면 그 결과를 [`Memo.Deleted`](/CIC/References/CICInterface/Memo.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -242,7 +242,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.AddMemo`](#AddMemo)
 * [`Clova.GetMemo`](#GetMemo)
 * [`Clova.RenderMemoList`](#RenderMemoList)
-* [`Memo.Deleted`](/CIC/References/APIs/Memo.md#Deleted)
+* [`Memo.Deleted`](/CIC/References/CICInterface/Memo.md#Deleted)
 
 ## DeleteReminder directive {#DeleteReminder}
 
@@ -254,7 +254,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 
 ### Remarks
 
-리마인더 삭제가 완료되면 그 결과를 [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
+리마인더 삭제가 완료되면 그 결과를 [`Reminder.Deleted`](/CIC/References/CICInterface/Reminder.md#Deleted) 이벤트 메시지를 통해 CIC로 전달해야 합니다.
 
 ### Message example
 
@@ -280,7 +280,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.AddReminder`](#AddReminder)
 * [`Clova.GetReminder`](#GetReminder)
 * [`Clova.RenderReminderList`](#RenderReminderList)
-* [`Reminder.Deleted`](/CIC/References/APIs/Reminder.md#Deleted)
+* [`Reminder.Deleted`](/CIC/References/CICInterface/Reminder.md#Deleted)
 
 ## DeleteSchedule directive {#DeleteSchedule}
 
@@ -394,7 +394,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.DeleteMemo`](#DeleteMemo)
 * [`Clova.GetMemo`](#GetMemo)
 * [`Clova.RenderMemoList`](#RenderMemoList)
-* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
+* [`Memo.Get`](/CIC/References/CICInterface/Memo.md#Get)
 
 ## GetReminder directive {#GetReminder}
 
@@ -428,7 +428,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.AddReminder`](#AddReminder)
 * [`Clova.DeleteReminder`](#DeleteReminder)
 * [`Clova.RenderReminderList`](#RenderReminderList)
-* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
+* [`Reminder.Get`](/CIC/References/CICInterface/Reminder.md#Get)
 
 ## GetSchedule directive {#GetSchedule}
 
@@ -588,7 +588,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.RenderReminderList`](#RenderReminderList)
 * [`Clova.RenderTemplate`](#RenderTemplate)
 * [`Clova.RenderText`](#RenderText)
-* [`Memo.Get`](/CIC/References/APIs/Memo.md#Get)
+* [`Memo.Get`](/CIC/References/CICInterface/Memo.md#Get)
 
 ## RenderReminderList directive {#RenderReminderList}
 
@@ -643,7 +643,7 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 * [`Clova.RenderMemoList`](#RenderMemoList)
 * [`Clova.RenderTemplate`](#RenderTemplate)
 * [`Clova.RenderText`](#RenderText)
-* [`Reminder.Get`](/CIC/References/APIs/Reminder.md#Get)
+* [`Reminder.Get`](/CIC/References/CICInterface/Reminder.md#Get)
 
 ## RenderTemplate directive {#RenderTemplate}
 

@@ -12,8 +12,8 @@ Reminder은 사용자의 리마인더(reminder)를 생성/조회/삭제할 때 �
 ## Created event {#Created}
 CIC에 특정 리마인더를 생성하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 생성을 요청한 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 리마인더 등록 요청을 [`Clova.AddReminder`](/CIC/References/APIs/Clova.md#AddReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 생성을 요청한 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 리마인더 등록 요청을 [`Clova.AddReminder`](/CIC/References/CICInterface/Clova.md#AddReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 리마인더 등록 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 리마인더 생성을 수락하면** `Reminder.Created` 이벤트 메시지를 CIC에 전송합니다.
@@ -46,7 +46,6 @@ CIC에 특정 리마인더를 생성하도록 요청합니다. 이 이벤트 메
     "header": {
       "namespace": "Reminder",
       "name": "Created",
-      "dialogRequestId": "c40588a1-7cf5-428a-aa2f-063d3932e375",
       "messageId": "447d7a2f-875c-4d70-84ce-61787811de8c"
     },
     "payload": {
@@ -60,16 +59,16 @@ CIC에 특정 리마인더를 생성하도록 요청합니다. 이 이벤트 메
 {% endraw %}
 
 ### See also
-* [`Clova.AddReminder`](/CIC/References/APIs/Clova.md#AddReminder)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Clova.AddReminder`](/CIC/References/CICInterface/Clova.md#AddReminder)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 
 ## Deleted event {#Deleted}
 
 CIC에 특정 리마인더를 삭제하도록 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 삭제를 요청한 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 리마인더 삭제 요청을 [`Clova.DeleteReminder`](/CIC/References/APIs/Clova.md#DeleteReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 삭제를 요청한 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 리마인더 삭제 요청을 [`Clova.DeleteReminder`](/CIC/References/CICInterface/Clova.md#DeleteReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 리마인더 삭제 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 리마인더 삭제를 수락하면** `Reminder.Deleted` 이벤트 메시지를 CIC에 전송합니다.
@@ -103,7 +102,6 @@ CIC에 특정 리마인더를 삭제하도록 요청합니다. 이 이벤트 메
     "header": {
       "namespace": "Reminder",
       "name": "Deleted",
-      "dialogRequestId": "004ef9d0-8b12-4be4-aef0-9558a4e12503",
       "messageId": "1ead8b31-aac4-46c6-9c6e-f6a302196065"
     },
     "payload": {
@@ -116,16 +114,16 @@ CIC에 특정 리마인더를 삭제하도록 요청합니다. 이 이벤트 메
 {% endraw %}
 
 ### See also
-* [`Clova.DeleteReminder`](/CIC/References/APIs/Clova.md#DeleteReminder)
+* [`Clova.DeleteReminder`](/CIC/References/CICInterface/Clova.md#DeleteReminder)
 * [`Reminder.Get`](#Get)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Get event {#Get}
 
 CIC에 모든 리마인더의 정보를 요청합니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
-1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 조회를 요청한 사용자의 음성을 CIC로 전송합니다.
-2. CIC는 Clova 플랫폼에서 인식된 리마인더 조회 요청을 [`Clova.GetReminder`](/CIC/References/APIs/Clova.md#GetReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 리마인더 조회를 요청한 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 리마인더 조회 요청을 [`Clova.GetReminder`](/CIC/References/CICInterface/Clova.md#GetReminder) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 인식된 사용자의 리마인더 조회 요청을 표시하여 의도한 것이 맞는지 확인합니다.
 4. 클라이언트는 사용자로부터 최종 확인을 받습니다.
    * **사용자가 리마인더 조회를 수락하면** `Reminder.Get` 이벤트 메시지를 CIC에 전송합니다.
@@ -144,7 +142,7 @@ CIC에 모든 리마인더의 정보를 요청합니다. 이 이벤트 메시지
 
 * 클라이언트는 이 이벤트 메시지를 CIC로 보낼 때 수행 결과에 대한 피드백을 돌려줘야 합니다. 예를 들면, "리마인더를 조회합니다." 또는 "리마인더 조회가 취소되었습니다."와 같은 메시지를 표시해야 합니다.
 
-* Get 이벤트 메시지를 CIC로 전달하면 CIC는 해당 사용자의 리마인더 목록을 [`Clova.RenderReminderList`](/CIC/References/APIs/Clova.md#RenderReminderList) 지시 메시지를 통해 전달합니다.
+* Get 이벤트 메시지를 CIC로 전달하면 CIC는 해당 사용자의 리마인더 목록을 [`Clova.RenderReminderList`](/CIC/References/CICInterface/Clova.md#RenderReminderList) 지시 메시지를 통해 전달합니다.
 
 ### Message example
 
@@ -157,7 +155,6 @@ CIC에 모든 리마인더의 정보를 요청합니다. 이 이벤트 메시지
     "header": {
       "namespace": "Reminder",
       "name": "Get",
-      "dialogRequestId": "f0d06cee-92a9-489e-a546-1f5d2e3a058d",
       "messageId": "2346313b-2b82-4522-85d8-385b43f2d981"
     },
     "payload": {}
@@ -168,9 +165,9 @@ CIC에 모든 리마인더의 정보를 요청합니다. 이 이벤트 메시지
 {% endraw %}
 
 ### See also
-* [`Clova.GetReminder`](/CIC/References/APIs/Clova.md#GetReminder)
-* [`Clova.RenderReminderList`](/CIC/References/APIs/Clova.md#RenderReminderList)
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`Clova.GetReminder`](/CIC/References/CICInterface/Clova.md#GetReminder)
+* [`Clova.RenderReminderList`](/CIC/References/CICInterface/Clova.md#RenderReminderList)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Updated event {#Updated}
 
@@ -193,7 +190,7 @@ CIC에 특정 리마인더의 갱신을 요청합니다.
 
 * Updated 이벤트 메시지는 payload 전체를 변경하므로 어떤 필드 값이 비어 있으면 해당 필드는 빈 값으로 변경되므로 갱신하고자 하는 특정 필드만 보내지 않도록 유의합니다. 예를 들면, done 필드만 전송하면 `content` 필드는 빈 값으로 채워집니다.
 
-* 각 리마인더의 필드 값은 [`Reminder.Get`](#Get) 이벤트 메시지의 응답으로 전달되는 [`Clova.RenderReminderList`](/CIC/References/APIs/Clova.md#RenderReminderList) 지시 메시지를 통해 확인할 수 있습니다.
+* 각 리마인더의 필드 값은 [`Reminder.Get`](#Get) 이벤트 메시지의 응답으로 전달되는 [`Clova.RenderReminderList`](/CIC/References/CICInterface/Clova.md#RenderReminderList) 지시 메시지를 통해 확인할 수 있습니다.
 
 ### Message example
 
@@ -206,7 +203,6 @@ CIC에 특정 리마인더의 갱신을 요청합니다.
     "header": {
       "namespace": "Reminder",
       "name": "Updated",
-      "dialogRequestId": "f107eac9-d8d5-4609-9892-49edb8ed4804",
       "messageId": "f1f0442f-720c-4264-b709-88f7b52dd14f"
     },
     "payload": {
@@ -222,4 +218,4 @@ CIC에 특정 리마인더의 갱신을 요청합니다.
 
 ### See also
 * [`Reminder.Get`](#Get)
-* [`Clova.RenderReminderList`](/CIC/References/APIs/Clova.md#RenderReminderList)
+* [`Clova.RenderReminderList`](/CIC/References/CICInterface/Clova.md#RenderReminderList)

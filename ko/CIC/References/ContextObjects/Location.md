@@ -1,7 +1,7 @@
 ## Clova.Location {#Location}
 클라이언트의 현재 위치 정보를 전송할 때 사용하는 메시지 포맷입니다. GPS, 기지국, 네트워크 기기 등을 통해 파악된 위치 정보를 CIC로 전송할 수 있습니다.
 
-### Message stucture
+### Message structure
 {% raw %}
 ```json
 {
@@ -44,4 +44,4 @@
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)
