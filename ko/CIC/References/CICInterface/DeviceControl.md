@@ -36,7 +36,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
+| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"app"</code> : 앱</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"channel"</code> : TV 채널</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
 | `command`     | string  | 정상 수행한 동작.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
 ### Remarks
@@ -49,12 +49,11 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "directive": {
+  "event": {
     "header": {
       "namespace": "DeviceControl",
       "name": "ActionExecuted",
-      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
-      "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
+      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5"
     },
     "payload": {
       "target": "gps",
@@ -87,7 +86,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"app"</code> : 앱</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
+| `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"app"</code> : 앱</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"channel"</code> : TV 채널</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수     |
 | `command`     | string  | 실패한 동작. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
 ### Remarks
@@ -101,12 +100,11 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "directive": {
+  "event": {
     "header": {
       "namespace": "DeviceControl",
       "name": "ActionFailed",
-      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
-      "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
+      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5"
     },
     "payload": {
       "target": "gps",
@@ -373,7 +371,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "directive": {
     "header": {
       "namespace": "DeviceControl",
-      "name": "Increse",
+      "name": "Increase",
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
       "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
     },
