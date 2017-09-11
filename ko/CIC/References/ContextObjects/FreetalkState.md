@@ -44,4 +44,4 @@ FreetalkState는 Clova의 대화 모드(Freetalk mode) 서비스가 클라이언
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

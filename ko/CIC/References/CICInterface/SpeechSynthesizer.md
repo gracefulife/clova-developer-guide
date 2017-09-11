@@ -31,7 +31,6 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
     "header": {
       "namespace": "SpeechSynthesizer",
       "name": "Request",
-      "dialogRequestId": "caa7862a-3566-4aef-98de-489be0973e18",
       "messageId": "ab63d4cb-49f0-4a92-94fc-5ee356193551"
     },
     "payload": {
@@ -44,7 +43,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak)
+* [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)
 
 ## Speak directive {#Speak}
 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage)로 전달될 수도 있고 오디오 스트리밍 주소 형태로 전달될 수도 있습니다.
@@ -57,7 +56,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 | `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 필수    |
 | `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li><li><code>"ja"</code> : 일본어</li><li><code>"zh"</code> : 중국어</li></ul> | 선택    |
 | `ttsText`              | string  | 합성된 파일의 TTS 텍스트                      | 선택    |
-| `x-clova-pause-before` | integer | 파일 재생 전 유휴 시간. 단위는 밀리초(millisecond)입니다.        | 선택    |
+| `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 선택    |
 
 ### Remarks
 
@@ -130,4 +129,4 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Request`](/CIC/References/APIs/SpeechSynthesizer.md#Request)
+* [`SpeechSynthesizer.Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)

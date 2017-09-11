@@ -10,6 +10,8 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 ## Authorization code 요청 {#RequestAuthorizationCode}
 {{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등을 파라미터로 전달해 authorization code를 요청합니다. Authorization code는 Clova access token을 발급받기 전 단계의 인증 정보입니다.
 
+일반적으로 사용자 인증을 받기 위해 클라이언트 기기와 페어링(Pairing)된 앱에서 인증을 처리합니다. 다만, 페어링된 앱에서 클라이언트 쪽으로 Clova access token을 전송하는 것은 보안상 이슈가 있기 때문에 이 코드를 대신 클라이언트로 보냅니다. 클라이언트는 전달받은 authorization code를 다시 Clova 인증 서버로 전달하여 [Clova access token을 요청](#RequestClovaAccessToken)해야 합니다.
+
 ```
 GET|POST /authorize
 ```
@@ -73,8 +75,7 @@ GET|POST /authorize
 ```
 {% endraw %}
 
-### Remarks
-일반적으로 사용자 인증을 받기 위해 클라이언트 기기와 페어링(Pairing)된 앱에서 인증을 처리합니다. 다만, 페어링된 앱에서 클라이언트 쪽으로 Clova access token을 전송하는 것은 보안상 이슈가 있기 때문에 이 코드를 대신 클라이언트로 보냅니다. 클라이언트는 전달받은 authorization code를 다시 Clova 인증 서버로 전달하여 [Clova access token을 요청](#RequestClovaAccessToken)해야 합니다.
+{% include "./CICAuthAPI/GuestMode.md" %}
 
 ### See also
 * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
