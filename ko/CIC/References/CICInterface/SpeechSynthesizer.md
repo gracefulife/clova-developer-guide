@@ -55,7 +55,6 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 | `url`                  | string  | 재생할 음성 파일의 URL                        | 필수    |
 | `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 필수    |
 | `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li><li><code>"ja"</code> : 일본어</li><li><code>"zh"</code> : 중국어</li></ul> | 선택    |
-| `ttsText`              | string  | 합성된 파일의 TTS 텍스트                      | 선택    |
 | `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 선택    |
 
 ### Remarks
@@ -90,7 +89,6 @@ Content-Type: application/json; charset=utf-8
       "format": "AUDIO_MPEG",
       "token": "cbba5103-8ce4-4e65-869b-f94d5878f579",
       "ttsLang": "ko",
-      "ttsText": "음성파일 만들어줘",
       "url": "cid:22f2ca4e-3b08-4d33-b32a-7eb62a8c0369",
       "x-clova-pause-before": 0
     }

@@ -18,13 +18,16 @@
 | DeviceControl      | [`BtStartPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStartPairing) | 클라이언트에게 블루투스 페어링 모드를 시작하도록 지시합니다.                                          |
 | DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | 클라이언트에게 블루투스 페어링 모드로 중지하도록 지시합니다.                                          |
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                            |
+| DeviceControl      | ['ExpectReportState'](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                 |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                            |
-| DeviceControl      | [`LaunchApp`](#LaunchApp)                                                | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                     |
+| DeviceControl      | [`LaunchApp`](#LaunchApp)                                                       | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                     |
 | DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | 클라이언트에게 설정 화면을 열도록 지시합니다.                                                     |
 | DeviceControl      | [`SetValue`](/CIC/References/CICInterface/DeviceControl.md#SetValue)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                           |
+| DeviceControl      | [`SynchronizeState`](/CIC/References/CICInterface/DeviceControl.md#SynchronizeState) | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.           |
 | DeviceControl      | [`TurnOff`](/CIC/References/CICInterface/DeviceControl.md#TurnOff)               | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                                  |
 | DeviceControl      | [`TurnOn`](/CIC/References/CICInterface/DeviceControl.md#TurnOn)                 | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                          |
-| DeviceControl      | [`UpdateDeviceState`](#UpdateDeviceState)                                | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.               |
+| Notifier           | [`ClearIndicator`](/CIC/References/CICInterface/Notifier.md#ClearIndicator)      | 클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다.                                         |
+| Notifier           | [`SetIndicator`](/CIC/References/CICInterface/Notifier.md#SetIndicator)         | 클라이언트에게 확인하지 않은 알림이 있음을 나타내는 표시를 켜도록 지시합니다.                              |
 | PlaybackController | [`Mute`](/CIC/References/CICInterface/PlaybackController.md#Mute)               | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                                                |
 | PlaybackController | [`Next`](/CIC/References/CICInterface/PlaybackController.md#Next)               | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.                               |
 | PlaybackController | [`Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)             | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.                                    |
