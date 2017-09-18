@@ -335,7 +335,6 @@ Content-Type: application/json; charset=utf-8
       "format":"AUDIO_MPEG",
       "token":"e81f7dec-63fb-453d-8bd8-6944bed9a306",
       "ttsLang":"ko",
-      "ttsText":"만나서 반가워요",
       "url":"cid:d329085c-379e-48aa-b871-7ecebdbe831d",
       "x-clova-pause-before":0
     }
@@ -524,7 +523,6 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
       "format": "AUDIO_MPEG",
       "token": "b5fa5144-1e55-4193-8628-c70283083d9b",
       "ttsLang": "ko",
-      "ttsText": "내일 날씨는 오전에는 맑다가 오후에는 구름이 많아지겠어요.",
       "url": "cid:9d5d37a3-0e70-41a6-a671-e1a40c7ea4d8",
       "x-clova-pause-before": 0
     }
@@ -613,6 +611,7 @@ CIC 메시지는 기능과 용도에 따라 각각의 인터페이스로 정의�
 * [Clova](/CIC/References/CICInterface/Clova.md)
 * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md)
 * [Memo](/CIC/References/CICInterface/Memo.md)
+* [Notifier](/CIC/References/CICInterface/Notifier.md)
 * [PlaybackController](/CIC/References/CICInterface/PlaybackController.md)
 * [Reminder](/CIC/References/CICInterface/Reminder.md)
 * [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
