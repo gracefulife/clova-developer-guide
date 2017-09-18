@@ -19,9 +19,8 @@ Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성�
     "namespace": {{string}},
     "name": {{string}},
     "payloadVersion": {{string}}
-    },
-    "payload": {{object}}
-  }
+  },
+  "payload": {{object}}
 }
 ```
 {% endraw %}

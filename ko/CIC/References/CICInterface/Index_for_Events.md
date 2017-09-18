@@ -13,6 +13,8 @@
 | AudioPlayer       | [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested) | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다. |
 | DeviceControl     | [`ActionExecuted`](/CIC/References/CICInterface/DeviceControl.md#ActionExecuted) | 클라이언트가 기기 제어를 정상적으로 수행했음을 보고하기 위해 사용됩니다.                               |
 | DeviceControl     | [`ActionFailed`](/CIC/References/CICInterface/DeviceControl.md#ActionFailed) | 클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패했음을 CIC에 보고하기 위해 사용됩니다.                   |
+| DeviceControl     | [`ReportState`](/CIC/References/CICInterface/DeviceControl.md#ReportState)   | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                              |
+| DeviceControl     | [`RequestStateSynchronization`](/CIC/References/CICInterface/DeviceControl.md#RequestStateSynchronization) | 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다.  |
 | Memo              | [`Created`](/CIC/References/CICInterface/Memo.md#Created)                  | CIC에 특정 메모를 등록하도록 요청합니다.                                                            |
 | Memo              | [`Deleted`](/CIC/References/CICInterface/Memo.md#Deleted)                  | CIC에 특정 메모를 삭제하도록 요청합니다.                                                            |
 | Memo              | [`Get`](/CIC/References/CICInterface/Memo.md#Get)                          | CIC에 사용자가 생성한 모든 메모 목록을 요청합니다.                                                    |

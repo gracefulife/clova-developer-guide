@@ -15,6 +15,7 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
 
 * 날씨 템플릿
+  * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
   * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
   * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
