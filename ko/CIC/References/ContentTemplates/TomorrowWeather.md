@@ -10,7 +10,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경음 파일의 URL 정보가 담긴 객체 |
+| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경 영상 파일의 URL 정보가 담긴 객체. <div class="danger"><p><strong>Caution!</strong></p><p>해당 필드의 데이터는 라이센스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
 | `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오후의 최고 기온 정보가 담긴 객체 |
 | `highTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 높을 때의 날씨 정보가 담긴 객체  |
 | `houlyWeatherList[]` | object array | 시간대별 날씨 정보를 가지는 객체 배열 |
@@ -289,6 +289,7 @@
 ![TomorrowWeather](/CIC/Resources/Images/Content-Template-TomorrowWeather.png)
 
 ## See also
+* [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
 * [Humidity](/CIC/References/ContentTemplates/Humidity.md)

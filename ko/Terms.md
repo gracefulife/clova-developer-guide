@@ -112,7 +112,7 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 
 ### 사용자 발화 예시 {#UserUtteranceExample}
 
-사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. [Intent](#Intent)별로 복수의 사례를 정의할 수 있으며, 예문에는 [slot](#Slot)이 표시됩니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md) 문서를 참조합니다.
+사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. [Intent](#Intent)별로 복수의 사례를 정의할 수 있으며, 예문에는 [slot](#Slot)이 표시됩니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel) 문서를 참조합니다.
 
 ### 세션 ID {#SessionID}
 세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extension Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 `false`로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.

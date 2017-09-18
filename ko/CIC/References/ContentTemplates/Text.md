@@ -20,10 +20,11 @@
 | `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
 | `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문장 형태의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
 | `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 보조 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                     |
-| `tableList[]`           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 열이 두 개인 표를 구성합니다.     |
-| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 열에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
-| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 열에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
+| `tableList[]`           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 행이 두 개 또는 세 개인 표를 구성합니다.     |
+| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 행에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
+| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 행에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
 | `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 |
+| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 세 번째 행에 표시할 텍스트 정보를 담은 객체. 이 필드는 생략될 수 있습니다. |
 | `type`                   | string                                                                          | Content template 구분자. `"ImageText"`로 고정             |
 
 ## Template Example
