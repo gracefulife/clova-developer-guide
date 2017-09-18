@@ -28,6 +28,9 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 | `audioItem.type`          | string | 음악 서비스 구분자. 음악 스트리밍 서비스를 제공하는 사업자나 서비스 이름입니다. 이 필드 값은 각 서비스마다 달라지는 audioItem 객체의 필드를 파악하고 이를 분석하는 파서(parser)를 선택하는데 이용될 수 있습니다. | 필수 |
 | `audioItem.[CustomField]` | any    | 재생할 오디오 스트림에 첨부할 메타 정보를 서비스 제공자 임의대로 추가할 수 있습니다.                     | 선택 |
 | `playBehavior`            | string | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li><code>"REPLACE_ALL"</code> : 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li><code>"ENQUEUE"</code> : 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 필수 |
+| `source`                  | object | 오디오 스트리밍 서비스의 출처 정보                                                    | 필수 |
+| `source.name`             | string | 오디오 스트리밍 서비스의 이름                                                        | 필수 |
+| `source.logoUrl`          | string | 오디오 스트리밍 서비스의 로고 이미지 URL. 이 필드의 값이 없거나 로고 이미지를 표시할 수 없을 경우 `source.name` 필드에 있는 오디오 스트리밍 서비스의 이름이라도 표시해야 합니다.  | 선택 |
 
 ### Remarks
 음악 서비스의 과금 문제 등으로 인해 실제 스트리밍 정보, 즉 스트리밍 URL과 같은 정보는 재생 직전에 획득할 수 있는 경우가 있습니다. 이는 `audioItem.stream.urlPlayable` 필드 값에 따라 다음과 같이 구분됩니다.
@@ -65,6 +68,10 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
         },
         "type": "podcast"
       },
+      "source": {
+        "name": "팟빵",
+        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.podbbang/source_logo.png"
+      },
       "playBehavior": "REPLACE_ALL"
     }
   }
@@ -93,6 +100,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
         ...
         "stream": {
           "beginAtInMilliseconds": 0,
+          "durationInMilliseconds" : 60000,
           "progressReport": {
             "progressReportDelayInMilliseconds": null,
             "progressReportIntervalInMilliseconds": null,
@@ -104,6 +112,10 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
         },
         "title": "이 지금",
         "type": "navermusic"
+      },
+      "source": {
+        "name": "네이버 뮤직",
+        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.music/source_logo.png"
       },
       "playBehavior": "REPLACE_ALL"
     }
@@ -504,15 +516,21 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `beginAtInMilliseconds` | number | 재생을 시작할 지점. 단위는 밀리초이며, 이 값이 지정된 경우 클라이언트는 해당 오디오 스트림을 지정된 위치부터 재생해야 합니다. 이 값이 0이면 해당 스트림을 처음부터 재생해야 합니다.          | 필수 |
-| `progressReport`    | object  | 재생 후 재생 상태 정보를 보고 받기 위해 보고 시간을 정해둔 객체                                                  | 선택 |
-| `progressReport.progressReportDelayInMilliseconds` | number | 재생 시작 후 지정된 시간이 지났을 때 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다.  | 선택 |
-| `progressReport.progressReportIntervalInMilliseconds` | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다.     | 선택 |
-| `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정하는 값입니다. 이 필드는 null 값을 가질 수 있습니다. | 선택 |
-| `token`             | string  | 오디오 스트림 token.                                                                                  | 필수 |
-| `url`               | string  | 오디오 스트림 URL                                                                                     | 필수 |
-| `urlPlayable`       | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code> : 바로 재생이 가능한 형태의 URL</li><li><code>false</code> : 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
-| `[Custom Field]`    | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.                                | 선택 |
+| `beginAtInMilliseconds`  | number | 재생을 시작할 지점. 단위는 밀리초이며, 이 값이 지정된 경우 클라이언트는 해당 오디오 스트림을 지정된 위치부터 재생해야 합니다. 이 값이 0이면 해당 스트림을 처음부터 재생해야 합니다.          | 필수 |
+| `durationInMilliseconds` | number | 오디오 스트림의 재생 시간. 오디오 스트림의 길이이며, 클라이언트는 이 필드에 지정된 시간까지 해당 오디오 스트림을 탐색 및 재생할 수 있습니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 없습니다.  | 선택  |
+| `progressReport`         | object  | 재생 후 재생 상태 정보를 보고 받기 위해 보고 시간을 정해둔 객체                                                  | 선택 |
+| `progressReport.progressReportDelayInMilliseconds`    | number | 재생 시작 후 지정된 시간이 지났을 때 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.  | 선택 |
+| `progressReport.progressReportIntervalInMilliseconds` | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.        | 선택 |
+| `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.    | 선택 |
+| `token`                  | string  | 오디오 스트림 token.                                                                                  | 필수 |
+| `url`                    | string  | 오디오 스트림 URL                                                                                     | 필수 |
+| `urlPlayable`            | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code> : 바로 재생이 가능한 형태의 URL</li><li><code>false</code> : 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
+| `[Custom Field]`         | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.<div class="danger"><p><strong>Caution!</strong></p><p>서비스 제공자에 의해 추가된 임의의 필드 값을 클라이언트가 이용해서는 안되며 이는 문제를 발생시킬 수 있습니다. 또한, 이 필드 값은 오디오 재생 상태를 전달할 때 <a href="/CIC/References/Context_Objects.html#PlaybackState">PlaybackState 문맥 정보</a>의 `stream` 필드에 그대로 첨부되어야 합니다.</p></div>                                | 선택 |
+
+#### Remarks
+* 클라이언트가 `durationInMilliseconds` 필드에 지정된 시간까지 음악 재생을 완료하면 [`AudioPlayer.PlayFinished`](#PlayFinished) 지시 메시지를 CIC로 전송해야 합니다.
+* 클라이언트는 `durationInMilliseconds` 필드에 지정된 시간을 초과하여 사용자가 오디오 스트림을 탐색(seek)할 수 없도록 UI를 제공해야 합니다.
+* 클라이언트가 현재 재생 중인 상태를 CIC에 보고할 때 [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)의 `totalInMilliseconds` 필드 값을 `durationInMilliseconds` 필드에 지정된 값으로 입력하면 됩니다.
 
 #### Object Example
 {% raw %}
@@ -549,6 +567,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 
 #### See also
 * [`AudioPlayer.Play`](#Play)
+* [`AudioPlayer.PlayFinished`](#PlayFinished)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
