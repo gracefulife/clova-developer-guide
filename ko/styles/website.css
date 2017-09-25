@@ -58,6 +58,10 @@ td .note {
     margin-bottom: 0;
 }
 
+.markdown-section ol ol {
+  list-style-type: lower-alpha;
+}
+
 .markdown-section ul li, .markdown-section ol li, .markdown-section dl li {
     margin-top: 8px;
 }
@@ -77,6 +81,20 @@ td .note {
 
 .markdown-section pre>code {
     color: #333333;
+}
+
+.markdown-section img {
+    margin: 5px 5px 5px 5px;
+    -moz-box-shadow:    3px 3px 10px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 10px 3px #ccc;
+    box-shadow:         3px 3px 10px 3px #ccc;
+}
+
+.src-fe-components-gitbook-ld_content img {
+    margin: 5px 5px 5px 5px;
+    -moz-box-shadow:    3px 3px 10px 3px #ccc;
+    -webkit-box-shadow: 3px 3px 10px 3px #ccc;
+    box-shadow:         3px 3px 10px 3px #ccc;
 }
 
 a.btn.pull-right.js-toolbar-action {

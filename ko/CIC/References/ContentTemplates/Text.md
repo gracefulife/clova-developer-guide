@@ -240,3 +240,4 @@
 * [CardList](/CIC/References/ContentTemplates/CardList.md)
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
 * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+* [Popup](/CIC/References/ContentTemplates/Popup.md)

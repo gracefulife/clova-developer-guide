@@ -231,7 +231,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><a href="ResponseMessage">응답 메시지</a>의 <code>shouldEndSession</code> 필드를 사용하여 extension 쪽에서 먼저 종료를 선언한 경우 이 메시지를 수신하지 않습니다.</p>
+  <p><a href="#CustomExtResponseMessage">응답 메시지</a>의 <code>shouldEndSession</code> 필드를 사용하여 extension 쪽에서 먼저 종료를 선언한 경우 이 메시지를 수신하지 않습니다.</p>
 </div>
 
 
@@ -289,7 +289,7 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `response`                               | object       | Extension의 응답 정보가 담긴 객체                            | 필수 |
-| `response.card`                          | object       | [Content template](/CEK/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.           | 필수 |
+| `response.card`                          | object       | [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다.           | 필수 |
 | `response.directives[]`                  | object array | Extension이 CEK로 전달하는 지시 메시지입니다. `response.directives` 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다. | 필수 |
 | `response.directives[].header`           | object       | 지시 메시지의 헤더                                          | 필수 |
 | `response.directives[].header.messageId` | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다(UUID).   | 필수 |
@@ -430,4 +430,4 @@ SpeechObject 객체는 응답 메시지의 `response.outputSpeech`에서 재사�
 
 #### See also
 * [Custom extension 응답 반환하기](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
-* [Content template](/CEK/References/Content_Templates.md)
+* [Content template](/CIC/References/Content_Templates.md)

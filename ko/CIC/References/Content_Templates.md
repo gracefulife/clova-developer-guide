@@ -8,6 +8,7 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Popup](/CIC/References/ContentTemplates/Popup.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
 
 * 길찾기 템플릿
@@ -23,5 +24,5 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
 * 공통 필드 및 공유 객체
-  * [공통 필드](CIC/References/ContentTemplates/Common_Fields.md)
+  * [공통 필드](/CIC/References/ContentTemplates/Common_Fields.md)
   * [공유 객체](/CIC/References/ContentTemplates/Shared_Objects.md)

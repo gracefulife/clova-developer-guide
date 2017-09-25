@@ -6,8 +6,10 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 |------------------|-----------|---------------------------------------------|
 | [`Mute`](#Mute)                           | Directive | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                    |
 | [`Next`](#Next)                           | Directive | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.   |
+| [`NextCommandIssued`](#NextCommandIssued) | Event     | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | [`Pause`](#Pause)                         | Directive | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.        |
 | [`Previous`](#Previous)                   | Directive | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다. |
+| [`PreviousCommandIssued`](#PreviousCommandIssued) | Event | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | [`Resume`](#Resume)                       | Directive | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                |
 | [`Stop`](#Stop)                           | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                |
 | [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                  |
@@ -69,6 +71,42 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 ### See also
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
+## NextCommandIssued event {#NextCommandIssued}
+사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. Clova는 클라이언트의 상황에 따라 필요한 동작을 수행해줍니다. 예를 들어, 클라이언트가 팟캐스트와 같은 extension을 사용하고 있었다면 Clova는 즉각 다음 콘텐츠를 재생할 수 있도록 처리해줍니다.
+
+### Context field
+
+필수 상태 정보 없음
+
+### Payload field
+
+없음
+
+### Remarks
+* 클라이언트 기기의 버튼은 물리적인 하드웨어 방식의 버튼일 수도 있고 음악 플레이어 위젯 버튼과 같은 소프트웨어 방식의 버튼일 수도 있습니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "context": [],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "NextCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {}
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`PalybackController.PreviousCommandIssued`](#PreviousCommandIssued)
+
 ## Pause directive {#Pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.
 
@@ -122,6 +160,43 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+
+
+## PreviousCommandIssued event {#PreviousCommandIssued}
+사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. Clova는 클라이언트의 상황에 따라 필요한 동작을 수행해줍니다. 예를 들어, 클라이언트가 팟캐스트와 같은 extension을 사용하고 있었다면 Clova는 즉각 이전 콘텐츠를 재생할 수 있도록 처리해줍니다.
+
+### Context field
+
+필수 상태 정보 없음
+
+### Payload field
+
+없음
+
+### Remarks
+* 클라이언트 기기의 버튼은 물리적인 하드웨어 방식의 버튼일 수도 있고 음악 플레이어 위젯 버튼과 같은 소프트웨어 방식의 버튼일 수도 있습니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "context": [],
+  "event": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "PreviousCommandIssued",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {}
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`PalybackController.NextCommandIssued`](#NextCommandIssued)
 
 ## Resume directive {#Resume}
 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.

@@ -87,7 +87,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 {% raw %}
 ```json
 {
-    "type": "date",
+    "type": "datetime",
     "value": "2017-07-26T18:00:00Z"
 }
 ```
@@ -100,7 +100,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"location"` 값으로 고정되어 있습니다.                  | 필수     |
-| `value`         | string  | 지도 상의 좌표 정보({{book.OrientedService}} UTMK). 위도와 경도 값의 쌍으로 구성됩니다.  | 필수     |
+| `value`         | string  | 지도 상의 좌표 정보(NAVER UTMK). 위도와 경도 값의 쌍으로 구성됩니다.  | 필수     |
 
 ### Object Example
 {% raw %}
