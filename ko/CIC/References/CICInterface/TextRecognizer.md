@@ -5,6 +5,10 @@ TextRecognizer는 사용자가 입력한 텍스트를 인식할 때 사용되는
 ## Recognize event {#Recognize}
 `TextRecognizer.Recognize` 이벤트 메시지는 사용자 텍스트 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. 사용자의 음성 입력을 받기 어려운 환경에 있거나 마이크 시스템이 정상 동작하지 않는 경우 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지 대신 사용하여 사용자의 텍스트 입력을 받을 수 있습니다.
 
+### Context field
+
+필수 상태 정보 없음
+
 ### Payload field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|

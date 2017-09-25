@@ -1,85 +1,32 @@
 # 공통 필드
-모든 content template는 다음과 같은 공통 필드를 content template 객체의 최상위에 가질 수 있다.
+모든 content template는 다음과 같은 공통 필드를 가질 수 있습니다. 공통 필드는 content template 객체의 최상위에 위치하게 됩니다.
 
 | 필드 이름        | 자료형    | 필드 설명                     | 필수 여부 |
 |----------------|---------|-----------------------------|---------|
-| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | Content template에서 제공된 UI에서 UI 터치와 같은 사용자 인터랙션에 대응해야 할 수 있습니다. 이때, 이 필드를 이용하여 사용자 인터랙션에 대응할 동작([Action URL scheme](#ActionURLScheme)) 목록을 전달합니다. [CardList](/CIC/References/ContentTemplates/CardList.md) 타입의 content template은 `cardList[]` 필드 하위에 정의될 수 있습니다. | 선택 |
-| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 사용자 요청을 처리하는데 실패한 경우 보여줄 메시지 정보를 포합합니다. | 필수 |
+| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | UI 터치와 같은 사용자 인터랙션에 대응할 수 있도록 content template을 제공해야합니다. 이때, 이 필드를 이용하여 사용자 인터랙션에 대응할 동작([Action URL scheme](#ActionURLScheme)) 목록을 전달합니다. [CardList](/CIC/References/ContentTemplates/CardList.md) 타입의 content template은 `cardList[]` 필드 하위에 정의될 수 있습니다. | 선택 |
+| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | UI에 content template를 표시하지 못할 경우 보여줄 메시지 정보를 포함합니다. 예를 들면, 클라이언트가 `meta.version`에 명시된 content template의 버전을 지원하지 않거나 템플릿 정보를 표시하는데 문제가 생길 경우 보여줄 메시지 입니다. | 필수 |
 | `meta`             | object | Content template과 관련된 메타 정보를 포함합니다. | 필수 |
 | `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Content template의 버전 정보를 포함합니다. | 필수 |
 
-## 공톨 필드 Example
+## 공통 필드 Example
 
 {% raw %}
 ```json
-// 일반 content template 사용 시
-
 {
-  "bgUrl": {
-    "type": "url",
-    "value": ""
+  "type": "Atmosphere",
+  "valueOfAtmosphere": {
+    "type": "number",
+    "value": "23㎍/㎥"
   },
   ...
-  "type": "Text",
-  "actionList": [
-    {
-      "type" : "action",
-      "value" : "clova://ttsRepeat?lang=ko&text=1달러 환율입니다."
-    }
-  ],
   "failureMessage": {
     "type": "string",
-    "value": "정보를 확인하는데 실패했습니다."
+    "value": "경기도 성남시 분당구 정자1동 오늘 미세먼지 지수는 좋음 입니다"
   },
-  "meta" : {
-    "version" : {
-      "type" : "string",
-      "value" : "1.0"
-    }
-  }
-}
-
-// Card List 타입 사용 시
-{
-  "subType": "",
-  "type": "CardList",
-  "cardList": [
-    {
-      "title": {
-        "type": "string",
-        "value": "인카네이트"
-      },
-      ...
-      "actionList": [
-        {
-          "type" : "action",
-          "value" : "clova://naverSearch?url=https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-        }
-      ]
-    },
-    {
-      "title": {
-        "type": "string",
-        "value": "링스"
-      },
-      ...
-      "actionList": [
-        {
-          "type" : "action",
-          "value" : "clova://naverSearch?url=https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-        }
-      ]
-    },
-    ...
-  ],
-  "failureMessage": {
-    "type": "string",
-    "value": "영화 정보를 확인하는데 실패했습니다."
-  },
-  "meta" : {
-    "version" : {
-      "type" : "string",
-      "value" : "1.0"
+  "meta": {
+    "version": {
+      "type": "string",
+      "value": "v0.1"
     }
   }
 }
@@ -96,7 +43,7 @@
 | [clova://app-launch/default-camera](#AppLaunchDefaultCamera)        | 기본 카메라 앱을 실행하는 동작   |
 | [clova://app-launch/default-email](#AppLaunchDefaultEmail)          | 기본 메일 앱을 실행하는 동작    |
 | [clova://app-launch/default-gallery](#AppLaunchDefaultGallery)      | 기본 갤러리 앱을 실행하는 동작   |
-| [clova://audio-repeat](#AudioRepeat)                                | 오디오 발화를 수행하는 동작     |
+| [clova://audio-repeat](#AudioRepeat)                                | 오디오 출력을 수행하는 동작     |
 | [clova://device-control](#DeviceControl)                            | 기기 제어를 수행하는 동작       |
 | [clova://guide/talking](#GuideTalking)     | 명령 도우미를 제공하는 동작                              |
 | [clova://naverSearch](#NaverSearch)        | 네이버 앱에서 특정 키워드를 검색하는 동작                    |

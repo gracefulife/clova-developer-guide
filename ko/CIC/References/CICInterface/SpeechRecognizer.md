@@ -10,7 +10,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.      |
+| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.      |
 | [`ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) | Event     | 음성 입력 대기 시간이 초과했음을 CIC에 보고합니다.           |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
 | [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.   |
@@ -24,6 +24,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
+| `expectSpeechId`        | string  | 사용자의 음성 입력을 추가로 받을 때 CIC가 이를 식별하기 위한 ID. 추후 이 값은 사용자의 추가 음성 입력을 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 CIC로 보낼 때 `speechId` 필드에 입력되어야 합니다.    | 필수 |
 | `explicit`              | boolean | 사용자 음성 입력의 필수 여부.`explicit`는 주로 `true`로 설정되며, 사용자로부터 필수 정보를 추가로 알아내야 할 때 사용됩니다.<ul><li><code>true</code> : 필수</li><li><code>false</code> : 선택</li></ul>예를 들면, 사용자가 "피자 주문해줘."와 같은 요청을 했고 CIC는 수량과 같은 필수 정보를 얻기 위해 "몇 판 주문할까요?"라는 음성과 함께 `explicit` 필드가 `true`로 설정된 `SpeechRecognizer.ExpectSpeech` 지시 메시지를 보낼 수 있습니다.  이 경우 사용자로부터 수량 정보를 입력받지 않는다면 주문을 제대로 수행할 수 없게 됩니다. 따라서, `explicit` 필드가 `true`인 경우 반드시 사용자 음성 입력을 받아야 합니다. | 필수  |
 | `timeoutInMilliseconds` | number  | 사용자의 음성 입력을 받기 위해 대기하는 시간으로 정수 형태 값이며, 단위는 밀리초(millisecond) 입니다. | 필수    |
 
@@ -46,7 +47,9 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
       "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
     },
     "payload": {
-      "timeoutInMilliseconds": 7000
+      "timeoutInMilliseconds": 7000,
+      "explicit": false,
+      "speechSpeechId": "561aeecf-2096-40fa-ba17-6612e28b339f"
     }
   }
 }
@@ -104,7 +107,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directives)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
+`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
 다음과 같은 기준의 음성 입력을 처리할 수 있습니다.
 * 16-bit Linear PCM
@@ -120,9 +123,11 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 ### Payload field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `format`  | string | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
-| `lang`    | string | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li></ul> | 필수    |
-| `profile` | string | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
+| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `format`           | string   | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
+| `lang`             | string   | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"ko"</code> : 한국어</li><li><code>"en"</code> : 영어</li></ul> | 필수    |
+| `profile`          | string   | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
 
 ### Remarks
 일반적으로 사용자 음성을 한국어로 인식하지만 대화 모드(Freetalk mode)의 경우 사용자 음성을 영어(`"en"`)로 인식해야 할 수 있습니다.
@@ -130,6 +135,7 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 ### Message example
 {% raw %}
 ```json
+// 일반적인 사용자 음성 입력
 {
   "context": [
     {{Speaker.VolumeState}},
@@ -149,6 +155,23 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
     }
   }
 }
+
+// SpeechRecognizer.ExpectSpeech 지시 메시지에 따른 추가적인 사용자 음성 입력
+{
+        "header": {
+            "dialogRequestId": "4951cbfe-0064-41e2-ac3a-b0e4e1b0a570",
+            "messageId": "6ab89102-668b-42eb-89d0-639253db10ba",
+            "namespace": "SpeechRecognizer",
+            "name": "Recognize"
+        },
+        "payload": {
+            "profile": "CLOSE_TALK",
+            "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+            "speechId": "561aeecf-2096-40fa-ba17-6612e28b339f",
+            "explicit": false
+        }
+}
+
 ```
 {% endraw %}
 
@@ -165,6 +188,7 @@ Content-Type: application/octet-stream
 ### See also
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
+* [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
