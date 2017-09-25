@@ -109,4 +109,5 @@
 ## See also
 * [CardList](/CIC/References/ContentTemplates/CardList.md)
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
+* [Popup](/CIC/References/ContentTemplates/Popup.md)
 * [Text](/CIC/References/ContentTemplates/Text.md)

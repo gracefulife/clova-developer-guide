@@ -29,12 +29,12 @@ Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성�
 #### Message field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `header`                 | object | 메시지의 헤더                                                                 | 필수     |
-| `header.messageId`       | string | 메시지 ID. 개별 메시지를 구분하기 위해 Clova에서 생성한 식별자입니다(UUID).              | 필수     |
-| `header.name`            | string | 메시지의 API 이름                                                             | 필수     |
-| `header.namespace`       | string | 이 필드는 `"ClovaHome"`으로 고정됩니다.                                          | 필수     |
-| `header.payloadVersion`  | string | `header.name`에 명시된 Clova Home extension 메시지의 버전. 이 버전에 따라 `payload` 필드의 구성이 달라질 수 있습니다.                                   | 필수     |
-| `payload`                | object | `header.name`에 지정된 [인터페이스](#ClovaHomeExtInterface)에 따라 payload 객체의 구성과 필드 값이 달라집니다. | 필수     |
+| `header`                 | object | 메시지의 헤더                                                                                            | 필수     |
+| `header.messageId`       | string | 메시지 ID. 개별 메시지를 구분하기 위해 Clova에서 생성한 식별자입니다(UUID).                                         | 필수     |
+| `header.name`            | string | 메시지의 API 이름                                                                                        | 필수     |
+| `header.namespace`       | string | 이 필드는 `"ClovaHome"`으로 고정됩니다.                                                                     | 필수     |
+| `header.payloadVersion`  | string | `header.name`에 명시된 Clova Home extension 메시지의 버전. 이 버전에 따라 `payload` 필드의 구성이 달라질 수 있습니다.  | 필수     |
+| `payload`                | object | `header.name`에 지정된 [인터페이스](#ClovaHomeExtInterface)에 따라 payload 객체의 구성과 필드 값이 달라집니다.       | 필수     |
 
 #### Message example
 {% raw %}
@@ -71,6 +71,10 @@ Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성�
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
         "isReachable": true,
           "actions": [
+            "DecrementBrightness",
+            "HealthCheck",
+            "IncrementBrightness",
+            "SetBrightness",
             "TurnOn",
             "TurnOff"
         ],
@@ -87,6 +91,7 @@ Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성�
         "friendlyDescription": "에너지를 절약하는 플러그",
         "isReachable": true,
         "actions": [
+          "HealthCheck",
           "TurnOn",
           "TurnOff"
         ],
@@ -145,4 +150,4 @@ Clova Home extension 메시지의 인터페이스는 다음과 같이 분류됩�
   * [Error 인터페이스](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
 
 * 공유 객체
-  * [공유 객체](#SharedObjects)
+  * [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)

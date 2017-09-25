@@ -1,5 +1,10 @@
 # Memo
 
+<div class="danger">
+  <p><strong>Deprecated!</strong></p>
+  <p>이 스펙은 더 이상 지원하지 않으며, 새로운 스펙이 추가될 예정입니다.</p>
+</div>
+
 Memo는 사용자의 메모를 생성/조회/삭제할 때 사용되는 네임스페이스입니다. Memo가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
@@ -60,7 +65,6 @@ CIC에 특정 메모를 등록하도록 요청합니다. 이 이벤트 메시지
 ### See also
 * [`Clova.AddMemo`](/CIC/References/CICInterface/Clova.md#AddMemo)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
-
 
 ## Deleted event {#Deleted}
 

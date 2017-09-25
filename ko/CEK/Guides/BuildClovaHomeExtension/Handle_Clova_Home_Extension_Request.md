@@ -1,8 +1,8 @@
 ## Clova Home extension 요청 처리하기 {#HandleClovaHomeExtensionRequest}
 
-사용자는 "거실 전등 켜줘"와 같이 IoT 기기를 제어하도록 Clova에게 요청합니다(HTTPS Request). 클라이언트는 [Discovery 기능](#ProvideDeviceDiscovery)을 통해 확보된 기기 목록과 각 기기별 허용 동작을 보고 사용자의 IoT 기기 제어 요청이 수행 가능한 요청인지 검증합니다. 검증된 사용자 요청은 CEK를 통해 Clova Home extension으로 전달되며 이때, [Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 이용합니다.
+사용자는 "전등 켜줘"와 같이 IoT 기기를 제어하도록 Clova에게 요청합니다(HTTPS Request). 클라이언트는 [Discovery 기능](#ProvideDeviceDiscovery)을 통해 확보된 기기 목록과 각 기기별 허용 동작을 보고 사용자의 IoT 기기 제어 요청이 수행 가능한 요청인지 검증합니다. 검증된 사용자 요청은 CEK를 통해 Clova Home extension으로 전달되며 이때, [Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 이용합니다.
 
-"거실 전등 켜줘"와 같은 요청은 다음과 같이 [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) 메시지로 전달됩니다.
+"전등 켜줘"와 같은 요청은 다음과 같이 [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) 메시지로 전달됩니다.
 
 {% raw %}
 ```json

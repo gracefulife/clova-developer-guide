@@ -4,8 +4,8 @@
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)                     | Request  | 사용자가 등록한 IoT 기기 목록을 Clova Home extension에게 요청합니다.             |
-| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)                   | Response | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용자가 등록한 IoT 기기 목록을 CEK에게 전달합니다. |
+| [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)   | Request  | 사용자가 등록한 IoT 기기 목록을 Clova Home extension에게 요청합니다.             |
+| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) | Response | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용자가 등록한 IoT 기기 목록을 CEK에게 전달합니다. |
 
 ## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
 사용자가 등록한 기기 목록을 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) 메시지를 사용해야 합니다.
@@ -71,6 +71,10 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
         "isReachable": true,
           "actions": [
+            "DecrementBrightness",
+            "HealthCheck",
+            "IncrementBrightness",
+            "SetBrightness",
             "TurnOn",
             "TurnOff"
         ],
@@ -86,6 +90,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
         "friendlyDescription": "에너지를 절약하는 플러그",
         "isReachable": true,
         "actions": [
+          "HealthCheck",
           "TurnOn",
           "TurnOff"
         ],

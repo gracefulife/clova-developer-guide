@@ -30,9 +30,9 @@
 | DeviceControl      | [`BtStartPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStartPairing) | 클라이언트에게 블루투스 페어링 모드를 시작하도록 지시합니다.                                          |
 | DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | 클라이언트에게 블루투스 페어링 모드로 중지하도록 지시합니다.                                          |
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                            |
-| DeviceControl      | ['ExpectReportState'](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                 |
+| DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                 |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                            |
-| DeviceControl      | [`LaunchApp`](#LaunchApp)                                                       | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                     |
+| DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                     |
 | DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | 클라이언트에게 설정 화면을 열도록 지시합니다.                                                     |
 | DeviceControl      | [`SetValue`](/CIC/References/CICInterface/DeviceControl.md#SetValue)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                           |
 | DeviceControl      | [`SynchronizeState`](/CIC/References/CICInterface/DeviceControl.md#SynchronizeState) | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.           |
@@ -54,4 +54,4 @@
 | SpeechRecognizer   | [`ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.                                            |
 | SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
 | SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
-| SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer#Speak)                 | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다.                                   |
+| SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다.                                   |

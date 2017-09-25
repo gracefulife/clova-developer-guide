@@ -19,6 +19,8 @@
 | Memo              | [`Deleted`](/CIC/References/CICInterface/Memo.md#Deleted)                  | CIC에 특정 메모를 삭제하도록 요청합니다.                                                            |
 | Memo              | [`Get`](/CIC/References/CICInterface/Memo.md#Get)                          | CIC에 사용자가 생성한 모든 메모 목록을 요청합니다.                                                    |
 | Memo              | [`Updated`](/CIC/References/CICInterface/Memo.md#Updated)                  | CIC에 특정 메모를 갱신하도록 요청합니다.                                                            |
+| PlaybackController | [`NextCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#NextCommandIssued) | Event     | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
+| PlaybackController | [`PreviousCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#PreviousCommandIssued) | Event     | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | Reminder          | [`Created`](/CIC/References/CICInterface/Reminder.md#Created)              | CIC에 특정 리마인더를 생성하도록 요청합니다.                                                         |
 | Reminder          | [`Deleted`](/CIC/References/CICInterface/Reminder.md#Deleted)              | CIC에 특정 리마인더를 삭제하도록 요청합니다.                                                         |
 | Reminder          | [`Get`](/CIC/References/CICInterface/Reminder.md#Get)                      | CIC에 사용자가 생성한 모든 리마인더 목록을 요청합니다.                                                 |

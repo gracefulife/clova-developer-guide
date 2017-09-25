@@ -206,7 +206,7 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
 * [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)
 
-## PlayResumed event {#PlayResuemd}
+## PlayResumed event {#PlayResumed}
 클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
 
 1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.

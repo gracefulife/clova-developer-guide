@@ -298,7 +298,7 @@ Content-Type: application/octet-stream
   * 바이너리 음성 데이터 : application/octet-stream
 
 ### Response message
-CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세한 [지시 메시지](#Directives)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 보냅니다. 지시 메시지에 어떤 정보를 담겼는지는 CIC가 내려준 지시 메시지에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
+CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세한 [지시 메시지](#Directive)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 보냅니다. 지시 메시지에 어떤 정보를 담겼는지는 CIC가 내려준 지시 메시지에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
 
 ### Status codes
 

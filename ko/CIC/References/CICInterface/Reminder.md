@@ -1,5 +1,10 @@
 # Reminder
 
+<div class="danger">
+  <p><strong>Deprecated!</strong></p>
+  <p>이 스펙은 더 이상 지원하지 않으며, 새로운 스펙이 추가될 예정입니다.</p>
+</div>
+
 Reminder은 사용자의 리마인더(reminder)를 생성/조회/삭제할 때 사용되는 네임스페이스입니다. Reminder가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |

@@ -87,7 +87,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 {% raw %}
 ```json
 {
-    "type": "date",
+    "type": "datetime",
     "value": "2017-07-26T18:00:00Z"
 }
 ```
