@@ -6,7 +6,7 @@
 </div>
 
 ### CEK
-[Clova Extension Kit](#CEK)의 약어
+[Clova Extensions Kit](#CEK)의 약어
 
 ### CIC
 [Clova Interface Connect](#CIC)의 약어
@@ -37,14 +37,14 @@ Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#Clo
 * [Custom extension](#CustomExtension)
 * [Clova Home extension](#ClovaHomeExtension)
 
-### Clova Extension Kit (CEK) {#CEK}
-Clova extension을 개발할 때 필요한 도구와 인터페이스를 제공하는 플랫폼으로 [Clova와 extension 사이의 커뮤니케이션](/CEK/CEK_Overview.md)을 지원합니다.
+### Clova Extensions Kit (CEK) {#CEK}
+Clova extension을 개발 및 배포할 때 필요한 도구와 인터페이스를 제공하는 플랫폼으로 [Clova와 extension 사이의 커뮤니케이션](/CEK/CEK_Overview.md)을 지원합니다.
 
 ### Clova Home extension {#ClovaHomeExtension}
 IoT 기기 제어 서비스를 제공하기 위한 extension입니다. 자세한 내용은 [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md) 문서를 참조합니다.
 
 ### Clova Home extension 메시지 {#ClovaHomeExtMessage}
-IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova Extension Kit](#CEK)와 정보를 주고 받을 때 전용으로 사용하는 메시지입니다. 자세한 내용은 [Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage) 문서를 참조합니다.
+IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova Extensions Kit](#CEK)와 정보를 주고 받을 때 전용으로 사용하는 메시지입니다. 자세한 내용은 [Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage) 문서를 참조합니다.
 
 ### Clova Interface Connection (CIC) {#CIC}
 인공 지능 비서 서비스를 제공하려는 PC/모바일용 앱, 모바일 또는 가전 기기 등의 클라이언트에게 Clova와 연동할 수 있는 인터페이스를 제공하는 플랫폼입니다. 자세한 내용은 [CIC 개요](/CIC/CIC_Overview.md) 문서를 참조합니다.
@@ -62,7 +62,7 @@ CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화
 임의의 확장된 기능을 제공하는 [extension](#ClovaExtension)입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
 
 ### Custom extension 메시지 {#CustomExtMessage}
-[Clova Extension Kit](#CEK)와 [custom extension](#CustomExtension) 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. 자세한 내용은 [Custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 문서를 참조합니다.
+[Clova Extensions Kit](#CEK)와 [custom extension](#CustomExtension) 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. 자세한 내용은 [Custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 문서를 참조합니다.
 
 ### Discovery 기능 {#Discovery}
 사용자 계정에 등록된 IoT 기기 목록을 클라이언트 기기에 제공하는 기능입니다. 자세한 내용은 [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery) 문서를 참조합니다.
@@ -115,7 +115,7 @@ HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wi
 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. [Intent](#Intent)별로 복수의 사례를 정의할 수 있으며, 예문에는 [slot](#Slot)이 표시됩니다. 자세한 내용은 [Interaction Model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel) 문서를 참조합니다.
 
 ### 세션 ID {#SessionID}
-세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extension Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 `false`로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
+세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extensions Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 `false`로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
 
 ### 이벤트 메시지 (Event) {#Event}
 이벤트 메시지는 클라이언트에서 [Clova Interface Connect](#CIC)로 전달하는 메시지이며, 사용자 요청(음성 입력)을 전달하거나 클라이언트의 상태 값이 변경된 것을 알릴 때 이 메시지를 전송합니다.

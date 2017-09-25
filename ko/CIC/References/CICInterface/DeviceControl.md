@@ -44,7 +44,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 ### Remarks
 
-CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`UpdateDeviceState`](#UpdateDeviceState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
+CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`SynchronizeState`](#SynchronizeState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
 
 ### Message example
 
@@ -94,7 +94,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Remarks
 
-* CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`UpdateDeviceState`](#UpdateDeviceState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
+* CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모든 클라이언트에게 [`SynchronizeState`](#SynchronizeState) 지시 메시지를 전송하여 특정 클라이언트 기기의 변경된 상태 정보를 알립니다.
 * [`LaunchApp`](#LaunchApp) 지시 메시지를 수신한 후 앱 실행에 실패하면 `target` 필드는 `"app"`으로 설정합니다.
 
 ### Message example
@@ -171,12 +171,12 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
-* [`DeviceControl.BtStartPairing`](#BtPairing)
+* [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
 
-## BtDisonnect directive {#BtDisonnect}
+## BtDisonnect directive {#BtDisconnect}
 
 클라이언트에게 연결된 블루투스 기기와 연결을 끊도록 지시합니다.
 
@@ -214,7 +214,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtConnect`](#BtConnect)
-* [`DeviceControl.BtStartPairing`](#BtPairing)
+* [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
@@ -729,7 +729,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
   "directive": {
     "header": {
       "namespace": "DeviceControl",
-      "name": "UpdateDeviceState",
+      "name": "SynchronizeState",
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5"
     },
     "payload": {

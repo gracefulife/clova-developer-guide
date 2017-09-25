@@ -30,7 +30,7 @@ Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 
 4. 전달받은 authorization code 혹은 access token은 redirect URL을 통해 Clova로 전달됩니다.
 
-5. **(3번 단계에서 authorization code를 받은 경우)** Clova는 **[Access Token URI](#RegisterAccountLinkingToCEK)**로 access token과 refresh token을 요청합니다. 이때 authorization code를 전달하며, 사용자의 Clova 계정 정보에 획득한 access token과 refresh token을 저장합니다.
+5. **(3번 단계에서 authorization code를 받은 경우)** Clova는 **[Access Token URI](#RegisterAccountLinkingInfo)**로 access token과 refresh token을 요청합니다. 이때 authorization code를 전달하며, 사용자의 Clova 계정 정보에 획득한 access token과 refresh token을 저장합니다.
 
 6. 이제 사용자는 계정 인증이 필요한 서비스를 사용할 수 있습니다.
 
@@ -44,7 +44,7 @@ Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 
 1. 사용자의 요청을 처리하기 위해 평상시처럼 extension을 호출합니다.
 
-2. **(만약 access token이 만료된 경우)** refresh token을 이용하여 **[Access Token URI](#RegisterAccountLinkingToCEK)**에 새로운 access token을 요청합니다.
+2. **(만약 access token이 만료된 경우)** refresh token을 이용하여 **[Access Token URI](#RegisterAccountLinkingInfo)**에 새로운 access token을 요청합니다.
 
 3. Extension에 전달하는 메시지에 access token을 포함시켜 사용자의 요청을 전달합니다.
    * Custom extension의 경우 `context.System.user.accessToken`와 `session.user.accessToken` 필드에 access token이 전달됩니다.
@@ -137,7 +137,7 @@ https://ToBeDetermined/?vendorId=YourServiceOrCompanyID
 {% endraw %}
 
 
-Clova가 사용자 계정 연결을 위해 Authorization code를 획득한 경우(authorization code grant 방식), Clova는 다시 extension 개발자가 Clova Developer Console에 미리 등록해 둔 **[Access Token URI](#RegisterAccountLinkingToCEK)**로 access token을 요청하게 됩니다. 이때, Clova는 획득한 authorization code를 파라미터로 전송하게 되며, 인증 서버는 외부 서비스의 계정 권한이 부여된 access token과 access token을 갱신할 수 있는 refresh token을 발급해야 합니다.
+Clova가 사용자 계정 연결을 위해 Authorization code를 획득한 경우(authorization code grant 방식), Clova는 다시 extension 개발자가 Clova Developer Console에 미리 등록해 둔 **[Access Token URI](#RegisterAccountLinkingInfo)**로 access token을 요청하게 됩니다. 이때, Clova는 획득한 authorization code를 파라미터로 전송하게 되며, 인증 서버는 외부 서비스의 계정 권한이 부여된 access token과 access token을 갱신할 수 있는 refresh token을 발급해야 합니다.
 
 Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경우(implicit grant 방식), refresh token을 발급받지 않으며 access token이 만료되면 사용자 계정 연결을 다시 시도해야 합니다.
 
