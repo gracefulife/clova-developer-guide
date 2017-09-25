@@ -83,3 +83,14 @@ td .note {
     color: #aaa;
     cursor: text;
 }
+
+img {
+  margin: 5px 5px 5px 5px;
+  -moz-box-shadow:    3px 3px 10px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 10px 3px #ccc;
+  box-shadow:         3px 3px 10px 3px #ccc;
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}

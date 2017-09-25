@@ -42,7 +42,7 @@ DeviceState는 클라이언트의 기기의 상태 정보를 전송할 때 사�
 | `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | 클라이언트 기기의 플래시 조명 설정 정보를 가지는 객체       | 선택 |
 | `gps`             | [GPSInfoObject](#GPSInfoObject)                         | 클라이언트 기기의 GPS 설정 정보를 가지는 객체            | 선택 |
 | `localTime`       | string | 클라이언트 기기에 설정된 현지 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷)              | 선택 |
-| `power`           | [PowerInfoObject](#PowerModeInfoObject)                 | 클라이언트 기기의 전원 상태 정보를 가지는 객체            | 선택 |
+| `power`           | [PowerInfoObject](#PowerInfoObject)                 | 클라이언트 기기의 전원 상태 정보를 가지는 객체            | 선택 |
 | `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | 클라이언트 기기의 화면 밝기 정보를 가지는 객체            | 선택 |
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | 클라이언트 기기의 소리 출력 설정 정보를 가지는 객체        | 선택 |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | 클라이언트 기기의 스피커 볼륨 정보를 가지는 객체           | 선택 |
@@ -602,4 +602,4 @@ DeviceState는 클라이언트의 기기의 상태 정보를 전송할 때 사�
 
 ### See also
 * [`DeviceControl` API](/CIC/References/CICInterface/DeviceControl.md)
-* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

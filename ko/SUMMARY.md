@@ -60,6 +60,7 @@
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Popup](/CIC/References/ContentTemplates/Popup.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
   * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
   * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
@@ -74,7 +75,7 @@
   * [Clova access token 갱신](/CIC/References/Clova_Auth_API.md#RefreshClovaAccessToken)
   * [Clova access token 삭제](/CIC/References/Clova_Auth_API.md#DeleteClovaAccessToken)
 
-## Clova Extension Kit
+## Clova Extensions Kit
 
 * [CEK 개요](/CEK/CEK_Overview.md)
   * [CEK란?](/CEK/CEK_Overview.md#WhatisCEK)
