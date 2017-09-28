@@ -2,7 +2,6 @@
 A message format that sends client's current location information. You can obtain location information from GPS, base stations or network devices and send it to CIC.
 
 ### Message structure
-
 {% raw %}
 ```json
 {
@@ -28,7 +27,6 @@ A message format that sends client's current location information. You can obtai
 | `refreshedAt`   | string  | The time when the location was last checked (UTC, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format) | Yes |
 
 ### Message example
-
 {% raw %}
 ```json
 {
@@ -46,4 +44,4 @@ A message format that sends client's current location information. You can obtai
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)

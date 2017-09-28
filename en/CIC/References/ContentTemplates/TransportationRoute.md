@@ -57,35 +57,35 @@ Provides route directions for public transportations. It is used to display publ
 
 | Subway line code | Description          | But type code   | Description          |
 |--------------|---------------|--------------|--------------|
-| 1	           | 수도권_1호선     | 1            | 일반          |
-| 2            | 수도권_2호선     | 2            | 좌석          |
-| 3            | 수도권_3호선     | 3            | 마을          |
-| 4            | 수도권_4호선     | 4            | 직행좌석       |
-| 5            | 수도권_5호선     | 5            | 공항          |
-| 6            | 수도권_6호선     | 6            | 간선급행       |
-| 7            | 수도권_7호선     | 10           | 외곽          |
-| 8            | 수도권_8호선     | 11           | 간선          |
-| 9            | 수도권_9호선     | 12           | 지선          |
-| 21           | 인천_1호선       | 13           | 순환          |
-| 31           | 대전_1호선       | 14           | 광역          |
-| 41           | 대구_1호선       | 15           | 급행          |
-| 42           | 대구_2호선       | 20           | 농어촌        |
-| 51           | 광주_1호선       | 21           | 제주시외       |
-| 71           | 부산_1호선       | 22           | 시외          |
-| 72           | 부산_2호선       | 26           | 급행간선       |
-| 73           | 부산_3호선       |              |              |
-| 74           | 부산_4호선       |              |              |
-| 78           | 부산_동해선       |              |              |
-| 79           | 부산_부산김해경전철 |              |              |
-| 100          | 분당선           |              |              |
-| 101          | 공항철도         |              |              |
-| 103          | 중앙선           |              |              |
-| 104          | 경의선           |              |              |
-| 107          | 에버라인         |              |              |
-| 108          | 경춘선           |              |              |
-| 109          | 신분당선         |              |              |
-| 110          | 의정부경전철      |              |              |
-| 111          | 수인선          |              |              |
+| 1	           | Metropolitan_Line 1     | 1            | Regular           |
+| 2            | Metropolitan_Line 2     | 2            | Seats          |
+| 3            | Metropolitan_Line 3     | 3            | Town          |
+| 4            | Metropolitan_Line 4     | 4            | Express seats       |
+| 5            | Metropolitan_Line 5     | 5            | Airport          |
+| 6            | Metropolitan_Line 6     | 6            | Main roads direct express       |
+| 7            | Metropolitan_Line 7     | 10           | Suburb          |
+| 8            | Metropolitan_Line 8     | 11           | Main roads          |
+| 9            | Metropolitan_Line 9     | 12           | Local lines          |
+| 21           | Incheon_Line 1       | 13           | Circular          |
+| 31           | Daejeon_Line 1       | 14           | Metropolitan          |
+| 41           | Daegu_Line 1       | 15           | Direct express          |
+| 42           | Daegu_Line 2       | 20           | Rural region        |
+| 51           | Gwangju_Line 1       | 21           | Jeju region       |
+| 71           | Busan_Line 1       | 22           | Countryside           |
+| 72           | Busan_Line 2       | 26           | Direct express main road       |
+| 73           | Busan_Line 3       |              |              |
+| 74           | Busan_Line 4       |              |              |
+| 78           | Busan_East Sea Line       |              |              |
+| 79           | Busan_Gimhae Light Rail Transit |              |              |
+| 100          | Bundang Line           |              |              |
+| 101          | Airport Railroad         |              |              |
+| 103          | Jungang Line           |              |              |
+| 104          | Gyeongui Line           |              |              |
+| 107          | Everline         |              |              |
+| 108          | Gyeongchun Line           |              |              |
+| 109          | Sinbundang Line         |              |              |
+| 110          | U Line      |              |              |
+| 111          | Suin Line          |              |              |
 
 
 ## Template Example

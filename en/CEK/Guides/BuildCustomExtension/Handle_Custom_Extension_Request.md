@@ -23,6 +23,7 @@ After receiving this message and before receiving a [`SessionEndedRequest`](#Han
 This is an example of a `LaunchReqeust` type message.
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -51,6 +52,7 @@ This is an example of a `LaunchReqeust` type message.
   }
 }
 ```
+
 {% endraw %}
 
 Each field in this example indicates the following.
@@ -68,6 +70,7 @@ When the message type is IntentRequest, `request.type` field is set to `"IntentR
 This is an example of an `IntentRequest` type message.
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -105,6 +108,7 @@ This is an example of an `IntentRequest` type message.
   }
 }
 ```
+
 {% endraw %}
 
 Each field in this example indicates the following.
@@ -129,6 +133,7 @@ This is an example of a `SessionEndedRequest` type message.
 
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -157,6 +162,7 @@ This is an example of a `SessionEndedRequest` type message.
   }
 }
 ```
+
 {% endraw %}
 
 Each field in this example indicates the following.

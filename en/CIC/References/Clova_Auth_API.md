@@ -8,7 +8,9 @@ The base URL of the Clova authorization server is as follows.
 </code></pre>
 
 ## Requesting authorization code {#RequestAuthorizationCode}
-Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. An authorization code is credential information necessary for generation of a Clova access token.
+Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. The authorization code is required to obtain the Clova access token.
+
+Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue and thus the app forwards an authorization code instead. Upon receiving authorization code, the client should pass it to Clova authentication server and [request a Clova access token](#RequestClovaAccessToken).
 
 ```
 GET|POST /authorize
@@ -64,7 +66,6 @@ GET|POST /authorize
 | 500 Server Internal Error | Failed to generate an authorization code due to an internal server error |
 
 ### Response example
-
 {% raw %}
 ```json
 {
@@ -74,8 +75,7 @@ GET|POST /authorize
 ```
 {% endraw %}
 
-### Remarks
-Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue, so the app forwards an authorization code instead. The client receives the authorization code, passes it to a Clova authorization server and [requests a Clova access token](#RequestClovaAccessToken).
+{% include "./CICAuthAPI/GuestMode.md" %}
 
 ### See also
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
@@ -138,7 +138,6 @@ GET|POST /token?grant_type=authorization_code
 | 500 Internal Server Error | Failed to generate an access token due to an internal server error |
 
 ### Response example
-
 {% raw %}
 ```json
 {
@@ -211,7 +210,6 @@ GET|POST /token?grant_type=refresh_token
 | 500 Internal Server Error | Failed to refresh the access token due to an internal server error |
 
 ### Response example
-
 {% raw %}
 ```json
 {
@@ -283,7 +281,6 @@ GET|POST /token?grant_type=delete
 | 500 Internal Server Error | Failed to delete the access token due to an internal server error |
 
 ### Response example
-
 {% raw %}
 ```json
 {

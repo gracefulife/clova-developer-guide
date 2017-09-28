@@ -1,5 +1,5 @@
 ## Custom extension message {#CustomExtMessage}
-When CEK and your custom extension exchange information, they use custom extension messages. A custom extension message is divided into a [request message](#CustomExtRequestMessage) and a [response message](#CustomExtResponseMessage). A request message has three [request types](#CustomExtRequestType) - `LaunchRequest`, `IntentRequest` and `SessionEndedRequest`.
+When CEK and your custom extension exchange information, they use custom extension messages. A custom extension message is divided into a [request message](#CustomExtRequestMessage) and a [response message](#CustomExtResponseMessage). A request message is dinstinguished into three types such as `LaunchRequest`, `IntentRequest` and `SessionEndedRequest` according to [request types](#CustomExtRequestType).
 
 ### Request message {#CustomExtRequestMessage}
 Once Clova analyzes a user request, CEK forwards a request message to your custom extension to send the user request (HTTPS request). The following explains the structure and fields of a request message and how the `request` field is configured for each type of request.
@@ -7,6 +7,7 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
 #### Message structure
 
 {% raw %}
+
 ```json
 {
   "context": {
@@ -39,6 +40,7 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   "version": {{string}}
 }
 ```
+
 {% endraw %}
 
 #### Message field
@@ -48,7 +50,7 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
 | `context.AudioPlayer`                      | object  | An object containing details of media currently playing or previously played | No |
 | `context.AudioPlayer.offsetInMilliseconds` | number  | The last playback point (offset) of the recently played media. Unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                       | No |
 | `context.AudioPlayer.playerActivity`       | string  | Indicates the state of the player. Available values are:<ul><li><code>"IDLE"</code>: Player is idle</li><li><code>"PLAYING"</code>: Player is playing</li><li><code>"PAUSED"</code>: Player paused playing</li><li><code>"STOPPED"</code>: Player stopped playing</li></ul> | Yes |
-| `context.AudioPlayer.stream`               | [AudioStreamObject](/CEK/References/APIs/AudioPlayer.md#AudioStreamObject) | An object containing details of the currently playing media. This field can be empty if `playerActivity` is set to `"IDLE"`.    | No |
+| `context.AudioPlayer.stream`               | [AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject) | An object containing details of the currently playing media. This field can be empty if `playerActivity` is set to `"IDLE"`.    | No |
 | `context.AudioPlayer.totalInMilliseconds`  | number  | The total length of the recently played media. Unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                                                  | No |
 | `context.System`                           | object  | An object containing context information of the client system                          | Yes |
 | `context.System.device`                    | object  | An object containing information of the client device                               | Yes |
@@ -67,7 +69,9 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
 | `version`                                  | string  | The version of the message format (CEK version)                          | Yes |
 
 #### Message example
+
 {% raw %}
+
 ```json
 // Example 1: LaunchRequest type
 {
@@ -162,11 +166,12 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   }
 }
 ```
+
 {% endraw %}
 
 #### See also
 * [Handling custom extension request](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
-* [AudioStreamObject](/CEK/References/APIs/AudioPlayer.md#AudioStreamObject)
+* [AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject)
 
 ### Request type {#CustomExtRequestType}
 A request message is divided into three types as follows. For each type, the `request` object has different field configuration.
@@ -180,6 +185,7 @@ The `LaunchRequest` type notifies that a user has started an extension. For exam
 When the message type is `LaunchRequest`, the `request` object field is configured as follows.
 
 {% raw %}
+
 ```json
 {
   "type": "LaunchRequest"
@@ -204,6 +210,7 @@ The `IntentRequest` type sends analysis details of a user request and asks to pe
 When the message type is `IntentRequest`, the `request` object field is configured as follows.
 
 {% raw %}
+
 ```json
 {
   "type": "IntentRequest",
@@ -238,11 +245,13 @@ The `SessionEndedRequest` type notifies that a user has ended an extension. Your
 When the message type is `SessionEndedRequest`, the `request` object field is configured as follows.
 
 {% raw %}
+
 ```json
 {
   "type": "EndRequest"
 }
 ```
+
 {% endraw %}
 
 | Field name       | Type    | Field description                     | Required |
@@ -253,7 +262,9 @@ When the message type is `SessionEndedRequest`, the `request` object field is co
 After your extension completes processing of a request message, it returns a response message (HTTPS response). The following explains the structure and fields of a response message.
 
 #### Message structure
+
 {% raw %}
+
 ```json
 {
   "response": {
@@ -283,6 +294,7 @@ After your extension completes processing of a request message, it returns a res
   "version": {{string}}
 }
 ```
+
 {% endraw %}
 
 #### Message field
@@ -322,7 +334,9 @@ SpeechObject is an object reused by `response.outputSpeech` in response messages
 | `value`          | string       | Content to be synthesized into speech audio                                                       | Yes |
 
 #### Message example
+
 {% raw %}
+
 ```json
 // Example 1: Returns speech data in simple sentence format (SimpleSpeech) - plain text
 {
@@ -426,6 +440,7 @@ SpeechObject is an object reused by `response.outputSpeech` in response messages
   }
 }
 ```
+
 {% endraw %}
 
 #### See also

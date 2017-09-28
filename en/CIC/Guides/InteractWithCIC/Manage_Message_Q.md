@@ -14,4 +14,4 @@ Determine the following rules in consideration of your UX design plan.
 * The number of message queues and their size
 * Processing priority of message queues
 
-If you provide UX that runs tasks seamlessly while your client is receiving speech input or playing speech audio, such as music playback ([AudioPlayer](/CIC/References/APIs/AudioPlayer.md)), process message queues separately for such directive messages. Also, some API namespaces send a single directive message simultaneously. For such namespaces, you do not have to manage message queues separately.
+If you provide UX that runs tasks seamlessly while your client is receiving speech input or playing speech audio, such as music playback ([AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)), process message queues separately for such directive messages. Also, some API namespaces send a single directive message simultaneously. For such namespaces, you do not have to manage message queues separately.

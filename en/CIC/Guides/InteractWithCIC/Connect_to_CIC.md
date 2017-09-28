@@ -17,7 +17,7 @@ Below are the steps to obtain a Clova access token.
 </li>
 <li><p>Obtain an access token for the {{ book.TargetServiceForClientAuth }} account, using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
 </li>
-<li><p><a href="/CIC/Clova_Auth_API.html#RequestAuthorizationCode">Request an authorization code</a> by providing the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a>. Below is an example of requesting an authorization code.</p>
+<li><p><a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">Request an authorization code</a> by providing the {{ book.TargetServiceForClientAuth }} account access token and <a href="#ClientAuthInfo">client credentials</a>. With <code>device_id</code> field value, use client's MAC address or create UUID hash value. Below is an example of requesting an authorization code.</p>
 <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
        {{ book.AuthServerBaseURL }}authorize \
        --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
@@ -73,7 +73,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 ```
 {% endraw %}
 
-When the connection request is processed successfully, CIC returns a [`Clova.Hello`](/CIC/References/APIs/Clova.md#Hello) directive message as a response. It indicates that CIC is ready to send more directive messages through the downchannel.
+When the connection request is processed successfully, CIC returns a [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) directive message as a response. It indicates that CIC is ready to send more directive messages through the downchannel.
 
 {% raw %}
 ```

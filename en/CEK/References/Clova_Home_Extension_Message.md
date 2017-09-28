@@ -11,7 +11,9 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
 </div>
 
 #### Message structure
+
 {% raw %}
+
 ```json
 {
   "header": {
@@ -24,6 +26,7 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
   }
 }
 ```
+
 {% endraw %}
 
 
@@ -38,7 +41,9 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
 | `payload`                | object | Configuration of the payload object and its field values can vary depending on which [interface](#ClovaHomeExtInterface) is specified in `header.name`. | Yes     |
 
 #### Message example
+
 {% raw %}
+
 ```json
 Example 1: DiscoverAppliancesRequest - request message
 {
@@ -131,6 +136,7 @@ Example 4: TargetOffLineError - Error response message
   }
 }
 ```
+
 {% endraw %}
 
 #### See also

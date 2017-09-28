@@ -2,6 +2,7 @@
 [After processing a request message](#HandleCustomExtensionRequest), you must return a [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) back to CEK (HTTPS response). Although details of response can vary depending on the request type, all response messages have a similar structure. Below is a response message returned after a LaunchRequest was processed (user request: "Let's talk in English").
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -21,6 +22,7 @@
   }
 }
 ```
+
 {% endraw %}
 
 The meaning of each field is as follows.
@@ -38,6 +40,7 @@ The meaning of each field is as follows.
 As shown below, you can write a response message for speaking several sentences of synthesized speech (text-to-speech) or playing an audio or music file from internet.
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -64,6 +67,7 @@ As shown below, you can write a response message for speaking several sentences 
   }
 }
 ```
+
 {% endraw %}
 
 Each `response.outputSpeech` field indicates the following.
@@ -80,6 +84,7 @@ Each `response.outputSpeech` field indicates the following.
 To display data on a screen of a client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CEK/References/Content_Templates.md).
 
 {% raw %}
+
 ```json
 {
   "version": "0.1.0",
@@ -201,4 +206,5 @@ To display data on a screen of a client device or client app in addition to gene
   }
 }
 ```
+
 {% endraw %}

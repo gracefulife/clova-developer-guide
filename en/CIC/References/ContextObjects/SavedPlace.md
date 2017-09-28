@@ -2,7 +2,6 @@
 A message format that sends client's pre-saved location information.
 
 ### Message structure
-
 {% raw %}
 ```json
 {
@@ -36,7 +35,6 @@ A message format that sends client's pre-saved location information.
 
 
 ### Message example
-
 {% raw %}
 ```json
 {
@@ -65,4 +63,4 @@ A message format that sends client's pre-saved location information.
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)

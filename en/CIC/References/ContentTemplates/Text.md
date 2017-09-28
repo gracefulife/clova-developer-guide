@@ -92,6 +92,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
 
 // Example 2.
 // User request: 토트넘 감독이 누구야? (User asks who's the director of Tottenham. Paragraph text is displayed)
+
 {
   "actionList": [
     {

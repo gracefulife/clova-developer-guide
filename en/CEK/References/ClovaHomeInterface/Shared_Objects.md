@@ -243,7 +243,7 @@ An object containing a speed. It displays an expected change in the value of a s
 * [`IncrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedRequest)
 
 ### TemperatureObject {#TemperatureObject}
-An object containing a temperature. It displays an expected change in the value of a temperature or a target temperature before and after change. The value is expressed as a number with one decimal point.
+An object containing a temperature. It displays an expected change in the value of a temperature or a target temperature before and after change. The value is expressed as the number of the first decimal point.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |

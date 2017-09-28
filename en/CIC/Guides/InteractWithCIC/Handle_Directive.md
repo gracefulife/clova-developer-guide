@@ -34,7 +34,7 @@ Implement your client to handle directive messages in the following steps.
 </li>
 <li>Check whether the <a href="/CIC/CIC_Overview.html#DialogModel">dialog ID</a>(<code>dialogRequestId</code>) of the directive message matches the dialog ID kept on the client.
 <ul>
-<li><p><strong>If it matches the dialog ID kept on the client</strong>, perform necessary actions as specified by the API. Usually, you can pick out additional necessary information (speech data) from <a href="#ManageMessageQ">message queues</a>, <a href="/CIC/References/APIs/SpeechSynthesizer.html#Speak">using the<code>cid</code> value</a> contained in <code>payload</code> of the directive message. <code>cid</code> indicates a `Content-Id` message header of speech data returned in a multipart message, as shown below.</p>
+<li><p><strong>If it matches the dialog ID kept on the client</strong>, perform necessary actions as specified by the API. Usually, you can pick out additional necessary information (speech data) from <a href="#ManageMessageQ">message queues</a>, <a href="/CIC/References/CICInterface/SpeechSynthesizer.html#Speak">using the<code>cid</code> value</a> contained in <code>payload</code> of the directive message. <code>cid</code> indicates a `Content-Id` message header of speech data returned in a multipart message, as shown below.</p>
 <pre><code>--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 Content-Id: d329085c-379e-48aa-b871-7ecebdbe831d

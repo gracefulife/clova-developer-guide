@@ -20,6 +20,7 @@ This is an example of a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeI
 }
 ```
 {% endraw %}
+
 When the Clova Home extension receives this message, it finds the user account for the access token and returns the list of appliances registered to the user's account, using a [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces#DiscoverAppliancesResponse) message. The message contains details of each appliance, such as appliance identifiers, appliance names, appliance availability (whether online or not), and supported actions (`actions`).
 
 This is an example of a `DiscoverAppliancesResponse` message which a Clova Home extension returns to CEK.

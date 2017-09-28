@@ -3,6 +3,7 @@ Content templates use the following shared objects to display repetitive data ty
 
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
+| [ActionObject](#ActionObject)             | An object containing possible action information of the client.          |
 | [CurrencyObject](#CurrencyObject)         | An object containing currency and amount                   |
 | [DateObject](#DateObject)                 | An object containing a date                         |
 | [DateTimeObject](#DateTimeObject)         | An object containing date and time                    |
@@ -15,6 +16,26 @@ Content templates use the following shared objects to display repetitive data ty
 | [TemperatureFObject](#TemperatureFObject) | An object containing a temperature (Fahrenheit)                    |
 | [URLObject](#URLObject)                   | An object containing a URL                         |
 
+
+# ActionObject {#ActionObject}
+| An object containing possible action information of the client.
+
+### Object field
+| Field name       | Type    | Field description                     | Required |
+|---------------|---------|-----------------------------|---------|
+| `type`          | string  | The value is always `"action"`.  | Yes     |
+| `value`         | string  | [Action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme) Action information of the format | Yes     |
+
+### Object Example
+{% raw %}
+```json
+{
+    "type": "action",
+    "value": "clova://naverSearch?query=이태원맛집"
+}
+```
+{% endraw %}
+
 # CurrencyObject {#CurrencyObject}
 An object containing currency and amount.
 
@@ -22,10 +43,9 @@ An object containing currency and amount.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | The value is always `"currency"`.  | Yes     |
-| `value`         | string  | Data in combination of currency and amount             | Yes     |
+| `value`         | string  | Data in combination of currency and amount               | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -45,7 +65,6 @@ An object containing a date.
 | `value`         | string  | A date (YYYY-MM-DD format)     | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -65,7 +84,6 @@ An object containing date and time.
 | `value`         | string  | Date and time (YYYY-MM-DDThh:mm:ssZ format) | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -85,7 +103,6 @@ An object containing map coordinates.
 | `value`         | string  | Map coordinates ({{book.OrientedService}} UTMK). The value is a pair of latitude and longitude.  | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -105,7 +122,6 @@ An object containing a number separated by thousands.
 | `value`         | string  | A number separated by thousands | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -125,7 +141,6 @@ An object containing a percentage.
 | `value`         | number  | A percentage                         | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -145,7 +160,6 @@ An object containing a phone number.
 | `value`         | string  | A phone number                    | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -165,7 +179,6 @@ An object containing text.
 | `value`         | string  | Text                      | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 // Example 1
@@ -192,7 +205,6 @@ An object containing a temperature in Celsius.
 | `value`         | number  | A temperature in Celsius                      | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -212,7 +224,6 @@ An object containing a temperature in Fahrenheit.
 | `value`         | number  | A temperature in Fahrenheit                      | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 {
@@ -232,7 +243,6 @@ An object containing a URL.
 | `value`         | string  | A URL                        | Yes     |
 
 ### Object Example
-
 {% raw %}
 ```json
 // Example 1

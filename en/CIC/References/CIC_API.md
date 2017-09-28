@@ -22,7 +22,7 @@ Clients send [event messages](#Event) in the form of a multipart message over th
 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 
-For example, to send user's speech input to CIC, send a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message, with recorded speech data attached to it. Set `Content-Type` to `multipart/form-data`, fill in the first message block with JSON-format data containing an event message, and fill in the second message block with binary data containing user's speech audio.
+For example, to send user's speech input to CIC, send a [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event message, with recorded speech data attached to it. Set `Content-Type` to `multipart/form-data`, fill in the first message block with JSON-format data containing an event message, and fill in the second message block with binary data containing user's speech audio.
 
 Also, specify a message boundary term in `boundary` to separate messages. When adding a boundary term between message blocks, put two consecutive hyphens (-) on the left of the boundary term. At the end of the last message block, add a boundary term and put two consecutive hyphens (-) on both sides of the term. Make the boundary term invisible in the body of each message block.
 
@@ -69,8 +69,8 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 Usually, an HTTP response returns a [directive message](#Directive) with an [HTTP status code](https://tools.ietf.org/html/rfc7231#section-6) (200), which indicates success. It has a combination of the following messages.
-* A [`Synthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak) directive message that plays speech audio. It returns speech data additionally.
-* Along with a `Synthesizer.Speak` directive message, other directive messages containing additional information can be returned. For example, an [`AudioPlayer.Play`](/CIC/References/APIs/AudioPlayer.md#Play) directive message can be returned to provide streaming details.
+* [`Synthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak) is a directive message that plays speech audio. It returns speech data additionally.
+* Along with a `Synthesizer.Speak` directive message, other directive messages containing additional information can be returned. For example, a [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive message containing streaming information can be returned additionally.
 
 As explained above, when responses are returned from CIC to a client, they take the form of a multipart message, consisting of multiple directive messages and speech data. The structure is as follows.
 
@@ -147,13 +147,13 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
   * application/json; charset=UTF-8
 
 ### Response message
-CIC returns an HTTP response by sending a [Clova.Hello](/CIC/References/APIs/Clova.md#Hello) directive message to a client. It indicates that a downchannel has been established.
+CIC returns an HTTP response by sending a [Clova.Hello](/CIC/References/CICInterface/Clova.md#Hello) directive message to a client. It indicates that a downchannel has been established.
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK                    | A downchannel has been properly connected and established. Now CIC can send directive messages on its own (cloud-initiated).        |
+| 200 OK                    | A status code that is returned when downchannel has been properly connected and established. Now CIC can send directive messages on its own (cloud-initiated).        |
 | 400 Bad Request           | The user request was sent in a wrong format.                       |
 | 401 Unauthorized          | Failed to authenticate the user. Check if the access token is valid. |
 | 500 Internal Server Error | An internal server error occurred.                                                      |
@@ -287,7 +287,8 @@ Content-Type: application/octet-stream
 ### Response message header
 
 * Content-Disposition: Specify a message processing type.
-  * `form-data; name="[message processing type]-[UUID]"` format
+* Content-Id: Message identifier
+ * UUID format
   * Example of a directive message: form-data; name="speakDirective-836d8db7-5e72-4fb2-9834-7c59291e1f8e"
   * Example of binary audio data: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 * Content-Id: A message identifier
@@ -329,7 +330,7 @@ Content-Type: application/json; charset=utf-8
       "namespace":"SpeechSynthesizer",
       "name":"Speak",
       "messageId":"dd4d463e-85a3-4514-927e-c90103c2dd02",
-      "dialogRequestId":"dialog-id-here-1"
+      "dialogRequestId":"4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload":{
       "format":"AUDIO_MPEG",
@@ -359,7 +360,7 @@ Content-Type: application/json; charset=utf-8
       "namespace":"Clova",
       "name":"RenderText",
       "messageId":"0fa1b36f-e86c-4979-9494-b00a162c4515",
-      "dialogRequestId":"dialog-id-here-1"
+      "dialogRequestId":"4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload":{
       "text":"만나서 반가워요"
@@ -401,10 +402,9 @@ CIC APIs use following messages. Each message has a different format.
 * [Error message](#Error)
 
 ### Event message {#Event}
-Event messages are used when a client sends user's speech input or client information to CIC. One example of event messages is [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize), which requests CIC to receive user's speech input and recognize it.
+Event messages are used when a client sends user's speech input or client information to CIC. One example of event messages is [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize), which requests CIC to receive user's speech input and recognize it.
 
 #### Message structure
-
 {% raw %}
 ```json
 {
@@ -436,14 +436,13 @@ Event messages are used when a client sends user's speech input or client inform
 | `context`                      | object array | An array containing client states to send to CIC. You can include the following [context](/CIC/References/Context_Objects.md) objects in the array. Include them in event messages as necessary.<ul><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback details</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: Device details</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: Freetalk mode details</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: Device location details</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Pre-defined location details</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker details</li></ul> | Yes |
 | `event`                        | object       | An object containing the header and necessary data (payload) of the event message                                                                 | Yes |
 | `event.header`                 | object       | The header of the event message                                                                                                 | Yes |
-| `event.header.dialogRequestId` | string       | The dialog ID. It is used at a CIC side to figure out which dialog is associated with which response. You must enter a value in this field when sending [`SpeechRecognizer.Regcognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event messages. | No |
+| `event.header.dialogRequestId` | string       | The dialog ID. When clients are sending [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) and [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) event messages, they must create [dialog ID](/CIC/CIC_Overview.md#DialogIDandClientOP) and enter on this field.| No |
 | `event.header.messageId`       | string       | The message ID. This is an identifier for distinguishing individual messages.                                                                 | Yes |
 | `event.header.name`            | string       | The API name of the event message                                                                                             | Yes |
 | `event.header.namespace`       | string       | The API namespace of the event message                                                                                       | Yes |
 | `event.payload`                | object       | An object containing details of the event message. Configuration of the payload object and its field values can vary depending on which [CIC message interface](#CICInterface) is used. | Yes |
 
 #### Message example
-
 {% raw %}
 ```json
 {
@@ -482,7 +481,6 @@ Event messages are used when a client sends user's speech input or client inform
 Directive messages are used when CIC returns responses for event messages (client requests), or when CIC sends information to clients under certain conditions. Directive messages are usually returned to instruct clients to perform specific actions after recognizing intent of a user's speech.
 
 #### Message structure
-
 {% raw %}
 ```json
 {
@@ -506,14 +504,13 @@ Directive messages are used when CIC returns responses for event messages (clien
 |---------------|---------|-----------------------------|---------|
 | `directive`                        | object | An object containing the header and necessary data (`payload`) of the directive message                                                                 | Yes     |
 | `directive.header`                 | object | The header of the directive message                                                                                                 | Yes     |
-| `directive.header.dialogRequestId` | string | The dialog ID. It is used at a client side to figure out which dialog is associated with which response. A directive message may not include this field if the message is not a response to a [`SpeechRecognizer.Regcognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize) event message.  | No  |
+| `directive.header.dialogRequestId` | string | The dialog ID. It is used at a client side to figure out which dialog is associated with which response. A directive message may not be included in this field if the message is not a response to a [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event message.  | No  |
 | `directive.header.messageId`       | string | The message ID. This is an identifier for distinguishing individual messages.                                                                | Yes     |
 | `directive.header.name`            | string | The API name of the directive message                                                                                             | Yes     |
 | `directive.header.namespace`       | string | The API namespace of the directive message                                                                                       | Yes     |
 | `directive.payload`                | object | An object containing details of the directive message. Configuration of the `payload` object and its field values can vary depending on which [interface](#CICInterface) is used. | Yes     |
 
 #### Message example
-
 {% raw %}
 ```json
 {
@@ -544,7 +541,6 @@ Directive messages are used when CIC returns responses for event messages (clien
 If you send event messages using incorrect methods or wrong formats, or if internal server error occurs, Clova may not be able to provide its service properly. In such situations, CIC returns error messages to clients. Implement your client to check error messages and provide UX/UI accordingly.
 
 #### Message structure
-
 {% raw %}
 ```json
 {
@@ -588,7 +584,6 @@ If you send event messages using incorrect methods or wrong formats, or if inter
 </div>
 
 ### Message example
-
 {% raw %}
 ```json
 {
@@ -614,17 +609,17 @@ CIC messages are defined and categorized into namespaces by their functions and 
 
 Available namespaces are as follows. Click each link to find out more about the namespaces.
 
-* [Alerts](/CIC/References/APIs/Alerts.md)
-* [AudioPlayer](/CIC/References/APIs/AudioPlayer.md)
-* [Clova](/CIC/References/APIs/Clova.md)
-* [DeviceControl](/CIC/References/APIs/DeviceControl.md)
-* [Memo](/CIC/References/APIs/Memo.md)
-* [PlaybackController](/CIC/References/APIs/PlaybackController.md)
-* [Reminder](/CIC/References/APIs/Reminder.md)
-* [SpeechRecognizer](/CIC/References/APIs/SpeechRecognizer.md)
-* [SpeechSynthesizer](/CIC/References/APIs/SpeechSynthesizer.md)
-* [TextRecognizer](/CIC/References/APIs/TextRecognizer.md)
+* [Alerts](/CIC/References/CICInterface/Alerts.md)
+* [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)
+* [Clova](/CIC/References/CICInterface/Clova.md)
+* [DeviceControl](/CIC/References/CICInterface/DeviceControl.md)
+* [Memo](/CIC/References/CICInterface/Memo.md)
+* [PlaybackController](/CIC/References/CICInterface/PlaybackController.md)
+* [Reminder](/CIC/References/CICInterface/Reminder.md)
+* [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
+* [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md)
+* [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
 
 See the following indexes for a full list of interfaces grouped into event and directive messages.
-* [Event messages index](/CIC/References/APIs/Index_for_Events.md)
-* [Directive messages index](/CIC/References/APIs/Index_for_Directives.md)
+* [Event messages index](/CIC/References/CICInterface/Index_for_Events.md)
+* [Directive messages index](/CIC/References/CICInterface/Index_for_Directives.md)

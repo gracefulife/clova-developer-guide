@@ -1,10 +1,11 @@
 ## HTTP message {#HTTPMessage}
-CEK and your extension communicates over the HTTP/1.1 protocol, sending HTTP requests and responses back and forth. When CEK and your extension communicates with each other, a JSON format message is included in the HTTP message body. The following explains how an HTTP message is constructed when CEK and your extension exchange messages.
+CEK and your extension communicates over the HTTP/1.1 protocol, sending HTTPS requests and responses back and forth. When CEK and your extension communicates with each other, a JSON format message is included in the HTTP message body. The following explains how an HTTP message is constructed when CEK and your extension exchange messages.
 
 ### HTTP header {#HTTPHeader}
 When CEK sends analysis details of user's speech input to your extension, it uses an HTTPS request. The header of an HTTPS request is constructed as follows.
 
 {% raw %}
+
 ```
 POST /APIpath HTTP/1.1
 Host: your.extension.endpoint
@@ -12,6 +13,7 @@ Content-Type: application/json;charset-UTF-8
 Accept:  application/json
 Accept-Charset : utf-8
 ```
+
 {% endraw %}
 
 * Uses HTTPS connection (HTTP/1.1 version) and POST method.
@@ -22,10 +24,12 @@ Accept-Charset : utf-8
 Conversely, when your extension returns processing results back to CEK, it uses an HTTPS response. The header of an HTTPS response consists of basic entries as follows.
 
 {% raw %}
+
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json;charset-UTF-8
 ```
+
 {% endraw %}
 
 * Returns processing results in response to HTTPS requests sent from CEK.

@@ -41,7 +41,7 @@ Due to the indirect nature of the dialog structure, dialogs between users and Cl
 * It takes more time than a direct dialog to send requests or receive responses.
 * It is difficult to respond promptly when users attempt to open a dialog with a new topic (request).
 
-For example, a user asks Clova, "How's the weather today?". Before Clova responds or while Clova is preparing to respond, the user makes another request by saying, "Play some upbeat music." In this case, the user probably does not want to get weather information anymore. If it were a direct dialog, you would easily stop or cancel responding. However, since dialogs need to be relayed by your client, you must make your client recognize the situation and perform appropriate actions.
+For example, a user asks Clova, "How's the weather today?". Before Clova responds or during Clova is responding, the user makes another request by saying, "Play some upbeat music." In this case, the user probably does not want to get weather information anymore. If it were a direct dialog, you would easily stop or cancel responding. However, since dialogs need to be relayed by your client, you must make your client recognize the situation and perform appropriate actions.
 
 ### Dialog ID and client behavior {#DialogIDandClientOP}
 
@@ -50,7 +50,7 @@ To solve the issue of indirect dialog structure, we use a **dialog ID**. To iden
 When CIC returns a directive message to your client to respond to the user request, the message includes a dialog ID which is the same as the one it has received with the user request. In short, dialog IDs help you confirm that results returned from CIC correspond to their original user requests. Implement your client to perform the following actions.
 
 1. Create a **new dialog ID** every time a user starts new speech input.
-2. Send the user request to CIC, using a [SpeechRecognizer.Recognize](/CIC/References/APIs/SpeechRecognizer.md) event message.
+2. Send the user request to CIC, using a [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md) event message.
   * At this point, the client must replace its **last existing dialog ID** with the newly created dialog ID.
   * When replacing the last existing dialog ID, the client must discard all directive messages associated to the dialog ID, whether they are being processed or waiting to be processed.
 3. When CIC returns a directive message with processing results, compare the dialog ID of the directive message with the last existing dialog ID kept at the client side.

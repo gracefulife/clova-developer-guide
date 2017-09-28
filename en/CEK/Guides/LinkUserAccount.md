@@ -91,6 +91,7 @@ The login page for user authentication must meet the following requirements.
 This is an example URL when a client app or app paired with a client device requests a login page.
 
 {% raw %}
+
 ```
 https://yourdomain.com/login?state=qwer123
                             &client_id=clova-extension
@@ -98,6 +99,7 @@ https://yourdomain.com/login?state=qwer123
                             &response_type=code
                             &redirect_uri=ToBeDetermined
 ```
+
 {% endraw %}
 
 
@@ -122,6 +124,7 @@ Pass the following parameters to the URL (`redirect_uri`) to be redirected to af
 This is an example URL to be redirected to after user authentication is complete.
 
 {% raw %}
+
 ```
 // Example 1: Authorization code grant
 https://ToBeDetermined/?vendorId=YourServiceOrCompanyID
@@ -134,6 +137,7 @@ https://ToBeDetermined/?vendorId=YourServiceOrCompanyID
                                 &access_token=sdfljnFZFEjr1zCsicM
                                 &token_type=Bearer
 ```
+
 {% endraw %}
 
 
@@ -154,6 +158,7 @@ Verify that the access token is present in the field and that it is valid.
 * Clova Home extension: `payload.accessToken`
 
 {% raw %}
+
 ```json
 // Example 1: Custom extension message
 {
@@ -205,6 +210,7 @@ Verify that the access token is present in the field and that it is valid.
   }
 }
 ```
+
 {% endraw %}
 
 <div class="note">

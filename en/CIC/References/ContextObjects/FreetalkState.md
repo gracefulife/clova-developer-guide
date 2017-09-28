@@ -2,7 +2,6 @@
 FreetalkState is a message format that shows the state of the Clova Freetalk service at a client side.
 
 ### Message structure
-
 {% raw %}
 ```json
 {
@@ -29,7 +28,6 @@ FreetalkState is a message format that shows the state of the Clova Freetalk ser
 The Freetalk mode is available only in English at the moment. If the `foreground` field is set to true, set the lang field in the Recognize event message of the SpeechRecognizer API to "en".
 
 ### Message example
-
 {% raw %}
 ```json
 {
@@ -46,4 +44,4 @@ The Freetalk mode is available only in English at the moment. If the `foreground
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#Recognize)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

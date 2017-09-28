@@ -2,7 +2,6 @@
 A message format that contains client's speaker volume information at the time when the user has spoken, such as how high/low its volume is or whether the speaker is in mute.
 
 ### Message structure
-
 {% raw %}
 ```json
 {
@@ -26,7 +25,6 @@ A message format that contains client's speaker volume information at the time w
 | `volume`        | number  | Current speaker volume (0-10)     | Yes     |
 
 ### Message example
-
 {% raw %}
 ```json
 {
@@ -43,4 +41,4 @@ A message format that contains client's speaker volume information at the time w
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/APIs/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)
