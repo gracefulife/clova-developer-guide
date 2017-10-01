@@ -33,7 +33,7 @@
 | `summary.start.lon`                    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 경도 정보가 담긴 객체 |
 | `summary.start.name`                   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 이름 정보가 담긴 객체 |
 | `summary.time`                         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 예상 이동 시간 정보가 담긴 객체. 단위는 분입니다. |
-| `type`                                 | string | Content template 구분자. `"CarRoute"`로 고정 |
+| `type`                                 | string | Content template 구분자. `"CarRoute"` 값을 가집니다. |
 
 ## Template Example
 

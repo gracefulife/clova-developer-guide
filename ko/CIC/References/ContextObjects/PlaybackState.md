@@ -1,5 +1,5 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 가지는 메시지 포맷입니다.
+PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디어 정보를 CIC에게 보고할때 사용하는 메시지 포맷입니다.
 
 ### Message structure
 {% raw %}
@@ -30,8 +30,9 @@ PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디�
 | `totalInMilliseconds`  | number | 최근 재생 미디어의 전체 길이. [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) 지시 메시지를 통해 전달받은 오디오 정보([AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject))에 `durationInMilliseconds` 필드 값이 있는 경우 이 필드의 값으로 입력하면 됩니다. 단위는 밀리초이며, `playerActivity` 값이 `"IDLE"`이면 이 필드 값은 입력하지 않아도 됩니다.                                                               | 선택 |
 
 ### Message example
-#### 예제 1: 재생이 중지된 상태
+
 {% raw %}
+
 ```json
 // Case 1: 재생이 중지된 상태
 {
@@ -56,12 +57,8 @@ PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디�
     }
   }
 }
-```
-{% endraw %}
 
-#### 예제 2: 플레이어가 비활성화된 상태
-{% raw %}
-```json
+// 예제 2: 플레이어가 비활성화된 상태
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -72,6 +69,7 @@ PlaybackState는 현재 재생하고 있거나 마지막으로 재생한 미디�
   }
 }
 ```
+
 {% endraw %}
 
 ### See also
