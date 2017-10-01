@@ -287,9 +287,6 @@ Content-Type: application/octet-stream
 ### Response message header
 
 * Content-Disposition : 메시지 처리 유형 명시.
-  * `form-data; name="[메시지 처리 유형]-[UUID]"` 형태
-  * 지시 메시지 예 : form-data; name="speakDirective-836d8db7-5e72-4fb2-9834-7c59291e1f8e"
-  * 바이너리 음성 데이터 예 : form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 * Content-Id : 메시지 식별자
   * UUID 형태
   * 클라이언트는 지시 메시지의 `payload` 필드에 포함된 `cid:[UUID]` 값으로 처리해야 할 메시지를 식별할 수 있습니다.
@@ -610,12 +607,11 @@ CIC 메시지는 기능과 용도에 따라 각각의 인터페이스로 정의�
 * [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)
 * [Clova](/CIC/References/CICInterface/Clova.md)
 * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md)
-* [Memo](/CIC/References/CICInterface/Memo.md)
 * [Notifier](/CIC/References/CICInterface/Notifier.md)
 * [PlaybackController](/CIC/References/CICInterface/PlaybackController.md)
-* [Reminder](/CIC/References/CICInterface/Reminder.md)
 * [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
 * [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md)
+* [System](/CIC/References/CICInterface/System.md)
 * [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
 
 이벤트 메시지와 지시 메시지를 기준으로 나눈 인터페이스 목록을 보려면 다음 색인을 참조합니다.

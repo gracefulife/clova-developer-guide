@@ -22,7 +22,7 @@
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |
 | `nowTemperature`            | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 현재 온도 정보가 담긴 객체 |
 | `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 날씨 정보가 담긴 객체  |
-| `type`                      | string | Content template 구분자. `"TodayWeather"`로 고정 |
+| `type`                      | string | Content template 구분자. `"TodayWeather"` 값을 가집니다. |
 
 {% include "./Shared_Weather_Code.md" %}
 

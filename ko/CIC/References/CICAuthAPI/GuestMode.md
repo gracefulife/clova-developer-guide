@@ -8,7 +8,7 @@
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>`request_vu`의 기본 값은 `N`이며, {{ book.TargetServiceForClientAuth }} 계정을 인증하여 쓰는 것이 기본 방침입니다.</p>
+  <p><code>request_vu</code>의 기본 값은 <code>N</code>이며, {{ book.TargetServiceForClientAuth }} 계정을 인증하여 쓰는 것이 기본 방침입니다.</p>
 </div>
 
 위 내용을 수행하면 guest 모드 용 authorization code를 받게 됩니다. 이를 이용하여 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)에서 설명하고 있는 나머지 절차를 수행하면 guest용 Clova access token을 획득할 수 있습니다.

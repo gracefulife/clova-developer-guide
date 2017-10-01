@@ -23,7 +23,7 @@
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |
 | `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오전의 최저 기온 정보가 담긴 객체 |
 | `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 낮을 때의 날씨 정보가 담긴 객체  |
-| `type`                      | string | Content template 구분자. `"TomorrowWeather"`로 고정 |
+| `type`                      | string | Content template 구분자. `"TomorrowWeather"` 값을 가집니다. |
 
 {% include "./Shared_Weather_Code.md" %}
 

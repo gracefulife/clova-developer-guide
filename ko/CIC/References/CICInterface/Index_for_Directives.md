@@ -2,26 +2,14 @@
 
 | 네임스페이스          | 메시지 이름       | 설명                                             |
 |--------------------|----------------|-------------------------------------------------|
-| Alerts             | [`DeleteAlert`](/CIC/References/CICInterface/Alerts.md#DeleteAlert)             | 클라이언트에게 알람 혹은 타이머 삭제를 지시합니다.                                                  |
-| Alerts             | [`GetAlert`](/CIC/References/CICInterface/Alerts.md#GetAlert)                   | 클라이언트에게 알람 혹은 타이머 조회를 지시합니다.                                                  |
-| Alerts             | [`SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert)                   | 클라이언트에게 알람 혹은 타이머 설정을 지시합니다.                                                  |
+| Alerts             | [`DeleteAlert`](/CIC/References/CICInterface/Alerts.md#DeleteAlert)             | 클라이언트에게 특정 알람을 삭제하도록 지시합니다. |
+| Alerts             | [`SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert)                   | 클라이언트에게 알람을 새로 추가하거나 특정 알람을 수정하도록 지시합니다. |
+| Alerts             | [`StopAlert`](/CIC/References/CICInterface/Alerts.md#StopAlert)                 | 클라이언트에게 특정 알람을 중지하도록 지시합니다.  |
 | AudioPlayer        | [`Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)                      | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                          |
 | AudioPlayer        | [`StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)    | [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
-| Clova              | [`AddMemo`](/CIC/References/CICInterface/Clova.md#AddMemo)                      | 클라이언트에게 새로운 메모를 추가하도록 지시합니다.                                                  |
-| Clova              | [`AddReminder`](/CIC/References/CICInterface/Clova.md#AddReminder)              | 클라이언트에게 새로운 리마인더를 추가하도록 지시합니다.                                               |
-| Clova              | [`AddSchedule`](/CIC/References/CICInterface/Clova.md#AddSchedule)              | 클라이언트에게 새로운 일정을 추가하도록 지시합니다.                                                  |
-| Clova              | [`CountSchedule`](/CIC/References/CICInterface/Clova.md#CountSchedule)          | 클라이언트에게 지정한 기간 사이에 있는 일정 개수를 확인하도록 지시합니다.                                 |
-| Clova              | [`DeleteMemo`](/CIC/References/CICInterface/Clova.md#DeleteMemo)                | 클라이언트에게 메모를 삭제하도록 지시합니다.                                                       |
-| Clova              | [`DeleteReminder`](/CIC/References/CICInterface/Clova.md#DeleteReminder)        | 클라이언트에게 리마인더를 삭제하도록 지시합니다.                                                    |
-| Clova              | [`DeleteSchedule`](/CIC/References/CICInterface/Clova.md#DeleteSchedule)        | 클라이언트에게 일정을 삭제하도록 지시합니다.                                                       |
 | Clova              | [`FinishExtension`](/CIC/References/CICInterface/Clova.md#FinishExtension)      | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.                                             |
-| Clova              | [`GetMemo`](/CIC/References/CICInterface/Clova.md#GetMemo)                      | 클라이언트에게 메모를 조회하도록 지시합니다.                                                       |
-| Clova              | [`GetReminder`](/CIC/References/CICInterface/Clova.md#GetReminder)              | 클라이언트에게 리마인더를 조회하도록 지시합니다.                                                    |
-| Clova              | [`GetSchedule`](/CIC/References/CICInterface/Clova.md#GetSchedule)              | 클라이언트에게 일정을 조회하도록 지시합니다.                                                       |
 | Clova              | [`Hello`](/CIC/References/CICInterface/Clova.md#Hello)                          | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.                                       |
 | Clova              | [`Help`](/CIC/References/CICInterface/Clova.md#Help)                            | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.                                       |
-| Clova              | [`RenderMemoList`](/CIC/References/CICInterface/Clova.md#RenderMemoList)        | 클라이언트에게 메모 목록을 표시하도록 지시합니다.                                                   |
-| Clova              | [`RenderReminderList`](/CIC/References/CICInterface/Clova.md#RenderReminderList) | 클라이언트에게 리마인더 목록을 표시하도록 지시합니다.                                               |
 | Clova              | [`RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate)        | 클라이언트에게 템플릿을 표시하도록 지시합니다.                                                     |
 | Clova              | [`RenderText`](/CIC/References/CICInterface/Clova.md#RenderText)                | 클라이언트에게 텍스트를 표시하도록 지시합니다.                                                     |
 | Clova              | [`StartExtension`](/CIC/References/CICInterface/Clova.md#StartExtension)        | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.                                             |
@@ -55,3 +43,4 @@
 | SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
 | SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
 | SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다.                                   |
+| System             | [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다. |
