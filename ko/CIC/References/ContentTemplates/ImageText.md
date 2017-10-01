@@ -18,12 +18,13 @@
 | `referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                  |
 | `subTextList`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 보조 문구가 담긴 배열. 이 객체 배열 요소의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                               |
 | `thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 썸네일 이미지의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                           |
-| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li><code>"인물"</code></li><li><code>"책"</code></li><li><code>"앨범"</code></li></ul> | 선택 |
-| `type`           | string  | Content template 구분자. `"ImageText"`로 고정      |
+| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 썸네일 이미지의 유형 정보가 담긴 객체이며, 다음과 같은 값을 가집니다. <ul><li><code>"인물"</code></li><li><code>"책"</code></li><li><code>"앨범"</code></li></ul> |
+| `type`           | string  | Content template 구분자. `"ImageText"` 값을 가집니다.      |
 
 ## Template Example
 
 {% raw %}
+
 ```json
 // 예제 1.
 // 사용자 요청: 리오넬 메시의 소속팀은? (썸네일 이미지와 텍스트 표시)
@@ -64,14 +65,27 @@
 // 예제 2.
 // 사용자 요청: 현재 위치 알려줘 (지도 이미지와 텍스트 표시)
 {
-  "type": "ImageText",
+  "appLinkUrl": {
+    "type": "url",
+    "value": "nmap://map?lat=37.3594589&lng=127.1047745&level=13&mode=1&traffic=false&bicycle=false&cadastral=false&appname=com.naver.clova"
+  },
   "imageUrl": {
     "type": "url",
     "value": "https://simg.pstatic.net/static.map/image?caller=mw_search&crs=EPSG:4326&scale=2&format=jpg&dataversion=163.2&version=1.1&baselayer=default&center=127.1047745,37.3594589&markers=type,default2_s,127.1047745,37.3594589&level=10&h=402&w=515"
   },
+  "linkUrl": {
+    "type": "url",
+    "value": "https://m.map.naver.com/map.nhn?lat=37.3594589&lng=127.1047745&dlevel=&mapMode=&pinTitle=&boundary=&traffic="
+  },
   "mainText": {
     "type": "string",
     "value": "경기도 성남시 분당구 정자1동"
+  },
+  "meta": {
+    "version": {
+      "type": "string",
+      "value": "v0.1"
+    }
   },
   "referenceText": {
     "type": "string",
@@ -94,9 +108,11 @@
   "thumbImageUrl": {
     "type": "url",
     "value": ""
-  }
+  },
+  "type": "ImageText"
 }
 ```
+
 {% endraw %}
 
 ## Screen UI example {#UIExample}

@@ -50,7 +50,7 @@
 | `totalDistance`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 전체 이동 거리 정보가 담긴 객체. 단위는 미터(m)입니다. |
 | `totalStationCount`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 버스 및 지하철로 이동할 때 지나야하는 총 버스 정류장과 지하철역 수의 합 정보가 담긴 객체 |
 | `totalTime`                 | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 전체 예상 이동 시간 정보가 담긴 객체. 단위는 분입니다. |
-| `type`                      | string | Content template 구분자. `"TransportationRoute"`로 고정 |
+| `type`                      | string | Content template 구분자. `"TransportationRoute"` 값을 가집니다. |
 
 
 ## 지하철 노선 코드 및 버스 타입 코드 {#CodeReference}

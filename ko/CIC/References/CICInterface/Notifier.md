@@ -8,7 +8,7 @@ Notifier는 CIC가 클라이언트기기에 알림이 있음을 표시하도록 
 | [`SetIndicator`](#SetIndicator)             | Directive | 클라이언트에게 확인하지 않은 알림이 있음을 나타내는 표시를 켜도록 지시합니다. |
 
 ## ClearIndicator directive {#ClearIndicator}
-클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. 알림을 표시하는 조명이나 소리 효과를 모두 꺼야 합니다. `Notifier.ClearIndicator` 지시 메시지는 다음과 같은 상황에 전달됩니다.
+클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. 알림을 표시하는 조명이나 소리 효과를 모두 꺼야 합니다.
 
 ### Payload field
 없음
@@ -20,7 +20,7 @@ Notifier는 CIC가 클라이언트기기에 알림이 있음을 표시하도록 
 
 {% raw %}
 
-```
+```json
 {
   "directive": {
     "header": {
@@ -39,7 +39,7 @@ Notifier는 CIC가 클라이언트기기에 알림이 있음을 표시하도록 
 * [`Notifier.SetIndicator`](#SetIndicator)
 
 ## SetIndicator directive {#SetIndicator}
-클라이언트에게 알림 표시를 켜도록 지시합니다. `Notifier.SetIndicator` 지시 메시지는 다음과 같은 상황에 전달됩니다.
+클라이언트에게 알림 표시를 켜도록 지시합니다.
 
 ### Payload field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -54,7 +54,7 @@ Notifier는 CIC가 클라이언트기기에 알림이 있음을 표시하도록 
 
 {% raw %}
 
-```
+```json
 {
   "directive": {
     "header": {

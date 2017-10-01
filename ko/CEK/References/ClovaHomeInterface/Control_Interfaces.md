@@ -17,19 +17,19 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                 | Response | [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
 | [`DecrementVolumeRequest`](#DecrementVolumeRequest)                           | Response | 대상 기기가 지정한 값만큼 볼륨 크기를 낮추도록 Clova home extension에게 요청합니다. |
 | [`GetAirQualityRequest`](#GetAirQualityRequest)                               | Request  | 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. |
-| [`GetAirQualityResponse`](#GetAirQualityResponse)                             | Response | [GetAirQualityRequest](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다. |
+| [`GetAirQualityResponse`](#GetAirQualityResponse)                             | Response | [`GetAirQualityRequest`](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다. |
 | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request  | 대상 기기의 배터리 정보를 Clova Home extension에게 전달합니다. |
-| [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | [GetBatteryInfoRequest](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다. |
+| [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다. |
 | [`GetFineDustRequest`](#GetFineDustRequest)                                   | Request  | 대상 기기가 측정한 미세 먼지(PM10) 정보를 Clova Home extension에게 요청합니다. |
-| [`GetFineDustResponse`](#GetFineDustResponse)                                 | Response | [GetFineDustRequest](#GetFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 미세 먼지(PM10) 정보를 CEK에게 전달합니다. |
+| [`GetFineDustResponse`](#GetFineDustResponse)                                 | Response | [`GetFineDustRequest`](#GetFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 미세 먼지(PM10) 정보를 CEK에게 전달합니다. |
 | [`GetHumidityRequest`](#GetHumidityRequest)                                   | Request  | 대상 기기가 측정한 습도 정보를 Clova Home extension에게 요청합니다. |
-| [`GetHumidityResponse`](#GetHumidityResponse)                                 | Response | [GetHumidityRequest](#GetHumidityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 습도 정보를 CEK에게 전달합니다. |
+| [`GetHumidityResponse`](#GetHumidityResponse)                                 | Response | [`GetHumidityRequest`](#GetHumidityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 습도 정보를 CEK에게 전달합니다. |
 | [`GetLockStateRequest`](#GetLockStateRequest)                                 | Request  | 대상 기기의 현재 잠금 상태 정보를 Clova Home extension에게 요청합니다.   |
-| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | [`GetLockStateRequest`](GetLockStateRequest) 메시지에 대한 응답으로 대상 기기의 현재 잠금 상태를 CEK에게 전달합니다. |
+| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | [`GetLockStateRequest`](#GetLockStateRequest) 메시지에 대한 응답으로 대상 기기의 현재 잠금 상태를 CEK에게 전달합니다. |
 | [`GetTargetTemperatureRequest`](#GetTargetTemperatureRequest)                 | Request  | 대상 기기가 설정한 희망 온도 정보를 Clova Home extension에게 요청합니다. |
 | [`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse)               | Response | [GetTargetTemperatureRequest](#GetTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 설정한 희망 온도 정보를 CEK에게 전달합니다. |
 | [`GetUltraFineDustRequest`](#GetUltraFineDustRequest)                         | Request  | 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 Clova Home extension에게 요청합니다. |
-| [`GetUltraFineDustResponse`](#GetUltraFineDustResponse)                       | Response | [GetUltraFineDustRequest](#GetUltraFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 CEK에게 전달합니다. |
+| [`GetUltraFineDustResponse`](#GetUltraFineDustResponse)                       | Response | [`GetUltraFineDustRequest`](#GetUltraFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 CEK에게 전달합니다. |
 | [`HealthCheckRequest`](#HealthCheckRequest)                                   | Request  | 지정한 기기의 상태를 파악할 때 사용되며, 대상 기기의 상태 정보를 Clova Home extension에게 요청합니다. |
 | [`HealthCheckResponse`](#HealthCheckResponse)                                 | Response | [`HealthCheckRequest`](#HealthCheckRequest) 메시지에 대한 응답으로 지정한 기기의 상태 정보를 CEK에게 전달합니다. |
 | [`IncrementBrightnessConfirmation`](#IncrementBrightnessConfirmation)         | Response | [`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 설정한 결과를 CEK에게 전달합니다. |
@@ -42,7 +42,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)     | Request  | 대상 기기가 지정한 값만큼 온도를 높이도록 Clova Home extension에게 요청합니다.     |
 | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)                 | Response | [`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 설정한 결과를 CEK에게 전달합니다. |
 | [`IncrementVolumeRequest`](#IncrementVolumeRequest)                           | Response | 대상 기기가 지정한 값만큼 볼륨 크기를 높이도록 Clova Home extension에게 요청합니다. |
-| [`MuteConfirmation`](#MuteConfirmation)                                       | Response | [MuteRequest](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다. |
+| [`MuteConfirmation`](#MuteConfirmation)                                       | Response | [`MuteRequest`](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다. |
 | [`MuteRequest`](#MuteRequest)                                                 | Request  | 대상 기기의 소리를 끄도록(음소거) Clova Home extension에게 요청합니다. |
 | [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
 | [`SetBrightnessRequest`](#SetBrightnessRequest)                               | Request  | 대상 기기가 조명 밝기를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. |
@@ -62,7 +62,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`TurnOffRequest`](#TurnOffRequest)                                           | Request  | 대상 기기를 끄도록 Clova Home extension에게 요청합니다.                        |
 | [`TurnOnConfirmation`](#TurnOnConfirmation)                                   | Response | [`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 설정한 결과를 CEK에게 전달합니다. |
 | [`TurnOnRequest`](#TurnOnRequest)                                             | Request  | 대상 기기를 켜도록 Clova Home extension에게 요청합니다.                        |
-| [`UnmuteConfirmation`](#UnmuteConfirmation)                                   | Response | [UnmuteRequest](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다. |
+| [`UnmuteConfirmation`](#UnmuteConfirmation)                                   | Response | [`UnmuteRequest`](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다. |
 | [`UnmuteRequest`](#UnmuteRequest)                                             | Request  | 대상 기기의 소리를 켜도록(음소거 해제) Clova Home extension에게 요청합니다. |
 
 ## ChargeConfirmation {#ChargeConfirmation}
@@ -535,7 +535,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)
 
 ## GetAirQualityRequest {#GetAirQualityRequest}
-주로 공기청정기와 같은 기기에서 측정된 공기질 정보를 확인할 때 사용되며, 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetAirQualityResponse](#GetAirQualityResponse) 메시지를 사용해야 합니다.
+주로 공기청정기와 같은 기기에서 측정된 공기질 정보를 확인할 때 사용되며, 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetAirQualityResponse`](#GetAirQualityResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -566,10 +566,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetAirQualityResponse](#GetAirQualityResponse)
+* [`GetAirQualityResponse`](#GetAirQualityResponse)
 
 ## GetAirQualityResponse {#GetAirQualityResponse}
-[GetAirQualityRequest](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다.
+[`GetAirQualityRequest`](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -599,10 +599,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetAirQualityRequest](#GetAirQualityRequest)
+* [`GetAirQualityRequest`](#GetAirQualityRequest)
 
 ## GetBatteryInfoRequest {#GetBatteryInfoRequest}
-주로 로봇청소기와 같이 무선 동작하는 기기의 내장 배터리 정보를 확인할 때 사용되며, 대상 기기의 현재 배터리 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetBatteryInfoResponse](#GetBatteryInfoResponse) 메시지를 사용해야 합니다.
+주로 로봇청소기와 같이 무선 동작하는 기기의 내장 배터리 정보를 확인할 때 사용되며, 대상 기기의 현재 배터리 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetBatteryInfoResponse`](#GetBatteryInfoResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -633,14 +633,14 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetBatteryInfoResponse](#GetBatteryInfoResponse)
+* [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)
 
 ## GetBatteryInfoResponse {#GetBatteryInfoResponse}
-[GetBatteryInfoRequest](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다.
+[`GetBatteryInfoRequest`](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryObject) | 현재 기기의 배터리 정보를 담고 있는 객체.   | 필수    |
+| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | 현재 기기의 배터리 정보를 담고 있는 객체.   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
 
 ### Message example
@@ -666,10 +666,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetBatteryInfoRequest](#GetBatteryInfoRequest)
+* [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)
 
 ## GetFineDustRequest {#GetFineDustRequest}
-주로 공기청정기와 같은 기기에서 측정된 미세 먼지(PM10) 정보를 확인할 때 사용되며, 대상 기기가 측정한 미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetFineDustResponse](#GetFineDustResponse) 메시지를 사용해야 합니다.
+주로 공기청정기와 같은 기기에서 측정된 미세 먼지(PM10) 정보를 확인할 때 사용되며, 대상 기기가 측정한 미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetFineDustResponse`](#GetFineDustResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -700,10 +700,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetFineDustResponse](#GetFineDustResponse)
+* [`GetFineDustResponse`](#GetFineDustResponse)
 
 ## GetFineDustResponse {#GetFineDustResponse}
-[GetFineDustRequest](#GetFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 미세 먼지(PM10) 정보를 CEK에게 전달합니다.
+[`GetFineDustRequest`](#GetFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 미세 먼지(PM10) 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -733,10 +733,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetFineDustRequest](#GetFineDustRequest)
+* [`GetFineDustRequest`](#GetFineDustRequest)
 
 ## GetHumidityRequest {#GetHumidityRequest}
-주로 가습기와 같은 기기에서 측정된 습도 정보를 확인할 때 사용되며, 대상 기기가 측정한 습도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetHumidityResponse](#GetHumidityResponse) 메시지를 사용해야 합니다.
+주로 가습기와 같은 기기에서 측정된 습도 정보를 확인할 때 사용되며, 대상 기기가 측정한 습도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetHumidityResponse`](#GetHumidityResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -767,10 +767,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetHumidityResponse](#GetHumidityResponse)
+* [`GetHumidityResponse`](#GetHumidityResponse)
 
 ## GetHumidityResponse {#GetHumidityResponse}
-[GetHumidityRequest](#GetHumidityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 습도 정보를 CEK에게 전달합니다.
+[`GetHumidityRequest`](#GetHumidityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 습도 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -803,7 +803,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [GetHumidityRequest](#GetHumidityRequest)
 
 ## GetLockStateRequest {#GetLockStateRequest}
-주로 스마트 밸브와 같은 기기의 상태를 확인할 때 사용되며, 대상 기기의 현재 잠금 상태 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetLockStateResponse](#GetLockStateResponse) 메시지를 사용해야 합니다.
+주로 스마트 밸브와 같은 기기의 상태를 확인할 때 사용되며, 대상 기기의 현재 잠금 상태 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetLockStateResponse`](#GetLockStateResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -834,10 +834,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetLockStateResponse](#GetLockStateResponse)
+* [`GetLockStateResponse`](#GetLockStateResponse)
 
 ## GetLockStateResponse {#GetLockStateResponse}
-[GetLockStateRequest](#GetLockStateRequest) 메시지에 대한 응답으로 대상 기기의 현재 잠금 상태를 CEK에게 전달합니다.
+[`GetLockStateRequest`](#GetLockStateRequest) 메시지에 대한 응답으로 대상 기기의 현재 잠금 상태를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -865,10 +865,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetLockStateRequest](#GetLockStateRequest)
+* [`GetLockStateRequest`](#GetLockStateRequest)
 
 ## GetTargetTemperatureRequest {#GetTargetTemperatureRequest}
-주로 에어컨이나 온도 조절 장치와 같은 기기에서 설정된 희망 온도를 확인할 때 사용되며, 대상 기기가 설정한 희망 온도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetTargetTemperatureResponse](#GetTargetTemperatureResponse) 메시지를 사용해야 합니다.
+주로 에어컨이나 온도 조절 장치와 같은 기기에서 설정된 희망 온도를 확인할 때 사용되며, 대상 기기가 설정한 희망 온도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -899,10 +899,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetTargetTemperatureResponse](#GetTargetTemperatureResponse)
+* [`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse)
 
 ## GetTargetTemperatureResponse {#GetTargetTemperatureResponse}
-[GetTargetTemperatureRequest](#GetTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 설정한 희망 온도 정보를 CEK에게 전달합니다.
+[`GetTargetTemperatureRequest`](#GetTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 설정한 희망 온도 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -932,10 +932,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetTargetTemperatureRequest](#GetTargetTemperatureRequest)
+* [`GetTargetTemperatureRequest`](#GetTargetTemperatureRequest)
 
 ## GetUltraFineDustRequest {#GetUltraFineDustRequest}
-주로 공기청정기와 같은 기기에서 측정된 초미세 먼지(PM2.5) 정보를 확인할 때 사용되며, 대상 기기가 측정한 초미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [GetUltraFineDustResponse](#GetUltraFineDustResponse) 메시지를 사용해야 합니다.
+주로 공기청정기와 같은 기기에서 측정된 초미세 먼지(PM2.5) 정보를 확인할 때 사용되며, 대상 기기가 측정한 초미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetUltraFineDustResponse`](#GetUltraFineDustResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -966,10 +966,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetUltraFineDustResponse](#GetUltraFineDustResponse)
+* [`GetUltraFineDustResponse`](#GetUltraFineDustResponse)
 
 ## GetUltraFineDustResponse {#GetUltraFineDustResponse}
-[GetUltraFineDustRequest](#GetUltraFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 CEK에게 전달합니다.
+[`GetUltraFineDustRequest`](#GetUltraFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -999,7 +999,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [GetUltraFineDustRequest](#GetUltraFineDustRequest)
+* [`GetUltraFineDustRequest`](#GetUltraFineDustRequest)
 
 ## HealthCheckRequest {#HealthCheckRequest}
 지정한 기기의 상태를 파악할 때 사용되며, 대상 기기의 상태 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`HealthCheckResponse`](#HealthCheckResponse) 메시지를 사용해야 합니다.
@@ -1477,7 +1477,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)
 
 ## MuteConfirmation {#MuteConfirmation}
-[MuteRequest](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다.
+[`MuteRequest`](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다.
 
 ### Payload field
 없음
@@ -2056,7 +2056,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetTargetTemperatureConfirmation`](#SetTargetTemperatureConfirmation)
 
 ## TurnOffConfirmation {#TurnOffConfirmation}
-[TurnOffRequest](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다.
+[`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다.
 
 ### Payload field
 없음
@@ -2182,7 +2182,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`TurnOnConfirmation`](#TurnOnConfirmation)
 
 ## UnmuteConfirmation {#UnmuteConfirmation}
-[UnmuteRequest](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다.
+[`UnmuteRequest`](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다.
 
 ### Payload field
 없음

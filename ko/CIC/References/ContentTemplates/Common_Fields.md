@@ -34,9 +34,9 @@
 {% endraw %}
 
 ## Action URL scheme {#ActionURLScheme}
-공통 필드 중 `actionList` 필드의 동작 정의를 위해 다음과 같은 action URL scheme를 정의하고 있습니다.
+공통 필드 중 `actionList` 필드에 다음과 같은 action URL scheme를 사용하여 동작을 정의하고 있습니다.
 
-| Action URL scheme           | 설명                                                              |
+| Action URL scheme           | 클라이언트가 수행할 동작                                               |
 |-----------------------------|------------------------------------------------------------------|
 | [clova://app-launch/default-addressbook](#AppLaunchDefaultAddrBook) | 기본 주소록 앱을 실행하는 동작   |
 | [clova://app-launch/default-browser](#AppLaunchDefaultBrowser)      | 기본 웹 브라우저를 실행하는 동작 |
