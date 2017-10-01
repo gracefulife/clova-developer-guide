@@ -20,7 +20,7 @@
 | `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |
 | `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 대기의 수치 정보가 담긴 객체. 수치의 단위가 포함되어 있습니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `type`          | string | Content template 구분자. `"Atmosphere"`로 고정 |
+| `type`          | string | Content template 구분자. `"Atmosphere"` 값을 가집니다. |
 
 ## Template Example
 

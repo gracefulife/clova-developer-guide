@@ -11,6 +11,20 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [Popup](/CIC/References/ContentTemplates/Popup.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
 
+* PIMS 템플릿
+  * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)
+  * [ActionTimerList](/CIC/References/ContentTemplates/ActionTimerList.md)
+  * [Alarm](/CIC/References/ContentTemplates/Alarm.md)
+  * [AlarmList](/CIC/References/ContentTemplates/AlarmList.md)
+  * [Memo](/CIC/References/ContentTemplates/Memo.md)
+  * [MemoList](/CIC/References/ContentTemplates/MemoList.md)
+  * [Reminder](/CIC/References/ContentTemplates/Reminder.md)
+  * [ReminderList](/CIC/References/ContentTemplates/ReminderList.md)
+  * [Schedule](/CIC/References/ContentTemplates/Schedule.md)
+  * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)
+  * [Timer](/CIC/References/ContentTemplates/Timer.md)
+  * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
+
 * 길찾기 템플릿
   * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
   * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)

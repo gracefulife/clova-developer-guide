@@ -13,49 +13,68 @@
 Clova access token을 획득하는 절차는 다음과 같습니다.
 
 <ol>
-<li><p>사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기 SDK</a>). 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 클라이언트 앱이나 페어링 앱을 사용해야 합니다.</p>
-</li>
-<li><p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득합니다.</p>
-</li>
-<li><p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
-<pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
-       {{ book.AuthServerBaseURL }}authorize \
-       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
-       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
-       --data-urlencode 'model_id=test_model' \
-       --data-urlencode 'response_type=code' \
-       --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
+  <li>
+    <p>사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱에서 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기 SDK</a>). 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 클라이언트 앱이나 페어링 앱을 사용해야 합니다.</p>
+  </li>
+  <li>
+    <p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득합니다.</p>
+  </li>
+  <li>
+    <p>획득한 {{ book.TargetServiceForClientAuth }} 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
+    <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
+    {{ book.AuthServerBaseURL }}authorize \
+    --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
+    --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
+    --data-urlencode 'model_id=test_model' \
+    --data-urlencode 'response_type=code' \
+    --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
 </code></pre>
-<p>다음과 같은 authorization code가 반환됩니다.</p>
-<pre><code>{
-    "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
-    "state": "FKjaJfMlakjdfTVbES5ccZ"
+    <p>수신하게 되는 응답 메시지의 본문은 다음과 같습니다. <code>code</code> 필드가 authorization code입니다.</p>
+    <pre><code>{
+  "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
+  "state": "FKjaJfMlakjdfTVbES5ccZ"
 }
 </code></pre></li>
-<li><p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
-</li>
-<li><p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
-<pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
-       --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
-       --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
-       --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
-       --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
-       --data-urlencode 'model_id=test_model'
+  <li>
+    <p>(만약, <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신한 경우) 응답 메시지 본문 <code>rediriec_uri</code> 필드에 입력된 URI를 이용하여 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
+    <pre><code>{
+  "code": "4mrklvwoC_KNgDlvmslka",
+  "redirect_uri": "https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
+  "state": "FKjaJfMlakjdfTVbES5ccZ"
+}
 </code></pre>
-<p>다음과 같은 Clova access token이 반환됩니다.</p>
-<pre><code>{
+    <p>참고로 사용자가 이용 약관에 동의하지 않으면 다음 단계를 수행할 수 없습니다. 사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
+    <ul>
+      <li><code>clova://agreement-success</code> : 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
+      <li><code>clova://agreement-failure</code> : 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
+  </li>
+  <li>
+    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+    <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
+    --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
+    --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
+    --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
+    --data-urlencode 'device_id=aa123123d6-d900-48a1-b73b-aa6c156353206' \
+    --data-urlencode 'model_id=test_model'
+</code></pre>
+    <p>다음과 같은 Clova access token이 반환됩니다.</p>
+    <pre><code>{
     "access_token": "XHapQasdfsdfFsdfasdflQQ7w",
     "expires_in": 332000,
     "refresh_token": "GW-Ipsdfasdfdfs3IbHFBA",
     "token_type": "Bearer"
 }
 </code></pre>
-</li>
+  </li>
 </ol>
 
 <div class="note">
-<p><strong>Note!</strong></p>
-<p>{{ book.TargetServiceForClientAuth }} 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
+  <p><strong>Note!</strong></p>
+  <p>{{ book.TargetServiceForClientAuth }} 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
 </div>
 
 
@@ -65,17 +84,20 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 Downchannel은 `/v1/directives` 경로로 `GET` 방식 요청을 보내면 구성할 수 있으며, CIC에 의해 연결이 계속 유지됩니다.
 
 {% raw %}
+
 ```
 :method: GET
 :scheme: https
 :path = /v1/directives
 Authorization: Bearer {{ClovaAccessToken}}
 ```
+
 {% endraw %}
 
 위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지 전달될 준비가 되었음을 나타냅니다.
 
 {% raw %}
+
 ```
 {
     "directive": {
@@ -88,11 +110,15 @@ Authorization: Bearer {{ClovaAccessToken}}
     }
 }
 ```
+
 {% endraw %}
 
 <div class="note">
-<p><strong>Note!</strong></p>
-<ul><li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li><li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li></ul>
+  <p><strong>Note!</strong></p>
+  <ul>
+    <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
+    <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
+  </ul>
 </div>
 
 
@@ -100,12 +126,14 @@ Authorization: Bearer {{ClovaAccessToken}}
 클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. 자세한 설명은 [CIC API](/CIC/References/CIC_API.md)를 참조합니다.
 
 {% raw %}
+
 ```
 :method: {{GET|POST}}
 :scheme: https
 :path = {{/v1/events|/v1/directives}}
 Authorization: Bearer {{ClovaAccessToken}}
 ```
+
 {% endraw %}
 
 클라이언트가 새로운 요청(이벤트 메시지)을 보낼 때마다 다음 그림과 같이 Clova access token을 함께 전달해야 합니다.
@@ -128,9 +156,10 @@ Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새
 CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.
 
 <div class="note">
-<p><strong>Note!</strong></p>
-<p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1분마다 <code>GET</code> 요청을 <code>/ping</code>으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p><p>다음은 <code>/ping</code>으로 <code>GET</code> 요청을 보내는 예제입니다.</p>
-<pre><code>:method = GET
+  <p><strong>Note!</strong></p>
+  <p>HTTP/2 PING 프레임을 전송할 수 없으면 클라이언트는 1분마다 <code>GET</code> 요청을 <code>/ping</code>으로 보내야 합니다. 이때, HTTP 204 No Content 응답을 받게 됩니다. HTTP/2 PING 프레임을 사용할 때와 마찬가지로 응답을 받지 못하면, 클라이언트는 즉시 새로운 연결을 구성해야 합니다.</p>
+  <p>다음은 <code>/ping</code>으로 <code>GET</code> 요청을 보내는 예제입니다.</p>
+  <pre><code>:method = GET
 :scheme = https
 :path = /ping
 Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
