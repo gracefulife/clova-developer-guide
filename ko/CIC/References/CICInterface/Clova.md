@@ -124,13 +124,29 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+  * [Popup](/CIC/References/ContentTemplates/Popup.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
+
+* PIMS 템플릿
+  * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)
+  * [ActionTimerList](/CIC/References/ContentTemplates/ActionTimerList.md)
+  * [Alarm](/CIC/References/ContentTemplates/Alarm.md)
+  * [AlarmList](/CIC/References/ContentTemplates/AlarmList.md)
+  * [Memo](/CIC/References/ContentTemplates/Memo.md)
+  * [MemoList](/CIC/References/ContentTemplates/MemoList.md)
+  * [Reminder](/CIC/References/ContentTemplates/Reminder.md)
+  * [ReminderList](/CIC/References/ContentTemplates/ReminderList.md)
+  * [Schedule](/CIC/References/ContentTemplates/Schedule.md)
+  * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)
+  * [Timer](/CIC/References/ContentTemplates/Timer.md)
+  * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
 
 * 길찾기 템플릿
   * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
   * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
 
 * 날씨 템플릿
+  * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
   * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
   * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

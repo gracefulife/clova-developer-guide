@@ -28,12 +28,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "action",
     "value": "clova://naverSearch?query=이태원맛집"
 }
 ```
+
 {% endraw %}
 
 # CurrencyObject {#CurrencyObject}
@@ -47,12 +49,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "currency",
     "value": "KRW500000"
 }
 ```
+
 {% endraw %}
 
 ## DateObject {#DateObject}
@@ -66,12 +70,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "date",
     "value": "2017-05-29"
 }
 ```
+
 {% endraw %}
 
 ## DateTimeObject {#DateTimeObject}
@@ -85,12 +91,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "datetime",
     "value": "2017-07-26T18:00:00Z"
 }
 ```
+
 {% endraw %}
 
 ## LocationObject {#LocationObject}
@@ -104,12 +112,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "location",
     "value": "349652984,149297371"
 }
 ```
+
 {% endraw %}
 
 ## NumberObject {#NumberObject}
@@ -123,12 +133,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "number",
     "value": "19,304,213"
 }
 ```
+
 {% endraw %}
 
 ## PercentageObject {#PercentageObject}
@@ -142,12 +154,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "percentage",
     "value": 20.2341
 }
 ```
+
 {% endraw %}
 
 ## PhoneNumberObject {#PhoneNumberObject}
@@ -161,12 +175,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "phoneNum",
     "value": "031-784-1000"
 }
 ```
+
 {% endraw %}
 
 ## StringObject {#StringObject}
@@ -180,6 +196,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 // 예제 1
 {
@@ -193,6 +210,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
     "value": "네이버 검색결과"
 }
 ```
+
 {% endraw %}
 
 ## TemperatureCObject {#TemperatureCObject}
@@ -206,12 +224,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "temperature-c",
     "value": 31
 }
 ```
+
 {% endraw %}
 
 ## TemperatureFObject {#TemperatureFObject}
@@ -225,12 +245,14 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "temperature-f",
     "value": 75
 }
 ```
+
 {% endraw %}
 
 ## URLObject {#URLObject}
@@ -244,6 +266,7 @@ URL 정보를 가지는 객체입니다.
 
 ### Object Example
 {% raw %}
+
 ```json
 // 예제 1
 {
@@ -257,4 +280,5 @@ URL 정보를 가지는 객체입니다.
     "value": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.com%2Fimage%2F410%2F2015%2F08%2F31%2F20150831_1441012614_99_20150831181804.jpg&type=b360"
 }
 ```
+
 {% endraw %}

@@ -5,8 +5,8 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 |---------------|-----------------------------|-----------------------------|
 | Toast         | 문장과 관련 링크로 구성된 toast입니다.    | `toastLinkText`, `toastLinkUrl`, `toastText`                  |
 | Alert         | 문장과 확인 버튼으로 구성된 alert입니다.   | `alertText`                                                   |
-| Popup(버튼 1개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `rightButtonText`, `rightButtonUrl`, `titleText`   |
-| Popup(버튼 2개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `leftButtonText`, `leftButtonUrl`, `mainText`, `rightButtonText`, `rightButtonUrl`, `titleText` |
+| Popup(버튼 1개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `positiveButtonText`, `positiveButtonUrl`, `titleText`   |
+| Popup(버튼 2개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `nagativeButtonText`, `nagativeButtonUrl`, `mainText`, `positiveButtonText`, `positiveButtonUrl`, `titleText` |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -18,16 +18,17 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `alertText`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Alert에 표시할 주의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `leftButtonText`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 버튼 두 개짜리 popup의 왼쪽 버튼에 표시할 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `leftButtonUrl`    | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 버튼 두 개짜리 popup의 왼쪽 버튼에 연결될 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
+| `displayType`      | string                                                                          | 표시할 화면의 종류. 다음과 같은 값을 가질 수 있습니다.<ul><li><code>"POPUP"</code></li><li><code>"ALERT"</code></li><li><code>"TOAST"</code></li></ul>  |
+| `nagativeButtonText`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Popup에서 **아니오**와 같이 부정의 의미에 해당하는 버튼에 표시할 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
+| `nagativeButtonUrl`    | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | Popup에서 **아니오**와 같이 부정의 의미에 해당하는 버튼에 연결될 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 |  `mainText`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Popup에 표시할 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `rightButtonText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 버튼 두 개짜리 popup의 오른쪽 버튼에 표시할 문구가 담긴 객체. 버튼 한 개짜리 popup의 경우 이 필드의 문구를 버튼 문구로 사용합니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `rightButtonUrl`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 버튼 두 개짜리 popup의 오른쪽 버튼에 연결될 URL 정보가 담긴 객체. 버튼 한 개짜리 popup의 경우 이 필드의 URL을 버튼에 연결될 URL로 사용합니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
+| `positiveButtonText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Popup에서 **예**와 같이 긍정에 해당하는 버튼에 표시할 문구가 담긴 객체. 버튼 한 개짜리 popup의 경우 **확인**과 같은 의미의 버튼에 표시할 문구로 이 객체를 사용합니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
+| `positiveButtonUrl`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | Popup에서 **예**와 같이 긍정에 해당하는 버튼에 연결될 URL 정보가 담긴 객체. 버튼 한 개짜리 popup의 경우 **확인**과 같은 의미의 버튼에 연결될 URL로 이 객체를 사용합니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `title`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Popup에 표시할 제목이 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `toastLinkText`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Toast에 표시할 링크의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `toastLinkUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | Toast에 표시할 링크의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `toastText`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Toast에 표시할 문구가 담긴 객체.  이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `type`             | string                                                                          | Content template 구분자. `"Popup"`로 고정     |
+| `type`             | string                                                                          | Content template 구분자. `"Popup"` 값을 가집니다.     |
 
 ## Template Example
 
@@ -36,6 +37,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 // 예제 1. Toast 형태
 {
   "type" : "Popup",
+  "diaplayType" : "TOAST",
   "toastText" : {
     "type" : "string",
     "value" : "1분 미리듣기 중입니다. 음악 취향 길들이기에 참여하고 네이버 뮤직 100곡 이용권 받으세요!"
@@ -60,19 +62,19 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type" : "string",
     "value" : ""
   },
-  "leftButtonText" : {
+  "nagativeButtonText" : {
     "type" : "string",
     "value" : ""
   },
-  "leftButtonUrl" : {
+  "nagativeButtonUrl" : {
     "type" : "url",
     "value" : ""
   },
-  "rightButtonText" : {
+  "positiveButtonText" : {
     "type" : "string",
     "value" : ""
   },
-  "rightButtonUrl" : {
+  "positiveButtonUrl" : {
     "type" : "url",
     "value" : ""
   }
@@ -81,6 +83,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 // 예제 2. Alert 형태
 {
   "type" : "Popup",
+  "diaplayType" : "ALERT",
   "toastText" : {
     "type" : "string",
     "value" : ""
@@ -105,19 +108,19 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type" : "string",
     "value" : ""
   },
-  "leftButtonText" : {
+  "nagativeButtonText" : {
     "type" : "string",
     "value" : ""
   },
-  "leftButtonUrl" : {
+  "nagativeButtonUrl" : {
     "type" : "url",
     "value" : ""
   },
-  "rightButtonText" : {
+  "positiveButtonText" : {
     "type" : "string",
     "value" : ""
   },
-  "rightButtonUrl" : {
+  "positiveButtonUrl" : {
     "type" : "url",
     "value" : ""
   }
@@ -126,6 +129,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 // 예제 3. 버튼 한 개짜리 popup 형태
 {
   "type" : "Popup",
+  "diaplayType" : "POPUP",
   "toastText" : {
     "type" : "string",
     "value" : ""
@@ -150,19 +154,19 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type" : "string",
     "value" : "이제 네이버 뮤직 100곡 무료 이용권으로 클로바의 추천 음악을 즐기세요!"
   },
-  "leftButtonText" : {
+  "nagativeButtonText" : {
     "type" : "string",
     "value" : ""
   },
-  "leftButtonUrl" : {
+  "nagativeButtonUrl" : {
     "type" : "url",
     "value" : ""
   },
-  "rightButtonText" : {
+  "positiveButtonText" : {
     "type" : "string",
     "value" : "뮤직 이용권 받기"
   },
-  "rightButtonUrl" : {
+  "positiveButtonUrl" : {
     "type" : "url",
     "value" : "https://..."
   }
@@ -171,6 +175,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 // 예제 4. 버튼 두 개짜리 popup 형태
 {
   "type" : "Popup",
+  "diaplayType" : "POPUP",
   "toastText" : {
     "type" : "string",
     "value" : ""
@@ -195,19 +200,19 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type" : "string",
     "value" : "고객님의 음악 취향을 알게되어서 추천을 더 잘할 수 있겠어요."
   },
-  "leftButtonText" : {
+  "nagativeButtonText" : {
     "type" : "string",
     "value" : "계속"
   },
-  "leftButtonUrl" : {
+  "nagativeButtonUrl" : {
     "type" : "url",
     "value" : "https://..."
   },
-  "rightButtonText" : {
+  "positiveButtonText" : {
     "type" : "string",
     "value" : "종료"
   },
-  "rightButtonUrl" : {
+  "positiveButtonUrl" : {
     "type" : "url",
     "value" : "https://..."
   }
