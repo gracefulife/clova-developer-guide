@@ -42,12 +42,12 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 일반적으로 알람의 등록부터 중지되는 순간까지 전체적인 흐름은 다음과 같습니다.
 
-1. 사용자가 알람 등록을 발화으로 요청([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize))합니다.
+1. 사용자가 알람 등록을 발화로 요청([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize))합니다.
 2. Clova는 사용자의 알람을 저장하고 사용자의 클라이언트 기기가 알람을 추가할 수 있도록 [`Alerts.SetAlert`](#SetAlert) 지시 메시지를 보냅니다.
-3. 클라이언트가 알람을 등록을 시도한 후 그 결과를 Clova에게 전달합니다.([`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) 이벤트 메시지, [`Alerts.SetAlertFailed`](#SetAlertFailed) 이벤트 메시지 사용)
-4. Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [SpeechSynthesizer.Speak](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지와 [Clova.RenderTemplate](/CIC/References/CICInterface/Clova.md#RenderTemplate) 지시 메시지를 클라이언트에게 전달합니다.
-5. (지정한 시간이 되면) 클라이언트는 알람을 울려야 하며, 알람이 시작되었음을 [`Alerts.AlertStarted`](#AlertStarted) 이벤트 메시지로 CIC에게 보고해야 합니다. 클라이언트가 [`Alerts.AlertStarted`](#AlertStarted) 이벤트 메시지를 보낼 때 반드시 [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState) 맥락 정보의 `activeAlerts` 필드에 현재 울리고 있는 알람 정보를 채워 보내야 합니다.
-6. 사용자가 발화나 물리적 버튼(하드웨어 방식) 또는 GUI 버튼(소프트웨어 방식)으로 알람을 중지할 것을 요청하게 됩니다.
+3. 클라이언트가 알람 등록을 시도한 후 그 결과를 Clova에게 전달합니다.([`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) 이벤트 메시지, [`Alerts.SetAlertFailed`](#SetAlertFailed) 이벤트 메시지 사용)
+4. Clova는 알람이 등록된 결과를 사용자에게 알려주기 위해 [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지와 [`Clova.RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate) 지시 메시지를 클라이언트에게 전달합니다.
+5. (지정한 시간이 되면) 클라이언트는 알람을 울려야 하며, 알람이 시작되었음을 [`Alerts.AlertStarted`](#AlertStarted) 이벤트 메시지로 CIC에게 보고해야 합니다. 클라이언트가 [`Alerts.AlertStarted`](#AlertStarted) 이벤트 메시지를 보낼 때 반드시 [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState) 맥락 정보의 `activeAlerts` 필드에 현재 울리고 있는 알람 정보를 채워 보내야 합니다.
+6. 사용자는 발화([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize))나 물리적 버튼(하드웨어 방식) 또는 GUI 버튼(소프트웨어 방식)으로 알람을 중지하도록 요청([`Alerts.RequestAlertStop`](#RequestAlertStop))할 것입니다.
 7. Clova는 클라이언트가 알람을 중지하도록 클라이언트에게 [`Alerts.StopAlert`](#StopAlert) 지시 메시지를 보냅니다.
 8. 클라이언트는 알람을 중지한 후 알람이 중지되었음을 [`Alerts.AlertStopped`](#SetAlertSucceeded) 이벤트 메시지로 보고해야 합니다.
 
@@ -63,6 +63,11 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 1. 사용자가 Clova 앱에서 알람을 수정하거나 삭제를 시도합니다.
 2. Clova는 사용자 요청을 처리하기 위해 [`Alerts.SetAlert`](#SetAlert) 지시 메시지 또는 [`Alerts.DeleteAlert`](#DeleteAlert) 지시 메시지를 클라이언트에게 보냅니다.
 3. 클라이언트가 알람을 수정하거나 삭제한 그 결과를 Clova에게 전달합니다. (관련 이벤트 메시지 사용)
+
+사용자의 클라이언트가 추가되거나 일부 또는 특정 클라이언트가 네트워크 연결이 끊긴 후 재접속되는 경우 다음과 같은 절차를 거쳐 서버에 등록된 사용자의 알람 정보를 클라이언트로 가져와서 동기화합니다.
+
+1. 클라이언트는 CIC에 연결 또는 재연결되면 [`System.RequestSynchronizeState`](/CIC/References/CICInterface/System.md#RequestSynchronizeState) 이벤트 메시지를 CIC로 전송해야 합니다.
+2. 클라이언트는 CIC로부터 [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) 지시 메시지를 수신하게 되며, 이 때 `allAlerts` 필드에 있는 알람 데이터를 기기 알람 정보와 동기화 해야 합니다.
 
 <div class="danger">
 <p><strong>Caution!</strong></p>
@@ -83,7 +88,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 시작된 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -129,7 +134,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 중지된 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -171,7 +176,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 삭제해야 할 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -213,7 +218,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 삭제하지 못한 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -257,7 +262,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 삭제한 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -301,7 +306,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 중지할 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Remarks
 클라이언트의 기기에서 사용자가 버튼을 눌러 직접 알람을 중지하더라도 이 이벤트 메시지를 CIC로 전송해서 [`Alerts.StopAlert`](#StopAlert) 지시 메시지를 받은 후 알람을 종료해야 합니다. 이는 알람을 종료하는 프로세스를 일관된 패턴을 일관되게 만들며, 알람의 상태를 동기화하는데 도움이 됩니다. 다만, 알람을 종료하기까지 시간이 걸릴 수 있으므로 사용자가 버튼을 눌러 직접 알람을 중지한 경우 [`Alerts.StopAlert`](#StopAlert) 지시 메시지를 받기 전까지 알람 표시를 임의로 없애거나 알람 소리를 무음으로 바꾸는 방식으로 대응하면 됩니다.
@@ -351,11 +356,11 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 |---------------|---------|-----------------------------|---------|
 | `assets[]`         | object array | 리마인더(`"REMINDER"`) 타입이나 액션 타이머(`"ACTIONTIMER"`)의 알람을 울릴 때 들려줄 TTS 오디오 목록을 가지는 객체 배열. 리마인더 타입과 액션 타이머일 경우에만 이 필드가 포함됩니다.   | 선택 |
 | `assets[].assetId` | string | TTS 오디오의 식별자       | 필수 |
-| `assets[].url`     | string | TTS 오디오의 URL        | 필수 |
+| `assets[].url`     | string | TTS 오디오의 URL. 만약, 이 필드의 값이 `"clova://bell"`이면, 클라이언트는 알람의 종류(`type`)에 따라 클라이언트가 보유하고 있는 벨소리 중 그에 맞는 벨소리를 울려야 합니다.    | 필수 |
 | `assetPlayOrder[]` | string array | `assets` 필드에 있는 TTS 오디오의 재생 순서를 저장하고 있는 배열. 배열의 인덱스 순서에 맞춰 재생할 TTS 오디오의 식별자(`assets[].assetId`)가 입력되어 있습니다. 리마인더(`"REMINDER"`) 타입이나 액션 타이머(`"ACTIONTIMER"`)의 알람일 경우에만 이 필드가 포함됩니다.  | 선택  |
 | `scheduledTime`  | string | 알람이 울릴 날짜와 시간 정보(YYYY-MM-DDThh:mm:ssZ 포맷)   | 필수 |
 | `token`          | string | 추가 또는 수정해야 할 알람의 식별자.                       | 필수 |
-| `type`           | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`           | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -376,7 +381,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
      "assets": [
        {
          "assetId": "5141f693-5b39-46b7-80e4-3d71ed5508da",
-         "url": "http://abc.de.fe/tts1"
+         "url": "clova://bell"
        },
        {
          "assetId": "b403ebe5-f911-4c5c-98b3-9f5320510235",
@@ -409,7 +414,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 추가 또는 수정하지 못한 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -454,7 +459,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 추가 또는 수정한 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}
@@ -494,7 +499,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `token`   | string | 중지해야 할 알람의 식별자.                 | 필수 |
-| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`    | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 ### Message example
 {% raw %}

@@ -21,9 +21,8 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
     "namespace": {{string}},
     "name": {{string}},
     "payloadVersion": {{string}}
-    },
-    "payload": {{object}}
-  }
+  },
+  "payload": {{object}}
 }
 ```
 
