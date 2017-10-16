@@ -22,7 +22,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | [`ReportState`](#ReportState)             | Event     | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                 |
 | [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다.  |
 | [`SetValue`](#SetValue)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                    |
-| [`SynchronizeSate`](#SynchronizeState)     | Directive | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.         |
+| [`SynchronizeState`](#SynchronizeState)     | Directive | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.         |
 | [`TurnOff`](#TurnOff)                     | Directive | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                           |
 | [`TurnOn`](#TurnOn)                       | Directive | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                   |
 
@@ -531,7 +531,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Remarks
 
-* CIC로부터 [`DeviceControl.ExpectReportSate`](#ExpectReportSate) 지시 메시지를 받은 경우 `DeviceControl.ReportState` 이벤트 메시지를 사용하여 현재 상태를 보고해야 합니다.
+* CIC로부터 [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 받은 경우 `DeviceControl.ReportState` 이벤트 메시지를 사용하여 현재 상태를 보고해야 합니다.
 * 이 이벤트 메시지를 통해 보고된 상태 정보는 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지 통해 사용자 계정에 등록된 모든 클라이언트에게 보내집니다.
 
 ### Message example
@@ -616,7 +616,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### See also
 * [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
-* [`DeviceControl.ExpectReportSate`](#ExpectReportSate)
+* [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
 ## RequestStateSynchronization event {#RequestStateSynchronization}

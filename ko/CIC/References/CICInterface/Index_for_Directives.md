@@ -32,6 +32,7 @@
 | PlaybackController | [`Next`](/CIC/References/CICInterface/PlaybackController.md#Next)               | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.                               |
 | PlaybackController | [`Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)             | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.                                    |
 | PlaybackController | [`Previous`](/CIC/References/CICInterface/PlaybackController.md#Previous)       | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다.                              |
+| PlaybackController | [`Replay`](/CIC/References/CICInterface/PlaybackController.md#Replay)           | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.                              |
 | PlaybackController | [`Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)           | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                                            |
 | PlaybackController | [`Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)               | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                                            |
 | PlaybackController | [`TurnOffRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode) | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                                  |
