@@ -25,8 +25,7 @@
       {
         "token": "{{string}}",
         "type": "{{string}}",
-        "scheduledTime": "{{string}}",
-        "content": "{{string}}"
+        "scheduledTime": "{{string}}"
       }
     ],
     "activeAlerts": [
@@ -115,10 +114,9 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `content`       | string | 알람의 종류(`type`)가 `"REMINDER"`일 때 가지는 필드이며, 리마인드할 내용입니다. | 선택  |
 | `scheduledTime` | string | 알람이 울릴 날짜와 시간 정보(YYYY-MM-DDThh:mm:ssZ 포맷)   | 필수 |
 | `token`         | string | 알람의 식별자                   | 필수 |
-| `type`          | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><li><code>ACTIONTIMER</code></li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`          | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
 
 #### Object example
 
