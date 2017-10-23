@@ -44,7 +44,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `discoveredAppliances[]`  | [ApplianceObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceObject) array  | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
 
 ### Remarks
 IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록을 제공해야 합니다.

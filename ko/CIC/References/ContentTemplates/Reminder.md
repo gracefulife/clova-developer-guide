@@ -103,7 +103,7 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Reminder 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

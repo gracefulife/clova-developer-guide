@@ -77,7 +77,7 @@ CIC는 사용자가 알람을 생성하면 생성한 알람의 정보를 Alarm �
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Alarm 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

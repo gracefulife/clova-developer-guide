@@ -46,8 +46,8 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `allAlerts`    | [AlertObject](#AlertObject) | 클라이언트에 설정된 전체 알람 목록을 가지는 객체 배열. 이 배열에 클라이언트가 설정하고 있는 모든 알람 정보를 입력해야 합니다.    | 필수 |
-| `activeAlerts` | [AlertObject](#AlertObject) | 클라이언트에서 현재 울리고 있는 알람 목록을 가지는 객체 배열. 현재 울리고 있는 알람이 없을 경우 빈 배열을 입력합니다.  | 필수 |
+| `allAlerts`    | [AlertInfoObject](#AlertInfoObject) | 클라이언트에 설정된 전체 알람 목록을 가지는 객체 배열. 이 배열에 클라이언트가 설정하고 있는 모든 알람 정보를 입력해야 합니다.    | 필수 |
+| `activeAlerts` | [AlertInfoObject](#AlertInfoObject) | 클라이언트에서 현재 울리고 있는 알람 목록을 가지는 객체 배열. 현재 울리고 있는 알람이 없을 경우 빈 배열을 입력합니다.  | 필수 |
 
 ### Message example
 
@@ -107,7 +107,7 @@
 
 {% endraw %}
 
-### AlertObject {#AlertObject}
+### AlertInfoObject {#AlertInfoObject}
 개별 알람의 정보를 가지는 객체입니다. 개별 알람에 대한 정보를 이 객체 포맷에 맞게 입력합니다.
 
 #### Object field
@@ -116,7 +116,7 @@
 |---------------|---------|-----------------------------|---------|
 | `scheduledTime` | string | 알람이 울릴 날짜와 시간 정보(YYYY-MM-DDThh:mm:ssZ 포맷)   | 필수 |
 | `token`         | string | 알람의 식별자                   | 필수 |
-| `type`          | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><li><code>ACTIONTIMER</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>TIMER</code></li></ul>  | 필수 |
+| `type`          | string | 알람의 종류. 다음과 같은 값을 가집니다. <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | 필수 |
 
 #### Object example
 
