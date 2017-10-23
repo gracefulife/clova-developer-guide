@@ -35,7 +35,7 @@ CIC는 사용자가 타이머를 생성하면 생성한 타이머의 정보를 T
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Timer 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

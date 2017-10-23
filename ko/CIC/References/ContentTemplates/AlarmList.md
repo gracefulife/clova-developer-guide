@@ -78,7 +78,7 @@ CIC는 사용자가 알람의 목록을 요청하면 사용자에게 등록된 �
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>AlarmList 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

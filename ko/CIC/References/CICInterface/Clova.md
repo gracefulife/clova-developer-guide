@@ -4,12 +4,47 @@ Clova는 CIC가 사용자 요청이 인식된 결과를 클라이언트로 전�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
+| [`ExpectLogin`](#ExpectLogin)               | Directive | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다. |
 | [`FinishExtension`](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
 | [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
 | [`Help`](#Help)                             | Directive | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.       |
 | [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
 | [`RenderText`](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
 | [`StartExtension`](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
+
+## ExpectLogin directive {#ExpectLogin}
+
+클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다. 클라이언트가 [guest 모드](/CIC/References/Clova_Auth_API.md#GuestMode)로 동작하는 중에 {{ book.OrientedService }} 계정 인증이 필요한 서비스를 사용자에게 제공해야 하는 경우 CIC는 클라이언트에게 이 지시 메시지를 전달합니다.
+
+### Payload field
+
+없음
+
+### Remarks
+로그인이 성공하였을때 이전의 요청은 이어서 처리되지 않습니다. 필요한 경우 사용자가 재요청을 하여야 합니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "RequestLogin"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+* [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
+* [Guest 모드](/CIC/References/Clova_Auth_API.md#GuestMode)
 
 ## FinishExtension directive {#FinishExtension}
 
