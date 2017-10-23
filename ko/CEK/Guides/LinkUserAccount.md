@@ -174,7 +174,8 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
       },
       "device": {
-        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b"
+        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
+        "displayType": "m100"
       }
     }
   },

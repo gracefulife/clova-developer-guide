@@ -50,7 +50,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
     "payload": {
       "timeoutInMilliseconds": 7000,
       "explicit": false,
-      "speechSpeechId": "561aeecf-2096-40fa-ba17-6612e28b339f"
+      "expectSpeechId": "561aeecf-2096-40fa-ba17-6612e28b339f"
     }
   }
 }
