@@ -3,21 +3,21 @@
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
-| [AirQualityObject](#AirQualityObject)       | 공기질 정보가 담긴 객체            |
-| [ApplianceObject](#ApplianceObject)         | IoT 기기의 정보가 담긴 객체        |
+| [AirQualityInfoObject](#AirQualityInfoObject)       | 공기질 정보가 담긴 객체            |
+| [ApplianceInfoObject](#ApplianceInfoObject)         | IoT 기기의 정보가 담긴 객체        |
 | [BatteryInfoObject](#BatteryInfoObject)       | 배터리 정보가 담긴 객체            |
-| [BrightnessObject](#BrightnessObject)       | 조명의 밝기 정보가 담긴 객체        |
-| [FineDustObject](#FineDustObject)           | 미세 먼지 지수 정보가 담긴 객체      |
-| [HeatingModeObject](#HeatingModeObject)     | 난방 모드 정보가 담긴 객체          |
-| [HumidityObject](#HumidityObject)           | 습도 정보가 담긴 객체              |
-| [SpeedObject](#SpeedObject)                 | 속도 정보가 담긴 객체              |
-| [TemperatureObject](#TemperatureObject)     | 온도 정보를 담고 있는 객체          |
-| [TVChannelNameObject](#TVChannelNameObject) | TV 채널의 이름 정보가 담긴 객체      |
-| [TVChannelObject](#TVChannelObject)         | TV 채널 정보가 담긴 객체           |
-| [UltraFineDustObject](#UltraFineDustObject) | 초미세 먼지 지수 정보가 담긴 객체     |
-| [VolumeObject](#VolumeObject)               | 볼륨 정보를 담고 있는 객체          |
+| [BrightnessInfoObject](#BrightnessInfoObject)       | 조명의 밝기 정보가 담긴 객체        |
+| [FineDustInfoObject](#FineDustInfoObject)           | 미세 먼지 지수 정보가 담긴 객체      |
+| [HeatingModeInfoObject](#HeatingModeInfoObject)     | 난방 모드 정보가 담긴 객체          |
+| [HumidityInfoObject](#HumidityInfoObject)           | 습도 정보가 담긴 객체              |
+| [SpeedInfoObject](#SpeedInfoObject)                 | 속도 정보가 담긴 객체              |
+| [TemperatureInfoObject](#TemperatureInfoObject)     | 온도 정보를 담고 있는 객체          |
+| [TVChannelNameInfoObject](#TVChannelNameInfoObject) | TV 채널의 이름 정보가 담긴 객체      |
+| [TVChannelInfoObject](#TVChannelInfoObject)         | TV 채널 정보가 담긴 객체           |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject) | 초미세 먼지 지수 정보가 담긴 객체     |
+| [VolumeInfoObject](#VolumeInfoObject)               | 볼륨 정보를 담고 있는 객체          |
 
-### AirQualityObject {#AirQualityObject}
+### AirQualityInfoObject {#AirQualityInfoObject}
 공기질 정보를 담고 있는 객체입니다. 기기가 측정한 공기질 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
@@ -51,7 +51,7 @@
 * [`GetAirQualityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityRequest)
 * [`GetAirQualityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityResponse)
 
-### ApplianceObject {#ApplianceObject}
+### ApplianceInfoObject {#ApplianceInfoObject}
 IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등록된 기기 목록을 CEK에게 전달하거나 특정 기기를 대상으로 지정하여 Clova Home extension에 기기 제어를 요청할 때 이 객체를 사용합니다.
 
 #### Object field
@@ -259,7 +259,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)
 * [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
-### BrightnessObject {#BrightnessObject}
+### BrightnessInfoObject {#BrightnessInfoObject}
 조명의 밝기 정보를 담고 있는 객체입니다. 변경할 조명의 밝기나 변경 전후의 밝기를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
 
 #### Object field
@@ -371,7 +371,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest)
 * [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
 
-### FineDustObject {#FineDustObject}
+### FineDustInfoObject {#FineDustInfoObject}
 미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
 
 #### Object field
@@ -407,7 +407,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest)
 * [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse)
 
-### HeatingModeObject {#HeatingModeObject}
+### HeatingModeInfoObject {#HeatingModeInfoObject}
 난방 모드 정보를 담고 있는 객체입니다. 변경할 난방 모드의 이름이나 변경 전후의 난방 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
@@ -460,7 +460,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetModeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeConfirmation)
 * [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest)
 
-### HumidityObject {#HumidityObject}
+### HumidityInfoObject {#HumidityInfoObject}
 습도 정보를 담고 있는 객체입니다. 기기가 측정한 습토 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
@@ -494,7 +494,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetHumidityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityRequest)
 * [`GetHumidityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityResponse)
 
-### SpeedObject {#SpeedObject}
+### SpeedInfoObject {#SpeedInfoObject}
 속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.
 
 #### Object field
@@ -556,7 +556,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedConfirmation)
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
-### TemperatureObject {#TemperatureObject}
+### TemperatureInfoObject {#TemperatureInfoObject}
 온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기나 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
 
 #### Object field
@@ -620,7 +620,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureConfirmation)
 * [`SetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureRequest)
 
-### TVChannelNameObject {#TVChannelNameObject}
+### TVChannelNameInfoObject {#TVChannelNameInfoObject}
 TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널이나 변경 전후의 TV 채널의 이름 정보를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
@@ -673,7 +673,7 @@ TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`SetChannelByNameConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameConfirmation)
 * [`SetChannelByNameRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameRequest)
 
-### TVChannelObject {#TVChannelObject}
+### TVChannelInfoObject {#TVChannelInfoObject}
 TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널이나 변경 전후의 TV 채널의 번호를 나타낼 때 사용되며 숫자로 표현됩니다.
 
 #### Object field
@@ -730,7 +730,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation)
 * [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
-### VolumeObject {#VolumeObject}
+### VolumeInfoObject {#VolumeInfoObject}
 스피커의 볼륨 정보를 담고 있는 객체입니다. 변경할 볼륨의 크기나 변경 전후의 볼륨 정보를 나타낼 때 사용되며 정수로 표현됩니다.
 
 #### Object field
@@ -790,7 +790,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation)
 * [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest)
 
-### UltraFineDustObject {#UltraFineDustObject}
+### UltraFineDustInfoObject {#UltraFineDustInfoObject}
 초미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 초미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
 
 #### Object field

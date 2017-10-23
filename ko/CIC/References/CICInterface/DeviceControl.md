@@ -176,7 +176,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
 
-## BtDisonnect directive {#BtDisconnect}
+## BtDisconnect directive {#BtDisconnect}
 
 클라이언트에게 연결된 블루투스 기기와 연결을 끊도록 지시합니다.
 
