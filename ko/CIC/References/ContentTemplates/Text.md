@@ -11,10 +11,12 @@
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `bgUrl`                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 백그라운드로 표시할 이미지의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.               |
+| `emotionCode`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 감정 표현이 정의된 코드. [감정 코드](#EmotionCode)를 활용하여 클라이언트 기기에서 미리 정의된 감정 표현을 표시할 수 있습니다. 기기에 감정 표현하는 기능이 존재하지 않으면 이 코드를 무시하면 됩니다.  |
 | `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) 또는 [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | 강조할 텍스트 또는 숫자 정보가 담긴 객체. 숫자 정보의 경우 구분 단위 기호를 넣어 표현할 수 있습니다. 이 객체의 `value` 필드는 빈 문자열(`""`) 또는 `null` 값을 가질 수도 있습니다. |
 | `imageUrl`               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 이미지의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                              |
 | `linkUrl`                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 지도 이미지가 포함되었을 때 웹 지도로 이동하는 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 메인 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                     |
+| `motionCode`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 동작이 정의된 코드. [동작 코드](#MotionCode)를 활용하여 클라이언트 기기에서 미리 정의된 움직임을 수행ㅎ할 수 있습니다. 기기에 동작을 표현하는 기능이 존재하지 않으면 이 코드를 무시하면 됩니다.  |
 | `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문단 형태의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
 | `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                               |
 | `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
@@ -27,9 +29,14 @@
 | `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 세 번째 행에 표시할 텍스트 정보를 담은 객체. 이 필드는 생략될 수 있습니다. |
 | `type`                   | string                                                                          | Content template 구분자. `"Text"` 값을 가집니다.             |
 
+{% include "./Shared_Emotion_Code.md" %}
+
+{% include "./Shared_Motion_Code.md" %}
+
 ## Template Example
 
 {% raw %}
+
 ```json
 // 예제 1.
 // 사용자 요청: 1달러 지금 얼마야? (강조하는 형태의 텍스트 표시)
@@ -88,6 +95,14 @@
       }
     }
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
@@ -148,6 +163,14 @@
       }
     }
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
@@ -223,10 +246,156 @@
     },
     ...
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
+// 예제 4.
+// 사용자 요청: 미안해. (감정 표현)
+
+{
+  "actionList": [
+    {
+      "type": "action",
+      "value": ""
+    }
+  ],
+  "bgUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "highlightText": {
+    "type": "string",
+    "value": ""
+  },
+  "mainText": {
+    "type": "string",
+    "value": ""
+  },
+  "paragraphText": {
+    "type": "string",
+    "value": "전혀 미안해 할 거 없어요."
+  },
+  "referenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "referenceUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "sentenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "tableList": [
+    {
+      "item1": {
+        "type": "string",
+        "value": ""
+      },
+      "item2": {
+        "type": "string",
+        "value": ""
+      },
+      "item2Link": {
+        "type": "",
+        "value": ""
+      }
+    }
+  ],
+  "emotionCode": {
+    "type": "string",
+    "value": "EmotionCode7"
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "type": "Text"
+}
+
+// 예제 5.
+// 사용자 요청: 춤춰줘. (동작 표현)
+
+{
+  "actionList": [
+    {
+      "type": "action",
+      "value": ""
+    }
+  ],
+  "bgUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "highlightText": {
+    "type": "string",
+    "value": ""
+  },
+  "mainText": {
+    "type": "string",
+    "value": ""
+  },
+  "paragraphText": {
+    "type": "string",
+    "value": "제 능력 밖의 일입니다."
+  },
+  "referenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "referenceUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "sentenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "tableList": [
+    {
+      "item1": {
+        "type": "string",
+        "value": ""
+      },
+      "item2": {
+        "type": "string",
+        "value": ""
+      },
+      "item2Link": {
+        "type": "",
+        "value": ""
+      }
+    }
+  ],
+  "emotionCode": {
+    "type": "string",
+    "value": "MotionDance"
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "type": "Text"
+}
 ```
+
 {% endraw %}
 
 ## Screen UI example {#UIExample}
@@ -235,6 +404,11 @@
 | 강조하는 형태의 텍스트 | 문단 형태의 텍스트 | 표 형태의 텍스트 |
 |-------|-------|-------|
 | ![Highlight](/CIC/Resources/Images/Content_Template-Highlight_Text.png) | ![Paragraph](/CIC/Resources/Images/Content_Template-Paragragh_Text.png) | ![Table](/CIC/Resources/Images/Content_Template-Table_Text.png) |
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p>감정이 표현된 화면 예제를 준비하고 있습니다.</p>
+</div>
 
 ## See also
 * [CardList](/CIC/References/ContentTemplates/CardList.md)

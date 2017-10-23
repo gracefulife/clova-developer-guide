@@ -125,7 +125,7 @@ CIC는 사용자가 캘린더에 일정을 생성하면 생성한 일정의 정�
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Schedule 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

@@ -89,7 +89,7 @@ CIC는 사용자가 액션 타이머를 생성하면 생성한 액션 타이머�
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>ActionTimer 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
 </div>

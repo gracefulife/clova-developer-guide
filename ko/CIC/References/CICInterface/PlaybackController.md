@@ -360,7 +360,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-## VolumneDown directive {#VolumeDown}
+## VolumeDown directive {#VolumeDown}
 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 낮춰야 합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
@@ -387,7 +387,7 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-## VolumneUp directive {#VolumeUp}
+## VolumeUp directive {#VolumeUp}
 클라이언트에게 오디오 플레이어 볼륨을 높이도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 높여야 합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
 ### Payload field
