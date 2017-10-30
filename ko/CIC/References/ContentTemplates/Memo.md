@@ -27,7 +27,7 @@ CIC는 사용자가 메모를 생성하면 생성한 메모의 정보를 Memo �
   "type": "Memo",
   "content": {
     "type": "string",
-    "value": "내 와이파이 비밀번호 : 12345678"
+    "value": "내 와이파이 비밀번호: 12345678"
   },
   "timestamp": {
     "type": "datetime",

@@ -367,7 +367,7 @@
 
 | `Type3` | `Type4` |
 |-------|-------|
-| ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
+| ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type4](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
 
 ## See also
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)

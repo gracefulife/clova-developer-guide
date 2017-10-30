@@ -7,16 +7,11 @@ CEK는 Clova extension(이하 extension)을 개발 및 배포할 때 필요한 �
 ![](/CEK/Resources/Images/CEK_Concept_Diagram.png)
 
 CEK는 다음과 같은 기능을 제공합니다.
-* Interaction 모델 관리(Clova Developer Console 제공)
+* [Interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md) 관리([Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md) 제공)
 * Clova와 extension 간 인터페이스 제공
 
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>현재 Clova Developer Console을 개발하는 중입니다. 따라서, Interaction 모델을 정의하려면 제휴 담당자와 협의하기 바랍니다.</p>
-</div>
-
 ## CEK 동작 구조 {#CEKInteractionStructure}
-Clova는 CIC로부터 입력된 사용자의 발화를 인식하며, CEK를 통해 미리 등록된 [Interaction 모델](/CEK/Guides/Build_Custom_Extension.md#InteractionModel)을 참조하여 사용자의 발화를 분석합니다. CEK는 분석된 사용자의 발화 정보를 extension에게 전달하며, extension은 사용자 요청에 대한 처리 결과를 응답으로 돌려줘야 합니다. 이때 미리 정의된 메시지 포맷에 맞게 메시지를 주고 받게 됩니다.
+Clova는 CIC로부터 입력된 사용자의 발화를 인식하며, CEK를 통해 미리 등록된 [interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md)을 참조하여 사용자의 발화를 분석합니다. CEK는 분석된 사용자의 발화 정보를 extension에게 전달하며, extension은 사용자 요청에 대한 처리 결과를 응답으로 돌려줘야 합니다. 이때 미리 정의된 메시지 포맷에 맞게 메시지를 주고 받게 됩니다.
 
 다음은 Clova 플랫폼과 extension 사이의 동작 구조를 나타내는 다이어그램입니다.
 
@@ -26,5 +21,5 @@ Clova는 CIC로부터 입력된 사용자의 발화를 인식하며, CEK를 통�
 ## Extension 종류 {#ExtensionType}
 Clova 플랫폼은 현재 다음과 같은 두 종류의 extension을 지원 및 제공하고 있습니다.
 
-* [Custom extension](/CEK/Guides/Build_Custom_Extension.md) : 임의의 확장된 기능을 제공하는 extension입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다.
-* [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md) : IoT 기기 제어 서비스를 제공하기 위한 extension입니다.
+* [Custom extension](/CEK/Guides/Build_Custom_Extension.md): 임의의 확장된 기능을 제공하는 extension입니다. Custom extension을 사용하면 음악, 쇼핑, 금융과 같은 외부 서비스의 기능을 제공할 수 있습니다.
+* [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md): IoT 기기 제어 서비스를 제공하기 위한 extension입니다.

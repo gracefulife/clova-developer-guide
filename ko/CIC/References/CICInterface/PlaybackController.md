@@ -363,6 +363,11 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 ## VolumeDown directive {#VolumeDown}
 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 낮춰야 합니다. 볼륨을 낮추는 정도는 각 클라이언트의 UX 기준을 따릅니다.
 
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용하길 권장합니다.</p>
+</div>
+
 ### Payload field
 없음
 
@@ -388,7 +393,13 @@ PlaybackController은 클라이언트의 오디오 재생 및 스피커 출력�
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## VolumeUp directive {#VolumeUp}
+
 클라이언트에게 오디오 플레이어 볼륨을 높이도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 높여야 합니다. 볼륨을 올리는 정도는 각 클라이언트의 UX 기준을 따릅니다.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용하길 권장합니다.</p>
+</div>
 
 ### Payload field
 없음

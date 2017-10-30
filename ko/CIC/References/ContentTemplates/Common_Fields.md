@@ -112,7 +112,7 @@ clova://audio-repeat?url=http://target.audioFile.url
 | 파라미터 이름    | 설명                         | 필수 여부 |
 |---------------|-----------------------------|--------|
 | command       | 제어 명령. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul>                      | 필수 |
-| target        | 제어 대상. <ul><li><code>"airplane"</code> : 비행기 모드</li><li><code>"app"</code> : 앱</li><li><code>"bluetooth"</code> : 블루투스</li><li><code>"cellular"</code> : 모바일 통신</li><li><code>"channel"</code> : TV 채널</li><li><code>"flashlight"</code> : 플래시 조명</li><li><code>"gps"</code> : GPS</li><li><code>"powersave"</code> : 절전 모드</li><li><code>"screenbrightness"</code> : 화면 밝기</li><li><code>"soundmode"</code> : 사운드 모드</li><li><code>"volume"</code> : 스피커 볼륨</li><li><code>"wifi"</code> : 무선랜</li></ul> | 필수 |
+| target        | 제어 대상. <ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수 |
 | value         | 설정 값. `command` 파라미터가 `setValue`일 때 스피커 볼륨(`"volume"`) 또는 화면 밝기(`"screenbrightness"`)를 설정하거나 TV 채널(`"channel"`)을 설정할 때 지정되는 값입니다. | 선택 |
 
 이 action URL scheme의 예는 다음과 같습니다.

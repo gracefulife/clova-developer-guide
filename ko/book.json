@@ -6,14 +6,15 @@
   "author": "NAVER Corp.",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v1.8",
+    "DocVersion": "v1.9",
     "Locale": "ko-KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
     "TargetServiceForClientAuth": "NAVER",
     "LoginAPIofTargetService": "https://developers.naver.com/docs/login/overview/",
-    "AuthServerBaseURL" : "https://auth.clova.ai/",
-    "CICBaseURL" : "https://prod-ni-cic.clova.ai/"
+    "AuthServerBaseURL": "https://auth.clova.ai/",
+    "CICBaseURL": "https://prod-ni-cic.clova.ai/",
+    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/"
   },
   "pdf": {
     "fontSize": 11,
