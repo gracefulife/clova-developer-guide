@@ -43,7 +43,14 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
       },
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
-        "displayType": "m100"
+        "display": {
+          "hasDisplay": true,
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -56,13 +63,13 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* `version` : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
-* `session` : **새로운 세션이며**, 새로운 세션에 사용될 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
-* `context` : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request` : `LaunchRequest` 타입 요청으로 현재 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
+* `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* `session`: **새로운 세션이며**, 새로운 세션에 사용될 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
+* `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
+* `request`: `LaunchRequest` 타입 요청으로 현재 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
-[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 미리 정의해 둔 [Interaction 모델](#InteractionModel)에 따라 CEK로부터 요청 메시지를 받습니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
+[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 미리 정의해 둔 [interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 따라 CEK로부터 요청 메시지를 받습니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
 
 IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 `request.intent` 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -89,7 +96,14 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
       },
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
-        "displayType": "m100"
+        "display": {
+          "hasDisplay": true,
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -111,10 +125,10 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* `version` : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
-* `session` : **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
-* `context` : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request` : `IntentRequest` 타입 요청이며, `"FreeTalk"`라는 이름으로 등록된 `intent`를 호출했습니다. 해당 `intent`의 필요 정보로 `"q"`라는 `slot`이 함께 전달되었고 해당 `slot`은 `"How are you"`라는 값을 가지고 있습니다.
+* `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* `session`: **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
+* `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
+* `request`: `IntentRequest` 타입 요청이며, `"FreeTalk"`라는 이름으로 등록된 intent를 호출했습니다. 해당 intent의 필요 정보로 `"q"`라는 slot이 함께 전달되었고 해당 slot은 `"How are you"`라는 값을 가지고 있습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -151,7 +165,14 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
       },
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
-        "displayType": "m100"
+        "display": {
+          "hasDisplay": true,
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -164,7 +185,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 위 예제에서 각 필드의 의미는 다음과 같습니다.
 
-* `version` : 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
-* `session` : **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
-* `context` : 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request` : `SessionEndedRequest` 타입 요청으로 현재 extension의 사용을 중지했음을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
+* `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
+* `session`: **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
+* `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
+* `request`: `SessionEndedRequest` 타입 요청으로 현재 extension의 사용을 중지했음을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.

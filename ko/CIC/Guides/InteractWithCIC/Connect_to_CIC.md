@@ -9,8 +9,8 @@
 사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 아래 그림은 클라이언트가 Clova access token은 획득하는 흐름을 나타내고 있습니다. 참고로 클라이언트는 두 가지 유형으로 구분되며, 각 유형에 따라 Clova access token을 획득하는 과정이 조금 달라집니다.
-* 기기 타입 클라이언트 : 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 전용 페어링 앱(paired app)을 제공합니다.
-* 앱 타입의 클라이언트 : Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
+* 기기 타입 클라이언트: 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 전용 페어링 앱(paired app)을 제공합니다.
+* 앱 타입의 클라이언트: Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
@@ -49,8 +49,8 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 </code></pre>
     <p>참고로 사용자가 이용 약관에 동의하지 않으면 다음 단계를 수행할 수 없습니다. 사용자가 이용 약관에 동의하고 동의한 결과를 서버에 전송하면 클라이언트는 <code>302 Found</code>(URL Redirection) 상태 코드를 가진 응답을 다음과 같은 URL과 함께 수신하게 됩니다.</p>
     <ul>
-      <li><code>clova://agreement-success</code> : 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
-      <li><code>clova://agreement-failure</code> : 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
+      <li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li>
+      <li><code>clova://agreement-failure</code>: 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li>
     </ul>
   </li>
   <li>
@@ -75,12 +75,6 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 </code></pre>
   </li>
 </ol>
-
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>{{ book.TargetServiceForClientAuth }} 계정 인증 정보를 사용하여 Clova access token을 획득할 때, 사용자에게 추가적인 약관 동의를 얻어야 하거나 성인 인증 관련 정보를 WebView로 표시해야 할 수 있습니다. 이 내용에 대한 가이드는 현재 준비 중입니다. 개발 시 테스트를 위해 우선 모바일용 Clova 앱에서 약관 동의 및 성인 인증이 완료된 계정을 이용해주시기 바랍니다.</p>
-</div>
-
 
 ### CIC 연결하기 {#CreateConnection}
 클라이언트가 CIC와 최초 연결 시 수행되어야 하는 작업은 [downchannel을 구성](/CIC/References/CIC_API.md#EstablishDownchannel)하는 것입니다. Downchannel은 CIC로부터 지시 메시지를 받을 때 사용됩니다. 이때 전달받는 지시 메시지는 클라이언트의 이벤트 메시지에 대한 응답으로 전달되는 지시 메시지가 아닌 특정 조건이나 필요에 의해 CIC가 주도(Cloud-initiated)하여 클라이언트에 보내는 지시 메시지입니다. 예를 들면, 새로운 알림(push)이 도착했다면 downchannel을 통해 지시 메시지가 전달될 것입니다.

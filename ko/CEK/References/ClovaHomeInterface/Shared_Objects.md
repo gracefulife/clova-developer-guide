@@ -5,16 +5,16 @@
 |--------------------|---------------------------------------------------|
 | [AirQualityInfoObject](#AirQualityInfoObject)       | 공기질 정보가 담긴 객체            |
 | [ApplianceInfoObject](#ApplianceInfoObject)         | IoT 기기의 정보가 담긴 객체        |
-| [BatteryInfoObject](#BatteryInfoObject)       | 배터리 정보가 담긴 객체            |
+| [BatteryInfoObject](#BatteryInfoObject)             | 배터리 정보가 담긴 객체            |
 | [BrightnessInfoObject](#BrightnessInfoObject)       | 조명의 밝기 정보가 담긴 객체        |
-| [FineDustInfoObject](#FineDustInfoObject)           | 미세 먼지 지수 정보가 담긴 객체      |
+| [FineDustInfoObject](#FineDustInfoObject)           | 미세 먼지 정보가 담긴 객체          |
 | [HeatingModeInfoObject](#HeatingModeInfoObject)     | 난방 모드 정보가 담긴 객체          |
 | [HumidityInfoObject](#HumidityInfoObject)           | 습도 정보가 담긴 객체              |
 | [SpeedInfoObject](#SpeedInfoObject)                 | 속도 정보가 담긴 객체              |
 | [TemperatureInfoObject](#TemperatureInfoObject)     | 온도 정보를 담고 있는 객체          |
 | [TVChannelNameInfoObject](#TVChannelNameInfoObject) | TV 채널의 이름 정보가 담긴 객체      |
 | [TVChannelInfoObject](#TVChannelInfoObject)         | TV 채널 정보가 담긴 객체           |
-| [UltraFineDustInfoObject](#UltraFineDustInfoObject) | 초미세 먼지 지수 정보가 담긴 객체     |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject) | 초미세 먼지 정보가 담긴 객체         |
 | [VolumeInfoObject](#VolumeInfoObject)               | 볼륨 정보를 담고 있는 객체          |
 
 ### AirQualityInfoObject {#AirQualityInfoObject}
@@ -23,13 +23,13 @@
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `index`       | string  | 공기질 지수                    | 필수     |
+| `index`       | string  | 공기질 수준                    | 필수     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// 예제 : GetAirQualityResponse 메시지에서 사용된 예
+// 예제: GetAirQualityResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -60,7 +60,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `actions[]`                  | string array  | 기기가 지원하는 동작 목록. 클라이언트는 기기가 지원하는 동작 내에서 사용자가 IoT 기기를 제어하도록 제한해야 합니다. | 선택    |
 | `additionalApplianceDetails` | object        | 제조사나 IoT 서비스에서 제공하는 추가 정보를 담고 있는 필드                                 | 선택    |
 | `applianceId`                | string        | 기기 ID                                                                        | 필수    |
-| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다.<ul><li>AIRCONDITIONER : 냉난방기 타입</li><li>AIRPURIFIER : 공기청정기 타입</li><li>HUMIDIFIER : 가습기 타입</li><li>LIGHT : 조명 기기 타입</li><li>SETTOPBOX : TV 셋톱 박스 타입</li><li>SMARTPLUG : 기기 전원을 제어하는 플러그</li><li>SWITCH : 가정 내 콘센트 전원을 제어하는 스위치</li><li>THERMOSTAT : 온도 조절 기기 타입</li></ul>          | 필수    |
+| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다.<ul><li>AIRCONDITIONER: 냉난방기 타입</li><li>AIRPURIFIER: 공기청정기 타입</li><li>HUMIDIFIER: 가습기 타입</li><li>LIGHT: 조명 기기 타입</li><li>SETTOPBOX: TV 셋톱 박스 타입</li><li>SMARTPLUG: 기기 전원을 제어하는 플러그</li><li>SWITCH: 가정 내 콘센트 전원을 제어하는 스위치</li><li>THERMOSTAT: 온도 조절 기기 타입</li></ul>          | 필수    |
 | `friendlyName`               | string        | 사용자가 붙여준 기기의 이름                                                           | 선택    |
 | `friendlyDescription`        | string        | 기기에 대한 설명                                                                  | 선택    |
 | `isReachable`                | boolean       | 원격 제어 가능 여부 <ul><li>true: 원격 제어 가능</li><li>false: 원격 제어 불가</li></ul> | 선택    |
@@ -131,7 +131,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>[`DiscoveryAppAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) 메시지를 통해 사용자가 등록한 IoT 기기 목록을 전달할 때 각 기기의 위치를 `location` 필드를 이용하여 CEK로 전달하면 사용자 IoT 기기의 위치가 자동으로 설정됩니다.</p>
+<p><a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoveryAppAppliancesResponse</code></a> 메시지를 통해 사용자가 등록한 IoT 기기 목록을 전달할 때 각 기기의 위치를 `location` 필드를 이용하여 CEK로 전달하면 사용자 IoT 기기의 위치가 자동으로 설정됩니다.</p>
 </div>
 
 다음 표는 `location` 필드에서 지원하는 위치 정보입니다. 이 정보는 사용자의 발화를 분석하거나 사용자에게 기기를 보여줄 때 사용됩니다.
@@ -188,7 +188,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 1 : DiscoverAppliancesResponse 메시지에서 사용된 예
+// 예제 1: DiscoverAppliancesResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
@@ -236,7 +236,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : TurnOnRequest 메시지에서 사용된 예
+// 예제 2: TurnOnRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -271,7 +271,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 1 : IncrementBrightnessRequest 메시지에서 사용된 예
+// 예제 1: IncrementBrightnessRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -290,7 +290,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : IncrementBrightnessConfirmation 메시지에서 사용된 예
+// 예제 2: IncrementBrightnessConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -333,7 +333,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 1 : GetBatteryInfoRequest 메시지에서 사용된 예
+// 예제 1: GetBatteryInfoRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -349,7 +349,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : GetBatteryInfoResponse 메시지에서 사용된 예
+// 예제 2: GetBatteryInfoResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -372,19 +372,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
 
 ### FineDustInfoObject {#FineDustInfoObject}
-미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
+미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 미세 먼지 지수나 수준을 나타낼 때 사용되며 숫자로 표현됩니다.
 
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | 미세 먼지 수치                  | 필수     |
-| `index`       | string  | 미세 먼지 지수                  | 필수     |
+| `value`       | number  | 미세 먼지 지수                  | 필수     |
+| `index`       | string  | 미세 먼지 수준                  | 필수     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// 예제 : GetFineDustResponse 메시지에서 사용된 예
+// 예제: GetFineDustResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -413,13 +413,13 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | string  | 난방 모드. <ul><li><code>"hotwater"</code> : 온수 모드</li><li><code>"away"</code> : 외출 모드</li></ul>   | 필수     |
+| `value`       | string  | 난방 모드. <ul><li><code>"hotwater"</code>: 온수 모드</li><li><code>"away"</code>: 외출 모드</li></ul>   | 필수     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// 예제 1 : SetModeRequest 메시지에서 사용된 예
+// 예제 1: SetModeRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -438,7 +438,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : SetModeConfirmation 메시지에서 사용된 예
+// 예제 2: SetModeConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -461,7 +461,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest)
 
 ### HumidityInfoObject {#HumidityInfoObject}
-습도 정보를 담고 있는 객체입니다. 기기가 측정한 습토 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
+습도 정보를 담고 있는 객체입니다. 기기가 측정한 습도 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -472,7 +472,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 : GetHumidityResponse 메시지에서 사용된 예
+// 예제: GetHumidityResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -506,7 +506,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 1 : IncrementFanSpeedRequest 메시지에서 사용된 예
+// 예제 1: IncrementFanSpeedRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -525,7 +525,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : IncrementFanSpeedConfirmation 메시지에서 사용된 예
+// 예제 2: IncrementFanSpeedConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -568,7 +568,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제 1 : IncrementTargetTemperatureRequest 메시지에서 사용된 예
+// 예제 1: IncrementTargetTemperatureRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -587,7 +587,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2 : IncrementTargetTemperatureConfirmation 메시지에서 사용된 예
+// 예제 2: IncrementTargetTemperatureConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -632,7 +632,7 @@ TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널
 {% raw %}
 
 ```json
-// 예제 1 : SetChannelByNameRequest 메시지에서 사용된 예
+// 예제 1: SetChannelByNameRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -651,7 +651,7 @@ TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널
   }
 }
 
-// 예제 2 : SetChannelByNameConfirmation 메시지에서 사용된 예
+// 예제 2: SetChannelByNameConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -685,7 +685,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 {% raw %}
 
 ```json
-// 예제 1 : SetChannelRequest 메시지에서 사용된 예
+// 예제 1: SetChannelRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -704,7 +704,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
   }
 }
 
-// 예제 2 : SetChannelConfirmation 메시지에서 사용된 예
+// 예제 2: SetChannelConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -742,7 +742,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 {% raw %}
 
 ```json
-// 예제 1 : IncrementVolumeRequest 메시지에서 사용된 예
+// 예제 1: IncrementVolumeRequest 메시지에서 사용된 예
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -761,7 +761,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
   }
 }
 
-// 예제 2 : IncrementVolumeConfirmation 메시지에서 사용된 예
+// 예제 2: IncrementVolumeConfirmation 메시지에서 사용된 예
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -796,14 +796,14 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | 초미세 먼지 수치                  | 필수     |
-| `index`       | number  | 초미세 먼지 지수                  | 필수     |
+| `value`       | number  | 초미세 먼지 지수                  | 필수     |
+| `index`       | number  | 초미세 먼지 수준                  | 필수     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// 예제 : GetUltraFineDustResponse 메시지에서 사용된 예
+// 예제: GetUltraFineDustResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",

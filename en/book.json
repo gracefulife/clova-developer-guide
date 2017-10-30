@@ -13,7 +13,8 @@
     "TargetServiceForClientAuth": "LINE",
     "LoginAPIofTargetService": "https://developers.line.me/line-login/overview/",
     "AuthServerBaseURL": "https://clova-authgw.line-apps.com/",
-    "CICBaseURL": "https://clova-cic.line-apps.com/"
+    "CICBaseURL": "https://clova-cic.line-apps.com/",
+    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/"
   },
   "pdf": {
     "fontSize": 11,
