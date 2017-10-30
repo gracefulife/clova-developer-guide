@@ -25,7 +25,7 @@
 | `lanes[]`                   | object array | 길찾기 결과의 모든 경로에 대한 보간점 정보를 가지는 객체 |
 | `lanes[].create`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 해당 객체의 `section` 필드가 어떤 유형의 정보인지 판단하는 객체. <ul><li><strong>이 필드가 존재하지 않으면</strong> 버스/지하철 구간을 그리는 보간점 정보를 <code>section</code> 필드가 가집니다.</li><li><strong>만약, 이 필드가 존재하고 <code>create.value</code> 값이 <code>"1"</code>이면,</strong> <code>section</code> 필드는 연결선을 그리는 보간점 정보를 가집니다.</ul> |
 | `lanes[].section[]`         | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) array | 버스/지하철 구간 또는 구간 사이의 연결선을 그리는 보간점 정보를 가지는 객체 배열. |
-| `pathType`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 길찾기 결과의 경로 구성 타입을 가지는 객체. `pathType.value` 필드는 다음과 같은 값을 가집니다. <ul><li><code>"1"</code> : 지하철만 이용하는 경로</li><li><code>"2"</code> : 버스만 이용하는 경로</li><li><code>"3"</code> : 지하철과 버스를 복합 이용하는 경로</li></ul>|
+| `pathType`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 길찾기 결과의 경로 구성 타입을 가지는 객체. `pathType.value` 필드는 다음과 같은 값을 가집니다. <ul><li><code>"1"</code>: 지하철만 이용하는 경로</li><li><code>"2"</code>: 버스만 이용하는 경로</li><li><code>"3"</code>: 지하철과 버스를 복합 이용하는 경로</li></ul>|
 | `start`                     | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | 출발지 좌표 정보가 담긴 객체 |
 | `startName`                 | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 출발지 이름 정보가 담긴 객체 |
 | `subPath[]`                 | object array | 각 경로별 세부 구간 정보를 가지는 객체 배열|
@@ -45,7 +45,7 @@
 | `subPath[].startName`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 특정 구간에서 승차해야 하는 지하철역/버스 정류장의 이름 정보가 담긴 객체. 이 필드는 지하철 또는 버스 구간(`subPath[].trafficType.value` 필드 값이 `"1"`이거나 `"2"`일 때) 정보를 나타낼 때 사용됩니다. 도보 구간(`subPath[].trafficType.value` 필드 값이 `"3"`일 때)일 경우 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `subPath[].startX`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 특정 구간에서 승차해야 하는 지하철역/버스 정류장의 X축 좌표 정보가 담긴 객체. 이 필드는 지하철 또는 버스 구간(`subPath[].trafficType.value` 필드 값이 `"1"`이거나 `"2"`일 때) 정보를 나타낼 때 사용됩니다. 도보 구간(`subPath[].trafficType.value` 필드 값이 `"3"`일 때)일 경우 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `subPath[].startY`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 특정 구간에서 승차해야 하는 지하철역/버스 정류장의 Y축 좌표 정보가 담긴 객체. 이 필드는 지하철 또는 버스 구간(`subPath[].trafficType.value` 필드 값이 `"1"`이거나 `"2"`일 때) 정보를 나타낼 때 사용됩니다. 도보 구간(`subPath[].trafficType.value` 필드 값이 `"3"`일 때)일 경우 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
-| `subPath[].trafficType`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 구간 타입. 특정 구간의 이동 수단을 구별하는 식별자입니다. 이 필드 값에 따라 `subPath` 필드의 하위 객체의 구성이 달라질 수 있습니다. 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"1"</code> : 지하철 구간</li><li><code>"2"</code> : 버스 구간</li><li><code>"3"</code> : 도보 구간</li></ul> |
+| `subPath[].trafficType`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 구간 타입. 특정 구간의 이동 수단을 구별하는 식별자입니다. 이 필드 값에 따라 `subPath` 필드의 하위 객체의 구성이 달라질 수 있습니다. 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"1"</code>: 지하철 구간</li><li><code>"2"</code>: 버스 구간</li><li><code>"3"</code>: 도보 구간</li></ul> |
 | `SubwayStationCount`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지하철로 이동할 때 지나야하는 총 지하철역 수 정보가 담긴 객체 |
 | `totalDistance`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 전체 이동 거리 정보가 담긴 객체. 단위는 미터(m)입니다. |
 | `totalStationCount`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 버스 및 지하철로 이동할 때 지나야하는 총 버스 정류장과 지하철역 수의 합 정보가 담긴 객체 |
@@ -59,260 +59,260 @@
 {% raw %}
 ```json
 {
-  "type" : "TransportationRoute",
-  "pathType" : {
-    "type" : "string",
-    "value" : "3"
+  "type": "TransportationRoute",
+  "pathType": {
+    "type": "string",
+    "value": "3"
   },
-  "subPath" : [
+  "subPath": [
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "179"
+      "distance": {
+        "type": "string",
+        "value": "179"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "3"
+      "sectionTime": {
+        "type": "string",
+        "value": "3"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "1"
+      "trafficType": {
+        "type": "string",
+        "value": "1"
       },
-      "lane" : {
-        "name" : {
-          "type" : "string",
-          "value" : "5호선"
+      "lane": {
+        "name": {
+          "type": "string",
+          "value": "5호선"
         },
-        "subwayCode" : {
-          "type" : "string",
-          "value" : "5"
+        "subwayCode": {
+          "type": "string",
+          "value": "5"
         }
       },
-      "startX" : {
-        "type" : "string",
-        "value" : "126.9764454"
+      "startX": {
+        "type": "string",
+        "value": "126.9764454"
       },
-      "startY" : {
-        "type" : "string",
-        "value" : "37.5716197"
+      "startY": {
+        "type": "string",
+        "value": "37.5716197"
       },
-      "startID" : {
-        "type" : "string",
-        "value" : "533"
+      "startID": {
+        "type": "string",
+        "value": "533"
       },
-      "startName" : {
-        "type" : "string",
-        "value" : "광화문"
+      "startName": {
+        "type": "string",
+        "value": "광화문"
       },
-      "endX" : {
-        "type" : "string",
-        "value" : "127.0053025"
+      "endX": {
+        "type": "string",
+        "value": "127.0053025"
       },
-      "endY" : {
-        "type" : "string",
-        "value" : "37.5646938"
+      "endY": {
+        "type": "string",
+        "value": "37.5646938"
       },
-      "endID" : {
-        "type" : "string",
-        "value" : "536"
+      "endID": {
+        "type": "string",
+        "value": "536"
       },
-      "endName" : {
-        "type" : "string",
-        "value" : "동대문역사문화공원"
+      "endName": {
+        "type": "string",
+        "value": "동대문역사문화공원"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "26"
+      "distance": {
+        "type": "string",
+        "value": "26"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "1"
+      "sectionTime": {
+        "type": "string",
+        "value": "1"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "2"
+      "trafficType": {
+        "type": "string",
+        "value": "2"
       },
-      "lane" : {
-        "busNo" : {
-          "type" : "string",
-          "value" : "301"
+      "lane": {
+        "busNo": {
+          "type": "string",
+          "value": "301"
         },
-        "type" : {
-          "type" : "string",
-          "value" : "11"
+        "type": {
+          "type": "string",
+          "value": "11"
         },
-        "busID" : {
-          "type" : "string",
-          "value" : "1006"
+        "busID": {
+          "type": "string",
+          "value": "1006"
         }
       },
-      "startX" : {
-        "type" : "string",
-        "value" : "127.0072774"
+      "startX": {
+        "type": "string",
+        "value": "127.0072774"
       },
-      "startY" : {
-        "type" : "string",
-        "value" : "37.5651429"
+      "startY": {
+        "type": "string",
+        "value": "37.5651429"
       },
-      "startID" : {
-        "type" : "string",
-        "value" : "105343"
+      "startID": {
+        "type": "string",
+        "value": "105343"
       },
-      "startName" : {
-        "type" : "string",
-        "value" : "광희동"
+      "startName": {
+        "type": "string",
+        "value": "광희동"
       },
-      "endX" : {
-        "type" : "string",
-        "value" : "127.0611357"
+      "endX": {
+        "type": "string",
+        "value": "127.0611357"
       },
-      "endY" : {
-        "type" : "string",
-        "value" : "37.511781"
+      "endY": {
+        "type": "string",
+        "value": "37.511781"
       },
-      "endID" : {
-        "type" : "string",
-        "value" : "123460"
+      "endID": {
+        "type": "string",
+        "value": "123460"
       },
-      "endName" : {
-        "type" : "string",
-        "value" : "무역센타"
+      "endName": {
+        "type": "string",
+        "value": "무역센타"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "373"
+      "distance": {
+        "type": "string",
+        "value": "373"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "6"
+      "sectionTime": {
+        "type": "string",
+        "value": "6"
       }
     }
   ],
-  "busStationCount" : {
-    "type" : "string",
-    "value" : "17"
+  "busStationCount": {
+    "type": "string",
+    "value": "17"
   },
-  "subwayStationCount" : {
-    "type" : "string",
-    "value" : "3"
+  "subwayStationCount": {
+    "type": "string",
+    "value": "3"
   },
-  "totalStationCount" : {
-    "type" : "string",
-    "value" : "20"
+  "totalStationCount": {
+    "type": "string",
+    "value": "20"
   },
-  "totalTime" : {
-    "type" : "string",
-    "value" : "55"
+  "totalTime": {
+    "type": "string",
+    "value": "55"
   },
-  "totalDistance" : {
-    "type" : "string",
-    "value" : "13284"
+  "totalDistance": {
+    "type": "string",
+    "value": "13284"
   },
-  "lanes" : [
+  "lanes": [
     {
-      "create" : {
-        "type" : "string",
-        "value" : "1"
+      "create": {
+        "type": "string",
+        "value": "1"
       },
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349538037, 149527412"
+          "type": "location",
+          "value": "349538037, 149527412"
         },
         {
-          "type" : "location",
-          "value" : "349543351, 149521660"
+          "type": "location",
+          "value": "349543351, 149521660"
         }
       ]
     },
     {
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349543351, 149521660"
+          "type": "location",
+          "value": "349543351, 149521660"
         },
         {
-          "type" : "location",
-          "value" : "349543376, 149522540"
+          "type": "location",
+          "value": "349543376, 149522540"
         },
         {
-          "type" : "location",
-          "value" : "349543354, 149522879"
+          "type": "location",
+          "value": "349543354, 149522879"
         },
         {
-          "type" : "location",
-          "value" : "349543478, 149524090"
+          "type": "location",
+          "value": "349543478, 149524090"
         },
         {
-          "type" : "location",
-          "value" : "349543584, 149524790"
+          "type": "location",
+          "value": "349543584, 149524790"
         }
       ]
     },
     {
-      "create" : {
-        "type" : "string",
-        "value" : "1"
+      "create": {
+        "type": "string",
+        "value": "1"
       },
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349600453, 149466463"
+          "type": "location",
+          "value": "349600453, 149466463"
         },
         {
-          "type" : "location",
-          "value" : "349610861, 149458583"
+          "type": "location",
+          "value": "349610861, 149458583"
         }
       ]
     }
   ],
-  "boundary" : {
-    "type" : "string",
-    "value" : "349532874,149530952,349610861,149451998"
+  "boundary": {
+    "type": "string",
+    "value": "349532874,149530952,349610861,149451998"
   },
-  "start" : {
-    "type" : "location",
-    "value" : "349538036,149527412"
+  "start": {
+    "type": "location",
+    "value": "349538036,149527412"
   },
-  "startName" : {
-    "type" : "string",
-    "value" : "광화문삼거리"
+  "startName": {
+    "type": "string",
+    "value": "광화문삼거리"
   },
-  "end" : {
-    "type" : "location",
-    "value" : "349610861,149458582"
+  "end": {
+    "type": "location",
+    "value": "349610861,149458582"
   },
-  "endName" : {
-    "type" : "string",
-    "value" : "코엑스"
+  "endName": {
+    "type": "string",
+    "value": "코엑스"
   },
-  "linkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "linkUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "appLinkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "appLinkUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 ```

@@ -26,7 +26,7 @@
 | `summary.roadSummary[].point`          | object | 도로 진입 좌표 정보를 담고 있는 객체 |
 | `summary.roadSummary[].point.x`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 네이버 지도에서 도로 진입 지점의 X 좌표 정보를 가진 객체 |
 | `summary.roadSummary[].point.y`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 네이버 지도에서 도로 진입 지점의 Y 좌표 정보를 가진 객체 |
-| `summary.roadSummary[].roadCongestion` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 상황 정보가 담긴 객체. `summary.roadSummary.roadCongestion.value`는 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"0"</code> : 미수신</li><li><code>"1"</code> : 원활</li><li><code>"2"</code> : 서행</li><li><code>"3"</code> : 지체</li><li><code>"4"</code> : 정체</li></ul> |
+| `summary.roadSummary[].roadCongestion` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 상황 정보가 담긴 객체. `summary.roadSummary.roadCongestion.value`는 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"0"</code>: 미수신</li><li><code>"1"</code>: 원활</li><li><code>"2"</code>: 서행</li><li><code>"3"</code>: 지체</li><li><code>"4"</code>: 정체</li></ul> |
 | `summary.roadSummary[].speed`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 도로 구간의 평균 속도 정보가 담긴 객체 |
 | `summary.start`                        | object | 출발지 정보를 담고 있는 객체 |
 | `summary.start.lat`                    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출발지의 위도 정보가 담긴 객체 |
@@ -40,96 +40,96 @@
 {% raw %}
 ```json
 {
-  "type" : "CarRoute",
-  "summary" : {
-    "distance" : {
-      "type" : "string",
-      "value" : "62526"
+  "type": "CarRoute",
+  "summary": {
+    "distance": {
+      "type": "string",
+      "value": "62526"
     },
-    "time" : {
-      "type" : "string",
-      "value" : "4526"
+    "time": {
+      "type": "string",
+      "value": "4526"
     },
-    "start" : {
-      "lon" : {
-        "type" : "string",
-        "value" : "349541687"
+    "start": {
+      "lon": {
+        "type": "string",
+        "value": "349541687"
       },
-      "lat" : {
-        "type" : "string",
-        "value" : "149420527"
+      "lat": {
+        "type": "string",
+        "value": "149420527"
       },
-      "name" : {
-        "type" : "string",
-        "value" : "사당역 2호선"
+      "name": {
+        "type": "string",
+        "value": "사당역 2호선"
       }
     },
-    "destination" : {
-      "lon" : {
-        "type" : "string",
-        "value" : "349541687"
+    "destination": {
+      "lon": {
+        "type": "string",
+        "value": "349541687"
       },
-      "lat" : {
-        "type" : "string",
-        "value" : "149420527"
+      "lat": {
+        "type": "string",
+        "value": "149420527"
       },
-      "name" : {
-        "type" : "string",
-        "value" : "사당역 2호선"
+      "name": {
+        "type": "string",
+        "value": "사당역 2호선"
       }
     },
-    "roadSummary" : [
+    "roadSummary": [
       {
-        "name" : {
-          "type" : "string",
-          "value" : "과천대로"
+        "name": {
+          "type": "string",
+          "value": "과천대로"
         },
-        "length" : {
-          "type" : "string",
-          "value" : "6199"
+        "length": {
+          "type": "string",
+          "value": "6199"
         },
-       "point" : {
-         "x" : {
-           "type" : "string",
-           "value" : "349556545"
+       "point": {
+         "x": {
+           "type": "string",
+           "value": "349556545"
          },
-         "y" : {
-           "type" : "string",
-           "value" : "149363287"
+         "y": {
+           "type": "string",
+           "value": "149363287"
          }
        },
-       "speed" : {
-         "type" : "string",
-         "value" : "72"
+       "speed": {
+         "type": "string",
+         "value": "72"
        },
-       "roadCongestion" : {
-         "type" : "string",
-         "value" : "1"
+       "roadCongestion": {
+         "type": "string",
+         "value": "1"
        }
       }
     ]
   },
-  "pathList" : [
+  "pathList": [
     {
-      "type" : "location",
-      "value" : "349668603.0,149410368.0"
+      "type": "location",
+      "value": "349668603.0,149410368.0"
     },
     {
-      "type" : "location",
-      "value" : "349668603.0,149410368.0"
+      "type": "location",
+      "value": "349668603.0,149410368.0"
     }
   ],
-  "boundary" : {
-    "type" : "string",
-    "value" : "349435089,149420518,349561008,149213590"
+  "boundary": {
+    "type": "string",
+    "value": "349435089,149420518,349561008,149213590"
   },
-  "linkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "linkUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "appLinkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "appLinkUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 ```

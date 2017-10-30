@@ -21,10 +21,10 @@ NAVER 계정 access token뿐만 아니라 Clova Developer Console을 통해 획�
 
 | 인증 정보                   | 설명                                              |
 |---------------------------|--------------------------------------------------|
-| `CLOVA_OAUTH_CLIENT_ID`     | Clova Developer Console에 등록한 클라이언트 ID        |
-| `CLOVA_OAUTH_CLIENT_SECRET` | Clova Developer Console을 통해 획득한 클라이언트 인증 키 |
+| `CLOVA_OAUTH_CLIENT_ID`     | Clova Developer Console에 등록한 클라이언트 ID         |
+| `CLOVA_OAUTH_CLIENT_SECRET` | Clova Developer Console을 통해 획득한 클라이언트 secret |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>현재 Clova Developer Console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
+  <p>현재 클라이언트 용 CIC - Clova Developer Console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
 </div>

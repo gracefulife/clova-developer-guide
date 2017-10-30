@@ -1044,8 +1044,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `isReachable` | boolean | 네트워크를 통해 대상 기기에 접근 가능한지 나타내는 값. <ul><li><code>true</code> : 접근 가능(online)</li><li><code>false</code> : 접근 불가(offline)</li></ul> | 필수    |
-| `isTurnOn`    | boolean | 대상 기기의 동작 상태를 나타내는 값. <ul><li><code>true</code> : 대기 상태(idle)</li><li><code>false</code> : 동작 상태(working)</li></ul>                  | 필수    |
+| `isReachable` | boolean | 네트워크를 통해 대상 기기에 접근 가능한지 나타내는 값. <ul><li><code>true</code>: 접근 가능(online)</li><li><code>false</code>: 접근 불가(offline)</li></ul> | 필수    |
+| `isTurnOn`    | boolean | 대상 기기의 동작 상태를 나타내는 값. <ul><li><code>true</code>: 대기 상태(idle)</li><li><code>false</code>: 동작 상태(working)</li></ul>                  | 필수    |
 
 ### Message example
 

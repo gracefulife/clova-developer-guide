@@ -36,185 +36,185 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 ```json
 // 예제 1. Toast 형태
 {
-  "type" : "Popup",
-  "displayType" : "TOAST",
-  "toastText" : {
-    "type" : "string",
-    "value" : "1분 미리듣기 중입니다. 음악 취향 길들이기에 참여하고 네이버 뮤직 100곡 이용권 받으세요!"
+  "type": "Popup",
+  "displayType": "TOAST",
+  "toastText": {
+    "type": "string",
+    "value": "1분 미리듣기 중입니다. 음악 취향 길들이기에 참여하고 네이버 뮤직 100곡 이용권 받으세요!"
   },
-  "toastLinkText" : {
-    "type" : "string",
-    "value" : "이벤트 참여 >"
+  "toastLinkText": {
+    "type": "string",
+    "value": "이벤트 참여 >"
   },
-  "toastLinkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "toastLinkUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "alertText" : {
-    "type" : "string",
-    "value" : ""
+  "alertText": {
+    "type": "string",
+    "value": ""
   },
-  "titleText" : {
-    "type" : "string",
-    "value" : ""
+  "titleText": {
+    "type": "string",
+    "value": ""
   },
-  "mainText" : {
-    "type" : "string",
-    "value" : ""
+  "mainText": {
+    "type": "string",
+    "value": ""
   },
-  "negativeButtonText" : {
-    "type" : "string",
-    "value" : ""
+  "negativeButtonText": {
+    "type": "string",
+    "value": ""
   },
-  "negativeButtonUrl" : {
-    "type" : "url",
-    "value" : ""
+  "negativeButtonUrl": {
+    "type": "url",
+    "value": ""
   },
-  "positiveButtonText" : {
-    "type" : "string",
-    "value" : ""
+  "positiveButtonText": {
+    "type": "string",
+    "value": ""
   },
-  "positiveButtonUrl" : {
-    "type" : "url",
-    "value" : ""
+  "positiveButtonUrl": {
+    "type": "url",
+    "value": ""
   }
 }
 
 // 예제 2. Alert 형태
 {
-  "type" : "Popup",
-  "displayType" : "ALERT",
-  "toastText" : {
-    "type" : "string",
-    "value" : ""
+  "type": "Popup",
+  "displayType": "ALERT",
+  "toastText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkText" : {
-    "type" : "string",
-    "value" : ""
+  "toastLinkText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkUrl" : {
-    "type" : "url",
-    "value" : ""
+  "toastLinkUrl": {
+    "type": "url",
+    "value": ""
   },
-  "alertText" : {
-    "type" : "string",
-    "value" : "다른 기기에서 재생을 시작하여 음악이 중지되었습니다."
+  "alertText": {
+    "type": "string",
+    "value": "다른 기기에서 재생을 시작하여 음악이 중지되었습니다."
   },
-  "titleText" : {
-    "type" : "string",
-    "value" : ""
+  "titleText": {
+    "type": "string",
+    "value": ""
   },
-  "mainText" : {
-    "type" : "string",
-    "value" : ""
+  "mainText": {
+    "type": "string",
+    "value": ""
   },
-  "negativeButtonText" : {
-    "type" : "string",
-    "value" : ""
+  "negativeButtonText": {
+    "type": "string",
+    "value": ""
   },
-  "negativeButtonUrl" : {
-    "type" : "url",
-    "value" : ""
+  "negativeButtonUrl": {
+    "type": "url",
+    "value": ""
   },
-  "positiveButtonText" : {
-    "type" : "string",
-    "value" : ""
+  "positiveButtonText": {
+    "type": "string",
+    "value": ""
   },
-  "positiveButtonUrl" : {
-    "type" : "url",
-    "value" : ""
+  "positiveButtonUrl": {
+    "type": "url",
+    "value": ""
   }
 }
 
 // 예제 3. 버튼 한 개짜리 popup 형태
 {
-  "type" : "Popup",
-  "displayType" : "POPUP",
-  "toastText" : {
-    "type" : "string",
-    "value" : ""
+  "type": "Popup",
+  "displayType": "POPUP",
+  "toastText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkText" : {
-    "type" : "string",
-    "value" : ""
+  "toastLinkText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkUrl" : {
-    "type" : "url",
-    "value" : ""
+  "toastLinkUrl": {
+    "type": "url",
+    "value": ""
   },
-  "alertText" : {
-    "type" : "string",
-    "value" : ""
+  "alertText": {
+    "type": "string",
+    "value": ""
   },
-  "titleText" : {
-    "type" : "string",
-    "value" : "취향파악 완료!"
+  "titleText": {
+    "type": "string",
+    "value": "취향파악 완료!"
   },
-  "mainText" : {
-    "type" : "string",
-    "value" : "이제 네이버 뮤직 100곡 무료 이용권으로 클로바의 추천 음악을 즐기세요!"
+  "mainText": {
+    "type": "string",
+    "value": "이제 네이버 뮤직 100곡 무료 이용권으로 클로바의 추천 음악을 즐기세요!"
   },
-  "negativeButtonText" : {
-    "type" : "string",
-    "value" : ""
+  "negativeButtonText": {
+    "type": "string",
+    "value": ""
   },
-  "negativeButtonUrl" : {
-    "type" : "url",
-    "value" : ""
+  "negativeButtonUrl": {
+    "type": "url",
+    "value": ""
   },
-  "positiveButtonText" : {
-    "type" : "string",
-    "value" : "뮤직 이용권 받기"
+  "positiveButtonText": {
+    "type": "string",
+    "value": "뮤직 이용권 받기"
   },
-  "positiveButtonUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "positiveButtonUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 
 // 예제 4. 버튼 두 개짜리 popup 형태
 {
-  "type" : "Popup",
-  "displayType" : "POPUP",
-  "toastText" : {
-    "type" : "string",
-    "value" : ""
+  "type": "Popup",
+  "displayType": "POPUP",
+  "toastText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkText" : {
-    "type" : "string",
-    "value" : ""
+  "toastLinkText": {
+    "type": "string",
+    "value": ""
   },
-  "toastLinkUrl" : {
-    "type" : "url",
-    "value" : ""
+  "toastLinkUrl": {
+    "type": "url",
+    "value": ""
   },
-  "alertText" : {
-    "type" : "string",
-    "value" : ""
+  "alertText": {
+    "type": "string",
+    "value": ""
   },
-  "titleText" : {
-    "type" : "string",
-    "value" : "취향파악 완료!"
+  "titleText": {
+    "type": "string",
+    "value": "취향파악 완료!"
   },
-  "mainText" : {
-    "type" : "string",
-    "value" : "고객님의 음악 취향을 알게되어서 추천을 더 잘할 수 있겠어요."
+  "mainText": {
+    "type": "string",
+    "value": "고객님의 음악 취향을 알게되어서 추천을 더 잘할 수 있겠어요."
   },
-  "negativeButtonText" : {
-    "type" : "string",
-    "value" : "계속"
+  "negativeButtonText": {
+    "type": "string",
+    "value": "계속"
   },
-  "negativeButtonUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "negativeButtonUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "positiveButtonText" : {
-    "type" : "string",
-    "value" : "종료"
+  "positiveButtonText": {
+    "type": "string",
+    "value": "종료"
   },
-  "positiveButtonUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "positiveButtonUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 ```
