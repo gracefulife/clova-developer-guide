@@ -123,21 +123,21 @@
 {% raw %}
 
 ```json
-예제 1 : ALARM 타입
+예제 1: ALARM 타입
 {
   "token": "5b3eb1a0-3a98-43ca-b28b-040462c2d2c9",
   "type": "ALARM",
   "scheduledTime": "2017-09-16T12:33:44Z"
 }
 
-예제 2 : TIMER 타입
+예제 2: TIMER 타입
 {
   "token": "26346794-0a23-446a-a34f-a0f5d957bd88",
   "type": "TIMER",
   "scheduledTime": "2017-09-14T22:22:22Z"
 }
 
-예제 3 : REMINDER 타입
+예제 3: REMINDER 타입
 {
   "token": "26346794-0a23-446a-a34f-a0f5d957bd88",
   "type": "TIMER",

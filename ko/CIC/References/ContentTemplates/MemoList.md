@@ -30,7 +30,7 @@ CIC는 사용자가 메모의 목록을 요청하면 사용자에게 등록된 �
     {
       "content": {
         "type": "string",
-        "value": "내 와이파이 비밀번호 : 12345678"
+        "value": "내 와이파이 비밀번호: 12345678"
       },
       "lastModified": {
         "type": "datetime",
@@ -40,7 +40,7 @@ CIC는 사용자가 메모의 목록을 요청하면 사용자에게 등록된 �
     {
       "content": {
         "type": "string",
-        "value": "할 일 목록 : 숙제하기, 여친 만들기"
+        "value": "할 일 목록: 숙제하기, 여친 만들기"
       },
       "lastModified": {
         "type": "datetime",
@@ -50,7 +50,7 @@ CIC는 사용자가 메모의 목록을 요청하면 사용자에게 등록된 �
     {
       "content": {
         "type": "string",
-        "value": "버킷 리스트 : 100억 써보기, 아무것도 안하기, 72시간 잠자기"
+        "value": "버킷 리스트: 100억 써보기, 아무것도 안하기, 72시간 잠자기"
       },
       "lastModified": {
         "type": "datetime",
