@@ -10,14 +10,14 @@
 <table>
   <thead>
     <tr>
-      <th width="20%">구분</th>
-      <th width="40%">클라이언트 개발자</th>
-      <th width="40%">Extension 개발자</th>
+      <th width="10%">구분</th>
+      <th width="45%">클라이언트 개발자</th>
+      <th width="45%">Extension 개발자</th>
     </tr>
   </thead>
   <tbody style="vertical-align: top;">
     <tr>
-      <td>개념 이해</td>
+      <td style="text-align: center;">개념 이해</td>
       <td>
         <ul>
           <li><a href="CIC/CIC_Overview.html#WhatisCIC">CIC란?</a></li>
@@ -32,7 +32,7 @@
       </td>
     </tr>
     <tr>
-      <td>설계</td>
+      <td style="text-align: center;">설계</td>
       <td>
         <ul>
           <li>하드웨어 설계 가이드라인(추후 제공 예정)</li>
@@ -47,7 +47,7 @@
       </td>
     </tr>
     <tr>
-      <td>개발</td>
+      <td style="text-align: center;">개발</td>
       <td>
         <ul>
           <li>가이드</li>
@@ -82,7 +82,7 @@
       </td>
     </tr>
     <tr>
-      <td>배포</td>
+      <td style="text-align: center;">배포</td>
       <td>
         <ul>
           <li>클라이언트 등록하기(작성 예정)</li>
