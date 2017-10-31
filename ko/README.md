@@ -20,14 +20,14 @@
       <td style="text-align: center;">개념 이해</td>
       <td>
         <ul>
-          <li><a href="CIC/CIC_Overview.html#WhatisCIC">CIC란?</a></li>
-          <li><a href="CIC/CIC_Overview.html#DialogModel">대화 모델</a></li>
+          <li><a href="/CIC/CIC_Overview.html#WhatisCIC">CIC란?</a></li>
+          <li><a href="/CIC/CIC_Overview.html#DialogModel">대화 모델</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li><a href="CEK/CEK_Overview.html#WhatisCEK">CEK란?</a></li>
-          <li><a href="DevConsole/Guides/CEK/Define_Interaction_Model.html#UnderstandInteractionModel">Interaction 모델 이해하기</a></li>
+          <li><a href="/CEK/CEK_Overview.html#WhatisCEK">CEK란?</a></li>
+          <li><a href="/DevConsole/Guides/CEK/Define_Interaction_Model.html#UnderstandInteractionModel">Interaction 모델 이해하기</a></li>
         </ul>
       </td>
     </tr>
@@ -52,14 +52,14 @@
         <ul>
           <li>가이드</li>
           <ul>
-            <li><a href="CIC/Guides/Interact_with_CIC.html">CIC 연동하기</a></li>
+            <li><a href="/CIC/Guides/Interact_with_CIC.html">CIC 연동하기</a></li>
           </ul>
           <li>레퍼런스</li>
           <ul>
-            <li><a href="CIC/References/CIC_API.html">CIC API 레퍼런스</a></li>
-            <li><a href="CIC/References/CIC_API.html#CICInterface">CIC 메시지 인터페이스</a></li>
-            <li><a href="CIC/References/Content_Templates.html">Content template</a></li>
-            <li><a href="CIC/References/Clova_Auth_API.html">CIC 인증 API 레퍼런스</a></li>
+            <li><a href="/CIC/References/CIC_API.html">CIC API 레퍼런스</a></li>
+            <li><a href="/CIC/References/CIC_API.html#CICInterface">CIC 메시지 인터페이스</a></li>
+            <li><a href="/CIC/References/Content_Templates.html">Content template</a></li>
+            <li><a href="/CIC/References/Clova_Auth_API.html">CIC 인증 API 레퍼런스</a></li>
           </ul>
         </ul>
       </td>
@@ -67,16 +67,16 @@
         <ul>
           <li>가이드</li>
           <ul>
-            <li><a href="DevConsole/Guides/CEK/Register_Extension.html">Extension 등록하기</a></li>
-            <li><a href="DevConsole/Guides/CEK/Define_Interaction_Model.html">Interaction 모델 정의하기</a></li>
-            <li><a href="CEK/Guides/Build_Custom_Extension.html">Custom extension 만들기</a></li>
-            <li><a href="CEK/Guides/Build_Clova_Home_Extension.html">Clova Home extension 만들기</a></li>
-            <li><a href="CEK/Guides/LinkUserAccount.html">사용자 계정 연결하기</a></li>
+            <li><a href="/DevConsole/Guides/CEK/Register_Extension.html">Extension 등록하기</a></li>
+            <li><a href="/DevConsole/Guides/CEK/Define_Interaction_Model.html">Interaction 모델 정의하기</a></li>
+            <li><a href="/CEK/Guides/Build_Custom_Extension.html">Custom extension 만들기</a></li>
+            <li><a href="/CEK/Guides/Build_Clova_Home_Extension.html">Clova Home extension 만들기</a></li>
+            <li><a href="/CEK/Guides/LinkUserAccount.html">사용자 계정 연결하기</a></li>
           </ul>
           <li>레퍼런스</li>
           <ul>
-            <li><a href="CEK/References/CEK_API.html#CustomExtMessage">Custom extension 메시지</a></li>
-            <li><a href="CEK/References/CEK_API.html#ClovaHomeExtMessage">Clova Home extension 메시지</a></li>
+            <li><a href="/CEK/References/CEK_API.html#CustomExtMessage">Custom extension 메시지</a></li>
+            <li><a href="/CEK/References/CEK_API.html#ClovaHomeExtMessage">Clova Home extension 메시지</a></li>
           </ul>
         </ul>
       </td>
@@ -90,7 +90,7 @@
       </td>
       <td>
         <ul>
-          <li><a href="DevConsole/Guides/CEK/Deploy_Extension.html">Extension 배포하기</a></li>
+          <li><a href="/DevConsole/Guides/CEK/Deploy_Extension.html">Extension 배포하기</a></li>
         </ul>
       </td>
     </tr>
