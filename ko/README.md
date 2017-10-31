@@ -1,66 +1,36 @@
-# 시작하기 전에
-
-[Clova](http://clova.ai)는 {{ book.TargetServiceForClientAuth }}가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. Clova 플랫폼을 이용하는 3rd party 개발자는 다음과 두 범주로 나뉠 수 있습니다.
-
-* Clova 인공 지능 서비스를 제공하는 전자 기기, 앱을 개발하려는 클라이언트 개발자
-* Clova를 통해 보유하고 있는 온라인 콘텐츠나 서비스를 제공하려는 확장 기능(Extension) 개발자
-
-위와 같이 나뉜 클라이언트 개발자와 extension 개발자를 위해 Clova는 Clova Interface Connection(CIC), Clova Extension Kit(CEK) 그리고 Clova developer console라는 것을 제공하고 있습니다. 각 개발자는 필요에 따라 다음과 같이 Clova 플랫폼이 제공하는 문서를 참조하면 됩니다.
-
-<table>
-  <thead>
-    <tr>
-      <th width="50%">클라이언트 개발자</th>
-      <th width="50%">Extension 개발자</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <ul>
-          <li>개념 설명 및 가이드</li>
-          <ul>
-            <li><a href="/CIC/CIC_Overview.html">CIC 개요</a></li>
-            <li>하드웨어 설계 가이드라인(작성 예정)</li>
-            <li><a href="/CIC/Guides/Interact_with_CIC.html">CIC 연동하기</a></li>
-            <li>클라이언트 등록하기(작성 예정)</li>
-          </ul>
-          <li>레퍼런스</li>
-          <ul>
-            <li><a href="/CIC/References/CIC_API.html">CIC API 레퍼런스</a></li>
-            <li><a href="/CIC/References/CIC_API.html#CICInterface">CIC 메시지 인터페이스</a></li>
-            <li><a href="/CIC/References/Content_Templates.html">Content template</a></li>
-            <li><a href="/CIC/References/Clova_Auth_API.html">CIC 인증 API 레퍼런스</a></li>
-          </ul>
-          <li><a href="/Release_Notes.html">릴리즈 노트</a></li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li>개념 설명 및 가이드</li>
-          <ul>
-            <li><a href="/CEK/CEK_Overview.html">CEK 개요</a></li>
-            <li>Extension 설계 가이드라인(작성 예정)</li>
-            <li><a href="/DevConsole/Guides/CEK/Register_Extension.md">Extension 등록하기</a></li>
-            <li><a href="/DevConsole/Guides/CEK/Define_Interaction_Model.md">Interaction 모델 정의하기</a></li>
-            <li><a href="/CEK/Guides/Build_Custom_Extension.html">Custom extension 만들기</a></li>
-            <li><a href="/CEK/Guides/Build_Clova_Home_Extension.html">Clova Home extension 만들기</a></li>
-            <li><a href="/CEK/Guides/LinkUserAccount.md">사용자 계정 연결하기</a></li>
-            <li><a href="/DevConsole/Guides/CEK/Deploy_Extension.html">Extension 배포하기</a></li>
-          </ul>
-          <li>레퍼런스</li>
-          <ul>
-            <li><a href="/CEK/References/CEK_API.html#CustomExtMessage">Custom extension 메시지</a></li>
-            <li><a href="/CEK/References/CEK_API.md#ClovaHomeExtMessage">Clova Home extension 메시지</a></li>
-          </ul>
-          <li><a href="/Release_Notes.html">릴리즈 노트</a></li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+# 문서 정보
+이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다. 대상 독자는 CIC를 사용하여 Clova 서비스와 연동되는 전자 기기, 앱을 개발하려는 클라이언트 개발자와 CEK를 사용하여 온라인 콘텐츠 및 서비스를 제공하려는 Extension 개발자입니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova 플랫폼은 계속 확장/개선되고 있기 때문에 문서의 구조와 내용이 수시로 추가 및 업데이트될 수 있습니다.</p>
+  <p>Clova는 현재 개발이 계속 진행되고 있습니다. 따라서, 이 문서의 내용은 언제든지 변경될 수 있습니다.</p>
 </div>
+
+## 연락처
+문서와 관련하여 궁금한 사항은 지정된 Clova 협업 담당자에게 문의합니다.
+
+## 문서 버전 및 변경 이력
+
+현재 이 문서의 버전은 {{ book.DocVersion }}이며, 변경 이력은 다음과 같습니다.
+
+| 버전 | 배포 일자 | 이력 사항                               |
+|----|--------|----------------------------------------|
+| v1.9 | 2017-10-30   | <ul><li>[Clova developer console] <a href="/DevConsole/ClovaDevConsole_Overview.html">Clova developer console 개요</a> 설명 추가</li><li>[Clova Developer Console] <a href="/DevConsole/Guides/CEK/Register_Extension.html">Extension 등록하기</a> 가이드 추가</li><li>[Clova developer console] <a href="/DevConsole/Guides/CEK/Define_Interaction_Model.html">Interaction 모델 정의하기</a> 가이드 추가</li><li>[Clova developer console] <a href="/DevConsole/Guides/CEK/Deploy_Extension.html">Extension 배포하기</a> 가이드 추가</li></ul>  |
+| v1.8 | 2017-10-23   | <ul><li>[CIC] <a href="/CIC/References/ContentTemplates/Text.html">Text</a> 템플릿에 emotionCode 필드와 motionCode 필드를 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/Alerts.html#SetAlert">Alerts.SetAlert</a> 지시 메시지의 assets[].url 필드 내용 변경</li><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#StreamRequested">AudioPlayer.StreamRequested</a> 이벤트 메시지의 예제 오류 수정</li><li>[CEK] <a href="/CEK/References/CEK_API.html#CustomExtMessage">Custom extension 메시지</a> 중 요청 메시지에 context.System.device.displayType 필드 추가</li></ul> |  |
+| v1.7 | 2017-10-16   | <ul><li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a> 네임스페이스에 <a href="/CIC/References/CICInterface/PlaybackController.html#Replay">Replay</a> 지시 메시지 추가</li><li>[CIC] 알람 동기화에 대한 보충 설명을 <a href="/CIC/References/CICInterface/Alerts.html#AlertsWorkFlow">알람 동작 구조</a> 절에 추가</li><li>[CIC] content 필드를 <a href="/CIC/References/Context_Objects.html#AlertsState">Alert.AlertsState</a> 문맥 정보의 <a href="/CIC/References/Context_Objects.html#AlertInfoObject">AlertInfoObject</a>에서 제거</li><li>[공통] 일부 문서 이미지 수정 및 문서 오류 교정</li></ul>  |
+| v1.6 | 2017-10-02   | <ul><li>[CIC] <a href="/CIC/References/CICInterface/Alerts.html">Alerts</a> 네임스페이스 및 알람 관련 인터페이스 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/System.html">System</a> 네임스페이스 및 알람 관련 인터페이스 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#ExpectSpeech">SpeechRecognizer.ExpectSpeech</a> 지시 메시지에 expectContentType 필드 추가</li><li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>의 <a href="/CIC/References/Context_Objects.html#VolumeInfoObject">VolumeInfoObject</a>에 warning 필드 추가</li><li>[CIC] <a href="/CIC/References/ContentTemplates/ActionTimer.html">ActionTimer</a>, <a href="/CIC/References/ContentTemplates/ActionTimerList.html">ActionTimerList</a>, <a href="/CIC/References/ContentTemplates/Alarm.html">Alarm</a>, <a href="/CIC/References/ContentTemplates/AlarmList.html">AlarmList</a>, <a href="/CIC/References/ContentTemplates/Memo.html">Memo</a>, <a href="/CIC/References/ContentTemplates/MemoList.html">MemoList</a>, <a href="/CIC/References/ContentTemplates/Reminder.html">Reminder</a>, <a href="/CIC/References/ContentTemplates/ReminderList.html">ReminderList</a>, <a href="/CIC/References/ContentTemplates/Schedule.html">Schedule</a>, <a href="/CIC/References/ContentTemplates/ScheduleList.html">ScheduleList</a>, <a href="/CIC/References/ContentTemplates/Timer.html">Timer</a>, <a href="/CIC/References/ContentTemplates/TimerList.html">TimerList</a> 템플릿 추가</li><li>[CIC] <a href="/CIC/References/ContentTemplates/ImageText.html">ImageText</a> 템플릿의 일부 코드 예제 수정</li><li>[CIC] <a href="/CIC/References/ContentTemplates/Popup.html">Popup 템플릿</a> 일부 필드 수정</li><li>[CIC] <a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">Clova access token 생성하기</a>와 <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">Authorization code 요청</a>에 서비스 이용 약관에 대한 내용 추가</li></ul>  |
+| v1.5 | 2017-09-25   | <ul><li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController API</a>에 음악 재생 제어용 <a href="/CIC/References/CICInterface/PlaybackController.html#NextCommandIssued">PlaybackController.NextCommandIssued</a> 이벤트 메시지와 <a href="/CIC/References/CICInterface/PlaybackController.html#PreviousCommandIssued">PlaybackController.PreviousCommandIssued</a> 이벤트 메시지 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#ExpectSpeech">SpeechRecognizer.ExpectSpeech</a> 지시 메시지에 expectSpeechId 필드를 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지에 speechId와 explicit 필드를 각각 추가</li><li>[CIC] <a href="/CIC/References/ContentTemplates/Popup.html">Popup 템플릿</a> 추가</li><li>[CEK] Clova Home API에 ChargeConfirmation 외 33건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a> 추가</li><li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 6종 추가 및 location 필드 추가</li></ul>  |
+| v1.4 | 2017-09-18   | <ul><li>[CIC] DeviceControl API에 <a href="/CIC/References/CICInterface/DeviceControl.html#ExpectReportState">DeviceControl.ExpectReportState</a> 지시 메시지, <a href="/CIC/References/CICInterface/DeviceControl.html#ReportState">DeviceControl.ReportState</a> 이벤트 메시지, <a href="/CIC/References/CICInterface/DeviceControl.html#RequestStateSynchronization">DeviceControl.RequestStateSynchronization</a> 이벤트 메시지 추가 및 DeviceControl.UpdateDeviceState 지시 메시지를 <a href="/CIC/References/CICInterface/DeviceControl.html#SynchronizeState">DeviceControl.SynchronizeState</a>로 이름 변경</li><li>[CIC] <a href="/CIC/References/ContentTemplates/Text.html">Text</a> 템플릿에 item3 필드 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#Play">AudioPlayer.Play</a> 지시 메시지에 출처 정보 관련 source 필드 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a>에 durationInMilliseconds 필드 추가 </li><li>[CIC] Notifier 네임스페이스 및 <a href="/CIC/References/CICInterface/Notifier.html#ClearIndicator">ClearIndicator</a>, <a href="/CIC/References/CICInterface/Notifier.html#SetIndicator">SetIndicator</a> 지시 메시지 추가</li><li>[CIC] <a href="/CIC/References/ContentTemplates/Atmosphere.html">대기 정보(Atmosphere) 템플릿</a> 추가</li><li>[CIC] 라이선스 이슈에 따른 날씨 템플릿의 bgClipURL 필드 사용 불가 문구 추가</li></ul>  |
+| v1.3 | 2017-09-11   | <ul><li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#ExpectSpeech">SpeechRecognizer.ExpectSpeech</a> 지시 메시지에 explicit 필드 추가</li><li>[CIC] <a href="/CIC/References/Content_Templates.md">Content template</a>에 <a href="/CIC/References/ContentTemplates/Common_Fields.md">공통 필드</a> 스펙 추가</li></ul> |
+| v1.2 | 2017-09-04   | <ul><li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#Help">Clova.Help</a> 지시 메시지 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">DeviceControl.LaunchApp</a> 지시 메시지 추가</li><li>[CIC] TextRecognizer 네임스페이스 및 <a href="/CIC/References/CICInterface/TextRecognizer.html">TextRecognizer.Recognize</a> 이벤트 메시지 추가</li><li>[CIC] <a href="/CIC/References/CIC_API.html">CIC API</a>, <a href="/CEK/References/CEK_API.html">CEK API</a>의 목차, 설명 재작성</li><li>[CIC] CIC API 내용 업데이트: 요청/응답 헤더의 Status code 추가, REST API reference 문서 포맷 적용</li><li>[기타] 일부 문서 오류 수정</li></ul> |
+| v1.1  | 2017-08-28   | <ul><li>[CIC] 셋톱박스용 TV 채널 정보 스펙과 전원 상태 정보 스펙을 <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>와 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에서 target으로 사용되는 값 일부 추가 및 변경: power, energysave, screenbrightness</li><li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>의 SetPoint를 <a href="/CIC/References/CICInterface/DeviceControl.html#SetValue">SetValue</a>로 이름 변경</li><li>[CIC] <a href="/CIC/References/Clova_Auth_API.html">Clova 인증 API</a> 내용 업데이트 - 요청/응답 헤더와 Status code 추가, REST API reference 문서 포맷 적용</li><li>[CEK] <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueOutOfRangeError">ValueOutOfRangeError</a>를 Clova Home의 Error 인터페이스에 추가</li></ul> |
+| v1.0  | 2017-08-21   | [CIC] <a href="/CIC/Guides/Interact_with_CIC.html#ManageConnection">Access token 갱신</a>절 추가 및 /token API 내용 업데이트 |
+| v0.9  | 2017-08-14   | <ul><li>[CIC] <a href="/CIC/CIC_Overview.html#DialogModel">대화 모델</a> 설명 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> API 추가</li><li>[CIC] <a href="/CIC/References/Context_Objects.html">Device.DeviceState</a> payload 필드 추가: airplane, battery, bluetooth, brightness, flashLight, gps, powerSavingMode, soundMode, volume, wifi</li><li>[CEK] <a href="/CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">Multi-turn 대화 수행하기</a>절 추가 및 sessionAttributes 필드 설명 업데이트</li></ul> |
+| v0.8 | 2017-08-04 | <ul><li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#Hello">Clova.Hello</a> 지시 메시지 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#Play">AudioPlayer.Play</a> 지시 메시지의 AudioItem 객체에 type 필드 추가</li><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a> 객체에 urlPlayable 필드 추가</li><li>[CIC] <a href="/CIC/References/CIC_API.html#Error">CIC 오류 메시지</a> 스펙 추가</li><li>[CIC] <a href="/CIC/References/CIC_API.html#MultipartMessage">Multipart 메시지</a> 내용 재작성</li><li>[CEK] Clova Home <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 추가: 공기청정기, 가습기, 셋톱박스, 난방기기</li><li>[CEK] Clova Home <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 제외: 도어락</li></ul>  |
+| v0.7 | 2017-07-28 | <ul><li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a>의 PlayNext, Stop 제거 (<a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a>에 병합)</li><li>[CIC]  <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a>의 메시지 이름 변경(Mute, Next, Pause, Previous, Resume, Stop, Unmute, VolumeDown, VolumeUp </li><li>[CIC] 길찾기 템플릿 추가: <a href="/CIC/References/ContentTemplates/CarRoute.html">CarRoute</a>, <a href="/CIC/References/ContentTemplates/TransportationRoute.html">TransportationRoute</a></li><li>[CIC] 날씨 템플릿 추가: <a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>, <a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>, <a href="/CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>, <a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>, <a href="/CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a></li></ul> |
+| v0.6 | 2017-07-14 | [CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a> 객체 beginAtInMilliseconds 필드 내용 추가 |
+| v0.5 | 2017-07-07 | <ul><li>[CEK] <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">Custom extension 응답 메시지</a>의 <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">outputSpeech</a> 객체 구성 업데이트 반영</li><li>[공통] <a href="/Terms.html">용어집 추가</a></li><li>CEK 메시지 포맷 파트의 목차 업데이트</li></ul> |
+| v0.4 | 2017-07-03 | <ul><li>[CEK] CEK 문서 이미지 내용 업데이트</li><li>[공통] 문서 리뷰 결과 반영</li></ul> |
+| v0.3 | 2017-06-19 | <ul><li>[CEK] CEK 문서 파트 작성</li><li>[CIC] <a href="/CIC/Guides/Interact_with_CIC.html#ManageConnection">연결 관리하기</a> 업데이트 (HTTP Ping 프레임을 사용할 수 없을 경우)</li></ul> |
+| v0.2 | 2017-06-08 | [CIC] [CIC 연동하기](/CIC/Guides/Interact_with_CIC.html)에 [연결 관리하기](/CIC/Guides/Interact_with_CIC.md#ManageConnection) 추가 (HTTP Ping) |
+| v0.1 | 2017-05-29 | [CIC] CIC 문서 파트 작성 |
