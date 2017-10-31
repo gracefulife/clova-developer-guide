@@ -10,9 +10,9 @@
 <table>
   <thead>
     <tr>
-      <th>구분</th>
-      <th>클라이언트 개발자</th>
-      <th>Extension 개발자</th>
+      <th width="20%">구분</th>
+      <th width="40%">클라이언트 개발자</th>
+      <th width="40%">Extension 개발자</th>
     </tr>
   </thead>
   <tbody style="vertical-align: top;">
