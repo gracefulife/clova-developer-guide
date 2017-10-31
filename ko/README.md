@@ -10,9 +10,9 @@
 <table>
   <thead>
     <tr>
-      <th width="10%">구분</th>
-      <th width="45%">클라이언트 개발자</th>
-      <th width="45%">Extension 개발자</th>
+      <th width="12%">구분</th>
+      <th width="44%">클라이언트 개발자</th>
+      <th width="44%">Extension 개발자</th>
     </tr>
   </thead>
   <tbody style="vertical-align: top;">
@@ -35,14 +35,14 @@
       <td style="text-align: center;">설계</td>
       <td>
         <ul>
-          <li>하드웨어 설계 가이드라인(추후 제공 예정)</li>
-          <li>애플리케이션 설계 가이드라인(추후 제공 예정)</li>
+          <li>하드웨어 설계 가이드라인(추후 제공)</li>
+          <li>애플리케이션 설계 가이드라인(추후 제공)</li>
         </ul>
       </td>
       <td>
         <ul>
-          <li>Custom extension 설계 가이드 라인(추후 제공 예정)</li>
-          <li>Clova home extension 설계 가이드 라인(추후 제공 예정)</li>
+          <li>Custom extension 설계 가이드 라인(추후 제공)</li>
+          <li>Clova home extension 설계 가이드 라인(추후 제공)</li>
         </ul>
       </td>
     </tr>
