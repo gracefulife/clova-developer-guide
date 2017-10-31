@@ -130,7 +130,7 @@
 
 ## Clova Developer Console
 * [Clova developer console 개요](/DevConsole/ClovaDevConsole_Overview.md)
-* CIC 메뉴 사용하기 (추가 예정)
+* [CIC 메뉴 사용하기 (추가 예정)]()
 * [CEK Menu 사용하기](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
   * [Extension 등록하기](/DevConsole/Guides/CEK/Register_Extension.md)
     * [Extension 기본 정보 입력](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)
