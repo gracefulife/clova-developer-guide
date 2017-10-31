@@ -1,9 +1,9 @@
 # Summary
 
-## About This Document
+## Discover
 
-* [문서 정보](/README.md)
-* [저작권](/Copyright.md)
+* [시작하기 전에](/README.md)
+* [릴리즈 노트](/Release_Notes.md)
 * [용어 및 약어](/Terms.md)
 
 ## Clova Interface Connect
