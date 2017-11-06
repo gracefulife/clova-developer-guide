@@ -52,6 +52,7 @@
     * [Clova.Location](/CIC/References/Context_Objects.md#Location)
     * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
     * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
+    * [Device.Display](/CIC/References/Context_Objects.md#Display)
     * [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 * [Content template 레퍼런스](/CIC/References/Content_Templates.md)
   * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)

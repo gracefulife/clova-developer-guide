@@ -2,6 +2,18 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2017-11-06
+
+## 플랫폼 변경 사항
+
+* CIC
+  - [`SpeechRecognizer.KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) 지시 메시지 추가
+  - 클라이언트의 디스플레이 장치 정보를 공유하기 위한 [`Device.Display`](/CIC/References/Context_Objects.md#Display) 맥락 정보 추가
+  - [`ActionTimer`](/CIC/References/ContentTemplates/ActionTimer.html), [`ActionTimerList`](/CIC/References/ContentTemplates/ActionTimerList.html), [`Alarm`](/CIC/References/ContentTemplates/Alarm.html), [`AlarmList`](/CIC/References/ContentTemplates/AlarmList.html), [`Memo`](/CIC/References/ContentTemplates/Memo.html), [`MemoList`](/CIC/References/ContentTemplates/MemoList.html), [`Reminder`](/CIC/References/ContentTemplates/Reminder.html), [`ReminderList`](/CIC/References/ContentTemplates/ReminderList.html), [`Schedule`](/CIC/References/ContentTemplates/Schedule.html), [`ScheduleList`](/CIC/References/ContentTemplates/ScheduleList.html), [`Timer`](/CIC/References/ContentTemplates/Timer.html), [`TimerList`](/CIC/References/ContentTemplates/TimerList.html) 템플릿에 `token` 필드 추가
+
+* CEK
+  - [Custom extension 메시지](/CEK/References/CEK_API.html#CustomExtMessage) 중 요청 메시지에서 `context.System.device.displayType` 필드의 이름을 `context.System.device.display`로 바꾸고 하위 필드 구성을 변경
+
 ## 2017-10-30
 
 ### 문서 변경 사항

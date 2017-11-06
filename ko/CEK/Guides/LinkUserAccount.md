@@ -163,7 +163,8 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,

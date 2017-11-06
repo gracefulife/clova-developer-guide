@@ -96,8 +96,3 @@
     </tr>
   </tbody>
 </table>
-
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>Clova 플랫폼은 계속 확장/개선되고 있기 때문에 문서의 구조와 내용이 수시로 추가 및 업데이트될 수 있습니다. 이에 대한 내용은 <a href="/Release_Notes.html">릴리즈 노트</a>를 참조합니다.</p>
-</div>
