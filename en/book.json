@@ -25,5 +25,6 @@
       "right": 30
     },
     "paperSize": "a3"
-  }
+  },
+  "plugins": "-search"
 }

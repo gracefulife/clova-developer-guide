@@ -20,12 +20,13 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
       "device": {
         "deviceId": {{string}},
         "display": {
-          "hasDisplay": {{boolean}},
-          "dpi": {{number}},
           "contentLayer": {
             "width": {{number}},
             "height": {{number}}
-          }
+          },
+          "dpi": {{number}},
+          "orientation": {{string}},
+          "size": {{string}}
         }
       },
       "user": {
@@ -62,11 +63,12 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `context.System.device`                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
 | `context.System.device.deviceId`           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 필수 |
 | `content.System.device.display`            | object  | 클라이언트 기기의 디스플레이 정보를 가지고 있는 객체.                                                 | 필수 |
-| `content.System.device.display.contentLayer`        | object | 디스플레이에서 콘텐츠가 표시되는 영역의 해상도 정보를 가지는 객체. `content.System.device.display.hasDisplay`의 값이 `false`일 경우 이 필드는 생략됩니다.             | 선택 |
-| `content.System.device.display.contentLayer.width`  | object | 디스플레이에서 콘텐츠가 표시되는 영역의 너비. 단위는 픽셀(px)입니다.             | 필수 |
-| `content.System.device.display.contentLayer.height` | object | 디스플레이에서 콘텐츠가 표시되는 영역의 높이. 단위는 픽셀(px)입니다.             | 필수 |
-| `content.System.device.display.dpi`        | object | 클라이언트 기기의 디스플레이 장치의 DPI. `content.System.device.display.hasDisplay`의 값이 `false`일 경우 이 필드는 생략됩니다.          | 선택 |
-| `content.System.device.display.hasDisplay` | object | 클라이언트 기기에 디스플레이 장치가 있는지 나타내는 필드.<ul><li><code>true</code>: 디스플레이 장치가 있음</li><li><code>false</code>: 디스플레이 장치가 없음</li></ul>                      | 필수 |
+| `content.System.device.display.contentLayer`        | object | 디스플레이에서 콘텐츠가 표시되는 영역의 해상도 정보를 가지는 객체. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.  | 선택 |
+| `content.System.device.display.contentLayer.width`  | number | 디스플레이에서 콘텐츠가 표시되는 영역의 너비. 단위는 픽셀(px)입니다.             | 필수 |
+| `content.System.device.display.contentLayer.height` | number | 디스플레이에서 콘텐츠가 표시되는 영역의 높이. 단위는 픽셀(px)입니다.             | 필수 |
+| `content.System.device.display.dpi`         | number | 디스플레이 장치의 DPI. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.          | 선택 |
+| `content.System.device.display.orientation` | string | 디스플레이 장치의 방향. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.<ul><li><code>"landscape"</code>: 가로 방향</li><li><code>"portrait"</code>: 세로 방향</li></ul>                      | 선택 |
+| `content.System.device.display.size`        | string | 디스플레이 장치의 해상도 크기를 나타내는 값. 해상도가 미리 지정된 값이 입력될 수도 있고 `"none"`이나 `"custom"`처럼 디스플레이 장치가 없거나 미리 정의된 크기의 해상도가 아닌 경우를 나타내는 값이 입력될 수도 있습니다. 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"none"</code>: 클라이언트 기기에 디스플레이 장치가 없음</li><li><code>"s100"</code>: 저해상도(160px X 107px)</li><li><code>"m100"</code>: 중간 해상도(427px X 240px)</li><li><code>"l100"</code>: 고해상도(640px X 360px)</li><li><code>"xl100"</code>: 초고해상도(xlarge type, 899px X 506px)</li><li><code>"custom"</code>: 미리 정의된 규격이 아닌 해상도.</li></ul><div class="note"><p><strong>Note!</strong></p><p>클라이언트 기기의 화면 비율과 DPI에 맞는 화질의 미디어 콘텐츠를 제공해야 합니다.</p></div> | 필수 |
 | `context.System.user`                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
 | `context.System.user.userId`               | string  | 기기 기본 사용자의 Clova ID                                    | 필수 |
 | `context.System.user.accessToken`          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수 |
@@ -75,7 +77,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `session.new`                              | boolean | 요청 메시지가 새로운 세션에 대한 것인지 아니면 기존 세션에 대한 것인지 구분합니다. <ul><li>true: 새로운 세션</li><li>false: 기존 세션</li></ul>  | 필수 |
 | `session.sessionAttributes`                       | object  | 사용자와의 multi-turn 대화를 위해 필요한 정보를 저장해둔 객체. Custom extension은 [응답 메시지](#CustomExtResponseMessage)의 `response.sessionAttributes` 필드를 이용해 중간 정보를 CEK에 전달하게 되며, 사용자의 추가 요청을 수신할 때 다시 해당 정보를 요청 메시지의 `session.sessionAttributes` 필드로 받게 됩니다. 객체는 키(key)-값(value)의 쌍으로 구성되며, custom extension을 구현할 때 임의로 정의할 수 있습니다. 저장된 값이 없으면 빈 객체가 전달됩니다.   | 필수 |
 | `session.sessionId`                        | string  | 세션 ID                                                    | 필수 |
-| `session.user`                            | object  | 현재 사용자의 정보를 가지고 있는 객체.                             | 필수 |
+| `session.user`                             | object  | 현재 사용자의 정보를 가지고 있는 객체.                             | 필수 |
 | `session.user.userId`                      | string  | 현재 사용자의 Clova ID. `context.System.user.userId` 값과 다를 수 있습니다. | 필수 |
 | `session.user.accessToken`                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.| 선택 |
 | `version`                                  | string  | 메시지 포맷의 버전 (CEK 버전)                          | 필수 |
@@ -104,7 +106,8 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
@@ -140,7 +143,8 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
@@ -185,7 +189,8 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
