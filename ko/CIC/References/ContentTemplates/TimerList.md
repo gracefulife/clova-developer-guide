@@ -40,16 +40,6 @@ CIC는 사용자가 타이머의 목록을 요청하면 사용자에게 등록�
     {
       "token": {
         "type": "string",
-        "value": "b5403bd0-1598-495b-a466-9385c2b1103a"
-      },
-      "scheduledTime": {
-        "type": "datetime",
-        "value": "2017-12-24T00:00:20Z"
-      }
-    },
-    {
-      "token": {
-        "type": "string",
         "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
       },
       "scheduledTime": {
