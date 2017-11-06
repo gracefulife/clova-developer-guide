@@ -60,7 +60,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `actions[]`                  | string array  | 기기가 지원하는 동작 목록. 클라이언트는 기기가 지원하는 동작 내에서 사용자가 IoT 기기를 제어하도록 제한해야 합니다. | 선택    |
 | `additionalApplianceDetails` | object        | 제조사나 IoT 서비스에서 제공하는 추가 정보를 담고 있는 필드                                 | 선택    |
 | `applianceId`                | string        | 기기 ID                                                                        | 필수    |
-| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다.<ul><li>AIRCONDITIONER: 냉난방기 타입</li><li>AIRPURIFIER: 공기청정기 타입</li><li>HUMIDIFIER: 가습기 타입</li><li>LIGHT: 조명 기기 타입</li><li>SETTOPBOX: TV 셋톱 박스 타입</li><li>SMARTPLUG: 기기 전원을 제어하는 플러그</li><li>SWITCH: 가정 내 콘센트 전원을 제어하는 스위치</li><li>THERMOSTAT: 온도 조절 기기 타입</li></ul>          | 필수    |
+| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다.<ul><li><code>"AIRCONDITIONER"</code>: 냉난방기 타입</li><li><code>"AIRPURIFIER"</code>: 공기청정기 타입</li><li><code>"AIRSENSOR"</code>: 공기질 측정기 타입</li><li><code>"DEHUMIDIFIER"</code>: 제습기 타입</li><li><code>"HUMIDIFIER"</code>: 가습기 타입</li><li><code>"LIGHT"</code>: 조명 기기 타입</li><li><code>"ROBOTVACUUM"</code>: 로봇 청소기 타입</li><li><code>"SETTOPBOX"</code>: TV 셋톱 박스 타입</li><li><code>"SMARTHUB"</code>: 스마트 허브 타입</li><li><code>"SMARTPLUG"</code>: 기기 전원을 제어하는 플러그</li><li><code>"SMARTTV"</code>: 스마트 TV 타입</li><li><code>"SMARTVALVE"</code>: 스마트 밸브 타입</li><li><code>"SWITCH"</code>: 가정 내 콘센트 전원을 제어하는 스위치</li><li><code>"THERMOSTAT"</code>: 온도 조절 기기 타입</li></ul>          | 필수    |
 | `friendlyName`               | string        | 사용자가 붙여준 기기의 이름                                                           | 선택    |
 | `friendlyDescription`        | string        | 기기에 대한 설명                                                                  | 선택    |
 | `isReachable`                | boolean       | 원격 제어 가능 여부 <ul><li>true: 원격 제어 가능</li><li>false: 원격 제어 불가</li></ul> | 선택    |
@@ -74,20 +74,20 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 | applianceTypes | 허용되는 actions                                |
 |----------------|-----------------------------------------------|
-| `AIRCONDITIONER` | DecrementTargetTemperature, GetTargetTemperature, HealthCheck, IncrementTargetTemperature, SetTargetTemperature, TurnOff, TurnOn               |
-| `AIRPURIFIER`    | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn                  |
-| `AIRSENSOR`      | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetTargetTemperature, HealthCheck                                                   |
-| `DEHUMIDIFIER`   | GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
-| `HUMIDFIER`      | GetHumidity, HealthCheck, TurnOff, TurnOn                                                                                                      |
-| `LIGHT`          | DecrementBrightness, HealthCheck, IncrementBrightness, SetBrightness, TurnOff, TurnOn                                                          |
-| `ROBOTVACUUM`    | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                                           |
-| `SETTOPBOX`      | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `SMARTHUB`       | GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                                                        |
-| `SMARTPLUG`      | HealthCheck, TurnOff, TurnOn                                                                                                                   |
-| `SMARTTV`        | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `SMARTVALVE`     | GetLockState, SetLockState                                                 |
-| `SWITCH`         | HealthCheck, TurnOff, TurnOn                                                                                                                   |
-| `THERMOSTAT`     | HealthCheck, SetMode, TurnOff, TurnOn                                                                                                          |
+| `"AIRCONDITIONER"` | DecrementTargetTemperature, GetTargetTemperature, HealthCheck, IncrementTargetTemperature, SetTargetTemperature, TurnOff, TurnOn               |
+| `"AIRPURIFIER"`    | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn                  |
+| `"AIRSENSOR"`      | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetTargetTemperature, HealthCheck                                                   |
+| `"DEHUMIDIFIER"`   | GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
+| `"HUMIDIFIER"`     | GetHumidity, HealthCheck, TurnOff, TurnOn                                                                                                      |
+| `"LIGHT"`          | DecrementBrightness, HealthCheck, IncrementBrightness, SetBrightness, TurnOff, TurnOn                                                          |
+| `"ROBOTVACUUM"`    | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                                           |
+| `"SETTOPBOX"`      | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
+| `"SMARTHUB"`       | GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                                                        |
+| `"SMARTPLUG"`      | HealthCheck, TurnOff, TurnOn                                                                                                                   |
+| `"SMARTTV"`        | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
+| `"SMARTVALVE"`     | GetLockState, SetLockState                                                 |
+| `"SWITCH"`         | HealthCheck, TurnOff, TurnOn                                                                                                                   |
+| `"THERMOSTAT"`     | HealthCheck, SetMode, TurnOff, TurnOn                                                                                                          |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -322,7 +322,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetBrightnessRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetBrightnessRequest)
 
 ### BatteryInfoObject {#BatteryInfoObject}
-기기의 배터리 정보를 담고 있는 객체입니다. 배터리 정보를 요청했을 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
+기기의 배터리 정보를 담고 있는 객체입니다. 배터리 정보를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
 
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
