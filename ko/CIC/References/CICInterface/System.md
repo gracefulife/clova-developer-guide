@@ -63,7 +63,7 @@ System은 Clova와 클라이언트 사이에 알람, 일정과 같이 사용자 
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `allAlerts`   | object array | 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가지는 객체 배열입니다. | 필수    |
+| `allAlerts`   | object array | 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 필수    |
 
 ### Remarks
 현재는 System 네임스페이스는 사용자가 등록한 알람 정보(Alerts)를 동기화하는데 사용되고 있습니다. 추후 동기화 대상이되는 정보가 더 많아질 수 있습니다.

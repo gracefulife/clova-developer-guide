@@ -5,6 +5,7 @@
 * [`Alerts.AlertsState`](#AlertsState)
 * [`AudioPlayer.PlaybackState`](#PlaybackState)
 * [`Device.DeviceState`](#DeviceState)
+* [`Device.Display`](#Display)
 * [`Clova.FreetalkState`](#FreetalkState)
 * [`Clova.Location`](#Location)
 * [`Clova.SavedPlace`](#SavedPlace)
@@ -15,6 +16,8 @@
 {% include "./ContextObjects/PlaybackState.md" %}
 
 {% include "./ContextObjects/DeviceState.md" %}
+
+{% include "./ContextObjects/Display.md" %}
 
 {% include "./ContextObjects/FreetalkState.md" %}
 

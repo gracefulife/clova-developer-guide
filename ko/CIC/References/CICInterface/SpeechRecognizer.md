@@ -10,10 +10,11 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.      |
+| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.         |
 | [`ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) | Event     | 음성 입력 대기 시간이 초과했음을 CIC에 보고합니다.           |
+| [`KeepRecording`](#KeepRecording)               | Directive | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.            |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
-| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.   |
+| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.      |
 | [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.      |
 
 ## ExpectSpeech directive {#ExpectSpeech}
@@ -107,6 +108,39 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 
+## KeepRecording directive {#KeepRecording}
+
+클라이언트에게 사용자의 음성 입력을 계속 받도록 지시합니다. `SpeechRecognizer.KeepRecording` 지시 메시지는 클라이언트에게 입력된 사용자의 음성을 인식하고 있음을 알려주는 중간 응답이며, 이 지시 메시지를 받은 클라이언트는 CIC로부터의 응답에 대한 timeout을 구현하거나 UX에 활용할 수 있습니다.
+
+### Payload field
+
+없음
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "SpeechRecognizer",
+      "name": "KeepRecording",
+      "dialogRequestId": "bc834682-6d22-4bbb-8352-4a49df2ed3d7",
+      "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
+    },
+    "payload": {}
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+
+* [`SpeechRecognizer.Recognize`](#Recognize)
+* [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut)
+
 ## Recognize event {#Recognize}
 `SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
@@ -139,8 +173,14 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 // 일반적인 사용자 음성 입력
 {
   "context": [
-    {{Speaker.VolumeState}},
-    {{Clova.FreetalkState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.FreetalkState}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}}
   ],
   "event": {
     "header": {
@@ -187,10 +227,16 @@ Content-Type: application/octet-stream
 ```
 
 ### See also
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
+* [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
+* [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
+* [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
+* [Clova.Location](/CIC/References/Context_Objects.md#Location)
+* [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
+* [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
+* [Device.Display](/CIC/References/Context_Objects.md#Display)
+* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 

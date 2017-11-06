@@ -22,7 +22,7 @@ Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니
 ```
 {% endraw %}
 
-만약, 사용자 요청을 수행하는데 오류가 발생한 경우 [Error API](/CEK/References/ClovaHomeInterface/Error_Interfaces.html)를 이용하여 오류를 CEK에게 전달해야 합니다. Clova는 수신된 API에 따라 그에 상응하는 오류 처리를 수행합니다.
+만약, 사용자 요청을 수행하는데 오류가 발생한 경우 [Error API](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)를 이용하여 오류를 CEK에게 전달해야 합니다. Clova는 수신된 API에 따라 그에 상응하는 오류 처리를 수행합니다.
 
 다음은 기기에 접속할 수 없어 `TargetOfflineError` 오류 메시지를 전달한 예제입니다.
 
