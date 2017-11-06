@@ -38,11 +38,20 @@ CIC는 사용자가 리마인더의 목록을 요청하면 사용자에게 등�
       },
       "scheduledTime": {
         "type": "datetime",
-        "value": "2017-10-01T14:00:00Z"
+        "value": "2017-10-09T09:00:00Z"
       },
+      "repeatPeriod": {
+        "type": "string",
+        "value": ""
+      },
+      "repeatDay": [],
       "content": {
         "type": "string",
         "value": "입금하기"
+      },
+      "status": {
+        "type": "string",
+        "value": "DONE"
       }
     },
     {
@@ -52,11 +61,48 @@ CIC는 사용자가 리마인더의 목록을 요청하면 사용자에게 등�
       },
       "scheduledTime": {
         "type": "datetime",
-        "value": "2017-10-01T14:00:00Z"
+        "value": "2017-10-09T09:00:00Z"
       },
+      "repeatPeriod": {
+        "type": "string",
+        "value": "daily"
+      },
+      "repeatDay": [],
       "content": {
         "type": "string",
-        "value": "소개팅 준비"
+        "value": "비타민 먹기"
+      },
+      "status": {
+        "type": "string",
+        "value": "TODO"
+      }
+    },
+    {
+      "token": {
+        "type": "string",
+        "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
+      },
+      "scheduledTime": {
+        "type": "datetime",
+        "value": "2017-10-09T09:00:00Z"
+      },
+      "repeatPeriod": {
+        "type": "string",
+        "value": "weekly"
+      },
+      "repeatDay": [
+        {
+          "type": "string",
+          "value": "monday"
+        }
+      ],
+      "content": {
+        "type": "string",
+        "value": "청소하기"
+      },
+      "status": {
+        "type": "string",
+        "value": "TODO"
       }
     }
   ]
