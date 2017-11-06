@@ -6,7 +6,7 @@
   "author": "NAVER Corp.",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v1.9",
+    "DocVersion": "v2.0",
     "Locale": "ko-KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
@@ -25,5 +25,6 @@
       "right": 30
     },
     "paperSize": "a3"
-  }
+  },
+  "plugins": "-search"
 }

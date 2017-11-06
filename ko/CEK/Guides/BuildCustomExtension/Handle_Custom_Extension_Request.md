@@ -44,7 +44,8 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
@@ -98,7 +99,8 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
@@ -167,7 +169,8 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
       "device": {
         "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
         "display": {
-          "hasDisplay": true,
+          "size": "l100",
+          "orientation": "landscape",
           "dpi": 96,
           "contentLayer": {
             "width": 640,
