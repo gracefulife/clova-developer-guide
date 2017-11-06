@@ -1,5 +1,5 @@
 ## Device.DeviceState {#DeviceState}
-DeviceState는 클라이언트의 기기의 상태 정보를 CIC에게 보고할 때 사용하는 메시지 포맷입니다.
+`Device.DeviceState`는 클라이언트의 기기의 상태 정보를 CIC에게 보고할 때 사용하는 메시지 포맷입니다.
 
 ### Message structure
 {% raw %}

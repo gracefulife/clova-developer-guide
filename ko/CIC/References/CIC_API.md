@@ -124,8 +124,9 @@ GET /v1/directives
 
 ### Request header
 
-* Authorization: 획득한 Clova access token
-  * Bearer [Clova access token]
+| Request header | 설명                                                                |
+|----------------|--------------------------------------------------------------------|
+| Authorization  | <p>획득한 Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre> |
 
 ### Request example
 
@@ -136,15 +137,16 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 
 ### Response header
 
-* Content-Type - [Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언
-  * multipart/form-data; boundary=[boundary_term]
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
-* Content-Disposition
-  * form-data; name="[data]" 형태
-* Content-Type
-  * application/json; charset=UTF-8
+| Response message header | 설명                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-Type            | <pre><code>application/json; charset=UTF-8</code></pre>            |
 
 ### Response message
 CIC는 HTTP 응답으로 클라이언트에게 [Clova.Hello](/CIC/References/CICInterface/Clova.md#Hello) 지시 메시지를 보냅니다. 이는 downchannel을 연결 설정이 완료되었음을 의미합니다.
@@ -216,18 +218,17 @@ POST /v1/events
 
 ### Request header
 
-* Authorization: 획득한 Clova access token
-  * Bearer [Clova access token]
-* Content-Type - [Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언
-  * multipart/form-data; boundary=[boundary_term]
+| Request header  | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Authorization   | <p>획득한 Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre>  |
+| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
 
 ### Request message header
 
-* Content-Disposition
-  * form-data; name="[data]" 형태
-* Content-Type :
-  * JSON 데이터: application/json; charset=UTF-8
-  * 바이너리 음성 데이터: application/octet-stream
+| Request message header  | 설명                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul> |
 
 ### Request message
 사용자의 요청이나 클라이언트 정보를 CIC에 전달할 때 [이벤트 메시지](#Event)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 전달해야 합니다. 이벤트 메시지는 어떤 정보를 전달하느냐에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
@@ -281,18 +282,17 @@ Content-Type: application/octet-stream
 
 ### Response header
 
-* Content-Type - [Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언
-  * multipart/form-data; boundary=[boundary_term]
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
-* Content-Disposition: 메시지 처리 유형 명시.
-* Content-Id: 메시지 식별자
-  * UUID 형태
-  * 클라이언트는 지시 메시지의 `payload` 필드에 포함된 `cid:[UUID]` 값으로 처리해야 할 메시지를 식별할 수 있습니다.
-* Content-Type :
-  * JSON 데이터: application/json; charset=UTF-8
-  * 바이너리 음성 데이터: application/octet-stream
+| Response message header | 설명                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | 메시지 처리 유형 명시                                                   |
+| Content-Id              | 메시지 식별자<ul><li>UUID 형태</li><li>클라이언트는 지시 메시지의 <code>payload</code> 필드에 포함된 <code>cid:[UUID]</code> 값으로 처리해야 할 메시지를 식별할 수 있습니다.</li></ul> |
+| content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul>  |
 
 ### Response message
 CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세한 [지시 메시지](#Directive)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 보냅니다. 지시 메시지에 어떤 정보를 담겼는지는 CIC가 내려준 지시 메시지에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
@@ -404,8 +404,10 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 ```json
 {
   "context": [
+    {{Alerts.AlertsState}},
     {{AudioPlayer.PlaybackState}}
     {{Device.DeviceState}},
+    {{Device.Display}},
     {{Clova.FreetalkState}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
@@ -428,7 +430,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `context`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: 기기 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: 스피커 정보</li></ul> | 필수 |
+| `context`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: 알람/타이머 상태 정보</li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: 기기의 디스플레이 정보</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: 기기 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: 스피커 정보</li></ul> | 필수 |
 | `event`                        | object       | 이벤트 메시지의 헤더와 필요한 데이터(payload)를 가지고 있는 객체                                                                 | 필수 |
 | `event.header`                 | object       | 이벤트 메시지의 헤더                                                                                                 | 필수 |
 | `event.header.dialogRequestId` | string       | 대화 ID(Dialog ID). 클라이언트는 [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)와 [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) 이벤트 메시지를 전송할 때 반드시 [대화 ID](/CIC/CIC_Overview.md#DialogIDandClientOP)를 생성하여 이 필드에 입력해야 합니다.| 선택 |

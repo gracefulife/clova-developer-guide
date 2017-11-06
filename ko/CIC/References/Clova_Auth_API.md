@@ -18,10 +18,10 @@ GET|POST /authorize
 
 ### Request header
 
-* Accept
-  * application/json
-* Authorization: [획득한 {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)을 입력합니다.
-  * Bearer [{{ book.TargetServiceForClientAuth }} access token]
+| Request header | 설명                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | `application/json`                                                 |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">획득한 {{ book.TargetServiceForClientAuth }} access token</a>을 입력:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
 
 ### Query parameter
 
@@ -46,8 +46,9 @@ GET|POST /authorize
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -102,8 +103,9 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | 설명                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -127,8 +129,9 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -174,8 +177,9 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | 설명                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -199,8 +203,9 @@ GET|POST /token?grant_type=refresh_token
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -245,8 +250,9 @@ GET|POST /token?grant_type=delete
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | 설명                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -270,8 +276,9 @@ GET|POST /token?grant_type=delete
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | 설명                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
