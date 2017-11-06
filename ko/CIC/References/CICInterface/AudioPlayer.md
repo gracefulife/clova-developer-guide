@@ -213,7 +213,46 @@ AudioPlayer는 클라이언트에서 오디오 스트림 재생을 요청하거�
 * [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)
 
 ## PlayResumed event {#PlayResumed}
-l
+
+클라이언트가 오디오 스트림 재생을 재개할 때 재개된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. 이 이벤트 메시지를 보내기 위해 필요한 사전 시나리오는 다음과 같습니다.
+
+1. 클라이언트는 [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지로 오디오 스트림 재생을 재개하도록 요청하는 사용자의 음성을 CIC로 전송합니다.
+2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
+3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
+
+### Context field
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+
+### Payload field
+없음
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{AudioPlayer.PlaybackState}},
+  ],
+  "event": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "PlayResumed",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {}
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`AudioPlayer.Play`](#Play)
+* [`AudioPlayer.PlayPaused`](#PlayPaused)
+* [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)
 
 ## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
