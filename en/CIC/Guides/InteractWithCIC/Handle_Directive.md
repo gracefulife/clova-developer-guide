@@ -23,8 +23,7 @@ Implement your client to handle directive messages in the following steps.
     "payload": {
       "format": "AUDIO_MPEG",
       "token": "b5fa5144-1e55-4193-8628-c70283083d9b",
-      "ttsLang": "ko",
-      "ttsText": "내일 날씨는 오전에는 맑다가 오후에는 구름이 많아지겠어요.",
+      "ttsLang": "ko"
       "url": "cid:9d5d37a3-0e70-41a6-a671-e1a40c7ea4d8",
       "x-clova-pause-before": 0
     }

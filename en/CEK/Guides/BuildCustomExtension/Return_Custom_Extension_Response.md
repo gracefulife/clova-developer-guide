@@ -4,6 +4,7 @@
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "sessionAttributes": {},
@@ -21,6 +22,7 @@
     "shouldEndSession": false
   }
 }
+
 ```
 
 {% endraw %}
@@ -29,8 +31,8 @@ The meaning of each field is as follows.
 
 * `version`: The message format version of the current custom extension is v0.1.0.
 * `response.outputSpeech`: It is set to speak in English, "Hi, nice to meet you".
-* `response.card`: There is no data to display on a client screen. It provides content to be displayed on a client screen using a [content template](/CEK/References/Content_Templates.md).
-* `response.shouldEndSession`: The current session does not end and continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
+* `response.card`: There is no data to display on a client screen. Data format follows [content templates](/CIC/References/Content_Templates.md). You can use this field to return content to display on a client screen.
+* `response.shouldEndSession`: The current session does not end but continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -42,6 +44,7 @@ As shown below, you can write a response message for speaking several sentences 
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "sessionAttributes": {},
@@ -66,6 +69,7 @@ As shown below, you can write a response message for speaking several sentences 
     "shouldEndSession": true
   }
 }
+
 ```
 
 {% endraw %}
@@ -81,11 +85,12 @@ Each `response.outputSpeech` field indicates the following.
   <p>In addition to simple or complex sentence format, we also support a combined format (SpeechSet) for a client device which does not have a screen or does not provide GUI for displaying detailed information. See <a href="/CEK/References/CEK_API.md#CustomExtResponseMessage">Response message</a> in "Custom extension message" for more details.</p>
 </div>
 
-To display data on a screen of a client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CEK/References/Content_Templates.md).
+To display data on a screen of client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CIC/References/Content_Templates.md).
 
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "sessionAttributes": {},
@@ -205,6 +210,7 @@ To display data on a screen of a client device or client app in addition to gene
     "shouldEndSession": true
   }
 }
+
 ```
 
 {% endraw %}

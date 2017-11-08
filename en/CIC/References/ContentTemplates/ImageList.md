@@ -17,7 +17,7 @@ Displays one or more images with description on a screen. It is used to display 
 | `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).      |
 | `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).      |
 | `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the thumbnail image. The `value` field of this object can have an empty string (`""`).      |
-| `type`                       | string       | A content template delimiter. The value is always `"ImageList"`.        |
+| `type`                       | string       | A content template delimiter. It has an `"ImageList"` value.        |
 
 ## Template Example
 
@@ -97,4 +97,5 @@ The following example shows how the ImageList template is presented in the Clova
 ## See also
 * [CardList](/CIC/References/ContentTemplates/ImageList.md)
 * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+* [Popup](/CIC/References/ContentTemplates/Popup.md)
 * [Text](/CIC/References/ContentTemplates/Text.md)

@@ -28,12 +28,14 @@ Content templates use the following shared objects to display repetitive data ty
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "action",
     "value": "clova://naverSearch?query=이태원맛집"
 }
 ```
+
 {% endraw %}
 
 # CurrencyObject {#CurrencyObject}
@@ -47,12 +49,14 @@ An object containing currency and amount.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "currency",
     "value": "KRW500000"
 }
 ```
+
 {% endraw %}
 
 ## DateObject {#DateObject}
@@ -66,12 +70,14 @@ An object containing a date.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "date",
     "value": "2017-05-29"
 }
 ```
+
 {% endraw %}
 
 ## DateTimeObject {#DateTimeObject}
@@ -85,12 +91,14 @@ An object containing date and time.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
-    "type": "date",
+    "type": "datetime",
     "value": "2017-07-26T18:00:00Z"
 }
 ```
+
 {% endraw %}
 
 ## LocationObject {#LocationObject}
@@ -104,12 +112,14 @@ An object containing map coordinates.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "location",
     "value": "349652984,149297371"
 }
 ```
+
 {% endraw %}
 
 ## NumberObject {#NumberObject}
@@ -123,12 +133,14 @@ An object containing a number separated by thousands.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "number",
     "value": "19,304,213"
 }
 ```
+
 {% endraw %}
 
 ## PercentageObject {#PercentageObject}
@@ -142,12 +154,14 @@ An object containing a percentage.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "percentage",
     "value": 20.2341
 }
 ```
+
 {% endraw %}
 
 ## PhoneNumberObject {#PhoneNumberObject}
@@ -161,12 +175,14 @@ An object containing a phone number.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "phoneNum",
     "value": "031-784-1000"
 }
 ```
+
 {% endraw %}
 
 ## StringObject {#StringObject}
@@ -180,6 +196,7 @@ An object containing text.
 
 ### Object Example
 {% raw %}
+
 ```json
 // Example 1
 {
@@ -193,6 +210,7 @@ An object containing text.
     "value": "네이버 검색결과"
 }
 ```
+
 {% endraw %}
 
 ## TemperatureCObject {#TemperatureCObject}
@@ -206,12 +224,14 @@ An object containing a temperature in Celsius.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "temperature-c",
     "value": 31
 }
 ```
+
 {% endraw %}
 
 ## TemperatureFObject {#TemperatureFObject}
@@ -225,12 +245,14 @@ An object containing a temperature in Fahrenheit.
 
 ### Object Example
 {% raw %}
+
 ```json
 {
     "type": "temperature-f",
     "value": 75
 }
 ```
+
 {% endraw %}
 
 ## URLObject {#URLObject}
@@ -244,6 +266,7 @@ An object containing a URL.
 
 ### Object Example
 {% raw %}
+
 ```json
 // Example 1
 {
@@ -257,4 +280,5 @@ An object containing a URL.
     "value": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.com%2Fimage%2F410%2F2015%2F08%2F31%2F20150831_1441012614_99_20150831181804.jpg&type=b360"
 }
 ```
+
 {% endraw %}

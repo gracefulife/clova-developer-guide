@@ -10,19 +10,19 @@ Provides weather forecasts for today. It is used to display today's weather on a
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file |
-| `concentrationOfFineDust`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing data on fine dust concentrations level |
-| `houlyWeatherList[]` | object array | An object array containing hourly weather |
-| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing hourly temperature |
-| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing hourly time |
+| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file. <div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
+| `concentrationOfFineDust`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing fine dust concentrations level data. |
+| `houlyWeatherList[]` | object array | An object array containing hourly weather. |
+| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing hourly temperature. |
+| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing hourly time. |
 | `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing rainfall probability. The `value` field of this object can have a `null` value. |
-| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather codes](#WeatherCode) for hourly weather |
-| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing the URL of the image file for hourly weather |
+| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather codes](#WeatherCode) for hourly weather. |
+| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of a file displaying images of hourly weather. |
 | `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).   |
-| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `nowTemperature`            | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing a current temperature |
-| `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current weather  |
-| `type`                      | string | A content template delimiter. The value is always `"TodayWeather"`. |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location. |
+| `nowTemperature`            | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing current temperature. |
+| `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current weather.  |
+| `type`                      | string | A content template delimiter. It has an `"TodayWeather"` value. |
 
 {% include "./Shared_Weather_Code.md" %}
 
@@ -284,6 +284,7 @@ The following example shows how the TodayWeather template is presented in the Cl
 ![TodayWeather](/CIC/Resources/Images/Content-Template-TodayWeather.png)
 
 ## See also
+* [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
 * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
 * [Humidity](/CIC/References/ContentTemplates/Humidity.md)

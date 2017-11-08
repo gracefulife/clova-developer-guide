@@ -8,7 +8,7 @@ The base URL of the Clova authorization server is as follows.
 </code></pre>
 
 ## Requesting authorization code {#RequestAuthorizationCode}
-Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. The authorization code is required to obtain the Clova access token.
+Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. The authorization code will be used when generating a Clova access token.
 
 Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue and thus the app forwards an authorization code instead. Upon receiving authorization code, the client should pass it to Clova authentication server and [request a Clova access token](#RequestClovaAccessToken).
 
@@ -53,24 +53,34 @@ GET|POST /authorize
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `code`  | string | The authorization code generated from the authorization server                                                                 |
-| `state` | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks |
+| `code`          | string | The authorization code generated from the authorization server It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code.      |
+| `redirect_uri`  | string | A URI page providing terms and conditions for the service. It is a field included in the body of a HTTP response message when the message is having `451 Unavailable For Legal Reasons` status code. The client should move to URI included in this field and mark the page. When the user agree to the terms and conditions, the client will receive a response containing a `302 Found`(URL redirection) status code along with the following URL. <ul><li><code>clova://agreement-success</code> : The user successfully agreed to the terms and conditions. The client can continue to the next process to create a Clova access token.</li><li><code>clova://agreement-failure</code> : The user failed to agree to the terms and conditions due to a server error. The client should exclude the failure properly.</li></ul> |
+| `state`         | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks. It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK           | The request was processed successfully                      |
-| 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
-| 403 Forbidden    | The {{ book.TargetServiceForClientAuth }} access token contained in the header is invalid |
-| 500 Server Internal Error | Failed to generate an authorization code due to an internal server error |
+| 200 OK           | The response will be received if a request is processed successfully                       |
+| 400 Bad Request  | The response will be received if entered an invalid data as a parameter or missed entering the required parameter just as `client_id` field |
+| 451 Unavailable For Legal Reasons | The response will be received if the user did not agree to the terms and conditions. Upon receiving the response, the client should move to the address found from `redirect_uri` field and mark the web page. The URI is a page asking users to agree to the terms and conditions.   |
+| 403 Forbidden    | The response is received when the {{ book.TargetServiceForClientAuth }} access token contained in the header is invalid |
+| 500 Server Internal Error | The response is received when failed to generate an authorization code due to an internal server error |
 
 ### Response example
 {% raw %}
 ```json
+// Example 1 : If HTTP response message has 200 OK status code
 {
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
     "state": "FKjaJfMlakjdfTVbES5ccZ"
+}
+
+// Example 2 : If HTTP response message has 451 Unavailable For Legal Reasons status code
+{
+  "code":"4mrklvwoC_KNgDlvmslka",
+  "redirect_uri":"https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
+  "state":"FKjaJfMlakjdfTVbES5ccZ"
 }
 ```
 {% endraw %}

@@ -37,7 +37,7 @@ Send this event message to CIC after your client executes device control.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions executed.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+| `command`     | string  | Actions executed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
 
 ### Remarks
 

@@ -5,6 +5,10 @@ Recognizes text entered by a user.
 ## Recognize event {#Recognize}
 `TextRecognizer.Recognize` event message sends user's text input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. If your client cannot receive speech input from a user or if its microphone is not working properly, you can use this event message instead of [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) to receive text input from a user.
 
+### Context field
+
+There is no required state information
+
 ### Payload field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|

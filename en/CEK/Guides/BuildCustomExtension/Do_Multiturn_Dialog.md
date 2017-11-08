@@ -5,7 +5,9 @@ Sometimes, CEK may return insufficient details about a user request ([`IntentReq
 Assume a user requested, "Order pepperoni pizza", and CEK sent a request message as follows.
 
 {% raw %}
+
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -33,7 +35,9 @@ Assume a user requested, "Order pepperoni pizza", and CEK sent a request message
     }
   }
 }
+
 ```
+
 {% endraw %}
 
 In addition to a pizza type, the custom extension may require order quantity. If `response.shouldEndSession` is set to `false` in a [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage), it can attempt to have a multi-turn dialog. Also, you can store the original details in the `sessionAttributes` field in a key-value pair.
@@ -41,7 +45,9 @@ In addition to a pizza type, the custom extension may require order quantity. If
 If you respond as follows, you can request Clova to keep the previously sent `intent` and `PizzaType` and also request the user to provide quantity.
 
 {% raw %}
+
 ```json
+
 {
   "version": "0.1.0",
   "sessionAttributes": {
@@ -62,13 +68,17 @@ If you respond as follows, you can request Clova to keep the previously sent `in
     "shouldEndSession": false
   }
 }
+
 ```
+
 {% endraw %}
 
 When the user provides required quantity, the Clova platform adds the quantity data, includes the `sessionAttributes` object in the `session.sessionAttributes` field and sends a [request message](/CEK/References/CEK_API.md#CustomExtRequestMessage) again. This subsequent message has the same `session.sessionId` as the previous message and your custom extension can now perform next actions.
 
 {% raw %}
+
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -99,5 +109,7 @@ When the user provides required quantity, the Clova platform adds the quantity d
     }
   }
 }
+
 ```
+
 {% endraw %}

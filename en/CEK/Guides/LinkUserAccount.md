@@ -30,7 +30,7 @@ When a user enables a custom extension or Clova Home extension that requires acc
 
 4. The authorization code or access token is forwarded to Clova through a specified redirect URL.
 
-5. **(If received an authorization code in step 3)** Clova requests access token and refresh token to the **[Access Token URI](#RegisterAccountLinkingToCEK)**. At which point, the authorization code is passed on and the access token and refresh token are stored in the user's Clova account information.
+5. **(If received an authorization code in step 3)** Clova requests access token and refresh token to the **[Access Token URI](#RegisterAccountLinkingInfo)**. At which point, the authorization code is passed on and the access token and refresh token are stored in the user's Clova account information.
 
 6. The user is now able to use the service that requires account authentication.
 
@@ -44,7 +44,7 @@ After account linking is completed, CEK invokes the extension in the following s
 
 1. Invokes the extension as usual to process a user request.
 
-2. **(If the access token has expired)** Using the refresh token, requests a new access token to the **[Access Token URI](#RegisterAccountLinkingToCEK)**.
+2. **(If the access token has expired)** Using the refresh token, requests a new access token to the **[Access Token URI](#RegisterAccountLinkingInfo)**.
 
 3. Sends a user request to the extension with the access token.
    * If it is a custom extension, the access token is passed to the `context.System.user.accessToken` and `session.user.accessToken` fields.
@@ -93,6 +93,7 @@ This is an example URL when a client app or app paired with a client device requ
 {% raw %}
 
 ```
+
 https://yourdomain.com/login?state=qwer123
                             &client_id=clova-extension
                             &scope=listen_music%20basic_profile
@@ -126,6 +127,7 @@ This is an example URL to be redirected to after user authentication is complete
 {% raw %}
 
 ```
+
 // Example 1: Authorization code grant
 https://ToBeDetermined/?vendorId=YourServiceOrCompanyID
                                 &state=qwer123
@@ -141,7 +143,7 @@ https://ToBeDetermined/?vendorId=YourServiceOrCompanyID
 {% endraw %}
 
 
-If Clova has obtained an authorization code (authorization code grant), it requests an access token once more to the **[Access Token URI](#RegisterAccountLinkingToCEK)**, which you have previously registered in the Clova Developer Console. At which point, Clova passes the authorization code as a parameter. Then the authorization server generates an access token granting account access for the 3rd party service and a refresh token for refreshing the access token.
+If Clova has obtained an authorization code (authorization code grant), it requests an access token once more to the **[Access Token URI](#RegisterAccountLinkingInfo)**, which you have previously registered in the Clova Developer Console. At which point, Clova passes the authorization code as a parameter. Then the authorization server generates an access token granting account access for the 3rd party service and a refresh token for refreshing the access token.
 
 If Clova has obtained an access token (implicit grant), it does not receive a refresh token. This means that the user must retry account linking if the access token expires.
 
@@ -160,6 +162,7 @@ Verify that the access token is present in the field and that it is valid.
 {% raw %}
 
 ```json
+
 // Example 1: Custom extension message
 {
   "version": "0.1.0",
@@ -209,6 +212,7 @@ Verify that the access token is present in the field and that it is valid.
     "accessToken": "92ebcb67fe33"
   }
 }
+
 ```
 
 {% endraw %}

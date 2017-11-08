@@ -10,11 +10,11 @@ Provides humidity information. It is used to display humidity on a screen.
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background sound file |
-| `humidity`      | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing humidity. The `value` field of this object can have a `null` value. |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file. <div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used from your partner company.</p></div> |
+| `humidity`      | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing humidity. |
 | `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).  |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `type`          | string | A content template delimiter. The value is always `"Humidity"`. |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location. |
+| `type`          | string | A content template delimiter. It has an `"Humidity"` value. |
 
 ## Template Example
 
@@ -44,6 +44,7 @@ The following example shows how the Humidity template is presented in the Clova 
 ![Humidity](/CIC/Resources/Images/Content-Template-Humidity.png)
 
 ## See also
+* [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
 * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)

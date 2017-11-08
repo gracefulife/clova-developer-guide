@@ -153,7 +153,7 @@ CIC returns an HTTP response by sending a [Clova.Hello](/CIC/References/CICInter
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK                    | A status code that is returned when downchannel has been properly connected and established. Now CIC can send directive messages on its own (cloud-initiated).        |
+| 200 OK                    | A status code that is returned when the downchannel has been properly connected and established. Now CIC can send directive messages on its own (cloud-initiated).        |
 | 400 Bad Request           | The user request was sent in a wrong format.                       |
 | 401 Unauthorized          | Failed to authenticate the user. Check if the access token is valid. |
 | 500 Internal Server Error | An internal server error occurred.                                                      |
@@ -287,10 +287,6 @@ Content-Type: application/octet-stream
 ### Response message header
 
 * Content-Disposition: Specify a message processing type.
-* Content-Id: Message identifier
- * UUID format
-  * Example of a directive message: form-data; name="speakDirective-836d8db7-5e72-4fb2-9834-7c59291e1f8e"
-  * Example of binary audio data: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
 * Content-Id: A message identifier
   * UUID format
   * Clients can identify a message to process by a `cid:[UUID]` value in the `payload` field.
@@ -299,7 +295,7 @@ Content-Type: application/octet-stream
   * Binary audio data: application/octet-stream
 
 ### Response message
-CIC returns [directive messages](#Directives) and additional speech data in a [multipart message](#MultipartMessage). The content and configuration of a directive message are determined by which directive message CIC has returned, which are categorized into [interfaces](#CICInterface).
+CIC returns [directive messages](#Directive) and additional speech data in a [multipart message](#MultipartMessage). The content and configuration of a directive message are determined by which directive message CIC has returned, which are categorized into [interfaces](#CICInterface).
 
 ### Status codes
 
@@ -336,7 +332,6 @@ Content-Type: application/json; charset=utf-8
       "format":"AUDIO_MPEG",
       "token":"e81f7dec-63fb-453d-8bd8-6944bed9a306",
       "ttsLang":"ko",
-      "ttsText":"만나서 반가워요",
       "url":"cid:d329085c-379e-48aa-b871-7ecebdbe831d",
       "x-clova-pause-before":0
     }
@@ -525,7 +520,6 @@ Directive messages are used when CIC returns responses for event messages (clien
       "format": "AUDIO_MPEG",
       "token": "b5fa5144-1e55-4193-8628-c70283083d9b",
       "ttsLang": "ko",
-      "ttsText": "내일 날씨는 오전에는 맑다가 오후에는 구름이 많아지겠어요.",
       "url": "cid:9d5d37a3-0e70-41a6-a671-e1a40c7ea4d8",
       "x-clova-pause-before": 0
     }
@@ -613,11 +607,11 @@ Available namespaces are as follows. Click each link to find out more about the 
 * [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)
 * [Clova](/CIC/References/CICInterface/Clova.md)
 * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md)
-* [Memo](/CIC/References/CICInterface/Memo.md)
+* [Notifier](/CIC/References/CICInterface/Notifier.md)
 * [PlaybackController](/CIC/References/CICInterface/PlaybackController.md)
-* [Reminder](/CIC/References/CICInterface/Reminder.md)
 * [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
 * [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md)
+* [System](/CIC/References/CICInterface/System.md)
 * [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
 
 See the following indexes for a full list of interfaces grouped into event and directive messages.

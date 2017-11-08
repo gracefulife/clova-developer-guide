@@ -50,14 +50,14 @@ Provides route directions for public transportations. It is used to display publ
 | `totalDistance`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a total travel distance. Unit is meter. |
 | `totalStationCount`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the total number of bus stops and subway stations to pass through when traveling by bus and subway |
 | `totalTime`                 | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing an estimated total travle time. Unit is minute. |
-| `type`                      | string | A content template delimiter. The value is always `"TransportationRoute"`. |
+| `type`                      | string | A content template delimiter. It has an `"TransportationRoute"` value. |
 
 
 ## Codes for subway lines and bus types {#CodeReference}
 
 | Subway line code | Description          | But type code   | Description          |
 |--------------|---------------|--------------|--------------|
-| 1	           | Metropolitan_Line 1     | 1            | Regular           |
+| 1	           | Metropolitan_Line 1     | 1            | Regular          |
 | 2            | Metropolitan_Line 2     | 2            | Seats          |
 | 3            | Metropolitan_Line 3     | 3            | Town          |
 | 4            | Metropolitan_Line 4     | 4            | Express seats       |
@@ -71,7 +71,7 @@ Provides route directions for public transportations. It is used to display publ
 | 41           | Daegu_Line 1       | 15           | Direct express          |
 | 42           | Daegu_Line 2       | 20           | Rural region        |
 | 51           | Gwangju_Line 1       | 21           | Jeju region       |
-| 71           | Busan_Line 1       | 22           | Countryside           |
+| 71           | Busan_Line 1       | 22           | Countryside          |
 | 72           | Busan_Line 2       | 26           | Direct express main road       |
 | 73           | Busan_Line 3       |              |              |
 | 74           | Busan_Line 4       |              |              |

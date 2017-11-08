@@ -33,7 +33,7 @@ Provides route directions by driving. It is used to display driving routes on a 
 | `summary.start.lon`                    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the longitude of the departure point |
 | `summary.start.name`                   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the name of the departure point |
 | `summary.time`                         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the estimated travel time. Unit is minute. |
-| `type`                                 | string | A content template delimiter. The value is always `"CarRoute"`. |
+| `type`                                 | string | A content template delimiter. It has an `"CarRoute"` value. |
 
 ## Template Example
 

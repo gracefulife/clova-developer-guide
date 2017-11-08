@@ -25,6 +25,7 @@ This is an example of a `LaunchReqeust` type message.
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -51,6 +52,7 @@ This is an example of a `LaunchReqeust` type message.
     "type": "LaunchRequest"
   }
 }
+
 ```
 
 {% endraw %}
@@ -72,6 +74,7 @@ This is an example of an `IntentRequest` type message.
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -107,6 +110,7 @@ This is an example of an `IntentRequest` type message.
     }
   }
 }
+
 ```
 
 {% endraw %}
@@ -135,6 +139,7 @@ This is an example of a `SessionEndedRequest` type message.
 {% raw %}
 
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -161,6 +166,7 @@ This is an example of a `SessionEndedRequest` type message.
     "type": "EndRequest"
   }
 }
+
 ```
 
 {% endraw %}

@@ -11,9 +11,7 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
 </div>
 
 #### Message structure
-
 {% raw %}
-
 ```json
 {
   "header": {
@@ -25,24 +23,21 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
   "payload": {{object}}
 }
 ```
-
 {% endraw %}
 
 
 #### Message field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `header`                 | object | The header of the message                                                                 | Yes     |
-| `header.messageId`       | string | The message ID. An identifier (UUID) created by Clova to distinguish individual messages.              | Yes     |
-| `header.name`            | string | The API name of the message                                                             | Yes     |
-| `header.namespace`       | string | The value is always `"ClovaHome"`.                                          | Yes     |
-| `header.payloadVersion`  | string | The version of the Clova Home extension message specified in `header.name`. Configuration of the `payload` field can vary depending on the version.                                   | Yes     |
-| `payload`                | object | Configuration of the payload object and its field values can vary depending on which [interface](#ClovaHomeExtInterface) is specified in `header.name`. | Yes     |
+| `header`                 | object | The header of the message                                                                                            | Yes     |
+| `header.messageId`       | string | The message ID. An identifier (UUID) created by Clova to distinguish individual messages.                                         | Yes     |
+| `header.name`            | string | The API name of the message                                                                                        | Yes     |
+| `header.namespace`       | string | The value is always `"ClovaHome"`.                                                                     | Yes     |
+| `header.payloadVersion`  | string | The version of the Clova Home extension message specified in `header.name`. Configuration of the `payload` field can vary depending on the version.  | Yes     |
+| `payload`                | object | Configuration of the payload object and its field values can vary depending on which [interface](#ClovaHomeExtInterface) is specified in `header.name`.       | Yes     |
 
 #### Message example
-
 {% raw %}
-
 ```json
 Example 1: DiscoverAppliancesRequest - request message
 {
@@ -76,6 +71,10 @@ Example 2: DiscoverAppliancesResponse - response message
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
         "isReachable": true,
           "actions": [
+            "DecrementBrightness",
+            "HealthCheck",
+            "IncrementBrightness",
+            "SetBrightness",
             "TurnOn",
             "TurnOff"
         ],
@@ -92,6 +91,7 @@ Example 2: DiscoverAppliancesResponse - response message
         "friendlyDescription": "에너지를 절약하는 플러그",
         "isReachable": true,
         "actions": [
+          "HealthCheck",
           "TurnOn",
           "TurnOff"
         ],
@@ -135,7 +135,6 @@ Example 4: TargetOffLineError - Error response message
   }
 }
 ```
-
 {% endraw %}
 
 #### See also
@@ -151,4 +150,4 @@ Clova Home extension messages are categorized into the following interfaces.
   * [Error interface](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
 
 * Shared objects
-  * [Shared objects](#SharedObjects)
+  * [Shared objects](/CEK/References/ClovaHomeInterface/Shared_Objects.md)

@@ -1,8 +1,8 @@
 # CEK overview
-This documentation explains Clova Extension Kit ('CEK' hereinafter) in detail. It will help you understand what CEK is and how it works, and provides you with the guides and references for CEK.
+This documentation explains Clova Extensions Kit ('CEK' hereinafter) in detail. It will help you understand what CEK is and how it works, and provides you with the guides and references for CEK.
 
 ## What is CEK? {#WhatisCEK}
-Clova extension ('extension' hereinafter) is a web application that lets you add extended capabilities to Clova for more diverse user experience. You can add a capability of controlling IoT devices at home or you can enable users to use third party services through Clova such as music, shopping, banking. CEK is a platform that gives you access to tools and interfaces for developing extensions. It supports communications between Clova and your extension.
+CEK is a platform that gives you access to tools and interfaces for developing Clova extensions ('extension' hereinafter). It supports communications between Clova and your extension. Extension is a web application that provides extended capabilities to Clova for more diverse user experience including the capability of controlling IoT appliances at home or 3rd party services such as music, shopping, banking and more.
 
 ![](/CEK/Resources/Images/CEK_Concept_Diagram.png)
 

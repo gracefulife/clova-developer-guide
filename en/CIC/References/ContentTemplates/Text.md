@@ -20,11 +20,12 @@ Displays text on a screen. It is used to display text with highlights, paragraph
 | `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).                                |
 | `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sentence text. The `value` field of this object can have an empty string (`""`).                                |
 | `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sub text. The `value` field of this object can have an empty string (`""`).                                     |
-| `tableList[]`           | object array                                                                    | An object array containing table text. The table consists of two columns.     |
-| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the first column. The `value` field of this object can have an empty string (`""`).                    |
-| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the second column. The `value` field of this object can have an empty string (`""`).                    |
+| `tableList[]`           | object array                                                                    | An object array containing table text. The table consists of two or three lines.      |
+| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the first line. The `value` field of this object can have an empty string (`""`).                    |
+| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the second line. The `value` field of this object can have an empty string (`""`).                    |
 | `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | An object containing link URL or phone number for the text in the second column |
-| `type`                   | string                                                                          | A content template delimiter. The value is always `"ImageText"`.             |
+| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the third line. This field can be omitted.  |
+| `type`                   | string                                                                          | A content template delimiter. It has an `"Text"` value.             |
 
 ## Template Example
 
@@ -92,7 +93,6 @@ Displays text on a screen. It is used to display text with highlights, paragraph
 
 // Example 2.
 // User request: 토트넘 감독이 누구야? (User asks who's the director of Tottenham. Paragraph text is displayed)
-
 {
   "actionList": [
     {
@@ -240,3 +240,4 @@ The following example shows how the Text template is presented in the Clova mobi
 * [CardList](/CIC/References/ContentTemplates/CardList.md)
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
 * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
+* [Popup](/CIC/References/ContentTemplates/Popup.md)

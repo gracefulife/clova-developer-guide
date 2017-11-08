@@ -7,7 +7,6 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
 #### Message structure
 
 {% raw %}
-
 ```json
 {
   "context": {
@@ -40,22 +39,21 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   "version": {{string}}
 }
 ```
-
 {% endraw %}
 
 #### Message field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `context`                                  | object  | An object containing context information of the client                                | Yes |
-| `context.AudioPlayer`                      | object  | An object containing details of media currently playing or previously played | No |
-| `context.AudioPlayer.offsetInMilliseconds` | number  | The last playback point (offset) of the recently played media. Unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                       | No |
+| `context`                                  | object  | An object containing context information of the client.                                | Yes |
+| `context.AudioPlayer`                      | object  | An object containing details of media currently playing or previously played. | No |
+| `context.AudioPlayer.offsetInMilliseconds` | number  | The last playback point (offset) of the recently played media. Its unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                       | No |
 | `context.AudioPlayer.playerActivity`       | string  | Indicates the state of the player. Available values are:<ul><li><code>"IDLE"</code>: Player is idle</li><li><code>"PLAYING"</code>: Player is playing</li><li><code>"PAUSED"</code>: Player paused playing</li><li><code>"STOPPED"</code>: Player stopped playing</li></ul> | Yes |
 | `context.AudioPlayer.stream`               | [AudioStreamObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamObject) | An object containing details of the currently playing media. This field can be empty if `playerActivity` is set to `"IDLE"`.    | No |
-| `context.AudioPlayer.totalInMilliseconds`  | number  | The total length of the recently played media. Unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                                                  | No |
-| `context.System`                           | object  | An object containing context information of the client system                          | Yes |
-| `context.System.device`                    | object  | An object containing information of the client device                               | Yes |
-| `context.System.device.deviceId`           | string  | The client device ID. Returns information that can help identify the user device, such as a combination of model name and device serial number. | Yes |
-| `context.System.user`                      | object  | An object containing information of the default user who has been authenticated in the client device                 | Yes |
+| `context.AudioPlayer.totalInMilliseconds`  | number  | The total length of the recently played media. Its unit is millisecond. This field can be empty if `playerActivity` is set to "IDLE".                                                                  | No |
+| `context.System`                           | object  | An object containing context information of the client system.                          | Yes |
+| `context.System.device`                    | object  | An object containing information of the client device.                               | Yes |
+| `context.System.device.deviceId`           | string  | The client device ID. This field returns information that can help identify the user device, such as a combination of model name and device serial number. | Yes |
+| `context.System.user`                      | object  | An object containing information of the default user who has been authenticated in the client device.                 | Yes |
 | `context.System.user.userId`               | string  | The Clova ID of the default device user                                    | Yes |
 | `context.System.user.accessToken`          | string  | The access token for the user's service account. The access token belongs to a user account which is associated with a default device user. CEK forwards the access token by obtaining it from the authorization server of the 3rd party service. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details. | Yes |
 | `request`                                 | object  | An object containing analysis details of user's speech input. Field configuration can vary depending on the [request type](#CustomExtRequestType). | Yes |
@@ -69,9 +67,7 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
 | `version`                                  | string  | The version of the message format (CEK version)                          | Yes |
 
 #### Message example
-
 {% raw %}
-
 ```json
 // Example 1: LaunchRequest type
 {
@@ -166,7 +162,6 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   }
 }
 ```
-
 {% endraw %}
 
 #### See also
@@ -185,7 +180,6 @@ The `LaunchRequest` type notifies that a user has started an extension. For exam
 When the message type is `LaunchRequest`, the `request` object field is configured as follows.
 
 {% raw %}
-
 ```json
 {
   "type": "LaunchRequest"
@@ -210,7 +204,6 @@ The `IntentRequest` type sends analysis details of a user request and asks to pe
 When the message type is `IntentRequest`, the `request` object field is configured as follows.
 
 {% raw %}
-
 ```json
 {
   "type": "IntentRequest",
@@ -238,20 +231,18 @@ The `SessionEndedRequest` type notifies that a user has ended an extension. Your
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>You will not receive this message if the extension declares its ending beforehand by returning a <a href="ResponseMessage">response message</a> with the <code>shouldEndSession</code> field.</p>
+  <p>You will not receive this message if the extension declares its ending beforehand by returning a <a href="#CustomExtResponseMessage">response message</a> with the <code>shouldEndSession</code> field.</p>
 </div>
 
 
 When the message type is `SessionEndedRequest`, the `request` object field is configured as follows.
 
 {% raw %}
-
 ```json
 {
   "type": "EndRequest"
 }
 ```
-
 {% endraw %}
 
 | Field name       | Type    | Field description                     | Required |
@@ -262,9 +253,7 @@ When the message type is `SessionEndedRequest`, the `request` object field is co
 After your extension completes processing of a request message, it returns a response message (HTTPS response). The following explains the structure and fields of a response message.
 
 #### Message structure
-
 {% raw %}
-
 ```json
 {
   "response": {
@@ -294,14 +283,13 @@ After your extension completes processing of a request message, it returns a res
   "version": {{string}}
 }
 ```
-
 {% endraw %}
 
 #### Message field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `response`                               | object       | An object containing response details of the extension                            | Yes |
-| `response.card`                          | object       | Data in the format of a [content template](/CEK/References/Content_Templates.md). It returns content to display on a client screen.           | Yes |
+| `response`                               | object       | An object containing response details of the extension.                            | Yes |
+| `response.card`                          | object       | Data in the format of a [content template](/CIC/References/Content_Templates.md). This field returns content to display on a client screen.           | Yes |
 | `response.directives[]`                  | object array | A directive message which an extension returns to CEK. The directive message API for the `response.directives` field will be available in the future. | Yes |
 | `response.directives[].header`           | object       | The header of the directive message                                          | Yes |
 | `response.directives[].header.messageId` | string       | The message ID. It is an identifier that distinguishes individual messages (UUID).   | Yes |
@@ -309,13 +297,13 @@ After your extension completes processing of a request message, it returns a res
 | `response.directives[].header.namespace` | string       | The API namespace of the directive message                                | Yes |
 | `response.directives[].payload`          | object       | An object containing details of the directive message. You can configure payload object and field values differently for each directive message.         | Yes |
 | `response.outputSpeech`                  | object       | An object containing speech data to be synthesized for audio output. Synthesized speech data is returned to a client through CIC.              | Yes |
-| `response.outputSpeech.brief`            | [SpeechObject](#CustomExtSpeechObject) | Brief speech data to be synthesized for audio output.                    | No |
+| `response.outputSpeech.brief`            | [SpeechObject](#CustomExtSpeechObject) | Brief speech data to be synthesized for audio output                    | No |
 | `response.outputSpeech.type`             | string       | The type of speech data to be synthesized for audio output. <ul><li>"SimpleSpeech": Speech data in a simple sentence format. This is the most basic type. When specifying this value, the <code>response.outputSpeech.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object.</li><li><code>"SpeechList"</code>: Speech data in a complex sentence format. Returns speech data consisting of several sentences. When specifying this value, the <code>response.outputSpeech.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object array.</li><li><code>"SpeechSet"</code>: Speech data in a combined format. Returns speech data consisting of brief and detailed information to a client device without screen. When specifying this value, <code>response.outputSpeech.brief</code> and <code>response.outputSpeech.verbose</code> fields are required, instead of the <code>response.outputSpeech.values</code> field.</li></ul> | Yes |
-| `response.outputSpeech.values`           | [SpeechObject](#CustomExtSpeechObject) or [SpeechObject](#CustomExtSpeechObject) array | An object or object array containing speech data to be synthesized for audio output on a client device | No |
-| `response.outputSpeech.verbose`          | object       | Returns detailed speech data to a client device without screen. | No |
-| `response.outputSpeech.verbose.type`     | string       | The type of speech data to be synthesized for audio output. You can input speech data only in simple and complex sentence format. <ul><li><code>"SimpleSpeech"</code>: Speech data in a simple sentence format. Returns the most basic type of speech data. When specifying this value, the <code>response.outputSpeech.verbose.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object.</li><li><code>"SpeechList"</code>: Speech data in a complex sentence format. Returns speech data consisting of several sentences. When specifying this value, the <code>response.outputSpeech.verbose.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object array.</li></ul> | Yes |
-| `response.outputSpeech.verbose.values`           | [SpeechObject](#CustomExtSpeechObject) or [SpeechObject](#CustomExtSpeechObject) array | An object or object array containing detailed speech data to be synthesized for audio output on a client device | Yes |
-| `response.shouldEndSession`              | boolean      | A flag for a session end. It notifies a client that the extension has ended. It notifies ending of an extension prior to receiving a [`SessionEndedRequest`](#CustomExtSessionEndedRequest) message.<ul><li>true: Ends the extension.</li><li>false: Keeps using the extension.</li></ul> | Yes |
+| `response.outputSpeech.values`           | [SpeechObject](#CustomExtSpeechObject) or [SpeechObject](#CustomExtSpeechObject) array | An object or object array containing speech data to be synthesized for audio output on a client device. | No |
+| `response.outputSpeech.verbose`          | object       | Returns detailed speech data to a client device without screen | No |
+| `response.outputSpeech.verbose.type`     | string       | The type of speech data to be synthesized for audio output. You can input speech data only in simple and complex sentence format. <ul><li><code>"SimpleSpeech"</code>: Speech data in a simple sentence format. This field returns the most basic type of speech data. When specifying this value, the <code>response.outputSpeech.verbose.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object.</li><li><code>"SpeechList"</code>: Speech data in a complex sentence format. Returns speech data consisting of several sentences. When specifying this value, the <code>response.outputSpeech.verbose.values</code> field requires a <a href="#CustomExtSpeechObject"><code>SpeechObject</code></a> object array.</li></ul> | Yes |
+| `response.outputSpeech.verbose.values`           | [SpeechObject](#CustomExtSpeechObject) or [SpeechObject](#CustomExtSpeechObject) array | An object or object array containing detailed speech data to be synthesized for audio output on a client device. | Yes |
+| `response.shouldEndSession`              | boolean      | A flag for a session end. This field notifies a client that the extension has ended. It notifies ending of an extension prior to receiving a [`SessionEndedRequest`](#CustomExtSessionEndedRequest) message.<ul><li>true: Ends the extension.</li><li>false: Keeps using the extension.</li></ul> | Yes |
 | `sessionAttributes`                      | object       | An object that stores information necessary for having a multi-turn dialog with users. Your custom extension returns intermediate information to CEK using the `sessionAttributes` field and receives the same information from the `session.sessionAttributes` field in a [request message](#CustomExtRequestMessage) when it receives additional requests from a user. The object consists of a key-value pair. You can define it when implementing your custom extension. If there is no value to store, enter an empty object. | Yes |
 | `version`                                | string       | The version of the message format (CEK version)                        | Yes |
 
@@ -334,9 +322,7 @@ SpeechObject is an object reused by `response.outputSpeech` in response messages
 | `value`          | string       | Content to be synthesized into speech audio                                                       | Yes |
 
 #### Message example
-
 {% raw %}
-
 ```json
 // Example 1: Returns speech data in simple sentence format (SimpleSpeech) - plain text
 {
@@ -440,9 +426,8 @@ SpeechObject is an object reused by `response.outputSpeech` in response messages
   }
 }
 ```
-
 {% endraw %}
 
 #### See also
 * [Returning custom extension response](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
-* [Content template](/CEK/References/Content_Templates.md)
+* [Content template](/CIC/References/Content_Templates.md)

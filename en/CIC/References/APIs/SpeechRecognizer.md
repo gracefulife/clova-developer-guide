@@ -28,7 +28,7 @@ Instructs your client to activate its microphone and receive speech input from a
 
 ### Remarks
 * When this directive message is returned, send user's input to CIC, using the same dialog ID (`dialogRequestId`) as the previous request message.
-* If you do not receive any speech input from the user for specified `timeoutInMilliseconds` time,  send CIC a [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) event message.
+* If you do not receive any speech input from the user for specified `timeoutInMilliseconds` time, send CIC a [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) event message.
 
 ### Message example
 

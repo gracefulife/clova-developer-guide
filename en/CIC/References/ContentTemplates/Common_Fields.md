@@ -3,83 +3,30 @@ All content templates may have the common fields as below. The common fields are
 
 | Field name        | Type    | Field description                     | Required |
 |----------------|---------|-----------------------------|---------|
-| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | Users should be provided with content template so that they may respond to the user interactions such as UI touch. The list of response actions([Action URL scheme](#ActionURLScheme)) should be conveyed to the user interaction through this field. [CardList](/CIC/References/ContentTemplates/CardList.md) type of content template can be defined at the sub level of `cardList[]` field.  | No |
-| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Includes the message information in case the content template cannot be expressed on UI. | Yes |
-| `meta`             | object | Includes meta information related to content template. | Yes |
+| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | A content template should be provided so that users can respond to user interaction such as UI touch. The list of response actions([Action URL scheme](#ActionURLScheme)) should be conveyed to the user interaction through this field. [CardList](/CIC/References/ContentTemplates/CardList.md) type of content template can be defined at the sub level of `cardList[]` field. | No |
+| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Includes the message information in case the content template cannot be expressed on UI. For instance, the message will be displayed if the client does not support content template version specified on `meta.version` or if an issue occurs to display the template information.  | Yes |
+| `meta`             | Object | Includes meta information related to content template. | Yes |
 | `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains content template version information. | Yes |
 
 ## An example of the common fields
 
 {% raw %}
 ```json
-// When using general content template
-
 {
-  "bgUrl": {
-    "type": "url",
-    "value": ""
+  "type": "Atmosphere",
+  "valueOfAtmosphere": {
+    "type": "number",
+    "value": "23㎍/㎥"
   },
   ...
-  "type": "Text",
-  "actionList": [
-    {
-      "type" : "action",
-      "value" : "clova://ttsRepeat?lang=ko&text=1달러 환율입니다."
-    }
-  ],
   "failureMessage": {
     "type": "string",
-    "value": "정보를 확인하는데 실패했습니다."
+    "value": "경기도 성남시 분당구 정자1동 오늘 미세먼지 지수는 좋음 입니다"
   },
-  "meta" : {
-    "version" : {
-      "type" : "string",
-      "value" : "1.0"
-    }
-  }
-}
-
-// When using Card List type
-{
-  "subType": "",
-  "type": "CardList",
-  "cardList": [
-    {
-      "title": {
-        "type": "string",
-        "value": "인카네이트"
-      },
-      ...
-      "actionList": [
-        {
-          "type" : "action",
-          "value" : "clova://naverSearch?url=https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-        }
-      ]
-    },
-    {
-      "title": {
-        "type": "string",
-        "value": "링스"
-      },
-      ...
-      "actionList": [
-        {
-          "type" : "action",
-          "value" : "clova://naverSearch?url=https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-        }
-      ]
-    },
-    ...
-  ],
-  "failureMessage": {
-    "type": "string",
-    "value": "영화 정보를 확인하는데 실패했습니다."
-  },
-  "meta" : {
-    "version" : {
-      "type" : "string",
-      "value" : "1.0"
+  "meta": {
+    "version": {
+      "type": "string",
+      "value": "v0.1"
     }
   }
 }
@@ -89,7 +36,7 @@ All content templates may have the common fields as below. The common fields are
 ## Action URL scheme {#ActionURLScheme}
 The following action URL schemes defined in the `actionList` field inform the client what actions to take.
 
-| Action URL scheme           | Description                                                              |
+| Action URL scheme           | An action that the client will carry out                                                |
 |-----------------------------|------------------------------------------------------------------|
 | [clova://app-launch/default-addressbook](#AppLaunchDefaultAddrBook) | An action to execute basic address app   |
 | [clova://app-launch/default-browser](#AppLaunchDefaultBrowser)      | An action to execute basic web browser |
@@ -232,7 +179,7 @@ This scheme is for the client to open a specific page through WebView.
 
 | Parameter name    | Description                         | Required |
 |---------------|-----------------------------|--------|
-| url           | URL of the target page               | Yes |
+| url           | URL of the target page              | Yes |
 | auth_required | Whether authentication is required or not. If the parameter is `true`, use authentication API to open the target page. If it is `false` or unmentioned, authentication is not required. | No |
 
 The following is an example for the action URL scheme.

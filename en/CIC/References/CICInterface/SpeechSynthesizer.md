@@ -55,7 +55,6 @@ Instructs your client to play the synthesized TTS audio file through the speaker
 | `url`                  | string  | The URL of the audio file to play                        | Yes    |
 | `token`                | string  | A token for identifying the TTS file                    | Yes    |
 | `ttsLang`              | string  | The language used for speech synthesis. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"zh"</code>: Chinese</li></ul> | No    |
-| `ttsText`              | string  | The TTS text in the synthesized file                      | No    |
 | `x-clova-pause-before` | number  | Idle time before playing the file. The value is in integer form and the unit is millisecond.        | No    |
 
 ### Remarks
@@ -72,7 +71,7 @@ The `url` can be either one of the two formats. Process audio output appropriate
 {% raw %}
 ```
 // cid:{Content-Id} format
-// Plays an audio data message with Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
+// Plays an audio data message with Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369.
 
 --Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"
@@ -90,7 +89,6 @@ Content-Type: application/json; charset=utf-8
       "format": "AUDIO_MPEG",
       "token": "cbba5103-8ce4-4e65-869b-f94d5878f579",
       "ttsLang": "ko",
-      "ttsText": "음성파일 만들어줘",
       "url": "cid:22f2ca4e-3b08-4d33-b32a-7eb62a8c0369",
       "x-clova-pause-before": 0
     }

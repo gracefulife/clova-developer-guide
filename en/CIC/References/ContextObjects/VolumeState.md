@@ -1,5 +1,5 @@
 ## Speaker.VolumeState {#VolumeState}
-A message format that contains client's speaker volume information at the time when the user has spoken, such as how high/low its volume is or whether the speaker is in mute.
+A message format used to report the client's speaker volume information at the time when the user has spoken, such as how high/low its volume is or whether the speaker is in mute to CIC. 
 
 ### Message structure
 {% raw %}
@@ -41,4 +41,4 @@ A message format that contains client's speaker volume information at the time w
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

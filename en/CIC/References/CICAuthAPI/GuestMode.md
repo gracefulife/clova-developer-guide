@@ -1,5 +1,5 @@
 ### Remarks
-To provide guest mode service to users without {{book.TargetServiceForClientAuth}} account authentication, follow below steps.
+ To provide guest mode service to users without {{book.TargetServiceForClientAuth}} account authentication, follow below steps.
 
 1. From [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) procedure description, skip step 1 and 2.
 2. When [request for authorization code](#RequestAuthorizationCode) from step 3, apply the following two.
@@ -8,10 +8,10 @@ To provide guest mode service to users without {{book.TargetServiceForClientAuth
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The basic value of `request_vu` is `N` and the basic policy is to authorize  {{ book.TargetServiceForClientAuth }} account for usage. </p>
+  <p>The basic value of <code>request_vu</code> is <code>N</code> and the basic policy is to authorize {{ book.TargetServiceForClientAuth }} account for usage.</p>
 </div>
 
-By following the two items, authorization code for guest mode will be acquired. Process the rest of steps explained on [Create Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) with the guest code to obtain Clova access token for guests.
+By following the above, authorization code for guest mode will be acquired. Process the rest of steps explained on [Create Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) with the guest code to obtain Clova access token for guests.
 
 Below is an example of requesting for guest mode authorization code.
 

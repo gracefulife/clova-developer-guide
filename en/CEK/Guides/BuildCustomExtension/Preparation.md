@@ -20,7 +20,9 @@ Assume your custom extension provides a pizza ordering service and it has receiv
 This is an interaction model defined in JSON format.
 
 {% raw %}
+
 ```json
+
 {
   "intents": [
     {
@@ -45,24 +47,31 @@ This is an interaction model defined in JSON format.
 }
 
 ```
+
 {% endraw %}
 
 The example shows how a user's request is mapped to pre-defined `intent` and `slot`. You can use this information to process other user requests that have the same intention but are expressed in different ways.
 
 {% raw %}
+
 ```
+
 OrerPizza {CUSTOM.PIZZA_TYPE} 주문해줘
 OrderItem {CUSTOM.PIZZA_TYPE} 주문해줄래?
 OrderItem {CUSTOM.PIZZA_TYPE} {CLOVA.NUMBER}판 주문해줘
 ...
-OrderSIdeDish  {CUSTOM.SIDE_DISH} 주문해줘
+OrderSIdeDish {CUSTOM.SIDE_DISH} 주문해줘
+
 ```
+
 {% endraw %}
 
 Your custom extension receives a message as below based on the pre-defined interaction model.
 
 {% raw %}
+
 ```json
+
 {
   "version": "0.1.0",
   "session": {
@@ -102,7 +111,9 @@ Your custom extension receives a message as below based on the pre-defined inter
     }
   }
 }
+
 ```
+
 {% endraw %}
 
 <div class="note">

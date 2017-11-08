@@ -1,5 +1,5 @@
 ## Clova.SavedPlace {#SavedPlace}
-A message format that sends client's pre-saved location information.
+A message format used to report the client's pre-saved location information to CIC. 
 
 ### Message structure
 {% raw %}
@@ -14,7 +14,7 @@ A message format that sends client's pre-saved location information.
       {
         "latitude": {{string}},
         "longitude": {{string}},
-        "refreshedAt": {{string}}
+        "refreshedAt": {{string}},
         "name": {{string}}
       }
     ]
@@ -63,4 +63,4 @@ A message format that sends client's pre-saved location information.
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#recognize-event)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
