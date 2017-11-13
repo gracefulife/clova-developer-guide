@@ -37,7 +37,7 @@ Interaction 모델을 Clova developer console에서 정의하기 전에 우선 i
 
 ### Intent {#Intent}
 
-Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공용으로 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있으며, extension에서 선택한 built-in intent를 처리할 수 있게 만들어야 합니다.
+Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있으며, extension에서 선택한 built-in intent를 처리할 수 있게 만들어야 합니다.
 
 | Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
 |---------------------------|-------------------|----------------------------------------------------------|
@@ -62,9 +62,9 @@ Custom intent는 서비스 제공자(extension 개발자)가 서비스에 맞게
 
 ### Slot {#Slot}
 
-Slot은 사용자의 발화로부터 획득하는 정보이며, [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 쉽게 말해 extension이 특정 범주의 사용자 요청을 처리할 때 필요한 파라미터라고 볼 수 있습니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하기 위해서는 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
+Slot은 사용자의 발화로부터 획득하는 정보이며, [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 extension이 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러가 intent이고 이때 이 함수나 핸들러에 필요한 파라미터가 slot입니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
 
-Slot을 선언할 때 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다. Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
+Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다. Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보를 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
 
 | Built-in slot 타입 이름 | 설명                                            |
 | ----------------------|------------------------------------------------|
@@ -80,11 +80,11 @@ Slot을 선언할 때 어떤 유형의 정보인지 구분해야 하며 이를 s
 | CLOVA.CURRENCY      | 화폐 표현에 해당하는 정보입니다. (예: "위안", "엔", "달러", "러시아 돈", "영국 통화") |
 | CLOVA.OFFICIALDATE  | 공휴일 및 국경일, 기념일 표현에 해당하는 정보입니다. (예: "입춘", "신정", "석가탄신일", "광복절") |
 
-Custom slot 타입은 제공하는 서비스(extension)의 도메인에 특화된 정보 유형을 정의한 것으로 custom slot 타입을 만들 때 주로 고유 명사 또는 명사를 지정합니다. 위 발화를 예를 들면 "OrderPizza" intent는 피자의 종류에 해당하는 정보(slot)를 사용자 발화에서 파악해야 하며 피자 종류를 나타내는 표현은 피자와 관련된 서비스에서 사용될 가능성이 큽니다. 따라서 "PIZZA_TYPE"과 같은 custom slot 타입을 정의하고 "PIZZA_TYPE"에는 피자 배달 서비스에서 주문 가능한 "페퍼로니 피자", "콤비네이션 피자", "치즈 피자"와 같은 항목들이 표현될 수 있음을 선언할 수 있습니다.
+Custom slot 타입은 제공하는 서비스(extension)의 도메인에 특화된 정보 유형을 정의한 것으로 custom slot 타입을 만들 때 주로 고유 명사 또는 명사를 지정합니다. 위 발화를 예를 들면 "OrderPizza" intent는 피자의 종류에 해당하는 정보(slot)를 사용자 발화에서 파악해야 하며 피자 종류를 나타내는 표현은 피자와 관련된 서비스에서만 사용될 가능성이 큽니다. 따라서 "PIZZA_TYPE"과 같은 custom slot 타입을 정의하고 "PIZZA_TYPE"에는 피자 배달 서비스에서 주문 가능한 "페퍼로니 피자", "콤비네이션 피자", "치즈 피자"와 같은 항목들이 표현될 수 있음을 선언할 수 있습니다.
 
-다만, 이런 항목들은 문장에서 같은 의미를 지니지만 비슷하거나 다양하게 표현될 수 있습니다. "바베큐 피자"는 "BBQ 피자"와 같은 동의어를 가질 수 있으며, "쉬림프 골드 크러스트 피자"와 같이 이름이 긴 경우 "쉬림프 골크 피자"처럼 사용자들이 흔히 짧게 부르는 표현이 존재할 수 있습니다. 따라서 custom slot 타입을 정의할 때 개념적으로 구분된 항목을 선언해야 할뿐만 아니라 각 항목의 대표어와 동의어/유의어를 정의해줘야 합니다. 이는 사용자 발화를 인식하는 과정에서 다양하게 표현된 동의어/유의어를 대표어로 전환해주며, extension이 같은 개념에 해당하는 정보를 일관된 값으로 받을 수 있도록 해줍니다.
+다만, 이런 항목들은 문장에서 같은 의미를 지니지만 비슷하거나 다양하게 표현될 수 있습니다. "바베큐 피자"는 "BBQ 피자"와 같은 동의어를 가질 수 있으며, "쉬림프 골드 크러스트 피자"와 같이 이름이 긴 경우 "쉬림프 골크 피자"처럼 사용자들이 흔히 짧게 부르는 표현이 존재할 수 있습니다. 따라서 custom slot 타입을 정의할 때 개념적으로 구분된 항목을 선언해야 할뿐만 아니라 각 항목의 대표어와 동의어/유의어를 정의해줘야 합니다. 이는 사용자 발화를 인식하는 과정에서 다양하게 표현된 동의어/유의어를 대표어로 전환해주며, extension이 intent를 처리할 때 같은 개념에 해당하는 정보를 일관된 값으로 받을 수 있도록 해줍니다.
 
-위와 같이 slot 타입을 정의하고 나면 각 intent에서 사용할 slot의 이름을 정의하고 해당 slot이 어떤 slot 타입을 가지는지 선언해야 합니다. 예를 들면, "OrderPizza" intent는 피자 종류 정보를 위해 "pizzaType", 피자 수량 정보를 위해 "pizzaAmount"라는 slot을 선언하고 각 slot에 미리 정의해둔 "PIZZA_TYPE"과 이미 제공되고 있는 CLOVA.NUMBER slot 타입을 지정할 수 있습니다.
+위와 같이 slot 타입을 정의하고 나면 각 intent에서 사용할 slot의 이름을 정의하고 해당 slot이 어떤 slot 타입을 가지는지 선언해야 합니다. 예를 들면, "OrderPizza" intent는 피자 종류 정보를 위해 "pizzaType", 피자 수량 정보를 위해 "pizzaAmount"라는 slot을 선언하고 각 slot에 미리 정의해둔 "PIZZA_TYPE" custome slot 타입과 이미 제공되고 있는 CLOVA.NUMBER built-in slot 타입을 지정할 수 있습니다.
 
 ### 발화 예시 {#UtteranceExample}
 Intent를 정의할 때 다양한 사용자 발화 예시를 열거할 수 있습니다. 발화 예시는 비슷한 의도를 지닌 다양한 사용자의 표현을 Clova가 인식하는데 필요한 기반 데이터가 되며 위에서 언급한 slot이 사용자 발화 중 어느 위치에 있는지 파악할 때 사용됩니다. 참고로 보통 서술어(동사)에 의해 intent가 결정됩니다. 그리고 발화 예시를 작성할 때는 intent의 의미에 딱맞는 표현을 반복적으로 사용하기 보다는 비슷한 의미를 가진 다양한 사용자 표현을 나열하는 것이 좋습니다. 이는 사용자 의도를 잘 인식하는 interaction 모델을 만들 수 있는 가장 좋은 방법입니다.
@@ -215,7 +215,7 @@ BBQ 피자 2판 배달시켜줄래?
 
 ## Built-in slot 타입 추가하기 {#AddBuiltinSlotType}
 
-서비스를 제공할 extension이 어떤 [built-in slot 타입](#Slot)을 사용할지 결정했다면 해당 extension의 Interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
+서비스를 제공할 extension이 어떤 [built-in slot 타입](#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
 
 <ol>
   <li><strong>Slot 타입</strong> 패널의 우측 상단이나 <strong>인터랙션 모델 빌더 메뉴</strong> 아래에서 <strong>사용중인 Slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>인터렉션 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
@@ -273,7 +273,7 @@ BBQ 피자 2판 배달시켜줄래?
 
 ## Built-in intent 추가하기 {#AddBuiltinIntent}
 
-[Built-in intent](#Intent)는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공용으로 사용하기 위해 선언한 intent입니다. 예를 들면, 일반적으로 빈번히 발생할 수 있는 사용자의 긍정/부정 요청, 중지나 취소와 같은 요청을 intent로 미리 정의해 둔 것입니다. Extension에서 사용할 built-in intent를 선택적으로 추가할 수 있습니다.
+[Built-in intent](#Intent)는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 intent입니다. 예를 들면, 일반적으로 빈번히 발생할 수 있는 사용자의 긍정/부정 요청, 중지나 취소와 같은 요청을 intent로 미리 정의해 둔 것입니다. Extension에서 사용할 built-in intent를 선택적으로 추가할 수 있습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -299,7 +299,7 @@ Extension에서 사용할 [built-in slot 타입](#AddBuiltinSlotType)과 [custom
   <li>마지막으로 우측 상단에 있는 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-참고로 발화 예시는 사용자 언어를 분석하는 기반 데이터가 되기 때문에 intent에 대한 발화 예시가 많고 표현이 다양할수록 사용자의 의도를 더 잘 분석할 확률이 커집니다. 따라서 발화 예시는 하나의 Intent에 최소 30개 이상의 발화 예시를 입력하는 것이 좋습니다.
+참고로 발화 예시는 사용자 언어를 분석하는 기반 데이터가 되기 때문에 intent에 대한 발화 예시가 많고 표현이 다양할수록 사용자의 의도를 더 잘 분석할 확률이 커집니다. 따라서 발화 예시는 하나의 intent에 최소 30개 이상의 발화 예시를 입력하는 것이 좋습니다.
 
 Custom slot 타입을 추가할 때와 마찬가지로 정의하려는 TSV(Tab-separated values, .tsv) 형식의 파일을 업로드할 수도 있습니다. TSV 파일은 두 부분으로 나뉘며 각각 intent의 slot을 정의하는 부분과 발화 예시를 나열하는 부분으로 나뉩니다. Intent의 slot을 정의하는 부분이 파일의 앞 부분에 오며 `[INTENT SLOT]`이 입력된 줄 바로 다음에 slot이 나열됩니다. 탭 문자로 구분된 첫 번째 열은 intent에서 사용되는 slot의 이름이며, 두 번째 열은 slot type입니다.
 
