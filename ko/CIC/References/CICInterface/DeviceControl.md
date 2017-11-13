@@ -40,7 +40,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수     |
-| `command`     | string  | 정상 수행한 동작.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
+| `command`     | string  | 정상 수행한 동작.<ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
 ### Remarks
 
@@ -320,6 +320,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * 기본 단위는 클라이언트측에서 직접 결정하면 됩니다.
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이 경우에는 음성 안내 대신 클라이언트 기기의 조명(LED)이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -407,6 +408,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * 기본 단위는 클라이언트측에서 직접 결정하면 됩니다.
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이 경우에는 음성 안내 대신 클라이언트 기기의 조명(LED)이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 
@@ -669,6 +671,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 * 클라이언트는 맥락 정보인 [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) 객체를 이용해 수시로 스피커 볼륨 정보와 화면 밝기 정보를 CIC에 전달해야 합니다.
 * 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+* Clova는 보통 기기 제어에 대한 지시 메시지를 클라이언트에게 전달할 때 음성 안내([`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지)를 함께 제공합니다. 다만, `target` 필드가 `"volume"`으로 설정된 것처럼 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지를 통해 안내 문구를 내려보내지 않습니다. 이는 사용자의 음악 감상 등과 같은 UX를 고려한 사항이며, 이 경우에는 음성 안내 대신 클라이언트 기기의 조명(LED)이나 짧은 효과음 통해 볼륨이 조절되었음을 알리도록 구현해야 합니다.
 
 ### Message example
 

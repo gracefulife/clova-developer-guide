@@ -16,7 +16,7 @@
 | `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 해당일 오후의 최고 기온 정보가 담긴 객체 |
 | `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 날짜별 [날씨 코드](#WeatherCode) 정보가 담긴 객체 |
 | `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) |해당일 날씨 정보를 표현하는 이미지 아이콘의 URL 정보를 가지는 객체 |
-| `dailyWeatherList[].lowTemperature`  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 해당일 오전의 최저 기온 정보가 담긴 객체 |
+| `dailyWeatherList[].lowTemperature`  | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 해당일 오전의 최저 기온 정보가 담긴 객체 |
 | `description`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 주간 날씨 정보임을 알리는 설명 문구가 포함된 객체  |
 | `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.   |
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |

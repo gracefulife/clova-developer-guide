@@ -2,9 +2,22 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2017-11-13
+
+### 플랫폼 변경 사항
+
+* CEK
+  - [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject)에서 에어컨 타입(AIRCONDITIONER)에 DecrementFanSpeed, IncrementFanSpeed, SetFanSpeed, SetMode actioin을 가습기 타입(HUMIDIFIER)에 SetFanSpeed를 추가
+
+### 문서 변경 사항
+
+* CIC
+  - 볼륨 제어 관련 지시 메시지([DeviceControl.Decrease](/CIC/References/CICInterface/DeviceControl.md#Decrease), [DeviceControl.Increase](/CIC/References/CICInterface/DeviceControl.html#Increase), [DeviceControl.SetValue](/CIC/References/CICInterface/DeviceControl.html#SetValue), [PlaybackController.Mute](/CIC/References/CICInterface/PlaybackController.html#Mute), [PlaybackController.Unmute](/CIC/References/CICInterface/PlaybackController.html#Unmute))의 Remarks 항목에 UX 관련 내용 추가
+  - [ReminderList](/CIC/References/ContentTemplates/ReminderList.md) 템플릿 예제 오류 수정
+
 ## 2017-11-06
 
-## 플랫폼 변경 사항
+### 플랫폼 변경 사항
 
 * CIC
   - [`SpeechRecognizer.KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) 지시 메시지 추가
