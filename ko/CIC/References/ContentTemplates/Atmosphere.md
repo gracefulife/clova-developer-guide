@@ -15,7 +15,7 @@
 | `concentrationOfAtmosphere` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 대기 상태나 공기질 수준 정보가 담긴 객체. 예보를 할 때는 이 필드가 생략됩니다. 생략될 때는 이 객체의 `value` 필드는 빈 문자열(`""`)을 가집니다. |
 | `halfDayAtmosphereList[]`             | object array | 반나절 단위(오전/오후)로 구분된 시간대별 대기 정보를 가지는 객체 배열                                    |
 | `halfDayAtmosphereList[].atmosphereImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | `halfDayAtmosphereList[].durationHalfDay` 필드에 입력된 시간대의 대기 상태를 표시하는 이미지 파일의 URL 정보가 담긴 객체 |
-| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | `halfDayAtmosphereList[].durationHalfDay` 필드에 입력된 시간대의 대기 상태나 공기질 수준 정보가 담긴 객체.  |
+| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | `halfDayAtmosphereList[].durationHalfDay` 필드에 입력된 시간대의 대기 상태나 공기질 수준 정보가 담긴 객체  |
 | `halfDayAtmosphereList[].durationHalfDay`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 대기 정보를 나타내는 시간 범위가 담긴 객체. 이 객체의 `value` 필드는 `내일 오전`, `내일 오후`, `모레 오전`, `모레 오후`와 같은 값을 가집니다.  |
 | `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |

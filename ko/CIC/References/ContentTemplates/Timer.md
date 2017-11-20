@@ -15,7 +15,7 @@ CIC는 사용자가 타이머를 생성하면 생성한 타이머의 정보를 T
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 추가된 타이머가 울릴 날짜와 시간 정보를 가지는 객체             |
-| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가된 타이머의 식별자 정보가 담긴 객체.                     |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가된 타이머의 식별자 정보가 담긴 객체                     |
 | `type`          | string                                                                              | Content template 구분자. `"Timer"` 값을 가집니다.        |
 
 ## Template Example

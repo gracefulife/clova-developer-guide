@@ -14,10 +14,10 @@ CIC는 사용자가 메모의 목록을 요청하면 사용자에게 등록된 �
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| `memoList[]`              | object array  | 사용자가 등록한 메모 목록을 가지는 객체 배열.                                       |
+| `memoList[]`              | object array  | 사용자가 등록한 메모 목록을 가지는 객체 배열                                        |
 | `memoList[].content`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 메모의 내용이 담긴 객체  |
 | `memoList[].lastModified` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 메모가 마지막으로 수정된 시간 정보가 담긴 객체 |
-| `memoList[].token`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 메모의 식별자 정보가 담긴 객체.  |
+| `memoList[].token`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 메모의 식별자 정보가 담긴 객체  |
 | `type`                    | string                                                                              | Content template 구분자. `"MemoList"` 값을 가집니다.             |
 
 ## Template Example

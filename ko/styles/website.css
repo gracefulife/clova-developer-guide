@@ -84,7 +84,8 @@ td .note {
 }
 
 .markdown-section img {
-    margin: 5px 5px 5px 5px;
+    padding: 10px;
+    margin: 2px 2px 2px 2px;
     -moz-box-shadow:    3px 3px 10px 3px #ccc;
     -webkit-box-shadow: 3px 3px 10px 3px #ccc;
     box-shadow:         3px 3px 10px 3px #ccc;

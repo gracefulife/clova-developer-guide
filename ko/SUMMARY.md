@@ -6,6 +6,10 @@
 * [저작권](/Copyright.md)
 * [용어 및 약어](/Terms.md)
 
+## Design
+* [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)
+* Extension 디자인 가이드라인(추가 예정)
+
 ## Clova Interface Connect
 
 * [CIC 개요](/CIC/CIC_Overview.md)
