@@ -2,23 +2,33 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
-| v2.2 | 2017-11-20   | <ul><li>[Design] <a href="/Design/DesignGuidelineForClientHardware.html">클라이언트 기기 디자인 가이드라인</a> 추가</li><li>[CIC] 오디오 콘텐츠 및 이미지 썸네일 표시를 위해 <a href="/CIC/References/ContentTemplates/CardList.html">CardList 템플릿</a>의 subType 값에 Type5, Type6를 추가</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> HeatingModeInfoObject를 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ModeInfoObject">ModeInfoObject</a>로 이름을 변경하고 범용적인 기기의 운전 모드를 나타내는데 사용하는 객체로 설명을 수정</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureRequest">GetCurrentTemperatureRequest</a> 메시지와 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureResponse">GetCurrentTemperatureResponse</a> 메시지 추가</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html">Error</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#UnsupportedOperationError">UnsupportedOperationError</a> 메시지 추가</li></ul>  |
-
 ## 2017-11-20
 
 ### 플랫폼 변경 사항
+* CIC
+  - 오디오 콘텐츠 및 이미지 썸네일 표시를 위해 [CardList 템플릿](/CIC/References/ContentTemplates/CardList.md)의 subType 값에 Type5, Type6를 추가
+
+* CEK
+  - Clova Home extension 메시지의 [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md) HeatingModeInfoObject를 [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)로 이름을 변경하고 범용적인 기기의 운전 모드를 나타내는데 사용하는 객체로 설명을 수정
+  - Clova Home extension 메시지의 [Control](/CEK/References/ClovaHomeInterface/Control_Interfaces.md) 인터페이스에 [GetCurrentTemperatureRequest](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureRequest) 메시지와 [GetCurrentTemperatureResponse](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureResponse) 메시지 추가
+  - Clova Home extension 메시지의 [Error](/CEK/References/ClovaHomeInterface/Error_Interfaces.md) 인터페이스에 [UnsupportedOperationError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#UnsupportedOperationError) 메시지 추가
+
+### 문서 변경 사항
+
+* Design
+  - [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md) 추가
 
 ## 2017-11-13
 
 ### 플랫폼 변경 사항
 
 * CEK
-  - [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject)에서 에어컨 타입(AIRCONDITIONER)에 DecrementFanSpeed, IncrementFanSpeed, SetFanSpeed, SetMode actioin을 가습기 타입(HUMIDIFIER)에 SetFanSpeed를 추가
+  - [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)에서 에어컨 타입(AIRCONDITIONER)에 DecrementFanSpeed, IncrementFanSpeed, SetFanSpeed, SetMode actioin을 가습기 타입(HUMIDIFIER)에 SetFanSpeed를 추가
 
 ### 문서 변경 사항
 
 * CIC
-  - 볼륨 제어 관련 지시 메시지([DeviceControl.Decrease](/CIC/References/CICInterface/DeviceControl.md#Decrease), [DeviceControl.Increase](/CIC/References/CICInterface/DeviceControl.html#Increase), [DeviceControl.SetValue](/CIC/References/CICInterface/DeviceControl.html#SetValue), [PlaybackController.Mute](/CIC/References/CICInterface/PlaybackController.html#Mute), [PlaybackController.Unmute](/CIC/References/CICInterface/PlaybackController.html#Unmute))의 Remarks 항목에 UX 관련 내용 추가
+  - 볼륨 제어 관련 지시 메시지([DeviceControl.Decrease](/CIC/References/CICInterface/DeviceControl.md#Decrease), [DeviceControl.Increase](/CIC/References/CICInterface/DeviceControl.md#Increase), [DeviceControl.SetValue](/CIC/References/CICInterface/DeviceControl.md#SetValue), [PlaybackController.Mute](/CIC/References/CICInterface/PlaybackController.md#Mute), [PlaybackController.Unmute](/CIC/References/CICInterface/PlaybackController.md#Unmute))의 Remarks 항목에 UX 관련 내용 추가
   - [ReminderList](/CIC/References/ContentTemplates/ReminderList.md) 템플릿 예제 오류 수정
 
 ## 2017-11-06
@@ -28,10 +38,10 @@
 * CIC
   - [`SpeechRecognizer.KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) 지시 메시지 추가
   - 클라이언트의 디스플레이 장치 정보를 공유하기 위한 [`Device.Display`](/CIC/References/Context_Objects.md#Display) 맥락 정보 추가
-  - [`ActionTimer`](/CIC/References/ContentTemplates/ActionTimer.html), [`ActionTimerList`](/CIC/References/ContentTemplates/ActionTimerList.html), [`Alarm`](/CIC/References/ContentTemplates/Alarm.html), [`AlarmList`](/CIC/References/ContentTemplates/AlarmList.html), [`Memo`](/CIC/References/ContentTemplates/Memo.html), [`MemoList`](/CIC/References/ContentTemplates/MemoList.html), [`Reminder`](/CIC/References/ContentTemplates/Reminder.html), [`ReminderList`](/CIC/References/ContentTemplates/ReminderList.html), [`Schedule`](/CIC/References/ContentTemplates/Schedule.html), [`ScheduleList`](/CIC/References/ContentTemplates/ScheduleList.html), [`Timer`](/CIC/References/ContentTemplates/Timer.html), [`TimerList`](/CIC/References/ContentTemplates/TimerList.html) 템플릿에 `token` 필드 추가
+  - [`ActionTimer`](/CIC/References/ContentTemplates/ActionTimer.md), [`ActionTimerList`](/CIC/References/ContentTemplates/ActionTimerList.md), [`Alarm`](/CIC/References/ContentTemplates/Alarm.md), [`AlarmList`](/CIC/References/ContentTemplates/AlarmList.md), [`Memo`](/CIC/References/ContentTemplates/Memo.md), [`MemoList`](/CIC/References/ContentTemplates/MemoList.md), [`Reminder`](/CIC/References/ContentTemplates/Reminder.md), [`ReminderList`](/CIC/References/ContentTemplates/ReminderList.md), [`Schedule`](/CIC/References/ContentTemplates/Schedule.md), [`ScheduleList`](/CIC/References/ContentTemplates/ScheduleList.md), [`Timer`](/CIC/References/ContentTemplates/Timer.md), [`TimerList`](/CIC/References/ContentTemplates/TimerList.md) 템플릿에 `token` 필드 추가
 
 * CEK
-  - [Custom extension 메시지](/CEK/References/CEK_API.html#CustomExtMessage) 중 요청 메시지에서 `context.System.device.displayType` 필드의 이름을 `context.System.device.display`로 바꾸고 하위 필드 구성을 변경
+  - [Custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 중 요청 메시지에서 `context.System.device.displayType` 필드의 이름을 `context.System.device.display`로 바꾸고 하위 필드 구성을 변경
 
 ## 2017-10-30
 
