@@ -32,11 +32,10 @@
       </td>
     </tr>
     <tr>
-      <td style="text-align: center;">설계</td>
+      <td style="text-align: center;">디자인</td>
       <td>
         <ul>
-          <li>하드웨어 설계 가이드라인(추후 제공)</li>
-          <li>애플리케이션 설계 가이드라인(추후 제공)</li>
+          <li><a href="/Design/DesignGuidelineForClientHardware.html">클라이언트 기기 디자인 가이드라인</a></li>
         </ul>
       </td>
       <td>

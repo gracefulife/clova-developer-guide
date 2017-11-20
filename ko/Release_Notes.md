@@ -2,6 +2,12 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+| v2.2 | 2017-11-20   | <ul><li>[Design] <a href="/Design/DesignGuidelineForClientHardware.html">클라이언트 기기 디자인 가이드라인</a> 추가</li><li>[CIC] 오디오 콘텐츠 및 이미지 썸네일 표시를 위해 <a href="/CIC/References/ContentTemplates/CardList.html">CardList 템플릿</a>의 subType 값에 Type5, Type6를 추가</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> HeatingModeInfoObject를 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ModeInfoObject">ModeInfoObject</a>로 이름을 변경하고 범용적인 기기의 운전 모드를 나타내는데 사용하는 객체로 설명을 수정</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureRequest">GetCurrentTemperatureRequest</a> 메시지와 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureResponse">GetCurrentTemperatureResponse</a> 메시지 추가</li><li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html">Error</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#UnsupportedOperationError">UnsupportedOperationError</a> 메시지 추가</li></ul>  |
+
+## 2017-11-20
+
+### 플랫폼 변경 사항
+
 ## 2017-11-13
 
 ### 플랫폼 변경 사항

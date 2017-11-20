@@ -553,7 +553,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 | `progressReport.progressReportDelayInMilliseconds`    | number | 재생 시작 후 지정된 시간이 지났을 때 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.  | 선택 |
 | `progressReport.progressReportIntervalInMilliseconds` | number | 재생 중 지정된 시간 간격으로 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.        | 선택 |
 | `progressReport.progressReportPositionInMilliseconds` | number | 재생 중 지정된 시점을 지날 때마다 재생 상태 정보를 보고받기 위해 지정되는 값입니다. 단위는 밀리 초이며, 이 필드는 null 값을 가질 수 있습니다.    | 선택 |
-| `token`                  | string  | 오디오 스트림 token.                                                                                  | 필수 |
+| `token`                  | string  | 오디오 스트림 token                                                                                   | 필수 |
 | `url`                    | string  | 오디오 스트림 URL                                                                                     | 필수 |
 | `urlPlayable`            | boolean | `url` 필드의 오디오 스트림 URL이 바로 재생 가능한 형태인지 구분하는 값. <ul><li><code>true</code>: 바로 재생이 가능한 형태의 URL</li><li><code>false</code>: 바로 재생이 불가능한 형태의 URL. <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> 이벤트 메시지를 사용하여 오디오 스트림 정보를 추가로 요청해야 합니다.</li></ul>        | 필수 |
 | `[Custom Field]`         | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.<div class="danger"><p><strong>Caution!</strong></p><p>서비스 제공자에 의해 추가된 임의의 필드 값을 클라이언트가 이용해서는 안되며 이는 문제를 발생시킬 수 있습니다. 또한, 이 필드 값은 오디오 재생 상태를 전달할 때 <a href="/CIC/References/Context_Objects.html#PlaybackState">PlaybackState 문맥 정보</a>의 `stream` 필드에 그대로 첨부되어야 합니다.</p></div>                                | 선택 |

@@ -1,12 +1,14 @@
 # CardList Template
 화면에 카드 리스트형으로 표현될 데이터를 정형화한 템플릿입니다. CardList는 다시 다음과 같은 카드 타입을 가집니다. 각 카드 타입에 따라 `card` 객체의 유효한 필드가 달라질 수 있습니다.
 
-| 카드 타입       | 타입 설명                      | 유효 필드(`card` 객체)         |
-|---------------|-----------------------------|-----------------------------|
-| `Type1`       | 콘텐츠의 이미지, 제목, 설명을 표시하는 카드 타입입니다.      | `description`, `imageUrl`, `referenceText`, `referenceUrl`, `title`           |
-| `Type2`       | 콘텐츠의 이미지, 제목, 설명, 링크를 표시하는 카드 타입입니다. | `description`, `imageUrl`, `linkUrl`, `referenceText`, `referenceUrl`, `title`  |
-| `Type3`       | 비디오 콘텐츠를 표시하는 카드 타입입니다.                 | `description`, `imageUrl`, `referenceText`, `referenceUrl`, `title`, `videoUrl` |
-| `Type4`       | 뉴스 콘텐츠를 표시하는 카드 타입입니다.                  | `description`, `press`, `pressIconUrl`, `publishDate`, `title`                |
+| 카드 타입 | 타입 설명                                         | 유효 필드(`card` 객체)                                                              |
+|---------|-------------------------------------------------|---------------------------------------------------------------------------------|
+| `Type1` | 콘텐츠의 이미지, 제목, 설명을 표시하는 카드 타입입니다.      | `description`, `imageUrl`, `referenceText`, `referenceUrl`, `title`             |
+| `Type2` | 콘텐츠의 이미지, 제목, 설명, 링크를 표시하는 카드 타입입니다. | `description`, `imageUrl`, `linkUrl`, `referenceText`, `referenceUrl`, `title`  |
+| `Type3` | 비디오 콘텐츠를 표시하는 카드 타입입니다.                 | `imageUrl`, `referenceText`, `referenceUrl`, `title`, `videoUrl`                |
+| `Type4` | 뉴스 콘텐츠를 표시하는 카드 타입입니다.                  | `description`, `press`, `pressIconUrl`, `publishDate`, `title`                  |
+| `Type5` | 오디오 콘텐츠를 표시하는 카드 타입입니다.                 | `description`, `imageUrl`, `title`, `videoUrl`                                  |
+| `Type6` | 미디어의 썸네일을 표시하는 카드입니다.                   | `imageUrl`, `linkUrl`                                                      |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -27,7 +29,7 @@
 | `cardList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 출처의 텍스트 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.         |
 | `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.          |
 | `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             |
-| `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
+| `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오 혹은 오디오의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
 | `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
 | `type`                      | string  | Content template 구분자. `"CardList"` 값을 가집니다.                                                                       |
 
@@ -368,6 +370,11 @@
 | `Type3` | `Type4` |
 |-------|-------|
 | ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type4](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
+
+<div class="note">
+<p><strong>Note!</strong></p>
+<p><code>Type5</code>, <code>Type6</code>이 사용된 화면 예제를 준비하고 있습니다.</p>
+</div>
 
 ## See also
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
