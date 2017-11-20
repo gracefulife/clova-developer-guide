@@ -61,7 +61,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
   - **대표 표현 문장**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. 첫 번째 예시문은 extension 목록을 보여줄 때 표시됩니다.
   - **검색 키워드**: 사용자가 extension을 검색할 때 특정 키워드가 포함되면 검색 결과에 표시되도록 해주는 검색어입니다.
   - **작은 아이콘**: Extension 아이콘을 나타낼 이미지 파일입니다.(108px X 108px)
-  - **큰 아이콘**: Extension 아이콘의 큰 이미지로서 추후 사용 예정입니다.(515px X 515px)
+  - **큰 아이콘**: Extension 아이콘의 큰 이미지로서 추후 사용 예정입니다.(512px X 512px)
 * 테스트용 지시어: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LinkUserAccount.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시 등을 입력합니다.
 * 서비스 국가 및 지역: 해당 extension이 서비스를 제공할 국가나 지역으로 현재는 선택할 수 있는 지역이 없고 한국에만 extension을 배포할 수 있습니다.
 

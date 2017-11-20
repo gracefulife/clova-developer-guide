@@ -113,7 +113,7 @@ GET|POST /token?grant_type=authorization_code
 |---------------|---------|-----------------------------|---------|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `code`          | string  | [발급받은 authorization code](#RequestAuthorizationCode).             | 필수 |
+| `code`          | string  | [발급받은 authorization code](#RequestAuthorizationCode)                                                               | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
 
@@ -139,16 +139,16 @@ GET|POST /token?grant_type=authorization_code
 |---------------|---------|-----------------------------|
 | `access_token`  | string  | Clova access token                               |
 | `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
-| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token.          |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     |
 | `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
 
 ### Status codes
 
 | 상태 코드       | 설명                     |
 |---------------|-------------------------|
-| 200 OK        | 요청 처리 성공                      |
+| 200 OK        | 요청 처리 성공                                                                                   |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 500 Internal Server Error | 서버 내부 오류로 인한 access token 발급 실패 |
+| 500 Internal Server Error | 서버 내부 오류로 인한 access token 발급 실패                                             |
 
 ### Response example
 {% raw %}
@@ -189,7 +189,7 @@ GET|POST /token?grant_type=refresh_token
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                    | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
-| `refresh_token` | string  | 인증 성공 후 발급받은 refresh token.                                            | 필수 |
+| `refresh_token` | string  | 인증 성공 후 발급받은 refresh token                                              | 필수 |
 
 ### Request example
 
@@ -213,16 +213,16 @@ GET|POST /token?grant_type=refresh_token
 |---------------|---------|-----------------------------|
 | `access_token`  | string  | Clova access token                               |
 | `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
-| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token.    |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     |
 | `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
 
 ### Status codes
 
 | 상태 코드       | 설명                     |
 |---------------|-------------------------|
-| 200 OK        | 요청 처리 성공                      |
-| 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 500 Internal Server Error | 서버 내부 오류로 인한 access token 갱신 실패 |
+| 200 OK                    | 요청 처리 성공                                                                                |
+| 400 Bad Request           | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
+| 500 Internal Server Error | 서버 내부 오류로 인한 access token 갱신 실패                                                      |
 
 ### Response example
 {% raw %}
@@ -258,7 +258,7 @@ GET|POST /token?grant_type=delete
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `access_token`  | string  | 인증 성공 후 발급받은 Clova access token.                                 | 필수 |
+| `access_token`  | string  | 인증 성공 후 발급받은 Clova access token                                                                                 | 필수 |
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 필수 |
@@ -285,17 +285,17 @@ GET|POST /token?grant_type=delete
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `access_token`  | string  | Clova access token                               |
-| `client_id`     | string  | 클라이언트 ID.                                      |
+| `client_id`     | string  | 클라이언트 ID                                       |
 | `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
 
 ### Status codes
 
 | 상태 코드       | 설명                     |
 |---------------|-------------------------|
-| 200 OK        | 요청 처리 성공                      |
-| 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패 |
-| 401 Unauthorized | 유효하지 않은 클라이언트 인증 정보(`client_id` 또는 `client_secret`) 또는 사용자 정보(`device_id` 또는 `model_id`)를 파라미터로 전달한 경우 발생하는 실패 |
-| 500 Internal Server Error | 서버 내부 오류로 인한 access token 삭제 실패 |
+| 200 OK                    | 요청 처리 성공                                                                                                                       |
+| 400 Bad Request           | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 발생하는 실패                                        |
+| 401 Unauthorized          | 유효하지 않은 클라이언트 인증 정보(`client_id` 또는 `client_secret`) 또는 사용자 정보(`device_id` 또는 `model_id`)를 파라미터로 전달한 경우 발생하는 실패 |
+| 500 Internal Server Error | 서버 내부 오류로 인한 access token 삭제 실패                                                                                             |
 
 ### Response example
 {% raw %}

@@ -37,7 +37,7 @@ Interaction 모델을 Clova developer console에서 정의하기 전에 우선 i
 
 ### Intent {#Intent}
 
-Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있으며, extension에서 선택한 built-in intent를 처리할 수 있게 만들어야 합니다.
+Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있습니다. 어떤 built-in intent를 사용할지 결정했다면 선택한 built-in intent를 등록하려는 extension에서 처리할 수 있게 만들어야 합니다.
 
 | Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
 |---------------------------|-------------------|----------------------------------------------------------|
@@ -118,7 +118,7 @@ BBQ 피자 2판 배달시켜줄래?
   </tbody>
 </table>
 
-위와 같이 "OrderPizza" intent에 관련된 발화를 텍스트로 열거한 후 각 slot에 해당하는 영역을 표시하게 됩니다. CLOVA.NUMBER built-in slot 타입과 "PIZZA_TYPE"이라는 slot 타입으로부터 과 이는 추후 Clova developer console에서 Intent를 등록할 때 처리하게 됩니다.
+"OrderPizza" intent에 관련된 발화를 텍스트로 열거한 후 각 slot에 해당하는 영역을 다음과 같이 표시하게 됩니다.
 
 {% raw %}
 
