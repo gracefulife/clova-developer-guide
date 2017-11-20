@@ -16,7 +16,7 @@ CIC는 사용자가 메모를 생성하면 생성한 메모의 정보를 Memo �
 |---------------|---------|-----------------------------|
 | `content`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 메모의 내용이 담긴 객체  |
 | `timestamp`   | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 메모 생성 시간 정보가 담긴 객체 |
-| `token`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 메모의 식별자 정보가 담긴 객체.  |
+| `token`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 메모의 식별자 정보가 담긴 객체  |
 | `type`        | string                                                                              | Content template 구분자. `"Memo"` 값을 가집니다.             |
 
 ## Template Example

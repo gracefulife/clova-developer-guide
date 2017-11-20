@@ -165,7 +165,7 @@ clova://naver-maps?url=http://target.map.url
 
 | 파라미터 이름    | 설명                         | 필수 여부 |
 |---------------|-----------------------------|--------|
-| lang          | TTS(Text to Speech) 대상 언어. <ul><li><code>"ko"</code>: 한국어</li><li><code>"en"</code>: 영어</li></ul> | 필수 |
+| lang          | TTS(Text to Speech) 대상 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li></ul> | 필수 |
 | text          | 발화할 텍스트                   | 선택 |
 
 이 action URL scheme의 예는 다음과 같습니다.
