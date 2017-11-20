@@ -564,7 +564,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 | `header.namespace`       | string | 오류 메시지의 네임스페이스. `"System"`으로 고정됩니다.             | 필수 |
 | `payload`                | object | 오류와 관련된 정보를 담고 있는 객체                                | 필수 |
 | `payload.code`           | string | 오류 코드. 해당 메시지의 HTTP 응답 코드와 같은 값을 가집니다.           | 필수 |
-| `payload.description`    | string | 오류 메시지.                                                  | 필수 |
+| `payload.description`    | string | 오류 메시지                                                  | 필수 |
 
 #### Error code reference
 

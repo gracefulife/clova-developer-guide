@@ -14,11 +14,11 @@ CIC는 사용자가 알람의 목록을 요청하면 사용자에게 등록된 �
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| `alarmList[]`               | object array  | 사용자가 등록한 알람 목록을 가지는 객체 배열.                                                                                          |
+| `alarmList[]`               | object array  | 사용자가 등록한 알람 목록을 가지는 객체 배열                                                                                           |
 | `alarmList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 매주 반복되는 알람일 경우 반복할 요일 정보를 가지고 있는 객체 배열  |
 | `alarmList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 반복 주기 정보를 가지는 객체입니다. 이 객체의 `value` 필드는 다음과 같은 값을 가집니다. <ul><li>빈 문자열(<code>""</code>): 일회성 알람</li><li><code>"daily"</code>: 매일 반복되는 알람</li><li><code>"weekly"</code>: 매주 반복되는 알람</li></ul> |
 | `alarmList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 알람이 울릴 날짜와 시간 정보를 가지는 객체                       |
-| `alarmList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 알람의 식별자 정보가 담긴 객체.                               |
+| `alarmList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 알람의 식별자 정보가 담긴 객체                               |
 | `type`                      | string                                                                              | Content template 구분자. `"AlarmList"`로 고정             |
 
 ## Template Example

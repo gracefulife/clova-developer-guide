@@ -62,13 +62,13 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `context.System`                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 필수 |
 | `context.System.device`                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 필수 |
 | `context.System.device.deviceId`           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 필수 |
-| `content.System.device.display`            | object  | 클라이언트 기기의 디스플레이 정보를 가지고 있는 객체.                                                 | 필수 |
+| `content.System.device.display`            | object  | 클라이언트 기기의 디스플레이 정보를 가지고 있는 객체                                                 | 필수 |
 | `content.System.device.display.contentLayer`        | object | 디스플레이에서 콘텐츠가 표시되는 영역의 해상도 정보를 가지는 객체. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.  | 선택 |
 | `content.System.device.display.contentLayer.width`  | number | 디스플레이에서 콘텐츠가 표시되는 영역의 너비. 단위는 픽셀(px)입니다.             | 필수 |
 | `content.System.device.display.contentLayer.height` | number | 디스플레이에서 콘텐츠가 표시되는 영역의 높이. 단위는 픽셀(px)입니다.             | 필수 |
 | `content.System.device.display.dpi`         | number | 디스플레이 장치의 DPI. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.          | 선택 |
 | `content.System.device.display.orientation` | string | 디스플레이 장치의 방향. `content.System.device.display.size`의 값이 `"none"`일 경우 이 필드는 생략됩니다.<ul><li><code>"landscape"</code>: 가로 방향</li><li><code>"portrait"</code>: 세로 방향</li></ul>                      | 선택 |
-| `content.System.device.display.size`        | string | 디스플레이 장치의 해상도 크기를 나타내는 값. 해상도가 미리 지정된 값이 입력될 수도 있고 `"none"`이나 `"custom"`처럼 디스플레이 장치가 없거나 미리 정의된 크기의 해상도가 아닌 경우를 나타내는 값이 입력될 수도 있습니다. 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"none"</code>: 클라이언트 기기에 디스플레이 장치가 없음</li><li><code>"s100"</code>: 저해상도(160px X 107px)</li><li><code>"m100"</code>: 중간 해상도(427px X 240px)</li><li><code>"l100"</code>: 고해상도(640px X 360px)</li><li><code>"xl100"</code>: 초고해상도(xlarge type, 899px X 506px)</li><li><code>"custom"</code>: 미리 정의된 규격이 아닌 해상도.</li></ul><div class="note"><p><strong>Note!</strong></p><p>클라이언트 기기의 화면 비율과 DPI에 맞는 화질의 미디어 콘텐츠를 제공해야 합니다.</p></div> | 필수 |
+| `content.System.device.display.size`        | string | 디스플레이 장치의 해상도 크기를 나타내는 값. 크기가 미리 지정된 값 또는 임의의 해상도 크기를 의미하는 값(`"custom"`)이 입력되어 있을 수도 있습니다. 또는 디스플레이 장치가 없음을 의미하는 값(`"none"`)이 입력되어 있을 수도 있습니다. <ul><li><code>"none"</code>: 클라이언트 기기에 디스플레이 장치가 없음</li><li><code>"s100"</code>: 저해상도(160px X 107px)</li><li><code>"m100"</code>: 중간 해상도(427px X 240px)</li><li><code>"l100"</code>: 고해상도(640px X 360px)</li><li><code>"xl100"</code>: 초고해상도(xlarge type, 899px X 506px)</li><li><code>"custom"</code>: 미리 정의된 규격이 아닌 해상도.</li></ul><div class="note"><p><strong>Note!</strong></p><p>클라이언트 기기의 화면 비율과 DPI에 맞는 화질의 미디어 콘텐츠를 제공해야 합니다.</p></div> | 필수 |
 | `context.System.user`                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 필수 |
 | `context.System.user.userId`               | string  | 기기 기본 사용자의 Clova ID                                    | 필수 |
 | `context.System.user.accessToken`          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수 |
@@ -77,7 +77,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `session.new`                              | boolean | 요청 메시지가 새로운 세션에 대한 것인지 아니면 기존 세션에 대한 것인지 구분합니다. <ul><li>true: 새로운 세션</li><li>false: 기존 세션</li></ul>  | 필수 |
 | `session.sessionAttributes`                       | object  | 사용자와의 multi-turn 대화를 위해 필요한 정보를 저장해둔 객체. Custom extension은 [응답 메시지](#CustomExtResponseMessage)의 `response.sessionAttributes` 필드를 이용해 중간 정보를 CEK에 전달하게 되며, 사용자의 추가 요청을 수신할 때 다시 해당 정보를 요청 메시지의 `session.sessionAttributes` 필드로 받게 됩니다. 객체는 키(key)-값(value)의 쌍으로 구성되며, custom extension을 구현할 때 임의로 정의할 수 있습니다. 저장된 값이 없으면 빈 객체가 전달됩니다.   | 필수 |
 | `session.sessionId`                        | string  | 세션 ID                                                    | 필수 |
-| `session.user`                             | object  | 현재 사용자의 정보를 가지고 있는 객체.                             | 필수 |
+| `session.user`                             | object  | 현재 사용자의 정보를 가지고 있는 객체                             | 필수 |
 | `session.user.userId`                      | string  | 현재 사용자의 Clova ID. `context.System.user.userId` 값과 다를 수 있습니다. | 필수 |
 | `session.user.accessToken`                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.| 선택 |
 | `version`                                  | string  | 메시지 포맷의 버전 (CEK 버전)                          | 필수 |
@@ -237,7 +237,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 다음은 LaunchRequest 타입의 요청 메시지 예제입니다.
 
 #### IntentRequest {#CustomExtIntentRequest}
-`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받고 처리할지 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)을 이용하여 [interaction 모델을 등록](/DevConsole/Guides/CEK/Define_Interaction_Model.md)해야 합니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
+`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받을지 [interaction 모델을 정의](/DevConsole/Guides/CEK/Define_Interaction_Model.md)해야 하며, Interaction 모델은 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)을 통해 등록할 수 있습니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
 
 `IntentRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
@@ -330,12 +330,12 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | `response.card`                          | object       | [Content template](/CIC/References/Content_Templates.md) 형태의 데이터이며, 클라이언트 화면에 표시할 콘텐트를 이 필드를 통해 전달할 수 있습니다. 이 필드에 데이터가 있으면 CIC는 클라이언트에게 [Clova.RenderTemplate](/CIC/References/CICInterface/Clova.md#RenderTemplate) 지시 메시지를 전달하게 되며, 빈 객체일 경우 CIC는 클라이언트에게 [Clova.RenderText](/CIC/References/CICInterface/Clova.md#RenderText) 지시 메시지를 전달하여 `response.outputSpeech.values` 필드의 값을 표시하게 합니다.        | 필수 |
 | `response.directives[]`                  | object array | Extension이 CEK로 전달하는 지시 메시지입니다. `response.directives` 필드에서 사용할 지시 메시지는 추후 API를 제공할 예정입니다. | 필수 |
 | `response.directives[].header`           | object       | 지시 메시지의 헤더                                          | 필수 |
-| `response.directives[].header.messageId` | string       | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다(UUID).   | 필수 |
+| `response.directives[].header.messageId` | string       | 메시지 ID(UUID). 개별 메시지를 구분하기 위해 사용하는 식별자입니다.   | 필수 |
 | `response.directives[].header.name`      | string       | 지시 메시지의 API 이름                                      | 필수 |
 | `response.directives[].header.namespace` | string       | 지시 메시지의 API 네임스페이스                                | 필수 |
 | `response.directives[].payload`          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
 | `response.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달됩니다.              | 필수 |
-| `response.outputSpeech.brief`            | [SpeechInfoObject](#CustomExtSpeechInfoObject) | 출력할 요약 음성 정보.                    | 선택 |
+| `response.outputSpeech.brief`            | [SpeechInfoObject](#CustomExtSpeechInfoObject) | 출력할 요약 음성 정보                    | 선택 |
 | `response.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech": 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li><li><code>"SpeechSet"</code>: 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
 | `response.outputSpeech.values`           | [SpeechInfoObject](#CustomExtSpeechInfoObject) or [SpeechInfoObject](#CustomExtSpeechInfoObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
 | `response.outputSpeech.verbose`          | object       | 스크린이 없는 클라이언트 기기에 전달할 때 사용되며, 상세 음성 정보를 가집니다. | 선택 |
@@ -355,7 +355,7 @@ SpeechInfoObject 객체는 응답 메시지의 `response.outputSpeech`에서 재
 
 | 필드 이름        | 자료형         | 설명                                                                | 필수 |
 |----------------|--------------|--------------------------------------------------------------------|-----|
-| `lang`           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li><code>"ko"</code>: 한국어</li><li><code>"en"</code>: 영어</li><li><code>""</code>: <code>type</code> 필드의 값이 <code>"URL"</code>이면 이 필드는 빈 문자열(empty string)을 가집니다.</li></ul>         | 필수 |
+| `lang`           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>""</code>: <code>type</code> 필드의 값이 <code>"URL"</code>이면 이 필드는 빈 문자열(empty string)을 가집니다.</li></ul>         | 필수 |
 | `type`           | string       | 재생할 음성의 타입. 이 필드의 값에 따라 `value` 필드 값의 형태가 달라집니다. 현재는 다음과 같은 값을 가집니다.<ul><li><code>"PlainText"</code>: 일반 텍스트</li><li><code>"URL"</code>: 음성 및 음악을 재생할 수 있는 파일의 URI</li></ul>            | 필수 |
 | `value`          | string       | 음성 합성할 내용                                                       | 필수 |
 

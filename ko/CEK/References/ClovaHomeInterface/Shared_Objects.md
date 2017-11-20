@@ -8,7 +8,7 @@
 | [BatteryInfoObject](#BatteryInfoObject)             | 배터리 정보가 담긴 객체            |
 | [BrightnessInfoObject](#BrightnessInfoObject)       | 조명의 밝기 정보가 담긴 객체        |
 | [FineDustInfoObject](#FineDustInfoObject)           | 미세 먼지 정보가 담긴 객체          |
-| [HeatingModeInfoObject](#HeatingModeInfoObject)     | 난방 모드 정보가 담긴 객체          |
+| [ModeInfoObject](#ModeInfoObject)                   | 운전 모드 정보가 담긴 객체          |
 | [HumidityInfoObject](#HumidityInfoObject)           | 습도 정보가 담긴 객체              |
 | [SpeedInfoObject](#SpeedInfoObject)                 | 속도 정보가 담긴 객체              |
 | [TemperatureInfoObject](#TemperatureInfoObject)     | 온도 정보를 담고 있는 객체          |
@@ -23,7 +23,7 @@
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `index`       | string  | 공기질 수준                    | 필수     |
+| `index`       | string  | 공기질 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
 #### Object Example
 {% raw %}
@@ -74,24 +74,24 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 | applianceTypes | 허용되는 actions                                |
 |----------------|-----------------------------------------------|
-| `"AIRCONDITIONER"` | DecrementFanSpeed, DecrementTargetTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
+| `"AIRCONDITIONER"` | DecrementFanSpeed, DecrementTargetTemperature, GetCurrentTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
 | `"AIRPURIFIER"`    | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn                  |
-| `"AIRSENSOR"`      | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetTargetTemperature, HealthCheck                                                   |
-| `"DEHUMIDIFIER"`   | GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
-| `"HUMIDIFIER"`     | GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
+| `"AIRSENSOR"`      | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetCurrentTemperature, HealthCheck                                                   |
+| `"DEHUMIDIFIER"`   | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
+| `"HUMIDIFIER"`     | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
 | `"LIGHT"`          | DecrementBrightness, HealthCheck, IncrementBrightness, SetBrightness, TurnOff, TurnOn                                                          |
 | `"ROBOTVACUUM"`    | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                                           |
 | `"SETTOPBOX"`      | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `"SMARTHUB"`       | GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                                                        |
+| `"SMARTHUB"`       | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                                                        |
 | `"SMARTPLUG"`      | HealthCheck, TurnOff, TurnOn                                                                                                                   |
 | `"SMARTTV"`        | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SMARTVALVE"`     | GetLockState, SetLockState                                                                                                                     |
 | `"SWITCH"`         | HealthCheck, TurnOff, TurnOn                                                                                                                   |
-| `"THERMOSTAT"`     | HealthCheck, SetMode, TurnOff, TurnOn                                                                                                          |
+| `"THERMOSTAT"`     | GetCurrentTemperature, HealthCheck, SetMode, TurnOff, TurnOn                                                                                                          |
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>실제 기기의 기능 제약에 따라 기기의 applianceTypes가 허용하는 actions보다 적은 actions을 사용하도록 제한할 수 있다. 예를 들면, 사용자가 등록한 공기청정기(<code>AIRPURIFIER</code> 타입)에 팬 속도를 조절할 수 있는 기능이 없을 경우 해당 기기에 허용되는 actions에서 IncrementFanSpeed와 DecrementFanSpeed를 제외하고 DiscoverAppliancesResponse 메시지를 보내야 합니다.</p>
+<p>실제 기기의 기능 제약에 따라 기기의 applianceTypes가 허용하는 actions보다 적은 actions을 사용하도록 제한할 수 있다. 예를 들면, 사용자가 등록한 공기청정기(<code>AIRPURIFIER</code> 타입)에 팬 속도를 조절할 수 있는 기능이 없을 경우 해당 기기에 허용되는 actions에서 IncrementFanSpeed와 DecrementFanSpeed를 제외하고 DiscoverAppliancesResponse 메시지를 보내야 합니다. 참고로 사용자가 대상 기기가 지원하지 않는 동작(action)을 요청한 경우 CEK가 바로 사용자에게 허용되지 않는 범위의 요청임을 알려줍니다.</p>
 </div>
 
 다음 표는 각 actions 항목과 관련이 있는 [인터페이스](/CEK/References/CEK_API.md#ClovaHomeExtInterface)를 나열하고 있습니다.
@@ -106,6 +106,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | DecrementVolume            | [`DecrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest) |
 | GetAirQuality              | [`GetAirQualityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityRequest), [`GetAirQualityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityResponse) |
 | GetBatteryInfo              | [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest), [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse) |
+| GetCurrentTemperature       | [`GetCurrentTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureRequest), [`GetCurrentTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureResponse) |
 | GetFineDust                | [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest), [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse) |
 | GetHumidity                | [`GetHumidityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityRequest), [`GetHumidityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityResponse) |
 | GetLockState               | [`GetLockStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetLockStateRequest), [`GetLockStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetLockStateResponse) |
@@ -327,7 +328,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | 배터리 잔량(%)                      | 필수     |
+| `value`       | number  | 배터리 잔량(%)                 | 필수     |
 
 #### Object Example
 {% raw %}
@@ -377,8 +378,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | 미세 먼지 지수                  | 필수     |
-| `index`       | string  | 미세 먼지 수준                  | 필수     |
+| `value`       | number  | 미세 먼지 지수                  | 선택     |
+| `index`       | string  | 미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
 #### Object Example
 {% raw %}
@@ -407,19 +408,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest)
 * [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse)
 
-### HeatingModeInfoObject {#HeatingModeInfoObject}
-난방 모드 정보를 담고 있는 객체입니다. 변경할 난방 모드의 이름이나 변경 전후의 난방 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
+### ModeInfoObject {#ModeInfoObject}
+운전 모드(operation mode) 정보를 담고 있는 객체입니다. 변경할 우전 모드의 이름이나 변경 전후의 운전 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
 
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | string  | 난방 모드. <ul><li><code>"hotwater"</code>: 온수 모드</li><li><code>"away"</code>: 외출 모드</li></ul>   | 필수     |
+| `value`       | string  | 운전 모드(operation mode). <ul><li><code>"away"</code>: 외출 모드. 난방 기기나, 온도조절기의 난방 모드를 의미할 수도 있고 스마트 허브 기기의 운전 모드일 수 있습니다.</li><li><code>"cool"</code>: 냉방 모드. 주로 에어컨 기기에서 사용되는 모드입니다.</li><li><code>"dehumidify"</code>: 제습 모드. 주로 에어컨이나 제습기와 같은 기기에서 사용되는 모드입니다.</li><li><code>"hotwater"</code>: 온수 모드. 주로 난방 기기나 온도조절기에서 사용되는 모드입니다.</li><li><code>"indoor"</code>: 실내 모드. 온도 조절기의 난방 모드를 의미할 수도 있고 스마트 허브 기기의 운전 모드일 수 있습니다.</li><li><code>"sleep"</code>: 취침 모드. 주로 스마트 허브와 같은 기기에서 사용되는 모드입니다.</li></ul>   | 필수     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// 예제 1: SetModeRequest 메시지에서 사용된 예
+// 예제 1: SetModeRequest 메시지에서 사용된 예 - 온도 조절기
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -438,17 +439,36 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   }
 }
 
-// 예제 2: SetModeConfirmation 메시지에서 사용된 예
+// 예제 2: SetModeRequest 메시지에서 사용된 예 - 스마트 허브
 {
   "header": {
-    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "messageId": "b4151a0d-1ec5-4ed0-a39a-1538c356b93b",
+    "name": "SetModeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-011"
+    },
+    "mode": {
+        "value": "indoor"
+    }
+  }
+}
+
+// 예제 3: SetModeConfirmation 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "b7434bd2-c397-461d-b08d-a4a427455c8f",
     "name": "SetModeConfirmation",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
     "mode": {
-      "value": "hotwater"
+      "value": "sleep"
     }
   }
 }
@@ -796,8 +816,8 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | 초미세 먼지 지수                  | 필수     |
-| `index`       | number  | 초미세 먼지 수준                  | 필수     |
+| `value`       | number  | 초미세 먼지 지수                  | 선택     |
+| `index`       | number  | 초미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
 #### Object Example
 {% raw %}
