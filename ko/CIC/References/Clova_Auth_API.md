@@ -187,7 +187,7 @@ GET|POST /token?grant_type=refresh_token
 |---------------|---------|-----------------------------|---------|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                    | 필수 |
+| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                    | 선택 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 | `refresh_token` | string  | 인증 성공 후 발급받은 refresh token                                              | 필수 |
 
