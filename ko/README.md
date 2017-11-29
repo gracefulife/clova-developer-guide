@@ -95,3 +95,8 @@
     </tr>
   </tbody>
 </table>
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>Clova는 현재 개발이 계속 진행되고 있습니다. 따라서, 문서의 내용은 언제든지 변경될 수 있습니다.</p>
+</div>
