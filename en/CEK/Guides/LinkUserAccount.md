@@ -73,7 +73,7 @@ The login page for user authentication must meet the following requirements.
 * The page shall keep sending the `state` parameter to the redirect URL (`redirect_uri`).
 
 
-**Authorization URL** is a page supporting login UI for users to authenticate their account. It should be entered when [registering an extension](/DevConsole/Guides/CEK/Register_Extension.md) in Clova Developer Console. **Authorization URL** will be called along with the following parameter if a user [sets account linking] (/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) of the extenstion.
+**Authorization URL** is a page supporting login UI for users to authenticate their account. It should be entered when [registering an extension](/DevConsole/Guides/CEK/Register_Extension.md) in Clova Developer Console. **Authorization URL** will be called along with the following parameter if a user [sets account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) of the extenstion.
 
 | Parameter name     | Description                                         |
 |---------------|---------------------------------------------|
@@ -81,7 +81,7 @@ The login page for user authentication must meet the following requirements.
 | `client_id`     | An ID used when Clova requests a 3rd party service to generate an access token. You must register `cliend_id` in advance in the Clova Developer Console. |
 | `response_type` | A parameter that defines the OAuth 2.0 authorization type (`"code"` or `"token"`). Use the `"code"` type if high level security is required. Clova Home extensions always use `"code"`. You must register `reponse_type` in advance in the Clova Developer Console. |
 | `scope`         | OAuth `scope` field. It defines an access level. You must register `scope` in advance in the Clova Developer Console. |
-| `redirect_uri`  | A URL(redirect URL) to be accessed after an account authentication. The value of `redirect_uri` can be verified when [setting account linking] (/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) to register an extension at the Clova Developer Console. At the moment, `{{ book.RedirectURLforAccountLinking }}` is being used. |
+| `redirect_uri`  | A URL(redirect URL) to be accessed after an account authentication. The value of `redirect_uri` can be verified when [setting account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) to register an extension at the Clova Developer Console. At the moment, `{{ book.RedirectURLforAccountLinking }}` is being used. |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -90,7 +90,7 @@ The login page for user authentication must meet the following requirements.
 
 This is an example URL when a client app or app paired with a client device requests a login page.
 
-https://yourdomain.com/login?state=qwer123<pre><code>
+<pre><code>https://yourdomain.com/login?state=qwer123
                             &client_id=clova-extension
                             &scope=listen_music%20basic_profile
                             &response_type=code
