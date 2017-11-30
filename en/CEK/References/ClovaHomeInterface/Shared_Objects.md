@@ -3,33 +3,33 @@ When you send [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHo
 
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [AirQualityObject](#AirQualityObject)       | An object containing an air quality            |
-| [ApplianceObject](#ApplianceObject)         | An object containing details of an IoT appliance        |
-| [BatteryInfoObject](#BatteryInfoObject)       | An object containing details of a battery            |
-| [BrightnessObject](#BrightnessObject)       | An object containing details of brightness        |
-| [FineDustObject](#FineDustObject)           | An object containing data on fine dust concentrations level      |
-| [HeatingModeObject](#HeatingModeObject)     | An object containing a heating mode          |
-| [HumidityObject](#HumidityObject)           | An object containing humidity              |
-| [SpeedObject](#SpeedObject)                 | An object containing a speed              |
-| [TemperatureObject](#TemperatureObject)     | An object containing a temperature.          |
-| [TVChannelNameObject](#TVChannelNameObject) | An object containing detail of the name of TV channel      |
-| [TVChannelObject](#TVChannelObject)         | An object containing a TV channel           |
-| [UltraFineDustObject](#UltraFineDustObject) | An object containing data on ultra fine dust concentrations level     |
-| [VolumeObject](#VolumeObject)               | An object containing a volume          |
+| [AirQualityInfoObject](#AirQualityInfoObject)       | An object containing an air quality            |
+| [ApplianceInfoObject](#ApplianceInfoObject)         | An object containing details of an IoT appliance        |
+| [BatteryInfoObject](#BatteryInfoObject)             | An object containing details of a battery            |
+| [BrightnessInfoObject](#BrightnessInfoObject)       | An object containing details of brightness        |
+| [FineDustInfoObject](#FineDustInfoObject)           | An object containing data on fine dust details          |
+| [HeatingModeInfoObject](#HeatingModeInfoObject)     | An object containing a heating mode          |
+| [HumidityInfoObject](#HumidityInfoObject)           | An object containing humidity              |
+| [SpeedInfoObject](#SpeedInfoObject)                 | An object containing a speed              |
+| [TemperatureInfoObject](#TemperatureInfoObject)     | An object containing a temperature.          |
+| [TVChannelNameInfoObject](#TVChannelNameInfoObject) | An object containing detail of a name of TV channel      |
+| [TVChannelInfoObject](#TVChannelInfoObject)         | An object containing a TV channel           |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject) | An object containing data on ultra fine dust         |
+| [VolumeInfoObject](#VolumeInfoObject)               | An object containing a volume          |
 
-### AirQualityObject {#AirQualityObject}
+### AirQualityInfoObject {#AirQualityInfoObject}
 An object containing an air quality. It is applied to show the air quality measured by the appliance. It is expressed in string.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `index`       | string  | Air quality index                    | Yes     |
+| `index`       | string  | Level of an air quality                    | Yes     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// Example : GetAirQualityResponse message
+// Example: GetAirQualityResponse message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -51,7 +51,7 @@ An object containing an air quality. It is applied to show the air quality measu
 * [`GetAirQualityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityRequest)
 * [`GetAirQualityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityResponse)
 
-### ApplianceObject {#ApplianceObject}
+### ApplianceInfoObject {#ApplianceInfoObject}
 An object containing details of an IoT appliance. This object is used when returning CEK a list of appliances registered on a user account or when requesting a Clova Home extension to control a specified appliance.
 
 #### Object field
@@ -60,14 +60,14 @@ An object containing details of an IoT appliance. This object is used when retur
 | `actions[]`                  | string array  | A list of actions supported by the appliance. You must limit the allowed actions to those supported by the appliance. | No    |
 | `additionalApplianceDetails` | object        | A field containing additional details of the appliance provided from the manufacturer or IoT service                                 | No    |
 | `applianceId`                | string        | The appliance ID                                                                        | Yes    |
-| `applianceTypes[]`           | string array  | The appliance type. `applicationType` determines allowed actions you can specify in the `actions` field. Specify the type as one of the following values for the appliances registered on the user's IoT service account.<ul><li>AIRCONDITIONER: Air conditioning or heating system type</li><li>AIRPURIFIER: Air purifier type</li><li>HUMIDIFIER: Humidifier type</li><li>LIGHT: Lighting appliance type</li><li>SETTOPBOX: TV set-top box type</li><li>SMARTPLUG: Plugs that control power supply of an appliance</li><li>SWITCH: Switches that control household power sockets</li><li>THERMOSTAT: Thermostat type</li></ul>          | Yes    |
+| `applianceTypes[]`           | string array  | The appliance type. `applicationType` determines allowed actions you can specify in the `actions` field. Specify the type as one of the following values for the appliances registered on the user's IoT service account.<ul><li>AIRCONDITIONER: Air conditioning or heating system type</li><li>AIRPURIFIER: Air purifier type</li><li>HUMIDIFIER: Humidifier type</li><li>LIGHT: Lighting appliance type</li><li>SETTOPBOX: TV set-top box type</li><li>SMARTPLUG: Plugs controlling power supply of an appliance</li><li>SWITCH: Switches controlling household power sockets</li><li>THERMOSTAT: Thermostat type</li></ul>          | Yes    |
 | `friendlyName`               | string        | The appliance name specified by the user                                                           | No    |
 | `friendlyDescription`        | string        | A description of the appliance                                                                  | No    |
 | `isReachable`                | boolean       | Whether remotely controllable or not <ul><li>true: Remotely controllable</li><li>false: Remotely uncontrollable</li></ul> | No    |
 | `manufacturerName`           | string        | The name of the appliance manufacturer                                                                  | No    |
 | `modelName`                  | string        | The name of the appliance model                                                                   | No    |
 | `version`                    | string        | The version of the manufacturer software                                                            | No    |
-| `location`                   | string        | The place where the appliance is installed                                                                 | No    |
+| `location`                   | string        | The place where the appliance is installed                                                                | No    |
 
 ### Remarks
 When your Clova Home extension receives a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message, you must return a list of appliances by filling in all fields except for `additionalApplianceDetails`. Allowed `actions` are determined by `applianceTypes`. Available values for each `applianceTypes` are as follows.
@@ -131,14 +131,14 @@ This table lists the [interfaces](/CEK/References/CEK_API.md#ClovaHomeExtInterfa
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>When passing a list of IoT appliances registered on a user via [`DiscoveryAppAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) message, return the location of each appliance using `location` field to CEK. If then, user’s IoT appliance location setting will be done automatically.</p>
+<p>When passing a list of IoT appliances registered on a user via <a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoveryAppAppliancesResponse</code></a>message, return the location of each appliance using `location` field to CEK. If then, user’s IoT appliance location setting will be done automatically.</p>
 </div>
 
 The following table shows location details supported from `location` field. The details are used to analyze user's speech or to reveal the appliance to the user.
 
 | `location` field value |    Location details       |
 |------------------|------------------|
-| `ATTIC`                     | Attic   |
+| `ATTIC`                     | Attic  |
 | `BALCONY`                   | Balcony  |
 | `BALCONY_IN_LIVING_ROOM`    | Balcony in living room  |
 | `BALCONY_IN_MAIN_ROOM`      | Balcony in master bedroom  |
@@ -259,8 +259,8 @@ The following table shows location details supported from `location` field. The 
 * [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)
 * [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
-### BrightnessObject {#BrightnessObject}
-An object containing details of brightness. It is used to define brightness of a light or the brightness before or after any change. The value is expressed as an integer (0~100), meaning a percentage.
+### BrightnessInfoObject {#BrightnessInfoObject}
+An object containing details of brightness. It contains brightness of a light or the brightness before or after any change. The value is expressed as an integer (0~100), meaning a percentage.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -290,7 +290,7 @@ An object containing details of brightness. It is used to define brightness of a
   }
 }
 
-// Example 2 : IncrementBrightnessConfirmation message
+// Example 2: IncrementBrightnessConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -333,7 +333,7 @@ An object containing battery info of the appliance. It is applied when the batte
 {% raw %}
 
 ```json
-// Example 1 : GetBatteryInfoRequest message
+// Example 1: GetBatteryInfoRequest message
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -349,7 +349,7 @@ An object containing battery info of the appliance. It is applied when the batte
   }
 }
 
-// Example 2 : GetBatteryInfoResponse message
+// Example 2: GetBatteryInfoResponse message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -371,20 +371,20 @@ An object containing battery info of the appliance. It is applied when the batte
 * [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest)
 * [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
 
-### FineDustObject {#FineDustObject}
-An object containing data on fine dust. It is used to define the fine dust concentration level measured by the appliance. The value is expressed as a number.
+### FineDustInfoObject {#FineDustInfoObject}
+An object containing data on fine dust. It contains the fine dust concentration level or index measured by the appliance. The value is expressed as a number.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | Fine dust index                  | Yes     |
+| `value`       | number  | Fine dust concentration level                  | Yes     |
 | `index`       | string  | Fine dust concentration level                  | Yes     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// Example : GetFineDustResponse message
+// Example: GetFineDustResponse message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -407,8 +407,8 @@ An object containing data on fine dust. It is used to define the fine dust conce
 * [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest)
 * [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse)
 
-### HeatingModeObject {#HeatingModeObject}
-An object containing a heating mode. It is used to define the name of the heating mode to change to or the heating mode before and after change. The value is expressed as a string.
+### HeatingModeInfoObject {#HeatingModeInfoObject}
+An object containing a heating mode. It contains the name of the heating mode to change to or the heating mode before and after change. The value is expressed as a string.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -419,7 +419,7 @@ An object containing a heating mode. It is used to define the name of the heatin
 {% raw %}
 
 ```json
-// Example 1 : SetModeRequest message
+// Example 1: SetModeRequest message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -438,7 +438,7 @@ An object containing a heating mode. It is used to define the name of the heatin
   }
 }
 
-// Example 2 : SetModeConfirmation message
+// Example 2: SetModeConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -460,8 +460,8 @@ An object containing a heating mode. It is used to define the name of the heatin
 * [`SetModeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeConfirmation)
 * [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest)
 
-### HumidityObject {#HumidityObject}
-An object containing data humidity. It is used to define the humidity condition measured by the appliance. The value is expressed as a string.
+### HumidityInfoObject {#HumidityInfoObject}
+An object containing data humidity. It contains the humidity condition measured by the appliance. The value is expressed as a string.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -472,7 +472,7 @@ An object containing data humidity. It is used to define the humidity condition 
 {% raw %}
 
 ```json
-// Example : GetHumidityResponse message
+// Example: GetHumidityResponse message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -494,8 +494,8 @@ An object containing data humidity. It is used to define the humidity condition 
 * [`GetHumidityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityRequest)
 * [`GetHumidityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityResponse)
 
-### SpeedObject {#SpeedObject}
-An object containing a speed. It is used to define an expected change in the value of a speed or a target speed before and after change. The value is expressed as an integer.
+### SpeedInfoObject {#SpeedInfoObject}
+An object containing a speed. It contains an expected change in the value of a speed or a target speed before and after change. The value is expressed as an integer.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -506,7 +506,7 @@ An object containing a speed. It is used to define an expected change in the val
 {% raw %}
 
 ```json
-// Example 1 : IncrementFanSpeedRequest message
+// Example 1: IncrementFanSpeedRequest message
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -525,7 +525,7 @@ An object containing a speed. It is used to define an expected change in the val
   }
 }
 
-// Example 2 : IncrementFanSpeedConfirmation message
+// Example 2: IncrementFanSpeedConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -556,8 +556,8 @@ An object containing a speed. It is used to define an expected change in the val
 * [`SetFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedConfirmation)
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
-### TemperatureObject {#TemperatureObject}
-An object containing a temperature. It is used to define an expected change in the value of a temperature or a target temperature before and after change or a setup target temperature. The value is expressed as the number of the first decimal point.
+### TemperatureInfoObject {#TemperatureInfoObject}
+An object containing a temperature. It contains an expected change in the value of a temperature or a target temperature before and after change or a setup target temperature. The value is expressed as the number of the first decimal point.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -568,7 +568,7 @@ An object containing a temperature. It is used to define an expected change in t
 {% raw %}
 
 ```json
-// Example 1 : IncrementTargetTemperatureRequest message
+// Example 1: IncrementTargetTemperatureRequest message
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -587,7 +587,7 @@ An object containing a temperature. It is used to define an expected change in t
   }
 }
 
-// Example 2 : IncrementTargetTemperatureConfirmation message
+// Example 2: IncrementTargetTemperatureConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -620,19 +620,19 @@ An object containing a temperature. It is used to define an expected change in t
 * [`SetTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureConfirmation)
 * [`SetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureRequest)
 
-### TVChannelNameObject {#TVChannelNameObject}
-An object containing a name of TV channel. It is used to define a TV channel or a name of TV channel before and after change. The value is expressed as a string.
+### TVChannelNameInfoObject {#TVChannelNameInfoObject}
+An object containing a name of TV channel. It contains a TV channel or a name of TV channel before and after change. The value is expressed as a string.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`       | string  | a name of TV channel                   | Yes     |
+| `value`       | string  | a name of TV channel                  | Yes     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// Example 1 : SetChannelByNameRequest message
+// Example 1: SetChannelByNameRequest message
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -651,7 +651,7 @@ An object containing a name of TV channel. It is used to define a TV channel or 
   }
 }
 
-// Example 2 : SetChannelByNameConfirmation message
+// Example 2: SetChannelByNameConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -673,8 +673,8 @@ An object containing a name of TV channel. It is used to define a TV channel or 
 * [`SetChannelByNameConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameConfirmation)
 * [`SetChannelByNameRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameRequest)
 
-### TVChannelObject {#TVChannelObject}
-An object containing a number of TV channel. It is used to define a TV channel or a number of TV channel before and after change. The value is expressed as a number.
+### TVChannelInfoObject {#TVChannelInfoObject}
+An object containing a number of TV channel. It contains a TV channel or a number of TV channel before and after change. The value is expressed as a number.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -685,7 +685,7 @@ An object containing a number of TV channel. It is used to define a TV channel o
 {% raw %}
 
 ```json
-// Example 1 : SetChannelRequest message
+// Example 1: SetChannelRequest message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -704,7 +704,7 @@ An object containing a number of TV channel. It is used to define a TV channel o
   }
 }
 
-// Example 2 : SetChannelConfirmation message
+// Example 2: SetChannelConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -730,8 +730,8 @@ An object containing a number of TV channel. It is used to define a TV channel o
 * [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation)
 * [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
-### VolumeObject {#VolumeObject}
-An object containing a speaker volume. It is used to define an expected change in the value of a volume or a volume before and after change. The value is expressed as an integer.
+### VolumeInfoObject {#VolumeInfoObject}
+An object containing a speaker volume. It contains an expected change in the value of a volume or a volume before and after change. The value is expressed as an integer.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
@@ -742,7 +742,7 @@ An object containing a speaker volume. It is used to define an expected change i
 {% raw %}
 
 ```json
-// Example 1 : IncrementVolumeRequest message
+// Example 1: IncrementVolumeRequest message
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -761,7 +761,7 @@ An object containing a speaker volume. It is used to define an expected change i
   }
 }
 
-// Example 2 : IncrementVolumeConfirmation message
+// Example 2: IncrementVolumeConfirmation message
 {
   "header": {
     "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
@@ -790,20 +790,20 @@ An object containing a speaker volume. It is used to define an expected change i
 * [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation)
 * [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest)
 
-### UltraFineDustObject {#UltraFineDustObject}
-An object containing data on ultra fine dust. It is used to define the ultra fine dust concentration level measured by the appliance. The value is expressed as a number.
+### UltraFineDustInfoObject {#UltraFineDustInfoObject}
+An object containing data on ultra fine dust. It contains the ultra fine dust concentration level measured by the appliance. The value is expressed as a number.
 
 #### Object field
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `value`       | number  | Ultra fine dust index                  | Yes     |
+| `value`       | number  | Ultra fine dust concentration level                  | Yes     |
 | `index`       | number  | Ultra fine dust concentration level                  | Yes     |
 
 #### Object Example
 {% raw %}
 
 ```json
-// Example : GetUltraFineDustResponse message
+// Example: GetUltraFineDustResponse message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",

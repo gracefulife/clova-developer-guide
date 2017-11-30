@@ -7,7 +7,6 @@ Requests such as "Turn on the light" is sent with a [`TurnOnRequest`](/CEK/Refer
 {% raw %}
 
 ```json
-
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
@@ -22,9 +21,10 @@ Requests such as "Turn on the light" is sent with a [`TurnOnRequest`](/CEK/Refer
     }
   }
 }
-
 ```
 
 {% endraw %}
 
-The received message is analyzed and the request is sent to the URI of the IoT service. At which point, the previously obtained access token is passed together. Then, you analyze the fields, process the user request, and return a [response message](#ReturnClovaHomeExtensionResponse).
+Analyze the received message and dispatch the user requests controlling the IoT appliance via URI supported by the IoT service.
+
+Make sure to send the [response message](#ReturnClovaHomeExtensionResponse) together with the previously obtained access token.

@@ -35,101 +35,101 @@ Provides route directions by driving. It is used to display driving routes on a 
 | `summary.time`                         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the estimated travel time. Unit is minute. |
 | `type`                                 | string | A content template delimiter. It has an `"CarRoute"` value. |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
 {
-  "type" : "CarRoute",
-  "summary" : {
-    "distance" : {
-      "type" : "string",
-      "value" : "62526"
+  "type": "CarRoute",
+  "summary": {
+    "distance": {
+      "type": "string",
+      "value": "62526"
     },
-    "time" : {
-      "type" : "string",
-      "value" : "4526"
+    "time": {
+      "type": "string",
+      "value": "4526"
     },
-    "start" : {
-      "lon" : {
-        "type" : "string",
-        "value" : "349541687"
+    "start": {
+      "lon": {
+        "type": "string",
+        "value": "349541687"
       },
-      "lat" : {
-        "type" : "string",
-        "value" : "149420527"
+      "lat": {
+        "type": "string",
+        "value": "149420527"
       },
-      "name" : {
-        "type" : "string",
-        "value" : "사당역 2호선"
+      "name": {
+        "type": "string",
+        "value": "사당역 2호선"
       }
     },
-    "destination" : {
-      "lon" : {
-        "type" : "string",
-        "value" : "349541687"
+    "destination": {
+      "lon": {
+        "type": "string",
+        "value": "349541687"
       },
-      "lat" : {
-        "type" : "string",
-        "value" : "149420527"
+      "lat": {
+        "type": "string",
+        "value": "149420527"
       },
-      "name" : {
-        "type" : "string",
-        "value" : "사당역 2호선"
+      "name": {
+        "type": "string",
+        "value": "사당역 2호선"
       }
     },
-    "roadSummary" : [
+    "roadSummary": [
       {
-        "name" : {
-          "type" : "string",
-          "value" : "과천대로"
+        "name": {
+          "type": "string",
+          "value": "과천대로"
         },
-        "length" : {
-          "type" : "string",
-          "value" : "6199"
+        "length": {
+          "type": "string",
+          "value": "6199"
         },
-       "point" : {
-         "x" : {
-           "type" : "string",
-           "value" : "349556545"
+       "point": {
+         "x": {
+           "type": "string",
+           "value": "349556545"
          },
-         "y" : {
-           "type" : "string",
-           "value" : "149363287"
+         "y": {
+           "type": "string",
+           "value": "149363287"
          }
        },
-       "speed" : {
-         "type" : "string",
-         "value" : "72"
+       "speed": {
+         "type": "string",
+         "value": "72"
        },
-       "roadCongestion" : {
-         "type" : "string",
-         "value" : "1"
+       "roadCongestion": {
+         "type": "string",
+         "value": "1"
        }
       }
     ]
   },
-  "pathList" : [
+  "pathList": [
     {
-      "type" : "location",
-      "value" : "349668603.0,149410368.0"
+      "type": "location",
+      "value": "349668603.0,149410368.0"
     },
     {
-      "type" : "location",
-      "value" : "349668603.0,149410368.0"
+      "type": "location",
+      "value": "349668603.0,149410368.0"
     }
   ],
-  "boundary" : {
-    "type" : "string",
-    "value" : "349435089,149420518,349561008,149213590"
+  "boundary": {
+    "type": "string",
+    "value": "349435089,149420518,349561008,149213590"
   },
-  "linkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "linkUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "appLinkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "appLinkUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 ```

@@ -25,7 +25,6 @@ This is an example of a `LaunchReqeust` type message.
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "session": {
@@ -44,7 +43,16 @@ This is an example of a `LaunchReqeust` type message.
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
       },
       "device": {
-        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b"
+        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
+        "display": {
+          "size": "l100",
+          "orientation": "landscape",
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -52,7 +60,6 @@ This is an example of a `LaunchReqeust` type message.
     "type": "LaunchRequest"
   }
 }
-
 ```
 
 {% endraw %}
@@ -65,7 +72,8 @@ Each field in this example indicates the following.
 * `request`: The request type is `LaunchRequest`. It notifies that the current extension has started. It does not contain analysis details of the user's speech input.
 
 ### Handling IntentRequest {#HandleIntentRequest}
-[`IntentRequest`](/CEK/References/CEK_API.md#CustomExtIntentRequest) receives request messages from CEK as specified by the pre-defined [interaction model](#InteractionModel). You can use `IntentRequest` for both one-time request and multi-turn request.
+
+[`IntentRequest`](/CEK/References/CEK_API.md#CustomExtIntentRequest) is used when CEK forwards user requests to your extension according to the predefined [interaction model](/DevConsole/Guides/CEK/Define_Interaction_Model.md). You can use `IntentRequest` for both one-time request and multi-turn request.
 
 When the message type is IntentRequest, `request.type` field is set to `"IntentRequest"`. You can check the name of the intent and analysis details of the user's speech input from the `request.intent` field. Analyze the field, process the user request, and return a [response message](#ReturnCustomExtensionResponse).
 
@@ -74,7 +82,6 @@ This is an example of an `IntentRequest` type message.
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "session": {
@@ -93,7 +100,16 @@ This is an example of an `IntentRequest` type message.
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
       },
       "device": {
-        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b"
+        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
+        "display": {
+          "size": "l100",
+          "orientation": "landscape",
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -110,7 +126,6 @@ This is an example of an `IntentRequest` type message.
     }
   }
 }
-
 ```
 
 {% endraw %}
@@ -120,7 +135,7 @@ Each field in this example indicates the following.
 * `version`: The message format version of the current custom extension is v0.1.0.
 * `session`: **The request is from a previous session**. It contains the previous session ID and user details (ID, accessToken).
 * `context`: This provides details of the client device. It contains the device ID and details of the default device user.
-* `request`: The request type is `IntentRequest`. It has called an `intent` named `"FreeTalk"`. The `intent` has a `slot` named `"q"` and the `slot` has a value of `"How are you"`.
+* `request`: The request type is `IntentRequest`. It has called an intent named `"FreeTalk"`. The necessary intent information has been passed along with `"q"` slot and the slot has a value of `"How are you"`.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -129,7 +144,7 @@ Each field in this example indicates the following.
 
 ### Handling SessionEndedRequest {#HandleSessionEndedRequest}
 
-[`SessionEndedRequest`](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) notifies that a user has requested to end a certain mode or custom extension. When your user gives a command such as "See you later", the client stops the Freetalk mode and CEK sends `SessionEndedRequest` to the extension that provides the conversation service.
+[`SessionEndedRequest`](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) notifies that a user has requested to end a certain mode or custom extension. The client will stop the extension if a user commands to "End the service", "Please end the service" or "Stop". CEK will pass a request of a `SessionEndedRequest` type to an extension providing dialog service.  Yet, in case of the Freetalk mode, the extension will be ended with an English expression such as "See you later".
 
 When the message type is `SessionEndedReqeust`, the `request.type` field is set to `"EndRequest"`. Same as the `LaunchRequest` type, the `request` field does not contain analysis details of the user's speech. When you receive this message, end the service and return a [response message](#ReturnCustomExtensionResponse) to notify that the service has ended.
 
@@ -139,7 +154,6 @@ This is an example of a `SessionEndedRequest` type message.
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "session": {
@@ -158,7 +172,16 @@ This is an example of a `SessionEndedRequest` type message.
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
       },
       "device": {
-        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b"
+        "deviceId": "096e6b27-1717-33e9-b0a7-510a48658a9b",
+        "display": {
+          "size": "l100",
+          "orientation": "landscape",
+          "dpi": 96,
+          "contentLayer": {
+            "width": 640,
+            "height": 360
+          }
+        }
       }
     }
   },
@@ -166,7 +189,6 @@ This is an example of a `SessionEndedRequest` type message.
     "type": "EndRequest"
   }
 }
-
 ```
 
 {% endraw %}

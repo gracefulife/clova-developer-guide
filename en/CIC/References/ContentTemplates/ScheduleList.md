@@ -6,7 +6,7 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
 <p>Currently, there are limits to the ScheduleList template as below.</p>
 <ul>
   <li>In order to create, modify, delete a calendar account, the user should use the Clova app.</li>
-  <li>With the voice command, the user can only request to add a calendar schedule or to check the list.</li>
+  <li>With the voice command, the user can only request to add a calendar schedule and check the list.</li>
   <li>In order to modify or delete a calendar schedule, the user should use the Clova app.</li>
 </ul>
 </div>
@@ -15,24 +15,29 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `scheduledList[]`        | object array | An object array containing the schedule list registered by the user.   |
-| `scheduledList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing contents of the added schedule entered by the user |
-| `scheduledList[].end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Termination date and time of the added schedule. In case of all day schedule, it is in DateObject format type with date information only. |
-| `scheduledList[].start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Starting date and time of the added schedule. In case of all day schedule, it is in DateObject format type with date information only. |
-| `scheduledList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing repeated date information if it is a weekly repeated alarm |
-| `scheduledList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing repeat cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time schedule </li><li><code>"daily"</code> : Daily repeated schedule</li><li><code>"weekly"</code> : Every week repeated schedule</li></ul> |
+| `scheduleList[]`        | object array | An object array containing the schedule list registered by the user.   |
+| `scheduleList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing contents of the added schedule entered by the user |
+| `scheduleList[].end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Termination date and time of the added schedule. In case of all day schedule, it is in DateObject format type with date information only. |
+| `scheduleList[].start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Starting date and time of the added schedule. In case of all day schedule, it is in DateObject format type and only contains date information. |
+| `scheduleList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing repeated date information if it is a weekly repeated alarm |
+| `scheduleList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time schedule </li><li><code>"daily"</code> : Daily repeated schedule</li><li><code>"weekly"</code> : Every week repeated schedule</li></ul> |
+| `scheduleList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of a schedule.  |
 | `type`        | string                                                                              | A content template delimiter. The value is always `"ScheduleList"`.             |
 
-## Template Example
+## Template example
 
 {% raw %}
 
 ```json
 {
   "type": "ScheduleList",
-  "scheduledList": [
+  "scheduleList": [
     {
       "type": "Schedule",
+      "token": {
+        "type": "string",
+        "value": "072c72b9-cfc5-4127-b4fe-557a10457232"
+      },
       "start": {
         "type": "datetime",
         "dateTime": "2017-09-30T12:00:00+09:00"
@@ -53,6 +58,10 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
     },
     {
       "type": "Schedule",
+      "token": {
+        "type": "string",
+        "value": "b5403bd0-1598-495b-a466-9385c2b1103a"
+      },
       "start": {
         "type": "datetime",
         "dateTime": "2017-08-02T10:00:00+09:00"
@@ -73,6 +82,10 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
     },
     {
       "type": "Schedule",
+      "token": {
+        "type": "string",
+        "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
+      },
       "start": {
         "type": "datetime",
         "dateTime": "2017-08-02T10:00:00+09:00"
@@ -98,6 +111,10 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
     },
     {
       "type": "Schedule",
+      "token": {
+        "type": "string",
+        "value": "5c8b4f7b-d8bd-4817-a1c3-eb9c9522277e"
+      },
       "start": {
         "type": "date",
         "dateTime": "2017-09-29"
@@ -124,11 +141,11 @@ When the user requests for a list of calender schedule, CIC passes the schedule 
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Preparing for an example of a screen which applied a ScheduleList template.</p>
 </div>
 
 ## See also
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
-* [ScheduleListList](/CIC/References/ContentTemplates/ScheduleListList.md)
+* [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)

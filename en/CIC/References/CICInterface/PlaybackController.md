@@ -4,7 +4,7 @@ Plays audio and controls speaker output on a client. PlaybackController provides
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Mute`](#Mute)                           | Directive | Instructs your client to mute the audio player.             |
+| [`Mute`](#Mute)                           | Directive | Instructs your client to mute the audio player.            |
 | [`Next`](#Next)                           | Directive | Instructs your client to start playback of a next audio stream in a playback queue.   |
 | [`NextCommandIssued`](#NextCommandIssued) | Event     | The client should send this event message to CIC when the user clicked or touched the 'Next' button on the client device. |
 | [`Pause`](#Pause)                         | Directive | Instructs your client to pause playback of a current audio stream.        |
@@ -73,7 +73,7 @@ None
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## NextCommandIssued event {#NextCommandIssued}
-The client should send this event message to CIC when the user clicked or touched the 'Next' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the next contents instantly.
+The client should send this event message to CIC when the user clicked or touched the 'Next' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the next content instantly.
 
 ### Context field
 
@@ -84,7 +84,7 @@ There is no required state information
 None
 
 ### Remarks
-* The button on the client device can either be a physical button in hardware method or in software method such as a widget button on a music player.
+* The button on the client device can either be a physical button in hardware method or in software method such as a widget button on music player.
 
 ### Message example
 
@@ -164,7 +164,7 @@ None
 
 
 ## PreviousCommandIssued event {#PreviousCommandIssued}
-The client should send this event message to CIC when the user clicked or touched the 'Previous' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the previous contents instantly.
+The client should send this event message to CIC when the user clicked or touched the 'Previous' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the previous content instantly.
 
 ### Context field
 
@@ -360,8 +360,13 @@ None
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-## VolumneDown directive {#VolumeDown}
+## VolumeDown directive {#VolumeDown}
 Instructs your client to turn down the audio player. The client should turn down the speaker volume related to the audio stream playback after receiving this directive message. The volume adjustment level is determined by your UX standard.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>A <code>PlaybackController.VolumeDown</code> directive message will no longer be provided.  It is recommended to use a <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DiviceControl.Decrease</code></a> directive message instead.</p>
+</div>
 
 ### Payload field
 None
@@ -387,8 +392,14 @@ None
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-## VolumneUp directive {#VolumeUp}
+## VolumeUp directive {#VolumeUp}
+
 Instructs your client to turn up the audio player. The client should turn up the speaker volume related to the audio stream playback after receiving this directive message. The volume adjustment level is determined by your UX standard.
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>A <code>PlaybackController.VolumeUp</code> directive message will no longer be provided. It is recommended to use a <a href="/CIC/References/CICInterface/DeviceControl.html#Increase"><code>DiviceControl.Increase</code></a> directive message instead.</p>
+</div>
 
 ### Payload field
 None

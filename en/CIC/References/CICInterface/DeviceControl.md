@@ -15,12 +15,12 @@ DeviceControl provides the following event and directive messages.
 | [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs your client to start a Bluetooth pairing mode.                                   |
 | [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs your client to stop a Bluetooth pairing mode.                                   |
 | [`Decrease`](#Decrease)                   | Directive | Instructs your client to turn down speaker volume or decrease screen brightness by a default unit.                     |
-| [`ExpectReportState`](#ExpectReportState)  | Directive | Instructs your client to report the current state of the appliance to CIC.                              |
+| [`ExpectReportState`](#ExpectReportState)  | Directive | Instructs your client to report the current state of the appliance to CIC.                             |
 | [`Increase`](#Increase)                   | Directive | Instructs your client to turn up speaker volume or increase screen brightness by a default unit.                     |
 | [`LaunchApp`](#LaunchApp)                 | Directive | Instructs your client to launch a specified app.                                             |
 | [`OpenScreen`](#OpenScreen)               | Directive | Instructs your client to open a setting screen.                                              |
-| [`ReportState`](#ReportState)             | Event     | The client should use this message to report the current state of the appliance to CIC.                  |
-| [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | Send this event message to CIC to acquire current state of other client's devices registered on the user's account.   |
+| [`ReportState`](#ReportState)             | Event     | The client should use this message to report the current state of the appliance to CIC.                 |
+| [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | Send this event message to CIC to acquire current state of other client's devices registered on the user's account.  |
 | [`SetValue`](#SetValue)                   | Directive | Instructs your client to set speaker volume or screen brightness to a specified value.                    |
 | [`SynchronizeState`](#SynchronizeState)     | Directive | Instructs your client to update states of other client's devices registered on the user account.         |
 | [`TurnOff`](#TurnOff)                     | Directive | Instructs your client to turn off or disable a specified feature or mode.                           |
@@ -40,7 +40,7 @@ Send this event message to CIC after your client executes device control.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions executed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+| `command`     | string  | Actions executed.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
 
 ### Remarks
 
@@ -176,7 +176,7 @@ None
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
 
-## BtDisonnect directive {#BtDisconnect}
+## BtDisconnect directive {#BtDisconnect}
 
 Instructs your client to disconnect a Bluetooth device.
 
@@ -313,7 +313,7 @@ Instructs your client to turn down speaker volume or decrease screen brightness 
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| `target`      | string  | Target to control<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
 
 ### Remarks
 
@@ -358,7 +358,7 @@ Instructs your client to report the current state of the appliance to CIC. As so
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `durationInSeconds` | number  | Reporting period. During the designated period, report the current state of the appliance. Unit is in millisecond. If this field is missing, report only once as the first time. | No     |
-| `intervalInSeconds` | number  | Reporting cycle. At the designated cycle, report the current state of the appliance. Unit is in millisecond. This field is valid only when `durationInSeconds` field is available. If it is missing, then the field is omitted as well.  | No     |
+| `intervalInSeconds` | number  | Reporting cycle. At the designated cycle, report the current state of the appliance. Unit is in millisecond. This field is valid only when `durationInSeconds` field is available. If it is missing, then the field is omitted as well. | No     |
 
 ### Remarks
 
@@ -400,7 +400,7 @@ Instructs your client to turn up speaker volume or increase screen brightness by
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| `target`      | string  | Target to control<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
 
 ### Remarks
 
@@ -444,7 +444,7 @@ Instructs your client to launch a specified app. To specify an app, it returns a
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Information of the target app. It can have app information as follows.<ul><li>Custom URL scheme: A custom URL scheme of the target app (for example, <code>"naversearchapp://..."</code>)</li><li>Relay page URL: A relay page URL that launches the app if the app is already installed (for example, <code>"http://naverapp.naver.com/..."</code>)</li><li>App name: The name of the app recognized from user speech (for example, <code>"NAVER App"</code>)</li></ul> | Yes     |
+| `target`      | string  | Information of the target app. It can have app information as follows<ul><li>Custom URL scheme: A custom URL scheme of the target app (for example, <code>"naversearchapp://..."</code>)</li><li>Relay page URL: A relay page URL that launches the app if the app is already installed (for example, <code>"http://naverapp.naver.com/..."</code>)</li><li>App name: The name of the app recognized from user speech (for example, <code>"NAVER App"</code>)</li></ul> | Yes     |
 
 ### Remarks
 
@@ -803,7 +803,7 @@ Instructs your client to turn on or enable a specified feature or mode. For exam
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| `target`      | string  | Target to control<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
 
 ### Remarks
 

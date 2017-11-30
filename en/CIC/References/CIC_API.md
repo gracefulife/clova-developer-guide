@@ -124,8 +124,9 @@ GET /v1/directives
 
 ### Request header
 
-* Authorization: A Clova access token you have obtained
-  * Bearer [Clova access token]
+| Request header | Explanations                                                                |
+|----------------|--------------------------------------------------------------------|
+| Authorization  | <p>Acquired Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre> |
 
 ### Request example
 
@@ -136,15 +137,16 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 
 ### Response header
 
-* Content-Type - Declare a [multipart message](#MultipartMessage) type and a boundary term
-  * multipart/form-data; boundary=[boundary_term]
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p>Declare a [multipart message](#MultipartMessage) type and a boundary term:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
-* Content-Disposition
-  * form-data; name="[data]" format
-* Content-Type
-  * application/json; charset=UTF-8
+| Response message header | Explanations                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-Type            | <pre><code>application/json; charset=UTF-8</code></pre>            |
 
 ### Response message
 CIC returns an HTTP response by sending a [Clova.Hello](/CIC/References/CICInterface/Clova.md#Hello) directive message to a client. It indicates that a downchannel has been established.
@@ -158,7 +160,7 @@ CIC returns an HTTP response by sending a [Clova.Hello](/CIC/References/CICInter
 | 401 Unauthorized          | Failed to authenticate the user. Check if the access token is valid. |
 | 500 Internal Server Error | An internal server error occurred.                                                      |
 
-### Response Example
+### Response example
 
 {% raw %}
 ```
@@ -216,18 +218,17 @@ POST /v1/events
 
 ### Request header
 
-* Authorization: A Clova access token you have obtained
-  * Bearer [Clova access token]
-* Content-Type - Declare a [multipart message](#MultipartMessage) type and a boundary term
-  * multipart/form-data; boundary=[boundary_term]
+| Request header  | Description                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Authorization   | <p>Acquired Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre>  |
+| Content-Type    | <p>Declare a [multipart message](#MultipartMessage) type and a boundary term:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
 
 ### Request message header
 
-* Content-Disposition
-  * form-data; name="[data]" format
-* Content-Type:
-  * JSON data: application/json; charset=UTF-8
-  * Binary audio data: application/octet-stream
+| Request message header  | Description                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-Type            | <ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul> |
 
 ### Request message
 To send CIC a user request or client information, send an [event message](#Event) and additional speech data in the form of a [multipart message](#MultipartMessage). The content and configuration of an event message are determined by the type of information in an event message, which are categorized into [interfaces](#CICInterface).
@@ -281,18 +282,17 @@ Content-Type: application/octet-stream
 
 ### Response header
 
-* Content-Type - Declare a [multipart message](#MultipartMessage) type and a boundary term
-  * multipart/form-data; boundary=[boundary_term]
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p>Declare a [multipart message](#MultipartMessage) type and a boundary term:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
-* Content-Disposition: Specify a message processing type.
-* Content-Id: A message identifier
-  * UUID format
-  * Clients can identify a message to process by a `cid:[UUID]` value in the `payload` field.
-* Content-Type:
-  * JSON data: application/json; charset=UTF-8
-  * Binary audio data: application/octet-stream
+| Response message header | Explanations                                                                |
+|-------------------------|--------------------------------------------------------------------|
+| Content-Disposition     | State the type of message                                                    |
+| Content-Id              | Message identifier<ul><li>UUID format</li><li>A client can identify the messages to be processed by a <code>cid:[UUID]</code> value which can be found from the <code>payload</code> field of a directive message. </li></ul> |
+| content-Type            | <ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul>  |
 
 ### Response message
 CIC returns [directive messages](#Directive) and additional speech data in a [multipart message](#MultipartMessage). The content and configuration of a directive message are determined by which directive message CIC has returned, which are categorized into [interfaces](#CICInterface).
@@ -307,7 +307,7 @@ CIC returns [directive messages](#Directive) and additional speech data in a [mu
 | 401 Unauthorized          | Failed to authenticate the user. Check if the access token is valid. |
 | 500 Internal Server Error | An internal server error occurred.                                  |
 
-### Response Example
+### Response example
 
 {% raw %}
 ```
@@ -404,8 +404,10 @@ Event messages are used when a client sends user's speech input or client inform
 ```json
 {
   "context": [
+    {{Alerts.AlertsState}},
     {{AudioPlayer.PlaybackState}}
     {{Device.DeviceState}},
+    {{Device.Display}},
     {{Clova.FreetalkState}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
@@ -428,7 +430,7 @@ Event messages are used when a client sends user's speech input or client inform
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `context`                      | object array | An array containing client states to send to CIC. You can include the following [context](/CIC/References/Context_Objects.md) objects in the array. Include them in event messages as necessary.<ul><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback details</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: Device details</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: Freetalk mode details</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: Device location details</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Pre-defined location details</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker details</li></ul> | Yes |
+| `context`                      | object array | An array containing client states to send to CIC. You can include the following [context](/CIC/References/Context_Objects.md) objects in the array. Include them in event messages as necessary.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: Alarm/timer state details</li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback details</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: Device details</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: Device's display details</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: Freetalk mode details</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: Device location details</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Pre-defined location details</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker details</li></ul> | Yes |
 | `event`                        | object       | An object containing the header and necessary data (payload) of the event message                                                                 | Yes |
 | `event.header`                 | object       | The header of the event message                                                                                                 | Yes |
 | `event.header.dialogRequestId` | string       | The dialog ID. When clients are sending [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) and [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) event messages, they must create [dialog ID](/CIC/CIC_Overview.md#DialogIDandClientOP) and enter on this field.| No |
@@ -599,7 +601,7 @@ If you send event messages using incorrect methods or wrong formats, or if inter
 
 ## Interface {#CICInterface}
 
-CIC messages are defined and categorized into namespaces by their functions and usage. You use these interfaces to create event messages to send to CIC or to interpret directive messages returned from CIC.
+CIC messages are defined and categorized into namespaces by their functions and usage. Use these interfaces to create event messages to send to CIC or to interpret directive messages returned from CIC.
 
 Available namespaces are as follows. Click each link to find out more about the namespaces.
 

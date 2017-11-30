@@ -14,11 +14,12 @@ When the user request for a list of timer, CIC passes the timer list registered 
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `timerListList[]`               | object array  | An object array containing the timer list registered by the user.                                                                                        |
-| `timerListList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the timer will ring.                    |
-| `type`        | string                                                                                                | A content template delimiter. It has an `"TimerList"` value.            |
+| `timerList[]`               | object array  | An object array containing the timer list registered by the user.                                                                                        |
+| `timerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the timer will ring                    |
+| `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of a timer.                             |
+| `type`                      | string                                                                              | A content template delimiter. It has an `"TimerList"` value.      |
 
-## Template Example
+## Template example
 
 {% raw %}
 
@@ -27,18 +28,30 @@ When the user request for a list of timer, CIC passes the timer list registered 
   "type": "Timer",
   "timerList": [
     {
+      "token": {
+        "type": "string",
+        "value": "072c72b9-cfc5-4127-b4fe-557a10457232"
+      },
       "scheduledTime": {
         "type": "datetime",
         "value": "2017-12-24T00:00:10Z"
       }
     },
     {
+      "token": {
+        "type": "string",
+        "value": "b5403bd0-1598-495b-a466-9385c2b1103a"
+      },
       "scheduledTime": {
         "type": "datetime",
         "value": "2017-12-24T00:00:20Z"
       }
     },
     {
+      "token": {
+        "type": "string",
+        "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
+      },
       "scheduledTime": {
         "type": "datetime",
         "value": "2017-12-24T00:01:00Z"
@@ -52,7 +65,7 @@ When the user request for a list of timer, CIC passes the timer list registered 
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Preparing for an example of a screen which applied a TimerList template.</p>
 </div>

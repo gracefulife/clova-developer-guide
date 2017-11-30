@@ -45,7 +45,7 @@ Instructs your client to turn on the alarm display.
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
 | `new`         | boolean | A field notifying if the message is a directive message for a new alarm. <ul><li><code>true</code> : If it is a new alarm</li><li><code>false</code> : If it is not a new alarm</li></ul> | Yes    |
-| `light`       | string  | Light setting information<ul><li><code>"on"</code> : There are alarms unchecked by the user. Usually turns on the light indicating an alarm. </li><li><code>"off"</code> : All alarms are checked by the user.</li></ul> | Yes    |
+| `light`       | string  | Light setting information<ul><li><code>"on"</code> : There are alarms unchecked by the user. Usually turns on the light indicating an alarm.</li><li><code>"off"</code> : All alarms are checked by the user.</li></ul> | Yes    |
 
 ### Remarks
 This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that the message is not a response to an event message.
@@ -63,8 +63,8 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
       "messageId": "29745c13-0d70-408e-a4cc-946afba67524"
     },
     "payload": {
-      "new" : true,
-      "light" : "on"
+      "new": true,
+      "light": "on"
     }
   }
 }

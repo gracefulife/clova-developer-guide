@@ -21,7 +21,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
 | `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing the type of the thumbnail image. Available values are: <ul><li><code>"인물"</code></li><li><code>"책"</code></li><li><code>"앨범"</code></li></ul> |
 | `type`           | string  | A content template delimiter. It has an `"ImageText"` value.      |
 
-## Template Example
+## Template example
 
 {% raw %}
 

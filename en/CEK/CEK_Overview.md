@@ -7,16 +7,11 @@ CEK is a platform that gives you access to tools and interfaces for developing C
 ![](/CEK/Resources/Images/CEK_Concept_Diagram.png)
 
 CEK provides the following features.
-* Managing your interaction model (provided in the Clova Developer Console)
+* [Interaction model](/DevConsole/Guides/CEK/Define_Interaction_Model.md) management (Provide [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md))
 * Providing interfaces between Clova and your extension
 
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>The Clova Developer Console is currently under development. Contact your counterpart contact personnel to ask for help with defining an interaction model.</p>
-</div>
-
 ## CEK interaction structure {#CEKInteractionStructure}
-Clova receives user's speech input from CIC and recognizes it, and CEK analyzes the recognized speech using a pre-defined [interaction model](/CEK/Guides/Build_Custom_Extension.md#InteractionModel). Following that, CEK sends analysis details of the user's speech to an extension and the extension returns processing results of the user request. During the process, messages are sent back and forth in a pre-defined format.
+Clova receives user's speech input from CIC and recognizes it, and CEK analyzes the recognized speech using a pre-defined [interaction model](/DevConsole/Guides/CEK/Define_Interaction_Model.md). Following that, CEK sends analysis details of the user's speech to an extension and the extension returns processing results of the user request. During the process, messages are sent back and forth in a pre-defined format.
 
 This diagram shows the interaction structure between the Clova platform and an extension.
 

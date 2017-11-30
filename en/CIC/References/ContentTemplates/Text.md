@@ -11,25 +11,28 @@ Displays text on a screen. It is used to display text with highlights, paragraph
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
 | `bgUrl`                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image to display in background. The `value` field of this object can have an empty string (`""`).               |
-| `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) or [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing text or number to highlight. You can add a digit grouping symbol to numbers. The `value` field of this object can have an empty string (`""`) or `null` value. |
+| `emotionCode`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | A code defining expression of emotion. Using the emotion code, predefined expression of emotion can be displayed on a client appliance.  If the feature of expression of emotion does not exist in the appliance, the code should be ignored.  <div class="note"><p><strong>Note!</strong></p><p>Contact your counterpart contact personnel to find out more about specs of the emotion code. </p></div> |
+| `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) 또는 [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing text or number to highlight. You can add a digit grouping symbol to numbers. The `value` field of this object can have an empty string (`""`) or `null` value. |
 | `imageUrl`               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image. The `value` field of this object can have an empty string (`""`).                              |
 | `linkUrl`                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing a URL which redirects to a web map when a map image is included. The `value` field of this object can have an empty string (`""`). |
 | `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing main text. The `value` field of this object can have an empty string (`""`).                                     |
+| `motionCode`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | A code defining actions. Using the action code, predefined expression of emotion can be displayed on a client appliance. If the feature of actions does not exist in the appliance, the code should be ignored. <div class="note"><p><strong>Note!</strong></p><p>Contact your counterpart contact personnel to find out more about specs of the action code.</p></div> |
 | `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing paragraph text. The `value` field of this object can have an empty string (`""`).                                |
 | `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).                               |
 | `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).                                |
 | `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sentence text. The `value` field of this object can have an empty string (`""`).                                |
 | `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sub text. The `value` field of this object can have an empty string (`""`).                                     |
-| `tableList[]`           | object array                                                                    | An object array containing table text. The table consists of two or three lines.      |
+| `tableList[]`           | object array                                                                    | An object array containing table text. The table consists of two or three lines.     |
 | `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the first line. The `value` field of this object can have an empty string (`""`).                    |
 | `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the second line. The `value` field of this object can have an empty string (`""`).                    |
 | `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | An object containing link URL or phone number for the text in the second column |
-| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the third line. This field can be omitted.  |
+| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the third line. This field can be omitted. |
 | `type`                   | string                                                                          | A content template delimiter. It has an `"Text"` value.             |
 
-## Template Example
+## Template example
 
 {% raw %}
+
 ```json
 // Example 1.
 // User request: 1달러 지금 얼마야? (User asks how much 1 dollar is worth now. Text with highlights is displayed)
@@ -88,6 +91,14 @@ Displays text on a screen. It is used to display text with highlights, paragraph
       }
     }
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
@@ -148,6 +159,14 @@ Displays text on a screen. It is used to display text with highlights, paragraph
       }
     }
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
@@ -223,10 +242,156 @@ Displays text on a screen. It is used to display text with highlights, paragraph
     },
     ...
   ],
+  "emotionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
   "type": "Text"
 }
 
+// Example 4.
+// User request: 미안해 (User says Im sorry. Emotional expression)
+
+{
+  "actionList": [
+    {
+      "type": "action",
+      "value": ""
+    }
+  ],
+  "bgUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "highlightText": {
+    "type": "string",
+    "value": ""
+  },
+  "mainText": {
+    "type": "string",
+    "value": ""
+  },
+  "paragraphText": {
+    "type": "string",
+    "value": "전혀 미안해 할 거 없어요."
+  },
+  "referenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "referenceUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "sentenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "tableList": [
+    {
+      "item1": {
+        "type": "string",
+        "value": ""
+      },
+      "item2": {
+        "type": "string",
+        "value": ""
+      },
+      "item2Link": {
+        "type": "",
+        "value": ""
+      }
+    }
+  ],
+  "emotionCode": {
+    "type": "string",
+    "value": "EmotionCode7"
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "type": "Text"
+}
+
+// Example 5.
+// User request: 춤춰줘 (User asks to dance. Expression of action)
+
+{
+  "actionList": [
+    {
+      "type": "action",
+      "value": ""
+    }
+  ],
+  "bgUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "highlightText": {
+    "type": "string",
+    "value": ""
+  },
+  "mainText": {
+    "type": "string",
+    "value": ""
+  },
+  "paragraphText": {
+    "type": "string",
+    "value": "제 능력 밖의 일입니다."
+  },
+  "referenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "referenceUrl": {
+    "type": "url",
+    "value": ""
+  },
+  "sentenceText": {
+    "type": "string",
+    "value": ""
+  },
+  "subText": {
+    "type": "string",
+    "value": ""
+  },
+  "tableList": [
+    {
+      "item1": {
+        "type": "string",
+        "value": ""
+      },
+      "item2": {
+        "type": "string",
+        "value": ""
+      },
+      "item2Link": {
+        "type": "",
+        "value": ""
+      }
+    }
+  ],
+  "emotionCode": {
+    "type": "string",
+    "value": "MotionDance"
+  },
+  "motionCode": {
+    "type": "string",
+    "value": ""
+  },
+  "type": "Text"
+}
 ```
+
 {% endraw %}
 
 ## Screen UI example {#UIExample}

@@ -5,7 +5,7 @@ When the user creates a timer, CIC passes the timer details in Timer template fo
 <p><strong>Note!</strong></p>
 <p>Currently, there are limits to the Timer template as below.</p>
 <ul>
-  <li>With the voice command, the user can only request to add a timer or to check the list.</li>
+  <li>With the voice command, the user can only request to add a timer and check the list.</li>
   <li>In order to modify or delete a timer, the user should use the Clova app.</li>
 </ul>
 </div>
@@ -14,16 +14,21 @@ When the user creates a timer, CIC passes the timer details in Timer template fo
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the timer will ring.      |
-| `type`          | string                                                                              | A content template delimiter. It has an `"Timer"` value.  |
+| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the added timer will ring.             |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an added action timer.                     |
+| `type`          | string                                                                              | A content template delimiter. It has an `"Timer"` value.        |
 
-## Template Example
+## Template example
 
 {% raw %}
 
 ```json
 {
   "type": "Timer",
+  "token": {
+    "type": "string",
+    "value": "072c72b9-cfc5-4127-b4fe-557a10457232"
+  },
   "scheduledTime": {
     "type": "datetime",
     "value": "2017-12-24T00:00:00Z"
@@ -35,7 +40,7 @@ When the user creates a timer, CIC passes the timer details in Timer template fo
 
 ## Screen UI example {#UIExample}
 
-<div>
+<div class="note">
 <p><strong>Note!</strong></p>
 <p>Preparing for an example of a screen which applied a Timer template.</p>
 </div>

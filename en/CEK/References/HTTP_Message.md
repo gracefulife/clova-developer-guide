@@ -9,8 +9,8 @@ When CEK sends analysis details of user's speech input to your extension, it use
 POST /APIpath HTTP/1.1
 Host: your.extension.endpoint
 Content-Type: application/json;charset-UTF-8
-Accept: application/json
-Accept-Charset : utf-8
+Accept:  application/json
+Accept-Charset: utf-8
 ```
 {% endraw %}
 

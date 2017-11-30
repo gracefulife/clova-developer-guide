@@ -4,12 +4,47 @@ Returns recognition results of user requests to your client. When user requests 
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
+| [`ExpectLogin`](#ExpectLogin)               | Directive | Instructs your client to receive a {{ book.OrientedService }} account authentication (login) from the user. |
 | [`FinishExtension`](#FinishExtension)       | Directive | Instructs your client to finish a specified extension.             |
 | [`Hello`](#Hello)                           | Directive | Notifies your client that a downchannel connection has been established.       |
 | [`Help`](#Help)                             | Directive | Instructs your client to give pre-made help.       |
 | [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs your client to display templates.                     |
 | [`RenderText`](#RenderText)                 | Directive | Instructs your client to display text.                     |
 | [`StartExtension`](#StartExtension)         | Directive | Instructs your client to start a specified extension.            |
+
+## ExpectLogin directive {#ExpectLogin}
+
+Instructs your client to receive a {{ book.OrientedService }} account authentication (login) from the user. CIC passes this directive message to the client if it has to provide a service that requires the {{ book.OrientedService }} account authentication while operating the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
+
+### Payload field
+
+None
+
+### Remarks
+If successfully login, previous requests are not process in a row.  Depending on the needs, users have to make a request again.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+    "directive": {
+        "header": {
+            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+            "namespace": "Clova",
+            "name": "RequestLogin"
+        },
+        "payload": {}
+    }
+}
+```
+
+{% endraw %}
+
+### See also
+* [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
+* [Guest mode](/CIC/References/Clova_Auth_API.md#GuestMode)
 
 ## FinishExtension directive {#FinishExtension}
 
@@ -85,7 +120,7 @@ This directive message does not have a dialog ID (`dialogRequestId`).
 
 ## Help directive {#Help}
 
-Instructs your client to give help for users. This directive message is returned when a user requests for help. Have your client deliver help by playing voice help or displaying help UI on a screen.
+Instructs your client to give help for users. This directive message is returned when a user requests for help. Have your client deliver help by playing audio help or displaying help UI on a screen.
 
 ### Payload field
 

@@ -17,8 +17,8 @@ Displays data in a card list format on a screen. CardList has several card types
 
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
-| `cardList[]`                | object array | An object array that displays a list of cards. |
-| `cardList[].description`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing the description of the content.          |
+| `cardList[]`                | object array | An object array that displays a list of cards |
+| `cardList[].description`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing the description of the content          |
 | `cardList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the image to display. Depending on the card type, the `value` field of this object can have an empty string (`""`).  |
 | `cardList[].linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the content. Depending on the card type, the `value` field of this object can have an empty string (`""`).         |
 | `cardList[].press`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing the name of the press. Depending on the card type, the `value` field of this object can have an empty string (`""`).             |
@@ -26,12 +26,12 @@ Displays data in a card list format on a screen. CardList has several card types
 | `cardList[].publishDate`    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | An object containing the article publishing date. Depending on the card type, the `value` field of this object can have an empty string (`""`).            |
 | `cardList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing text information of the source. Depending on the card type, the `value` field of this object can have an empty string (`""`).         |
 | `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the source. Depending on the card type, the `value` field of this object can have an empty string (`""`).          |
-| `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing the title of the content.             |
+| `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing the title of the content             |
 | `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the video to play. Depending on the card type, the `value` field of this object can have an empty string (`""`).    |
 | `subType`                   | string  | A card type delimiter. You can specify one of the four types. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p><code>Type1</code>, <code>Type2</code>, <code>Type3</code> are displayed as an <strong>empty string</strong> at the moment. You must determine the type by checking the fields of the <code>card</code> object.</p></div>                                                    | Yes |
 | `type`                      | string  | A content template delimiter. It has an `"CardList"` value.                                                                       |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -367,7 +367,7 @@ The following examples show how each type's CardList template is presented in th
 
 | `Type3` | `Type4` |
 |-------|-------|
-| ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
+| ![Type3](/CIC/Resources/Images/Content_Template-Video_Card_Type.png) | ![Type4](/CIC/Resources/Images/Content_Template-News_Card_Type.png) |
 
 ## See also
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)

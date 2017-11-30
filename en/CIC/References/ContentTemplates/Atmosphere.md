@@ -1,5 +1,5 @@
 # Atmosphere Template
-Provides atmosphere information. It is used to displays find dust, ultra fine dust, ozone, UV rays and yellow dust on the screen.
+Provides atmosphere information. It is used to display find dust, ultra fine dust, ozone, UV rays and yellow dust on the screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -11,18 +11,18 @@ Provides atmosphere information. It is used to displays find dust, ultra fine du
 | Field name       | Type    | Field description                     |
 |---------------|---------|-----------------------------|
 | `announcementOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing forecast guide. This field is eliminated when displaying current atmosphere status. When eliminated, a `value` field of the object will have an empty string (`""`). |
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a URL of the background video file. <div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, this field cannot be used by your partner company. </p></div> |
-| `concentrationOfAtmosphere` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current status or index of atmosphere. This field is eliminated during the forecast. When eliminated, a `value` field of the object will have an empty string (`""`). |
-| `halfDayAtmosphereList[]`             | object array | An object array containing atmosphere information in a half day unit (morning/evening).                                    |
-| `halfDayAtmosphereList[].atmosphereImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of an image file displaying status of atmosphere at the time indicated on `halfDayAtmosphereList[].concentrationOfAtmosphere` field.  |
-| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing status of atmosphere or level of air quality at the time indicated on `halfDayAtmosphereList[].concentrationOfAtmosphere` field.   |
-| `halfDayAtmosphereList[].durationHalfDay`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a range of time reflecting atmosphere. In the ‘value’ field of the object, it has `내일 오전`, `내일 오후`, `모레 오전` and `모레 오후` values.  |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file.<div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
+| `concentrationOfAtmosphere` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current status or level of an air quality.  This field is eliminated during the forecast. When eliminated, a `value` field of the object will have an empty string (`""`). |
+| `halfDayAtmosphereList[]`             | object array | An object array containing atmosphere information in half day unit (morning/evening)                                    |
+| `halfDayAtmosphereList[].atmosphereImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object entered on `halfDayAtmosphereList[].durationHalfDay` field is containing URL of the image file displaying the status of atmosphere at the time |
+| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current status or level of an air quality at a time entered on a `halfDayAtmosphereList[].durationHalfDay` field.   |
+| `halfDayAtmosphereList[].durationHalfDay`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing atmosphere information in time range. The object of `value` field has `내일 오전`, `내일 오후`, `모레 오전` and `모레 오후` values.  |
 | `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).  |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location. |
-| `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current atmosphere index. It includes an index unit. The `value` field of this object can have an empty string (`""`). |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
+| `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current atmosphere index. Includes ndex unit. The `value` field of this object can have an empty string (`""`). |
 | `type`          | string | A content template delimiter. It has an `"Atmosphere"` value. |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json

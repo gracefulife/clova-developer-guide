@@ -18,10 +18,10 @@ GET|POST /authorize
 
 ### Request header
 
-* Accept
-  * application/json
-* Authorization: Enter an [obtained {{ book.TargetServiceForClientAuth }} access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken).
-  * Bearer [{{ book.TargetServiceForClientAuth }} access token]
+| Request header | Explanations                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | `application/json`                                                 |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">Enter the aquired {{ book.TargetServiceForClientAuth }} access token</a>:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
 
 ### Query parameter
 
@@ -46,8 +46,9 @@ GET|POST /authorize
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -55,28 +56,28 @@ GET|POST /authorize
 |---------------|---------|-----------------------------|
 | `code`          | string | The authorization code generated from the authorization server It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code.      |
 | `redirect_uri`  | string | A URI page providing terms and conditions for the service. It is a field included in the body of a HTTP response message when the message is having `451 Unavailable For Legal Reasons` status code. The client should move to URI included in this field and mark the page. When the user agree to the terms and conditions, the client will receive a response containing a `302 Found`(URL redirection) status code along with the following URL. <ul><li><code>clova://agreement-success</code> : The user successfully agreed to the terms and conditions. The client can continue to the next process to create a Clova access token.</li><li><code>clova://agreement-failure</code> : The user failed to agree to the terms and conditions due to a server error. The client should exclude the failure properly.</li></ul> |
-| `state`         | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks. It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code. |
+| `state`         | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks | It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK           | The response will be received if a request is processed successfully                       |
+| 200 OK           | The response will be received if a request is processed successfully                      |
 | 400 Bad Request  | The response will be received if entered an invalid data as a parameter or missed entering the required parameter just as `client_id` field |
-| 451 Unavailable For Legal Reasons | The response will be received if the user did not agree to the terms and conditions. Upon receiving the response, the client should move to the address found from `redirect_uri` field and mark the web page. The URI is a page asking users to agree to the terms and conditions.   |
+| 451 Unavailable For Legal Reasons | The response will be received if the user did not agree to the terms and conditions. Upon receiving the response, the client should move to the address found from `redirect_uri` field and mark the web page. The URI is a page asking users to agree to the terms and conditions.  |
 | 403 Forbidden    | The response is received when the {{ book.TargetServiceForClientAuth }} access token contained in the header is invalid |
 | 500 Server Internal Error | The response is received when failed to generate an authorization code due to an internal server error |
 
 ### Response example
 {% raw %}
 ```json
-// Example 1 : If HTTP response message has 200 OK status code
+// Example 1: If HTTP response message has 200 OK status code
 {
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
     "state": "FKjaJfMlakjdfTVbES5ccZ"
 }
 
-// Example 2 : If HTTP response message has 451 Unavailable For Legal Reasons status code
+// Example 2: If HTTP response message has 451 Unavailable For Legal Reasons status code
 {
   "code":"4mrklvwoC_KNgDlvmslka",
   "redirect_uri":"https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
@@ -102,8 +103,9 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | Explanations                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -127,8 +129,9 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -174,8 +177,9 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | Explanations                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -199,8 +203,9 @@ GET|POST /token?grant_type=refresh_token
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -245,8 +250,9 @@ GET|POST /token?grant_type=delete
 
 ### Request header
 
-* Accept
-  * application/json
+| Request header | Explanations                                                                |
+|----------------|--------------------------------------------------------------------|
+| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -270,8 +276,9 @@ GET|POST /token?grant_type=delete
 
 ### Response header
 
-* Content-Type
-  * appliacation/json
+| Response header | Explanations                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 

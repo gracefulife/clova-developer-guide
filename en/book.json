@@ -6,12 +6,12 @@
   "author": "LINE Corp.",
   "variables": {
     "ClassifiedInfo": "Confidential",
-    "DocVersion": "v1.7",
+    "DocVersion": "v2.0",
     "Locale": "en-JP",
     "DocOwner": "LINE",
     "OrientedService": "LINE",
     "TargetServiceForClientAuth": "LINE",
-    "LoginAPIofTargetService": "https://developers.line.me/line-login/overview/",
+    "LoginAPIofTargetService": "https://developers.line.me/en/services/line-login/",
     "AuthServerBaseURL": "https://clova-authgw.line-apps.com/",
     "CICBaseURL": "https://clova-cic.line-apps.com/",
     "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/"

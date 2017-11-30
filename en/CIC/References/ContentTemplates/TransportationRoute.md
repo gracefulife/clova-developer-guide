@@ -25,7 +25,7 @@ Provides route directions for public transportations. It is used to display publ
 | `lanes[]`                   | object array | An object containing interpolated points on all routes found |
 | `lanes[].create`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object that decides the `section` type of the object. <ul><li><strong>If this field does not exist,</strong> the <code>section</code> field contains interpolated points for drawing bus/subway sections.</li><li><strong>If this field does exist and <code>create.value</code> is set to <code>"1"</code>,</strong> the <code>section</code> field contains interpolated points for drawing polylines.</ul> |
 | `lanes[].section[]`         | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) array | An object array containing interpolated points for drawing bus/subway sections or polylines between sections. |
-| `pathType`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the route type of the direction. The `pathType.value` field has the following values. <ul><li><code>"1"</code>: Routes that use subways only</li><li><code>"2"</code>: Routes that use buses only</li><li><code>"3"</code>: Routes that use both subways and buses</li></ul>|
+| `pathType`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the route type of the direction. The `pathType.value` field has the following values. <ul><li><code>"1"</code>: Routes only used by the subways</li><li><code>"2"</code>: Routes only used by the buses</li><li><code>"3"</code>: Routes both subways and buses use</li></ul>|
 | `start`                     | [LocationObject](/CIC/References/ContentTemplates/Shared_Objects.md#LocationObject) | An object containing coordinates of the departure point |
 | `startName`                 | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing the name of the departure point |
 | `subPath[]`                 | object array | An object array containing details of sections on each route |
@@ -52,301 +52,267 @@ Provides route directions for public transportations. It is used to display publ
 | `totalTime`                 | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing an estimated total travle time. Unit is minute. |
 | `type`                      | string | A content template delimiter. It has an `"TransportationRoute"` value. |
 
+{% include "./Shared_Transportation_Code.md" %}
 
-## Codes for subway lines and bus types {#CodeReference}
-
-| Subway line code | Description          | But type code   | Description          |
-|--------------|---------------|--------------|--------------|
-| 1	           | Metropolitan_Line 1     | 1            | Regular          |
-| 2            | Metropolitan_Line 2     | 2            | Seats          |
-| 3            | Metropolitan_Line 3     | 3            | Town          |
-| 4            | Metropolitan_Line 4     | 4            | Express seats       |
-| 5            | Metropolitan_Line 5     | 5            | Airport          |
-| 6            | Metropolitan_Line 6     | 6            | Main roads direct express       |
-| 7            | Metropolitan_Line 7     | 10           | Suburb          |
-| 8            | Metropolitan_Line 8     | 11           | Main roads          |
-| 9            | Metropolitan_Line 9     | 12           | Local lines          |
-| 21           | Incheon_Line 1       | 13           | Circular          |
-| 31           | Daejeon_Line 1       | 14           | Metropolitan          |
-| 41           | Daegu_Line 1       | 15           | Direct express          |
-| 42           | Daegu_Line 2       | 20           | Rural region        |
-| 51           | Gwangju_Line 1       | 21           | Jeju region       |
-| 71           | Busan_Line 1       | 22           | Countryside          |
-| 72           | Busan_Line 2       | 26           | Direct express main road       |
-| 73           | Busan_Line 3       |              |              |
-| 74           | Busan_Line 4       |              |              |
-| 78           | Busan_East Sea Line       |              |              |
-| 79           | Busan_Gimhae Light Rail Transit |              |              |
-| 100          | Bundang Line           |              |              |
-| 101          | Airport Railroad         |              |              |
-| 103          | Jungang Line           |              |              |
-| 104          | Gyeongui Line           |              |              |
-| 107          | Everline         |              |              |
-| 108          | Gyeongchun Line           |              |              |
-| 109          | Sinbundang Line         |              |              |
-| 110          | U Line      |              |              |
-| 111          | Suin Line          |              |              |
-
-
-## Template Example
+## Template example
 
 {% raw %}
 ```json
 {
-  "type" : "TransportationRoute",
-  "pathType" : {
-    "type" : "string",
-    "value" : "3"
+  "type": "TransportationRoute",
+  "pathType": {
+    "type": "string",
+    "value": "3"
   },
-  "subPath" : [
+  "subPath": [
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "179"
+      "distance": {
+        "type": "string",
+        "value": "179"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "3"
+      "sectionTime": {
+        "type": "string",
+        "value": "3"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "1"
+      "trafficType": {
+        "type": "string",
+        "value": "1"
       },
-      "lane" : {
-        "name" : {
-          "type" : "string",
-          "value" : "5호선"
+      "lane": {
+        "name": {
+          "type": "string",
+          "value": "5호선"
         },
-        "subwayCode" : {
-          "type" : "string",
-          "value" : "5"
+        "subwayCode": {
+          "type": "string",
+          "value": "5"
         }
       },
-      "startX" : {
-        "type" : "string",
-        "value" : "126.9764454"
+      "startX": {
+        "type": "string",
+        "value": "126.9764454"
       },
-      "startY" : {
-        "type" : "string",
-        "value" : "37.5716197"
+      "startY": {
+        "type": "string",
+        "value": "37.5716197"
       },
-      "startID" : {
-        "type" : "string",
-        "value" : "533"
+      "startID": {
+        "type": "string",
+        "value": "533"
       },
-      "startName" : {
-        "type" : "string",
-        "value" : "광화문"
+      "startName": {
+        "type": "string",
+        "value": "광화문"
       },
-      "endX" : {
-        "type" : "string",
-        "value" : "127.0053025"
+      "endX": {
+        "type": "string",
+        "value": "127.0053025"
       },
-      "endY" : {
-        "type" : "string",
-        "value" : "37.5646938"
+      "endY": {
+        "type": "string",
+        "value": "37.5646938"
       },
-      "endID" : {
-        "type" : "string",
-        "value" : "536"
+      "endID": {
+        "type": "string",
+        "value": "536"
       },
-      "endName" : {
-        "type" : "string",
-        "value" : "동대문역사문화공원"
+      "endName": {
+        "type": "string",
+        "value": "동대문역사문화공원"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "26"
+      "distance": {
+        "type": "string",
+        "value": "26"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "1"
+      "sectionTime": {
+        "type": "string",
+        "value": "1"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "2"
+      "trafficType": {
+        "type": "string",
+        "value": "2"
       },
-      "lane" : {
-        "busNo" : {
-          "type" : "string",
-          "value" : "301"
+      "lane": {
+        "busNo": {
+          "type": "string",
+          "value": "301"
         },
-        "type" : {
-          "type" : "string",
-          "value" : "11"
+        "type": {
+          "type": "string",
+          "value": "11"
         },
-        "busID" : {
-          "type" : "string",
-          "value" : "1006"
+        "busID": {
+          "type": "string",
+          "value": "1006"
         }
       },
-      "startX" : {
-        "type" : "string",
-        "value" : "127.0072774"
+      "startX": {
+        "type": "string",
+        "value": "127.0072774"
       },
-      "startY" : {
-        "type" : "string",
-        "value" : "37.5651429"
+      "startY": {
+        "type": "string",
+        "value": "37.5651429"
       },
-      "startID" : {
-        "type" : "string",
-        "value" : "105343"
+      "startID": {
+        "type": "string",
+        "value": "105343"
       },
-      "startName" : {
-        "type" : "string",
-        "value" : "광희동"
+      "startName": {
+        "type": "string",
+        "value": "광희동"
       },
-      "endX" : {
-        "type" : "string",
-        "value" : "127.0611357"
+      "endX": {
+        "type": "string",
+        "value": "127.0611357"
       },
-      "endY" : {
-        "type" : "string",
-        "value" : "37.511781"
+      "endY": {
+        "type": "string",
+        "value": "37.511781"
       },
-      "endID" : {
-        "type" : "string",
-        "value" : "123460"
+      "endID": {
+        "type": "string",
+        "value": "123460"
       },
-      "endName" : {
-        "type" : "string",
-        "value" : "무역센타"
+      "endName": {
+        "type": "string",
+        "value": "무역센타"
       }
     },
     {
-      "trafficType" : {
-        "type" : "string",
-        "value" : "3"
+      "trafficType": {
+        "type": "string",
+        "value": "3"
       },
-      "distance" : {
-        "type" : "string",
-        "value" : "373"
+      "distance": {
+        "type": "string",
+        "value": "373"
       },
-      "sectionTime" : {
-        "type" : "string",
-        "value" : "6"
+      "sectionTime": {
+        "type": "string",
+        "value": "6"
       }
     }
   ],
-  "busStationCount" : {
-    "type" : "string",
-    "value" : "17"
+  "busStationCount": {
+    "type": "string",
+    "value": "17"
   },
-  "subwayStationCount" : {
-    "type" : "string",
-    "value" : "3"
+  "subwayStationCount": {
+    "type": "string",
+    "value": "3"
   },
-  "totalStationCount" : {
-    "type" : "string",
-    "value" : "20"
+  "totalStationCount": {
+    "type": "string",
+    "value": "20"
   },
-  "totalTime" : {
-    "type" : "string",
-    "value" : "55"
+  "totalTime": {
+    "type": "string",
+    "value": "55"
   },
-  "totalDistance" : {
-    "type" : "string",
-    "value" : "13284"
+  "totalDistance": {
+    "type": "string",
+    "value": "13284"
   },
-  "lanes" : [
+  "lanes": [
     {
-      "create" : {
-        "type" : "string",
-        "value" : "1"
+      "create": {
+        "type": "string",
+        "value": "1"
       },
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349538037, 149527412"
+          "type": "location",
+          "value": "349538037, 149527412"
         },
         {
-          "type" : "location",
-          "value" : "349543351, 149521660"
+          "type": "location",
+          "value": "349543351, 149521660"
         }
       ]
     },
     {
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349543351, 149521660"
+          "type": "location",
+          "value": "349543351, 149521660"
         },
         {
-          "type" : "location",
-          "value" : "349543376, 149522540"
+          "type": "location",
+          "value": "349543376, 149522540"
         },
         {
-          "type" : "location",
-          "value" : "349543354, 149522879"
+          "type": "location",
+          "value": "349543354, 149522879"
         },
         {
-          "type" : "location",
-          "value" : "349543478, 149524090"
+          "type": "location",
+          "value": "349543478, 149524090"
         },
         {
-          "type" : "location",
-          "value" : "349543584, 149524790"
+          "type": "location",
+          "value": "349543584, 149524790"
         }
       ]
     },
     {
-      "create" : {
-        "type" : "string",
-        "value" : "1"
+      "create": {
+        "type": "string",
+        "value": "1"
       },
-      "section" : [
+      "section": [
         {
-          "type" : "location",
-          "value" : "349600453, 149466463"
+          "type": "location",
+          "value": "349600453, 149466463"
         },
         {
-          "type" : "location",
-          "value" : "349610861, 149458583"
+          "type": "location",
+          "value": "349610861, 149458583"
         }
       ]
     }
   ],
-  "boundary" : {
-    "type" : "string",
-    "value" : "349532874,149530952,349610861,149451998"
+  "boundary": {
+    "type": "string",
+    "value": "349532874,149530952,349610861,149451998"
   },
-  "start" : {
-    "type" : "location",
-    "value" : "349538036,149527412"
+  "start": {
+    "type": "location",
+    "value": "349538036,149527412"
   },
-  "startName" : {
-    "type" : "string",
-    "value" : "광화문삼거리"
+  "startName": {
+    "type": "string",
+    "value": "광화문삼거리"
   },
-  "end" : {
-    "type" : "location",
-    "value" : "349610861,149458582"
+  "end": {
+    "type": "location",
+    "value": "349610861,149458582"
   },
-  "endName" : {
-    "type" : "string",
-    "value" : "코엑스"
+  "endName": {
+    "type": "string",
+    "value": "코엑스"
   },
-  "linkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "linkUrl": {
+    "type": "url",
+    "value": "https://..."
   },
-  "appLinkUrl" : {
-    "type" : "url",
-    "value" : "https://..."
+  "appLinkUrl": {
+    "type": "url",
+    "value": "https://..."
   }
 }
 ```

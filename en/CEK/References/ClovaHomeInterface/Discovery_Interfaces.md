@@ -44,7 +44,7 @@ Returns CEK a list of appliances registered on a user. Use this message to respo
 
 | Field name       | Type    | Field description                     | Required |
 |---------------|---------|-----------------------------|---------|
-| `discoveredAppliances[]`  | [ApplianceObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceObject) array  | An object array displaying a list of appliances registered on a user account          | Yes    |
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | An object array displaying a list of appliances registered on a user account          | Yes    |
 
 ### Remarks
 When providing an IoT service, you must provide a list of appliances registered on each user account.

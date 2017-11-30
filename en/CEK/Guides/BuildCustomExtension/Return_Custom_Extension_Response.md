@@ -4,14 +4,13 @@
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "sessionAttributes": {},
   "response": {
     "outputSpeech": {
       "type": "SimpleSpeech",
-      "values" : {
+      "values": {
           "type": "PlainText",
           "lang": "en",
           "value": "Hi, nice to meet you"
@@ -22,7 +21,6 @@
     "shouldEndSession": false
   }
 }
-
 ```
 
 {% endraw %}
@@ -32,7 +30,8 @@ The meaning of each field is as follows.
 * `version`: The message format version of the current custom extension is v0.1.0.
 * `response.outputSpeech`: It is set to speak in English, "Hi, nice to meet you".
 * `response.card`: There is no data to display on a client screen. Data format follows [content templates](/CIC/References/Content_Templates.md). You can use this field to return content to display on a client screen.
-* `response.shouldEndSession`: The current session does not end but continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
+* `response.shouldEndSession`: The current session does not end
+ but continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -44,7 +43,6 @@ As shown below, you can write a response message for speaking several sentences 
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "sessionAttributes": {},
@@ -69,7 +67,6 @@ As shown below, you can write a response message for speaking several sentences 
     "shouldEndSession": true
   }
 }
-
 ```
 
 {% endraw %}
@@ -90,14 +87,13 @@ To display data on a screen of client device or client app in addition to genera
 {% raw %}
 
 ```json
-
 {
   "version": "0.1.0",
   "sessionAttributes": {},
   "response": {
     "outputSpeech": {
       "type": "SimpleSpeech",
-      "values" : {
+      "values": {
           "type": "PlainText",
           "lang": "ko",
           "value": "공포 영화 추천해 드려요."
@@ -210,7 +206,6 @@ To display data on a screen of client device or client app in addition to genera
     "shouldEndSession": true
   }
 }
-
 ```
 
 {% endraw %}

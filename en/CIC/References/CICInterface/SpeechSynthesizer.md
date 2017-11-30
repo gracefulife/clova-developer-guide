@@ -71,7 +71,7 @@ The `url` can be either one of the two formats. Process audio output appropriate
 {% raw %}
 ```
 // cid:{Content-Id} format
-// Plays an audio data message with Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369.
+// Plays an audio data message with Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 
 --Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"

@@ -4,7 +4,7 @@ All content templates may have the common fields as below. The common fields are
 | Field name        | Type    | Field description                     | Required |
 |----------------|---------|-----------------------------|---------|
 | `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | A content template should be provided so that users can respond to user interaction such as UI touch. The list of response actions([Action URL scheme](#ActionURLScheme)) should be conveyed to the user interaction through this field. [CardList](/CIC/References/ContentTemplates/CardList.md) type of content template can be defined at the sub level of `cardList[]` field. | No |
-| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Includes the message information in case the content template cannot be expressed on UI. For instance, the message will be displayed if the client does not support content template version specified on `meta.version` or if an issue occurs to display the template information.  | Yes |
+| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Includes the message information in case the content template cannot be expressed on UI. For instance, the message will be displayed if the client does not support content template version specified on `meta.version` or if an issue occurs to display the template information. | Yes |
 | `meta`             | Object | Includes meta information related to content template. | Yes |
 | `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains content template version information. | Yes |
 
@@ -36,7 +36,7 @@ All content templates may have the common fields as below. The common fields are
 ## Action URL scheme {#ActionURLScheme}
 The following action URL schemes defined in the `actionList` field inform the client what actions to take.
 
-| Action URL scheme           | An action that the client will carry out                                                |
+| Action URL scheme           | An action that the client will carry out                                               |
 |-----------------------------|------------------------------------------------------------------|
 | [clova://app-launch/default-addressbook](#AppLaunchDefaultAddrBook) | An action to execute basic address app   |
 | [clova://app-launch/default-browser](#AppLaunchDefaultBrowser)      | An action to execute basic web browser |
@@ -112,7 +112,7 @@ This scheme is for the client to control a specific feature of client.
 | Parameter name    | Description                         | Required |
 |---------------|-----------------------------|--------|
 | command       | Control command <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul>                      | Yes |
-| target        | Target to control. <ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes |
+| target        | Target to control <ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes |
 | value         | Setting value. This value is being designated when the `command` parameter is a `setValue`. It is also applied when setting speaker volume(`"volume"`) or screen brightness(`"screenbrightness"`) or controlling TV channel(`"channel"`). | No |
 
 The following is an example for the action URL scheme.

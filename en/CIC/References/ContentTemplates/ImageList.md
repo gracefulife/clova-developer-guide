@@ -19,7 +19,7 @@ Displays one or more images with description on a screen. It is used to display 
 | `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the thumbnail image. The `value` field of this object can have an empty string (`""`).      |
 | `type`                       | string       | A content template delimiter. It has an `"ImageList"` value.        |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
