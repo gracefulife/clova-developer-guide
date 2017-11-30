@@ -258,7 +258,7 @@ When the message type is `IntentRequest`, the `request` object field is configur
 | `type`          | string  | The type of the request message. The value is always `"IntentRequest"`.                                                                              | Yes |
 | `intent`        | object  | An object containing analysis of requests of a user [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent)                          | Yes |
 | `intent.name`   | string  | The name of the intent. [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent) defined on the interaction model can be identified by this field.  | Yes |
-| `intent.slots`  | object  | An object containing slots necessary for your extension to process the intent. This field configuration may be changed depending on [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md# Intent) entered on `intent.name` field. | Yes |
+| `intent.slots`  | object  | An object containing slots necessary for your extension to process the intent. This field configuration may be changed depending on [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent) entered on `intent.name` field. | Yes |
 
 
 #### SessionEndedRequest {#CustomExtSessionEndedRequest}
