@@ -179,7 +179,7 @@ The custom extension will receive the following message.
         },
         "pizzaType": {
           "name": "pizzaType",
-          "value": "페퍼로니"
+          "value": "pepperoni"
         }
       }
     }

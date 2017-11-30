@@ -40,7 +40,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   },
   "referenceText": {
     "type": "string",
-    "value": "네이버 검색결과"
+    "value": "Search Result"
   },
   "referenceUrl": {
     "type": "url",
@@ -89,7 +89,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   },
   "referenceText": {
     "type": "string",
-    "value": "네이버 검색결과"
+    "value": "Search Result"
   },
   "referenceUrl": {
     "type": "url",

@@ -43,7 +43,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",
@@ -69,7 +69,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",

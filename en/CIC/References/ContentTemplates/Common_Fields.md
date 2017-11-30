@@ -46,8 +46,6 @@ The following action URL schemes defined in the `actionList` field inform the cl
 | [clova://audio-repeat](#AudioRepeat)                                | An action to play an audio content     |
 | [clova://device-control](#DeviceControl)                            | An action to control a device       |
 | [clova://guide/talking](#GuideTalking)     | An action to provide a command helper                              |
-| [clova://naverSearch](#NaverSearch)        | An action to search a specific keyword on Naver app                    |
-| [clova://naver-maps](#NaverMaps)           | An action to execute Naver Map app                            |
 | [clova://ttsRepeat](#TTSRepeat)            | An action to execute Text To Speech                     |
 | [clova://webview](#Webview)                | An action to open a webpage through WebView                          |
 
@@ -129,34 +127,6 @@ This scheme is for the client to provide a command helper. The following is an e
 
 ```
 clova://guide/talking
-```
-
-### clova://naverSearch {#NaverSearch}
-
-This scheme is for the client to search on Naver app.
-
-| Parameter name    | Description                         | Required |
-|---------------|-----------------------------|--------|
-| url           |  URL of the page you are about to open through Naver app | Yes |
-
-The following is an example for the action URL scheme.
-
-```
-clova://naverSearch?url=http://target.page.url
-```
-
-### clova://naver-maps {#NaverMaps}
-
-This scheme is for the client to find a way by executing Naver Map app.
-
-| Parameter name    | Description                         | Required |
-|---------------|-----------------------------|--------|
-| url           | An URL opened via the Naver Map app   | Yes |
-
-The following is an example for the action URL scheme.
-
-```
-clova://naver-maps?url=http://target.map.url
 ```
 
 ### clova://ttsRepeat {#TTSRepeat}

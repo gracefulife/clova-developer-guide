@@ -391,7 +391,7 @@ SpeechInfoObject is an object reused by `response.outputSpeech` in response mess
       "values": [
         {
           "type": "PlainText",
-          "lang": "ko",
+          "lang": "en",
           "value": "Listen to my song."
         },
         {

@@ -75,7 +75,7 @@ Displays data in a card list format on a screen. CardList has several card types
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",
@@ -123,7 +123,7 @@ Displays data in a card list format on a screen. CardList has several card types
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",
@@ -181,7 +181,7 @@ Displays data in a card list format on a screen. CardList has several card types
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",
@@ -229,7 +229,7 @@ Displays data in a card list format on a screen. CardList has several card types
       },
       "referenceText": {
         "type": "string",
-        "value": "네이버 검색결과"
+        "value": "Search Result"
       },
       "referenceUrl": {
         "type": "url",

@@ -42,10 +42,10 @@ This is an example of a `DiscoverAppliancesResponse` message which a Clova Home 
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "스마트 전등",
+        "modelName": "Smart light",
         "version": "v1.0",
-        "friendlyName": "거실 전등",
-        "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "friendlyName": "Light in living room",
+        "friendlyDescription": "Smartphone-controllable light",
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -62,10 +62,10 @@ This is an example of a `DiscoverAppliancesResponse` message which a Clova Home 
       {
         "applianceId": "device-002",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "스마트 플러그",
+        "modelName": "Smart Plug",
         "version": "v1.0",
-        "friendlyName": "부엌 플러그",
-        "friendlyDescription": "에너지를 절약하는 플러그",
+        "friendlyName": "Plug in kitchen",
+        "friendlyDescription": "Energy saving plug",
         "isReachable": true,
         "actions": [
           "HealthCheck",

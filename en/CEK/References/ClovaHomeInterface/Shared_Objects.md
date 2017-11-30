@@ -39,7 +39,7 @@ An object containing an air quality. It is applied to show the air quality measu
   },
   "payload": {
     "airQuality": {
-        "index": "보통"
+        "index": "normal"
     }
   }
 }
@@ -201,10 +201,10 @@ The following table shows location details supported from `location` field. The 
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "스마트 전등",
+        "modelName": "Smart light",
         "version": "v1.0",
-        "friendlyName": "거실 전등",
-        "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "friendlyName": "Light in living room",
+        "friendlyDescription": "Smartphone-controllable light",
         "isReachable": true,
           "actions": [
             "HealthCheckt",
@@ -218,10 +218,10 @@ The following table shows location details supported from `location` field. The 
       {
         "applianceId": "device-002",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "스마트 플러그",
+        "modelName": "Smart plug",
         "version": "v1.0",
-        "friendlyName": "부엌 플러그",
-        "friendlyDescription": "에너지를 절약하는 플러그",
+        "friendlyName": "Plug in kitchen",
+        "friendlyDescription": "Energy saving plug",
         "isReachable": true,
         "actions": [
           "HealthCheckt",
@@ -395,7 +395,7 @@ An object containing data on fine dust. It contains the fine dust concentration 
   "payload": {
     "fineDust": {
         "value": 77,
-        "index": "보통"
+        "index": "normal"
     }
   }
 }
@@ -814,7 +814,7 @@ An object containing data on ultra fine dust. It contains the ultra fine dust co
   "payload": {
     "fineDust": {
         "value": 44,
-        "index": "좋음"
+        "index": "good"
     }
   }
 }

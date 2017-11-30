@@ -207,7 +207,7 @@ An object containing text.
 // Example 2
 {
     "type": "string",
-    "value": "네이버 검색결과"
+    "value": "Search Result"
 }
 ```
 

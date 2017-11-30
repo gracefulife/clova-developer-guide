@@ -129,7 +129,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "referenceText": {
     "type": "string",
-    "value": "네이버 검색결과"
+    "value": "Search Result"
   },
   "referenceUrl": {
     "type": "url",
@@ -197,7 +197,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "referenceText": {
     "type": "string",
-    "value": "네이버 검색결과"
+    "value": "Search Result"
   },
   "referenceUrl": {
     "type": "url",

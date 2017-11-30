@@ -74,7 +74,7 @@ As shown below, you can write a response message for speaking several sentences 
 Each `response.outputSpeech` field indicates the following.
 
 * `response.outputSpeech.type`: The speech data is a complex sentence (SpeechList).
-* `response.outputSpeech.values[0]`: The speech data is plain text. It is set to speak in Korean, "노래를 불러볼게요".
+* `response.outputSpeech.values[0]`: The speech data is plain text. It is set to speak in English, "Listen to my song.".
 * `response.outputSpeech.values[1]`: The speech data is a URL. It is set to play a file from the URL in the `value` field.
 
 <div class="note">

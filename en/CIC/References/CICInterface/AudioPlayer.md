@@ -115,7 +115,7 @@ Sometimes, due to the way music services charge users, streaming details such as
         "type": "navermusic"
       },
       "source": {
-        "name": "네이버 뮤직",
+        "name": "Sample Music Service",
         "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.music/source_logo.png"
       },
       "playBehavior": "REPLACE_ALL"

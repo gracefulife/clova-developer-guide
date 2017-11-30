@@ -590,7 +590,7 @@ Returns CEK the air quality info measured by the target appliance in response to
   },
   "payload": {
     "airQuality": {
-        "index": "보통"
+        "index": "normal"
     }
   }
 }
