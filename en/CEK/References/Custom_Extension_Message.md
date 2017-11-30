@@ -392,7 +392,7 @@ SpeechInfoObject is an object reused by `response.outputSpeech` in response mess
         {
           "type": "PlainText",
           "lang": "ko",
-          "value": "노래를 불러볼게요."
+          "value": "Listen to my song."
         },
         {
           "type": "URL",
@@ -416,21 +416,21 @@ SpeechInfoObject is an object reused by `response.outputSpeech` in response mess
       "type": "SpeechSet",
       "brief": {
         "type": "PlainText",
-        "lang": "ko",
-        "value": "날씨 뉴스 입니다."
+        "lang": "en",
+        "value": "This is the weather information."
       },
       "verbose": {
         "type": "SpeechList",
         "values": [
           {
               "type": "PlainText",
-              "lang": "ko",
-              "value": "주말까지 전국 장맛비…폭염 누그러져."
+              "lang": "en",
+              "value": "The seasonal rain front is moving through tomorrow."
           },
           {
               "type": "PlainText",
-              "lang": "ko",
-              "value": "내일 전국 장맛비…곳곳 국지성 호우 주의."
+              "lang": "en",
+              "value": "Severe thunderstorms are expected tomorrow."
           }
           ...
         ]
@@ -447,15 +447,15 @@ SpeechInfoObject is an object reused by `response.outputSpeech` in response mess
   "version": "0.1.0",
   "sessionAttributes": {
     "RequestedIntent": "OrderPizza",
-    "pizzaType": "페퍼로니 피자"
+    "PizzaType": "pepperoni pizza"
   },
   "response": {
     "outputSpeech": {
       "type": "SimpleSpeech",
       "values": {
           "type": "PlainText",
-          "lang": "ko",
-          "value": "몇 판 주문할까요?"
+          "lang": "en",
+          "value": "How many?"
       }
     },
     "card": {},

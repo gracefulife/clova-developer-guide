@@ -26,9 +26,9 @@ Assume a user requested, "Order pepperoni pizza", and CEK sent a request message
     "intent": {
       "name": "OrderPizza",
       "slots": {
-        "pizzaType": {
-          "name": "pizzaType",
-          "value": "페퍼로니"
+        "PizzaType": {
+          "name": "PizzaType",
+          "value": "pepperoni"
         }
       }
     }
@@ -49,15 +49,15 @@ If you respond as follows, you can request Clova to keep the previously sent `in
   "version": "0.1.0",
   "sessionAttributes": {
     "intent": "OrderPizza",
-    "pizzaType": "페퍼로니"
+    "PizzaType": "pepperoni pizza"
   },
   "response": {
     "outputSpeech": {
       "type": "SimpleSpeech",
       "values": {
           "type": "PlainText",
-          "lang": "ko",
-          "value": "몇 판 주문할까요?"
+          "lang": "en",
+          "value": "How many?"
       }
     },
     "card": {},
@@ -80,7 +80,7 @@ When the user provides required quantity, the Clova platform adds the quantity d
     "new": false,
     "sessionAttributes": {
         "intent": "OrderPizza",
-        "pizzaType": "페퍼로니"
+        "PizzaType": "pepperoni pizza"
     },
     "sessionId": "a29cfead-c5ba-474d-8745-6c1a6625f0c5",
     "user": {
