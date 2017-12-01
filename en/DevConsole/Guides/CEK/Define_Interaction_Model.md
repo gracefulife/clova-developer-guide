@@ -48,9 +48,9 @@ An intent is a segment that distinguishes the user requests for an extension to 
 
 The custom intent specifies the following information:
 
-* What various request categories exist in service
-* What [Slots](#Slot) are required for each request category
-* What types of [speech examples](#UtteranceExample) are in each request category
+* What kinds of request categories exist in service?
+* Which [Slots](#Slot) are required for each request category?
+* What types of [speech examples](#UtteranceExample) are in each request category?
 
 To give an example with the pizza delivery service, the specific service will have the following categories of requests.
 
