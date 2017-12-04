@@ -22,7 +22,7 @@ Custom extension을 배포하는 경우 [interaction 모델이 정의](/DevConso
   <img src="/DevConsole/Resources/Images/DevConsole-Build_Interaction_Model_2.png" />
 </ol>
 
-참고로 빌드 중에 **인터렉션 모델: 대시보드** 내에서 다른 메뉴로 이동하더라도 빌드가 취소되지 않습니다. 빌드한 이후에 얼마든지 메뉴 이동 및 내용 편집이 가능합니다.
+참고로 빌드 중에 **인터렉션 모델: 대시보드** 내에서 다른 메뉴로 이동하더라도 빌드가 취소되지 않습니다. 빌드를 시작한 이후에 얼마든지 메뉴 이동 및 내용 편집이 가능합니다.
 
 ## Interaction 모델 테스트하기 {#TestInteractionModel}
 
@@ -54,10 +54,10 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ![](/DevConsole/Resources/Images/DevConsole-Input_Deployment_Info.png)
 
-* Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확장 기능 관리** 메뉴에서 사용자에게 제공된다. 다음과 같은 정보들이 입력됩니다.
+* Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확장 기능 관리** 메뉴에서 사용자에게 제공됩니다. 다음과 같은 정보들이 입력됩니다.
   - **카테고리**: Extension의 종류로서 사용자가 extension 종류별로 목록을 확인하거나 검색할 때 이용됩니다.
   - **익스텐션 요약 설명**: Extension 상세 페이지에 표시할 요약 설명입니다.
-  - **익스텐션 상세 설명**: Extension 상세 페이지에서 사용자가 좀 더 자세한 설명을 원할 경우 표시할 extension의 상세 설명입니다.
+  - **익스텐션 상세 설명**: Extension 상세 페이지에서 사용자가 좀 더 자세한 설명을 원할 경우 제공할 상세 설명입니다.
   - **대표 표현 문장**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. 첫 번째 예시문은 extension 목록을 보여줄 때 표시됩니다.
   - **검색 키워드**: 사용자가 extension을 검색할 때 특정 키워드가 포함되면 검색 결과에 표시되도록 해주는 검색어입니다.
   - **작은 아이콘**: Extension 아이콘을 나타낼 이미지 파일입니다.(108px X 108px)
@@ -78,7 +78,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ## 개인 정보 관리 및 규정 준수 정보 입력 {#InputComplianceInfo}
 
-Extension에 필요한 정보를 입력하는 마지막 단계로서 개인 정보 관리 및 규정 준수에 관련된 내용을 입력해야 합니다. Extension 등록 메뉴에서 **개인 정보 및 규정 준수**를 선택합니다.
+Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개인 정보 관리 및 규정 준수에 관련된 내용을 입력해야 합니다. Extension 등록 메뉴에서 **개인 정보 및 규정 준수**를 선택합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Policy_Menu.png)
 
@@ -98,7 +98,10 @@ Extension에 필요한 정보를 입력하는 마지막 단계로서 개인 정�
 
 ## Extension 승인 요청하기 {#RequestExtensionSubmission}
 
-Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 최종적으로 등록한 extension에 대해 심사를 요청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 검수하게 됩니다. Extension이 정상 동작하고 검수 시 특별한 문제 사항이 없다면 extension은 심사를 통과하게 될 것이며, 심사 통과 후 즉시 혹은 원하는 시간에 배포할 수 있게 됩니다. 만약, 심사 과정에서 실행 오류가 있거나 사용자 시나리오 상의 심각한 문제 발견되면 운영자에 의해 재심사 받도록 extension 수정을 요청할 수 있습니다.
+Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 최종적으로 등록한 extension에 대해 심사를 요청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 검수하게 됩니다.
+
+* Extension이 정상 동작하고 검수 시 특별한 문제 사항이 없다면 extension은 심사를 통과하게 될 것이며, 심사 통과 후 즉시 혹은 원하는 시간에 배포할 수 있게 됩니다.
+* 만약, 심사 과정에서 실행 오류가 있거나 사용자 시나리오 상의 심각한 문제 발견되면 운영자에 의해 재심사 받도록 extension 수정을 요청할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
 
@@ -109,7 +112,6 @@ Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습
 1. Extension 빌드 검증
   * Extension 서비스에 적합한 용어를 사용하고 있는지 확인합니다.
   * Intent, slot 등 interaction 모델을 검증합니다.
-  * 개발 주요 요소에 대한 가이드를 반드시 참고합니다. (TBD, 무슨 의미인지?)
 2. 사용자 시나리오 검증
   * 대화 문맥 상 어색한 부분이 있는지 확인합니다.
   * 시나리오 상 사용되는 발화 데이터에 금칙어, 민감어 등이 있는지 확인합니다.

@@ -8,7 +8,7 @@
 
 ## Design
 * [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)
-* Extension 디자인 가이드라인(추가 예정)
+* [Extension 디자인 가이드라인(추가 예정)]()
 
 ## Clova Interface Connect
 
@@ -18,6 +18,9 @@
   * [대화 모델](/CIC/CIC_Overview.md#DialogModel)
 * [CIC 연동하기](/CIC/Guides/Interact_with_CIC.md)
   * [사전 준비사항](/CIC/Guides/Interact_with_CIC.md#Preparation)
+    * [HTTP/2 라이브러리](/CIC/Guides/Interact_with_CIC.md#RequiredLibrary)
+    * [User-Agent string](/CIC/Guides/Interact_with_CIC.md#UserAgentString)
+    * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
   * [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
     * [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
     * [연결하기](/CIC/Guides/Interact_with_CIC.md#CreateConnection)
@@ -135,7 +138,7 @@
 
 ## Clova Developer Console
 * [Clova developer console 개요](/DevConsole/ClovaDevConsole_Overview.md)
-* CIC 메뉴 사용하기 (추가 예정)
+* [CIC 메뉴 사용하기 (추가 예정)]()
 * [CEK Menu 사용하기](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
   * [Extension 등록하기](/DevConsole/Guides/CEK/Register_Extension.md)
     * [Extension 기본 정보 입력](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)
