@@ -18,7 +18,7 @@ GET|POST /authorize
 
 ### Request header
 
-| Request header | 설명                                                                |
+| Request header | 값                                                                 |
 |----------------|--------------------------------------------------------------------|
 | Accept         | `application/json`                                                 |
 | Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">획득한 {{ book.TargetServiceForClientAuth }} access token</a>을 입력:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
@@ -46,7 +46,7 @@ GET|POST /authorize
 
 ### Response header
 
-| Response header | 설명                                                                |
+| Response header | 값                                                                  |
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -64,8 +64,8 @@ GET|POST /authorize
 |---------------|-------------------------|
 | 200 OK           | 요청 처리 성공 시 받는 응답                      |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 받는 응답 |
-| 451 Unavailable For Legal Reasons | 사용자가 이용 약관을 동의하지 않은 경우 받는 응답. 클라이언트는 이 응답을 받으면 `redirect_uri` 필드에 있는 주소로 이동하여 웹 페이지를 표시해야 합니다. 해당 URI는 사용자에게 서비스 이용 약관에 대해 동의를 받는 페이지입니다.  |
 | 403 Forbidden    | 헤더에 포함된 {{ book.TargetServiceForClientAuth }} access token이 유효하지 않은 경우 받는 응답 |
+| 451 Unavailable For Legal Reasons | 사용자가 이용 약관을 동의하지 않은 경우 받는 응답. 클라이언트는 이 응답을 받으면 `redirect_uri` 필드에 있는 주소로 이동하여 웹 페이지를 표시해야 합니다. 해당 URI는 사용자에게 서비스 이용 약관에 대해 동의를 받는 페이지입니다.  |
 | 500 Server Internal Error | 서버 내부 오류로 인한 authorization code 발급 실패 시 받는 응답 |
 
 ### Response example
@@ -103,7 +103,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Request header
 
-| Request header | 설명                                                                |
+| Request header | 값                                                                  |
 |----------------|--------------------------------------------------------------------|
 | Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -129,7 +129,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response header
 
-| Response header | 설명                                                                |
+| Response header | 값                                                                  |
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -177,7 +177,7 @@ GET|POST /token?grant_type=refresh_token
 
 ### Request header
 
-| Request header | 설명                                                                |
+| Request header | 값                                                                  |
 |----------------|--------------------------------------------------------------------|
 | Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -187,7 +187,7 @@ GET|POST /token?grant_type=refresh_token
 |---------------|---------|-----------------------------|---------|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                    | 선택 |
+| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 선택 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 | `refresh_token` | string  | 인증 성공 후 발급받은 refresh token                                              | 필수 |
 
@@ -203,7 +203,7 @@ GET|POST /token?grant_type=refresh_token
 
 ### Response header
 
-| Response header | 설명                                                                |
+| Response header | 값                                                                  |
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -250,7 +250,7 @@ GET|POST /token?grant_type=delete
 
 ### Request header
 
-| Request header | 설명                                                                |
+| Request header | 값                                                                  |
 |----------------|--------------------------------------------------------------------|
 | Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -276,7 +276,7 @@ GET|POST /token?grant_type=delete
 
 ### Response header
 
-| Response header | 설명                                                                |
+| Response header | 값                                                                  |
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
 

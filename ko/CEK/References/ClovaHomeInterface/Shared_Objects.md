@@ -556,7 +556,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
       "applianceId": "device-001"
     },
     "deltaTemperature": {
-      "value": 1.0
+      "value": 1
     }
   }
 }
@@ -571,11 +571,11 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   },
   "payload": {
     "targetTemperature": {
-      "value": 25.0
+      "value": 25
     },
     "previousState": {
       "targetTemperature": {
-        "value": 21.0
+        "value": 21
       }
     }
   }
@@ -786,7 +786,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
     "payloadVersion": "1.0"
   },
   "payload": {
-    "fineDust": {
+    "ultraFineDust": {
         "value": 44,
         "index": "good"
     }

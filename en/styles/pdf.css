@@ -92,6 +92,12 @@ img {
   box-shadow:         3px 3px 10px 3px #ccc;
 }
 
+img.inlineImage {
+  padding: 0px;
+  box-shadow: 0px 0px 0px 0px;
+  vertical-align: middle;
+}
+
 ol ol {
   list-style-type: lower-alpha;
 }

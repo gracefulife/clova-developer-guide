@@ -244,18 +244,17 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "brightness": {
+    "channel": {
       "value": 12
     },
     "previousState": {
-      "brightness": {
+      "channel": {
         "value": 13
       }
     }
   }
 }
 ```
-
 {% endraw %}
 
 ### See also
@@ -415,11 +414,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "targetTemperature": {
-      "value": 23.0
+      "value": 23
     },
     "previousState": {
       "targetTemperature": {
-        "value": 25.0
+        "value": 25
       }
     }
   }
@@ -460,7 +459,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-001"
     },
     "deltaTemperature": {
-      "value": 2.0
+      "value": 2
     }
   }
 }
@@ -596,7 +595,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `airQuality`                 | [AirQualityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#AirQualityInfoObject) | 현재 기기가 측정한 공기질 정보를 담고 있는 객체   | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -613,7 +612,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   "payload": {
     "airQuality": {
         "index": "good"
-    }
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:04+09:00"
   }
 }
 ```
@@ -663,7 +663,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | 현재 기기의 배터리 정보를 담고 있는 객체   | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -680,7 +680,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   "payload": {
     "batteryInfo": {
         "value": 50
-    }
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }
 ```
@@ -731,7 +732,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `currentTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기가 측정한 현재 온도 정보를 담고 있는 객체  | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -747,8 +748,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "currentTemperature": {
-        "value": 22.0
-    }
+        "value": 22
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:32+09:00"
   }
 }
 ```
@@ -799,7 +801,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `fineDust`                 | [FineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#FineDustInfoObject) | 현재 기기가 측정한 미세 먼지 정보를 담고 있는 객체   | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -817,7 +819,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "fineDust": {
       "value": 77,
       "index": "normal"
-    }
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:44+09:00"
   }
 }
 ```
@@ -867,7 +870,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `humidity`                 | [HumidityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#HumidityInfoObject) | 현재 기기가 측정한 습도 정보를 담고 있는 객체   | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -884,7 +887,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   "payload": {
     "humidity": {
         "value": 40
-    }
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
 ```
@@ -934,7 +938,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `lockState`   | string | 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -950,7 +954,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "airQuality": "LOCKED"
-  }
+  },
+  "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
 }
 ```
 
@@ -999,7 +1004,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `targetTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기에 설정된 희망 온도 정보를 담고 있는 객체  | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -1015,8 +1020,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "targetTemperature": {
-        "value": 24.0
-    }
+        "value": 24
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:31:18+09:00"
   }
 }
 ```
@@ -1065,8 +1071,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `fineDust`                 | [UltraFineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#UltraFineDustInfoObject) | 현재 기기가 측정한 초미세 먼지 정보를 담고 있는 객체   | 필수    |
-| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 필수    |
+| `ultraFineDust`                 | [UltraFineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#UltraFineDustInfoObject) | 현재 기기가 측정한 초미세 먼지 정보를 담고 있는 객체   | 필수    |
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
 ### Message example
 
@@ -1081,10 +1087,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "fineDust": {
+    "ultraFineDust": {
       "value": 44,
       "index": "good"
-    }
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:26:48+09:00"
   }
 }
 ```
@@ -1277,12 +1284,12 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "brightness": {
+    "channel": {
       "value": 14
     },
     "previousState": {
-      "brightness": {
-        "value": 13
+      "channel": {
+        "value": 15
       }
     }
   }
@@ -1448,11 +1455,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "targetTemperature": {
-      "value": 25.0
+      "value": 25
     },
     "previousState": {
       "targetTemperature": {
-        "value": 22.0
+        "value": 22
       }
     }
   }
@@ -1493,7 +1500,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-001"
     },
     "deltaTemperature": {
-      "value": 3.0
+      "value": 3
     }
   }
 }
@@ -2136,7 +2143,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "targetTemperature": {
-      "value": 22.0
+      "value": 22
     }
   }
 }
@@ -2176,7 +2183,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-001"
     },
     "targetTemperature": {
-      "value": 22.0
+      "value": 22
     }
   }
 }
