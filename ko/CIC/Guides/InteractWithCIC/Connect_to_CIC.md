@@ -86,7 +86,8 @@ Downchannel은 `/v1/directives` 경로로 `GET` 방식 요청을 보내면 구�
 ```
 :method: GET
 :scheme: https
-:path = /v1/directives
+:path: /v1/directives
+User-Agent: {{User-Agent_string}}
 Authorization: Bearer {{ClovaAccessToken}}
 ```
 
@@ -115,10 +116,15 @@ Authorization: Bearer {{ClovaAccessToken}}
   <p><strong>Note!</strong></p>
   <ul>
     <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
+    <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString"></a>를 참조합니다.</li>
     <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
   </ul>
 </div>
 
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>Downchannel을 구성하지 않으면 CIC로 <a href="#SendEvent">이벤트 메시지를 전송</a>할 수 없습니다.</p>
+</div>
 
 ### 인증하기 {#Authorization}
 클라이언트가 CIC에 요청을 보낼 때 [Clova access token](#CreateClovaAccessToken)을 함께 전달해야 합니다. 아래와 같이 헤더의 Authorization 필드에 Clova access token의 타입과 값을 공백 문자(space)로 구분하여 입력해야 합니다. 자세한 설명은 [CIC API](/CIC/References/CIC_API.md)를 참조합니다.
@@ -128,7 +134,8 @@ Authorization: Bearer {{ClovaAccessToken}}
 ```
 :method: {{GET|POST}}
 :scheme: https
-:path = {{/v1/events|/v1/directives}}
+:path: {{/v1/events|/v1/directives}}
+User-Agent: {{User-Agent_string}}
 Authorization: Bearer {{ClovaAccessToken}}
 ```
 
@@ -160,7 +167,8 @@ CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1
   <pre><code>:method = GET
 :scheme = https
 :path = /ping
-Authorization = Bearer {{YOUR_ACCESS_TOKEN}}
+User-Agent: [User-Agent_string]
+Authorization: Bearer [YOUR_ACCESS_TOKEN]
 </code></pre>
 </div>
 

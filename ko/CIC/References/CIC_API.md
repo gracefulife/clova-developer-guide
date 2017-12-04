@@ -33,8 +33,9 @@ CIC API의 base URL은 다음과 같습니다.
 :method = POST
 :scheme = https
 :path = /v1/events
-authorization = Bearer {{clova-access-token}}
-Content-Type = multipart/form-data; boundary=this-is-boundary-text
+User-Agent: {{User-Agent_string}}
+Authorization: Bearer {{clova-access-token}}
+Content-Type: multipart/form-data; boundary=this-is-boundary-text
 
 --this-is-boundary-text
 [ Message Header ]
@@ -78,7 +79,7 @@ Content-Type: application/octet-stream
 ```
 HTTP/2 {{HTTP STATUS CODE}}
 Content-Type: multipart/related; boundary=this-is-boundary-text;
-date: {{DATETIME}}
+Date: {{DATETIME}}
 
 --this-is-boundary-text
 [ Message Header ]
@@ -118,6 +119,11 @@ Content-Type: application/octet-stream
 ## Downchannel 구성 {#EstablishDownchannel}
 클라이언트는 제일 먼저 CIC와 downchannel을 구성해야 합니다. Downchannel은 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내지는 지시 메시지를 수신할 때 사용됩니다. Downchannel을 구성하는 방법에 대한 자세한 내용은 [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#CreateConnection)를 참조합니다.
 
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>Downchannel을 구성하지 않으면 CIC로 <a href="#SendEvent">이벤트 메시지를 전송</a>할 수 없습니다.</p>
+</div>
+
 ```
 GET /v1/directives
 ```
@@ -126,12 +132,14 @@ GET /v1/directives
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Authorization  | <p>획득한 Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre> |
+| Authorization  | <p>획득한 Clova access token을 입력합니다.</p><pre><code>Bearer [Clova access token]</code></pre> |
+| User-Agent     | <p><a href="/CIC/Guides/Interact_with_CIC.html#UserAgentString">User agent string</a>을 입력합니다.</p><pre><code>User-Agent: [User-Agent string]</code></pre>  |
 
 ### Request example
 
 <pre><code>GET /v1/directives HTTP/2
 Host: {{ book.CICBaseURL }}
+User-Agent: MyOrganizationName/MyAppName/2.1.2-release (Android 7.0;SettopBox;target=KR;other=sample)
 Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 </code></pre>
 
@@ -139,7 +147,7 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
+| Content-Type    | <p><a href="#MultipartMessage">Multipart 메시지</a> 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
@@ -156,9 +164,9 @@ CIC는 HTTP 응답으로 클라이언트에게 [Clova.Hello](/CIC/References/CIC
 | 상태 코드       | 설명                     |
 |---------------|-------------------------|
 | 200 OK                    | Downchannel이 정상적으로 연결 및 설정되었을 때 반환되는 상태 코드입니다. 이후 CIC 주도(Cloud-initiated) 지시 메시지가 수신될 것입니다.        |
-| 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                       |
-| 401 Unauthorized          | 사용자 인증에 실패한 경우 발생하는 오류입니다. access token이 유효한지 확인해야 합니다. |
-| 500 Internal Server Error | 서버 내부 오류입니다.                                                      |
+| 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                                                                       |
+| 401 Unauthorized          | 사용자 인증에 실패한 경우 발생하는 오류입니다. 이 경우 [사용자 인증](#CreateClovaAccessToken)을 다시 시도해야합니다.                       |
+| 500 Internal Server Error | 서버 내부 오류입니다.                                                                                                      |
 
 ### Response example
 
@@ -220,8 +228,9 @@ POST /v1/events
 
 | Request header  | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Authorization   | <p>획득한 Clova access token:</p><pre><code>Bearer [Clova access token]</code></pre>  |
-| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
+| Authorization   | <p>획득한 Clova access token을 입력합니다.</p><pre><code>Bearer [Clova access token]</code></pre> |
+| Content-Type    | <p><a href="#MultipartMessage">Multipart 메시지</a> 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
+| User-Agent      | <p><a href="/CIC/Guides/Interact_with_CIC.html#UserAgentString">User agent string</a>을 입력합니다.</p><pre><code>User-Agent: [User-Agent string]</code></pre>  |
 
 ### Request message header
 
@@ -238,6 +247,7 @@ POST /v1/events
 <pre><code>POST /v1/events HTTP/2
 Host: {{ book.CICBaseURL }}
 Accept: */*
+User-Agent: MyOrganizationName/MyAppName/2.1.2-release (Android 7.0;SettopBox;target=KR;other=sample)
 Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 > Content-Length: 456
 > Content-Type: multipart/form-data; boundary=920d6335ba920d6337a319f
@@ -284,7 +294,7 @@ Content-Type: application/octet-stream
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>[Multipart 메시지](#MultipartMessage) 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
+| Content-Type    | <p><a href="#MultipartMessage">Multipart 메시지</a> 타입 및 경계 문구 선언:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
@@ -292,7 +302,7 @@ Content-Type: application/octet-stream
 |-------------------------|--------------------------------------------------------------------|
 | Content-Disposition     | 메시지 처리 유형 명시                                                   |
 | Content-Id              | 메시지 식별자<ul><li>UUID 형태</li><li>클라이언트는 지시 메시지의 <code>payload</code> 필드에 포함된 <code>cid:[UUID]</code> 값으로 처리해야 할 메시지를 식별할 수 있습니다.</li></ul> |
-| content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul>  |
+| content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul>                     |
 
 ### Response message
 CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세한 [지시 메시지](#Directive)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 보냅니다. 지시 메시지에 어떤 정보를 담겼는지는 CIC가 내려준 지시 메시지에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
@@ -303,9 +313,10 @@ CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세�
 |---------------|-------------------------|
 | 200 OK                    | 클라이언트가 보낸 이벤트 메시지를 CIC가 정상적으로 수신했고, 클라이언트가 수행해야 할 지시 메시지가 1개 이상 응답에 포함되어 있을 경우 이 상태 코드가 반환됩니다. |
 | 204 No Content            | 클라이언트가 보낸 이벤트 메시지를 CIC가 정상적으로 수신했고, 클라이언트가 수행해야 할 지시 메시지가 없는 경우 이 상태 코드가 반환됩니다.                    |
-| 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 이 상태 코드가 반환됩니다.                   |
-| 401 Unauthorized          | 사용자 인증에 실패한 경우 이 상태 코드가 반환됩니다. access token이 유효한지 확인해야 합니다. |
-| 500 Internal Server Error | 서버 내부 오류일 경우 이 상태 코드가 반환됩니다.                                  |
+| 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 이 상태 코드가 반환됩니다.                                                                        |
+| 401 Unauthorized          | 사용자 인증에 실패한 경우 이 상태 코드가 반환됩니다. 이 경우 [사용자 인증](#CreateClovaAccessToken)을 다시 시도해야합니다.                        |
+| 412 Precondition Failed   | 사용자 요청을 전송하기 위해 필요한 사전 조건(pre-condition)이 만족되지 않은 상황입니다. 주로 클라이언트가 [Downchannel을 구성](#EstablishDownchannel)하지 않은 경우 발생합니다.  |
+| 500 Internal Server Error | 서버 내부 오류일 경우 이 상태 코드가 반환됩니다.                                                                                       |
 
 ### Response example
 
@@ -430,7 +441,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `context`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: 알람/타이머 상태 정보</li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: 기기의 디스플레이 정보</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: 기기 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: 스피커 정보</li></ul> | 필수 |
+| `context`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: 알람 또는 타이머 상태 정보</li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: 기기의 디스플레이 정보</li><li><a href="/CIC/References/Context_Objects.html#FreetalkState"><code>Clova.FreetalkState</code></a>: 대화 모드(Freetalk mode) 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: 기기 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: 스피커 정보</li></ul> | 필수 |
 | `event`                        | object       | 이벤트 메시지의 헤더와 필요한 데이터(payload)를 가지고 있는 객체                                                                 | 필수 |
 | `event.header`                 | object       | 이벤트 메시지의 헤더                                                                                                 | 필수 |
 | `event.header.dialogRequestId` | string       | 대화 ID(Dialog ID). 클라이언트는 [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)와 [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) 이벤트 메시지를 전송할 때 반드시 [대화 ID](/CIC/CIC_Overview.md#DialogIDandClientOP)를 생성하여 이 필드에 입력해야 합니다.| 선택 |
@@ -475,7 +486,12 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 * [인터페이스](#CICInterface)
 
 ### 지시 메시지(Directive) {#Directive}
-지시 메시지는 클라이언트가 요청한 이벤트 메시지에 응답을 하거나 특정 조건에 의해 클라이언트로 정보를 전달할 때 사용됩니다. 이 지시 메시지는 주로 사용자의 음성이 인식된 후 그 의도를 클라이언트가 수행하도록 요청하기 위해 전달됩니다.
+지시 메시지는 클라이언트가 요청한 이벤트 메시지에 응답을 하거나 특정 조건에 의해 클라이언트로 정보를 전달할 때 사용됩니다. 이 지시 메시지는 주로 사용자의 음성이 인식된 후 그 의도를 클라이언트가 수행하도록 요청하기 위해 전달됩니다. 클라이언트는 지시 메시지에 담긴 의도에 맞게 결과를 사용자에게 제공하거나 작업을 처리해야 합니다.
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>클라이언트가 지원하지 않기로 결정한 지시 메시지나 알 수 없는 지시 메시지를 수신한 경우 해당 지시 메시지를 무시해야 합니다. 특히 주의해야 할 점은 클라이언트는 CIC로부터 multipart 메시지 형태로 한 번에 여러 개의 지시 메시지를 수신할 수 있는데 이때 지원하지 않거나 알 수 없는 지시 메시지가 포함되어 있으면 해당 지시 메시지만 무시해야 합니다.</p>
+</div>
 
 #### Message structure
 {% raw %}
@@ -570,9 +586,9 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 
 | 오류 코드 | 설명                             |
 |---------|---------------------------------|
-| 400     | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                       |
-| 401     | 사용자 인증에 실패한 경우 발생하는 오류입니다. access token이 유효한지 확인해야 합니다. |
-| 500     | 서버 내부 오류입니다.                                                      |
+| 400     | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                                                 |
+| 401     | 사용자 인증에 실패한 경우 발생하는 오류입니다. 이 경우 [사용자 인증](#CreateClovaAccessToken)을 다시 시도해야합니다. |
+| 500     | 서버 내부 오류입니다.                                                                                |
 
 <div class="note">
   <p><strong>Note!</strong></p>

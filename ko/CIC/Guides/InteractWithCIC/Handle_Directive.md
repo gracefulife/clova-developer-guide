@@ -46,3 +46,8 @@ Content-Type: application/octet-stream<br />
 </ul>
 </li>
 </ol>
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>클라이언트가 지원하지 않기로 결정한 지시 메시지나 알 수 없는 지시 메시지를 수신한 경우 해당 지시 메시지를 무시해야 합니다. 특히 주의해야 할 점은 클라이언트는 CIC로부터 multipart 메시지 형태로 한 번에 여러 개의 지시 메시지를 수신할 수 있는데 이때 지원하지 않거나 알 수 없는 지시 메시지가 포함되어 있으면 해당 지시 메시지만 무시해야 합니다.</p>
+</div>

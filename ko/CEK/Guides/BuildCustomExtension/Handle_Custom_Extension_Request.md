@@ -71,7 +71,7 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
 
-[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 미리 정의해 둔 [interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 따라 CEK로부터 요청 메시지를 받습니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
+[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 CEK가 미리 정의해 둔 [interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 따라 사용자의 요청을 extension에 전달할 때 사용됩니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
 
 IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 `request.intent` 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -142,7 +142,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 [`SessionEndedRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest)은 사용자가 특정 모드나 특정 custom extension의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. "종료", "종료해줘", "그만" 등과 같은 명령을 사용자가 내린 경우 클라이언트는 extension 사용을 중지하며, CEK는 대화 서비스를 제공하는 extension에게 `SessionEndedRequest` 타입 요청을 전달합니다. 단, 대화 모드(Freetalk mode)의 경우 "See you later"와 같은 영문 표현으로 extension 사용이 중단됩니다.
 
-`SessionEndedReqeust` 타입 메시지는 `request.type` 필드에 `"EndRequest"`라는 값을 가지며 `LaunchRequest` 타입과 마찬가지로 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 서비스 제공을 종료하고 사용자에게 사용 종료 상황의 인사 정도를 [응답 메시지](#ReturnCustomExtensionResponse)로 보내면 됩니다.
+`SessionEndedReqeust` 타입 메시지는 `request.type` 필드에 `"SessionEndedRequest"`라는 값을 가지며 `LaunchRequest` 타입과 마찬가지로 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 서비스 제공을 종료하고 사용자에게 사용 종료 상황의 인사 정도를 [응답 메시지](#ReturnCustomExtensionResponse)로 보내면 됩니다.
 
 다음은 `SessionEndedRequest` 타입의 요청 메시지 예입니다.
 
@@ -181,7 +181,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
     }
   },
   "request": {
-    "type": "EndRequest"
+    "type": "SessionEndedRequest"
   }
 }
 ```

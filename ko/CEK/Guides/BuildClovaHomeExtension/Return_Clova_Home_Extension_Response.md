@@ -2,7 +2,7 @@
 
 Clova Home extension 개발자는 처리 결과를 CEK에게 돌려줘야 합니다(HTTPS Response). Clova Home extension 응답은 다음과 같은 특징이 있습니다.
 
-* 기기의 상태 정보를 요청한 경우 IoT 서비스에서 기기의 상태 정보를 가져오기 때문에 기기의 실제 현재 상태와 차이가 있을 수 있습니다.
+* 기기의 상태 정보를 요청한 경우 IoT 서비스에서 기기의 상태 정보를 가져오기 때문에 기기의 실제 현재 상태와 다를 수 있습니다.
 * 기기 제어를 요청한 경우 기기의 최종 상태 변화를 결과로 전달하지 않으며, IoT 서비스에 사용자의 요청이 제대로 전달되었는지 확인하는 정도의 응답을 전달합니다.
 * 요청이 정상적으로 처리된 경우 다음과 같이 항상 [Clova Home extension 요청](#HandleClovaHomeExtensionRequest)에 대응되는 [인터페이스](/CEK/References/CEK_API.md#ClovaHomeExtInterface)를 사용하여 응답해야 합니다.
 
