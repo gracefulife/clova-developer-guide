@@ -19,7 +19,7 @@ Extension을 등록하는 과정에서 가장 먼저 할 일은 등록할 extens
 
 <ol>
   <li><strong>타입</strong> 항목에서 등록할 extension의 타입을 선택합니다. Extension 타입을 선택하면 그에 해당하는 입력 필드가 추가로 나타납니다.</li>
-  <li><strong>사용 언어</strong> 항목에서 extension에서 사용할 언어를 선택합니다. 현재 **한국어**만 지원하고 있습니다.</li>
+  <li><strong>사용 언어</strong> 항목에서 extension에서 사용할 언어를 선택합니다. 현재 <strong>한국어</strong>만 지원하고 있습니다.</li>
   <li>Extension의 ID, 이름, 호출 이름에 해당하는 정보를 다음 항목에 입력합니다.
     <ol>
       <li><strong>익스텐션 아이디</strong>: Extension의 고유 ID입니다. Reversed FQDN 형식으로 입력합니다. (예: com.yourdomain.extension.weathernotifier)</li>

@@ -2,6 +2,22 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2017-12-04
+
+### 문서 변경 사항
+
+* Design
+  - [오디오 재생 규칙(audio interruption rule)](/Design/DesignGuidelineForClientHardware.md#AudioInterruptionRule)을 [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)에 추가
+  - [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)에 사용된 이미지 개선
+
+* CIC
+  - [CIC 연동하기](/CIC/Guides/Interact_with_CIC.md)의 사전 준비사항에 [User-Agent string](/CIC/Guides/Interact_with_CIC.md#UserAgentString)을 추가
+  - [CIC API 레퍼런스](/CIC/References/CIC_API.md)>의 [이벤트 메시지 전송](/CIC/References/CIC_API.md#SendEvent) 절에 412 Precondition Failed 상태 코드 설명 추가
+
+* CEK
+  - 사용자 multi-turn 대화를 위해 reprompt 필드 설명을 [응답 메시지](/CEK/References/CEK_API.md#CustomExtResponseMessage)에 추가
+  - 일부 문서 오류 수정
+
 ## 2017-11-20
 
 ### 플랫폼 변경 사항

@@ -1,6 +1,6 @@
 ## Multi-turn 대화 수행하기 {#DoMultiturnDialog}
 
-CEK로부터 전달받은 사용자 요청 정보([`IntentRequest`](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest))가 custom extension이 서비스를 제공하거나 동작을 수행하기에 부족할 수도 있습니다. 이 경우 custom extension은 사용자에게 부족한 정보를 추가로 받기 위해 multi-turn 대화를 수행할 수 있습니다.
+CEK로부터 전달받은 사용자 요청 정보([`IntentRequest`](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest))가 custom extension이 서비스를 제공하거나 동작을 수행하기에 부족할 수도 있습니다. 또는 Single-turn 형태의 대화로 사용자의 요청을 한번에 받기 어려울 수 있습니다. 이 경우 custom extension은 사용자에게 부족한 정보를 추가로 받기 위해 multi-turn 대화를 수행할 수 있습니다.
 
 예를 들면, 사용자가 "페퍼로니 피자 주문해줘"라고 했고 CEK에서 아래와 같은 요청 메시지를 보냈다고 가정해 봅니다.
 
@@ -46,7 +46,7 @@ Custom extension에서 피자 종류뿐만 아니라 주문 수량 정보가 추
   "version": "0.1.0",
   "sessionAttributes": {
     "intent": "OrderPizza",
-    "pizzaType": "페퍼로니"
+    "pizzaType": "pepperoni"
   },
   "response": {
     "outputSpeech": {

@@ -1,5 +1,5 @@
 ## Custom extension 응답 반환하기 {#ReturnCustomExtensionResponse}
-[요청 메시지를 처리](#HandleCustomExtensionRequest)하고 나면 다시 CEK로 [응답 메시지](/CEK/References/CEK_API.md#CustomExtResponseMessage)를 돌려줘야 합니다(HTTPS Response). 요청 메시지의 타입에 따라 응답해야 하는 내용이 달라질 수 있지만 응답 메시지의 구조는 크게 차이가 없습니다. 다음은 LaunchRequest 타입 요청("영어 대화하자"라는 사용자 요청)을 처리하고 보낸 응답 메시지입니다.
+[요청 메시지를 처리](#HandleCustomExtensionRequest)하고 나면 다시 CEK로 [응답 메시지](/CEK/References/CEK_API.md#CustomExtResponseMessage)를 돌려줘야 합니다(HTTPS Response). 요청 메시지의 타입에 따라 응답해야 하는 내용이 달라질 수 있지만 응답 메시지의 구조는 크게 다르지 않습니다. 다음은 LaunchRequest 타입 요청("영어 대화하자"라는 사용자 요청)을 처리하고 보낸 응답 메시지입니다.
 
 {% raw %}
 ```json

@@ -8,7 +8,7 @@
 
 ## Design
 * [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)
-* Extension 디자인 가이드라인(추가 예정)
+* [Extension 디자인 가이드라인(추가 예정)]()
 
 ## Clova Interface Connect
 
@@ -18,6 +18,9 @@
   * [대화 모델](/CIC/CIC_Overview.md#DialogModel)
 * [CIC 연동하기](/CIC/Guides/Interact_with_CIC.md)
   * [사전 준비사항](/CIC/Guides/Interact_with_CIC.md#Preparation)
+    * [HTTP/2 라이브러리](/CIC/Guides/Interact_with_CIC.md#RequiredLibrary)
+    * [User-Agent string](/CIC/Guides/Interact_with_CIC.md#UserAgentString)
+    * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
   * [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
     * [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
     * [연결하기](/CIC/Guides/Interact_with_CIC.md#CreateConnection)
