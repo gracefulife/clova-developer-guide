@@ -23,4 +23,4 @@
 ```
 {% endraw %}
 
-요청 받은 메시지를 분석하여 IoT 서비스가 제공하는 URI로 사용자의 IoT 기기 제어 요청을 전달하면 됩니다. 이때 함께 전달받은 access token을 사용하여 요청합니다. 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnClovaHomeExtensionResponse)를 보내면 됩니다.
+요청 받은 메시지를 분석하여 IoT 서비스가 제공하는 URI로 사용자의 IoT 기기 제어 요청을 전달하면 됩니다. 이때 함께 전달받은 access token을 사용하여 요청합니다.

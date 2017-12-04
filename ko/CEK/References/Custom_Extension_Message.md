@@ -201,7 +201,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
     }
   },
   "request": {
-    "type": "EndRequest"
+    "type": "SessionEndedRequest"
   }
 }
 ```
@@ -278,14 +278,14 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 {% raw %}
 ```json
 {
-  "type": "EndRequest"
+  "type": "SessionEndedRequest"
 }
 ```
 {% endraw %}
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `type`          | string  | 요청 메시지의 타입. `"EndRequest"` 값으로 고정됩니다. | 필수 |
+| `type`          | string  | 요청 메시지의 타입. `"SessionEndedRequest"` 값으로 고정됩니다. | 필수 |
 
 ### 응답 메시지 {#CustomExtResponseMessage}
 Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 합니다(HTTPS Response). 여기에서는 응답 메시지의 구조와 각 필드에 대해 설명합니다.
@@ -307,13 +307,24 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
       }
     ],
     "outputSpeech": {
+      "type": {{string}},
+      "values": {{SpeechInfoObject|SpeechInfoObject array}},
+      "brief": {{SpeechInfoObject}},
+      "verbose": {
+        "type": {{string}},
+        "values": {{SpeechInfoObject|SpeechInfoObject array}},
+      }
+    },
+    "reprompt": {
+      "outputSpeech": {
+        "type": {{string}},
+        "values": {{SpeechInfoObject|SpeechInfoObject array}},
+        "brief": {{SpeechInfoObject}},
+        "verbose": {
           "type": {{string}},
           "values": {{SpeechInfoObject|SpeechInfoObject array}},
-          "brief": {{SpeechInfoObject}},
-          "verbose": {
-            "type": {{string}},
-            "values": {{SpeechInfoObject|SpeechInfoObject array}},
-          }
+        }
+      }
     },
     "shouldEndSession": {{boolean}},
   },
@@ -336,12 +347,20 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 | `response.directives[].payload`          | object       | 지시 메시지와 관련된 정보를 담고 있는 객체. 지시 메시지에 따라 payload 객체의 구성과 필드 값을 달리 작성할 수 있습니다.         | 필수 |
 | `response.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달됩니다.              | 필수 |
 | `response.outputSpeech.brief`            | [SpeechInfoObject](#CustomExtSpeechInfoObject) | 출력할 요약 음성 정보                    | 선택 |
-| `response.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech": 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li><li><code>"SpeechSet"</code>: 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
+| `response.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li><code>"SimpleSpeech"</code>: 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li><li><code>"SpeechSet"</code>: 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
 | `response.outputSpeech.values`           | [SpeechInfoObject](#CustomExtSpeechInfoObject) or [SpeechInfoObject](#CustomExtSpeechInfoObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
 | `response.outputSpeech.verbose`          | object       | 스크린이 없는 클라이언트 기기에 전달할 때 사용되며, 상세 음성 정보를 가집니다. | 선택 |
 | `response.outputSpeech.verbose.type`     | string       | 출력할 음성 정보의 타입. 단문과 복문 형태의 음성 정보만 입력할 수 있습니다. <ul><li><code>"SimpleSpeech"</code>: 단문 형태의 음성 정보입니다. 가장 기본적인 음성 정보를 전달할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li></ul> | 필수 |
 | `response.outputSpeech.verbose.values`           | [SpeechInfoObject](#CustomExtSpeechInfoObject) or [SpeechInfoObject](#CustomExtSpeechInfoObject) array | 클라이언트 기기에서 출력할 상세 음성 정보를 담고 있는 객체 또는 객체 배열 | 필수 |
-| `response.shouldEndSession`              | boolean      | 세션 종료 플래그. 클라이언트에게 특정 extension 사용이 종료됨을 알리는 필드입니다. [`SessionEndedRequest`](#CustomExtSessionEndedRequest) 타입의 요청 메시지를 받기 전에 extension이 먼저 사용 종료를 알릴 때 사용합니다.<ul><li>true: 사용 종료</li><li>false: 계속 사용</li></ul> | 필수 |
+| `response.reprompt`                               | obejct       | 사용자 추가 발화를 독려하는 음성 정보를 담고 있는 객체. `response. reprompt` 필드를 사용하면 사용자에게 multi-turn 대화를 계속 이어갈지 의사를 묻거나 또는 필수적인 정보를 추가로 입력하도록 독려할 수 있습니다. 일반적으로 Multi-turn 대화를 할 때 사용자가 추가 발화를 하지 않으면 입력 대기 시간이 초과되어 multi-turn 대화가 자동 종료됩니다. 하지만, `response.reprompt` 필드를 사용하면 Clova는 클라이언트가 입력 대기 시간이 초과된 이후에 `response.reprompt` 필드에 작성한 음성을 출력하고 한 번 더 사용자의 추가 발화를 입력 받도록 [`SpeechSynthesizer.Speak`](/ko/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) 지시 메시지와 [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) 지시 메시지를 클라이언트에게 전달합니다.<div class="note"><p><strong>Note!</strong></p><p><code>response.reprompt</code> 필드는 <code>response.shouldEndSession</code> 필드 값을 <code>false</code>로 입력했을 때 유효합니다. 주로 단문 형태의 음성 정보(<code>"SimpleSpeech"</code>)를 보낼 것을 권장하며, <code>response.reprompt</code> 필드를 사용하면 입력 대기 시간을 최대 1회 연장할 수 있습니다.</p></div> | 선택 |
+| `response.reprompt.outputSpeech`                  | object       | 음성으로 합성할 정보를 담고 있는 객체. 합성된 음성 정보는 CIC를 거쳐 클라이언트로 전달됩니다.              | 필수 |
+| `response.reprompt.outputSpeech.brief`            | [SpeechInfoObject](#CustomExtSpeechInfoObject) | 출력할 요약 음성 정보                    | 선택 |
+| `response.reprompt.outputSpeech.type`             | string       | 출력할 음성 정보의 타입. <ul><li>"SimpleSpeech": 단문 형태의 음성 정보입니다. 가장 기본적인 타입이며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li><li><code>"SpeechSet"</code>: 복합 형태의 음성 정보입니다. 스크린이 없는 클라이언트 기기에 요약 음성 정보와 상세 음성 정보를 전달할 때 사용합니다. 이 값을 지정한 경우 <code>response.outputSpeech.values</code> 필드 대신 <code>response.outputSpeech.brief</code>와 <code>response.outputSpeech.verbose</code> 필드를 가져야 합니다.</li></ul> | 필수 |
+| `response.reprompt.outputSpeech.values`           | [SpeechInfoObject](#CustomExtSpeechInfoObject) or [SpeechInfoObject](#CustomExtSpeechInfoObject) array | 클라이언트 기기에서 출력할 음성 정보를 담고 있는 객체 또는 객체 배열 | 선택 |
+| `response.reprompt.outputSpeech.verbose`          | object       | 스크린이 없는 클라이언트 기기에 전달할 때 사용되며, 상세 음성 정보를 가집니다. | 선택 |
+| `response.reprompt.outputSpeech.verbose.type`     | string       | 출력할 음성 정보의 타입. 단문과 복문 형태의 음성 정보만 입력할 수 있습니다. <ul><li><code>"SimpleSpeech"</code>: 단문 형태의 음성 정보입니다. 가장 기본적인 음성 정보를 전달할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체를 가져야 합니다.</li><li><code>"SpeechList"</code>: 복문 형태의 음성 정보입니다. 여러 문장을 출력할 때 사용되며, 이 값을 지정한 경우 <code>response.outputSpeech.verbose.values</code> 필드가 <a href="#CustomExtSpeechInfoObject"><code>SpeechInfoObject</code></a> 객체 배열을 가져야 합니다.</li></ul> | 필수 |
+| `response.reprompt.outputSpeech.verbose.values`           | [SpeechInfoObject](#CustomExtSpeechInfoObject) or [SpeechInfoObject](#CustomExtSpeechInfoObject) array | 클라이언트 기기에서 출력할 상세 음성 정보를 담고 있는 객체 또는 객체 배열 | 필수 |
+| `response.shouldEndSession`              | boolean      | 세션 종료 플래그. 클라이언트에게 특정 extension 사용이 종료됨을 알리는 필드입니다. [`SessionEndedRequest`](#CustomExtSessionEndedRequest) 타입의 요청 메시지를 받기 전에 extension이 먼저 사용 종료를 알릴 때 사용합니다.<ul><li>true: 사용 종료</li><li>false: 계속 사용. 사용자와 multi-turn 대화를 시도하게 됩니다.</li></ul> | 필수 |
 | `sessionAttributes`                      | object       | 사용자와의 multi-turn 대화를 위해 필요한 정보를 저장할 때 사용하는 객체. Custom extension은 `sessionAttributes` 필드를 이용해 중간 정보를 CEK에 전달하게 되며, 사용자의 추가 요청을 수신할 때 다시 해당 정보를 [요청 메시지](#CustomExtRequestMessage)의 `session.sessionAttributes` 필드로 받게 됩니다. `sessionAttributes` 객체는 키(key)-값(value)의 쌍으로 구성해야 하며, custom extension을 구현할 때 임의로 정의할 수 있습니다. 저장할 값이 없으면 빈 객체를 입력하면 됩니다. | 필수 |
 | `version`                                | string       | 메시지 포맷의 버전 (CEK 버전)                        | 필수 |
 
@@ -353,7 +372,7 @@ Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 
 #### SpeechInfoObject {#CustomExtSpeechInfoObject}
 SpeechInfoObject 객체는 응답 메시지의 `response.outputSpeech`에서 재사용되는 객체이며, 사용자에게 출력하려는 음성 정보의 가장 작은 단위인 단문 수준의 발화 정보입니다. 이 객체는 다음과 같은 필드를 가집니다.
 
-| 필드 이름        | 자료형         | 설명                                                                | 필수 |
+| 필드 이름        | 자료형         | 설명                                                                | 필수 여부 |
 |----------------|--------------|--------------------------------------------------------------------|-----|
 | `lang`           | string       | 음성 합성을 할 때 사용할 언어의 코드. 현재 다음과 같은 값을 가집니다.<ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>""</code>: <code>type</code> 필드의 값이 <code>"URL"</code>이면 이 필드는 빈 문자열(empty string)을 가집니다.</li></ul>         | 필수 |
 | `type`           | string       | 재생할 음성의 타입. 이 필드의 값에 따라 `value` 필드 값의 형태가 달라집니다. 현재는 다음과 같은 값을 가집니다.<ul><li><code>"PlainText"</code>: 일반 텍스트</li><li><code>"URL"</code>: 음성 및 음악을 재생할 수 있는 파일의 URI</li></ul>            | 필수 |
@@ -460,6 +479,37 @@ SpeechInfoObject 객체는 응답 메시지의 `response.outputSpeech`에서 재
     },
     "card": {},
     "directives": [],
+    "shouldEndSession": false
+  }
+}
+
+// 예제 5: multi-turn 대화에서 사용자 추가 발화 독려 - reprompt 사용
+{
+  "version": "0.1.0",
+  "sessionAttributes": {
+    "RequestedIntent": "OrderPizza",
+    "pizzaType": "페퍼로니 피자"
+  },
+  "response": {
+    "outputSpeech": {
+      "type": "SimpleSpeech",
+      "values": {
+          "type": "PlainText",
+          "lang": "ko",
+          "value": "몇 판 주문할까요?"
+      }
+    },
+    "card": {},
+    "reprompt" : {
+      "outputSpeech" : {
+        "type" : "SimpleSpeech",
+        "values" : {
+          "type" : "PlainText",
+          "lang" : "ko",
+          "value" : "말씀이 없으시면, 주문을 취소할까요?"
+        }
+      }
+    },
     "shouldEndSession": false
   }
 }

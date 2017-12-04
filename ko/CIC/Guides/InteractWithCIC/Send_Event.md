@@ -10,8 +10,9 @@
 <pre><code>:method = POST
 :scheme = https
 :path = /v1/events
-Authorization = Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
-content-type = multipart/form-data; boundary=Boundary-Text
+User-Agent: MyOrganizationName/MyAppName/2.1.2-release (Android 7.0;SettopBox;target=KR;other=sample)
+Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
+Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
 <li><p>이벤트 메시지에 포함시킬 <a href="/CIC/CIC_Overview.html#DialogModel">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</p></li>
