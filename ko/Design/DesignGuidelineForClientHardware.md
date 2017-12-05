@@ -93,8 +93,8 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 다음은 Wave 기기의 조명 색상 적용 사례입니다.
 
-| Green       | YellowGreen               | Red         | warmWhite   |
-|-------------|-------------|-------------|-------------|-------------|
+| Green       | YellowGreen | Red         | warmWhite   |
+|-------------|-------------|-------------|-------------|
 | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Green.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_YellowGreen.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Red.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_warmWhite.png) |
 
 ### 조명 효과 {#LightEffect}
@@ -239,7 +239,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 클라이언트의 [상태](#ClientState) 표현을 위해 다음과 같은 효과음을 제공해야 합니다.
 
 | 상태 설명                   | 효과음 샘플                     | 필수 여부 |
-|---------------------------|---------|------------------------------|---------|
+|---------------------------|------------------------------|---------|
 | Attending 상태 진입         | <audio title="Attending" controls><source src="./Resources/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | 필수     |
 | Error 상태 진입             | <audio title="Error" controls><source src="/Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>     | 필수     |
 | Mute on 상태 진입           | <audio title="Mute on" controls><source src="/Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>   | 필수     |
