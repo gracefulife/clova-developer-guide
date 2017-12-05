@@ -21,7 +21,7 @@ GET|POST /authorize
 | Request header | 값                                                                 |
 |----------------|--------------------------------------------------------------------|
 | Accept         | `application/json`                                                 |
-| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken">획득한 {{ book.TargetServiceForClientAuth }} access token</a>을 입력:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken">획득한 NAVER access token</a>을 입력:</p><p><pre><code>Bearer [NAVER access token]</code></pre></p>  |
 
 ### Query parameter
 
@@ -64,7 +64,7 @@ GET|POST /authorize
 |---------------|-------------------------|
 | 200 OK           | 요청 처리 성공 시 받는 응답                      |
 | 400 Bad Request  | `client_id` 필드와 같이 필수 파라미터를 입력하지 않거나 유효하지 않은 데이터를 파라미터로 입력한 경우 받는 응답 |
-| 403 Forbidden    | 헤더에 포함된 {{ book.TargetServiceForClientAuth }} access token이 유효하지 않은 경우 받는 응답 |
+| 403 Forbidden    | 헤더에 포함된 NAVER access token이 유효하지 않은 경우 받는 응답 |
 | 451 Unavailable For Legal Reasons | 사용자가 이용 약관을 동의하지 않은 경우 받는 응답. 클라이언트는 이 응답을 받으면 `redirect_uri` 필드에 있는 주소로 이동하여 웹 페이지를 표시해야 합니다. 해당 URI는 사용자에게 서비스 이용 약관에 대해 동의를 받는 페이지입니다.  |
 | 500 Server Internal Error | 서버 내부 오류로 인한 authorization code 발급 실패 시 받는 응답 |
 

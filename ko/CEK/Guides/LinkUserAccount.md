@@ -81,7 +81,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 | `client_id`     | Clova가 외부 서비스의 access token을 발급 받기 위해 사용할 ID. 개발자는 Clova Developer Console을 통해 미리 `cliend_id`를 등록해둬야 합니다. |
 | `response_type` | OAuth 2.0 인가 타입(`"code"` 또는 `"token"`)을 정의해 둔 파라미터. 높은 보안이 필요한 경우 `"code"` 타입을 사용합니다. Clova Home extension은 항상 `"code"` 타입을 사용합니다. Clova Developer Console을 통해 미리 `reponse_type`을 등록해둬야 합니다. |
 | `scope`         | OAuth의 `scope` 필드. 접근 수준을 정의할 수 있습니다. Clova Developer Console을 통해 미리 `scope`를 등록해둬야 합니다. |
-| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
+| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) 중에서 확인할 수 있으며, 현재 `https://prod-ni-cic.clova.ai/v1/al/token/`을 사용하고 있습니다. |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -94,7 +94,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
                             &client_id=clova-extension
                             &scope=listen_music%20basic_profile
                             &response_type=code
-                            &redirect_uri={{ book.RedirectURLforAccountLinking }}
+                            &redirect_uri=https://prod-ni-cic.clova.ai/v1/al/token/
 </code></pre>
 
 
@@ -117,12 +117,12 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 다음은 사용자의 계정 인증이 완료된 후 이동할 redirect URL 예입니다.
 
 <pre><code>// 예제 1: Authorization code grant 방식을 사용할 경우
-{{ book.RedirectURLforAccountLinking }}?vendorId=YourServiceOrCompanyID
+https://prod-ni-cic.clova.ai/v1/al/token/?vendorId=YourServiceOrCompanyID
                                 &state=qwer123
                                 &code=nl__eCSTdsdlkjfweyuxXvnl
 
 // 예제 2: Implicit grant 방식을 사용할 경우
-{{ book.RedirectURLforAccountLinking }}?vendorId=YourServiceOrCompanyID
+https://prod-ni-cic.clova.ai/v1/al/token/?vendorId=YourServiceOrCompanyID
                                 &state=qwer123
                                 &access_token=sdfljnFZFEjr1zCsicM
                                 &token_type=Bearer
