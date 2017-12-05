@@ -21,7 +21,7 @@ GET|POST /authorize
 | Request header | 값                                                                 |
 |----------------|--------------------------------------------------------------------|
 | Accept         | `application/json`                                                 |
-| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">획득한 {{ book.TargetServiceForClientAuth }} access token</a>을 입력:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken">획득한 {{ book.TargetServiceForClientAuth }} access token</a>을 입력:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
 
 ### Query parameter
 

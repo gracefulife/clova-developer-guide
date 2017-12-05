@@ -11,17 +11,17 @@
 ### CIC
 [Clova Interface Connect](#CIC)의 약어
 
-### CIC API {#CIC API}
+### CIC API {#CICAPI}
 CIC가 클라이언트에 제공하는 REST API로 클라이언트는 CIC API를 사용하여 Clova와 정보를 교환할 때 사용됩니다.
 
 ### Clova {#Clova}
-[Clova](http://clova.ai)는 NAVER가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
+<a target="_blank" href="http://clova.ai">Clova</a>는 NAVER가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. 3rd party 개발자는 Clova가 가진 기술을 활용하여 인공 지능 서비스를 제공하는 기기 또는 가전 제품을 만들거나 보유하고 있는 콘텐츠나 서비스를 Clova를 통해 사용자에게 제공할 수 있습니다.
 
 ### Clova access token {#ClovaAccessToken}
 클라이언트가 [Clova Interface Connect](#CIC)로 [이벤트 메시지](#Event)를 보낼 때 Clova가 클라이언트를 인증하는 수단입니다. 자세한 내용은 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) 문서를 참조합니다.
 
 ### Clova Developer Console {#ClovaDeveloperConsole}
-Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#ClovaExtension)을 개발하는 개발자에게 다음과 같은 내용을 제공하는 [웹 도구](https://developers.naver.com/console/clova/)입니다.
+Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#ClovaExtension)을 개발하는 개발자에게 다음과 같은 내용을 제공하는 <a target="_blank" href="https://developers.naver.com/console/clova/">웹 도구</a>입니다.
 * 클라이언트 기기 등록 및 클라이언트 인증 정보 제공
 * Clova extension [등록](/DevConsole/Guides/CEK/Register_Extension.md) 및 [배포](/DevConsole/Guides/CEK/Deploy_Extension.md)
 * [Interaction 모델 등록](/DevConsole/Guides/CEK/Define_Interaction_Model.md)
@@ -69,7 +69,7 @@ Downchannel은 클라이언트가 [Clova Interface Connect](#CIC)로부터 지�
 [Clova extension](#ClovaExtension)의 다른 표현
 
 ### HTTP/2 {#HTTP2}
-HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wiki/SPDY)에 기반하고 있으며, 국제 인터넷 표준화 기구(IETF)에서 개발되고 있다. 1997년 RFC 2068로 표준이 된 HTTP 1.1을 개선한 것으로, 2014년 12월 표준안 제안(Proposed Standard)으로 고려되어, 2015년 2월 17일 IESG에서 제안안으로 승인되었다. 2015년 5월, [RFC 7540](https://tools.ietf.org/html/rfc7540)로 공개되었다.
+HTTP 프로토콜의 두 번째 버전이다. <a target="_blank" href="https://en.wikipedia.org/wiki/SPDY">SPDY</a>에 기반하고 있으며, 국제 인터넷 표준화 기구(IETF)에서 개발되고 있다. 1997년 RFC 2068로 표준이 된 HTTP 1.1을 개선한 것으로, 2014년 12월 표준안 제안(Proposed Standard)으로 고려되어, 2015년 2월 17일 IESG에서 제안안으로 승인되었다. 2015년 5월, <a target="_blank" href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>로 공개되었다.
 
 ### Intent {#Intent}
 Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. [Custom extension](#CustomExtension)을 구현하기 전에 먼저 intent의 집합으로 구성된 [interaction 모델](#InteractionModel)을 정의해야 합니다. 자세한 내용은 [Interaction 모델](/DevConsole/Guides/CEK/Define_Interaction_Model.md) 문서를 참조합니다.
@@ -85,7 +85,7 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 사용자가 특정 모드나 특정 [custom extension](#CustomExtension)을 사용하기로 선언한 것을 알리기 위해 보내는 요청 메시지입니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) 문서를 참조합니다.
 
 ### OAuth 2.0
-접근 권한을 위임하기 위한 공개 표준으로 인터넷 사용자가 다른 웹 서비스나 응용 프로그램에 사용자 계정에 접근할 수 있는 권한을 부여하는 규약입니다. Clova 플랫폼에서는 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하거나 사용자가 특정 extension을 사용 시 자신의 [계정을 연결](/CEK/Guides/LinkUserAccount.md)할 때 사용됩니다. 자세한 내용은 [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)를 참고합니다.
+접근 권한을 위임하기 위한 공개 표준으로 인터넷 사용자가 다른 웹 서비스나 응용 프로그램에 사용자 계정에 접근할 수 있는 권한을 부여하는 규약입니다. Clova 플랫폼에서는 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하거나 사용자가 특정 extension을 사용 시 자신의 [계정을 연결](/CEK/Guides/LinkUserAccount.md)할 때 사용됩니다. 자세한 내용은 <a target="_blank" href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>를 참고합니다.
 
 ### SessionEndedRequest {#SessionEndedRequest}
 사용자가 특정 모드나 특정 [custom extension](#CustomExtension)의 사용을 중지하기로 선언한 것을 알리기 위해 사용되며 요청 메시지에 포함됩니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) 문서를 참조합니다.

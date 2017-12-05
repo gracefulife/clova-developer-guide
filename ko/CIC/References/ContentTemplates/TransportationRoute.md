@@ -9,7 +9,7 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>대중 교통 길찾기 템플릿을 표시하려면 NAVER 지도 API에 대한 이해가 필요하며, 템플릿으로 전달된 데이터와 NAVER 지도 API를 이용하여 길찾기 결과를 지도에 표시해야 합니다. 네이버 지도 API에 대한 자세한 설명은 <a href="https://navermaps.github.io/maps.js/docs/">{NAVER 지도 API 문서</a>를 참고합니다. 길찾기 결과를 표시한 예는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>대중 교통 길찾기 템플릿을 표시하려면 NAVER 지도 API에 대한 이해가 필요하며, 템플릿으로 전달된 데이터와 NAVER 지도 API를 이용하여 길찾기 결과를 지도에 표시해야 합니다. 네이버 지도 API에 대한 자세한 설명은 <a target="_blank"  href="https://navermaps.github.io/maps.js/docs/">{NAVER 지도 API 문서</a>를 참고합니다. 길찾기 결과를 표시한 예는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
 </div>
 
 ## Template field

@@ -37,7 +37,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 클라이언트 기기는 사용자가 음성 대신 직접 기기를 제어할 수 있도록 버튼을 제공해야 합니다. 클라이언트가 사용자에게 어떤 버튼을 제공할 수 있는지 그리고 구현할 때 어떤 사항을 지켜야 하는지 설명합니다.
 
-* [버튼 종류](#Bottons)
+* [버튼 종류](#Buttons)
 * [버튼 가이드라인](#ButtonGuideline)
 
 ### 버튼 종류 {#Buttons}
@@ -84,12 +84,12 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 클라이언트는 다음과 같은 조명 색상을 사용해야 합니다.
 
-| 조명 색상      | RGB 값             | 설명                                   | 필수 여부 |
-|--------------|-------------------|---------------------------------------|--------|
-| Green        | <span style="color:#32C864; font-size:150%; vertical-align:middle;">&#9724;</span> 50, 200, 100(#32C864)   | 사용자의 음성 입력 수신                                  | 필수  |
-| YellowGreen  | <span style="color:#B4FF00; font-size:150%; vertical-align:middle;">&#9724;</span> 180, 255, 0(#B4FF00)    | Clova 알림(Notification)                             | 필수  |
-| Red          | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255, 0, 0(#FF0000)      | 마이크 음소거, 네트워크 연결 오류, 배터리 부족 등의 오류 상황     | 필수  |
-| warmWhite    | <span style="color:#EDE9E5; font-size:150%; vertical-align:middle;">&#9724;</span> 237, 233, 229(#EDE9E5)  | 스피커를 통한 Clova 음성 출력                            | 필수  |
+| 조명 색상     | RGB 값                | 설명                                   | 필수 여부 |
+|-------------|----------------------|---------------------------------------|--------|
+| Green       | <span style="color:#32C864; font-size:150%; vertical-align:middle;">&#9724;</span> 50, 200, 100(#32C864)   | 사용자의 음성 입력 수신                                  | 필수  |
+| YellowGreen | <span style="color:#B4FF00; font-size:150%; vertical-align:middle;">&#9724;</span> 180, 255, 0(#B4FF00)    | Clova 알림(Notification)                             | 필수  |
+| Red         | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255, 0, 0(#FF0000)      | 마이크 음소거, 네트워크 연결 오류, 배터리 부족 등의 오류 상황     | 필수  |
+| warmWhite   | <span style="color:#EDE9E5; font-size:150%; vertical-align:middle;">&#9724;</span> 237, 233, 229(#EDE9E5)  | 스피커를 통한 Clova 음성 출력                            | 필수  |
 
 다음은 Wave 기기의 조명 색상 적용 사례입니다.
 
@@ -352,8 +352,8 @@ Bar 타입의 voice agent는 아래와 같이 긴 막대 형태로 표시되며 
 
 Bar 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 합니다.
 
-| 상태 이름                | 애니메이션 효과                                                                  | 예시                                            |
-|------------------------|------------------------------------------------------------------------------|------------------------------------------------|
+| 상태 이름                | 애니메이션 효과                                                                  | 예시                                                                             |
+|------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Attending              | Green1 색상의 bar가 1초 내로 서서히 표시되어야 합니다.                                  | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Attending.gif" /> |
 | Hearing                | 말소리 크기에 따라 중앙부터 warmWhite, Green2 색상 순으로 색상 영역이 확장되어야 합니다.      | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Hearing.gif" /> |
 | Processing & reporting | warmWhite 색상 영역이 좌우로 움직여야 합니다.                                        | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-ProcessingAndReporting.gif" /> |
@@ -373,8 +373,8 @@ Icon A 타입의 voice agent는 아래와 같이 왼쪽에 아이콘 형태로 �
 
 Icon A 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 합니다.
 
-| 상태 이름                | 애니메이션 효과                                                                  | 예시                                            |
-|------------------------|------------------------------------------------------------------------------|------------------------------------------------|
+| 상태 이름                | 애니메이션 효과                                                                  | 예시                                                                              |
+|------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Loading                | Green1 색상의 원을 그리며 표시되어야 합니다.                                          | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Loading.gif" /> |
 | Attending              | 애니메이션 효과가 없는 Green1 색상의 원이 표시됩니다.                                   | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Attending.png" /> |
 | Hearing                | 말소리 크기에 따라 원의 색을 아래에서 위로 warmWhite, Green2 색상 순으로 생상 영역이 확장되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Hearing.gif" /> |
@@ -395,8 +395,8 @@ Icon B 타입은 앱 타입의 클라이언트 즉 모바일 기기에서 voice 
 
 Icon B 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 합니다.
 
-| 상태 이름                | 애니메이션 효과                                                                  | 예시                                            |
-|------------------------|------------------------------------------------------------------------------|------------------------------------------------|
+| 상태 이름                | 애니메이션 효과                                                                  | 예시         |
+|------------------------|------------------------------------------------------------------------------|-------------|
 | Idle                   | 애니메이션 효과가 없는 warmWhite 색상의 아이콘을 표시합니다.                             | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Idle.png) |
 | Loading                | Green1 색상으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                              | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Loading.gif) |
 | Attending              | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다. 표시됩니다.                                              | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |

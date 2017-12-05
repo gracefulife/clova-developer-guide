@@ -24,7 +24,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>사용자가 입력한 NAVER 계정 정보를 이용하여 NAVER 계정 access token을 획득합니다.</p>
   </li>
   <li>
-    <p>획득한 NAVER 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
+    <p>획득한 NAVER 계정 access token과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.md#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
     <pre><code>$ curl -H 'Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv'
     https://auth.clova.ai/authorize \
     --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
@@ -40,7 +40,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 }
 </code></pre></li>
   <li>
-    <p>(만약, <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신한 경우) 응답 메시지 본문 <code>rediriec_uri</code> 필드에 입력된 URI를 이용하여 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
+    <p>(만약, <a href="/CIC/References/Clova_Auth_API.md#RequestAuthorizationCode">authorization code를 요청</a>에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신한 경우) 응답 메시지 본문 <code>rediriec_uri</code> 필드에 입력된 URI를 이용하여 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
     <pre><code>{
   "code": "4mrklvwoC_KNgDlvmslka",
   "redirect_uri": "https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
@@ -57,7 +57,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
   </li>
   <li>
-    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
     <pre><code>$ curl https://auth.clova.ai/token?grant_type=authorization_code \
     --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
     --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
@@ -116,7 +116,7 @@ Authorization: Bearer {{ClovaAccessToken}}
   <p><strong>Note!</strong></p>
   <ul>
     <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
-    <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString"></a>를 참조합니다.</li>
+    <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString">User-Agent string</a>를 참조합니다.</li>
     <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
   </ul>
 </div>
@@ -158,7 +158,7 @@ Downchannel 연결이 종료되거나 끊어지면 클라이언트는 즉시 새
 
 #### Ping-pong 수행 {#DoPingpong}
 
-CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 [HTTP/2 PING Payload Format](https://http2.github.io/http2-spec/#rfc.figure.12)을 참조합니다.
+CIC와 연결이 유지되고 있는지 파악하기 위해 클라이언트는 1분 간격으로 HTTP/2 PING 프레임을 CIC로 전송해야 합니다. CIC로부터 HTTP/2 PING ACK 응답을 받지 못하면 클라이언트는 즉시 새로운 연결을 구성해 클라이언트와 CIC간의 연결이 지속될 수 있도록 해야합니다. HTTP/2 PING 프레임에 대한 자세한 설명은 <a target="_blank" href="https://http2.github.io/http2-spec/#rfc.figure.12">HTTP/2 PING Payload Format</a>을 참조합니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>

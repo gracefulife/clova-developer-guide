@@ -11,8 +11,8 @@ HTTP/2 프로토콜 연결을 위해 클라이언트 개발 시 다음과 같은
 
 | 개발 언어 | 라이브러리                            |
 |---------|------------------------------------|
-| C/C++   | [nghttp2](https://nghttp2.org/), [libcurl](https://curl.haxx.se/libcurl/) |
-| Java    | [OkHttp](http://square.github.io/okhttp/), [Netty](http://netty.io/), [Jetty](http://www.eclipse.org/jetty/) |
+| C/C++   | <a target="_blank" href="https://nghttp2.org/">nghttp2</a>, <a target="_blank" href="https://curl.haxx.se/libcurl/">libcurl</a> |
+| Java    | <a target="_blank" href="http://square.github.io/okhttp/">OkHttp</a>, <a target="_blank" href="http://netty.io/">Netty</a>, <a target="_blank" href="http://www.eclipse.org/jetty/">Jetty</a> |
 
 
 ### User-Agent string {#UserAgentString}
@@ -29,7 +29,7 @@ HTTP/2 프로토콜 연결을 위해 클라이언트 개발 시 다음과 같은
   <p>HTTP 헤더를 통해 User-Agent string을 보내지 않거나 규칙에 맞지 않는 User-Agent string을 보낼 경우 클라이언트의 연결이나 요청이 거부될 수 있습니다.</p>
 </div>
 
-User-Agent string을 작성할 때 지켜야하는 문법([BNF 문법](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form))은 다음과 같습니다.
+User-Agent string을 작성할 때 지켜야하는 문법(<a target="_blank" href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form">BNF 문법</a>)은 다음과 같습니다.
 
 ```
 letter     = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M"
@@ -80,7 +80,7 @@ User_Agent = Manufacturer_Identifier , slash_delimiter ,
              [ semicolon_delimiter , extra_informations ] , ")" ;
 ```
 
-이 문법을 적용하여 User-Agent string을 작성한 예는 다음과 같습니다. **참고로 `Firmware_Version`에 대한 버전 번호를 입력할 때 [Semantic Versioning](https://semver.org/) 규칙을 따라야 합니다.**
+이 문법을 적용하여 User-Agent string을 작성한 예는 다음과 같습니다. **참고로 `Firmware_Version`에 대한 버전 번호를 입력할 때 <a target="_blank" href="https://semver.org/">Semantic Versioning</a> 규칙을 따라야 합니다.**
 
 ```
 MyCompanyName/MyProductName/1.0.1 (KindOfOS 0.9;CustomHardwareInfo;sampleKey1=sampleValue1;sampleKey2=sampleValue2)

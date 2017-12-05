@@ -373,7 +373,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용하길 권장합니다.</p>
+  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용하길 권장합니다.</p>
 </div>
 
 ### Payload field
@@ -406,7 +406,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용하길 권장합니다.</p>
+  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용하길 권장합니다.</p>
 </div>
 
 ### Payload field

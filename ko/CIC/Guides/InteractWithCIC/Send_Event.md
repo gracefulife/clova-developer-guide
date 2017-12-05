@@ -6,7 +6,7 @@
 <ol>
 <li><p>이벤트 메시지 전송을 위해 클라이언트에 <a href="#RequiredLibrary">HTTP/2용 라이브러리</a>와 <a href="#Authorization">Clova access token</a>을 준비합니다.</p>
 </li>
-<li><p>다음과 같이 <a href="/CIC/References/CIC_API.html#SendEvent">CIC API</a>에 맞게 HTTP 헤더를 준비한 값으로 채우고 HTTP/2용 라이브러리를 이용해 요청을 전달합니다.</p>
+<li><p>다음과 같이 <a href="/CIC/References/CIC_API.md#SendEvent">CIC API</a>에 맞게 HTTP 헤더를 준비한 값으로 채우고 HTTP/2용 라이브러리를 이용해 요청을 전달합니다.</p>
 <pre><code>:method = POST
 :scheme = https
 :path = /v1/events
@@ -15,8 +15,8 @@ Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 Content-Type: multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
-<li><p>이벤트 메시지에 포함시킬 <a href="/CIC/CIC_Overview.html#DialogModel">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</p></li>
-<li><p>첫 번째 메시지 파트에 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.</p>
+<li><p>이벤트 메시지에 포함시킬 <a href="/CIC/CIC_Overview.md#DialogModel">대화 ID</a>(<code>dialogRequestId</code>)와 메시지 ID(messageId)를 UUID 포맷으로 생성합니다. 추후 <a href="#ManageMessageQ">메시지 큐</a>에서 지시 메시지를 선별할 수 있도록 식별 가능한 대화 ID와 메시지 ID를 생성해서 전달합니다.</p></li>
+<li><p>첫 번째 메시지 파트에 <a href="/CIC/References/CICInterface/SpeechRecognizer.md#Recognize"><code>SpeechRecognizer.Recognize</code></a> API 스펙에 맞게 작성된 JSON 포맷의 이벤트 메시지와 메시지 헤더를 함께 입력한 후 CIC로 전송합니다.</p>
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8<br/>
@@ -56,11 +56,11 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
 </li>
-<li><p>사용자가 음성 입력을 마치거나 CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</p>
+<li><p>사용자가 음성 입력을 마치거나 CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</p>
 </li>
 </ol>
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><a href="/CIC/References/CICInterface/TextRecognizer.html#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
+  <p><a href="/CIC/References/CICInterface/TextRecognizer.md#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
 </div>
