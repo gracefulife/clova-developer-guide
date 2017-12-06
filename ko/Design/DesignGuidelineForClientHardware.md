@@ -93,8 +93,8 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 다음은 Wave 기기의 조명 색상 적용 사례입니다.
 
-| Green       | YellowGreen               | Red         | warmWhite   |
-|-------------|-------------|-------------|-------------|-------------|
+| Green       | YellowGreen | Red         | warmWhite   |
+|-------------|-------------|-------------|-------------|
 | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Green.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_YellowGreen.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Red.png) | ![](/Design/Resources/Images/Clova-Client-Light-Wave_warmWhite.png) |
 
 ### 조명 효과 {#LightEffect}
@@ -239,7 +239,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 클라이언트의 [상태](#ClientState) 표현을 위해 다음과 같은 효과음을 제공해야 합니다.
 
 | 상태 설명                   | 효과음 샘플                     | 필수 여부 |
-|---------------------------|---------|------------------------------|---------|
+|---------------------------|------------------------------|---------|
 | Attending 상태 진입         | <audio title="Attending" controls><source src="./Resources/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | 필수     |
 | Error 상태 진입             | <audio title="Error" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>     | 필수     |
 | Mute on 상태 진입           | <audio title="Mute on" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>   | 필수     |
@@ -395,15 +395,15 @@ Icon B 타입은 앱 타입의 클라이언트 즉 모바일 기기에서 voice 
 
 Icon B 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 합니다.
 
-| 상태 이름                | 애니메이션 효과                                                                  | 예시         |
-|------------------------|------------------------------------------------------------------------------|-------------|
-| Idle                   | 애니메이션 효과가 없는 warmWhite 색상의 아이콘을 표시합니다.                             | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Idle.png) |
-| Loading                | Green1 색상으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                              | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Loading.gif) |
-| Attending              | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다. 표시됩니다.                                              | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |
-| Hearing                | warmWhite, Green2 색상 순으로 표시된 영역이 Green1 색상의 원 위에서 원을 그리며 표시되어야 합니다.                   | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Hearing.gif) |
-| Processing & reporting | warmWhite, Green2 색상 순으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                                       | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-ProcessingAndReporting.gif) |
-| Mute on                | Red 색상의 음소거 또는 마이크 아이콘이 표시되어야 합니다.                                                       | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-MuteOn.gif) |
-| Error                  | Red 색상의 오류 아이콘이 표시되어야 합니다.                                                                  | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Error.gif) |
+| 상태 이름                  | 애니메이션 효과                                                                | 예시       |
+|--------------------------|----------------------------------------------------------------------------|-----------|
+| Idle                     | 애니메이션 효과가 없는 warmWhite 색상의 아이콘을 표시합니다.                           | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Idle.png) |
+| Loading                  | Green1 색상으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                            | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Loading.gif) |
+| Attending                | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다. 표시됩니다.                                            | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |
+| Hearing                  | warmWhite, Green2 색상 순으로 표시된 영역이 Green1 색상의 원 위에서 원을 그리며 표시되어야 합니다.                 | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Hearing.gif) |
+| Processing & reporting   | warmWhite, Green2 색상 순으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-ProcessingAndReporting.gif) |
+| Mute on                  | Red 색상의 음소거 또는 마이크 아이콘이 표시되어야 합니다.                                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-MuteOn.gif) |
+| Error                    | Red 색상의 오류 아이콘이 표시되어야 합니다.                                                                | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Error.gif) |
 
 <div class="note">
   <p><strong>Note!</strong></p>
