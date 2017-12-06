@@ -9,8 +9,8 @@
 사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 아래 그림은 클라이언트가 Clova access token은 획득하는 흐름을 나타내고 있습니다. 참고로 클라이언트는 두 가지 유형으로 구분되며, 각 유형에 따라 Clova access token을 획득하는 과정이 조금 달라집니다.
-* 기기 타입 클라이언트: 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 전용 페어링 앱(paired app)을 제공합니다.
-* 앱 타입의 클라이언트: Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
+* **기기 타입의 클라이언트**: 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 전용 페어링 앱(paired app)을 제공합니다.
+* **앱 타입의 클라이언트**: Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
 
