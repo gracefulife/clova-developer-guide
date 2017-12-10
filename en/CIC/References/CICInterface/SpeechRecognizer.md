@@ -161,7 +161,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) alo
 | `speechId`   | string   | If receiving additional speech input because of [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive message, enter the value of `expectSpeechId` field included in `SpeechRecognizer.ExpectSpeech` directive message.  | No  |
 | `explicit`         | boolean  | If receiving additional speech input because of [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive message, enter the value of `explicit` field included in `SpeechRecognizer.ExpectSpeech` directive message.  | No  |
 | `format`           | string   | Speech audio data format. The value is always `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | No    |
-| `lang`             | string   Determines in which language user's speech input will be recognized. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Yes    |
+| `lang`             | string   | Determines in which language user's speech input will be recognized. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Yes    |
 | `profile`          | string   | A field reserved for future use. The value is always `CLOSE_TALK`.                                     | No    |
 
 ### Remarks
