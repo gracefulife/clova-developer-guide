@@ -162,7 +162,7 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `actions[]`     | string array | 배터리와 관련하여 수행할 수 있는 [`DeviceControl`](/CIC/References/CICInterface/DeviceControl.md) API 목록. 현재는 지원하는 동작이 없습니다. | 필수 |
+| `actions[]`     | string array | 배터리와 관련하여 수행할 수 있는 [`DeviceControl`](/CIC/References/CICInterface/DeviceControl.md) API 목록. 현재 지원하는 동작이 없습니다. | 필수 |
 | `value`         | number | 배터리 잔량. 0에서 100 사이의 숫자를 입력해야 하며, 단위는 퍼센트(%) 입니다. | 필수 |
 | `charging`      | boolean | 충전 중인지 여부.<ul><li><code>true</code>: 충전 중인 상태</li><li><code>false</code>: 충전 중이지 않은 상태</li></ul> | 필수 |
 

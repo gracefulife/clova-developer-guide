@@ -2,6 +2,18 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2017-12-10
+
+### 플랫폼 변경 사항
+
+* CIC
+  - [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md) 인터페이스에 [ClearQueue](/CIC/References/CICInterface/AudioPlayer.html#ClearQueue) 지시 메시지 추가
+
+### 문서 변경 사항
+
+* Design
+  - [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md) 추가
+
 ## 2017-12-04
 
 ### 문서 변경 사항

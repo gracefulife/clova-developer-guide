@@ -40,8 +40,7 @@
       </td>
       <td>
         <ul>
-          <li>Custom extension 설계 가이드 라인(추후 제공)</li>
-          <li>Clova home extension 설계 가이드 라인(추후 제공)</li>
+          <li><a href="/Design/DesignGuidelineForExtension.md">Extension 설계 가이드 라인</a></li>
         </ul>
       </td>
     </tr>

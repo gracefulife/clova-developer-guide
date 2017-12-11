@@ -531,7 +531,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
 ### TemperatureInfoObject {#TemperatureInfoObject}
-온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기나 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
+온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기, 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
 
 #### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
