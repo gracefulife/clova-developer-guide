@@ -8,7 +8,16 @@
 
 ## Design
 * [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)
+  * [클라이언트 상태](/Design/DesignGuidelineForClientHardware.md#ClientState)
+  * [버튼](/Design/DesignGuidelineForClientHardware.md#Button)
+  * [조명](/Design/DesignGuidelineForClientHardware.md#Light)
+  * [소리](/Design/DesignGuidelineForClientHardware.md#Audio)
+  * [화면](/Design/DesignGuidelineForClientHardware.md#Screen)
 * [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md)
+  * [목표 수립](/Design/DesignGuidelineForExtension.md#SettingGoal)
+  * [사용 시나리오 작성](/Design/DesignGuidelineForExtension.md#MakeUseCaseScenarioScript)
+  * [유의사항](/Design/DesignGuidelineForExtension.md#Precautions)
+  * [지속적인 업데이트](/Design/DesignGuidelineForExtension.md#ContinuousUpdate)
 
 ## Clova Interface Connect
 

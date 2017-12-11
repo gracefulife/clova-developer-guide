@@ -9,7 +9,7 @@
 사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 아래 그림은 클라이언트가 Clova access token은 획득하는 흐름을 나타내고 있습니다. 참고로 클라이언트는 두 가지 유형으로 구분되며, 각 유형에 따라 Clova access token을 획득하는 과정이 조금 달라집니다.
-* **기기 타입의 클라이언트**: 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 전용 페어링 앱(paired app)을 제공합니다.
+* **기기 타입의 클라이언트**: 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 기기 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위해 페어링 앱(paired app)을 제공합니다.
 * **앱 타입의 클라이언트**: Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
@@ -40,7 +40,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 }
 </code></pre></li>
   <li>
-    <p>(만약, <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신한 경우) 응답 메시지 본문 <code>rediriec_uri</code> 필드에 입력된 URI를 이용하여 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
+    <p>(만약, <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>에 대한 응답으로 <code>451 Unavailable For Legal Reasons</code> 상태 코드를 수신한 경우) 응답 메시지 본문 <code>redirect_uri</code> 필드에 입력된 URI를 이용하여 사용자에게 이용 약관 동의 페이지를 보여줘야 합니다. 다음은 상태 코드가 <code>451 Unavailable For Legal Reasons</code>일 때 수신하게 되는 응답 메시지의 본문의 예 입니다.</p>
     <pre><code>{
   "code": "4mrklvwoC_KNgDlvmslka",
   "redirect_uri": "https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
@@ -57,7 +57,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
   </li>
   <li>
-    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여 <a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
     <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
     --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
     --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
@@ -115,7 +115,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 <div class="note">
   <p><strong>Note!</strong></p>
   <ul>
-    <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
+    <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 downchannel 생성하라는 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
     <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString">User-Agent string</a>를 참조합니다.</li>
     <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
   </ul>

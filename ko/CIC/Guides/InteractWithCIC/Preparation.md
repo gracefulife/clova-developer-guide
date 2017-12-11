@@ -91,7 +91,7 @@ MCN/SampleClient/1.7.0 (SampleIoTOS 2.1;SmartHub)
 
 <div class="danger">
   <p><strong>Note!</strong></p>
-  <p>User-Agent string은 추후 Clova developer console를 통해 등록해야 합니다. 현재 CIC용 Clova developer console이 개발 중이므로 User-Agent string 등록은 제휴 담당자에게 문의합니다.</p>
+  <p>User-Agent string은 추후 Clova developer console를 통해 등록해야 합니다. CIC용 Clova developer console이 개발 중이므로 User-Agent string 등록은 제휴 담당자에게 문의합니다.</p>
 </div>
 
 ### 클라이언트 인증 정보 {#ClientAuthInfo}
@@ -106,5 +106,5 @@ MCN/SampleClient/1.7.0 (SampleIoTOS 2.1;SmartHub)
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>현재 클라이언트 용 CIC - Clova Developer Console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
+  <p>클라이언트 용 CIC - Clova Developer Console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
 </div>

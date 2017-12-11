@@ -4,6 +4,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
+| [`ClearQueue`](#ClearQueue)           | Directive | 클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다.                              |
 | [`Play`](#Play)                       | Directive | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                         |
 | [`PlayFinished`](#PlayFinished)       | Event     | 클라이언트가 오디오 스트림 재생을 완료할 때 재생 완료된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.     |
 | [`PlayPaused`](#PlayPaused)           | Event     | 클라이언트가 오디오 스트림 재생을 일시 정지할 때 일시 정지된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다. |
@@ -15,6 +16,41 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | 오디오 스트림 재생이 시작된 후 지정된 보고 시점에 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 시점은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.|
 | [`StreamDeliver`](#StreamDeliver)     | Directive | [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | [`StreamRequested`](#StreamRequested) | Event     | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.               |
+
+## ClearQueue directive {#ClearQueue}
+클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다. 이 지시 메시지의 `clearBehavior` 필드 값은 초기화 동작을 구분하며, 클라이언트가 재생 대기열을 초기화하면서 현재 재생 중인 오디오 스트림의 재생을 멈춰야 하는지를 결정합니다.
+
+### Payload field
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|---------|
+| `clearBehavior`           | string | 초기화 동작을 결정하는 구분자<ul><li><code>"CLEAR_ALL"</code>: 재생 대기열을 모두 비우고, 현재 재생 중인 오디오 스트림의 재생을 즉시 멈춥니다.</li><li><code>"CLEAR_ENQUEUED"</code>: 재생 대기열만 비우고, 현재 재생 중인 오디오 스트림은 계속 재생합니다.</li></ul> | 필수 |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "ClearQueue",
+      "dialogRequestId": "8b81296d-218e-4a08-897a-bee51daad907",
+      "messageId": "823a703d-9447-438a-bad5-21fa7a62b623"
+    },
+    "payload": {
+      "clearBehavior": "CLEAR_ALL"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`AudioPlayer.Play`](#Play)
+* [`AudioPlayer.PlayStarted`](#PlayStarted)
+* [`AudioPlayer.PlayStopped`](#PlayStopped)
 
 ## Play directive {#Play}
 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.
@@ -46,7 +82,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
   "directive": {
     "header": {
       "namespace": "AudioPlayer",
-      "name": "StreamDeliver",
+      "name": "Play",
       "dialogRequestId": "34abac3-cb46-611c-5111-47eab87b7",
       "messageId": "ad13f0d6-bb11-ca23-99aa-312a0b213805"
     },
@@ -83,7 +119,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
   "directive": {
     "header": {
       "namespace": "AudioPlayer",
-      "name": "StreamDeliver",
+      "name": "Play",
       "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },

@@ -67,7 +67,7 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 * `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * `session`: **새로운 세션이며**, 새로운 세션에 사용될 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request`: `LaunchRequest` 타입 요청으로 현재 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
+* `request`: `LaunchRequest` 타입 요청으로 대상 extension의 사용 시작을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
 
@@ -192,4 +192,4 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 * `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * `session`: **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request`: `SessionEndedRequest` 타입 요청으로 현재 extension의 사용을 중지했음을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
+* `request`: `SessionEndedRequest` 타입 요청으로 대상 extension의 사용을 중지했음을 알립니다. 사용자의 발화가 분석된 정보는 없습니다.
