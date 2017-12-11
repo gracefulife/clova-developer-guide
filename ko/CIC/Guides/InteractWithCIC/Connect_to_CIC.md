@@ -57,13 +57,8 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>(페어링 앱의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
   </li>
   <li>
-<<<<<<< HEAD
     <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여<a href="/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
     <pre><code>$ curl https://auth.clova.ai/token?grant_type=authorization_code \
-=======
-    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여 <a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
-    <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
->>>>>>> doc-KR-Partner
     --data-urlencode 'client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ' \
     --data-urlencode 'client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D' \
     --data-urlencode 'code=cnl__eCSTdsdlkjfweyuxXvnlA' \
@@ -120,11 +115,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 <div class="note">
   <p><strong>Note!</strong></p>
   <ul>
-<<<<<<< HEAD
-    <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
-=======
     <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 downchannel 생성하라는 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
->>>>>>> doc-KR-Partner
     <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString">User-Agent string</a>를 참조합니다.</li>
     <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
   </ul>
