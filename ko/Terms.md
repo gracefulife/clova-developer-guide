@@ -11,7 +11,7 @@
 ### CIC
 [Clova Interface Connect](#CIC)의 약어
 
-### CIC API {#CIC API}
+### CIC API {#CICAPI}
 CIC가 클라이언트에 제공하는 REST API로 클라이언트는 CIC API를 사용하여 Clova와 정보를 교환할 때 사용됩니다.
 
 ### Clova {#Clova}
