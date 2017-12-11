@@ -46,7 +46,7 @@ Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, 
 | Clova.YesIntent           | 긍정 응답(예, Yes)   | "응", "그래", "알겠어", "알겠습니다", "오케이"                   |
 | Clova.NoIntent            | 부정 응답(아니오, No) | "아니", "아니요", "싫어"                                     |
 
-Custom intent는 다음과 같은 것을 정의한 명세입니다.
+Custom intent는 built-in intent와 달리 제공하려는 서비스에 특화된 사용자 요청 범주를 정의한 것입니다. Custom intent는 다음과 같은 것을 정의한 명세입니다.
 * 서비스에 어떤 범주의 사용자 요청이 있는지?
 * 각 사용자 요청 범주에는 어떤 정보([Slot](#Slot))가 필요한지?
 * 각 사용자 요청 범주에는 어떤 다양한 [발화 예시](#UtteranceExample)가 있는지?
@@ -67,7 +67,7 @@ Custom intent는 다음과 같은 것을 정의한 명세입니다.
 
 ### Slot {#Slot}
 
-Slot은 사용자의 발화로부터 획득하는 정보이며, [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 extension이 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러가 intent이고 이때 이 함수나 핸들러에 필요한 파라미터가 slot입니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
+Slot은 사용자의 발화로부터 획득하는 정보이며, [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 intent는 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러이고 slot은 이 함수나 핸들러에 필요한 파라미터가 됩니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
 
 Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다. Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보를 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
 
@@ -304,7 +304,10 @@ Extension에서 사용할 [built-in slot 타입](#AddBuiltinSlotType)과 [custom
   <li>마지막으로 우측 상단에 있는 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-참고로 발화 예시는 사용자 언어를 분석하는 기반 데이터가 되기 때문에 intent에 대한 발화 예시가 많고 표현이 다양할수록 사용자의 의도를 더 잘 분석할 확률이 커집니다. 따라서 발화 예시는 하나의 intent에 최소 30개 이상의 발화 예시를 입력하는 것이 좋습니다.
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>발화 예시는 사용자 언어를 분석하는 기반 데이터가 되기 때문에 intent에 대한 발화 예시가 많고 표현이 다양할수록 사용자의 의도를 더 잘 분석할 확률이 커집니다. 따라서 발화 예시는 하나의 intent에 최소 30개 이상의 발화 예시를 입력하는 것이 좋습니다.</p>
+</div>
 
 Custom slot 타입을 추가할 때와 마찬가지로 정의하려는 TSV(Tab-separated values, .tsv) 형식의 파일을 업로드할 수도 있습니다. TSV 파일은 두 부분으로 나뉘며 각각 intent의 slot을 정의하는 부분과 발화 예시를 나열하는 부분으로 나뉩니다. Intent의 slot을 정의하는 부분이 파일의 앞 부분에 오며 `[INTENT SLOT]`이 입력된 줄 바로 다음에 slot이 나열됩니다. 탭 문자로 구분된 첫 번째 열은 intent에서 사용되는 slot의 이름이며, 두 번째 열은 slot type입니다.
 

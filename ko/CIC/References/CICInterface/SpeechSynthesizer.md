@@ -51,7 +51,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 ### Payload field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
-| `format`               | string  | 파일 포맷. 현재는 `"AUDIO_MPEG"`로 고정되어 있습니다. | 필수    |
+| `format`               | string  | 파일 포맷. 현재 `"AUDIO_MPEG"`로 고정되어 있습니다. | 필수    |
 | `url`                  | string  | 재생할 음성 파일의 URL                        | 필수    |
 | `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 필수    |
 | `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 선택    |

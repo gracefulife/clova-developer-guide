@@ -1,10 +1,10 @@
 ## 지시 메시지 처리하기 {#HandleDirective}
-지시 메시지는 CIC로부터 수신되며 클라이언트에 특정 동작을 요구합니다. 지시 메시지는 [이벤트 메시지](#SendEvent)의 응답이나 CIC와 최초 연결시 생성했던 downchannel을 통해 전달됩니다. 응답은 주로 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage) 형태이고, JSON 포맷 형태의 [지시 메시지](/CIC/References/CIC_API.md#Directive)가 첫 번째 메시지로 먼저 수신된 후 [CIC 메시지](/CIC/References/CIC_API.md)에 따라 주로 다음과 같이 부가적인 정보(음성 데이터, 콘텐츠 정보)를 담은 메시지가 추가로 수신될 수 있습니다.
+지시 메시지는 CIC로부터 수신되며 클라이언트에 특정 동작을 요구합니다. 지시 메시지는 [이벤트 메시지](#SendEvent)의 응답이나 downchannel을 통해 전달됩니다. 응답은 주로 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage) 형태이고, JSON 포맷 형태의 [지시 메시지](/CIC/References/CIC_API.md#Directive)가 첫 번째 메시지로 먼저 수신된 후 [CIC API](/CIC/References/CIC_API.md)에 따라 주로 다음과 같이 부가적인 정보(음성 데이터, 콘텐츠 정보)를 담은 메시지가 추가로 수신될 수 있습니다.
 
 | 콘텐츠 유형            | 설명                                             |
 |---------------------|-------------------------------------------------|
-| 음성 데이터            | 기기 스피커를 통해 출력하려는 음성 정보                  |
-| JSON 형식의 콘텐츠 정보 | <ul><li>기기의 화면을 통해 표시하려는 데이터(<a href="/CIC/References/Content_Templates.md">content template</a> 참조)</li><li>음악과 같이 재생하려는 콘텐츠의 위치와 인증 정보가 담긴 데이터</li></ul> |
+| 음성 데이터            | 클라이언트 스피커를 통해 출력하려는 음성 정보                  |
+| JSON 형식의 콘텐츠 정보 | <ul><li>클라이언트의 화면을 통해 표시하려는 데이터(<a href="/CIC/References/Content_Templates.md">content template</a> 참조)</li><li>음악과 같이 재생하려는 콘텐츠의 위치와 인증 정보가 담긴 데이터</li></ul> |
 
 클라이언트는 다음과 같이 지시 메시지를 처리해야 합니다.
 
