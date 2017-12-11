@@ -40,7 +40,7 @@
       </td>
       <td>
         <ul>
-          <li><a href="/Design/DesignGuidelineForExtension.md">Extension 설계 가이드 라인</a></li>
+          <li><a href="/Design/DesignGuidelineForExtension.md">Extension 디자인 가이드라인</a></li>
         </ul>
       </td>
     </tr>
