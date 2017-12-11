@@ -1,3 +1,9 @@
 {
-  "plugins": "-search"
+  "plugins": ["-search", "toggle-chapters", "page-toc-button"],
+  "pluginsConfig": {
+      "page-toc-button": {
+          "maxTocDepth": 3,
+          "minTocSize": 3
+         }
+  }
 }

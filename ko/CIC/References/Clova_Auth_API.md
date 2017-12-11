@@ -30,7 +30,7 @@ GET|POST /authorize
 | `client_id`     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID. MAC 주소를 사용하거나 UUID 해쉬 값을 생성하면 됩니다.                          | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
-| `response_type` | string  | 응답 유형. 현재는 `"code"`만 지원합니다.                                                             | 필수 |
+| `response_type` | string  | 응답 유형. 현재 `"code"`만 지원합니다.                                                             | 필수 |
 | `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
 
 ### Request example
