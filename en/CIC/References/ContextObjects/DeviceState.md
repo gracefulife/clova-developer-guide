@@ -592,7 +592,7 @@ An object used to report the activation and connection status of wireless networ
 |---------------|---------|-----------------------------|---------|
 | `actions[]`            | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for wireless network. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul>| Yes |
 | `networks[]`           | object array | An object array containing details of wireless network found | Yes |
-| `networks[].name`      | string       | The name of the wireless network                     | Yes |
+| `networks[].name`      | string       | The name of the wireless network (SSID)                      | Yes |
 | `networks[].connected` | boolean      | Whether the wireless network is connected or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
 | `state`                | string       | Whether the wireless network is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
 
