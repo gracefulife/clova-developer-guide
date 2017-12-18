@@ -49,13 +49,13 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage)로 전달될 수도 있고 오디오 스트리밍 주소 형태로 전달될 수도 있습니다.
 
 ### Payload field
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
-| `format`               | string  | 파일 포맷. 현재 `"AUDIO_MPEG"`로 고정되어 있습니다. | 필수    |
-| `url`                  | string  | 재생할 음성 파일의 URL                        | 필수    |
-| `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 필수    |
-| `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 선택    |
-| `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 선택    |
+| `format`               | string  | 파일 포맷. 현재 `"AUDIO_MPEG"`로 고정되어 있습니다. | 항상    |
+| `url`                  | string  | 재생할 음성 파일의 URL                        | 항상    |
+| `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 항상    |
+| `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 조건부    |
+| `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 조건부    |
 
 ### Remarks
 
