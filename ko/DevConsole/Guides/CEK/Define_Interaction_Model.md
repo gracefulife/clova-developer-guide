@@ -2,11 +2,11 @@
 
 CEK가 extension으로 사용자의 요청 정보를 보낼 때 사용자의 발화를 어떻게 분석하고 이를 어떤 형식으로 보낼지 interaction 모델을 미리 정의해야 합니다. Interaction 모델은 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이 받게 될 요청을 정형화한 스키마입니다.
 
-Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)한 후 Interaction 모델을 정의할 수 있습니다. Extension 등록 메뉴에서 **인터렉션 모델**을 선택합니다.
+Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)한 후 Interaction 모델을 정의할 수 있습니다. 다음과 같이 CEK 메뉴에서 interaction 모델을 정의할 extension의 **수정** 버튼을 클릭합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
-**인터렉션 모델** 메뉴를 선택하면 다음과 같은 **인터랙션 모델: 대시보드** 화면이 표시됩니다.
+다음과 같은 **Interaction 모델: 대시보드** 화면이 표시됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
@@ -37,7 +37,7 @@ Interaction 모델을 Clova developer console에서 정의하기 전에 우선 i
 
 ### Intent {#Intent}
 
-Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있습니다. 어떤 built-in intent를 사용할지 결정했다면 선택한 built-in intent를 등록하려는 extension에서 처리할 수 있게 만들어야 합니다.
+Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 주로 사용자 발화문에 사용된 **동사**형 요소에 의해 Intent가 구분됩니다. Intent는 custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있습니다. 어떤 built-in intent를 사용할지 결정했다면 선택한 built-in intent를 등록하려는 extension에서 처리할 수 있게 만들어야 합니다.
 
 | Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
 |---------------------------|-------------------|----------------------------------------------------------|
@@ -67,7 +67,7 @@ Custom intent는 built-in intent와 달리 제공하려는 서비스에 특화�
 
 ### Slot {#Slot}
 
-Slot은 사용자의 발화로부터 획득하는 정보이며, [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 intent는 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러이고 slot은 이 함수나 핸들러에 필요한 파라미터가 됩니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
+Slot은 사용자의 발화로부터 획득하는 정보이며, 사용자 발화문에 사용된 **명사**형 요소가 Slot이 될 수 있습니다. [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 intent는 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러이고 slot은 이 함수나 핸들러에 필요한 파라미터가 됩니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
 
 Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다. Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보를 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
 
@@ -92,49 +92,74 @@ Custom slot 타입은 제공하는 서비스(extension)의 도메인에 특화�
 위와 같이 slot 타입을 정의하고 나면 각 intent에서 사용할 slot의 이름을 정의하고 해당 slot이 어떤 slot 타입을 가지는지 선언해야 합니다. 예를 들면, "OrderPizza" intent는 피자 종류 정보를 위해 "pizzaType", 피자 수량 정보를 위해 "pizzaAmount"라는 slot을 선언하고 각 slot에 미리 정의해둔 "PIZZA_TYPE" custome slot 타입과 이미 제공되고 있는 CLOVA.NUMBER built-in slot 타입을 지정할 수 있습니다.
 
 ### 발화 예시 {#UtteranceExample}
-Intent를 정의할 때 다양한 사용자 발화 예시를 열거할 수 있습니다. 발화 예시는 비슷한 의도를 지닌 다양한 사용자의 표현을 Clova가 인식하는데 필요한 기반 데이터가 되며 위에서 언급한 slot이 사용자 발화 중 어느 위치에 있는지 파악할 때 사용됩니다. 참고로 보통 서술어(동사)에 의해 intent가 결정됩니다. 그리고 발화 예시를 작성할 때는 intent의 의미에 딱맞는 표현을 반복적으로 사용하기 보다는 비슷한 의미를 가진 다양한 사용자 표현을 나열하는 것이 좋습니다. 이는 사용자 의도를 잘 인식하는 interaction 모델을 만들 수 있는 가장 좋은 방법입니다.
+Intent를 정의할 때 다양한 사용자 발화 예시를 열거할 수 있습니다. 발화 예시는 비슷한 의도를 지닌 다양한 사용자의 표현을 Clova가 인식하는데 필요한 기반 데이터가 되며 위에서 언급한 slot이 사용자 발화 중 어느 위치에 있는지 파악할 때 사용됩니다. 발화 예시를 잘 입력하면 사용자 의도를 잘 인식하는 interaction 모델을 만들 수 있습니다. 발화 예시를 작성할 때 되도록이면 다음 권고 사항을 따릅니다.
 
-다음은 피자 배달 서비스의 주문과 관련된 intent(OrderPizza)에 입력될 수 있는 발화 예시 목록이며, 잘 작성된 예와 그렇지 않은 예를 보여줍니다.
+* 같은 의도를 지녔지만 다른 방식으로 표현이 되는 발화 예시를 많이 입력해야 합니다.
+* 패턴이 서로 겹치지 않게 표현에 다양한 변형을 주어 발화 예시를 작성합니다.
+* 발화 예시 작성 개수는 다음 기준을 따릅니다.
+  * Intent에 사용된 slot이 built-in slot 타입이거나 사람이 전부 인지할 수 있는 양의 사전 크기를 가진 custom slot 타입일 경우 해당 slot이 들어가는 발화 문장을 최소 30개 이상 작성해야 합니다.
+  * Intent에 사용된 slot이 가수명, 곡명, 영화 제목, 업체명 등 사전의 크기가 매우 큰 slot 타입일 경우 해당 slot이 들어가는 발화 문장을 최소 100개 이상은 작성해야 합니다.
+  * 간단한 형태의 표현을 가지는 Intent이면 10개 내외의 발화 예시만 등록해도 됩니다.
+* 위 기준으로 발화 예시를 입력한 후 새로운 표현이 생기거나 인식이 잘 안되는 표현을 발견할 때마다 발화 예시를 추가하는 것이 좋습니다.
+* Slot 타입의 사전에 등록된 값 중에 slot인지 아닌지 판단하기 모호한 값이 있다면 해당 값을 발화 예시로 사용하여 slot임을 명시하는 것이 좋습니다. 다만, slot 타입에 모호한 값이 들어가도록 정의하지 않는 것을 더 권장합니다.
 
-<table>
-  <thead>
-    <tr>
-      <th width="50%">좋은 예</th>
-      <th width="50%">나쁜 예</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <pre>페퍼로니 피자 1판 주문해줘.
-BBQ 피자 2판 배달시켜줄래?
-콤비네이션 세 개 시켜줘.
-쉬림프 골크 피자 하나 부탁해.
-...</pre>
-      </td>
-      <td>
-        <pre>페퍼로니 피자 1판 주문해줘.
-콤비네이션 피자 1판 주문해줘.
-불고기 피자 1판 주문해줘.
-치즈 피자 1판 주문해줘.
-...</pre>
-      </td>
-    </tr>
-  </tbody>
-</table>
+발화 예시를 많이 입력하되 패턴이 서로 겹치지 않게 표현에 다양한 변형을 주어야 한다는 의미는 다음 그림을 참조하면 이해하기 쉽습니다.
+
+![](/DevConsole/Resources/Images/DevConsole-Diagram_for_Utterance_Example.png)
+
+예를 들어, 피자 배달 서비스의 주문과 관련된 intent(OrderPizza)에 다음과 같은 발화 예시를 작성했다고 가정합니다.
+
+```
+페퍼로니 피자 1판 시켜줘.
+페퍼로니 피자 1판 주문해줘.
+페퍼로니 피자 1판 보내줘.
+페퍼로니 피자 1판 부탁해.
+```
+
+결론을 위 발화 예시는 Clova는 학습을 통해 문장에 `"페퍼로니"`나 `"1판"`이라는 값만 들어 있어도 `OrderPizza` intent로 인식할 가능성이 매우 높아집니다. 예를 들면, "페퍼로니 피자 1판 얼마야?"와 같이 메뉴 조회를 예상한 발화가 피자를 주문을 요청한 발화로 처리되기 쉽습니다.
+
+따라서, 다음과 같은 형태로 발화 예시를 작성할 것을 권장합니다.
+
+```
+페퍼로니 피자 2판 시켜줘.
+BBQ 피자 하나만 배달시켜줄래?
+콤비네이션 세 개 보내주면 좋겠어.
+쉬림프 골크 피자 빨리 부탁해, 배고파.
+```
+
+발화를 명사(피자 종류), 명사(수량), 동사(의도)와 같은 패턴으로 구성했으며, 일상적으로 사용하는 조사, 어미, 부사, 감탄사 등도 포함되어 있습니다. 발화 패턴이 더 없다면 이제 패턴을 재사용하고 slot의 값을 바꿔가면서 발화 예시를 권장 기준만큼 추가하면 됩니다. 다음 사항을 따르면서 발화 예시를 추가해야 합니다.
+* 발화 예시에 사용된 slot의 값에 변화를 주면서 문장을 추가합니다.
+* 조사, 어미, 부사, 감탄사 등의 사용에 변화를 주면서 문장을 추가합니다.
+* **특정 값의 조합이 자주 사용되지 않도록 유의하는 것이 좋습니다.** 예를 들면, "페퍼로니 피자 2개 시켜줘"와 "페퍼로니 피자를 1판만 시켜주세요."는 어미/조사와 수량 값에 변화를 줬지만 `"페퍼로니"`와 `"시켜주다"`라는 값 조합이 중복된 예입니다.
+
+```
+바베큐 5개만 얼른 시켜.
+페퍼로니 1판 먹을래.
+야채 피자 부탁해.
+맛있는 치츠 피자 넷 주문해주라.
+```
 
 "OrderPizza" intent에 관련된 발화를 텍스트로 열거한 후 각 slot에 해당하는 영역을 다음과 같이 표시하게 됩니다.
 
 {% raw %}
 
 ```
-<pizzaType>페퍼로니</pizzaType> <pizzaAmount>2판</pizzaAmount> 주문해줘.
-<pizzaType>BBQ 피자</pizzaType> <pizzaAmount>2판</pizzaAmount> 배달시켜줄래?
-<pizzaType>콤비네이션 피자</pizzaType> <pizzaAmount>2개</pizzaAmount> 시켜줘.
-<pizzaType>쉬림프 골크</pizzaType> <pizzaAmount>하나</pizzaAmount> 부탁해.
+<pizzaType>페퍼로니 피자</pizzaType> <pizzaAmount>2판</pizzaAmount> 시켜줘.
+<pizzaType>BBQ 피자</pizzaType> <pizzaAmount>하나</pizzaAmount>만 배달시켜줄래?
+<pizzaType>콤비네이션</pizzaType> <pizzaAmount>세 개</pizzaAmount> 보내주면 좋겠어.
+<pizzaType>쉬림프 골크 피자</pizzaType> 빨리 부탁해, 배고파.
+<pizzaType>바베큐</pizzaType> <pizzaAmount>5개</pizzaAmount>만 얼른 시켜.
+<pizzaType>페퍼로니</pizzaType> <pizzaAmount>1판</pizzaAmount> 먹을래.
+<pizzaType>야채 피자</pizzaType> 부탁해.
+맛있는 <pizzaType>치즈 피자</pizzaType> <pizzaAmount>넷</pizzaAmount> 주문해.
 ...
 ```
 {% endraw %}
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>추후 <a href="/DevConsole/Guides/CEK/Deploy_Extension.html#TestInteractionModel">interaction 모델 테스트</a>나 실제 사용자 로그를 통해 완성도를 높여 나갈 수 있습니다. Interaction 모델을 테스트할 때는 발화 예시를 작성한 사람이 아닌 다른 사람이 테스트해보는 것이 좋습니다. 이 방법은 새로운 표현 패턴을 찾는데 도움이 됩니다.</p>
+</div>
 
 
 추후 custom extension은 다음과 같은 메시지를 수신하게 됩니다.
@@ -223,15 +248,15 @@ BBQ 피자 2판 배달시켜줄래?
 서비스를 제공할 extension이 어떤 [built-in slot 타입](#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
 
 <ol>
-  <li><strong>Slot 타입</strong> 패널의 우측 상단이나 <strong>인터랙션 모델 빌더 메뉴</strong> 아래에서 <strong>사용중인 Slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>인터렉션 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
-  <li>필요한 built-in slot 타입의 체크 박스를 체크합니다.</li>
-  <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot.png" />
-  <li>필요한 built-in slot 타입을 체크한 후 페이지 맨 아래에 있는 <strong>만들기</strong> 버튼을 클릭합니다.</li>
+  <li><strong>등록된 slot 타입</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>등록된 slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>Interaction 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
+  <li><strong>Clova가 제공하는 built-in slot 타입 사용하기</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
+  <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
+  <li>필요한 built-in slot 타입을 선택한 후 우측 상단에 있는 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-위 과정을 수행하고 나면 **인터랙션 모델: 대시보드** 화면의 **Slot 타입 패널**에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
+위 과정을 수행하고 나면 **Interaction 모델: 대시보드** 화면의 **등록된 slot 타입** 패널에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
 
-![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot.png)
+![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot_Type.png)
 
 ## Custom slot 타입 추가하기 {#AddCustomSlotType}
 
@@ -248,19 +273,19 @@ BBQ 피자 2판 배달시켜줄래?
 다음 절차에 따라 custom slot 타입을 추가합니다.
 
 <ol>
-  <li><strong>Slot 타입</strong> 패널의 우측 상단이나 <strong>인터랙션 모델 빌더 메뉴</strong> 아래에서 <strong>사용중인 Slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>인터렉션 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
+  <li><strong>등록된 slot 타입</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>등록된 slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>Interaction 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
   <li><strong>새로운 slot 타입 만들기</strong>의 입력 필드에 추가할 custom slot 타입의 이름을 입력하고 <strong>만들기</strong> 버튼을 클릭합니다. Custom slot 타입이 생성되면 해당 custom slot 타입에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
-  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_1.png" />
+  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_1.png" />
   <li><strong>Slot 타입 사전</strong>에 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 대표어를 추가합니다.</li>
-  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_2.png" />
+  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_2.png" />
   <li>추가한 대표어에 동의어나 유사 표현을 추가합니다.</li>
-  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_3.png" />
+  <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_3.png" />
   <li>마지막으로 우측 상단에 있는 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **인터렉션 모델: 대시보드**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
+오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **Interaction 모델: 대시보드**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
 
-![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot.png)
+![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
 정의하려는 custom slot 타입에 대량의 정보를 입력해야 하는 경우 TSV(Tab-separated values, .tsv) 형식의 파일을 업로드할 수도 있습니다. TSV 파일의 각 행의 첫 번째 값은 대표어가 되며, 그 다음부터 탭 문자로 구분된 값은 대표어에 대한 동의어나 유사 표현이 됩니다. 다음은 "PIZZA_TYPE" custom slot 타입의 정의를 TSV 형식으로 표현한 예입니다.
 
@@ -289,14 +314,14 @@ Clova developer console은 다음과 같이 **업로드** 버튼과 **다운로�
 Extension에서 사용할 [built-in slot 타입](#AddBuiltinSlotType)과 [custom slot 타입](#AddCustomSlotType)을 추가했다면 이제 custom intent를 추가하면 됩니다. 이전 설명에 이어서 피자를 주문하는 사용자의 요청을 가정하고 다음 절차에 따라 "OrderPizza"라는 이름의 intent를 추가합니다.
 
 <ol>
-  <li><strong>Intents</strong> 패널의 우측 상단이나 <strong>인터랙션 모델 빌더 메뉴</strong> 아래에서 <strong>사용중인 Intent</strong> 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>인터렉션 모델: Intent 추가하기</strong> 화면이 표시됩니다.</li>
-  <li><strong>새로운 커스텀 Intent 만들기</strong>의 입력 필드에 추가할 custom intent의 이름을 입력하고 <strong>만들기</strong> 버튼을 클릭합니다. Custom intent가 생성되면 해당 custom intent에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
+  <li><strong>등록된 intent</strong> 패널의 우측 상단이나 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>등록된 intent</strong> 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>Interaction 모델: Intent 추가하기</strong> 화면이 표시됩니다.</li>
+  <li><strong>새로운 커스텀 intent 만들기</strong>의 입력 필드에 추가할 custom intent의 이름을 입력하고 <strong>만들기</strong> 버튼을 클릭합니다. Custom intent가 생성되면 해당 custom intent에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_1.png" />
-  <li><strong>Intent Slot 리스트</strong>의 입력 필드에 추가할 slot의 이름을 입력하고 오른쪽에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 Slot을 추가합니다.</li>
+  <li><strong>Slot 목록</strong>의 입력 필드에 추가할 slot의 이름을 입력하고 오른쪽에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 slot을 추가합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_2.png" />
   <li>Slot을 추가한 후 해당 slot이 어떤 slot 타입인지 지정합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_3.png" />
-  <li>이제 <strong>사용자 표현 리스트</strong>에 사용자 발화 예시를 입력하고 오른쪽에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 사용자 발화 예시를 추가합니다.</li>
+  <li>이제 <strong>발화 예시 목록</strong>에 사용자 발화 예시를 입력하고 오른쪽에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 사용자 발화 예시를 추가합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_4.png" />
   <li>추가한 발화 예시에서 slot으로 처리할 부분을 드래그하여 slot을 지정해줍니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_5.png" />
@@ -306,7 +331,7 @@ Extension에서 사용할 [built-in slot 타입](#AddBuiltinSlotType)과 [custom
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>발화 예시는 사용자 언어를 분석하는 기반 데이터가 되기 때문에 intent에 대한 발화 예시가 많고 표현이 다양할수록 사용자의 의도를 더 잘 분석할 확률이 커집니다. 따라서 발화 예시는 하나의 intent에 최소 30개 이상의 발화 예시를 입력하는 것이 좋습니다.</p>
+  <p>Slot 타입과 slot의 이름은 집합의 이름이거나 여러가지 값이 대입될 수 있는 추상적인 개념을 지닌 이름이어야 합니다.</p>
 </div>
 
 Custom slot 타입을 추가할 때와 마찬가지로 정의하려는 TSV(Tab-separated values, .tsv) 형식의 파일을 업로드할 수도 있습니다. TSV 파일은 두 부분으로 나뉘며 각각 intent의 slot을 정의하는 부분과 발화 예시를 나열하는 부분으로 나뉩니다. Intent의 slot을 정의하는 부분이 파일의 앞 부분에 오며 `[INTENT SLOT]`이 입력된 줄 바로 다음에 slot이 나열됩니다. 탭 문자로 구분된 첫 번째 열은 intent에서 사용되는 slot의 이름이며, 두 번째 열은 slot type입니다.
