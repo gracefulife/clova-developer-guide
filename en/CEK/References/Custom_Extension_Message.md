@@ -37,7 +37,7 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   },
   "request": {{object}},
   "session": {
-    "new": {{bolean}},
+    "new": {{boolean}},
     "sessionAttributes": {{object}},
     "sessionId": {{string}},
     "user": {

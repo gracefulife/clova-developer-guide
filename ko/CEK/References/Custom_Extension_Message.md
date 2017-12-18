@@ -37,7 +37,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
   },
   "request": {{object}},
   "session": {
-    "new": {{bolean}},
+    "new": {{boolean}},
     "sessionAttributes": {{object}},
     "sessionId": {{string}},
     "user": {
