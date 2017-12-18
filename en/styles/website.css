@@ -79,6 +79,7 @@ td .note {
     border-width: thin;
 }
 
+
 .markdown-section pre>code {
     color: #333333;
 }
@@ -95,6 +96,12 @@ img.inlineImage {
   padding: 0px;
   box-shadow: 0px 0px 0px 0px;
   vertical-align: middle;
+}
+
+.markdown-section td img:nth-child(1) {
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle;
 }
 
 a.btn.pull-right.js-toolbar-action {

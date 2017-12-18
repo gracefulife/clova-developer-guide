@@ -84,6 +84,11 @@ td .note {
     cursor: text;
 }
 
+td img {
+  padding: 0px;
+  margin: 0px;
+}
+
 img {
   padding: 10px;
   margin: 2px 2px 2px 2px;

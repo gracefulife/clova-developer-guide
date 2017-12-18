@@ -3,7 +3,7 @@ Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CE
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png)
 
-이런 사용자의 요청은 단번에 끝나는 요청일 수도 있지만 대화 모드(Freetalk mode)와 같이 계속 맥락이 유지되어야 하는 multi-turn 대화일 수도 있습니다.
+이런 사용자의 요청은 단번에 끝나는 요청일 수도 있지만 다음과 같이 계속 맥락이 유지되어야 하는 multi-turn 대화일 수도 있습니다.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Multi-turn_Sequence_Diagram.png)
 
@@ -14,7 +14,7 @@ Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CE
 * [SessionEndedRequest 요청을 받은 경우](#HandleSessionEndedRequest)
 
 ### LaunchRequest 요청 처리 {#HandleLaunchRequest}
-[`LaunchRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtLaunchRequest)은 사용자가 특정 모드나 특정 custom extension을 사용하기로 선언한 것을 알릴 때 사용됩니다. 예를 들면, "영어 대화하자"와 같은 명령을 사용자가 내린 경우 클라이언트는 대화 모드(Freetalk mode)를 수행하며, CEK는 영어 대화 서비스를 제공하는 extension에게 `LaunchRequest` 타입 요청을 전달합니다.
+[`LaunchRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtLaunchRequest)은 사용자가 특정 extension을 사용하기로 선언한 것을 알릴 때 사용됩니다. 예를 들면, "피자봇 시작해줘"와 같은 명령을 사용자가 내린 경우 CEK는 피자 배달 서비스를 제공하는 extension에게 `LaunchRequest` 타입 요청을 전달합니다.
 
 LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라는 값을 가지며 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 사전 준비 사항을 처리하거나 사용자에게 서비스를 제공할 준비가 되었다는 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -113,11 +113,11 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "FreeTalk",
+      "name": "OrderPizza",
       "slots": {
-        "q": {
-          "name": "q",
-          "value": "How are you"
+        "pizzaType": {
+          "name": "pizzaType",
+          "value": "페퍼로니"
         }
       }
     }
@@ -131,7 +131,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 * `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * `session`: **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request`: `IntentRequest` 타입 요청이며, `"FreeTalk"`라는 이름으로 등록된 intent를 호출했습니다. 해당 intent의 필요 정보로 `"q"`라는 slot이 함께 전달되었고 해당 slot은 `"How are you"`라는 값을 가지고 있습니다.
+* `request`: `IntentRequest` 타입 요청이며, `"OrderPizza"`라는 이름으로 등록된 [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent)를 호출했습니다. 해당 intent의 필요 정보로 `"pizzaType"`라는 [slot](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Slot)이 함께 전달되었고 해당 slot은 `"페퍼로니"`라는 값을 가지고 있습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -140,7 +140,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 ### SessionEndedRequest 요청 처리 {#HandleSessionEndedRequest}
 
-[`SessionEndedRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest)은 사용자가 특정 모드나 특정 custom extension의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. "종료", "종료해줘", "그만" 등과 같은 명령을 사용자가 내린 경우 클라이언트는 extension 사용을 중지하며, CEK는 대화 서비스를 제공하는 extension에게 `SessionEndedRequest` 타입 요청을 전달합니다. 단, 대화 모드(Freetalk mode)의 경우 "See you later"와 같은 영문 표현으로 extension 사용이 중단됩니다.
+[`SessionEndedRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest)은 사용자가 특정 모드나 특정 custom extension의 사용을 중지하기로 선언한 것을 알릴 때 사용됩니다. "종료", "종료해줘", "그만" 등과 같은 명령을 사용자가 내린 경우 클라이언트는 extension 사용을 중지하며, CEK는 대화 서비스를 제공하는 extension에게 `SessionEndedRequest` 타입 요청을 전달합니다.
 
 `SessionEndedReqeust` 타입 메시지는 `request.type` 필드에 `"SessionEndedRequest"`라는 값을 가지며 `LaunchRequest` 타입과 마찬가지로 `request` 필드에 사용자의 발화가 분석된 정보를 포함하고 있지 않습니다. Extension 개발자는 이 메시지를 받은 경우 서비스 제공을 종료하고 사용자에게 사용 종료 상황의 인사 정도를 [응답 메시지](#ReturnCustomExtensionResponse)로 보내면 됩니다.
 
