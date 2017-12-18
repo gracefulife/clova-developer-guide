@@ -42,10 +42,10 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 클라이언트에게 알림 표시를 켜도록 지시합니다.
 
 ### Payload field
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
-| `new`         | boolean | 새로운 알림에 대한 지시 메시지인지 알려주는 필드입니다. <ul><li><code>true</code>: 새로운 알림인 경우</li><li><code>false</code>: 새로운 알림이 아닌 경우</li></ul> | 필수    |
-| `light`       | string  | 조명 설정 정보<ul><li><code>"on"</code>: 사용자가 확인하지 않은 알림이 있는 경우입니다. 주로 알림 표시용 조명을 점등하게 됩니다.</li><li><code>"off"</code>: 사용자가 확인하지 않은 알림이 없는 경우입니다.</li></ul> | 필수    |
+| `new`         | boolean | 새로운 알림에 대한 지시 메시지인지 알려주는 필드입니다. <ul><li><code>true</code>: 새로운 알림인 경우</li><li><code>false</code>: 새로운 알림이 아닌 경우</li></ul> | 항상    |
+| `light`       | string  | 조명 설정 정보<ul><li><code>"on"</code>: 사용자가 확인하지 않은 알림이 있는 경우입니다. 주로 알림 표시용 조명을 점등하게 됩니다.</li><li><code>"off"</code>: 사용자가 확인하지 않은 알림이 없는 경우입니다.</li></ul> | 항상    |
 
 ### Remarks
 해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.

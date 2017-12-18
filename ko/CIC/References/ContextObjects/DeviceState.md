@@ -44,7 +44,7 @@
 | `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | 클라이언트 기기의 플래시 조명 설정 정보를 보고할 때 사용하는 객체       | 선택 |
 | `gps`             | [GPSInfoObject](#GPSInfoObject)                         | 클라이언트 기기의 GPS 설정 정보를 보고할 때 사용하는 객체            | 선택 |
 | `localTime`       | string | 클라이언트 기기에 설정된 현지 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷)              | 선택 |
-| `power`           | [PowerInfoObject](#PowerInfoObject)                 | 클라이언트 기기의 전원 상태 정보를 보고할 때 사용하는 객체            | 선택 |
+| `power`           | [PowerInfoObject](#PowerInfoObject)                     | 클라이언트 기기의 전원 상태 정보를 보고할 때 사용하는 객체            | 선택 |
 | `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | 클라이언트 기기의 화면 밝기 정보를 보고할 때 사용하는 객체            | 선택 |
 | `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | 클라이언트 기기의 소리 출력 설정 정보를 보고할 때 사용하는 객체        | 선택 |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | 클라이언트 기기의 스피커 볼륨 정보를 보고할 때 사용하는 객체           | 선택 |
@@ -592,7 +592,7 @@
 |---------------|---------|-----------------------------|---------|
 | `actions[]`            | string array | 무선 네트워크과 관련하여 수행할 수 있는 [`DeviceControl`](/CIC/References/CICInterface/DeviceControl.md) API 목록. 다음 동작 목록 중 클라이언트 기기가 실제로 수행할 수 있는 동작을 입력합니다. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul>| 필수 |
 | `networks[]`           | object array | 검색된 무선 네트워크 정보를 가지는 객체 배열 | 필수 |
-| `networks[].name`      | string       | 무선 네트워크 이름                     | 필수 |
+| `networks[].name`      | string       | 무선 네트워크 이름(SSID)               | 필수 |
 | `networks[].connected` | boolean      | 무선 네트워크 연결 여부. <ul><li><code>true</code>: 연결된 상태</li><li><code>false</code>: 연결되어 있지 않은 상태</li></ul> | 필수 |
 | `state`                | string       | 무선 네트워크 기능 활성화 상태. <ul><li><code>"off"</code>: 꺼짐</li><li><code>"on"</code>: 켜짐</li></ul> | 필수 |
 
