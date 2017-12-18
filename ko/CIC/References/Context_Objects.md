@@ -6,7 +6,6 @@
 * [`AudioPlayer.PlaybackState`](#PlaybackState)
 * [`Device.DeviceState`](#DeviceState)
 * [`Device.Display`](#Display)
-* [`Clova.FreetalkState`](#FreetalkState)
 * [`Clova.Location`](#Location)
 * [`Clova.SavedPlace`](#SavedPlace)
 * [`Speaker.VolumeState`](#VolumeState)
@@ -18,8 +17,6 @@
 {% include "./ContextObjects/DeviceState.md" %}
 
 {% include "./ContextObjects/Display.md" %}
-
-{% include "./ContextObjects/FreetalkState.md" %}
 
 {% include "./ContextObjects/Location.md" %}
 

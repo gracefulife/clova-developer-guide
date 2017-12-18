@@ -177,11 +177,11 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "FreeTalk",
+      "name": "OrderPizza",
       "slots": {
-        "q": {
-          "name": "q",
-          "value": "How are you"
+        "pizzaType": {
+          "name": "pizzaType",
+          "value": "페퍼로니"
         }
       }
     }

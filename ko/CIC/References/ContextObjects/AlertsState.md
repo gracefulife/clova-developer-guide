@@ -18,21 +18,21 @@
   "payload": {
     "allAlerts": [
       {
-        "token": "{{string}}",
-        "type": "{{string}}",
-        "scheduledTime": "{{string}}"
+        "token": {{string}},
+        "type": {{string}},
+        "scheduledTime": {{string}}
       },
       {
-        "token": "{{string}}",
-        "type": "{{string}}",
-        "scheduledTime": "{{string}}"
+        "token": {{string}},
+        "type": {{string}},
+        "scheduledTime": {{string}}
       }
     ],
     "activeAlerts": [
       {
-        "token": "{{string}}",
-        "type": "{{string}}",
-        "scheduledTime": "{{string}}"
+        "token": {{string}},
+        "type": {{string}},
+        "scheduledTime": {{string}}
       }
     ]
   }

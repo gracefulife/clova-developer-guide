@@ -2,6 +2,24 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2017-12-18
+
+### 플랫폼 변경 사항
+
+* CIC
+  - [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md) 인터페이스에서 ExpectSpeechTimedOut 이벤트 메시지 제거
+  - [맥락 정보(context)](/CIC/References/Context_Objects.md)에서 Clova.FreetalkState 개체 제거
+
+* Clova developer console
+  - Clova developer console UI 개선
+
+### 문서 변경 사항
+
+* Clova developer DevConsole
+  - [Interaction 모델 정의하기](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 [발화 예시문](/DevConsole/Guides/CEK/Define_Interaction_Model.md#UtteranceExample) 작성 가이드라인 추가
+  - [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)에 [테스트 모드 사용하기](/DevConsole/Guides/CEK/Test_Extension.md#UsingTestMode) 추가
+  - [Extension 업데이트하기](/DevConsole/Guides/CEK/Update_Extension.md), [Extension 중지 및 삭제하기](/DevConsole/Guides/CEK/Remove_Extension.md) 추가
+
 ## 2017-12-10
 
 ### 플랫폼 변경 사항
