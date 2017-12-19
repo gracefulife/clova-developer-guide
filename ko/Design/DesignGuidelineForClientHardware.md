@@ -294,7 +294,7 @@ Clova가 제공하는 UI 화면에 Clova 로고를 다음과 같은 레이아웃
 ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Bottom_Overlay.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Full_Screen_Overlay.png)
 
 * Clova 로고는 좌측 상단에 배치되어야 합니다.
-* Clova 로고의 투명도(Opacity)는 100%로 지정할 것을 권장합니다.
+* Clova 로고를 투명하게 만들지 않아야 합니다.
 
 다음은 로고 레이아웃 A의 화면 예시입니다.
 
