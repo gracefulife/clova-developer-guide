@@ -25,6 +25,9 @@
 .note p, .info p, .danger p {
   margin-bottom: 0.85em;
 }
+.note img, .info img, .danger img {
+  margin: 0px;
+}
 
 td .danger {
   margin-bottom: 10px;
