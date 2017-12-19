@@ -8,12 +8,15 @@ Clova developer console은 Clova 플랫폼과 연동하는 기기이나 서비�
 
 Clova developer console은 CIC 메뉴와 CEK 메뉴를 제공합니다. 각 메뉴에서 할 수 있는 작업은 다음과 같습니다.
 
+* [CEK 메뉴](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
+  * [Extension 등록하기](/DevConsole/Guides/CEK/Register_Extension.md)
+  * [Interaction 모델 정의하기](/DevConsole/Guides/CEK/Define_Interaction_Model.md)
+  * [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)
+  * [Extension 배포하기](/DevConsole/Guides/CEK/Deploy_Extension.md)
+  * [Extension 업데이트하기](/DevConsole/Guides/CEK/Update_Extension.md)
+  * [Extension 중지 및 삭제하기](/DevConsole/Guides/CEK/Remove_Extension.md)
+
 * CIC 메뉴(추후 제공 예정)
   * 클라이언트 기기 및 앱 등록
   * 클라이언트 인증 관련 정보 등록
   * 클라이언트 기기 사양 등록
-  
-* [CEK 메뉴](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
-  * [Clova extension 등록](/DevConsole/Guides/CEK/Register_Extension.md)
-  * [Interaction 모델 등록](/DevConsole/Guides/CEK/Define_Interaction_Model.md)
-  * [Extension 테스트 및 배포](/DevConsole/Guides/CEK/Deploy_Extension.md)
