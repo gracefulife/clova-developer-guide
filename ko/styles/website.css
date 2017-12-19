@@ -22,6 +22,14 @@
     line-height: 1.4;
 }
 
+.note p, .info p, .danger p {
+  margin-bottom: 0.85em;
+}
+
+.note img, .info img, .danger img {
+  margin-bottom: 0px;
+}
+
 td .danger {
   margin-bottom: 10px;
 }
