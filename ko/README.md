@@ -7,7 +7,7 @@
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova 서비스를 제공하려는 클라이언트나 전자 상거래와 같이 금전 거래나 결재를 포함하는 extension을 개발하는 회사나 개인은 사전에 <a target="_blank" href="https://www.navercorp.com/ko/company/proposalRegister.nhn">NAVER 제휴 제안</a> 페이지를 방문하여 미리 제휴를 맺어야 합니다.</p>
+  <p>Clova 서비스를 제공하려는 클라이언트나 전자 상거래와 같이 금전 거래나 결제를 포함하는 extension을 개발하는 회사나 개인은 사전에 <a target="_blank" href="https://www.navercorp.com/ko/company/proposalRegister.nhn">NAVER 제휴 제안</a> 페이지를 방문하여 미리 제휴를 맺어야 합니다.</p>
 </div>
 
 클라이언트 개발자와 extension 개발자를 위해 Clova 플랫폼은 Clova Interface Connection(CIC), Clova Extension Kit(CEK) 그리고 Clova developer console을 제공하고 있습니다. 개발자는 필요에 따라 다음과 같은 문서를 참조하면 됩니다.
