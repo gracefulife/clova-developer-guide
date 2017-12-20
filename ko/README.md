@@ -2,8 +2,8 @@
 
 <a target="_blank" href="http://clova.ai">Clova</a>는 NAVER가 개발 및 서비스하고 있는 인공지능 플랫폼입니다. Clova 사용자의 음성이나 이미지를 인식하고 이를 분석하여 사용자가 원하는 정보나 서비스를 제공합니다. Clova 플랫폼을 이용하는 3rd party 개발자는 다음과 같이 두 그룹으로 나뉠 수 있습니다.
 
-* Clova 인공 지능 서비스를 제공하는 전자 기기, 앱을 개발하려는 클라이언트 개발자 ([CIC 플랫폼](/CIC/CIC_Overview.md#WhatisCIC) 사용자)
-* Clova를 통해 보유하고 있는 온라인 콘텐츠나 서비스를 제공하려는 확장 기능(Extension) 개발자 ([CEK 플랫폼](/CEK/CEK_Overview.md#WhatisCEK) 사용자)
+* [CIC 플랫폼](/CIC/CIC_Overview.md#WhatisCIC) 사용자: Clova 인공 지능 서비스를 제공하는 전자 기기, 앱을 개발하려는 클라이언트 개발자
+* [CEK 플랫폼](/CEK/CEK_Overview.md#WhatisCEK) 사용자: Clova를 통해 보유하고 있는 온라인 콘텐츠나 서비스를 제공하려는 확장 기능(Extension) 개발자
 
 <div class="note">
   <p><strong>Note!</strong></p>
