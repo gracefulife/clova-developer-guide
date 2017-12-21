@@ -46,12 +46,12 @@ Extension을 설계할 때 제일 먼저 할 일은 Extension의 목표를 정�
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>이렇게 작성된 세부 목표들은 <a href="#MakeUseCaseScenarioScript">사용 시나리오를 작성</a>하거나 <a href="#DefineInteractionModel">interaction 모델</a>을 정의하는 기반 정보가 됩니다. 또한, <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo">extension을 배포</a>할 때 이 정보를 등록해야 하며, 이를 기준으로 extension이 제대로 동작하는지 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission">심사</a>를 받게 됩니다.</p>
+  <p>이렇게 작성된 세부 목표들은 <a href="#MakeUseCaseScenarioScript">사용 시나리오 스크립트를 작성</a>하거나 <a href="#DefineInteractionModel">interaction 모델</a>을 정의하는 기반 정보가 됩니다. 또한, <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo">extension을 배포</a>할 때 이 정보를 등록해야 하며, 이를 기준으로 extension이 제대로 동작하는지 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission">심사</a>를 받게 됩니다.</p>
 </div>
 
 ## 사용 시나리오 스크립트 작성 {#MakeUseCaseScenarioScript}
 
-사용 시나리오 스크립트는 사용자와 Clova 사이의 대화를 미리 예상한 것입니다. 세부 목표를 기반으로 다양한 사용 시나리오에 사용자와 Clova의 대화를 미리 예상해 봄으로써 서비스의 편의성, 흐름 등을 점검할 수 있습니다. [목표 수립](#SettingGoal)에서 정한 세부 목표를 기준으로 예상되는 사용 시나리오를 스크립트로 작성할 것을 권장합니다. 이는 추후 [interaction 모델](#DefineInteractionModel)을 등록할 때 재사용될 수 있습니다.
+사용 시나리오 스크립트는 사용자와 Clova 사이의 대화를 미리 예상한 것입니다. 세부 목표를 기반으로 다양한 사용 시나리오에 사용자와 Clova의 대화를 미리 예상해 봄으로써 서비스의 편의성, 흐름 등을 점검할 수 있습니다. [목표 수립](#SettingGoal)에서 정한 세부 목표를 기준으로 예상되는 사용 시나리오 스크립트를 작성합니다. 이는 추후 [interaction 모델](#DefineInteractionModel)을 등록할 때 재사용될 수 있습니다.
 
 스크립트를 작성할 때는 다음을 고려하여 작성할 것을 권장합니다.
 
