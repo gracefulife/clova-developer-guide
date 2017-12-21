@@ -243,7 +243,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Attending 상태 진입         | <audio title="Attending" controls><source src="./Resources/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | 필수     |
 | Error 상태 진입             | <audio title="Error" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>     | 필수     |
 | Mute on 상태 진입           | <audio title="Mute on" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>   | 필수     |
-| Mute off 상태 해제          | <audio title="Mute off" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>  | 필수     |
+| Mute on 상태 해제          | <audio title="Mute off" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>  | 필수     |
 
 #### 효과음 가이드라인 {#SoundEffectGuideline}
 

@@ -15,6 +15,10 @@
 
 ### 문서 변경 사항
 
+* Design
+  - [Interaction 모델 등록하기](DevConsole/Guides/CEK/Register_Interaction_Model.md)에서 [interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용을 [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md) 문서로 이동
+  - [Interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용에 [발화 예시](/Design/DesignGuidelineForExtension.md#UtteranceExample)문 작성 가이드라인 추가
+
 * Clova developer DevConsole
   - [Interaction 모델 정의하기](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 [발화 예시문](/DevConsole/Guides/CEK/Define_Interaction_Model.md#UtteranceExample) 작성 가이드라인 추가
   - [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)에 [테스트 모드 사용하기](/DevConsole/Guides/CEK/Test_Extension.md#UsingTestMode) 추가
@@ -25,7 +29,7 @@
 ### 플랫폼 변경 사항
 
 * CIC
-  - [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md) 인터페이스에 [ClearQueue](/CIC/References/CICInterface/AudioPlayer.html#ClearQueue) 지시 메시지 추가
+  - [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md) 인터페이스에 [ClearQueue](/CIC/References/CICInterface/AudioPlayer.md#ClearQueue) 지시 메시지 추가
 
 ### 문서 변경 사항
 
