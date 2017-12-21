@@ -3,16 +3,16 @@
 The system provides directive messages and event messages that are required when synchronizing user account related information such as alarm and schedule between Clova and the client. Such synchronizing process can be done on the following cases:
 
 * When a client appliance using the user account is added. 
-* When the client is reconnected to CIC due to network connection error or other issues. 
-* When the user account registered to the client appliance has changed because other user begin to use. 
-* When the client appliance is reset after disconnected from the paring app. 
+* When the client is reconnected to CIC due to network connection error or other issues.
+* When the user account registered to the client appliance has changed because other user begin to use.
+* When the client appliance is reset after disconnected from the paring app.
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>If network is disconnected or a user account is logged out, all information related to the account has to be deleted. </p>
 </div>
 
-To synchronize information, client will send a ['System.RequestSynchronizeState'](RequestSynchronizeState) event message to CIC and CIC will share the server information to the client using a [`System.SynchronizeState`](#SynchronizeState) directive message.
+To synchronize information, client will send a [`System.RequestSynchronizeState`](RequestSynchronizeState) event message to CIC and CIC will share the server information to the client using a [`System.SynchronizeState`](#SynchronizeState) directive message.
 
 | Message name         | Message type  | Message description                                 |
 |------------------|-----------|-------------------------------------------|
