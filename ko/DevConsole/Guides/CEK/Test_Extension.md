@@ -9,7 +9,7 @@ Extension을 배포할 때 일반적으로 다음 항목을 순차적으로 수�
 
 ## Interaction 모델 빌드하기 {#BuildInteractionModel}
 
-Custom extension을 배포하는 경우 [interaction 모델이 정의](/DevConsole/Guides/CEK/Define_Interaction_Model.md)되어 있어야 합니다. 정의된 interaction 모델은 빌드 과정을 거쳐야 새로 작성했거나 또는 업데이트한 내용을 [테스트](#TestInteractionModel)하거나 사용할 수 있습니다. 다음과 같이 정의된 interaction 모델을 빌드할 수 있습니다.
+Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConsole/Guides/CEK/Register_Interaction_Model.md)되어 있어야 합니다. 정의된 interaction 모델은 빌드 과정을 거쳐야 새로 작성했거나 또는 업데이트한 내용을 [테스트](#TestInteractionModel)하거나 사용할 수 있습니다. 다음과 같이 정의된 interaction 모델을 빌드할 수 있습니다.
 
 <ol>
   <li>등록한 extension 목록에서 interaction 모델을 빌드하려는 extension 항목의 <strong>수정</strong> 메뉴를 클릭합니다.</li>
