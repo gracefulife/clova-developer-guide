@@ -9,7 +9,7 @@ Extension을 배포할 때 일반적으로 다음 항목을 수행해야 합니�
 
 ## 배포 정보 입력 {#InputDeploymentInfo}
 
-Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)과 [Interaction 모델을 정의](/DevConsole/Guides/CEK/Define_Interaction_Model.md)한 후 배포 정보를 입력할 수 있습니다. Extension 등록 메뉴에서 **배포 정보**을 선택합니다.
+Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)과 [Interaction 모델을 등록](/DevConsole/Guides/CEK/Register_Interaction_Model.md)한 후 배포 정보를 입력할 수 있습니다. Extension 등록 메뉴에서 **배포 정보**을 선택합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Deployment_Info_Menu.png)
 
