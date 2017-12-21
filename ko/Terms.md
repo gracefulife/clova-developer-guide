@@ -21,7 +21,7 @@ CIC가 클라이언트에 제공하는 REST API로 클라이언트는 CIC API를
 클라이언트가 [Clova Interface Connect](#CIC)로 [이벤트 메시지](#Event)를 보낼 때 Clova가 클라이언트를 인증하는 수단입니다. 자세한 내용은 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) 문서를 참조합니다.
 
 ### Clova Developer Console {#ClovaDeveloperConsole}
-Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#ClovaExtension)을 개발하는 개발자에게 다음과 같은 내용을 제공하는 [웹 도구](https://developers.naver.com/console/clova/)입니다.
+Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#ClovaExtension)을 개발하는 개발자에게 다음과 같은 내용을 제공하는 <a target="_blank" href="https://developers.naver.com/console/clova/">웹 도구</a>입니다.
 * 클라이언트 기기 등록 및 클라이언트 인증 정보 제공 (추후 제공 예정)
 * Clova extension [등록](/DevConsole/Guides/CEK/Register_Extension.md) 및 [배포](/DevConsole/Guides/CEK/Deploy_Extension.md)
 * [Interaction 모델 등록](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
