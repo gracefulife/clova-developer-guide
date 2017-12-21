@@ -16,7 +16,7 @@
 * [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md)
   * [목표 수립](/Design/DesignGuidelineForExtension.md#SettingGoal)
   * [사용 시나리오 작성](/Design/DesignGuidelineForExtension.md#MakeUseCaseScenarioScript)
-  * [Interaction 모델 이해하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)
+  * [Interaction 모델 정의](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)
     * [Intent](/Design/DesignGuidelineForExtension.md#Intent)
     * [Slot](/Design/DesignGuidelineForExtension.md#Slot)
     * [발화 예시](/Design/DesignGuidelineForExtension.md#UtteranceExample)
