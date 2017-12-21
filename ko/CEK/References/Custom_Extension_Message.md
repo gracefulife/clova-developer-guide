@@ -237,7 +237,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 다음은 LaunchRequest 타입의 요청 메시지 예제입니다.
 
 #### IntentRequest {#CustomExtIntentRequest}
-`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받을지 [interaction 모델을 정의](/DevConsole/Guides/CEK/Define_Interaction_Model.md)해야 하며, Interaction 모델은 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)을 통해 등록할 수 있습니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
+`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받을지 [interaction 모델을 정의](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)해야 하며, Interaction 모델은 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)을 통해 등록할 수 있습니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
 
 `IntentRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
@@ -256,9 +256,9 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | 요청 메시지의 타입. `"IntentRequest"` 값으로 고정됩니다.                                                                              | 항상 |
-| `intent`        | object  | 사용자의 요청을 분석한 정보가 저장된 객체 [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent)                          | 항상 |
-| `intent.name`   | string  | Intent 이름. Interaction 모델에 정의한 [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent)를 이 필드로 식별할 수 있다.  | 항상 |
-| `intent.slots`  | object  | Extension이 intent를 처리할 때 요구되는 정보(slot)가 저장된 객체. 이 필드는 `intent.name` 필드에 입력된 [intent](/DevConsole/Guides/CEK/Define_Interaction_Model.md#Intent)에 따라 구성이 달라질 수 있다. | 항상 |
+| `intent`        | object  | 사용자의 요청을 분석한 정보가 저장된 객체 [intent](/Design/DesignGuidelineForExtension.md#Intent)                          | 항상 |
+| `intent.name`   | string  | Intent 이름. Interaction 모델에 정의한 [intent](/Design/DesignGuidelineForExtension.md#Intent)를 이 필드로 식별할 수 있다.  | 항상 |
+| `intent.slots`  | object  | Extension이 intent를 처리할 때 요구되는 정보(slot)가 저장된 객체. 이 필드는 `intent.name` 필드에 입력된 [intent](/Design/DesignGuidelineForExtension.md#Intent)에 따라 구성이 달라질 수 있다. | 항상 |
 
 
 #### SessionEndedRequest {#CustomExtSessionEndedRequest}
