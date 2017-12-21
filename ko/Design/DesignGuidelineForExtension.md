@@ -5,7 +5,7 @@
 웹 서비스의 정보 조회, 쇼핑 및 배달 서비스, 대화형 게임, 방송 또는 실시간 브리핑, IoT 기기 제어 및 그 밖의 음성을 통한 활동이나 서비스를 제공하는 extension 을 만들 수 있습니다. 어떤 종류의 extension을 만들지 결정했다면 Extension을 설계할 때 다음과 같은 사항들을 수행 및 준수해야 합니다. 참고로 여기서 다루는 내용은 extension 설계의 기본 권장 사항이며 간단한 예시와 함께 설명하고 있습니다. 물론, 보유하고 계신 사업적 경험과 서비스의 특성에 따라 extension이 더 많은 가능성을 가지도록 설계/구현할 수도 있습니다.
 
 * [목표 수립](#SettingGoal)
-* [사용 시나리오 작성](#MakeUseCaseScenarioScript)
+* [사용 시나리오 스크립트 작성](#MakeUseCaseScenarioScript)
 * [Interaction 모델 정의](#DefineInteractionModel)
 * [유의사항](#Precautions)
 * [지속적인 업데이트](#ContinuousUpdate)
@@ -297,7 +297,7 @@ BBQ 피자 하나만 배달시켜줄래?
 
 {% endraw %}
 
-## 유의사항 {#PrecautionsForExtension}
+## 유의사항 {#Precautions}
 
 Extension을 설계할 때 다음과 같은 사회적인 또는 법적인 문제가 없는지 미리 파악하여 문제가 발생하지 않도록 반드시 주의해야 합니다. Extension을 설계하는 단계뿐만 아니라 extension을 Clova에 등록하거나 배포할 때에도 아래 사항을 한 번 더 검토할 것을 권고합니다.
 
