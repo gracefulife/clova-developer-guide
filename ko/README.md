@@ -88,7 +88,7 @@
       <td style="text-align: center;">배포</td>
       <td>
         <ul>
-          <li>클라이언트 등록하기(작성 예정)</li>
+          <li>클라이언트 등록하기(추가 예정)</li>
         </ul>
       </td>
       <td>

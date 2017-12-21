@@ -346,7 +346,7 @@ Voice agent는 사용자의 음성 입력 수신, Clova 음성 출력 등 Clova 
 
 #### Bar 타입 {#BarType}
 
-Bar 타입의 voice agent는 아래와 같이 긴 막대 형태로 표시되며 음성 표시 텍스트, 상태 표현 색, 로고 구성되며, 상황에 따라 아이콘이 포함될 수 있습니다. 다음은 Bar 타입의 voice agent가 표시된 예입니다.
+Bar 타입의 voice agent는 아래와 같이 긴 막대 형태로 표시되며 음성을 텍스트로 표시하는 영역, 상태 표현 색, 로고 구성되며, 상황에 따라 아이콘이 포함될 수 있습니다. 다음은 Bar 타입의 voice agent가 표시된 예입니다.
 
 ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type.png)
 
