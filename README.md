@@ -1,7 +1,3 @@
-# Clova developer guide
-
-
-
 ## Introduction
 
 This repository is created for managing and deploying [Clova developer guide](https://pages.oss.navercorp.com/JTF-P6/platform_technical_doc/) content. [GitBook](https://toolchain.gitbook.com/) is used for building document in PDF format and web format.
