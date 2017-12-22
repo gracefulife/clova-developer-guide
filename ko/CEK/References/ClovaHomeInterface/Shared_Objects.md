@@ -1,4 +1,4 @@
-## Shared objects {#SharedObjects}
+# Shared objects {#SharedObjects}
 [Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 본문(payload)에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
 
 | 객체 이름            | 객체 설명                                            |
@@ -17,15 +17,15 @@
 | [UltraFineDustInfoObject](#UltraFineDustInfoObject) | 초미세 먼지 정보가 담긴 객체         |
 | [VolumeInfoObject](#VolumeInfoObject)               | 볼륨 정보를 담고 있는 객체          |
 
-### AirQualityInfoObject {#AirQualityInfoObject}
+## AirQualityInfoObject {#AirQualityInfoObject}
 공기질 정보를 담고 있는 객체입니다. 기기가 측정한 공기질 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `index`       | string  | 공기질 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -47,14 +47,14 @@
 
 {% endraw %}
 
-#### See also
+### See also
 * [`GetAirQualityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityRequest)
 * [`GetAirQualityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityResponse)
 
-### ApplianceInfoObject {#ApplianceInfoObject}
+## ApplianceInfoObject {#ApplianceInfoObject}
 IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등록된 기기 목록을 CEK에게 전달하거나 특정 기기를 대상으로 지정하여 Clova Home extension에 기기 제어를 요청할 때 이 객체를 사용합니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `actions[]`                  | string array  | 기기가 지원하는 동작 목록. 클라이언트는 기기가 지원하는 동작 내에서 사용자가 IoT 기기를 제어하도록 제한해야 합니다. | 선택    |
@@ -69,7 +69,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `version`                    | string        | 제조사의 소프트웨어 버전                                                            | 선택    |
 | `location`                   | string        | 기기가 설치된 장소                                                                | 선택    |
 
-### Remarks
+## Remarks
 [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) 메시지를 통해 사용자 기기 목록을 요청하면 Clova Home extension은 `additionalApplianceDetails` 필드를 제외한 모든 필드의 정보를 채워서 전달해야 합니다. 이때, `actions` 필드의 값은 보통 `applianceTypes` 필드에 의해 결정되며, `applianceTypes` 필드 값에 따라 다음과 같은 값을 가질 수 있습니다.
 
 | applianceTypes | 허용되는 actions                                |
@@ -139,7 +139,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% include "./Location.md" %}
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -210,19 +210,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)
 * [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
-### BrightnessInfoObject {#BrightnessInfoObject}
+## BrightnessInfoObject {#BrightnessInfoObject}
 조명의 밝기 정보를 담고 있는 객체입니다. 변경할 조명의 밝기나 변경 전후의 밝기를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 밝기(%)                      | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -268,7 +268,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DecrementBrightnessConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementBrightnessConfirmation)
 * [`DecrementBrightnessRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementBrightnessRequest)
 * [`IncrementBrightnessConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementBrightnessConfirmation)
@@ -276,15 +276,15 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetBrightnessConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetBrightnessConfirmation)
 * [`SetBrightnessRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetBrightnessRequest)
 
-### BatteryInfoObject {#BatteryInfoObject}
+## BatteryInfoObject {#BatteryInfoObject}
 기기의 배터리 정보를 담고 있는 객체입니다. 배터리 정보를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 배터리 잔량(%)                 | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -322,20 +322,20 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest)
 * [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
 
-### FineDustInfoObject {#FineDustInfoObject}
+## FineDustInfoObject {#FineDustInfoObject}
 미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 미세 먼지 지수나 수준을 나타낼 때 사용되며 숫자로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 미세 먼지 지수                  | 선택     |
 | `index`       | string  | 미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -358,19 +358,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest)
 * [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse)
 
-### ModeInfoObject {#ModeInfoObject}
+## ModeInfoObject {#ModeInfoObject}
 운전 모드(operation mode) 정보를 담고 있는 객체입니다. 변경할 우전 모드의 이름이나 변경 전후의 운전 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | string  | 운전 모드(operation mode). <ul><li><code>"away"</code>: 외출 모드. 난방 기기나, 온도조절기의 난방 모드를 의미할 수도 있고 스마트 허브 기기의 운전 모드일 수 있습니다.</li><li><code>"cool"</code>: 냉방 모드. 주로 에어컨 기기에서 사용되는 모드입니다.</li><li><code>"dehumidify"</code>: 제습 모드. 주로 에어컨이나 제습기와 같은 기기에서 사용되는 모드입니다.</li><li><code>"hotwater"</code>: 온수 모드. 주로 난방 기기나 온도조절기에서 사용되는 모드입니다.</li><li><code>"indoor"</code>: 실내 모드. 온도 조절기의 난방 모드를 의미할 수도 있고 스마트 허브 기기의 운전 모드일 수 있습니다.</li><li><code>"sleep"</code>: 취침 모드. 주로 스마트 허브와 같은 기기에서 사용되는 모드입니다.</li></ul>   | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -430,19 +430,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`SetModeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeConfirmation)
 * [`SetModeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetModeRequest)
 
-### HumidityInfoObject {#HumidityInfoObject}
+## HumidityInfoObject {#HumidityInfoObject}
 습도 정보를 담고 있는 객체입니다. 기기가 측정한 습도 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 습도(%)                      | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -464,19 +464,19 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`GetHumidityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityRequest)
 * [`GetHumidityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetHumidityResponse)
 
-### SpeedInfoObject {#SpeedInfoObject}
+## SpeedInfoObject {#SpeedInfoObject}
 속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 속도 값                       | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -522,7 +522,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DecrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedConfirmation)
 * [`DecrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementFanSpeedRequest)
 * [`IncrementFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedConfirmation)
@@ -530,15 +530,15 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedConfirmation)
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
-### TemperatureInfoObject {#TemperatureInfoObject}
+## TemperatureInfoObject {#TemperatureInfoObject}
 온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기, 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 온도 값                       | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -584,7 +584,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DecrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureConfirmation)
 * [`DecrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureRequest)
 * [`IncrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation)
@@ -594,15 +594,15 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureConfirmation)
 * [`SetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureRequest)
 
-### TVChannelNameInfoObject {#TVChannelNameInfoObject}
+## TVChannelNameInfoObject {#TVChannelNameInfoObject}
 TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널이나 변경 전후의 TV 채널의 이름 정보를 나타낼 때 사용되며 문자열로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | string  | TV 채널 이름                  | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -643,19 +643,19 @@ TV 채널의 이름 정보를 담고 있는 객체입니다. 변경할 TV 채널
 
 {% endraw %}
 
-#### See also
+### See also
 * [`SetChannelByNameConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameConfirmation)
 * [`SetChannelByNameRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameRequest)
 
-### TVChannelInfoObject {#TVChannelInfoObject}
+## TVChannelInfoObject {#TVChannelInfoObject}
 TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널이나 변경 전후의 TV 채널의 번호를 나타낼 때 사용되며 숫자로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | TV 채널 번호                  | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -696,7 +696,7 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DecrementChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementChannelConfirmation)
 * [`DecrementChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementChannelRequest)
 * [`IncrementChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementChannelConfirmation)
@@ -704,15 +704,15 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation)
 * [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
-### VolumeInfoObject {#VolumeInfoObject}
+## VolumeInfoObject {#VolumeInfoObject}
 스피커의 볼륨 정보를 담고 있는 객체입니다. 변경할 볼륨의 크기나 변경 전후의 볼륨 정보를 나타낼 때 사용되며 정수로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 볼륨 값                       | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -758,22 +758,22 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 
 {% endraw %}
 
-#### See also
+### See also
 * [`DecrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeConfirmation)
 * [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest)
 * [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation)
 * [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest)
 
-### UltraFineDustInfoObject {#UltraFineDustInfoObject}
+## UltraFineDustInfoObject {#UltraFineDustInfoObject}
 초미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 초미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
 
-#### Object field
+### Object field
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `value`       | number  | 초미세 먼지 지수                  | 선택     |
 | `index`       | number  | 초미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수     |
 
-#### Object Example
+### Object Example
 {% raw %}
 
 ```json
@@ -796,6 +796,6 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 
 {% endraw %}
 
-#### See also
+### See also
 * [`GetUltraFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustRequest)
 * [`GetUltraFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustResponse)
