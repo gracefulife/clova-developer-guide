@@ -18,7 +18,7 @@ Prepare the following tools and library:
 * [`gitbook-cli`](https://toolchain.gitbook.com/setup.html)
 * [`calibre`](https://toolchain.gitbook.com/ebook.html)
 
-> Calibre library is required for building PDF. Make sure put the `ebook-convert` bin file to the $PATH.
+> Calibre application is required for PDF documentation build. Make sure put the `ebook-convert` bin file to the $PATH contained in Calibre application.
 
 > You can also make documentation build environment with Docker. See [Setup GitBook env. with Docker](https://oss.navercorp.com/JTF-P6/platform_technical_doc/wiki/Setup-GitBook-env-with-Docker)
 
@@ -44,7 +44,7 @@ gitbook pdf . book.pdf
 # If you want to make web content in ./book directory
 gitbook build . book
 
-# If you want to make web content with web server running on your PC
+# If you want to run web server with GitBook web content. You can access the web server at http://localhost:4000.
 gitbook serve
 ```
 
@@ -54,18 +54,17 @@ gitbook serve
 
 Due to the various purposes, this repository has the following branches:
 
-* **master**
-* **document**
-* **gh-pages**
-* **doc-KR**
-* **doc-KR-Partner**
-* **doc-KR-Partner-LGUplus**
-* **doc-KR-En_Partner**
-* **doc-JP**
-* **doc-JP-ClovaHomeExt-Partner**
-* **doc-JP-CustomExt-Partner**
-
-> TBD : Add descriptions of the above branches
+* **document**: Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.
+* **doc-JP**: Branch for Japanese business, this branch holds EN version documentation. JA version will be added future. (document -> doc-JP)
+* **doc-JP-ClovaHomeExt-Partner**: Branch for Japanese partners who provides IoT services via Clova. (doc-JP -> doc-JP-ClovaHomeExt-Partner)
+* **doc-JP-CustomExt-Partner**: Branch for Japanese partners who provides extensions via Clova. (doc-JP -> doc-JP-CustomExt-Partner)
+* **doc-KR**: Branch for Korean business, this branch holds KO and EN version documentation. (documnt -> doc-KR)
+* **doc-KR-En_Partner**: Branch for Korean partners who prefer English such as Xaomi. (EN, PDF doc, doc-KR -> doc-KR-En_Partner)
+* **doc-KR-Partner-LGUplus**: Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification. (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)
+* **doc-KR-Partner**: Branch for Korean partners contains partner exclusive specification. (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)
+* **doc-KR-Public**: Branch for public documentation which is deployed on NAVER developer center. (KO, online doc, doc-KR-Partner -> doc-KR-Public)
+* **master**: Backup branch for **document** branch (document -> master)
+* **gh-pages**: Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).
 
 
 <a name="Releases" />
@@ -76,3 +75,5 @@ The release history of Clova developer guide is recorded as GitHub issuse and re
 
 * [Issues with Deployment label](https://oss.navercorp.com/JTF-P6/platform_technical_doc/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3ADeployment%20)
 * [Releases](https://oss.navercorp.com/JTF-P6/platform_technical_doc/releases)
+
+> Due to translation job, EN version documentation is released after 1 or 2 week(s).
