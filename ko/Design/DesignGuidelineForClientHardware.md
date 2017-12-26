@@ -367,7 +367,7 @@ Bar 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 �
 
 #### Icon A 타입 {#IconAType}
 
-Icon A 타입의 voice agent는 아래와 같이 왼쪽에 아이콘 형태로 표시되며 음성을 텍스트로 표시하는 영역, 상태 표현 색, 로고로 구성됩니다.
+Icon A 타입의 voice agent는 아래와 같이 왼쪽에 아이콘 형태로 표시되며 음성을 텍스트로 표시하는 영역, 상태 표현 색, 로고로 구성됩니다. 다음은 Icon A 타입의 voice agent가 표시된 예입니다.
 
 ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type.png)
 
@@ -377,7 +377,7 @@ Icon A 타입의 voice agent는 상황에 따라 다음과 같이 표현되어�
 |------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Loading                | Green1 색상의 원을 그리며 표시되어야 합니다.                                          | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Loading.gif" /> |
 | Attending              | 애니메이션 효과가 없는 Green1 색상의 원이 표시됩니다.                                   | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Attending.png" /> |
-| Hearing                | 말소리 크기에 따라 원의 색을 아래에서 위로 Warm White, Green2 색상 순으로 생상 영역이 확장되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Hearing.gif" /> |
+| Hearing                | 말소리 크기에 따라 원의 색을 아래에서 위로 Warm White, Green2 색상 순으로 색상 영역이 확장되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Hearing.gif" /> |
 | Processing & reporting | Green2, Warm White 색상이 원을 따라 움직여야 합니다.                                  | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-ProcessingAndReporting.gif" /> |
 | Mute on                | Red 색상의 음소거 또는 마이크 아이콘이 나타나고, "마이크 음소거 상태입니다."라는 텍스트가 표시되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-MuteOn.gif" /> |
 | Error                  | Red 색상의 오류 아이콘이 나타나고, 오류를 설명하는 간략한 텍스트가 표시되어야 합니다.            | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Error.gif" /> |
@@ -399,7 +399,7 @@ Icon B 타입의 voice agent는 상황에 따라 다음과 같이 표현되어�
 |--------------------------|----------------------------------------------------------------------------|-----------|
 | Idle                     | 애니메이션 효과가 없는 Warm White 색상의 아이콘을 표시합니다.                           | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Idle.png) |
 | Loading                  | Green1 색상으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                            | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Loading.gif) |
-| Attending                | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다.                                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |
+| Attending                | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다.                                                      | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |
 | Hearing                  | Warm White, Green2 색상 순으로 표시된 영역이 Green1 색상의 원 위에서 원을 그리며 표시되어야 합니다.                 | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Hearing.gif) |
 | Processing & reporting   | Warm White, Green2 색상 순으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-ProcessingAndReporting.gif) |
 | Mute on                  | Red 색상의 음소거 또는 마이크 아이콘이 표시되어야 합니다.                                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-MuteOn.gif) |

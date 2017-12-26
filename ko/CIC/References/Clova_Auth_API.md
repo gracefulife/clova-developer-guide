@@ -20,8 +20,8 @@ GET|POST /authorize
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>`application/json`</code></pre></p>   |
-| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken">획득한 NAVER access token</a>을 입력:</p><p><pre><code>Bearer [NAVER access token]</code></pre></p>  |
+| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>application/json</code></pre></p>  |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">획득한 NAVER access token</a>을 입력:</p><p><pre><code>Bearer [NAVER access token]</code></pre></p>  |
 
 ### Query parameter
 
@@ -46,9 +46,9 @@ GET|POST /authorize
 
 ### Response header
 
-| Response header | 설명                                                                  |
+| Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p> |
+| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Response JSON object field
 
@@ -127,7 +127,7 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response header
 
-| Response header | 설명                                                                  |
+| Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
@@ -177,7 +177,7 @@ GET|POST /token?grant_type=refresh_token
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>appliacation/json</code></pre></p> |
+| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
 ### Query parameter
 
