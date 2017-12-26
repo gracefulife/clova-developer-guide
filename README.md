@@ -55,17 +55,29 @@ gitbook serve
 Due to the various purposes, this repository has the following branches:
 
 <ul>
-  <li><strong>document</strong><br />Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.<br /></li>
-<li><strong>doc-JP</strong> (EN, document -> doc-JP)<br />Branch for Japanese business, this branch holds EN version documentation. JA version will be added future.<br /></li>
-<li><strong>doc-JP-ClovaHomeExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-ClovaHomeExt-Partner)<br />Branch for Japanese partners who provides IoT services via Clova.<br /></li>
-<li><strong>doc-JP-CustomExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-CustomExt-Partner)<br />Branch for Japanese partners who provides extensions via Clova.<br /></li>
-<li><strong>doc-KR</strong> (KO and EN, documnt -> doc-KR)<br />Branch for Korean business, this branch holds KO and EN version documentation.<br /></li>
-<li><strong>doc-KR-En_Partner</strong> (EN, PDF doc, doc-KR -> doc-KR-En_Partner)<br />Branch for Korean partners who prefer English such as Xaomi.<br /></li>
-<li><strong>doc-KR-Partner-LGUplus</strong> (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)<br />Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification.<br /></li>
-<li><strong>doc-KR-Partner</strong> (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)<br />Branch for Korean partners contains partner exclusive specification.<br /></li>
-<li><strong>doc-KR-Public</strong> (KO, Online doc, doc-KR-Partner -> doc-KR-Public)<br />Branch for public documentation which is deployed on NAVER developer center.<br /></li>
-<li><strong>master</strong> (document -> master)<br />Backup branch for <strong>document</strong> branch<br /></li>
-<li><strong>gh-pages</strong> (All lang., Online doc)<br />Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).<br /></li>
+  <li>Common branches
+    <ul>
+      <li><strong>document</strong><br />Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.</li>
+      <li><strong>master</strong> (document -> master)<br />Backup branch for <strong>document</strong> branch</li>
+      <li><strong>gh-pages</strong> (All lang., Online doc)<br />Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).</li>
+    </ul>
+  </li>
+  <li>Branches for Japan business
+    <ul>
+      <li><strong>doc-JP</strong> (EN, document -> doc-JP)<br />Branch for Japanese business, this branch holds EN version documentation. JA version will be added future.</li>
+      <li><strong>doc-JP-ClovaHomeExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-ClovaHomeExt-Partner)<br />Branch for Japanese partners who provides IoT services via Clova.</li>
+      <li><strong>doc-JP-CustomExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-CustomExt-Partner)<br />Branch for Japanese partners who provides extensions via Clova.</li>
+    </ul>
+  </li>
+  <li>Branches for Korean business
+    <ul>
+      <li><strong>doc-KR</strong> (KO and EN, documnt -> doc-KR)<br />Branch for Korean business, this branch holds KO and EN version documentation.</li>
+      <li><strong>doc-KR-En_Partner</strong> (EN, PDF doc, doc-KR -> doc-KR-En_Partner)<br />Branch for Korean partners who prefer English such as Xaomi.</li>
+      <li><strong>doc-KR-Partner-LGUplus</strong> (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)<br />Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification.</li>
+      <li><strong>doc-KR-Partner</strong> (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)<br />Branch for Korean partners contains partner exclusive specification.</li>
+      <li><strong>doc-KR-Public</strong> (KO, Online doc, doc-KR-Partner -> doc-KR-Public)<br />Branch for public documentation which is deployed on NAVER developer center.</li>
+    </ul>
+  </li>
 </ul>
 
 <a name="Releases" />
