@@ -54,18 +54,19 @@ gitbook serve
 
 Due to the various purposes, this repository has the following branches:
 
-* **document**: Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.
-* **doc-JP**: Branch for Japanese business, this branch holds EN version documentation. JA version will be added future. (document -> doc-JP)
-* **doc-JP-ClovaHomeExt-Partner**: Branch for Japanese partners who provides IoT services via Clova. (doc-JP -> doc-JP-ClovaHomeExt-Partner)
-* **doc-JP-CustomExt-Partner**: Branch for Japanese partners who provides extensions via Clova. (doc-JP -> doc-JP-CustomExt-Partner)
-* **doc-KR**: Branch for Korean business, this branch holds KO and EN version documentation. (documnt -> doc-KR)
-* **doc-KR-En_Partner**: Branch for Korean partners who prefer English such as Xaomi. (EN, PDF doc, doc-KR -> doc-KR-En_Partner)
-* **doc-KR-Partner-LGUplus**: Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification. (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)
-* **doc-KR-Partner**: Branch for Korean partners contains partner exclusive specification. (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)
-* **doc-KR-Public**: Branch for public documentation which is deployed on NAVER developer center. (KO, online doc, doc-KR-Partner -> doc-KR-Public)
-* **master**: Backup branch for **document** branch (document -> master)
-* **gh-pages**: Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).
-
+<ul>
+  <li><strong>document</strong><br />Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.</li>
+<li><strong>doc-JP</strong><br />Branch for Japanese business, this branch holds EN version documentation. JA version will be added future. (document -> doc-JP)
+<li><strong>doc-JP-ClovaHomeExt-Partner</strong><br />Branch for Japanese partners who provides IoT services via Clova. (doc-JP -> doc-JP-ClovaHomeExt-Partner)
+<li><strong>doc-JP-CustomExt-Partner</strong><br />Branch for Japanese partners who provides extensions via Clova. (doc-JP -> doc-JP-CustomExt-Partner)
+<li><strong>doc-KR</strong><br />Branch for Korean business, this branch holds KO and EN version documentation. (documnt -> doc-KR)
+<li><strong>doc-KR-En_Partner</strong><br />Branch for Korean partners who prefer English such as Xaomi. (EN, PDF doc, doc-KR -> doc-KR-En_Partner)
+<li><strong>doc-KR-Partner-LGUplus</strong><br />Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification. (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)
+<li><strong>doc-KR-Partner</strong><br />Branch for Korean partners contains partner exclusive specification. (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)
+<li><strong>doc-KR-Public</strong><br />Branch for public documentation which is deployed on NAVER developer center. (KO, online doc, doc-KR-Partner -> doc-KR-Public)
+<li><strong>master</strong><br />Backup branch for <strong>document</strong> branch (document -> master)
+<li><strong>gh-pages</strong><br />Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).
+</ul>
 
 <a name="Releases" />
 
