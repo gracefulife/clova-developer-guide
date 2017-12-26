@@ -1,6 +1,6 @@
 # Interaction 모델 등록하기
 
-CEK가 extension으로 사용자의 요청 정보를 보낼 때 사용자의 발화를 어떻게 분석하고 이를 어떤 형식으로 보낼지 interaction 모델을 미리 정의해야 합니다. Interaction 모델은 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이 받게 될 요청을 정형화한 스키마입니다.
+CEK가 extension으로 사용자의 요청 정보를 보낼 때 사용자의 발화를 어떻게 분석하고 이를 어떤 형식으로 보낼지 [interaction 모델을 미리 정의](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)해야 합니다. Interaction 모델은 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이 받게 될 요청을 정형화한 스키마입니다.
 
 Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)한 후 Interaction 모델을 등록할 수 있습니다. 다음과 같이 CEK 메뉴에서 interaction 모델을 등록할 extension의 **수정** 버튼을 클릭합니다.
 
