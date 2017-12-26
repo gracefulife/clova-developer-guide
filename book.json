@@ -1,5 +1,5 @@
 {
-  "plugins": ["-search", "toggle2", "toggle-headers", "page-toc-button"],
+  "plugins": ["-search", "toggle-children", "page-toc-button"],
   "pluginsConfig": {
       "page-toc-button": {
           "maxTocDepth": 4,

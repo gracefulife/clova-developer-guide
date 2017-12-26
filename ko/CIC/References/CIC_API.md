@@ -166,7 +166,11 @@ CIC는 HTTP 응답으로 클라이언트에게 [Clova.Hello](/CIC/References/CIC
 | 200 OK                    | Downchannel이 정상적으로 연결 및 설정되었을 때 반환되는 상태 코드입니다. 이후 CIC 주도(Cloud-initiated) 지시 메시지가 수신될 것입니다.        |
 | 400 Bad Request           | 사용자 요청이 잘못된 형식으로 전달된 경우 발생하는 오류입니다.                                                                       |
 | 401 Unauthorized          | 사용자 인증에 실패한 경우 발생하는 오류입니다. 이 경우 [사용자 인증](#CreateClovaAccessToken)을 다시 시도해야합니다.                       |
+| 429 Too Many Request      | 클라이언트가 동시 또는 매우 짧은 시간 사이에 <code>/v1/directives</code>로 2건 이상의 연결을 요청할 때 발생하는 오류입니다. 클라이언트가 downchannel 구성을 요청할 때 한 번만 요청하도록 만들어야 합니다.  |
 | 500 Internal Server Error | 서버 내부 오류입니다.                                                                                                      |
+
+### Remarks
+클라이언트는 CIC와 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 downchannel 생성하라는 추가 요청이 들어오면 기존 downchannel은 해제됩니다. 또한, 클라이언트가 동시 또는 매우 짧은 시간 사이에 <code>/v1/directives</code>로 2건 이상의 연결을 요청하는 경우 CIC는 클라이언트에게 429 Too Many Request 오류 메시지를 반환합니다.
 
 ### Response example
 
