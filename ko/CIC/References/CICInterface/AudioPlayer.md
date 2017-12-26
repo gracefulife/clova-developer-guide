@@ -66,7 +66,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `playBehavior`            | string | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li><code>"REPLACE_ALL"</code>: 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li><code>"ENQUEUE"</code>: 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 항상 |
 | `source`                  | object | 오디오 스트리밍 서비스의 출처 정보                                                    | 항상 |
 | `source.name`             | string | 오디오 스트리밍 서비스의 이름                                                        | 항상 |
-| `source.logoUrl`          | string | 오디오 스트리밍 서비스의 로고 이미지 URL. 이 필드의 값이 없거나 로고 이미지를 표시할 수 없을 경우 `source.name` 필드에 있는 오디오 스트리밍 서비스의 이름이라도 표시해야 합니다.  | 조건부 |
+| `source.logoUrl`          | string | 오디오 스트리밍 서비스의 로고 이미지 URL. 이 필드 또는 필드의 값이 없거나 로고 이미지를 표시할 수 없을 경우 `source.name` 필드에 있는 오디오 스트리밍 서비스의 이름이라도 표시해야 합니다.  | 조건부 |
 
 ### Remarks
 음악 서비스의 과금 문제 등으로 인해 실제 스트리밍 정보, 즉 스트리밍 URL과 같은 정보는 재생 직전에 획득할 수 있는 경우가 있습니다. 이는 `audioItem.stream.urlPlayable` 필드 값에 따라 다음과 같이 구분됩니다.
@@ -488,7 +488,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `audioStream` | [AudioStreamInfoObject](#AudioStreamInfoObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체               | 항상 |
 
 ### Remarks
-StreamDeliver 지시 메시지와 이미 수신한 [Play](#Play) 지시 메시지의 본문인 `payload.audioStream`을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 `StreamDeliver` 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 `StreamDeliver` 지시 메시지의 `AudioStreamInfoObject`의 내용이 이미 [`AudioPlayer.Play`](#Play) 지시 메시지로 전달된 내용과 중복된 부분이 있으면 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
+StreamDeliver 지시 메시지와 이미 수신한 [`Play`](#Play) 지시 메시지의 본문인 `payload.audioStream`을 조합하는 형태로 오디오 스트림 재생을 구현할 수 있습니다. 하지만, 기존 Play 지시 메시지를 통해 전달받은 값을 `StreamDeliver` 지시 메시지가 새로 전달한 값으로 치환하면 안 됩니다. 그 이유는 `StreamDeliver` 지시 메시지의 `AudioStreamInfoObject`의 내용이 이미 [`AudioPlayer.Play`](#Play) 지시 메시지로 전달된 내용과 중복된 부분이 있으면 해당 내용이 생략될 수 있기 때문입니다. 이는 반복 재생이나 이전 곡 재생 등 동일한 Play 지시 메시지를 두 번 이상 처리할 때 기대와 다른 동작을 유발할 수 있습니다.
 
 ### Message example
 {% raw %}

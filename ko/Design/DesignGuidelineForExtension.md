@@ -46,14 +46,14 @@ Extension을 설계할 때 제일 먼저 할 일은 Extension의 목표를 정�
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>이렇게 작성된 세부 목표들은 <a href="#MakeUseCaseScenarioScript">사용 시나리오를 작성</a>하거나 <a href="#DefineInteractionModel">interaction 모델</a>을 정의하는 기반 정보가 됩니다. 또한, <a href="/DevConsole/Guides/CEK/Deploy_Extension.html#InputDeploymentInfo">extension을 배포</a>할 때 이 정보를 등록해야 하며, 이를 기준으로 extension이 제대로 동작하는지 <a href="/DevConsole/Guides/CEK/Deploy_Extension.html#RequestExtensionSubmission">심사</a>를 받게 됩니다.</p>
+  <p>이렇게 작성된 세부 목표들은 <a href="#MakeUseCaseScenarioScript">사용 시나리오 스크립트를 작성</a>하거나 <a href="#DefineInteractionModel">interaction 모델</a>을 정의하는 기반 정보가 됩니다. 또한, <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo">extension을 배포</a>할 때 이 정보를 등록해야 하며, 이를 기준으로 extension이 제대로 동작하는지 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission">심사</a>를 받게 됩니다.</p>
 </div>
 
 ## 사용 시나리오 스크립트 작성 {#MakeUseCaseScenarioScript}
 
-사용 시나리오 스크립트는 사용자와 Clova 사이의 대화를 미리 예상한 것입니다. 세부 목표를 기반으로 다양한 사용 시나리오에 사용자와 Clova의 대화를 미리 예상해 봄으로써 서비스의 편의성, 흐름 등을 점검할 수 있습니다. [목표 수립](#SettingGoal)에서 정한 세부 목표를 기준으로 예상되는 사용 시나리오를 스크립트로 작성할 것을 권장합니다. 이는 추후 [interaction 모델](#DefineInteractionModel)을 등록할 때 재사용될 수 있습니다.
+사용 시나리오 스크립트는 사용자와 Clova 사이의 대화를 미리 예상한 것입니다. 세부 목표를 기반으로 다양한 사용 시나리오에 사용자와 Clova의 대화를 미리 예상해 봄으로써 서비스의 편의성, 흐름 등을 점검할 수 있습니다. [목표 수립](#SettingGoal)에서 정한 세부 목표를 기준으로 예상되는 사용 시나리오 스크립트를 작성합니다. 이는 추후 [interaction 모델](#DefineInteractionModel)을 등록할 때 재사용될 수 있습니다.
 
-스크립트를 작성할 때는 다음을 고려하여 작성할 것을 권장합니다.
+사용 시나리오 스크립트를 작성할 때는 다음을 고려하여 작성할 것을 권장합니다.
 
 * 문어체 보다는 구어체 형식으로 작성합니다.
 * Extension이 정보를 제공할 때 너무 많은 내용 또는 선택지를 주지 않습니다.
@@ -170,7 +170,7 @@ Intent를 정의할 때 다양한 사용자 발화 예시를 열거할 수 있�
 페퍼로니 피자 1판 부탁해.
 ```
 
-결론을 위 발화 예시는 Clova는 학습을 통해 문장에 `"페퍼로니"`나 `"1판"`이라는 값만 들어 있어도 `OrderPizza` intent로 인식할 가능성이 매우 높아집니다. 예를 들면, "페퍼로니 피자 1판 얼마야?"와 같이 메뉴 조회를 예상한 발화가 피자를 주문을 요청한 발화로 처리되기 쉽습니다.
+위 발화 예시로 Clova가 학습한 경우 `"페퍼로니"`나 `"1판"`이라는 값이 사용자 발화에 포함되면 해당 발화가 `OrderPizza` intent로 인식할 가능성이 매우 높아집니다. 예를 들면, "페퍼로니 피자 1판 얼마야?"와 같이 메뉴 조회를 예상한 발화가 피자를 주문을 요청한 발화로 처리되기 쉽습니다.
 
 따라서, 다음과 같은 형태로 발화 예시를 작성할 것을 권장합니다.
 
@@ -212,7 +212,7 @@ BBQ 피자 하나만 배달시켜줄래?
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>추후 <a href="/DevConsole/Guides/CEK/Deploy_Extension.html#TestInteractionModel">interaction 모델 테스트</a>나 실제 사용자 로그를 통해 완성도를 높여 나갈 수 있습니다. Interaction 모델을 테스트할 때는 발화 예시를 작성한 사람이 아닌 다른 사람이 테스트해보는 것이 좋습니다. 이 방법은 새로운 표현 패턴을 찾는데 도움이 됩니다.</p>
+  <p>추후 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#TestInteractionModel">interaction 모델 테스트</a>나 실제 사용자 로그를 통해 완성도를 높여 나갈 수 있습니다. Interaction 모델을 테스트할 때는 발화 예시를 작성한 사람이 아닌 다른 사람이 테스트해보는 것이 좋습니다. 이 방법은 새로운 표현 패턴을 찾는데 도움이 됩니다.</p>
 </div>
 
 

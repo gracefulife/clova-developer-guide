@@ -93,7 +93,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 {% endraw %}
 
-위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지 전달될 준비가 되었음을 나타냅니다.
+위 연결 요청이 성공적으로 수행되면 CIC는 다음과 같은 [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) 지시 메시지를 응답으로 보냅니다. 이는 downchannel을 통해 추가적인 지시 메시지가 전달될 준비가 되었음을 나타냅니다.
 
 {% raw %}
 
@@ -115,7 +115,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 <div class="note">
   <p><strong>Note!</strong></p>
   <ul>
-    <li>클라이언트 앱이나 기기가 시작되면, CIC와 연결하여 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 downchannel 생성하라는 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
+    <li>클라이언트는 CIC와 항시 하나의 downchannel을 유지하도록 해야 합니다. 만약, downchannel이 생성된 상태에서 <code>/v1/directives</code>으로 downchannel 생성하라는 추가 요청이 들어오면 기존 downchannel은 해제됩니다.</li>
     <li>헤더에 포함해야 하는 User-Agent 필드에 대한 내용은 <a href="#UserAgentString">User-Agent string</a>를 참조합니다.</li>
     <li>헤더에 포함해야 하는 Authorization 필드에 대한 내용은 <a href="#Authorization">인증하기</a>를 참조합니다.</li>
   </ul>
