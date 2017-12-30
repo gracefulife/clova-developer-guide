@@ -3,10 +3,10 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Text 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>Text 템플릿의 표시 형태는 <a href="#UIExample">UI example</a>을 참조합니다.</p>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -25,11 +25,11 @@
 | `tableList[]`           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 행이 두 개 또는 세 개인 표를 구성합니다.     |
 | `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 첫 번째 행에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
 | `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 두 번째 행에 표시할 텍스트 정보를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                    |
-| `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 열에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체 |
+| `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) 또는 [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | 두 번째 행에 표시된 텍스트의 링크 URL 또는 전화 번호를 담은 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 세 번째 행에 표시할 텍스트 정보를 담은 객체. 이 필드는 생략될 수 있습니다. |
 | `type`                   | string                                                                          | Content template 구분자. `"Text"` 값을 가집니다.             |
 
-## Template Example
+## Template example
 
 {% raw %}
 
@@ -394,7 +394,7 @@
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 Text 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 강조하는 형태의 텍스트 | 문단 형태의 텍스트 | 표 형태의 텍스트 |
