@@ -89,4 +89,4 @@ The release history of Clova developer guide is recorded as GitHub issuse and re
 * [Issues with Deployment label](https://oss.navercorp.com/JTF-P6/platform_technical_doc/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3ADeployment%20)
 * [Releases](https://oss.navercorp.com/JTF-P6/platform_technical_doc/releases)
 
-> Due to translation job, EN version documentation is released after 1 or 2 week(s).
+> Due to the translation job, EN version documentation is released 1 or 2 week(s) later after KO version release.

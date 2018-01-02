@@ -15,7 +15,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 특정 Extension 사용을 종료하도록 지시합니다. 클라이언트는 FinishExtension 지시 메시지를 수신하면 해당 값에 대응하는 Extension을 종료해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -35,7 +35,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
       "dialogRequestId": "3db18cee-caac-4101-891f-b5f5c2e7fa9c"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "SampleExtension"
     }
   }
 }
@@ -50,7 +50,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다. 클라이언트는 이 지시 메시지를 통해 Clova 서비스에 대한 [접속 시도](/CIC/Guides/Interact_with_CIC.md#CreateConnection)가 제대로 수행되었는지 확인할 수 있습니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -83,7 +83,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 도움말 정보를 제공하도록 지시합니다. 사용자가 도움말을 요청한 경우 이 지시 메시지를 전달받게 되며, 미리 준비해둔 도움말 음성 정보를 들려주거나 도움말 UI를 화면에 표시해야 합니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -113,7 +113,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 데이터를 content template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
-### Payload field
+### Payload fields
 `payload` 필드는 [content template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 content template을 제공하고 있습니다.
 
 * 콘텐츠 UI 유형별 템플릿
@@ -136,10 +136,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
   * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
-
-* 길찾기 템플릿
-  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
-  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
 
 * 날씨 템플릿
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
@@ -179,7 +175,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 텍스트 메시지를 표시하도록 지시합니다. 사용자에게 보여줄 텍스트가 함께 전달됩니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -214,7 +210,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 클라이언트에게 특정 Extension을 시작하도록 지시합니다. 클라이언트는 StartExtension 지시 메시지를 수신하면 해당 값에 대응하는 Extension을 시작합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -234,7 +230,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
       "dialogRequestId": "8b509a36-9081-4783-b1cd-58d406205956"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "SampleExtension"
     }
   }
 }

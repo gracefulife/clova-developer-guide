@@ -1,9 +1,9 @@
 {
   "plugins": ["-search", "toggle-children", "page-toc-button"],
   "pluginsConfig": {
-      "page-toc-button": {
-          "maxTocDepth": 4,
-          "minTocSize": 2
-         }
+    "page-toc-button": {
+      "maxTocDepth": 4,
+      "minTocSize": 2
+    }
   }
 }

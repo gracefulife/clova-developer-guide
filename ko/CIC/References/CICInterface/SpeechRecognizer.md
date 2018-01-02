@@ -19,7 +19,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 클라이언트에게 마이크를 활성화하여 사용자의 음성 입력을 받도록 지시합니다. 해당 지시 메시지는 CIC가 먼저 사용자의 요청에서 불충분한 정보를 추가로 요구하는 multi-turn 대화를 수행하기 위해 전달됩니다. 입력된 사용자 음성은 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 통해 CIC로 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -64,7 +64,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 클라이언트에게 사용자의 음성 입력을 계속 받도록 지시합니다. `SpeechRecognizer.KeepRecording` 지시 메시지는 클라이언트에게 입력된 사용자의 음성을 인식하고 있음을 알려주는 중간 응답이며, 이 지시 메시지를 받은 클라이언트는 CIC로부터의 응답에 대한 timeout을 구현하거나 UX에 활용할 수 있습니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -93,7 +93,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * [`SpeechRecognizer.Recognize`](#Recognize)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
+`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 읍성 입력을 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
 다음과 같은 기준의 음성 입력을 처리할 수 있습니다.
 * 16-bit Linear PCM
@@ -101,11 +101,11 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * Mono
 * Little endian
 
-### Context field
+### Context fields
 Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
-### Payload field
+### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
@@ -175,13 +175,13 @@ Content-Type: application/octet-stream
 ### See also
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
-* [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
-* [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
-* [Clova.Location](/CIC/References/Context_Objects.md#Location)
-* [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
-* [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
-* [Device.Display](/CIC/References/Context_Objects.md#Display)
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
+* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ## StopCapture directive {#StopCapture}
 CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 후 더 이상 녹음 데이터(PCM)를 수신할 필요가 없다고 판단한 경우 `SpeechRecognizer.StopCapture` 지시 메시지를 클라이언트에 전달합니다. 클라이언트는 이 메시지를 수신한 즉시 사용자 음성 녹음을 중지해야 합니다. CIC가 이 메시지를 보낸 후에도 사용자 음성 정보를 수신할 수 있지만 해당 음성 정보는 처리되지 않습니다.

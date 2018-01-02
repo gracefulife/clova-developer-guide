@@ -17,7 +17,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 ## DriverInternalError {#DriverInternalError}
 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -47,7 +47,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 ## TargetOfflineError {#TargetOfflineError}
 대상 기기에 접속할 수 없으면(offline) CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -80,7 +80,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 
 예를 들어, 사용자의 온도조절기(`"THERMOSTAT"` 타입)가 `SetMode` 동작을 수행할 수 있고 해당 기기가 취침 모드(`"sleep"`), 외출 모드(`"away"`)를 지원한다고 가정해 봅니다. 이 상태에서 사용자가 해당 기기에 냉방 모드(`"cool"`)를 설정하도록 요청하면 Clova Home extension에서 `UnsupportedOperationError` 메시지를 CEK로 보내야 합니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -110,7 +110,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 ## ValueOutOfRangeError {#ValueOutOfRangeError}
 사용자가 대상 기기가 처리할 수 없는 범위의 값으로 동작을 요청한 경우 CEK에게 이 메시지를 응답으로 보냅니다. 예를 들면, 에어컨에 설정할 수 있는 희망 온도 값이 18에서 28 사이인데 사용자가 16이나 30과 같은 값을 설정하도록 요청한 상황에 이 메시지가 사용될 수 있습니다. `payload` 필드에 대상 기기가 처리할 수 있는 최대치와 최소치를 전달해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|

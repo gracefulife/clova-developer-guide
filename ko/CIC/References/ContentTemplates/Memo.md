@@ -10,7 +10,7 @@ CIC는 사용자가 메모를 생성하면 생성한 메모의 정보를 Memo �
 </ul>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -19,7 +19,7 @@ CIC는 사용자가 메모를 생성하면 생성한 메모의 정보를 Memo �
 | `token`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 메모의 식별자 정보가 담긴 객체  |
 | `type`        | string                                                                              | Content template 구분자. `"Memo"` 값을 가집니다.             |
 
-## Template Example
+## Template example
 
 {% raw %}
 
@@ -43,7 +43,7 @@ CIC는 사용자가 메모를 생성하면 생성한 메모의 정보를 Memo �
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>

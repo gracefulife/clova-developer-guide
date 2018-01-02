@@ -84,8 +84,8 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 | `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
 
 <div class="note">
-<p><strong>Note!</strong></p>
-<p>파라미터에 대한 자세한 설명은 OAuth 2.0 Authorization Framework의 <a href="https://tools.ietf.org/html/rfc6749#section-4">Obtaining Authorization</a>을 참고합니다.</p>
+  <p><strong>Note!</strong></p>
+  <p>파라미터에 대한 자세한 설명은 OAuth 2.0 Authorization Framework의 <a href="https://tools.ietf.org/html/rfc6749#section-4">Obtaining Authorization</a>을 참고합니다.</p>
 </div>
 
 다음은 클라이언트 앱 또는 클라이언트 기기와 페어링하는 앱이 로그인 페이지를 요청하는 URL 예입니다.
