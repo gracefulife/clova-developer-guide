@@ -70,7 +70,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
       "dialogRequestId": "3db18cee-caac-4101-891f-b5f5c2e7fa9c"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "SampleExtension"
     }
   }
 }
@@ -172,10 +172,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
 
-* 길찾기 템플릿
-  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
-  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
-
 * 날씨 템플릿
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
@@ -269,7 +265,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
       "dialogRequestId": "8b509a36-9081-4783-b1cd-58d406205956"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "SampleExtension"
     }
   }
 }

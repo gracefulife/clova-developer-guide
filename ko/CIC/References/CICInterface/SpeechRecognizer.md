@@ -94,7 +94,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * [`SpeechRecognizer.Recognize`](#Recognize)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 해당 결과를 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
+`SpeechRecognizer.Recognize` 이벤트 메시지는 사용자 음성 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다. Clova 내부의 자연어 분석 시스템과 대화 이해 시스템이 읍성 입력을 해석하여 사용자의 요청을 처리합니다. CIC로부터 전달되는 대부분의 [지시 메시지](/CIC/References/CIC_API.md#Directive)는 `SpeechRecognizer.Recognize` 이벤트 메시지를 통해 사용자의 요청을 확인한 후 전달됩니다.
 
 다음과 같은 기준의 음성 입력을 처리할 수 있습니다.
 * 16-bit Linear PCM
@@ -176,13 +176,13 @@ Content-Type: application/octet-stream
 ### See also
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
-* [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
-* [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
-* [Clova.Location](/CIC/References/Context_Objects.md#Location)
-* [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
-* [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
-* [Device.Display](/CIC/References/Context_Objects.md#Display)
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
+* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
