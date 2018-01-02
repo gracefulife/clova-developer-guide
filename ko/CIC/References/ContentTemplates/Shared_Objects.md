@@ -20,7 +20,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 # ActionObject {#ActionObject}
 클라이언트가 수행할 수 있는 동작 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"action"` 값으로 고정되어 있습니다.  | 필수     |
@@ -41,7 +41,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 # CurrencyObject {#CurrencyObject}
 통화와 금액 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"currency"` 값으로 고정되어 있습니다.  | 필수     |
@@ -62,7 +62,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## DateObject {#DateObject}
 날짜 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"date"` 값으로 고정되어 있습니다.  | 필수     |
@@ -83,7 +83,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## DateTimeObject {#DateTimeObject}
 날짜와 시간 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"datetime"` 값으로 고정되어 있습니다.   | 필수     |
@@ -104,7 +104,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## LocationObject {#LocationObject}
 지도 상의 좌표 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"location"` 값으로 고정되어 있습니다.                  | 필수     |
@@ -125,7 +125,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## NumberObject {#NumberObject}
 단위 구분자(1천 단위)가 처리된 숫자 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"number"` 값으로 고정되어 있습니다.    | 필수     |
@@ -146,7 +146,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## PercentageObject {#PercentageObject}
 백분율 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"percentage"` 값으로 고정되어 있습니다. | 필수     |
@@ -167,7 +167,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## PhoneNumberObject {#PhoneNumberObject}
 전화 번호 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"phoneNum"` 값으로 고정되어 있습니다. | 필수     |
@@ -188,7 +188,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## StringObject {#StringObject}
 텍스트 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"string"` 값으로 고정되어 있습니다.  | 필수     |
@@ -216,7 +216,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## TemperatureCObject {#TemperatureCObject}
 섭씨 단위의 온도 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"temperature-c"` 값으로 고정되어 있습니다.   | 필수     |
@@ -237,7 +237,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## TemperatureFObject {#TemperatureFObject}
 화씨 단위의 온도 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"temperature-f"` 값으로 고정되어 있습니다.   | 필수     |
@@ -258,7 +258,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ## URLObject {#URLObject}
 URL 정보를 가지는 객체입니다.
 
-### Object field
+### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `type`          | string  | `"url"` 값으로 고정되어 있습니다.   | 필수     |

@@ -70,7 +70,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## ChargeConfirmation {#ChargeConfirmation}
 [`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -98,7 +98,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## ChargeRequest {#ChargeRequest}
 주로 로봇 청소기를 제어할 때 사용되며, 대상 기기가 스스로를 충전하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`ChargeConfirmation`](#ChargeConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -134,7 +134,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementBrightnessConfirmation {#DecrementBrightnessConfirmation}
 [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -179,7 +179,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementBrightnessRequest {#DecrementBrightnessRequest}
 주로 조명 기기를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 조명의 밝기를 낮추도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -219,7 +219,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementChannelConfirmation {#DecrementChannelConfirmation}
 [`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -263,7 +263,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementChannelRequest {#DecrementChannelRequest}
 주로 TV나 셋톱박스를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 TV 채널을 낮추도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DecrementChannelConfirmation`](#DecrementChannelConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -303,7 +303,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementFanSpeedConfirmation {#DecrementFanSpeedConfirmation}
 [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -348,7 +348,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementFanSpeedRequest {#DecrementFanSpeedRequest}
 주로 공기청정기와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 팬의 속도를 낮추도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -388,7 +388,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementTargetTemperatureConfirmation {#DecrementTargetTemperatureConfirmation}
 [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -433,7 +433,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementTargetTemperatureRequest {#DecrementTargetTemperatureRequest}
 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 온도를 낮추도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -473,7 +473,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementVolumeConfirmation {#DecrementVolumeConfirmation}
 [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -518,7 +518,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## DecrementVolumeRequest {#DecrementVolumeRequest}
 주로 TV 셋톱 박스와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 스피커 볼륨을 낮추도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1104,7 +1104,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## HealthCheckRequest {#HealthCheckRequest}
 지정한 기기의 상태를 파악할 때 사용되며, 대상 기기의 상태 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`HealthCheckResponse`](#HealthCheckResponse) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1140,7 +1140,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## HealthCheckResponse {#HealthCheckResponse}
 [`HealthCheckRequest`](#HealthCheckRequest) 메시지에 대한 응답으로 지정된 기기의 상태를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1174,7 +1174,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementBrightnessConfirmation {#IncrementBrightnessConfirmation}
 [`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1219,7 +1219,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementBrightnessRequest {#IncrementBrightnessRequest}
 주로 조명 기기를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 조명의 밝기를 높이도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`IncrementBrightnessConfirmation`](#IncrementBrightnessConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1259,7 +1259,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementChannelConfirmation {#IncrementChannelConfirmation}
 [`IncrementChannelRequest`](#IncrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 높이도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1304,7 +1304,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementChannelRequest {#IncrementChannelRequest}
 주로 TV나 셋톱박스를 제어할 때 사용되며, 대상 기기가 지정한 수준만큼 TV 채널을 높이도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`IncrementChannelConfirmation`](#IncrementChannelConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1344,7 +1344,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementFanSpeedConfirmation {#IncrementFanSpeedConfirmation}
 [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬의 속도를 높이도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1389,7 +1389,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementFanSpeedRequest {#IncrementFanSpeedRequest}
 주로 공기청정기와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 팬의 속도를 높이도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1429,7 +1429,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementTargetTemperatureConfirmation {#IncrementTargetTemperatureConfirmation}
 [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 높이도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1474,7 +1474,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementTargetTemperatureRequest {#IncrementTargetTemperatureRequest}
 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 온도를 높이도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1514,7 +1514,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementVolumeConfirmation {#IncrementVolumeConfirmation}
 [`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1555,7 +1555,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## IncrementVolumeRequest {#IncrementVolumeRequest}
 주로 TV 셋톱 박스와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 스피커 볼륨을 높이도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1595,7 +1595,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## MuteConfirmation {#MuteConfirmation}
 [`MuteRequest`](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -1622,7 +1622,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## MuteRequest {#MuteRequest}
 주로 TV나 셋톱박스와 같은 기기를 제어할 때 사용되며, 대상 기기의 소리를 끄도록(음소거) Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`MuteConfirmation`](#MuteConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1658,7 +1658,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetBrightnessConfirmation {#SetBrightnessConfirmation}
 [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1696,7 +1696,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetBrightnessRequest {#SetBrightnessRequest}
 주로 조명 기기를 제어할 때 사용되며, 대상 기기가 조명 밝기를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetBrightnessConfirmation`](#SetBrightnessConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1736,7 +1736,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetChannelByNameConfirmation {#SetChannelByNameConfirmation}
 [`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1774,7 +1774,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetChannelByNameRequest {#SetChannelByNameRequest}
 주로 TV 셋톱 박스와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 채널 이름으로 채널을 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1814,7 +1814,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetChannelConfirmation {#SetChannelConfirmation}
 [`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 채널 번호로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1852,7 +1852,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetChannelRequest {#SetChannelRequest}
 주로 TV 셋톱 박스와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 채널 번호로 채널을 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetChannelConfirmation`](#SetChannelConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1892,7 +1892,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetFanSpeedConfirmation {#SetFanSpeedConfirmation}
 [`SetFanSpeedRequest`](#SetFanSpeedRequest) 메시지에 대한 응답으로 팬 속도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1930,7 +1930,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetFanSpeedRequest {#SetFanSpeedRequest}
 주로 공기청정기와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값으로 팬 속도를 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetFanSpeedConfirmation`](#SetFanSpeedConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -1970,7 +1970,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetLockStateConfirmation {#SetLockStateConfirmation}
 [`SetLockStateRequest`](#SetLockStateRequest) 메시지에 대한 응답으로 대상 기기가 잠기거나 열리도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2003,7 +2003,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetLockStateRequest {#SetLockStateRequest}
 주로 스마트 밸브와 같은 기기를 제어할 때 사용되며, 대상 기기를 잠그거나 열도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetLockStateConfirmation`](#SetLockStateConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2041,7 +2041,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetModeConfirmation {#SetModeConfirmation}
 [`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 운전 모드(operation mode)를 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2079,7 +2079,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetModeRequest {#SetModeRequest}
 기기의 운전 모드(operation mode)를 제어할 때 사용되며, 기기의 운전 모드를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetModeConfirmation`](#SetModeConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2119,7 +2119,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetTargetTemperatureConfirmation {#SetTargetTemperatureConfirmation}
 [`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest) 메시지에 대한 응답으로 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2157,7 +2157,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## SetTargetTemperatureRequest {#SetTargetTemperatureRequest}
 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 희망 온도를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`SetTargetTemperatureConfirmation`](#SetTargetTemperatureConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2197,7 +2197,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## TurnOffConfirmation {#TurnOffConfirmation}
 [`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -2224,7 +2224,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## TurnOffRequest {#TurnOffRequest}
 대상 기기를 끄도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`TurnOffConfirmation`](#TurnOffConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2260,7 +2260,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## TurnOnConfirmation {#TurnOnConfirmation}
 [`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 설정한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -2287,7 +2287,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## TurnOnRequest {#TurnOnRequest}
 대상 기기를 켜도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`TurnOnConfirmation`](#TurnOnConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -2323,7 +2323,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## UnmuteConfirmation {#UnmuteConfirmation}
 [`UnmuteRequest`](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다.
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -2350,7 +2350,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## UnmuteRequest {#UnmuteRequest}
 주로 TV나 셋톱박스와 같은 기기를 제어할 때 사용되며, 대상 기기의 소리를 켜도록(음소거 해제) Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`UnmuteConfirmation`](#UnmuteConfirmation) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|

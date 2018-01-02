@@ -2,6 +2,14 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-01-02
+
+### 플랫폼 변경 사항
+
+* CIC
+  - [Downchannel 구성](/CIC/References/CIC_API.md#EstablishDownchannel)에 429 오류 코드 추가 및 관련 설명을 Remarks 항목에 추가
+  - 길찾기 템플릿(CarRoute, TransportationRoute) 제거, 길찾기에 대한 UI 표현을 위해 ImageText 템플릿을 사용하는 것으로 대체됨
+
 ## 2017-12-18
 
 ### 플랫폼 변경 사항

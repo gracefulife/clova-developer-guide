@@ -10,7 +10,7 @@
 ## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
 사용자가 등록한 기기 목록을 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) 메시지를 사용해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -40,7 +40,7 @@
 ## DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
 사용자가 등록한 기기 목록을 CEK에게 전달합니다. 이 메시지는 [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) 메시지에 대한 응답으로 사용됩니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|

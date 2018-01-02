@@ -10,7 +10,7 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 ## ClearIndicator directive {#ClearIndicator}
 클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. 알림을 표시하는 조명이나 소리 효과를 모두 꺼야 합니다.
 
-### Payload field
+### Payload fields
 없음
 
 ### Remarks
@@ -41,7 +41,7 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 ## SetIndicator directive {#SetIndicator}
 클라이언트에게 알림 표시를 켜도록 지시합니다.
 
-### Payload field
+### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
 | `new`         | boolean | 새로운 알림에 대한 지시 메시지인지 알려주는 필드입니다. <ul><li><code>true</code>: 새로운 알림인 경우</li><li><code>false</code>: 새로운 알림이 아닌 경우</li></ul> | 항상    |

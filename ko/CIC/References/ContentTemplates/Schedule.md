@@ -11,19 +11,19 @@ CIC는 사용자가 캘린더에 일정을 생성하면 생성한 일정의 정�
 </ul>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 일정에 사용자가 입력한 내용이 담긴 객체 |
 | `end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) 또는 [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | 추가한 일정의 종료 날짜와 시간. 종일 일정의 경우 DateObject 형태의 자료형을 가지며, 날짜 정보만 가집니다. |
 | `start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) 또는 [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | 추가한 일정의 시작 날짜와 시간. 종일 일정의 경우 DateObject 형태의 자료형을 가지며, 날짜 정보만 가집니다. |
-| `repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 매주 반복되는 일정일 경우 반복할 요일 정보를 가지고 있는 객체 배열 |
+| `repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 매주 반복되는 일정일 경우 반복할 요일 정보를 가지고 있는 객체 배열 |
 | `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 반복 주기 정보를 가지는 객체입니다. 이 객체의 `value` 필드는 다음과 같은 값을 가집니다. <ul><li>빈 문자열(<code>""</code>): 일회성 일정 </li><li><code>"daily"</code>: 매일 반복되는 일정</li><li><code>"weekly"</code>: 매주 반복되는 일정</li></ul> |
 | `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 일정의 식별자 정보가 담긴 객체  |
 | `type`          | string                                                                              | Content template 구분자. `"Schedule"`로 고정             |
 
-## Template Example
+## Template example
 
 {% raw %}
 
@@ -140,7 +140,7 @@ CIC는 사용자가 캘린더에 일정을 생성하면 생성한 일정의 정�
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
