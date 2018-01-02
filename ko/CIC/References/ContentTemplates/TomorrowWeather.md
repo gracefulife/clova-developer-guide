@@ -3,15 +3,15 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>내일 날씨 정보를 표시한 예는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>내일 날씨 정보를 표시한 예는 <a href="#UIExample">UI example</a>을 참조합니다.</p>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경 영상 파일의 URL 정보가 담긴 객체. <div class="danger"><p><strong>Caution!</strong></p><p>해당 필드의 데이터는 라이센스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
-| `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오후의 최고 기온 정보가 담긴 객체 |
+| `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일의 최고 기온 정보가 담긴 객체 |
 | `highTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 높을 때의 날씨 정보가 담긴 객체  |
 | `houlyWeatherList[]` | object array | 시간대별 날씨 정보를 가지는 객체 배열 |
 | `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 시간대별 온도 정보가 담긴 객체 |
@@ -21,13 +21,13 @@
 | `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 시간대별 날씨 이미지 파일의 URL 정보가 담긴 객체 |
 | `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 콘텐츠 링크 경로가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.      |
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |
-| `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일 오전의 최저 기온 정보가 담긴 객체 |
+| `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 내일의 최저 기온 정보가 담긴 객체 |
 | `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 낮을 때의 날씨 정보가 담긴 객체  |
 | `type`                      | string | Content template 구분자. `"TomorrowWeather"` 값을 가집니다. |
 
 {% include "./Shared_Weather_Code.md" %}
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -283,7 +283,7 @@
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 TomorrowWeather 템플릿의 내용을 표현한 UI 예제입니다.
 
 ![TomorrowWeather](/CIC/Resources/Images/Content-Template-TomorrowWeather.png)

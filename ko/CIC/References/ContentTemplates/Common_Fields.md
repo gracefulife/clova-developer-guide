@@ -1,12 +1,12 @@
 # 공통 필드
 모든 content template는 다음과 같은 공통 필드를 가질 수 있습니다. 공통 필드는 content template 객체의 최상위에 위치하게 됩니다.
 
-| 필드 이름        | 자료형    | 필드 설명                     | 필수 여부 |
+| 필드 이름        | 자료형    | 필드 설명                     | 반환 여부 |
 |----------------|---------|-----------------------------|---------|
-| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | UI 터치와 같은 사용자 인터랙션에 대응할 수 있도록 content template을 제공해야합니다. 이때, 이 필드를 이용하여 사용자 인터랙션에 대응할 동작([Action URL scheme](#ActionURLScheme)) 목록을 전달합니다. [CardList](/CIC/References/ContentTemplates/CardList.md) 타입의 content template은 `cardList[]` 필드 하위에 정의될 수 있습니다. | 선택 |
-| `failureMessage[]` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | UI에 content template를 표시하지 못할 경우 보여줄 메시지 정보를 포함합니다. 예를 들면, 클라이언트가 `meta.version`에 명시된 content template의 버전을 지원하지 않거나 템플릿 정보를 표시하는데 문제가 생길 경우 보여줄 메시지 입니다. | 필수 |
-| `meta`             | object | Content template과 관련된 메타 정보를 포함합니다. | 필수 |
-| `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Content template의 버전 정보를 포함합니다. | 필수 |
+| `actionList[]`     | [ActionObject](/CIC/References/ContentTemplates/Shared_Objects.md#ActionObject) array | UI 터치와 같은 사용자 인터랙션에 대응할 수 있도록 content template을 제공해야합니다. 이때, 이 필드를 이용하여 사용자 인터랙션에 대응할 동작([Action URL scheme](#ActionURLScheme)) 목록을 전달합니다. [CardList](/CIC/References/ContentTemplates/CardList.md) 타입의 content template은 `cardList[]` 필드 하위에 정의될 수 있습니다. | 조건부 반환 |
+| `failureMessage` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | UI에 content template를 표시하지 못할 경우 보여줄 메시지 정보를 포함합니다. 예를 들면, 클라이언트가 `meta.version`에 명시된 content template의 버전을 지원하지 않거나 템플릿 정보를 표시하는데 문제가 생길 경우 보여줄 메시지 입니다. | 항상 |
+| `meta`             | object | Content template과 관련된 메타 정보를 포함합니다. | 항상 |
+| `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Content template의 버전 정보를 포함합니다. | 항상 |
 
 ## 공통 필드 Example
 
@@ -46,8 +46,8 @@
 | [clova://audio-repeat](#AudioRepeat)                                | 오디오 출력을 수행하는 동작     |
 | [clova://device-control](#DeviceControl)                            | 기기 제어를 수행하는 동작       |
 | [clova://guide/talking](#GuideTalking)     | 명령 도우미를 제공하는 동작                              |
-| [clova://naverSearch](#NaverSearch)        | 네이버 앱에서 특정 키워드를 검색하는 동작                    |
-| [clova://naver-maps](#NaverMaps)           | 네이버 지도 앱을 실행하는 동작                            |
+| [clova://naverSearch](#NaverSearch)        | NAVER 앱에서 특정 키워드를 검색하는 동작                    |
+| [clova://naver-maps](#NaverMaps)           | NAVER 지도 앱을 실행하는 동작                            |
 | [clova://ttsRepeat](#TTSRepeat)            | Text to speech 발화를 수행하는 동작                     |
 | [clova://webview](#Webview)                | WebView로 웹 페이지를 여는 동작                          |
 
@@ -133,11 +133,11 @@ clova://guide/talking
 
 ### clova://naverSearch {#NaverSearch}
 
-클라이언트가 네이버 앱을 실행하여 검색 기능을 수행하도록 정의한 스키마입니다.
+클라이언트가 NAVER 앱을 실행하여 검색 기능을 수행하도록 정의한 스키마입니다.
 
 | 파라미터 이름    | 설명                         | 필수 여부 |
 |---------------|-----------------------------|--------|
-| url           | 네이버 앱을 통해 열려는 페이지의 URL | 필수 |
+| url           | NAVER 앱을 통해 열려는 페이지의 URL | 필수 |
 
 이 action URL scheme의 예는 다음과 같습니다.
 
@@ -147,11 +147,11 @@ clova://naverSearch?url=http://target.page.url
 
 ### clova://naver-maps {#NaverMaps}
 
-클라이언트가 네이버 지도 앱을 실행하여 길찾기 기능을 수행하도록 정의한 스키마입니다.
+클라이언트가 NAVER 지도 앱을 실행하여 길찾기 기능을 수행하도록 정의한 스키마입니다.
 
 | 파라미터 이름    | 설명                         | 필수 여부 |
 |---------------|-----------------------------|--------|
-| url           | 네이버 지도 앱을 통해 열려는 URL   | 필수 |
+| url           | NAVER 지도 앱을 통해 열려는 URL   | 필수 |
 
 이 action URL scheme의 예는 다음과 같습니다.
 

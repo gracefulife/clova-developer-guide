@@ -10,7 +10,7 @@ CIC는 사용자가 타이머의 목록을 요청하면 사용자에게 등록�
 </ul>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -19,7 +19,7 @@ CIC는 사용자가 타이머의 목록을 요청하면 사용자에게 등록�
 | `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 타이머의 식별자 정보가 담긴 객체                             |
 | `type`                      | string                                                                              | Content template 구분자. `"TimerList"` 값을 가집니다.      |
 
-## Template Example
+## Template example
 
 {% raw %}
 
@@ -53,7 +53,7 @@ CIC는 사용자가 타이머의 목록을 요청하면 사용자에게 등록�
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>

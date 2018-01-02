@@ -25,10 +25,6 @@ Content template은 CIC를 통해 전달되는 콘텐츠 정보를 일정 범주
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
 
-* 길찾기 템플릿
-  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
-  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
-
 * 날씨 템플릿
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)

@@ -1,7 +1,7 @@
 ## Device.DeviceState {#DeviceState}
 `Device.DeviceState`는 클라이언트의 기기의 상태 정보를 CIC에게 보고할 때 사용하는 메시지 포맷입니다.
 
-### Message structure
+### Object structure
 {% raw %}
 
 ```json
@@ -31,7 +31,7 @@
 
 {% endraw %}
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -50,7 +50,7 @@
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | 클라이언트 기기의 스피커 볼륨 정보를 보고할 때 사용하는 객체           | 선택 |
 | `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | 클라이언트 기기의 무선 네트워크(Wi-Fi) 기능 활성화 상태와 무선 네트워크 연결 정보를 보고할 때 사용하는 객체    | 선택 |
 
-### Message example
+### Object example
 {% raw %}
 
 ```json
@@ -122,7 +122,7 @@
 ### AirplaneInfoObject {#AirplaneInfoObject}
 클라이언트 기기의 비행기 모드 설정 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -158,7 +158,7 @@
 ### BatteryInfoObject {#BatteryInfoObject}
 클라이언트 기기의 배터리 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -193,7 +193,7 @@
 ### BluetoothInfoObject {#BluetoothInfoObject}
 클라이언트 기기의 블루투스 활성화 상태 및 블루투스 기기 연결 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -249,7 +249,7 @@
 ### CellularInfoObject {#CellularInfoObject}
 클라이언트 기기의 모바일 통신 활성화 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -285,7 +285,7 @@
 ### ChannelInfoObject {#ChannelInfoObject}
 클라이언트 기기의 TV 채널 설정 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -321,7 +321,7 @@
 ### EnergySavingModeInfoObject {#EnergySavingModeInfoObject}
 클라이언트 기기의 에너지 절약 모드 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -358,7 +358,7 @@
 ### FlashLightInfoObject {#FlashLightInfoObject}
 클라이언트 기기의 플래시 조명 설정 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -394,7 +394,7 @@
 ### GPSInfoObject {#GPSInfoObject}
 클라이언트 기기의 GPS 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -430,7 +430,7 @@
 ### PowerInfoObject {#PowerInfoObject}
 클라이언트 기기의 전원 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -466,7 +466,7 @@
 ### ScreenBrightnessInfoObject {#ScreenBrightnessInfoObject}
 클라이언트 기기의 화면 밝기 상태 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -507,7 +507,7 @@
 ### SoundModeInfoObject {#SoundModeInfoObject}
 클라이언트 기기의 사운드 모드 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -543,7 +543,7 @@
 ### VolumeInfoObject {#VolumeInfoObject}
 클라이언트 기기의 스피커 볼륨 크기 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -586,7 +586,7 @@
 ### WifiInfoObject {#WifiInfoObject}
 클라이언트 기기의 무선 네트워크(Wi-Fi) 기능 활성화 상태와 무선 네트워크 연결 정보를 보고할 때 사용하는 객체입니다.
 
-#### Object field
+#### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|

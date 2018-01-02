@@ -20,7 +20,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## ClearQueue directive {#ClearQueue}
 클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다. 이 지시 메시지의 `clearBehavior` 필드 값은 초기화 동작을 구분하며, 클라이언트가 재생 대기열을 초기화하면서 현재 재생 중인 오디오 스트림의 재생을 멈춰야 하는지를 결정합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
@@ -55,7 +55,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## Play directive {#Play}
 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.
 
-### Payload field
+### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
 | `audioItem`               | object | 재생할 오디오 스트림의 메타 정보와 재생에 필요한 오디오 스트림 정보를 담고 있는 객체                     | 항상 |
@@ -175,12 +175,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## PlayFinished event {#PlayFinished}
 클라이언트가 오디오 스트림 재생을 완료할 때 재생 완료된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -214,12 +214,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 2. CIC는 Clova 플랫폼에서 인식된 일시 정지 요청을 [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 일시 정지하고 PlayPaused 이벤트 메시지를 CIC에 전송합니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -256,12 +256,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 2. CIC는 Clova 플랫폼에서 인식된 재생 재개 요청을 [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 재개하고 PlayResumed 이벤트 메시지를 CIC에 전송합니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -293,12 +293,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## PlayStarted event {#PlayStarted}
 클라이언트가 오디오 스트림 재생을 시작할 때 재생이 시작된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -333,12 +333,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 2. CIC는 Clova 플랫폼에서 인식된 중지 요청을 [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop) 지시 메시지를 통해 클라이언트에 전달합니다.
 3. 클라이언트는 오디오 스트림 재생을 중지하고 PlayStopped 이벤트 메시지를 CIC에 전송합니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -370,12 +370,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
 오디오 스트림 재생이 시작된 후 지정된 지연 시간만큼 시간이 지났을 때 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 지연 시간은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -407,12 +407,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## ProgressReportIntervalPassed event {#ProgressReportIntervalPassed}
 오디오 스트림 재생이 시작된 후 지정된 간격마다 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 간격은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -444,12 +444,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## ProgressReportPositionPassed event {#ProgressReportPositionPassed}
 오디오 스트림 재생이 시작된 후 지정된 보고 시점에 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 시점은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.
 
-### Context field
+### Context fields
 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
 없음
 
 ### Message example
@@ -481,7 +481,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ## StreamDeliver directive {#StreamDeliver}
 [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. 클라이언트가 음악을 재생할 수 있도록 오디오 스트림 정보에 스트리밍할 수 있는 URL 정보가 필수로 포함되어 있습니다.
 
-### Payload field
+### Payload fields
 | 필드 이름 | 자료형 | 필드 설명 | 포함 여부 |
 |---------|------|--------|---------|
 | `audioItemId` | string | 오디오 스트림 정보를 구분하는 값. 클라이언트는 이 값을 기준으로 중복된 Play 지시 메시지를 제거할 수 있습니다. | 항상 |
@@ -522,10 +522,10 @@ StreamDeliver 지시 메시지와 이미 수신한 [`Play`](#Play) 지시 메시
 ## StreamRequested event {#StreamRequested}
 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.
 
-### Context field
+### Context fields
 없음
 
-### Payload field
+### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `audioItemId`   | string  | Play 지시 메시지의 `audioItemId`                                              | 필수 |
@@ -580,7 +580,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 ### AudioStreamInfoObject {#AudioStreamInfoObject}
 재생할 음악의 오디오 스트림의 스트리밍 정보를 담고 있는 객체입니다. 클라이언트에게 재생할 스트리밍 정보를 전달하거나 클라이언트가 CIC로 현재 재생 중인 음악의 스트리밍 정보를 전달해야 할 때 사용합니다.
 
-#### Object field
+#### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|---------|
 | `beginAtInMilliseconds`  | number | 재생을 시작할 지점. 단위는 밀리초이며, 이 값이 지정된 경우 클라이언트는 해당 오디오 스트림을 지정된 위치부터 재생해야 합니다. 이 값이 0이면 해당 스트림을 처음부터 재생해야 합니다.          | 필수 |
