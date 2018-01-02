@@ -50,7 +50,7 @@ GET|POST /authorize
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response JSON object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -133,7 +133,7 @@ GET|POST /token?grant_type=authorization_code
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response JSON object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -207,7 +207,7 @@ GET|POST /token?grant_type=refresh_token
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response JSON object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -280,7 +280,7 @@ GET|POST /token?grant_type=delete
 |-----------------|--------------------------------------------------------------------|
 | Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response JSON object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|

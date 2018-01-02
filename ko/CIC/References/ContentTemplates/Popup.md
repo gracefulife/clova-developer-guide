@@ -10,10 +10,10 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Popup 템플릿의 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>Popup 템플릿의 표시 형태는 <a href="#UIExample">UI example</a>을 참조합니다.</p>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -30,7 +30,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 | `toastText`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Toast에 표시할 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `type`             | string                                                                          | Content template 구분자. `"Popup"` 값을 가집니다.     |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -220,7 +220,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 Popup 템플릿의 내용을 표현한 UI 예제입니다.
 
 | Toast 형태 | Alert 형태 |

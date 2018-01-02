@@ -3,10 +3,10 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>대기 정보를 표시한 예는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>대기 정보를 표시한 예는 <a href="#UIExample">UI example</a>을 참조합니다.</p>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
@@ -22,11 +22,11 @@
 | `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 현재 대기의 수치 정보가 담긴 객체. 수치의 단위가 포함되어 있습니다. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다. |
 | `type`          | string | Content template 구분자. `"Atmosphere"` 값을 가집니다. |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
-// 현재 대기 정보 요청
+// 현재 대기 정보
 {
   "announcementOfAtmosphere": {
     "type": "string",
@@ -119,7 +119,7 @@
   }
 }
 
-// 내일 대기 정보 요청
+// 내일 대기 정보
 {
   "announcementOfAtmosphere": {
     "type": "string",
@@ -214,7 +214,7 @@
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 Atmosphere 템플릿의 내용을 표현한 UI 예제입니다.
 
 | 현재 대기 상태 | 내일 대기 상태 |

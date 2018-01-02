@@ -28,11 +28,11 @@ System 인터페이스는 Clova와 클라이언트 사이에 알람, 일정과 �
 ## RequestSynchronizeState event {#RequestSynchronizeState}
 클라이언트가 Clova의 클라우드 환경에 저장된 공유 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. CIC는 이 이벤트 메시지를 받으면, 클라이언트에게 [`System.SynchronizeState`](#SynchronizeState) 지시 메시지를 전송합니다.
 
-### Context field
+### Context fields
 
 필수 상태 정보 없음
 
-### Payload field
+### Payload fields
 
 없음
 
@@ -59,11 +59,11 @@ System 인터페이스는 Clova와 클라이언트 사이에 알람, 일정과 �
 ## SynchronizeState directive {#SynchronizeState}
 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다. 클라이언트는 Clova로부터 전달된 데이터에 맞게 클라이언트에 설정된 값을 변경해야 합니다.
 
-### Payload field
+### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|---------|
-| `allAlerts`   | object array | 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 항상    |
+| `allAlerts[]`   | object array | 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 사용되는 [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 항상    |
 
 ### Remarks
 현재 System 네임스페이스는 사용자가 등록한 알람 정보(Alerts)를 동기화하는데 사용되고 있습니다. 추후 동기화 대상이되는 정보가 더 많아질 수 있습니다.

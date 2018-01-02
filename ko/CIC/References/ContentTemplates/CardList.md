@@ -12,15 +12,15 @@
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>각 타입별 표시 형태는 <a href="#UIExample">Screen UI example</a>을 참조합니다.</p>
+<p>각 타입별 표시 형태는 <a href="#UIExample">UI example</a>을 참조합니다.</p>
 </div>
 
-## Template field
+## Template fields
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `cardList[]`                | object array | 카드 목록을 표현하는 객체 배열 |
-| `cardList[].description`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
+| `cardList[].description[]`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
 | `cardList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 표시해야 할 이미지의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `cardList[].linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 콘텐츠의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.         |
 | `cardList[].press`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.             |
@@ -30,10 +30,10 @@
 | `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.          |
 | `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             |
 | `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오 혹은 오디오의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
-| `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    | 필수 |
+| `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    |
 | `type`                      | string  | Content template 구분자. `"CardList"` 값을 가집니다.                                                                       |
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -360,7 +360,7 @@
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 CardList 템플릿의 내용을 각 카드 타입별로 표현한 UI 예제입니다.
 
 | `Type1` | `Type2` |
