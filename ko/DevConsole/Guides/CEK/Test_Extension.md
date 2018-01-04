@@ -47,7 +47,7 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 
 ## 테스트 모드 사용하기 {#UsingTestMode}
 
-Extension의 실제 테스트를 위해 **테스트 모드**를 제공하고 있습니다. Extension에서 **테스트 모드**를 활성화하면 별도의 설정 없이 개발자 본인의 <strong>{{ book.OrientedService }} 계정이 인증된 Clova 앱</strong>에서 등록한 extension을 바로 테스트해볼 수 있습니다. **테스트 모드**를 활성화하려면 다음과 같이 등록한 extension 목록에서 테스트 모드를 활성화하려는 extension 항목의 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Check_Button.png" /> 버튼을 클릭합니다.
+Extension의 실제 테스트를 위해 **테스트 모드**를 제공하고 있습니다. Extension에서 **테스트 모드**를 활성화하면 별도의 설정 없이 개발자 본인의 <strong>{{ book.OrientedService }} 계정이 인증된 Clova 앱</strong>에서 등록한 extension을 바로 테스트해볼 수 있도록 지원할 예정입니다. **테스트 모드**를 활성화하려면 다음과 같이 등록한 extension 목록에서 테스트 모드를 활성화하려는 extension 항목의 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Check_Button.png" /> 버튼을 클릭합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Enable_Extension_Test_Mode.png)
 
