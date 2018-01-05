@@ -1,27 +1,29 @@
 # Schedule Template
-When the user creates a schedule on the calendar, CIC passes the schedule detail in Schedule template format to the client. The client should display the schedule details on the screen using the received template.
+
+The Schedule template is used in providing schedule information for the client to display on the client's screen.
+When the user creates a schedule on the calendar, CIC sends the schedule information to the client, in the form of the Schedule template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the Schedule template as below.</p>
+<p>The following is the restrictions in using schedule:</p>
 <ul>
-  <li>In order to create, modify, delete a calendar account, the user should use the Clova app.</li>
-  <li>With the voice command, the user can only request to add a calendar schedule and check the list.</li>
-  <li>In order to modify or delete a calendar schedule, the user should use the Clova app.</li>
+  <li>To register, modify or delete the account for calendar, the user must use the Clova app.</li>
+  <li>Voice requests can be used only to add a schedule or to check a list of schedules.</li>
+  <li>To modify or delete a schedule, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing contents of the added schedule entered by the user |
-| `end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Termination date and time of the added schedule. In case of all day schedule, it is in DateObject format type with date information only. |
-| `start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | Starting date and time of the added schedule. In case of all day schedule, it is in DateObject format type and only contains date information. |
-| `repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing repeated date information if it is a weekly repeated alarm |
-| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time schedule </li><li><code>"daily"</code> : Daily repeated schedule</li><li><code>"weekly"</code> : Every week repeated schedule</li></ul> |
-| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an added schedule.  |
-| `type`          | string                                                                              | A content template delimiter. The value is always `"Schedule"`.             |
+| `content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the schedule message. |
+| `end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The end date and time of this schedule. If `DateObject` is used, this schedule is an _all-day_ schedule. |
+| `start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The start date and time of this schedule. If `DateObject` is used, this schedule is an _all-day_ schedule.  |
+| `repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ schedule.  |
+| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available cycles are: <ul><li><code>""</code> (empty string): One-time schedule </li><li><code>"daily"</code>: Daily schedule</li><li><code>"weekly"</code>: Weekly schedule</li></ul> |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the schedule.  |
+| `type`          | string                                                                              | The type of this template. The value is always `"Schedule"`.             |
 
 ## Template example
 
@@ -45,7 +47,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   },
   "content": {
     "type": "string",
-    "value": "친구 결혼식"
+    "value": "Moon's wedding"
   },
   "repeatPeriod": {
     "type": "string",
@@ -54,7 +56,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   "repeatDay": []
 }
 
-// Daily repeated schedule
+// Daily schedule
 {
   "type": "Schedule",
   "token": {
@@ -71,7 +73,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   },
   "content": {
     "type": "string",
-    "value": "데일리 스크럼"
+    "value": "Daily scrum"
   },
   "repeatPeriod": {
     "type": "string",
@@ -80,7 +82,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   "repeatDay": []
 }
 
-// Every week repeated schedule
+// Weekly schedule
 {
   "type": "Schedule",
   "token": {
@@ -97,7 +99,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   },
   "content": {
     "type": "string",
-    "value": "주간 회의"
+    "value": "Weekly meeting"
   },
   "repeatPeriod": {
     "type": "string",
@@ -111,7 +113,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   ]
 }
 
-// All day schedule
+// All-day schedule
 {
   "type": "Schedule",
   "token": {
@@ -128,7 +130,7 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
   },
   "content": {
     "type": "string",
-    "value": "플레이숍"
+    "value": "LINE DEVELOPER DAY"
   },
   "repeatPeriod": {
     "type": "string",
@@ -140,13 +142,14 @@ When the user creates a schedule on the calendar, CIC passes the schedule detail
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied a Schedule template.</p>
+<p>An example for the Schedule template is in preparation.</p>
 </div>
 
 ## See also
+
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
 * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)

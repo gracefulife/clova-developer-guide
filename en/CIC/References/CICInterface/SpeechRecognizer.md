@@ -1,39 +1,38 @@
 # SpeechRecognizer
 
-Processes recognition of user speech. To process speech input, perform the following steps.
+The SpeechRecognizer namespace provides interfaces for processing recognition of user voice request. To have a voice request processed:
 
-1. Send CIC a [`SpeechRecognizer.Recognize`](#Recognize) event message while speech input is coming in from a user.
-2. Continue to send the speech input to CIC by capturing it with the interval of 200ms.
-3. Repeat the step 2 until the user finishes speech input or a [`SpeechRecognizer.StopCapture`](#StopCapture) directive message is returned from CIC.
+1. Send CIC the [`SpeechRecognizer.Recognize`](#Recognize) event when the user makes a voice request.
+2. Continue to send the speech input to CIC in every 200ms.
+3. Repeat step 2 until the user finishes speaking or the [`SpeechRecognizer.StopCapture`](#StopCapture) directive from CIC is received.
 
-SpeechRecognizer provides the following event and directive messages.
+The SpeechRecognizer namespace provides the following events and directives.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | Instructs your client to receive speech input from a user.         |
-| [`ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) | Event     | Reports to CIC that the specified waiting time for speech input has timed out.           |
-| [`KeepRecording`](#KeepRecording)               | Directive | Instructs your client to continually receive speech input.            |
-| [`Recognize`](#Recognize)                       | Event     | Requests CIC to recognize speech input coming in from a user. |
-| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | Returns recognition results of user speech in real time.      |
-| [`StopCapture`](#StopCapture)                   | Directive | Instructs your client to stop recognizing user's speech.      |
+| [`ExpectSpeech`](#ExpectSpeech)                 | Directive | Instructs a client to receive speech input from a user.         |
+| [`KeepRecording`](#KeepRecording)               | Directive | Instructs a client to continue taking in and recording user's voice request.            |
+| [`Recognize`](#Recognize)                       | Event     | A message to request CIC to recognize what the user has requested. |
+| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | Returns in real time the recognition result of a user's voice request.      |
+| [`StopCapture`](#StopCapture)                   | Directive | Instructs a client to stop taking in the user's voice request.      |
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
-Instructs your client to activate its microphone and receive speech input from a user. CIC returns this directive message to execute multi-turn conversation requesting additional information when the original user request does not provide enough information. Or, CIC returns this message to engage conversation with a user, for example, in the Freetalk mode. To send the speech input to CIC, use a [`SpeechRecognizer.Recognize`](#Recognize) event message.
+Instructs a client to activate its microphone and receive speech input from a user. CIC sends this directive to engage a multi-turn conversation to request additional information, because the information provided in the original user request was inadequate. To send the user's voice request to CIC, use the [`SpeechRecognizer.Recognize`](#Recognize) event.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `expectContentType`        | string  | When the client receives additional speech input of the user, the value decides in which type the data should be sent. Available values are: <ul><li><code>"audio/l16"</code> : A speech data in PCM format which did not go through postprocess distinctively for speech recognition such as eliminating echo or noise.</li><li><code>"application/x-clova-feat"</code> : A speech data in PCM format which went through postprocess distinctively for speech recognition such as eliminating echo or noise.</li></ul>  | No  |
-| `expectSpeechId`        | string  | An ID for CIC to identify additional user's speech input This value has to be entered on `speechId` field when passing the user's speech input as a [`SpeechRecognizer.Recognize`](#Recognize) event message to CIC in the future.    | Yes |
-| `explicit`              | boolean | Whether user’s speech input was done or not. `explicit` is usually set as `true` and it is applied to grasp additional information from the user.<ul><li><code>true</code> : Yes</li><li><code>false</code> : No</li></ul>For instance, if the user makes a request saying “order a pizza”, CIC will reply “how many boxes of pizza do you want to order?” to acquire required information such as an amount. By replying, CIC can return a `SpeechRecognizer.ExpectSpeech` directive message with `explicit` field is set as `true`.  If the amount information is not given from the user, the pizza order cannot be processed successfully. Thus, in case `explicit` field is `true`, CIC must acquire the user’s voice input. | Yes  |
-| `timeoutInMilliseconds` | number  | It is the time to standby until receiving user’s voice input. The value is in integer form and the unit is millisecond. | Yes    |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `expectContentType`        | string  | When the client takes in additional vocal input from the user, this field decides in which type the data should be sent. Available values are: <ul><li><code>"audio/l16"</code>: Denotes audio data in PCM format that had not been processed specifically for speech recognition such as eliminating echo or noise.</li><li><code>"application/x-clova-feat"</code>: Denotes audio data in PCM format that had been processed specifically for speech recognition such as eliminating echo or noise.</li></ul>  | Conditional |
+| `expectSpeechId`        | string  | The ID for CIC to identify user's additional vocal input. Use this value in the `speechId` field when delivering the user's voice request to CIC with the [`SpeechRecognizer.Recognize`](#Recognize) event.    | Always |
+| `explicit`              | boolean | Indicates whether user's vocal input is required or not. This field is usually set as `true` and is used to obtain additional information from the user.<ul><li><code>true</code>: User's vocal input is required.</li><li><code>false</code>: User's vocal input is not required.</li></ul>Suppose a user requests, “Order me a pizza”. To acquire necessary information such as quantity, CIC will ask the user, “How many boxes of pizza do you want to order?”. With this question, CIC may send the `SpeechRecognizer.ExpectSpeech` directive with the `explicit` field is set to `true`.  If the quantity is not specified by the user, the order cannot be processed successfully. Therefore, if the `explicit` field is `true`, the client must acquire the user’s vocal input. | Always |
+| `timeoutInMilliseconds` | number  | The time to standby until user speaks to Clova. The value is an Integer and the unit is millisecond. | Always |
 
 ### Remarks
-* When this directive message is returned, send user's input to CIC, using the same dialog ID (`dialogRequestId`) as the previous request message.
-* If `explicit` field is `false`, the user’s voice input may not be received according to policies or conditions the client has.
-* If you do not receive any speech input from the user for specified `timeoutInMilliseconds` time,  send CIC a [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut) event message.
+
+* When this directive is received, send the user's voice recording to CIC with the same dialog ID (`dialogRequestId`) used in the user's previous request message.
+* If the `explicit` field is `false`, taking the user's vocal input depends on the client policy or the conditions the client has.
 
 ### Message example
 
@@ -64,55 +63,11 @@ Instructs your client to activate its microphone and receive speech input from a
 * [`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut)
 
-## ExpectSpeechTimedOut event {#ExpectSpeechTimedOut}
-
-Send this event message to CIC if you do not receive any speech input from the user for a specified waiting time, which was returned in a [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive message.
-
-### Context field
-
-Send the following [context information](/CIC/References/Context_Objects.md) together.
-
-* [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
-
-### Payload field
-
-None
-
-### Remarks
-
-* This event message works only in the Freetalk mode.
-
-### Message example
-
-{% raw %}
-
-```json
-{
-  "context": [
-    {{Clova.FreetalkState}}
-  ],
-  "event": {
-    "header": {
-      "namespace": "SpeechRecognizer",
-      "name": "ExpectSpeechTimedOut",
-      "messageId": "56dcd20e-7fdc-4294-b6d9-a4b960d72df8"
-    },
-    "payload": {}
-  }
-}
-```
-
-{% endraw %}
-
-### See also
-* [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
-* [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
-
 ## KeepRecording directive {#KeepRecording}
 
-Instructs your client to continually receive speech input from a user. A `SpeechRecognizer.KeepRecording` directive message is an intermediate response indicating that it is recognizing user's speech input entered on the client. Upon receiving the directive message, the client can implement timeout as a response to CIC or apply it to UX.
+Instructs a client to continue to receive vocal input from the user. The `SpeechRecognizer.KeepRecording` directive is an interim response indicating that CIC is in a process of recognizing user's vocal input taken by the client. The client has an option to implement timeout for CIC's response and apply the timeout in UX.
 
-### Payload field
+### Payload fields
 
 None
 
@@ -142,42 +97,48 @@ None
 * [`SpeechRecognizer.ExpectSpeechTimedOut`](#ExpectSpeechTimedOut)
 
 ## Recognize event {#Recognize}
-`SpeechRecognizer.Recognize` event message sends user's speech input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. Most of [directive messages](/CIC/References/CIC_API.md#Directive) are returned from CIC after CIC confirms user requests which are sent in `SpeechRecognizer.Recognize` event messages.
 
-Processable audio input formats are as follows.
+A message for sending user's voice request and requesting CIC to recognize what the user wants. Clova's natural language analysis system and dialog understanding system interpret user's request and process the request accordingly. Most [directives](/CIC/References/CIC_API.md#Directive) from CIC are sent after CIC has confirmed the user requests sent through the `SpeechRecognizer.Recognize` events.
+
+CIC can process the following audio formats:
 * 16-bit Linear PCM
 * 16 kHz sample rate
 * Mono
 * Little endian
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) along with a Recognize event message.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
+
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
-* [`Clova.FreetalkState`](/CIC/References/Context_Objects.md#FreetalkState)
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `speechId`   | string   | If receiving additional speech input because of [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive message, enter the value of `expectSpeechId` field included in `SpeechRecognizer.ExpectSpeech` directive message.  | No  |
-| `explicit`         | boolean  | If receiving additional speech input because of [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive message, enter the value of `explicit` field included in `SpeechRecognizer.ExpectSpeech` directive message.  | No  |
-| `format`           | string   | Speech audio data format. The value is always `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | No    |
-| `lang`             | string   | Determines in which language user's speech input will be recognized. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Yes    |
-| `profile`          | string   | A field reserved for future use. The value is always `CLOSE_TALK`.                                     | No    |
+### Payload fields
 
-### Remarks
-In general, user's speech is recognizable in Korean. However, when in the Freetalk mode, it may have to be recognized in English (`"en"`).
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `speechId`   | string   | If receiving additional vocal input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
+| `explicit`         | boolean  | If receiving additional vocal input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of `explicit` field specified in `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
+| `format`           | string   | Audio data format of the user's request. The value is always `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | Optional |
+| `lang`             | string   | The language CIC shall recognize user's request in: <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Required |
+| `profile`          | string   | A field reserved for future use. The value is always `CLOSE_TALK`.                                     | Optional |
 
 ### Message example
+
 {% raw %}
 ```json
-// Input general user's voice
+// General user request
 {
   "context": [
     {{Alerts.AlertsState}},
     {{AudioPlayer.PlayerState}},
     {{Device.DeviceState}},
     {{Device.Display}},
-    {{Clova.FreetalkState}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
     {{Speaker.VolumeState}}
@@ -197,7 +158,7 @@ In general, user's speech is recognizable in Korean. However, when in the Freeta
   }
 }
 
-// Input additional user's voice according to a SpeechRecognizer.ExpectSpeech directive message
+// Additional vocal input for the SpeechRecognizer.ExpectSpeech directive
 {
         "header": {
             "dialogRequestId": "4951cbfe-0064-41e2-ac3a-b0e4e1b0a570",
@@ -217,7 +178,9 @@ In general, user's speech is recognizable in Korean. However, when in the Freeta
 {% endraw %}
 
 ### Audio Data
-After sending a `SpeechRecognizer.Recognize` event message, continue to send the audio data as follows until the user finishes speech input or a [StopCapture](#StopCapture) directive message is returned. You must keep streaming it in a same message part, not separate message parts.
+
+After sending the `SpeechRecognizer.Recognize` event, continue to send the user's voice record until the user finishes speaking or the [StopCapture](#StopCapture) directive is received. Send the user's voice record as a part of a multipart message of the original HTTP request, as shown in the following example.
+
 ```
 [ Message Header ]
 Content-Disposition: form-data; name="audio"
@@ -227,38 +190,38 @@ Content-Type: application/octet-stream
 ```
 
 ### See also
+
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
-* [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
-* [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
-* [Clova.FreetalkState](/CIC/References/Context_Objects.md#FreetalkState)
-* [Clova.Location](/CIC/References/Context_Objects.md#Location)
-* [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
-* [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
-* [Device.Display](/CIC/References/Context_Objects.md#Display)
-* [Speaker.VolumeState](/CIC/References/Context_Objects.md#VolumeState)
+* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 
-While receiving speech input from users in [`SpeechRecognizer.Recognize`](#Recognize) event messages, Clova's speech recognition system analyzes it and provides analysis results. During the process, CIC returns intermediate recognition results to your client in `SpeechRecognizer.ShowRecognizedText` directive messages. You can make your client display the progress of recognition processing in real time.
+Returns recognition result to a client in real time. Clova's speech recognition system analyzes and returns the user's voice request in real time while taking the user's voice request through the [`SpeechRecognizer.Recognize`](#Recognize) event. During the recognition process, CIC returns partial recognition result to the client with the `SpeechRecognizer.ShowRecognizedText` directive. A client has an option to display the recognition progress in real time.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `text`  | string | Contains recognition results of user speech in real time. | Yes    |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `text`  | string | Contains real time recognition result of the user's request. | Always |
 
 ### Remarks
 
-This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that the message is not a response to an event message.
-* CIC does not provide intermediate result to your client by default. `SpeechRecognizer.ShowRecognizedText` directive message will be returned only under special conditions.
+* This directive is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that this directive is not a response to an event.
+* CIC does not provide partial result to a client by default. Only under special conditions will the `SpeechRecognizer.ShowRecognizedText` directive be sent.
 
 ### Message example
 
 {% raw %}
 
 ```json
-// Intermediate recognition result 1
+// Partial recognition result 1
 {
   "directive": {
     "header": {
@@ -268,12 +231,12 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
       "messageId": "ceb4c638-d817-4a65-977d-03726d72cb91"
     },
     "payload": {
-      "text": "오늘"
+      "text": "Let me"
     }
   }
 }
 
-// Intermediate recognition result 2
+// Partial recognition result 2
 {
   "directive": {
     "header": {
@@ -283,12 +246,12 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
       "messageId": "fab4c638-d8df7-4adf-977d-adf72cb91"
     },
     "payload": {
-      "text": "오늘 날씨"
+      "text": "Let me know"
     }
   }
 }
 
-// Intermediate recognition result 3
+// Partial recognition result 3
 {
   "directive": {
     "header": {
@@ -298,7 +261,7 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
       "messageId": "efac233-8df7d-14df-d37d-72f72cb91"
     },
     "payload": {
-      "text": "오늘 날씨 알려줘"
+      "text": "Let me know today's weather"
     }
   }
 }
@@ -312,17 +275,21 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
 
 ## StopCapture directive {#StopCapture}
-After receiving a [`SpeechRecognizer.Recognize`](#Recognize) event message, CIC returns a `SpeechRecognizer.StopCapture` directive message to your client when it decides that it does not need to receive recorded PCM data any longer. You must stop recording user's speech immediately upon receiving this message. Although you can continue to receive user's speech even after CIC returns this message, the speech audio data will not be processed. Also, the `SpeechRecognizer.StopCapture` directive message will contain the last recognition result of the user's speech input in the `payload` field.
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `recognizedText` | string | Contains recognition results of the user's speech input. This field is not included in the `SpeechRecognizer.StopCapture` directive message by default. It will be included only under special conditions. | No |
+Returns the last recognition result and instructs a client to stop recording user's voice when CIC decides no more voice recording (PCM) is required. When you receive this directive, stop recording user's voice request immediately. However, a client can choose to continue to receive user's request even after CIC sends this directive, but the voice request taken after receiving this directive will not be processed by Clova.
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `recognizedText` | string | Contains recognition results of the user's speech input. This field is not included in the `SpeechRecognizer.StopCapture` directive by default. It will be included only under special conditions. | Conditional |
 
 ### Remarks
-This directive message is sent through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event message.
+
+This directive is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event.
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -341,5 +308,6 @@ This directive message is sent through [downchannel](/CIC/Guides/Interact_with_C
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](#Recognize)
 * [`SpeechRecognizer.ShowRecognizedText`](#ShowRecognizedText)

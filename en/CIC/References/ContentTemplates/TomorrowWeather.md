@@ -1,33 +1,34 @@
 # TomorrowWeather template
-Provides weather forecasts for tomorrow. It is used to display tomorrow's weather on a screen.
+
+The TomorrowWeather template is used in providing tomorrow's weather forecast for the client to display on the client's screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> on how tomorrow's weather is displayed.</p>
+<p>See a <a href="#UIExample">UI example</a> on how the TomorrowWeather template is used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file.<div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
-| `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the highest temperature tomorrow afternoon |
-| `highTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the highest temperature weather.  |
-| `houlyWeatherList[]` | object array | An object array containing hourly weather |
-| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing hourly temperature |
-| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing hourly time |
-| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing rainfall probability. The `value` field of this object can have a `null` value.      |
-| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather codes](#WeatherCode) for hourly weather |
-| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing the URL of the image file for hourly weather |
-| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).      |
-| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the lowest temperature tomorrow morning |
-| `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the lowest temperature weather.  |
-| `type`                      | string | A content template delimiter. It has an `"TomorrowWeather"` value. |
+| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `highTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The highest temperature for tomorrow. |
+| `highTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Describes the weather at the highest temperature.  |
+| `houlyWeatherList[]` | object array | Contains hourly weather information units. |
+| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The temperature for the hour. |
+| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The hour for which this weather forecast is provided for. |
+| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | The chance of rain. A `null` indicates that this information is unavailable.    |
+| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The [weather code](#WeatherCode) for this forecast. |
+| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the icon to represent this forecast. |
+| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to open when the weather information is tapped. An empty string (`""`) indicates that this information is unavailable.    |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this forecast is for. |
+| `lowTemperature`           | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The lowest temperature for tomorrow. |
+| `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Describes the weather at the lowest temperature.  |
+| `type`                      | string | The type of this template. The value is always `"TomorrowWeather"`. |
 
 {% include "./Shared_Weather_Code.md" %}
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -38,7 +39,7 @@ Provides weather forecasts for tomorrow. It is used to display tomorrow's weathe
   },
   "highTempWeather": {
     "type": "string",
-    "value": "구름많음"
+    "value": "Mostly cloudy"
   },
   "highTemperature": {
     "type": "temperature-c",
@@ -268,11 +269,11 @@ Provides weather forecasts for tomorrow. It is used to display tomorrow's weathe
   ],
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Shinjuku"
   },
   "lowTempWeather": {
     "type": "string",
-    "value": "구름많음"
+    "value": "Mostly cloudy"
   },
   "lowTemperature": {
     "type": "temperature-c",
@@ -283,12 +284,14 @@ Provides weather forecasts for tomorrow. It is used to display tomorrow's weathe
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the TomorrowWeather template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
+
+The following example shows how the TomorrowWeather template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![TomorrowWeather](/CIC/Resources/Images/Content-Template-TomorrowWeather.png)
 
 ## See also
+
 * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)

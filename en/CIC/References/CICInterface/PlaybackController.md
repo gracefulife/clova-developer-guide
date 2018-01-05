@@ -1,31 +1,34 @@
 # PlaybackController
 
-Plays audio and controls speaker output on a client. PlaybackController provides the following event and directive messages.
+The PlaybackController namespace provides interfaces for playing audio and controlling sound on a client. The PlaybackController namespace provides the following events and directives.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Mute`](#Mute)                           | Directive | Instructs your client to mute the audio player.            |
-| [`Next`](#Next)                           | Directive | Instructs your client to start playback of a next audio stream in a playback queue.   |
-| [`NextCommandIssued`](#NextCommandIssued) | Event     | The client should send this event message to CIC when the user clicked or touched the 'Next' button on the client device. |
-| [`Pause`](#Pause)                         | Directive | Instructs your client to pause playback of a current audio stream.        |
-| [`Previous`](#Previous)                   | Directive | Instructs your client to start playback of a previous audio stream in a playback queue. |
-| [`PreviousCommandIssued`](#PreviousCommandIssued) | Event | The client should send this event message to CIC when the user clicked or touched the 'Previous' button on the client device. |
-| [`Replay`](#Replay)                       | Directive | Instructs your client to replay the audio stream from the beginning.         |
-| [`Resume`](#Resume)                       | Directive | Instructs your client to resume playback of an audio stream.                |
-| [`Stop`](#Stop)                           | Directive | Instructs your client to stop playback of an audio stream.                |
-| [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | Instructs your client to turn off the single track repeat mode.                  |
-| [`TurnOnRepeatMode`](#TurnOnRepeatMode)   | Directive | Instructs your client to turn on the single track repeat mode.                  |
-| [`Unmute`](#Unmute)                       | Directive | Instructs your client to unmute the audio player volume.              |
-| [`VolumeDown`](#VolumeDown)               | Directive | Instructs your client to turn down the audio player volume.                      |
-| [`VolumeUp`](#VolumeUp)                   | Directive | Instructs your client to turn up the audio player volume.                      |
+| [`Mute`](#Mute)                           | Directive | Instructs a client to mute the audio player.            |
+| [`Next`](#Next)                           | Directive | Instructs a client to start playing the next audio stream in the playback queue.   |
+| [`NextCommandIssued`](#NextCommandIssued) | Event     | A message to notify CIC that the user has pressed the 'Next' button on the client device. |
+| [`Pause`](#Pause)                         | Directive | Instructs a client to pause playing the current audio stream.        |
+| [`Previous`](#Previous)                   | Directive | Instructs a client to start playing the previous audio stream in the playback queue. |
+| [`PreviousCommandIssued`](#PreviousCommandIssued) | Event | A message to notify CIC that the user has pressed the 'Previous' button on the client device. |
+| [`Replay`](#Replay)                       | Directive | Instructs a client to replay the audio stream from the beginning.         |
+| [`Resume`](#Resume)                       | Directive | Instructs a client to resume playing the audio stream.                |
+| [`Stop`](#Stop)                           | Directive | Instructs a client to stop playing the audio stream.                |
+| [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | Instructs a client to turn off repeat for a single track.                  |
+| [`TurnOnRepeatMode`](#TurnOnRepeatMode)   | Directive | Instructs a client to turn on repeat for a single track.                  |
+| [`Unmute`](#Unmute)                       | Directive | Instructs a client to unmute the audio player.              |
+| [`VolumeDown`](#VolumeDown)               | Directive | Instructs a client to turn down the audio player's volume.                      |
+| [`VolumeUp`](#VolumeUp)                   | Directive | Instructs a client to turn up the audio player's volume.                      |
 
 ## Mute directive {#Mute}
-Instructs your client to mute the audio player. The client should mute the speaker volume related to the audio stream playback after receiving this directive message.
 
-### Payload field
+Instructs a client to mute the audio player. Upon receiving this directive, the client must mute the speaker for the audio stream playback.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -43,16 +46,20 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Next directive {#Next}
-Instructs your client to start playback of a next audio stream in a playback queue. The client should play the audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to start playing the next audio stream in the playback queue. Upon receiving this directive, the client must play the next audio stream in the queue.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -70,21 +77,26 @@ None
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## NextCommandIssued event {#NextCommandIssued}
-The client should send this event message to CIC when the user clicked or touched the 'Next' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the next content instantly.
 
-### Context field
+A message for reporting to CIC that the user has pressed the 'Next' button on the client device. Clova will handle the user's action based on the client's state. For instance, if the client was using an extension such as Podcast, Clova will take an action to make the client play the next podcast instantly.
 
-There is no required state information
+### Context fields
 
-### Payload field
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+
+### Payload fields
 
 None
 
 ### Remarks
-* The button on the client device can either be a physical button in hardware method or in software method such as a widget button on music player.
+
+* The button on the client device can either be a physical button or a software button like a widget button on a music player.
 
 ### Message example
 
@@ -92,7 +104,9 @@ None
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{AudioPlayer.PlaybackState}}
+  ],
   "event": {
     "header": {
       "namespace": "PlaybackController",
@@ -106,15 +120,21 @@ None
 {% endraw %}
 
 ### See also
-* [`PalybackController.PreviousCommandIssued`](#PreviousCommandIssued)
+
+* [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
 ## Pause directive {#Pause}
-Instructs your client to pause playback of a current audio stream. The client should pause playback of the audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to pause playing the current audio stream. Upon receiving this directive, the client must pause playing.
+
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -132,16 +152,20 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.PlayPaused`](/CIC/References/CICInterface/AudioPlayer.md#PlayPaused)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Previous directive {#Previous}
-Instructs your client to start playback of a previous audio stream in a playback queue. The client should play the previous audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to start playing the previous audio stream in the playback queue. Upon receiving this directive, the client must play the previous audio stream.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -159,23 +183,27 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
-
 ## PreviousCommandIssued event {#PreviousCommandIssued}
-The client should send this event message to CIC when the user clicked or touched the 'Previous' button on the client device. Clova should carry out necessary actions depending on the client's situations. For instance, if the client was using extensions such as podcast, Clova should process an action to make the client play the previous content instantly.
 
-### Context field
+A message for notifying CIC that the user has pressed the 'Previous' button on the client device. Clova will handle the user's action based on the client's state. For instance, if the client was using an extension such as Podcast, Clova will take an action to make the client play the previous podcast instantly.
 
-There is no required state information
+### Context fields
 
-### Payload field
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+
+### Payload fields
 
 None
 
 ### Remarks
-* The button on the client device can either be a physical button in hardware method or in software method such as a widget button on music player.
+
+* The button on the client device can either be a physical button or a software button like a widget button on a music player.
 
 ### Message example
 
@@ -183,7 +211,9 @@ None
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{AudioPlayer.PlaybackState}}
+  ],
   "event": {
     "header": {
       "namespace": "PlaybackController",
@@ -197,15 +227,20 @@ None
 {% endraw %}
 
 ### See also
-* [`PalybackController.NextCommandIssued`](#NextCommandIssued)
+
+* [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
 ## Replay directive {#Replay}
-Instructs your client to replay the audio stream from the beginning. The client should replace the playback location to the beginning part of the audio stream after receiving this directive message. Start the audio stream instantly after the replacement. If the audio stream playback is paused, it should be resumed.
 
-### Payload field
+Instructs a client to replay the current audio stream from the beginning. Upon receiving this directive, the client must play the currently playing audio stream from the beginning. If playing had been paused, then resume playing the audio stream.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -223,17 +258,21 @@ None
 {% endraw %}
 
 ### See also
+
 * [`PlaybackController.Pause`](#Pause)
 * [`PlaybackController.Resume`](#Resume)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Resume directive {#Resume}
-Instructs your client to resume playback of an audio stream. The client should resume playback of the audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to resume playing paused audio stream. Upon receiving this directive, the client must resume playing the audio stream.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -251,13 +290,15 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.PlayResumed`](/CIC/References/CICInterface/AudioPlayer.md#PlayResumed)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Stop directive {#Stop}
-Instructs your client to stop playback of an audio stream. The client should stop playback of the audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to stop playing an audio stream. When The client should stop playback of the audio stream upon receiving this directive message.
+
+### Payload fields
 None
 
 ### Message example
@@ -278,16 +319,20 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.PlayStopped`](/CIC/References/CICInterface/AudioPlayer.md#PlayStopped)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
- Instructs your client to turn off the single track repeat mode.
 
-### Payload field
+Instructs a client to stop repeating a song.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -305,15 +350,19 @@ None
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
-Instructs your client to turn on the single track repeat mode. The client should repeatedly play the current playbakck of audio stream upon receiving this directive message.
 
-### Payload field
+Instructs a client to repeat a song. After receiving this directive, repeat playing the currently played audio stream.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -331,15 +380,19 @@ None
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## Unmute directive {#Unmute}
-Instructs your client to unmute the audio player volume. The client should replace the volume level to where it was before the mute upon receiving this directive message.
 
-### Payload field
+Instructs a client to unmute the audio player. Restore the volume level to the level before the player had been muted.
+
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -357,18 +410,21 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## VolumeDown directive {#VolumeDown}
-Instructs your client to turn down the audio player. The client should turn down the speaker volume related to the audio stream playback after receiving this directive message. The volume adjustment level is determined by your UX standard.
+
+Instructs a client to turn down the volume of the audio player. Upon receiving this directive, the client must turn down the volume of the audio player. The volume adjustment level depends on the client's UX standard.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>A <code>PlaybackController.VolumeDown</code> directive message will no longer be provided.  It is recommended to use a <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DiviceControl.Decrease</code></a> directive message instead.</p>
+  <p>The <code>PlaybackController.VolumeDown</code> directive is to be deprecated. Use the <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DeviceControl.Decrease</code></a> directive instead.</p>
 </div>
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
@@ -389,22 +445,25 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## VolumeUp directive {#VolumeUp}
 
-Instructs your client to turn up the audio player. The client should turn up the speaker volume related to the audio stream playback after receiving this directive message. The volume adjustment level is determined by your UX standard.
+Instructs a client to turn up the volume of the audio player. Upon receiving this directive, the client must turn up the volume of the audio player. The volume adjustment level depends on the client's UX standard.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>A <code>PlaybackController.VolumeUp</code> directive message will no longer be provided. It is recommended to use a <a href="/CIC/References/CICInterface/DeviceControl.html#Increase"><code>DiviceControl.Increase</code></a> directive message instead.</p>
+  <p>The <code>PlaybackController.VolumeUp</code> directive is to be deprecated. Use the <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DeviceControl.Increase</code></a> directive instead.</p>
 </div>
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
@@ -422,5 +481,6 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

@@ -1,41 +1,44 @@
 # Text template
-Displays text on a screen. It is used to display text with highlights, paragraph text or table text.
+
+The Text template is used in providing text for the client to display on the client's screen.
+The name of the template fields provides style information as to how the text is composed or displayed.
+For example, the given text may consist of a number of paragraphs or is to be displayed as a series of tables.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for available display formats of the Text template.</p>
+<p>See <a href="#UIExample">UI example</a>s of the Text template used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgUrl`                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image to display in background. The `value` field of this object can have an empty string (`""`).               |
-| `emotionCode`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | A code defining expression of emotion. Using the emotion code, predefined expression of emotion can be displayed on a client appliance.  If the feature of expression of emotion does not exist in the appliance, the code should be ignored.  <div class="note"><p><strong>Note!</strong></p><p>Contact your counterpart contact personnel to find out more about specs of the emotion code. </p></div> |
-| `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) 또는 [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing text or number to highlight. You can add a digit grouping symbol to numbers. The `value` field of this object can have an empty string (`""`) or `null` value. |
-| `imageUrl`               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image. The `value` field of this object can have an empty string (`""`).                              |
-| `linkUrl`                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing a URL which redirects to a web map when a map image is included. The `value` field of this object can have an empty string (`""`). |
-| `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing main text. The `value` field of this object can have an empty string (`""`).                                     |
-| `motionCode`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | A code defining actions. Using the action code, predefined expression of emotion can be displayed on a client appliance. If the feature of actions does not exist in the appliance, the code should be ignored. <div class="note"><p><strong>Note!</strong></p><p>Contact your counterpart contact personnel to find out more about specs of the action code.</p></div> |
-| `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing paragraph text. The `value` field of this object can have an empty string (`""`).                                |
-| `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).                               |
-| `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).                                |
-| `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sentence text. The `value` field of this object can have an empty string (`""`).                                |
-| `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing sub text. The `value` field of this object can have an empty string (`""`).                                     |
-| `tableList[]`           | object array                                                                    | An object array containing table text. The table consists of two or three lines.     |
-| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the first line. The `value` field of this object can have an empty string (`""`).                    |
-| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the second line. The `value` field of this object can have an empty string (`""`).                    |
-| `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | An object containing link URL or phone number for the text in the second column |
-| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text to display in the third line. This field can be omitted. |
-| `type`                   | string                                                                          | A content template delimiter. It has an `"Text"` value.             |
+| `bgUrl`                  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL of the image to display in the background. An empty string (`""`) indicates that background image information is unavailable.             |
+| `emotionCode`            | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The code for Clova's emotion for the client to _"express"_. If the client does not support emotional expression, ignore this field. <div class="note"><p><strong>Note!</strong></p><p>Contact us to find more about the emotion code specification.</p></div> |
+| `highlightText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) or [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | Contains a text or number to be displayed with an emphasis. The number may contain commas as thousand separators. An empty string (`""`) or `null` indicates that there is no text or number to display with an emphasis. |
+| `imageUrl`               | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL of the image. An empty string (`""`) indicates that image is unavailable.               |
+| `linkUrl`                | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)  | The URL to a Web map, _if_ this template contains an image of a map. An empty string (`""`) indicates that a URL to a Web map is unavailable. |
+| `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains the main text to display. An empty string (`""`) indicates that this information is unavailable.                     |
+| `motionCode`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The code for a motion for the client to perform. If the client does not support motions, ignore this field. <div class="note"><p><strong>Note!</strong></p><p>Contact us to find more about the motion code specification.</p></div> |
+| `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains paragraphs to display. An empty string (`""`) indicates that paragraphical text is unavailable. |
+| `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The name or description of the source of the content. An empty string (`""`) indicates that source information is unavailable.                               |
+| `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL of the content source. An empty string (`""`) indicates that source information is unavailable.                      |
+| `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains a sentence to display. |
+| `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains supplementary text to display. An empty string (`""`) indicates that supplementary text is unavailable. |
+| `tableList[]`           | object array                                                                    | Contains text units to be displayed in tables. All tables consist of a single column and two or three rows.    |
+| `tableList[].item1`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The text for the first row. An empty string (`""`) indicates that the first row is empty or no text is to be presented in a table.   |
+| `tableList[].item2`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The text for the second row. An empty string (`""`) indicates that the second row is empty or no text is to be presented in a table.  |
+| `tableList[].item2Link` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) or [PhoneNumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#PhoneNumberObject) | The link or phone number for the text in the second row. An empty string (`""`) indicates that this information is unavailable. |
+| `tableList[].item3`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The text for the third row. This field is omissible. |
+| `type`                   | string                                                                          | The type of this template. The value is always `"Text"`.             |
 
 ## Template example
 
 {% raw %}
 
 ```json
-// Example 1.
-// User request: 1달러 지금 얼마야? (User asks how much 1 dollar is worth now. Text with highlights is displayed)
+// Example 1
+// User asks the rate for a US dollar (The text is to be displayed as emphasized)
 {
   "actionList": [
     {
@@ -53,7 +56,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "mainText": {
     "type": "string",
-    "value": "원"
+    "value": "Won"
   },
   "paragraphText": {
     "type": "string",
@@ -61,11 +64,11 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "referenceText": {
     "type": "string",
-    "value": "KEB하나은행"
+    "value": "LINE Bank"
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=1%eb%8b%ac%eb%9f%ac+%ed%99%98%ec%9c%a8"
+    "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=2%3%9&34"
   },
   "sentenceText": {
     "type": "string",
@@ -102,8 +105,8 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   "type": "Text"
 }
 
-// Example 2.
-// User request: 토트넘 감독이 누구야? (User asks who's the director of Tottenham. Paragraph text is displayed)
+// Example 2
+// User asks who the Tottenham manager is. (The text is to be displayed as paragraphs)
 {
   "actionList": [
     {
@@ -125,11 +128,11 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "paragraphText": {
     "type": "string",
-    "value": "토트넘 홋스퍼 FC 감독\n 마우리시오 포체티노"
+    "value": "Tottenham Hotspur FC Manager\n Mauricio Pochettino"
   },
   "referenceText": {
     "type": "string",
-    "value": "Search Result"
+    "value": "NAVER search result"
   },
   "referenceUrl": {
     "type": "url",
@@ -170,8 +173,8 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   "type": "Text"
 }
 
-// Example 3.
-// User request: 꽃집 전화번호 알려줘 (User asks flower shop phone numbers. Table text is displayed)
+// Example 3
+// User requests for phone numbers for flower shops. (The text is to be displayed tables)
 {
   "actionList": [
     {
@@ -197,7 +200,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "referenceText": {
     "type": "string",
-    "value": "Search Result"
+    "value": "NAVER search result"
   },
   "referenceUrl": {
     "type": "url",
@@ -215,29 +218,29 @@ Displays text on a screen. It is used to display text with highlights, paragraph
     {
       "item1": {
         "type": "string",
-        "value": "터지머지플라워 분당 정자점"
+        "value": "Sally Flowers Shinjuku branch"
       },
       "item2": {
         "type": "string",
-        "value": "031-716-6676"
+        "value": "03-1234-5678"
       },
       "item2Link": {
         "type": "phoneNum",
-        "value": "031-716-6676"
+        "value": "03-1234-5678"
       }
     },
     {
       "item1": {
         "type": "string",
-        "value": "서머셋플라워"
+        "value": "Super Brown's Super Flowers"
       },
       "item2": {
         "type": "string",
-        "value": "031-712-3310"
+        "value": "03-9876-5432"
       },
       "item2Link": {
         "type": "phoneNum",
-        "value": "031-712-3310"
+        "value": "03-9876-5432"
       }
     },
     ...
@@ -253,9 +256,8 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   "type": "Text"
 }
 
-// Example 4.
-// User request: 미안해 (User says Im sorry. Emotional expression)
-
+// Example 4
+// User apologizes. (Client is to display the text and express emotion)
 {
   "actionList": [
     {
@@ -277,7 +279,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "paragraphText": {
     "type": "string",
-    "value": "전혀 미안해 할 거 없어요."
+    "value": "You have nothing to be sorry about."
   },
   "referenceText": {
     "type": "string",
@@ -322,9 +324,8 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   "type": "Text"
 }
 
-// Example 5.
-// User request: 춤춰줘 (User asks to dance. Expression of action)
-
+// Example 5
+// User asks the client to dance. (Motion)
 {
   "actionList": [
     {
@@ -346,7 +347,7 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   },
   "paragraphText": {
     "type": "string",
-    "value": "제 능력 밖의 일입니다."
+    "value": "It's out my scope."
   },
   "referenceText": {
     "type": "string",
@@ -382,11 +383,11 @@ Displays text on a screen. It is used to display text with highlights, paragraph
   ],
   "emotionCode": {
     "type": "string",
-    "value": "MotionDance"
+    "value": ""
   },
   "motionCode": {
     "type": "string",
-    "value": ""
+    "value": "MotionDance"
   },
   "type": "Text"
 }
@@ -394,14 +395,16 @@ Displays text on a screen. It is used to display text with highlights, paragraph
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the Text template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
 
-| Text with highlights | Paragraph text | Table text |
-|-------|-------|-------|
+The following examples show how the Text template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+| Text with emphasis | Paragraph | Table |
+|:-------:|:-------:|:-------:|
 | ![Highlight](/CIC/Resources/Images/Content_Template-Highlight_Text.png) | ![Paragraph](/CIC/Resources/Images/Content_Template-Paragragh_Text.png) | ![Table](/CIC/Resources/Images/Content_Template-Table_Text.png) |
 
 ## See also
+
 * [CardList](/CIC/References/ContentTemplates/CardList.md)
 * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
 * [ImageText](/CIC/References/ContentTemplates/ImageText.md)

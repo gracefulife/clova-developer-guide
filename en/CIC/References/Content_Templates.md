@@ -1,10 +1,10 @@
 # Content template reference
 
-Content templates are standardized formats for displaying content returned from CIC. Sometimes you have to make your client receive content from Clova and display it on its screen in addition to playing speech audio. To help with displaying, Clova returns data in a pre-defined format using the content templates. The content templates let you focus on displaying data in a proper manner.
+The content templates are standardized formats for clients to display the content CIC sends. Along with playing synthesized speech for CIC's message, clients may need to display additional information on the client's screen depending on the nature of the message. To simplify the process of identifying what information to display, Clova provides data in a pre-defined format called content template. The content templates let you focus on displaying data.
 
-Clova currently provides the following content templates.
+Clova provides the following content templates.
 
-* Templates for content UI types
+* Templates for different UI types
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
@@ -25,10 +25,6 @@ Clova currently provides the following content templates.
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
 
-* Templates for route directions
-  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
-  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
-
 * Templates for weather forecast
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
@@ -37,6 +33,6 @@ Clova currently provides the following content templates.
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
-* Common fields and shared objects
+* Common fields and common objects
   * [Common fields](CIC/References/ContentTemplates/Common_Fields.md)
-  * [Shared objects](/CIC/References/ContentTemplates/Shared_Objects.md)
+  * [Common objects](/CIC/References/ContentTemplates/Shared_Objects.md)

@@ -1,27 +1,28 @@
 # Clova
 
-Returns recognition results of user requests to your client. When user requests are sent in [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event messages, Clova analyzes their meaning. Based on the recognition results, CIC returns appropriate directive messages to your client. Your client processes the directive messages and provide requested Clova functions to users.
+The Clova namespace provides interfaces that return the result for user's voice request. When user requests are sent to Clova through the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) events, Clova analyzes the request, identifies what the user wants and uses the following directives to return the result for the request. The client is to process these directives and provide the Clova service user wants.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectLogin`](#ExpectLogin)               | Directive | Instructs your client to receive a {{ book.OrientedService }} account authentication (login) from the user. |
-| [`FinishExtension`](#FinishExtension)       | Directive | Instructs your client to finish a specified extension.             |
-| [`Hello`](#Hello)                           | Directive | Notifies your client that a downchannel connection has been established.       |
-| [`Help`](#Help)                             | Directive | Instructs your client to give pre-made help.       |
-| [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs your client to display templates.                     |
-| [`RenderText`](#RenderText)                 | Directive | Instructs your client to display text.                     |
-| [`StartExtension`](#StartExtension)         | Directive | Instructs your client to start a specified extension.            |
+| [`ExpectLogin`](#ExpectLogin)               | Directive | Instructs a client to prompt a user to authenticate their {{ book.OrientedService }} account (i.e. login). |
+| [`FinishExtension`](#FinishExtension)       | Directive | Instructs a client to end the specified extension.             |
+| [`Hello`](#Hello)                           | Directive | Notifies a client that a downchannel connection has been established.       |
+| [`Help`](#Help)                             | Directive | Instructs a client to provide pre-made help to the user.       |
+| [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs a client to render the given template.                     |
+| [`RenderText`](#RenderText)                 | Directive | Instructs a client to display the given text.                     |
+| [`StartExtension`](#StartExtension)         | Directive | Instructs a client to start running the given extension.            |
 
 ## ExpectLogin directive {#ExpectLogin}
 
-Instructs your client to receive a {{ book.OrientedService }} account authentication (login) from the user. CIC passes this directive message to the client if it has to provide a service that requires the {{ book.OrientedService }} account authentication while operating the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
+Instructs a client to prompt its user to authenticate their {{ book.OrientedService }} account. CIC sends this directive to a client to provide a service that requires the {{ book.OrientedService }} account authentication while running in the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
-If successfully login, previous requests are not process in a row.  Depending on the needs, users have to make a request again.
+
+After the user gets authenticated successfully, CIC does not pick up the user's previously made request. If needed, the user has to make the request again.
 
 ### Message example
 
@@ -43,22 +44,20 @@ If successfully login, previous requests are not process in a row.  Depending on
 {% endraw %}
 
 ### See also
+
 * [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
 * [Guest mode](/CIC/References/Clova_Auth_API.md#GuestMode)
 
 ## FinishExtension directive {#FinishExtension}
 
-Instructs your client to finish a specified extension. When a FinishExtension directive message is returned, have your client finish the extension that match a specified value.
+Instructs a client to end the specified extension. End the given extension when you receive this directive.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `extension`     | string  | The name of the extension to finish          | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `extension`     | string  | The name of the extension to finish.          | Always |
 
-### Remarks
-
-The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can finish the mode by saying the trigger word, "See you later". A FinishExtension directive message returns "freetalking" in the `extension` field.
 
 ### Message example
 
@@ -74,7 +73,7 @@ The server currently provides an extension called the Freetalk mode by default. 
       "dialogRequestId": "3db18cee-caac-4101-891f-b5f5c2e7fa9c"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "Sample Extension"
     }
   }
 }
@@ -83,18 +82,20 @@ The server currently provides an extension called the Freetalk mode by default. 
 {% endraw %}
 
 ### See also
+
 * [`Clova.StartExtension`](#StartExtension)
 
 ## Hello directive {#Hello}
 
-Notifies your client that a downchannel connection has been established. This directive message lets you confirm that the [connection attempt](/CIC/Guides/Interact_with_CIC.md#CreateConnection) has succeeded for the Clova service.
+Notifies a client that a downchannel has been established between the client and CIC. This directive is a confirmation for the [connection attempt](/CIC/Guides/Interact_with_CIC.md#CreateConnection) required to use Clova.
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
-This directive message does not have a dialog ID (`dialogRequestId`).
+
+This directive does not have a dialog ID (`dialogRequestId`).
 
 ### Message example
 
@@ -116,13 +117,14 @@ This directive message does not have a dialog ID (`dialogRequestId`).
 {% endraw %}
 
 ### See also
+
 * [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
 ## Help directive {#Help}
 
-Instructs your client to give help for users. This directive message is returned when a user requests for help. Have your client deliver help by playing audio help or displaying help UI on a screen.
+Instructs a client to give help for users. This directive is returned when a user requests help for using Clova. Provide a guide by audio or UI through the client screen when you receive this directive.
 
-### Payload field
+### Payload fields
 
 None
 
@@ -146,16 +148,18 @@ None
 {% endraw %}
 
 ### See also
+
 None
 
 ## RenderTemplate directive {#RenderTemplate}
 
-Instructs your client to display data using a content template. It also returns the content obtained by recognizing user's speech input.
+Instructs a client to display data, the result of recognizing user's voice request, filled in the given content template.
 
-### Payload field
-The format of the `payload` field can vary depending on which type of [content template](/CIC/References/Content_Templates.md) is used. Available content templates are as follows.
+### Payload fields
 
-* Templates for content UI types
+The format of the `payload` field differs depending on the type of [content template](/CIC/References/Content_Templates.md) used. Available content templates are as follows.
+
+* Templates for different UI layouts
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
@@ -175,10 +179,6 @@ The format of the `payload` field can vary depending on which type of [content t
   * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
-
-* Templates for route directions
-  * [CarRoute](/CIC/References/ContentTemplates/CarRoute.md)
-  * [TransportationRoute](/CIC/References/ContentTemplates/TransportationRoute.md)
 
 * Templates for weather forecast
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
@@ -211,18 +211,19 @@ The format of the `payload` field can vary depending on which type of [content t
 {% endraw %}
 
 ### See also
+
 * [`Clova.RenderText`](#RenderText)
 * [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
 
-Instructs your client to display text messages. It also returns text to display to a user.
+Instructs a client to display the given text message.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `text`          | string  | Text to display to a user          | Yes     |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `text`          | string  | The text message to display to a user.          | Required |
 
 ### Message example
 
@@ -238,7 +239,7 @@ Instructs your client to display text messages. It also returns text to display 
       "dialogRequestId": "5690395e-8c0d-4123-9d3f-937eaa9285dd"
     },
     "payload": {
-      "text": "신나는 노래 들려드릴게요."
+      "text": "I will play an exciting song for you."
     }
   }
 }
@@ -247,21 +248,18 @@ Instructs your client to display text messages. It also returns text to display 
 {% endraw %}
 
 ### See also
+
 * [`Clova.RenderTemplate`](#RenderTemplate)
 
 ## StartExtension directive {#StartExtension}
 
-Instructs your client to start a specified extension. When a StartExtension directive message is returned, have your client start the extension that matches a specified value.
+Instructs a client to start the specified extension. Start the given extension when you receive this directive.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `extension`     | string  | The name of the extension to start          | Yes     |
-
-### Remarks
-
-The server currently provides an extension called the Freetalk mode by default. The Freetalk mode is available only in English at the moment. You can start the mode by saying a trigger word, such as "Start a conversation in English". A `StartExtension` directive message returns `"freetalking"` in the `extension` field.
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `extension`     | string  | The name of the extension to start          | Always |
 
 ### Message example
 
@@ -277,7 +275,7 @@ The server currently provides an extension called the Freetalk mode by default. 
       "dialogRequestId": "8b509a36-9081-4783-b1cd-58d406205956"
     },
     "payload": {
-      "extension": "freetalking"
+      "extension": "Sample Extension"
     }
   }
 }

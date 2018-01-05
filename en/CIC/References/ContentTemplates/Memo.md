@@ -1,23 +1,25 @@
 # Memo Template
-When the user creates a memo, CIC passes the memo detail in Memo template format to the client. The client should display the memo details on the screen using the received template.
+
+The Memo template is used in providing memo information for the client to display on the client's screen.
+When the user creates a memo, CIC sends the memo to the client, in the form of the Memo template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the Memo template as below.</p>
+<p>The following is the restrictions in using memo:</p>
 <ul>
-  <li>With the voice command, the user can only request to add a memo and check the list.</li>
-  <li>In order to modify or delete a memo, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add a memo or to check a list of memos.</li>
+  <li>To modify or delete a memo, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `content`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a memo  |
-| `timestamp`   | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing the time when the memo was added |
-| `token`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an added memo.  |
-| `type`        | string                                                                              | A content template delimiter. It has an `"Memo"` value.             |
+| `content`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the memo.  |
+| `timestamp`   | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The time at which this memo was created. |
+| `token`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this memo. |
+| `type`        | string                                                                              | The type of this template. The value is always `"Memo"`.             |
 
 ## Template example
 
@@ -32,7 +34,7 @@ When the user creates a memo, CIC passes the memo detail in Memo template format
   },
   "content": {
     "type": "string",
-    "value": "내 와이파이 비밀번호: 12345678"
+    "value": "My WiFi password: 12345678"
   },
   "timestamp": {
     "type": "datetime",
@@ -43,12 +45,13 @@ When the user creates a memo, CIC passes the memo detail in Memo template format
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied a Memo template.</p>
+<p>An example for the Memo template is in preparation.</p>
 </div>
 
 ## See also
+
 * [MemoList](/CIC/References/ContentTemplates/MemoList.md)

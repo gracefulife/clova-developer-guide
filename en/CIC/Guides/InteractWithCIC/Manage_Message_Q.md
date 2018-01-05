@@ -1,17 +1,19 @@
-## Managing message queue {#ManageMessageQ}
+## Managing message queues {#ManageMessageQ}
 
-Sending and receiving messages to and from CIC occur in a consecutive way. When CIC returns directive messages, they have the following characteristics.
-* CIC can return multiple directive messages and messages for additional information at one time.
-* CIC can return directive messages not only through a downchannel but also through a response message to an event message.
-* CIC can return directive messages with different dialog IDs.
-* CIC does not return directive messages in a sequential order.
+Clients constantly send and receive messages to and from CIC. Directives, the messages clients receive from CIC, have the following characteristics.
 
-Because of these characteristics, you must use a queue-based data structure to put in and take out messages in a sequential order, whether the messages are responses to event messages or whether they are messages sent through a downchannel. We call this data structure a "message queue."
+* Multiple directives and additional information can come within an HTTP response.
+* Directives are sent through a downchannel or as an HTTP response.
+* Directives within an HTTP response may have different dialog IDs.
+* The order in which the message parts with additional information is not guaranteed.
 
-Develop your client to process directive messages one at a time as they are enqueued in each message queue. Also, the message in processing must correspond to the last user request in your client. User requests are identifiable by [dialog IDs](/CIC/CIC_Overview.md#DialogModel) and the dialog ID of the last request must be kept at the client side. If your client is keeping any directive message which has a canceled dialog ID in a message queue, such message and its related information must be removed from the queue.
+Due to these characteristics, we recommend you to use a queue to manage directives, either received through a downchannel or an HTTP response. Push and pop directives in the order they were received. We call this queue a "message queue."
 
-Determine the following rules in consideration of your UX design plan.
-* The number of message queues and their size
-* Processing priority of message queues
+Make your client process directives in the message queue one at a time. Ignore directives with [dialog ID](/CIC/CIC_Overview.md#DialogModel) different to that of the one kept in your client. This is for your client to provide a valid respond to user's request. User requests are identifiable by dialog IDs and your client shall keep the dialog ID of the latest request. If your message queue is keeping any directive with a dialog ID of a canceled dialog, remove the directive from the queue.
 
-If you provide UX that runs tasks seamlessly while your client is receiving speech input or playing speech audio, such as music playback ([AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)), process message queues separately for such directive messages. Some API namespaces send a single directive message simultaneously. For such namespaces, you do not have to manage message queues separately.
+Determine the following as you wish or depending on UX design.
+
+* The number of message queues and each queue size
+* Priority over message queues
+
+For example, if the nature of a service requires seamless UX, such as receiving user's vocal input whilst playing music, use two message queues; one for playing the music and one for processing vocal input. However, there are a number of Clova services that send a single directive simultaneously. For such services, no separate message queues are required.

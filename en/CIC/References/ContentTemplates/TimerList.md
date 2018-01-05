@@ -1,23 +1,26 @@
 # TimerList Template
-When the user request for a list of timer, CIC passes the timer list registered to the user in TimerList template format to the client. The client should display the timer list registered by the user on the screen using the received template.
+
+The TimerList template is used in providing information of multiple timers for the client to display on the client's screen.
+When the user requests for a list of timers, CIC sends the list of timers registered by the user to the client, in the form of the TimerList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the TimerList template as below.</p>
+<p>The following is the restrictions in using the TimerList template:</p>
 <ul>
-  <li>With the voice command, the user can only request to add a timer and check the list.</li>
-  <li>In order to modify or delete a timer, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add a timer or to check a list of timers.</li>
+  <li>To modify or delete a timer, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
 
-| Field name       | Type    | Field description                     |
+## Template fields
+
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `timerList[]`               | object array  | An object array containing the timer list registered by the user.                                                                                        |
-| `timerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the timer will ring                    |
-| `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of a timer.                             |
-| `type`                      | string                                                                              | A content template delimiter. It has an `"TimerList"` value.      |
+| `timerList[]`               | object array  | Contains a list of timers registered by the user.                                                                                        |
+| `timerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this timer is to ring.                    |
+| `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this timer.                             |
+| `type`                      | string                                                                              | The type of this template. The value is always `"TimerList"`.      |
 
 ## Template example
 
@@ -63,13 +66,14 @@ When the user request for a list of timer, CIC passes the timer list registered 
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied a TimerList template.</p>
+<p>An example for the TimerList template is in preparation.</p>
 </div>
 
 ## See also
+
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
 * [Timer](/CIC/References/ContentTemplates/Timer.md)

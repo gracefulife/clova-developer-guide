@@ -1,24 +1,26 @@
 # MemoList Template
-When the user requests for a list of memo, CIC passes the memo list registered to the user in MemoList template format to the client. The client should display the memo list registered by the user on the screen using the received template.
+
+The MemoList template is used in providing a list of memos for the client to display on the client's screen.
+When the user requests for a list of memos, CIC sends the list of memos registered by the user to the client, in the form of the MemoList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the MemoList template as below.</p>
+<p>The following is the restrictions in using memo:</p>
 <ul>
-  <li>With the voice command, the user can only request to add a memo and check the list.</li>
-  <li>In order to modify or delete a memo, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add a memo or to check a list of memos.</li>
+  <li>To modify or delete a memo, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `memoList[]`              | object array  | An object array containing the memo list registered by the user.                                       |
-| `memoList[].content`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a memo  |
-| `memoList[].lastModified` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing the latest time when the memo was modified |
-| `memoList[].token`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of a memo.  |
-| `type`                    | string                                                                              | A content template delimiter. It has an `"MemoList"` value.             |
+| `memoList[]`              | object array  | Contains a list of memos registered by the user.                                       |
+| `memoList[].content`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the memo.  |
+| `memoList[].lastModified` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The time this memo was last modified. |
+| `memoList[].token`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this memo.  |
+| `type`                    | string                                                                              | The type of this template. The value is always `"MemoList"`.             |
 
 ## Template example
 
@@ -35,7 +37,7 @@ When the user requests for a list of memo, CIC passes the memo list registered t
       },
       "content": {
         "type": "string",
-        "value": "내 와이파이 비밀번호: 12345678"
+        "value": "My WiFi password: 12345678"
       },
       "lastModified": {
         "type": "datetime",
@@ -49,7 +51,7 @@ When the user requests for a list of memo, CIC passes the memo list registered t
       },
       "content": {
         "type": "string",
-        "value": "할 일 목록: 숙제하기, 여친 만들기"
+        "value": "To do: Play LINE Rangers, Play Pokopang, Play LINE Rangers"
       },
       "lastModified": {
         "type": "datetime",
@@ -63,7 +65,7 @@ When the user requests for a list of memo, CIC passes the memo list registered t
       },
       "content": {
         "type": "string",
-        "value": "버킷 리스트: 100억 써보기, 아무것도 안하기, 72시간 잠자기"
+        "value": "Bucket list: Spend 10 billion dollars, Do absolutely nothing, Sleep for 72 hours"
       },
       "lastModified": {
         "type": "datetime",
@@ -76,12 +78,13 @@ When the user requests for a list of memo, CIC passes the memo list registered t
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied a MemoList template.</p>
+<p>An example for the MemoList template is in preparation.</p>
 </div>
 
 ## See also
+
 * [Memo](/CIC/References/ContentTemplates/Memo.md)

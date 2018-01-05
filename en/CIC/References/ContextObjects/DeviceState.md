@@ -1,7 +1,9 @@
 ## Device.DeviceState {#DeviceState}
-`Device.DeviceState` is a message format applied to report the state of the device of the client to CIC.
+
+`Device.DeviceState` is a format for reporting the state of the client device to CIC.
 
 ### Message structure
+
 {% raw %}
 
 ```json
@@ -31,26 +33,27 @@
 
 {% endraw %}
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `airplane`        | [AirplaneInfoObject](#AirplaneInfoObject)               | An object used to report an airplane mode setting of a client device      | No |
-| `battery`         | [BatteryInfoObject](#BatteryInfoObject)                 | An object used to report battery information of a client device              | No |
-| `bluetooth`       | [BluetoothInfoObject](#BluetoothInfoObject)             | An object used to report the activation status and device connection details of a Bluetooth of the client device.       | No |
-| `cellular`        | [CellularInfoObject](#CellularInfoObject)               | An object used to report a cellular state of a client device | No |
-| `channel`         | [ChannelInfoObject](#ChannelInfoObject)                 | An object used to report a TV channel setting of a client device         | No |
-| `energySavingMode` | [EnergySavingModeInfoObject](#EnergySavingModeInfoObject) | An object used to report an energy saving mode of a client device     | No |
-| `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | An object used to report a flash light setting of a client device       | No |
-| `gps`             | [GPSInfoObject](#GPSInfoObject)                         | An object used to report a GPS setting of a client device            | No |
-| `localTime`       | string | Current local time set in the client device ([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format)              | No |
-| `power`           | [PowerInfoObject](#PowerInfoObject)                 | An object used to report power status of a client device            | No |
-| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | An object used to report screen brightness of a client device            | No |
-| `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | An object used to report a sound output setting of a client device        | No |
-| `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | An object used to report speaker volume details of a client device           | No |
-| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | An object used to report the activation and connection status of wireless network (Wi-Fi) of the client device.    | No |
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `airplane`        | [AirplaneInfoObject](#AirplaneInfoObject)               | The airplane mode settings of a client device      | Optional |
+| `battery`         | [BatteryInfoObject](#BatteryInfoObject)                 | The battery information of a client device              | Optional |
+| `bluetooth`       | [BluetoothInfoObject](#BluetoothInfoObject)             | The Bluetooth status and information of paired devices of a client device.      | Optional |
+| `cellular`        | [CellularInfoObject](#CellularInfoObject)               | The cellular network settings of a client device | Optional |
+| `channel`         | [ChannelInfoObject](#ChannelInfoObject)                 | The TV channel settings of a client device         | Optional |
+| `energySavingMode` | [EnergySavingModeInfoObject](#EnergySavingModeInfoObject) | The energy saving mode of a client device     | Optional |
+| `flashLight`      | [FlashLightInfoObject](#FlashLightInfoObject)           | The flash light settings of a client device       | Optional |
+| `gps`             | [GPSInfoObject](#GPSInfoObject)                         | The GPS settings of a client device            | Optional |
+| `localTime`       | string | The current local time set on a client device. Format: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)             | Optional |
+| `power`           | [PowerInfoObject](#PowerInfoObject)                 | The power status of a client device            | Optional |
+| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | The screen brightness level of a client device            | Optional |
+| `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | The sound settings of a client device        | Optional |
+| `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | The speaker volume level of a client device           | Optional |
+| `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | The WiFi settings and connection state of a client device.    | Optional |
 
-### Message example
+### Example
+
 {% raw %}
 
 ```json
@@ -120,14 +123,15 @@
 {% endraw %}
 
 ### AirplaneInfoObject {#AirplaneInfoObject}
-An object used to report an airplane mode setting of a client device.
 
-#### Object field
+Contains the airplane mode settings of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`     | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for airplane mode. Enter the following values if your client's device can execute them.<ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`         | string | The state of the airplane mode.<ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`     | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for airplane mode, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`         | string | Indicates whether the airplane mode is on or off:<ul><li><code>"off"</code>: Airplane mode is off</li><li><code>"on"</code>: Airplane mode is on</li></ul> | Required |
 
 #### Object example
 
@@ -156,15 +160,16 @@ An object used to report an airplane mode setting of a client device.
 {% endraw %}
 
 ### BatteryInfoObject {#BatteryInfoObject}
-An object used to report a battery state of a client device.
 
-#### Object field
+Contains the battery state of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`     | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for battery. No actions are currently supported. | Yes |
-| `value`         | number | Remaining battery. Enter a number between 0 and 100. Unit is percentage (%). | Yes |
-| `charging`      | boolean | Whether charging the battery or not<ul><li><code>true</code>: Charging</li><li><code>false</code>: Not charging</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`     | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for battery. Add an empty array as there are no APIs available. | Required |
+| `value`         | number | The percentage of remaining battery. Range: [0–100] | Required |
+| `charging`      | boolean | Indicates whether the client is charging or not:<ul><li><code>true</code>: The client is charging</li><li><code>false</code>: The client is not charging</li></ul> | Required |
 
 #### Object example
 
@@ -191,18 +196,19 @@ An object used to report a battery state of a client device.
 {% endraw %}
 
 ### BluetoothInfoObject {#BluetoothInfoObject}
-An object used to report the activation status and device connection details of a Bluetooth of the client device.
 
-#### Object field
+Contains the Bluetooth information including Bluetooth status and paired devices.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for Bluetooth connection. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li><li>"BtConnect"</li><li>"BtDisconnect"</li><li>"BtStartPairing"</li><li>"BtStopPairing"</li></ul> | Yes |
-| `btlist[]`           | object array | An object containing details of a paired Bluetooth device         | Yes |
-| `btlist[].name`      | string       | The name of the Bluetooth device                      | Yes |
-| `btlist[].address`   | string       | The MAC address of the Bluetooth device                  | Yes |
-| `btlist[].connected` | boolean      | Whether the Bluetooth device is connected or not <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
-| `state`              | string       | Whether Bluetooth is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for Bluetooth, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li><li>"BtConnect"</li><li>"BtDisconnect"</li><li>"BtStartPairing"</li><li>"BtStopPairing"</li></ul> | Required |
+| `btlist[]`           | object array | Contains details of Bluetooth devices paired to the client.         | Required |
+| `btlist[].name`      | string       | The name of This Bluetooth device.                      | Required |
+| `btlist[].address`   | string       | The MAC address of this Bluetooth device.                  | Required |
+| `btlist[].connected` | boolean      | Indicates whether this Bluetooth device is connected to the client device or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Required |
+| `state`              | string       | Indicates whether Bluetooth is on or off: <ul><li><code>"off"</code>: Bluetooth is turned off</li><li><code>"on"</code>: Bluetooth is turned on</li></ul> | Required |
 
 #### Object example
 
@@ -247,14 +253,15 @@ An object used to report the activation status and device connection details of 
 {% endraw %}
 
 ### CellularInfoObject {#CellularInfoObject}
-An object used to report the activation status of a cellular state of the client device.
 
-#### Object field
+Contains the cellular network settings of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for mobile data communication. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | Whether mobile data communication is turned on or not <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the  [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for cellular network settings, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates whether cellular network is turned on or off: <ul><li><code>"off"</code>: Cellular network is turned off</li><li><code>"on"</code>: Cellular network is turned on</li></ul> | Required |
 
 #### Object example
 
@@ -283,13 +290,14 @@ An object used to report the activation status of a cellular state of the client
 {% endraw %}
 
 ### ChannelInfoObject {#ChannelInfoObject}
-An object used to report a TV channel setting of a client device
 
-#### Object field
+Contains the TV channel settings of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`     | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for TV channel settings. Enter the following values if your client's device can execute them.<ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`     | string array | A list of the  [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for TV channel settings, from the following: <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Required |
 
 #### Object example
 
@@ -319,14 +327,15 @@ An object used to report a TV channel setting of a client device
 
 
 ### EnergySavingModeInfoObject {#EnergySavingModeInfoObject}
-An object used to report an energy saving mode of a client device.
 
-#### Object field
+Contains the energy saving mode of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for sleep mode. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | The state of the power saving mode. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for sleep mode, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates whether the power saving mode is on or not: <ul><li><code>"off"</code>: Power saving mode is off</li><li><code>"on"</code>: Power saving mode is on</li></ul> | Required |
 
 #### Object example
 
@@ -356,14 +365,15 @@ An object used to report an energy saving mode of a client device.
 
 
 ### FlashLightInfoObject {#FlashLightInfoObject}
-An object used to report a flash light setting of a client device
 
-#### Object field
+Contains the flash light settings of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for flashlight. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | The current state of the flashlight. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the  [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for flashlight, from the following. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates whether the flashlight on or off: <ul><li><code>"off"</code>: Flashlight is off</li><li><code>"on"</code>: Flashlight is on</li></ul> | Required |
 
 #### Object example
 
@@ -392,14 +402,15 @@ An object used to report a flash light setting of a client device
 {% endraw %}
 
 ### GPSInfoObject {#GPSInfoObject}
-An object used to report GPS state of a client device.
 
-#### Object field
+Contains the GPS state of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for GPS. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | The current GPS state. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for GPS, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates whether GPS is turned on or off: <ul><li><code>"off"</code>: GPS is turned off</li><li><code>"on"</code>: GPS is turned on</li></ul> | Required |
 
 #### Object example
 
@@ -428,14 +439,15 @@ An object used to report GPS state of a client device.
 {% endraw %}
 
 ### PowerInfoObject {#PowerInfoObject}
-An object used to report power state of a client device.
 
-#### Object field
+Contains the power state of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for power state. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | The power state. <ul><li><code>"active"</code>: The client device is turned on</li><li><code>"idle"</code>: The client device is turned off</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the  [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for power state, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates whether the client device is turned on or off: <ul><li><code>"active"</code>: The client device is turned on</li><li><code>"idle"</code>: The client device is turned off</li></ul> | Required |
 
 #### Object example
 
@@ -464,16 +476,17 @@ An object used to report power state of a client device.
 {% endraw %}
 
 ### ScreenBrightnessInfoObject {#ScreenBrightnessInfoObject}
-An object used to report screen brightness state of a client device.
 
-#### Object field
+Contains the screen brightness level of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for screen brightness. Enter the following values if your client's device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
-| `min`                | number       | The minimum screen brightness of the client device    | Yes |
-| `max`                | number       | The maximum screen brightness of the client device    | Yes |
-| `value`              | number       | The current screen brightness of the client device                   | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for brightness, from the following: <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Required |
+| `min`                | number       | The minimum screen brightness level available on the client device    | Required |
+| `max`                | number       | The maximum screen brightness level available on the client device    | Required |
+| `value`              | number       | The current screen brightness level of the client device.                    | Required |
 
 #### Object example
 
@@ -505,14 +518,15 @@ An object used to report screen brightness state of a client device.
 {% endraw %}
 
 ### SoundModeInfoObject {#SoundModeInfoObject}
-An object used to report a sound mode of a client device.
 
-#### Object field
+Contains the sound mode of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for sound mode. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Yes |
-| `state`              | string       | The state of the sound mode setting. <ul><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for sound mode, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul> | Required |
+| `state`              | string       | Indicates the active sound mode on the client device: <ul><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li></ul> | Required |
 
 #### Object example
 
@@ -541,17 +555,18 @@ An object used to report a sound mode of a client device.
 {% endraw %}
 
 ### VolumeInfoObject {#VolumeInfoObject}
-An object used to report a speaker volume level of a client device.
 
-#### Object field
+Contains the speaker volume level of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`          | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for speaker volume size. Enter the following values if your client's device can execute them. <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Yes |
-| `min`                | number       | The minimum speaker volume of the client device    | Yes |
-| `max`                | number       | The maximum speaker volume of the client device    | Yes |
-| `warning`            | number       | The warning value which appears when the speaker setting of the client device exceeds a certain level. The value of the field is `8` and if the user sets the volume higher than `8`, it give warning message saying, "Volume 10 is very loud. Would you like to lower the volume?" | No |
-| `value`              | number       | The current speaker volume of the client device               | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`          | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can speaker for speaker volume, from the following: <ul><li>"Decrease"</li><li>"Increase"</li><li>"SetValue"</li></ul> | Required |
+| `min`                | number       | The minimum speaker volume level available on the client device.    | Required |
+| `max`                | number       | The maximum speaker volume level available on the client device.    | Required |
+| `warning`            | number       | The volume level at which to warn the user if the user sets the volume to this level or higher. For example, if this field is set to `8` and if the user sets the volume to `10`, Clova will send a message to the client to inform the user, "Volume 10 is very loud. Would you like to lower the volume?" | Optional |
+| `value`              | number       | The current speaker volume level of the client device.               | Required |
 
 #### Object example
 
@@ -584,17 +599,18 @@ An object used to report a speaker volume level of a client device.
 {% endraw %}
 
 ### WifiInfoObject {#WifiInfoObject}
-An object used to report the activation and connection status of wireless network (Wi-Fi) of the client device.
 
-#### Object field
+Contains the Wifi state of a client device.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `actions[]`            | string array | A list of executable [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) for wireless network. Enter the following values if your client's device can execute them. <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul>| Yes |
-| `networks[]`           | object array | An object array containing details of wireless network found | Yes |
-| `networks[].name`      | string       | The name of the wireless network (SSID)                      | Yes |
-| `networks[].connected` | boolean      | Whether the wireless network is connected or not. <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Yes |
-| `state`                | string       | Whether the wireless network is turned on or not. <ul><li><code>"off"</code>: Turned off</li><li><code>"on"</code>: Turned on</li></ul> | Yes |
+#### Object fields
+
+| Field        | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `actions[]`            | string array | A list of the [`DeviceControl` APIs](/CIC/References/CICInterface/DeviceControl.md) the client can support for WiFi, from the following: <ul><li>"TurnOff"</li><li>"TurnOn"</li></ul>| Required |
+| `networks[]`           | object array | Contains the details of WiFi networks detected. | Required |
+| `networks[].name`      | string       | The name of the wireless network (SSID).                      | Required |
+| `networks[].connected` | boolean      | Indicates whether the client is connected to this WiFi network or not: <ul><li><code>true</code>: Connected</li><li><code>false</code>: Not connected</li></ul> | Required |
+| `state`                | string       | Indicates whether WiFi is turned on or not: <ul><li><code>"off"</code>: WiFi is turned on</li><li><code>"on"</code>: WiFi is turned off</li></ul> | Required |
 
 #### Object example
 
@@ -633,5 +649,6 @@ An object used to report the activation and connection status of wireless networ
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl` API](/CIC/References/CICInterface/DeviceControl.md)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

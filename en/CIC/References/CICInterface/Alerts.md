@@ -1,102 +1,114 @@
 # Alerts
 
-Alerts is a namespace controlled by the client to add/change/remove/start/stop an alert. The following table shows types of alarm.
+The Alerts namespace provides interfaces for you to add, change, remove, start, or stop an alert. Available alarm types are as follows.
 
-| Types of alarm | Explanation                                |
+| Alarm Type | Description                                |
 |---------|------------------------------------|
-| Alarm(`"ALARM"`)            | An alarm that rings at a set date and time                                            |
-| Timer`"TIMER"`)           | An alarm that rings after a set time has elapsed                                         |
-| Action timer(`"ACTIONTIMER"`) | An alarm that conveys a specified action after a set time has elapsed                               |
-| Reminder(`"REMINDER"`)      | An alarm that reminds the user of what the user has requested. If the user makes a request to "ring the alarm tomorrow at 7P.M. to take the medicine", the alarm will be scheduled to ring at 7.P.M and "Take the medicine" will become the actual alarm message. The alarm message will either be delivered as a voice notification or a voice notification and a UI display.       |
+| Alarm (`"ALARM"`)            | An alarm that rings at a set date and time.                                            |
+| Timer (`"TIMER"`)           | An alarm that rings after a set time has elapsed.                                         |
+| Action timer (`"ACTIONTIMER"`) | An alarm that executes a certain action after a set time has elapsed.                               |
+| Reminder (`"REMINDER"`)      | An alarm that reminds the user of what the user has requested. If the user makes a request to "Ring the alarm tomorrow at 7 p.m. to take the medicine", the alarm will be scheduled to ring at 7 p.m. and "Take the medicine" will be the alarm message. When it is time to ring the alarm, play and display the alarm message provided by CIC. |
 
+A user can add an alarm by voice request or through the Clova app, but changing or removing the alarm is only available through the app. Clova stores alarm details on the cloud and through CIC informs clients to alert user. Of repeated alarms, Clova informs the client only of the first upcoming alarm, instead of giving the bulk alarm information at once. After the first upcoming alarm rings and stops, Clova lets the client know of the next repeated alarm.
 
-The user can add an alarm via voice command or Clova app. Changing or removing the alarm can be done only through the app. Clova stores alarm details in cloud environment. Alarms added by the user are delivered to the client through CIC. In case of repeated alarm, Clova only delivers the most recent alarm to the client. When the alarm stops, it lets the client know the next repeated alarm.
+You must implement the following on a client, using the Alerts interfaces:
 
-Therefore, the client should carry out the following actions using alerts interface.
-* Upon receiving a directive message from CIC, add/change/remove the alarm according to the message.
-* Ring the alarm at the time when it should be rang.
-* When add/change/remove/start/stop the alarm, a report should be made to CIC. Only by then a correspond result will be returned to the client from CIC.
-* As delivering an event message, [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState) context object must be sent together to report the alarm status setup by the client.
+* Upon receiving a directive from CIC, add, change, or remove the alarm as instructed by the directive.
+* Ring the alarm at the set time.
+* Report to CIC when adding, changing, removing, starting, or stopping the alarm. Only by then a corresponding result will be returned to the client from CIC.
+* Include the [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState) context object in your events to report to CIC the alarm state on the client.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Refer to <a href="#AlertsWorkFlow">Alarm work flow</a> to find out about structure of alarm actions (add/change/remove/start/stop).</p>
+  <p> See the <a href="#AlertsWorkFlow">Overall process</a> section for handling alarm actions such as adding, changing, removing, starting and stopping.</p>
 </div>
 
-Alerts provides the following event and directive messages.
+The Alerts namespace provides the following events and directives.
 
-| Message name         | Message type  | Message description                                   |
+| Name    | Message type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`AlertStarted`](#AlertStarted)                 | Event     | The message reports to CIC that the client has started an alarm. |
-| [`AlertStopped`](#AlertStopped)                 | Event     | The message reports to CIC that the client has stopped an alarm. |
-| [`DeleteAlert`](#DeleteAlert)                   | Directive | Instructs your client to delete a specified alarm. |
-| [`DeleteAlertFailed`](#DeleteAlertFailed)       | Event     | The message reports to CIC that the client has failed to delete a specified alarm. |
-| [`DeleteAlertSucceeded`](#DeleteAlertSucceeded) | Event     | The message reports to CIC that the client has successfully deleted a specified alarm. |
-| [`RequestAlertStop`](#RequestAlertStop)         | Event     | The message sends request to Clova to stop the ringing alarm.  |
-| [`SetAlert`](#SetAlert)                         | Directive | Instructs your client to add an alarm or to change a specified alarm. |
-| [`SetAlertFailed`](#SetAlertFailed)             | Event     | The message reports to CIC that the client has failed to add or change a specified alarm. |
-| [`SetAlertSucceeded`](#SetAlertSucceeded)       | Event     | The message reports to CIC that the client has successfully added or changed a specified alarm. |
-| [`StopAlert`](#StopAlert)                       | Directive | Instructs your client to stop a specified alarm.  |
+| [`AlertStarted`](#AlertStarted)                 | Event     | A message to report to CIC that the client has started ringing an alarm. |
+| [`AlertStopped`](#AlertStopped)                 | Event     | A message to report to CIC that the client has stopped an alarm. |
+| [`DeleteAlert`](#DeleteAlert)                   | Directive | Instructs a client to delete the specified alarm. |
+| [`DeleteAlertFailed`](#DeleteAlertFailed)       | Event     | A message to report to CIC that the client has failed to delete the specified alarm. |
+| [`DeleteAlertSucceeded`](#DeleteAlertSucceeded) | Event     | A message to report to CIC that the client has successfully deleted the specified alarm. |
+| [`RequestAlertStop`](#RequestAlertStop)         | Event     | A message to request to Clova to stop the ringing alarm.  |
+| [`SetAlert`](#SetAlert)                         | Directive | Instructs a client to add an alarm or to change the specified alarm. |
+| [`SetAlertFailed`](#SetAlertFailed)             | Event     | A message to report to CIC that the client has failed to add or change the specified alarm. |
+| [`SetAlertSucceeded`](#SetAlertSucceeded)       | Event     | A message to report to CIC that the client has successfully added or changed the specified alarm. |
+| [`StopAlert`](#StopAlert)                       | Directive | Instructs a client to stop the specified alarm.  |
 
-## Alarm work flow {#AlertsWorkFlow}
+## Overall process {#AlertsWorkFlow}
 
-The general flow from adding to stopping an alarm is as below.
+The general flow of adding an alarm to stopping an alarm is as follows.
 
-1. The user request([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) to add an alarm through a voice command.
-2. After saving the user's alarm, Clova sends a [`Alerts.SetAlert`](#SetAlert) directive message to the user's client device so that it can add the alarm.
-3. The client passes the result of attempting to add the alarm. (Use [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) event message and [`Alerts.SetAlertFailed`](#SetAlertFailed) event message).
-4. To return the result of adding the alarm to the user, Clova passes [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) directive message [`Clova.RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate) and directive message to the client.
-5. (When it is the designated time) The client should ring the alarm and report a [`Alerts.AlertStarted`](#AlertStarted) event message to CIC that the alarm has started. When the client is sending the [`Alerts.AlertStarted`](#AlertStarted) event message, fill up the ringing alarm details on `activeAlerts` field of [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState) context information.
-6. The user will request([`Alerts.RequestAlertStop`](#RequestAlertStop)) to stop the alarm through a voice command ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) or by pressing a physical button (hardware method) or a GUI button (software method).
-7. Clova will send a directive message to the client [`Alerts.StopAlert`](#StopAlert) to stop the alarm.
-8. After stopping the alarm, the client should send a [`Alerts.AlertStopped`](#SetAlertSucceeded) event message to report that the alarm is stopped.
+1. A user makes a voice request ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) to add an alarm.
+2. Clova saves the requested alarm and then sends the [`Alerts.SetAlert`](#SetAlert) directive to the user's client for the client to add the alarm.
+3. The client adds the alarm and informs CIC of the result by using the [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) event and the [`Alerts.SetAlertFailed`](#SetAlertFailed) event.
+4. To inform the user of the result for the request, Clova sends the  [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) directive and the [`Clova.RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate) directive to the client.
+5. The client rings the alarm at the set time and report to CIC with the [`Alerts.AlertStarted`](#AlertStarted) event that the client has started ringing the alarm. The client then provides the details of the ringing alarm through the `activeAlerts` field of the [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState) context information, contained in the [`Alerts.AlertStarted`](#AlertStarted) event.
+6. The user requests to stop the alarm ([`Alerts.RequestAlertStop`](#RequestAlertStop)) with a voice command ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) or by pressing a button on the client device or client app.
+7. Clova sends the [`Alerts.StopAlert`](#StopAlert) directive to the client to stop the alarm.
+8. The client stops the alarm and sends the [`Alerts.AlertStopped`](#SetAlertSucceeded) event to CIC to report that the client has stopped the alarm.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>In case of a repeated alarm, only the nearest alarm from the current hour will be added and executed on the client. When the repeated alarm is stopped, a new repeated alarm will be passed to client from CIC. If network is disconnected for a long time, the repeated alarm may not work properly.</p>
+<p>For a repeated alarm, CIC informs the client only of the first upcoming alarm. Only after the given alarm has rang and stopped, the client will get the information of the upcoming alarm of the repeated alarm. If a client loses network connection for a while, repeated alarms will not work properly, since no succeeding alarm information would be received.</p>
 </div>
 
-The alarm can be changed or removed before step 5 and they can only be done from the Clova app. Unless the directive message is not sent as a response to the user's voice command, it will be passed to the client through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection).
+### Changing and removing alarms
 
-The following are steps of how to change or remove the alarm.
+Alarms can be changed or removed before step 5 of the [overall process](#AlertsWorkFlow) and only through the Clova app. A directive for this request will be sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection). The reason being that the directives not as responses to a voice request are designed to be forwarded to the client through a downchannel.
 
-1. The user attempts to change or remove the alarm from the Clove app.
-2. To respond to the user's request, Clova sends [`Alerts.SetAlert`](#SetAlert) directive message or [`Alerts.DeleteAlert`](#DeleteAlert) directive message to the client.
-3. The client passes the result of changing or removing the alarm to Clova. (Through the related event message)
+Have a look at the following process of changing or removing an alarm.
 
-Process the below steps to bring and synchronize the user's alarm information to the client in the following cases: If the user's client is added, if partial or specified client is reconnected after network disconnection, if a change is made to the user's account registered on the client.
+1. The user attempts to change or remove an alarm on the Clove app.
+2. To respond to the user's request, Clova sends the [`Alerts.SetAlert`](#SetAlert) directive or the [`Alerts.DeleteAlert`](#DeleteAlert) directive to the client.
+3. The client attempts to change or remove the alarm and then passes the result to Clova with an event.
 
-1. If the client is connected or reconnected to CIC, it should pass a [`System.RequestSynchronizeState`](/CIC/References/CICInterface/System.md#RequestSynchronizeState) event message to CIC.
-2. The client receives a [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) directive message from CIC and at this point, the alarm data from `allAlerts` field should be synchronized with the alarm details from the device.
+### Synchronizing alarm information
+
+Synchronize alarm information in any of the following cases:
+
+* When the user has added a client to the user's account.
+* If any of the user's client has reconnected with CIC after network disconnection.
+* If the user account authenticated on a client has changed to a different account.
+
+To synchronize alarm information:
+
+1. After establishing or re-establishing a connection with CIC, send the [`System.RequestSynchronizeState`](/CIC/References/CICInterface/System.md#RequestSynchronizeState) event to CIC. CIC will send the [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) directive in return.
+2. Synchronize the alarm information on the client with the information contained in the  `allAlerts` field of the [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) directive.
 
 <div class="danger">
 <p><strong>Caution!</strong></p>
-<p>Be aware that all actions of alarm will not be performed properly if the client is disconnected from the network due to the above work flow.</p>
+<p>Note that maintaining network connection is crucial in providing the alarm service, since alarm information is provided by CIC.</p>
 </div>
 
 ## AlertStarted event {#AlertStarted}
 
-The message reports to CIC that the client has started an alarm. The client must send the event message to CIC once the alarm starts and rings.
+A message for reporting to CIC that the client has started ringing an alarm. You MUST send this event to CIC once you start ringing the alarm.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of started alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the ringing alarm.                 | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -115,26 +127,29 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 {% endraw %}
 
 ### See also
+
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 * [`Alerts.AlertStopped`](#AlertStopped)
 
 ## AlertStopped event {#AlertStopped}
 
-The message reports to CIC that the client has stopped an alarm. The client must send the event message to CIC once the ringing alarm stops.
-* **If a regular alarm is stopped** a [`Alerts.DeleteAlert`](#DeleteAlert) directive message will be sent from CIC.
-* **If a repeated alarm is stopped** a [`Alerts.SetAlert`](#SetAlert) directive message will be sent from CIC to set the next repeated alarm.
+A message for reporting to CIC that the client has stopped ringing an alarm. You MUST send this event to CIC once you stop ringing the alarm. As a response to this event, CIC will send a directive depending on the stopped alarm's repeat settings:
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+* **If a regular alarm is stopped**: The [`Alerts.DeleteAlert`](#DeleteAlert) directive is sent.
+* **If a repeated alarm is stopped**: The [`Alerts.SetAlert`](#SetAlert) directive is sent for the client to set the succeeding alarm.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of stopped alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the stopped alarm.                 | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
 {% raw %}
@@ -142,7 +157,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -166,17 +181,17 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 
 ## DeleteAlert directive {#DeleteAlert}
 
-Instructs your client to delete a specified alarm. The client must delete the specified alarm and report the result to CIC using the following directive message.
+Instructs a client to delete the specified alarm. When you receive this directive, delete the specified alarm and report the result to CIC using either one of the following events:
 
-* [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded) event message: If the client successfully deleted the specified alarm
-* [`Alerts.DeleteAlertFailed`](#DeleteAlertSucceeded) event message: If the client failed to delete the specified alarm
+* [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded) event: If the client has successfully deleted the specified alarm.
+* [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed) event: If the client has failed to delete the specified alarm.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of to-be-deleted alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm to delete.                 | Always |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Always |
 
 ### Message example
 {% raw %}
@@ -201,24 +216,26 @@ Instructs your client to delete a specified alarm. The client must delete the sp
 {% endraw %}
 
 ### See also
+
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
 
 ## DeleteAlertFailed event {#DeleteAlertFailed}
 
-The message reports to CIC that the client has failed to delete a specified alarm. If the client fails to delete the specified alarm after receiving a [Alerts.DeleteAlert](#DeleteAlert) directive message, it must send the event message to CIC.
+A message for reporting to CIC that the client has failed to delete the specified alarm. Send this event to CIC if you fail to delete the specified alarm for the [Alerts.DeleteAlert](#DeleteAlert) directive.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of failed-to-delete alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm the client has failed to delete.                 | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
 {% raw %}
@@ -226,7 +243,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -245,24 +262,26 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 {% endraw %}
 
 ### See also
+
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertSucceeded`](#DeleteAlertSucceeded)
 
 ## DeleteAlertSucceeded event {#DeleteAlertSucceeded}
 
-The message reports to CIC that the client has successfully deleted a specified alarm. If the client successfully deletes the specified alarm after receiving a [Alerts.DeleteAlert](#DeleteAlert) directive message, it must send the event message to CIC.
+A message for reporting to CIC that the client has successfully deleted the specified alarm. Send this event to CIC once you delete the specified alarm successfully for the [Alerts.DeleteAlert](#DeleteAlert) directive.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of deleted alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm deleted.                | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
 {% raw %}
@@ -270,7 +289,7 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -289,28 +308,31 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 {% endraw %}
 
 ### See also
+
 * [`Alerts.DeleteAlert`](#DeleteAlert)
 * [`Alerts.DeleteAlertFailed`](#DeleteAlertFailed)
 
 ## RequestAlertStop event {#RequestAlertStop}
 
-The message sends request to Clova to stop the ringing alarm. The client should send the event message to CIC when the user stopped the alarm with the software button instead of the physical button (Hardware). The client will receive a [`Alerts.StopAlert`](#StopAlert) directive message from CIC in the future once sending the event message to CIC.
+A message for requesting Clova to stop the ringing alarm. Send this event to CIC when the user stops the alarm _not_ with a voice command, but by pressing a button on the client device or the client app. CIC will send the [`Alerts.StopAlert`](#StopAlert) directive as a response to this event.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of to-be-stopped alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm to stop.                 | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Remarks
-Even after the alarm has stopped as the user press the button on the client's device, it has to be end
-d after receiving a [`Alerts.StopAlert`](#StopAlert) directive message upon sending the event message to CIC. This alarm termination method will make a coherent pattern for the termination process and is helpful when synchronizing the alarm status. In case the stop button was pressed directly by the user, respond by removing the alarm sign arbitrarily or mute the alarm sound until receiving the [`Alerts.StopAlert`](#StopAlert) directive message since some loading time may take place until the termination.
+
+Stopping a ringing alarm requires informing CIC of the stopping and getting confirmation from CIC to stop. So, a user pressing a button to stop the alarm is not the end of the task. You will send this event to inform CIC, and CIC will return the [`Alerts.StopAlert`](#StopAlert) directive.
+Such process guarantees consistency in stopping an alarm and is helpful for synchronizing alarm information between clients and CIC. Yet, to provide seamless UX to users, you have an option to remove the alarm display or muting the ringing while waiting for the [`Alerts.StopAlert`](#StopAlert) directive from CIC.
 
 ### Message example
 {% raw %}
@@ -318,7 +340,7 @@ d after receiving a [`Alerts.StopAlert`](#StopAlert) directive message upon send
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -341,29 +363,30 @@ d after receiving a [`Alerts.StopAlert`](#StopAlert) directive message upon send
 
 ## SetAlert directive {#SetAlert}
 
-Instructs your client to add an alarm or to change a specified alarm. The client may add or change an alarm in the following condition.
+Instructs a client to add an alarm or to change the specified alarm. Add an alarm or change the specified alarm, based on the following guide:
 
-* **If an alarm that has the same identifier as the `token` field value currently does not exist on the client's device** add the received alarm.
-* **If an alarm that has the same identifier as the `token` field value currently does exist on the client's device** make change on the alarm.
+* Add an alarm **if the client has no alarm with the ID identical to the `token` field** of this directive.
+* Make a change on the alarm **if the client already has an alarm with the ID identical to the `token` field** of this directive.
 
-The client should report the result to CIC using the following directive message.
+Report the result of executing the instruction to CIC using either one of the following events:
 
-* [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) event message: If the client successfully added or changed the specified alarm.
-* [`Alerts.SetAlertFailed`](#SetAlertFailed) event message: If the client failed to add or change the specified alarm.
+* [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded) event: If the client has successfully added or changed the specified alarm.
+* [`Alerts.SetAlertFailed`](#SetAlertFailed) event: If the client has failed to add or change the specified alarm.
 
-### Payload field {#SetAlertPayload}
+### Payload fields {#SetAlertPayload}
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `assets[]`         | object array | An object array containing TTS audio list that turns on when reminder (`"REMINDER"`) type or action timer (`"ACTIONTIMER"`) alarm rings. This field is included only if it is reminder type or action timer.   | No |
-| `assets[].assetId` | string | Identifier of TTS audio       | Yes |
-| `assets[].url`     | string | URL of TTS audio If the value of the field is in `"clova://alert/bell/{type}"` format, the client should ring a matching bell ring according to the types(`type`)of the alarm. An available value is:  <ul><li><code>"clova://alert/bell/reminder"</code>: Play a reminder bell ring</li></ul>    | Yes |
-| `assetPlayOrder[]` | string array | An array storing TTS audio play order in `assets` field. TTS audio identifier(`assets[].assetId`) that will play the audio according to the array index is included. This field is included only if it is reminder(`"REMINDER"`) type or action timer(`"ACTIONTIMER"`).  | No  |
-| `scheduledTime`  | string | Date and time when the alarm will ring (YYYY-MM-DDThh:mm:ssZ format)   | Yes |
-| `token`          | string | Identifier of to-be-added or changed alarms.                       | Yes |
-| `type`           | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `assets[]`         | object array | Contains a list of audio clips (TTS audio or ringtone) to play when ringing a reminder alarm or action timer. This field is provided only if the `type` value is `"REMINDER"` or `"ACTIONTIMER"`.   | Conditional |
+| `assets[].assetId` | string | The ID of an audio clip. | Always |
+| `assets[].url`     | string | The URL of the audio clip to play. If the value is in the `"clova://alert/bell/{alarm_type}"` format, ring the sound set for the given alarm type. Available values are:  <ul><li><code>"clova://alert/bell/reminder"</code>: Play a reminder ringtone</li></ul>    | Always |
+| `assetPlayOrder[]` | string array | Defines the order for playing the TTS audio clips contained in the `assets` array. Play the audio clips in the order the `assets[].assetId` are placed in this array. This field is returned only if the `type` value is `"REMINDER"` or `"ACTIONTIMER"`.  | Conditional |
+| `scheduledTime`  | string | The date and time for the alarm to ring. (Format: YYYY-MM-DDThh:mm:ssZ)   | Always |
+| `token`          | string | The ID of the alarm to be added or to be changed.                     | Always |
+| `type`           | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Always |
 
 ### Message example
+
 {% raw %}
 
 ```json
@@ -398,32 +421,35 @@ The client should report the result to CIC using the following directive message
 {% endraw %}
 
 ### See also
+
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
 
 ## SetAlertFailed event {#SetAlertFailed}
 
-The message reports to CIC that the client has failed to add or change a specified alarm. If the client fails to add or change the specified alarm after receiving a [Alerts.SetAlert](#SetAlert) directive message, it must send the event message to CIC.
+A message for reporting to CIC that the client has failed to add or change the specified alarm. Send this event to CIC if you failed to add or change the specified alarm for the [Alerts.SetAlert](#SetAlert) directive.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of failed-to-add or change alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm the client has failed to add or change.               | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -442,33 +468,36 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 {% endraw %}
 
 ### See also
+
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertSucceeded`](#SetAlertSucceeded)
 
 
 ## SetAlertSucceeded event {#SetAlertSucceeded}
 
-The message reports to CIC that the client has successfully added or changed a specified alarm. If the client succeed at adding or changing the specified alarm after receiving a [Alerts.SetAlert](#SetAlert) directive message, it must send the event message to CIC.
+A message for reporting to CIC that the client has successfully added or changed the specified alarm. Send this event when you succeed in adding or changing the specified alarm for the  [Alerts.SetAlert](#SetAlert) directive.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of added or changed alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm added or changed.                 | Required |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{Alerts.AlertState}},
+    {{Alerts.AlertState}}
   ],
   "event": {
     "header": {
@@ -487,22 +516,24 @@ Send the following [context information](/CIC/References/Context_Objects.md) tog
 {% endraw %}
 
 ### See also
+
 * [`Alerts.SetAlert`](#SetAlert)
 * [`Alerts.SetAlertFailed`](#SetAlertFailed)
 
 ## StopAlert directive {#StopAlert}
 
-Instructs your client to stop a specified alarm. The client must stop the specified alarm and report the result to CIC using the following [`AlertStopped`](#AlertStopped) event message.
+Instructs a client to stop the specified alarm. Stop the specified alarm and report the result to CIC with the [`AlertStopped`](#AlertStopped) event.
 
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `token`   | string | Identifier of should-be-stopped alarms.                 | Yes |
-| `type`    | string | Types of alarm. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Yes |
+| Field name       | Type    | Description                    | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `token`   | string | The ID of the alarm to stop.                 | Always |
+| `type`    | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Always |
 
 ### Message example
+
 {% raw %}
 
 ```json
@@ -525,4 +556,5 @@ Instructs your client to stop a specified alarm. The client must stop the specif
 {% endraw %}
 
 ### See also
+
 * [`Alerts.AlertStopped`](#AlertStopped)

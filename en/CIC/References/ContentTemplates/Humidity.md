@@ -1,20 +1,21 @@
 # Humidity template
-Provides humidity information. It is used to display humidity on a screen.
+
+The Humidity template is used in providing humidity information for the client to display on the client's screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> on how humidity is displayed.</p>
+<p>See a <a href="#UIExample">UI example</a> of the Humidity template used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file. <div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
-| `humidity`      | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | An object containing humidity. |
-| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).  |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `type`          | string | A content template delimiter. It has an `"Humidity"` value. |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background. <div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `humidity`      | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | The humidity. |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the content to display when the humidity information is tapped. An empty string (`""`) indicates that no content is to be displayed. |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location which the humidity information is for.  |
+| `type`          | string | The type of this template. The value is always `"Humidity"`. |
 
 ## Template example
 
@@ -31,15 +32,16 @@ Provides humidity information. It is used to display humidity on a screen.
   },
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Shinjuku"
   },
   "type": "Humidity"
 }
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the Humidity template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
+
+The following example shows how the Humidity template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![Humidity](/CIC/Resources/Images/Content-Template-Humidity.png)
 

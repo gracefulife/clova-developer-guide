@@ -1,24 +1,48 @@
 # TextRecognizer
 
-Recognizes text entered by a user.
+The TextRecognizer namespace provides an interface to request to CIC to recognize the user's text entry.
 
 ## Recognize event {#Recognize}
-`TextRecognizer.Recognize` event message sends user's text input to CIC and requests to recognize what the user wants. Clova's natural language analysis and dialog understanding system interpret the results and process user requests accordingly. If your client cannot receive speech input from a user or if its microphone is not working properly, you can use this event message instead of [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) to receive text input from a user.
 
-### Context field
+A message for sending user's text entry to CIC and requesting to recognize what the user wants. Clova's natural language analysis system and dialog understanding system interpret the given text and process user requests accordingly.
 
-There is no required state information
+Use this event instead of the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) in the following cases:
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `text`        | string  | Contains text entered by a user. | Yes     |
+* The client cannot receive voice requests from a user.
+* The client's microphone is not functioning properly.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
+
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `text`        | string  | The text entered by a user. | Required     |
 
 ### Message example
+
 {% raw %}
 ```json
 {
-  "context":[],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}}
+  ],
   "event": {
     "header": {
       "namespace": "TextRecognizer",
@@ -27,7 +51,7 @@ There is no required state information
       "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
     },
     "payload": {
-      "text": "지금 날씨 어때?"
+      "text": "How is the weather now?"
     }
   }
 }
@@ -35,4 +59,12 @@ There is no required state information
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)

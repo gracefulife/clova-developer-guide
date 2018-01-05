@@ -1,13 +1,14 @@
 # Interacting with CIC
-To provide Clova services for users, you must make your client (app or device) use the CIC interface to send user requests and contextual information to Clova. First, you need to understand how to connect your client with CIC, which messages are sent and received, and which actions are performed during the process.
 
-This documentation covers the following topics to provide essential information for client development.
+To provide Clova services on a client, be it an app or a device, use the CIC API to send user requests and contextual information to Clova. First, you need to learn how to integrate your client with CIC, what messages are sent and received, and how to handle the messages.
+
+Follow the guide as provided below to learn how to develop a client for Clova.
 
 1. [Preparation](#Preparation)
-2. [Connecting with CIC](#ConnectToCIC)
-3. [Sending event message](#SendEvent)
-4. [Handling directive message](#HandleDirective)
-5. [Managing message queue](#ManageMessageQ)
+2. [Integrating CIC](#ConnectToCIC)
+3. [Sending events](#SendEvent)
+4. [Handling directives](#HandleDirective)
+5. [Managing message queues](#ManageMessageQ)
 
 {% include "./InteractWithCIC/Preparation.md" %}
 

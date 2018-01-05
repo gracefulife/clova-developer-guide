@@ -1,30 +1,32 @@
 # ImageList template
-Displays one or more images with description on a screen. It is used to display a list of thumbnails or a large image when a user selects one of the thumbnails.
+
+The ImageList template is used in providing a list of images plus additional information for the client to display on the client's screen.
+This template is often used to display a list of thumbnails or the original image.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for available display formats of the ImageList template.</p>
+<p>See a <a href="#UIExample">UI example</a> of the ImageList template used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `ImageList[]`                | object array | An object array that displays a list of images                        |
-| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the source of the image. The `value` field of this object can have an empty string (`""`).      |
-| `ImageList[].imageTitle`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the title of the image. The `value` field of this object can have an empty string (`""`).           |
-| `ImageList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the image. The `value` field of this object can have an empty string (`""`).      |
-| `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).      |
-| `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).      |
-| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | An object containing the URL of the thumbnail image. The `value` field of this object can have an empty string (`""`).      |
-| `type`                       | string       | A content template delimiter. It has an `"ImageList"` value.        |
+| `ImageList[]`                | object array | Contains units of image information.                        |
+| `ImageList[].imageReference` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The name or description of the source of the image. An empty string (`""`) indicates that the source is unavailable.     |
+| `ImageList[].imageTitle`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The title of the image. An empty string (`""`) indicates that the title is unavailable.           |
+| `ImageList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL of the image. An empty string (`""`) indicates that the image is a thumbnail.      |
+| `ImageList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The  information on the source of the image. An empty string (`""`) indicates that this information is unavailable.      |
+| `ImageList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL to the image source. An empty string (`""`) indicates that this information is unavailable.    |
+| `ImageList[].thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The URL of the thumbnail image. An empty string (`""`) indicates that the image is an original image.      |
+| `type`                       | string       | The type of this template. The value is always `"ImageList"`.        |
 
 ## Template example
 
 {% raw %}
 ```json
 // Example 1.
-// User request: 자동차 사진 보여줘 (Request to show pictures of cars)
+// User requests for pictures of cars
 {
   "type": "ImageList",
   "thumbImageUrlList": [
@@ -35,7 +37,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "imageTitle": {
         "type": "string",
-        "value": "창원대리운전 번개처럼 빠르게"
+        "value": "Chauffer at your service as fast as lightning"
       },
       "imageUrl": {
         "type": "url",
@@ -43,7 +45,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "referenceText": {
         "type": "string",
-        "value": "Search Result"
+        "value": "NAVER search result"
       },
       "referenceUrl": {
         "type": "url",
@@ -61,7 +63,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "imageTitle": {
         "type": "string",
-        "value": "자동차"
+        "value": "Car"
       },
       "imageUrl": {
         "type": "url",
@@ -69,7 +71,7 @@ Displays one or more images with description on a screen. It is used to display 
       },
       "referenceText": {
         "type": "string",
-        "value": "Search Result"
+        "value": "NAVER search result"
       },
       "referenceUrl": {
         "type": "url",
@@ -87,11 +89,12 @@ Displays one or more images with description on a screen. It is used to display 
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the ImageList template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
 
-| Thumbnail list | Selected image |
-|-------|-------|
+The following example shows how the ImageList template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+| Thumbnail list | Original image |
+|:-------:|:-------:|
 | ![Thumbnail](/CIC/Resources/Images/Content_Template-Thumbnail_List.png) | ![Original](/CIC/Resources/Images/Content_Template-Original_Image.png) |
 
 ## See also

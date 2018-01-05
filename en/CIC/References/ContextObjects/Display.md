@@ -1,7 +1,9 @@
 ## Device.Display {#Display}
-`Device.Display` is a message format applied to report the display information of the device of the client to CIC. When sending display information to Clova, a media content with a resolution corresponding to the screen ratio and DPI will be returned.  If the context information is not sent to CIC, Clova will assume that the client owns a display with Full HD resolution.  A content with resolution corresponding to the client device or the same ratio as the resolution will be provided if using the context information.
 
-### Message structure
+`Device.Display` is a format for reporting to CIC the display information of the client device. By providing the display information to Clova, the client will be supplied with visual content in the best resolution and DPI for the client. If client does not provide its display information to Clova, Clova assumes the client has a full HD resolution.
+
+### Object structure
+
 {% raw %}
 
 ```json
@@ -24,19 +26,19 @@
 
 {% endraw %}
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `contentLayer`        | object | An object containing resolution information of a display part for content. This field cannot be omitted if the value of `size` is `"custom"`.  | No |
-| `contentLayer.width`  | number | The width of content being displayed on the screen. Its unit is pixel(px).                                           | Yes |
-| `contentLayer.height` | number | The height of content being displayed on the screen. Its unit is pixel(px).                                           | Yes |
-| `dpi`         | number | DPI of the display device. This field can be omitted if the value of `size` is `"none"`.                                 | No |
-| `orientation` | string | Direction of the display device. This field can be omitted if the value of `size` is `"none"`.<ul><li><code>"landscape"</code>: Horizontal direction</li><li><code>"portrait"</code>: Vertical direction</li></ul>  | No |
-| `size`        | string | A value indicating the resolution size of the display device. In the value, a predefined number or a value implying any resolution size or a value meaning no display can be entered. Available values are: <ul><li><code>"none"</code>: No display found from the client appliance</li><li><code>"s100"</code>: Low resolution (160px X 107px)</li><li><code>"m100"</code>: Medium resolution (427px X 240px)</li><li><code>"l100"</code>: High resolution (640px X 360px)</li><li><code>"xl100"</code>: Ultra high resolution (xlarge type, 899px X 506px)</li><li><code>"custom"</code>: A resolution without a set standard Enter the actual resolution value of the device on the `contentLayer` field. </li></ul> | Yes |
+| Field       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `contentLayer`        | object | Contains the resolution of the client display for contents. This field is mandatory if the `size` field is `"custom"`.  | Optional |
+| `contentLayer.width`  | number | The width of the display in pixels.        | Required |
+| `contentLayer.height` | number | The height of the display in pixels.       | Required |
+| `dpi`         | number | The DPI of the display. This field is omissible _only if_ the `size` field is `"none"`.     | Optional |
+| `orientation` | string | The orientation of the physical screen of the client: <ul><li><code>"landscape"</code></li><li><code>"portrait"</code></li></ul>This field is omissible _only if_ the `size` field is `"none"`.  | Optional |
+| `size`        | string | The resolution of the display. Available values are: <ul><li><code>"none"</code>: The client has no display</li><li><code>"s100"</code>: Low resolution (160x107 pixels)</li><li><code>"m100"</code>: Medium resolution (427x240 pixels)</li><li><code>"l100"</code>: High resolution (640x360 pixels)</li><li><code>"xl100"</code>: Ultra high resolution (xlarge type, 899x506 pixels)</li><li><code>"custom"</code>: For unavailable resolution, assign `"custom"` here and define the actual resolution in the `contentLayer` field. </li></ul>  | Required |
 
+### Example
 
-### Message example
 {% raw %}
 
 ```json
@@ -60,5 +62,6 @@
 {% endraw %}
 
 ### See also
+
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 * [Custom extension message](/CEK/References/CEK_API.md#CustomExtMessage)
