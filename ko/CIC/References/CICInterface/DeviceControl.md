@@ -38,7 +38,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수     |
 | `command`     | string  | 정상 수행한 동작.<ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
@@ -88,7 +88,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수     |
 | `command`     | string  | 실패한 동작. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | 필수   |
 
@@ -312,7 +312,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"channel"</code>: TV 채널</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"volume"</code>: 스피커 볼륨</li></ul> | 항상     |
 
 ### Remarks
@@ -357,7 +357,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `durationInSeconds` | number  | 보고 기간. 지정된 시간동안 기기의 현재 상태를 보고합니다. 단위는 초단위 입니다. 이 필드가 없는 경우 최초 1회만 보고를 수행합니다. | 조건부     |
 | `intervalInSeconds` | number  | 보고 주기. 지정된 주기로 기기의 형태 상태를 보고합니다. 단위는 초단위 입니다. 이 필드는 `durationInSeconds` 필드가 있을 경우에만 유효하며 없을 경우 함께 생략됩니다. | 조건부     |
 
@@ -400,7 +400,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"channel"</code>: TV 채널</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"volume"</code>: 스피커 볼륨</li></ul> | 항상     |
 
 ### Remarks
@@ -445,7 +445,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 대상 앱에 대한 정보. 다음과 같은 타입의 앱 정보를 가질 수 있습니다.<ul><li>custom URL scheme: 대상 앱의 custom URL scheme (예, <code>"naversearchapp://..."</code>)</li><li>중계 페이지 URL: 설치된 대상 앱이 있을 경우 해당 앱을 실행하는 중계 페이지 URL(예, <code>"http://naverapp.naver.com/..."</code>)</li><li>앱 이름: 사용자의 발화를 인식한 앱의 이름 (예, <code>"네이버앱"</code>)</li></ul> | 항상     |
 
 ### Remarks
@@ -484,7 +484,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 표시할 화면. 현재 설정 화면을 여는 값인 `"settings"`만 입력됩니다. | 항상     |
 
 ### Remarks
@@ -663,7 +663,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"channel"</code>: TV 채널</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"volume"</code>: 스피커 볼륨</li></ul> | 항상     |
 | `value`       | string  | 변경할 값 또는 TV 채널 번호나 이름        | 항상     |
 
@@ -716,7 +716,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `deviceId`    | string  | 상태가 업데이트된 클라이언트 기기의 ID. | 항상     |
 | `deviceState` | [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState) object | 기기 상태 업데이트 정보가 담긴 객체         | 항상     |
 
@@ -758,7 +758,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"energysave"</code>: 에너지 절약 모드</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: 전원 상태</li><li><code>"ring"</code>: 벨소리 모드</li><li><code>"silent"</code>: 무음 모드</li><li><code>"vibrate"</code>: 진동 모드</li><li><code>"wifi"</code>: 무선랜</li></ul> | 항상     |
 
 ### Remarks
@@ -806,7 +806,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"energysave"</code>: 에너지 절약 모드</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: 전원 상태</li><li><code>"ring"</code>: 벨소리 모드</li><li><code>"silent"</code>: 무음 모드</li><li><code>"vibrate"</code>: 진동 모드</li><li><code>"wifi"</code>: 무선랜</li></ul> | 항상     |
 
 ### Remarks

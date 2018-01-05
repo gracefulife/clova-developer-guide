@@ -100,10 +100,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
 
 ### Message example
 
@@ -137,7 +137,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 현재 밝기 정보를 담고 있는 객체                                | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
 | `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 이전 밝기 정보를 담고 있는 객체                                | 선택    |
@@ -181,11 +181,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 변경할 밝기의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 변경할 밝기의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -222,7 +222,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널 정보를 담고 있는 객체                                | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
 | `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
@@ -265,11 +265,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 변경할 TV 채널의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 변경할 TV 채널의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -306,7 +306,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | 현재 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 선택    |
 | `previousState`     | object                                  | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
 | `previousState.fanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)     | 이전 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 선택    |
@@ -350,11 +350,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | 변경할 팬 속도의 크기 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | 변경할 팬 속도의 크기 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 항상    |
 
 ### Message example
 
@@ -391,7 +391,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 현재 희망 온도 정보를 담고 있는 객체                            | 선택    |
 | `previousState`     | object                                  | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
 | `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 이전 희망 온도 정보를 담고 있는 객체              | 선택    |
@@ -435,11 +435,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 변경할 온도의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 변경할 온도의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -476,7 +476,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetVolume`      | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)            | 현재 볼륨 정보를 담고 있는 객체                             | 선택    |
 | `previousState`     | object                                  | 기기의 이전 상황 정보를 담고 있는 객체                        | 선택    |
 | `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)    | 이전 볼륨 정보를 담고 있는 객체                             | 선택    |
@@ -520,11 +520,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | 변경할 볼륨의 크기 정보를 담고 있는 객체                           | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | 변경할 볼륨의 크기 정보를 담고 있는 객체                           | 항상    |
 
 ### Message example
 
@@ -558,10 +558,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetAirQualityRequest {#GetAirQualityRequest}
 주로 공기청정기와 같은 기기에서 측정된 공기질 정보를 확인할 때 사용되며, 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetAirQualityResponse`](#GetAirQualityResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
 
 ### Message example
 
@@ -593,7 +593,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetAirQualityRequest`](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `airQuality`                 | [AirQualityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#AirQualityInfoObject) | 현재 기기가 측정한 공기질 정보를 담고 있는 객체   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -626,10 +626,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetBatteryInfoRequest {#GetBatteryInfoRequest}
 주로 로봇청소기와 같이 무선 동작하는 기기의 내장 배터리 정보를 확인할 때 사용되며, 대상 기기의 현재 배터리 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetBatteryInfoResponse`](#GetBatteryInfoResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
 
 ### Message example
 
@@ -661,7 +661,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetBatteryInfoRequest`](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | 현재 기기의 배터리 정보를 담고 있는 객체   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -694,10 +694,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetCurrentTemperatureRequest {#GetCurrentTemperatureRequest}
 주로 에어컨이나 온도 조절 장치와 같은 기기에서 측정된 현재 온도를 확인할 때 사용되며, 대상 기기가 측정한 현재 온도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetCurrentTemperatureResponse`](#GetCurrentTemperatureResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
 
 ### Message example
 
@@ -730,7 +730,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetCurrentTemperatureRequest`](#GetCurrentTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 측정한 현재 온도 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `currentTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기가 측정한 현재 온도 정보를 담고 있는 객체  | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -764,10 +764,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetFineDustRequest {#GetFineDustRequest}
 주로 공기청정기와 같은 기기에서 측정된 미세 먼지(PM10) 정보를 확인할 때 사용되며, 대상 기기가 측정한 미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetFineDustResponse`](#GetFineDustResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함됩니다.     | 항상    |
 
 ### Message example
 
@@ -799,7 +799,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetFineDustRequest`](#GetFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 미세 먼지(PM10) 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `fineDust`                 | [FineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#FineDustInfoObject) | 현재 기기가 측정한 미세 먼지 정보를 담고 있는 객체   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -833,10 +833,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetHumidityRequest {#GetHumidityRequest}
 주로 가습기와 같은 기기에서 측정된 습도 정보를 확인할 때 사용되며, 대상 기기가 측정한 습도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetHumidityResponse`](#GetHumidityResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함됩니다.     | 항상    |
 
 ### Message example
 
@@ -868,7 +868,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetHumidityRequest`](#GetHumidityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 습도 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `humidity`                 | [HumidityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#HumidityInfoObject) | 현재 기기가 측정한 습도 정보를 담고 있는 객체   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -901,10 +901,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetLockStateRequest {#GetLockStateRequest}
 주로 스마트 밸브와 같은 기기의 상태를 확인할 때 사용되며, 대상 기기의 현재 잠금 상태 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetLockStateResponse`](#GetLockStateResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함됩니다.     | 항상    |
 
 ### Message example
 
@@ -936,7 +936,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetLockStateRequest`](#GetLockStateRequest) 메시지에 대한 응답으로 대상 기기의 현재 잠금 상태를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `lockState`   | string | 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -967,10 +967,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetTargetTemperatureRequest {#GetTargetTemperatureRequest}
 주로 에어컨이나 온도 조절 장치와 같은 기기에서 설정된 희망 온도를 확인할 때 사용되며, 대상 기기가 설정한 희망 온도 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함됩니다.     | 항상    |
 
 ### Message example
 
@@ -1002,7 +1002,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetTargetTemperatureRequest`](#GetTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 설정한 희망 온도 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기에 설정된 희망 온도 정보를 담고 있는 객체  | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -1035,10 +1035,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ## GetUltraFineDustRequest {#GetUltraFineDustRequest}
 주로 공기청정기와 같은 기기에서 측정된 초미세 먼지(PM2.5) 정보를 확인할 때 사용되며, 대상 기기가 측정한 초미세 먼지 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetUltraFineDustResponse`](#GetUltraFineDustResponse) 메시지를 사용해야 합니다.
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함됩니다.     | 항상    |
 
 ### Message example
 
@@ -1070,7 +1070,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 [`GetUltraFineDustRequest`](#GetUltraFineDustRequest) 메시지에 대한 응답으로 대상 기기가 측정한 초미세 먼지(PM2.5) 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `ultraFineDust`                 | [UltraFineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#UltraFineDustInfoObject) | 현재 기기가 측정한 초미세 먼지 정보를 담고 있는 객체   | 필수    |
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))     | 선택    |
 
@@ -1106,10 +1106,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string  | Clova Home extension의 access token | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string  | Clova Home extension의 access token | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포합됩니다.     | 항상    |
 
 ### Message example
 
@@ -1143,7 +1143,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `isReachable` | boolean | 네트워크를 통해 대상 기기에 접근 가능한지 나타내는 값. <ul><li><code>true</code>: 접근 가능(online)</li><li><code>false</code>: 접근 불가(offline)</li></ul> | 필수    |
 | `isTurnOn`    | boolean | 대상 기기의 동작 상태를 나타내는 값. <ul><li><code>true</code>: 대기 상태(idle)</li><li><code>false</code>: 동작 상태(working)</li></ul>                  | 필수    |
 
@@ -1177,7 +1177,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 현재 밝기 정보를 담고 있는 객체                                | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 필수    |
 | `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 이전 밝기 정보를 담고 있는 객체                                | 선택    |
@@ -1221,11 +1221,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 변경할 밝기의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 항상 포함니다.     | 항상    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 변경할 밝기의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -1262,7 +1262,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널 정보를 담고 있는 객체                                | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
 | `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
@@ -1306,11 +1306,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 필수    |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 변경할 TV 채널의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 변경할 TV 채널의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -1347,7 +1347,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `fanSpeed`            | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 현재 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 선택    |
 | `previousState`          | object                      | 기기의 이전 상황 정보를 담고 있는 객체                 | 선택    |
 | `previousState.FanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 이전 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul> | 선택    |
@@ -1391,11 +1391,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 변경할 속도의 크기 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul>  | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 변경할 속도의 크기 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul>  | 항상    |
 
 ### Message example
 
@@ -1432,7 +1432,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 현재 희망 온도 정보를 담고 있는 객체                               | 선택    |
 | `previousState`     | object                                  | 기기의 이전 상황 정보를 담고 있는 객체                              | 선택    |
 | `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 이전 희망 온도 정보를 담고 있는 객체                 | 선택    |
@@ -1476,11 +1476,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 변경할 온도의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 변경할 온도의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -1517,7 +1517,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)               | 현재 볼륨 정보를 담고 있는 객체                               | 선택    |
 | `previousState`     | object                                 | 기기의 이전 상황 정보를 담고 있는 객체                              | 선택    |
 | `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject) | 이전 볼륨 정보를 담고 있는 객체                 | 선택    |
@@ -1557,11 +1557,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | 변경할 볼륨의 크기 정보를 담고 있는 객체                              | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | 변경할 볼륨의 크기 정보를 담고 있는 객체                              | 항상    |
 
 ### Message example
 
@@ -1624,10 +1624,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
 
 ### Message example
 
@@ -1661,7 +1661,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 현재 밝기 정보를 담고 있는 객체                                | 선택    |
 
 ### Remarks
@@ -1698,11 +1698,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 대상 기기에 설정할 조명 밝기 정보를 담고 있는 객체                | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 대상 기기에 설정할 조명 밝기 정보를 담고 있는 객체                | 항상    |
 
 ### Message example
 
@@ -1739,7 +1739,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `channelName`               | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | 현재 TV 채널의 이름 정보를 담고 있는 객체                                | 선택    |
 
 ### Remarks
@@ -1776,11 +1776,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | 대상 기기에 설정할 TV 채널의 이름 정보를 담고 있는 객체                | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | 대상 기기에 설정할 TV 채널의 이름 정보를 담고 있는 객체                | 항상    |
 
 ### Message example
 
@@ -1817,7 +1817,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `channel`     | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)  | 대상 기기에 설정된 TV 채널 정보를 담고 있는 객체      | 선택    |
 
 ### Remarks
@@ -1854,11 +1854,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 대상 기기에 설정할 TV 채널 정보를 담고 있는 객체                | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 대상 기기에 설정할 TV 채널 정보를 담고 있는 객체                | 항상    |
 
 ### Message example
 
@@ -1895,7 +1895,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `fanSpeed`               | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 현재 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul>   | 선택    |
 
 ### Remarks
@@ -1932,11 +1932,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 대상 기기에 설정할 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul>     | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 대상 기기에 설정할 팬의 속도 정보를 담고 있는 객체. 팬의 속도는 풍속을 의미하며 팬 속도를 다음과 같은 값으로 제한합니다.<ul><li><code>1</code>: 약한 바람(1단)</li><li><code>2</code>: 중간 바람(2단)</li><li><code>3</code>: 강한 바람(3단)</li></ul>     | 항상    |
 
 ### Message example
 
@@ -1973,7 +1973,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `lockState`   | string  | 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 필수    |
 
 
@@ -2005,11 +2005,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `lockState`       | string | 설정할 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `lockState`       | string | 설정할 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 항상    |
 
 ### Message example
 
@@ -2044,7 +2044,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | 대상 기기에 설정된 운전 모드 정보를 담고 있는 객체      | 선택    |
 
 ### Remarks
@@ -2081,11 +2081,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken` | string  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 필수    |
-| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | 대상 기기에 설정할 운전 모드 정보를 담고 있는 객체                         | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken` | string  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 항상    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | 대상 기기에 설정할 운전 모드 정보를 담고 있는 객체                         | 항상    |
 
 ### Message example
 
@@ -2122,7 +2122,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 현재 희망 온도 정보를 담고 있는 객체                                | 선택    |
 
 ### Remarks
@@ -2159,11 +2159,11 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기에 설정할 희망 온도 정보를 담고 있는 객체                | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 대상 기기에 설정할 희망 온도 정보를 담고 있는 객체                | 항상    |
 
 ### Message example
 
@@ -2226,10 +2226,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
 
 ### Message example
 
@@ -2289,10 +2289,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
 
 ### Message example
 
@@ -2352,10 +2352,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### Payload fields
 
-| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 필수    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 필수    |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
 
 ### Message example
 
