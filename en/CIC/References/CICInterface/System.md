@@ -1,46 +1,47 @@
 # System
 
-The system provides directive messages and event messages that are required when synchronizing user account related information such as alarm and schedule between Clova and the client. Such synchronizing process can be done on the following cases:
+The System namespace provides directives and events that are required when synchronizing information related to user accounts such as alarm and schedule between Clova and the client. Such synchronization is needed in the following cases:
 
-* When a client appliance using the user account is added. 
-* When the client is reconnected to CIC due to network connection error or other issues.
-* When the user account registered to the client appliance has changed because other user begin to use.
-* When the client appliance is reset after disconnected from the paring app.
+* When a user has added another client to their account.
+* When the client is reconnected to CIC due to network error or other issues.
+* When the user account registered on the client has changed to a new user's.
+* When the client is reset after getting disconnected from the pair app.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If network is disconnected or a user account is logged out, all information related to the account has to be deleted. </p>
+  <p>If the client experiences network disconnection or a user logs out from the client, you MUST delete all the information related to the user account.</p>
 </div>
 
-To synchronize information, client will send a [`System.RequestSynchronizeState`](RequestSynchronizeState) event message to CIC and CIC will share the server information to the client using a [`System.SynchronizeState`](#SynchronizeState) directive message.
+To synchronize information, a client sends the [`System.RequestSynchronizeState`](RequestSynchronizeState) event to CIC and CIC shares the server information with the client using the [`System.SynchronizeState`](#SynchronizeState) directive.
 
-| Message name         | Message type  | Message description                                 |
+| Message name         | Message type  | Description                                 |
 |------------------|-----------|-------------------------------------------|
-| [`RequestSynchronizeState`](#RequestSynchronizeState)  | Event     | Send this event message to CIC when the client needs to synchronize shared information stored in Clova's cloud environment. |
-| [`SynchronizeState`](#SynchronizeState)                | Directive | Instructs your client to synchronize the data in `payload` field.                               |
-
+| [`RequestSynchronizeState`](#RequestSynchronizeState)  | Event     | A message to notify CIC that the client needs to synchronize its data with Clova. |
+| [`SynchronizeState`](#SynchronizeState)                | Directive | Instructs a client to synchronize its data with the data provided by Clova.                                |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>For now, the system namespace is used to synchronize alarm details added by the user. The number of synchronized information may increase in the future.</p>
+  <p>Until further notice, the System namespace only provides an interface for synchronizing alarm details. More features are expected to be provided in the future.</p>
 </div>
 
 ## RequestSynchronizeState event {#RequestSynchronizeState}
-Send this event message to CIC when the client needs to synchronize shared information stored in Clova's cloud environment. CIC will pass a [`System.SynchronizeState`](#SynchronizeState) directive message to the client upon receiving the event message.
 
-### Context field
+A message for reporting to CIC that the client needs to synchronize shared information stored in Clova's cloud. CIC will send the [`System.SynchronizeState`](#SynchronizeState) directive in return.
 
-There is no required state information
+### Context fields
 
-### Payload field
+None
+
+### Payload fields
 
 None
 
 ### Message example
+
 {% raw %}
 ```json
 {
-  "context":[],
+  "context": [],
   "event": {
     "header": {
       "namespace": "System",
@@ -54,19 +55,22 @@ None
 {% endraw %}
 
 ### See also
+
 * [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState)
 
 ## SynchronizeState directive {#SynchronizeState}
-Instructs your client to synchronize the data in `payload` field. The client should modify the set value according to the data delivered from Clova.
 
-### Payload field
+Instructs a client to synchronize the data in the `payload` field. The client should modify the set value according to the data delivered from Clova.
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `allAlerts`   | object array | An object array containing a list of alarm that the client should synchronize. The object array has the same format as a [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) object that is being used from a [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) directive message.  | Yes    |
+### Payload fields
+
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `allAlerts[]`   | object array | Contains a list of alarms to synchronize. Alarm information is specified in the format used in the [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) of the [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) directive.  | Required    |
 
 ### Remarks
-For now, the system namespace is used to synchronize alarm details added by the user. The number of synchronized information may increase in the future.
+
+Until further notice, the System namespace only provides an interface for synchronizing alarm details. More features are expected to be provided in the future.
 
 ### Message example
 
@@ -113,4 +117,5 @@ For now, the system namespace is used to synchronize alarm details added by the 
 {% endraw %}
 
 ### See also
+
 * [`System.RequestSynchronizeState`](#RequestSynchronizeState)

@@ -1,30 +1,31 @@
 # WeeklyWeather template
-Provides weather forecasts for the week. It is used to display weekly weather on a screen.
+
+The WeeklyWeather template is used in providing weekly weather information for the client to display on the client's screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> on how weekly weather is displayed.</p>
+<p>See a <a href="#UIExample">UI example</a> on how the WeeklyWeather template is used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file.<div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
-| `dailyWeatherList[]`              | object array | An object array containing daily weather |
-| `dailyWeatherList[].date`         | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | An object containing the date of the day |
-| `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the highest temperature in the afternoon of the day |
-| `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing [weather codes](#WeatherCode) by date |
-| `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of an image icon displaying weather of the day |
-| `dailyWeatherList[].lowTemperature`  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | An object containing the lowest temperature in the morning of the day |
-| `description`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing a brief explanation that this is weekly weather forecasts  |
-| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).   |
-| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `type`                      | string | A content template delimiter. It has an `"WeeklyWeather"` value. |
+| `bgClipUrl`                       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) |The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div>  |
+| `dailyWeatherList[]`              | object array | Contains daily forecasts. |
+| `dailyWeatherList[].date`         | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | The date for which this weather forecast is provided for. |
+| `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The highest temperature for the day. |
+| `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The [weather code](#WeatherCode) for this forecast. |
+| `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the icon to represent this forecast. |
+| `dailyWeatherList[].lowTemperature`  |  [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The lowest temperature for the day. |
+| `description`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | A statement to state that weekly forecasts are being displayed.  |
+| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to open when the weather information is tapped. An empty string (`""`) indicates that this information is unavailable.   |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this forecast is for. |
+| `type`                      | string | The type of this template. The value is always `"WeeklyWeather"`. |
 
 {% include "./Shared_Weather_Code.md" %}
 
-## Template Example
+## Template example
 
 {% raw %}
 ```json
@@ -191,23 +192,25 @@ Provides weather forecasts for the week. It is used to display weekly weather on
   ],
   "description": {
     "type": "string",
-    "value": "주간 날씨예요"
+    "value": "Weekly weather"
   },
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Davenport"
   },
   "type": "WeeklyWeather"
 }
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the WeeklyWeather template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
+
+The following example shows how the WeeklyWeather template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![WeeklyWeather](/CIC/Resources/Images/Content-Template-WeeklyWeather.png)
 
 ## See also
+
 * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

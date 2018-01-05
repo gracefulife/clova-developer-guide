@@ -1,20 +1,23 @@
 # Notifier
 
-Notifier instructs CIC to display an alarm notification or to delete alarm displays from all clients registered on the user's account. CIC sends the following directive message even without a request from the client to make the client keep the alarm notification as the lastest.
+The Notifier namespace provides interfaces for CIC to instruct a client to turn on notification indicators or to turn off notification indicators on all the clients registered to the user's account. For clients to keep the notification check status up to date, CIC sends the following directives, without having received events from clients:
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ClearIndicator`](#ClearIndicator)         | Directive | Instructs your client to turn off all displays indicating the alarm. |
-| [`SetIndicator`](#SetIndicator)             | Directive | Instructs your client to turn on a display indicating an unchecked alarm. |
+| [`ClearIndicator`](#ClearIndicator)         | Directive | Instructs a client to turn off all the notification indicators. |
+| [`SetIndicator`](#SetIndicator)             | Directive | Instructs a client to turn on notification indicators for unchecked notifications. |
 
 ## ClearIndicator directive {#ClearIndicator}
-Instructs your client to turn off all displays indicating the alarm. Must turn off all lights or sound effects indicating the alarm.
 
-### Payload field
+Instructs a client to turn off notification indicators. Turn off all light indicators or sound effects for notification.
+
+### Payload fields
+
 None
 
 ### Remarks
-This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that the message is not a response to an event message.
+
+This directive is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that this directive is not a response to an event.
 
 ### Message example
 
@@ -36,19 +39,22 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
 {% endraw %}
 
 ### See also
+
 * [`Notifier.SetIndicator`](#SetIndicator)
 
 ## SetIndicator directive {#SetIndicator}
-Instructs your client to turn on the alarm display.
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `new`         | boolean | A field notifying if the message is a directive message for a new alarm. <ul><li><code>true</code> : If it is a new alarm</li><li><code>false</code> : If it is not a new alarm</li></ul> | Yes    |
-| `light`       | string  | Light setting information<ul><li><code>"on"</code> : There are alarms unchecked by the user. Usually turns on the light indicating an alarm.</li><li><code>"off"</code> : All alarms are checked by the user.</li></ul> | Yes    |
+Instructs a client to turn on the notification indicator.
+
+### Payload fields
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `new`         | boolean | Indicates if the notification to turn the indicator on is a new notification. <ul><li><code>true</code>: The notification is new.</li><li><code>false</code>: The notification is not new.</li></ul> | Always |
+| `light`       | string  | Indicates whether to tun on the light indicator<ul><li><code>"on"</code>: Indicates there are notifications unchecked by the user. Turn on the light indicator.</li><li><code>"off"</code>: All notifications have been checked by the user.</li></ul> | Always |
 
 ### Remarks
-This directive message is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that the message is not a response to an event message.
+
+This directive is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), which means that this directive is not a response to an event.
 
 ### Message example
 
@@ -73,4 +79,5 @@ This directive message is sent through a [downchannel](/CIC/Guides/Interact_with
 {% endraw %}
 
 ### See also
+
 * [`Notifier.ClearIndicator`](#ClearIndicator)

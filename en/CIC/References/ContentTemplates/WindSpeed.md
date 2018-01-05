@@ -1,20 +1,21 @@
 # WindSpeed template
-Provides wind speeds. It is used to display wind speeds on a screen.
+
+The WindSpeed template is used in providing wind speed information for the client to display on the client's screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> on how wind speeds are displayed.</p>
+<p>See a <a href="#UIExample">UI example</a> on how the WindSpeed template is used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file.<div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
-| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).   |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location. The `value` field of this object can have an empty string (`""`).   |
-| `type`          | string | A content template delimiter. The value is always "WindSpeed". |
-| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | An object containing wind speeds. |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to open when the wind speed information is tapped. An empty string (`""`) indicates that this information is unavailable.    |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this wind speed information is for. An empty string (`""`) indicates that this information is unavailable.   |
+| `type`          | string | The type of this template. The value is always ``"WindSpeed"``. |
+| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | The wind speed. |
 
 ## Template example
 
@@ -27,7 +28,7 @@ Provides wind speeds. It is used to display wind speeds on a screen.
   },
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Macquarie"
   },
   "type": "WindSpeed",
   "windSpeed": {
@@ -38,12 +39,14 @@ Provides wind speeds. It is used to display wind speeds on a screen.
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the WindSpeed template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
+
+The following example shows how the WindSpeed template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![WindSpeed](/CIC/Resources/Images/Content-Template-WindSpeed.png)
 
 ## See also
+
 * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

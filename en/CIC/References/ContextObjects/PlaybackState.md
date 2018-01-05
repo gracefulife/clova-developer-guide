@@ -1,7 +1,9 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-`AudioPlayer.PlaybackState` is a message format used to report details of media currently playing or previously played to CIC.
 
-### Message structure
+`AudioPlayer.PlaybackState` is a format for reporting to CIC the details of media currently playing or the last media played.
+
+### Object  structure
+
 {% raw %}
 ```json
 {
@@ -20,21 +22,21 @@
 {% endraw %}
 
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `offsetInMilliseconds` | number | The last playback point (offset) of the recently played media. Unit is millisecond. You do not have to enter a value in this field if `playerActivity` is set to `"IDLE"`.                                                  | No |
-| `playerActivity`       | string | Indicates a state of the player. Available values are:<ul><li><code>"IDLE"</code>: Player is idle</li><li><code>"PLAYING"</code>: Player is playing</li><li><code>"PAUSED"</code>: Player is paused</li><li><code>"STOPPED"</code>: Player is stopped</li></ul> | Yes |
-| `stream`               | [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | An object containing details of the currently played media. It is not required to enter a value in this field if `playerActivity` is set as `"IDLE"`. Enter media details (`stream` object) returned from [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) or [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver) directive message. | No |
-| `totalInMilliseconds`  | number | The total length of the recently played media. If `durationInMilliseconds` field value is found from the audio details ([AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject)) received through a [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive message, enter the value as the field value. Its unit is millisecond. You do not have to enter a value in this field if `playerActivity` is set to `"IDLE"`.                                                               | No |
+| Field       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `offsetInMilliseconds` | number | The last playback point (offset) of the recently played media. Unit is millisecond. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                  | Optional |
+| `playerActivity`       | string | Indicates the state of the player. Available states are:<ul><li><code>"IDLE"</code>: Player is inactive.</li><li><code>"PLAYING"</code>: Player is playing.</li><li><code>"PAUSED"</code>: Player has paused.</li><li><code>"STOPPED"</code>: Player is stopped.</li></ul> | Required |
+| `stream`               | [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | Contains the details of the media currently playing. This field is omissible if the `playerActivity` field is set as `"IDLE"`. Enter the details with the information defined in the `stream` object, provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive or [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver) directive. | Optional |
+| `totalInMilliseconds`  | number | The total duration of the recently played media, in milliseconds. Enter the value of the `durationInMilliseconds` field of the [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive, if the value is available. This field is omissible if the `playerActivity` field is set to `"IDLE"`.      | Optional |
 
-### Message example
+### Example
 
 {% raw %}
 
 ```json
-// Case 1: Playback has stopped
+// Case 1: Playing has stopped
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -58,7 +60,7 @@
   }
 }
 
-// Example 2: Playback is deactivated
+// Example 2: Player is inactive
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -73,6 +75,7 @@
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)
 * [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)
 * [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested)

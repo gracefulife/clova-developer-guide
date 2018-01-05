@@ -1,19 +1,20 @@
 ### Remarks {#GuestMode}
-To provide guest mode service to users without {{book.TargetServiceForClientAuth}} account authentication, follow below steps.
 
-1. From [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) procedure description, skip step 1 and 2.
-2. When [request for authorization code](#RequestAuthorizationCode) from step 3, apply the following two.
-  * Do not enter `Authorization` field on the requested headers.
-  * Add `request_vu` as query parameter and set as `Y`.
+To provide Clova services in guest mode without authenticating {{book.TargetServiceForClientAuth}} account:
+
+1. Skip step 1 and step 2 of the [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) instruction.
+2. Apply the following changes when [requesting for authorization code](#RequestAuthorizationCode) for step 3:
+  * Skip specifying the `Authorization` header field for the request.
+  * Add `request_vu` as a query parameter and set the value to `Y`.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The basic value of <code>request_vu</code> is <code>N</code> and the basic policy is to authorize {{ book.TargetServiceForClientAuth }} account for usage.</p>
+  <p>The default value of the <code>request_vu</code> parameter is <code>N</code>. Clova policy is to have a user's {{ book.TargetServiceForClientAuth }} account authenticated.</p>
 </div>
 
-By following the above, authorization code for guest mode will be acquired. Process the rest of steps explained on [Create Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) with the guest code to obtain Clova access token for guests.
+You can obtain a guest code (an authorization code for guest mode) by following the instruction provided above. To obtain a Clova access token for guests, continue following the steps provided in the [Create Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) section with the guest code.
 
-Below is an example of requesting for guest mode authorization code.
+The following code is an example of requesting a guest code (authorization code for guest mode).
 
 <pre><code>$ curl {{ book.AuthServerBaseURL }}authorize \
        --data-urlencode 'request_vu=Y' \

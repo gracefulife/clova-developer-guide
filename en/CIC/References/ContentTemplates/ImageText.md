@@ -1,33 +1,34 @@
 # ImageText template
-Displays an image with text on a screen. It is used to display a thumbnail image with text or a map with text.
+
+The ImageText template is used in providing an image and description for the client to display on the client's screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> for available display formats of the ImageText template.</p>
+<p>See a <a href="#UIExample">UI example</a> of the ImageText template used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `appLinkUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing a URL which redirects to a map app when a map image is included. The `value` field of this object can have an empty string (`""`).  |
-| `imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the image. The `value` field of this object can have an empty string (`""`).                                |
-| `linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing a URL which redirects to a web map when a map image is included. The `value` field of this object can have an empty string (`""`).   |
-| `mainText`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing main text. The `value` field of this object can have an empty string (`""`).                                       |
-| `referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing text information of the source. The `value` field of this object can have an empty string (`""`).                                |
-| `referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the source. The `value` field of this object can have an empty string (`""`).                                  |
-| `subTextList`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An array containing sub text. The `value` field of this object array can have an empty string (`""`).                               |
-| `thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | An object containing the URL of the thumbnail image. The `value` field of this object can have an empty string (`""`).                           |
-| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | An object containing the type of the thumbnail image. Available values are: <ul><li><code>"인물"</code></li><li><code>"책"</code></li><li><code>"앨범"</code></li></ul> |
-| `type`           | string  | A content template delimiter. It has an `"ImageText"` value.      |
+| `appLinkUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | The URL to the NAVER map app, _if_ the image is an image of a map. An empty string (`""`) indicates that the image is not of a map. |
+| `imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | The URL of the image. An empty string (`""`) indicates that this information is unavailable.                            |
+| `linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | The URL to a Web map, _if_ the image is an image of a map. An empty string (`""`) indicates that the image is not of a map.   |
+| `mainText`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | The text to display on the screen. An empty string (`""`) indicates that text information is unavailable.         |
+| `referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | The name or description of the source of the image. An empty string (`""`) indicates that source description is unavailable.             |
+| `referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | The URL to the image source. An empty string (`""`) indicates that source URL is unavailable.       |
+| `subTextList`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | Contains a list of sub-texts. An empty string (`""`) indicates that there is no sub-text to display.      |
+| `thumbImageUrl`  | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | The URL of the thumbnail image. An empty string (`""`) indicates that the image is not a thumbnail image.            |
+| `thumbImageType` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | The category of the content of the thumbnail. Available categories are: <ul><li><code>"People"</code>: For people</li><li><code>"Book"</code>: For books</li><li><code>"Album"</code>: For music albums</li><li><code>""</code>(empty string): Category unavailable</li></ul> |
+| `type`           | string  | The type of this template. The value is always `"ImageText"` value.      |
 
 ## Template example
 
 {% raw %}
 
 ```json
-// Example 1.
-// User request: 리오넬 메시의 소속팀은? (User asks which team Lionel Messi is in. Thumbnail image and text are displayed)
+// Example 1
+// User asks for Lionel Messi's team (A thumbnail image and texts are to be displayed)
 {
   "type": "ImageText",
   "imageUrl": {
@@ -36,11 +37,11 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   },
   "mainText": {
     "type": "string",
-    "value": "리오넬 메시"
+    "value": "Lionel Messi"
   },
   "referenceText": {
     "type": "string",
-    "value": "Search Result"
+    "value": "NAVER search result"
   },
   "referenceUrl": {
     "type": "url",
@@ -49,12 +50,12 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   "subTextList": [
     {
       "type": "string",
-      "value": "FC 바르셀로나"
+      "value": "FC Barcelona"
     }
   ],
   "thumbImageType": {
     "type": "string",
-    "value": "인물"
+    "value": "People"
   },
   "thumbImageUrl": {
     "type": "url",
@@ -63,7 +64,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
 }
 
 // Example 2.
-// User request: 현재 위치 알려줘 (User asks the current location. Map image and text are displayed)
+// User asks for the current location. An image of a map and descriptions are to be displayed)
 {
   "appLinkUrl": {
     "type": "url",
@@ -79,7 +80,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   },
   "mainText": {
     "type": "string",
-    "value": "경기도 성남시 분당구 정자1동"
+    "value": "Tokyo, Shinjuku-ku, Shinjuku"
   },
   "meta": {
     "version": {
@@ -89,7 +90,7 @@ Displays an image with text on a screen. It is used to display a thumbnail image
   },
   "referenceText": {
     "type": "string",
-    "value": "Search Result"
+    "value": "NAVER search result"
   },
   "referenceUrl": {
     "type": "url",
@@ -115,11 +116,12 @@ Displays an image with text on a screen. It is used to display a thumbnail image
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the ImageText template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
+
+The following example shows how the ImageText template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 | Thumbnail image with text | Map image with text |
-|-------|-------|
+|:-------:|:-------:|
 | ![Thumbnail](/CIC/Resources/Images/Content_Template-Thumbimage_and_Text.png) | ![Map and text](/CIC/Resources/Images/Content_Template-Mapimage_and_Text.png) |
 
 ## See also

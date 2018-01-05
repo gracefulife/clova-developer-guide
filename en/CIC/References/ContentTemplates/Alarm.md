@@ -1,24 +1,26 @@
 # Alarm Template
-When the user creates an alarm, CIC passes the alarm detail in Alarm template format to the client. The client should display the alarm details on the screen using the received template.
+
+The Alarm template is used in providing alarm information for the client to display on the client's screen.
+When the user creates an alarm, CIC sends the created alarm's information to the client, in the form of the Alarm template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the Alarm template as below.</p>
+<p>The following is the restrictions in using alarm:</p>
 <ul>
-  <li>With the voice command, the user can only request to add an alarm and check the list.</li>
-  <li>In order to modify or delete an alarm, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add an alarm or to check a list of alarms.</li>
+  <li>To modify or delete an alarm, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing repeated date information if it is a weekly repeated alarm |     |
-| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time alarm </li><li><code>"daily"</code> : Daily repeated alarm</li><li><code>"weekly"</code> : Every week repeated alarm</li></ul> |
-| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the alarm will ring                         |
-| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an added alarm.                            |
-| `type`          | string                                                                              | A content template delimiter. It has an `"Alarm"` value.             |
+| `repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ alarm.    |
+| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available cycles are: <ul><li><code>""</code>(Empty String): One-time alarm </li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
+| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                         |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this alarm.                            |
+| `type`          | string                                                                              | The type of this template. The value is always `"Alarm"`.             |
 
 ## Template example
 
@@ -44,7 +46,7 @@ When the user creates an alarm, CIC passes the alarm detail in Alarm template fo
   "repeatDay": []
 }
 
-// Daily repeated alarm
+// Daily alarm
 {
   "type": "Alarm",
   "token": {
@@ -62,7 +64,7 @@ When the user creates an alarm, CIC passes the alarm detail in Alarm template fo
   "repeatDay": []
 }
 
-// Every week repeated alarm 
+// Weekly alarm
 {
   "token": {
     "type": "string",
@@ -88,13 +90,14 @@ When the user creates an alarm, CIC passes the alarm detail in Alarm template fo
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied an Alarm template.</p>
+<p>An example for the Alarm template is in preparation.</p>
 </div>
 
 ## See also
+
 * [AlarmList](/CIC/References/ContentTemplates/AlarmList.md)
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface

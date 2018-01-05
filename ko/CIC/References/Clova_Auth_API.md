@@ -26,7 +26,7 @@ GET|POST /authorize
 ### Query parameter
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `client_id`     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID. MAC 주소를 사용하거나 UUID 해쉬 값을 생성하면 됩니다.                          | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
@@ -52,11 +52,11 @@ GET|POST /authorize
 
 ### Response JSON object fields
 
-| 필드 이름       | 자료형    | 필드 설명                     |
-|---------------|---------|-----------------------------|
-| `code`          | string | 인증 서버로부터 발급받은 authorization code. HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다.      |
-| `redirect_uri`  | string | 서비스 이용 약관과 관련된 내용을 제공하는 페이지 URI. HTTP 응답 메시지가 `451 Unavailable For Legal Reasons`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. 클라이언트는 이 필드에 포함된 URI로 이동하여 페이지를 표시해야 합니다. 사용자가 이용 약관에 동의하면 클라이언트는 `302 Found`(URL redirection) 상태 코드를 가진 응답을 다음 URL과 함께 수신하게 됩니다. <ul><li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li><li><code>clova://agreement-failure</code>: 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li></ul> |
-| `state`         | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 토큰을 복호화한 값(URL 디코딩 적용). HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `code`          | string | 인증 서버로부터 발급받은 authorization code. HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다.      | 항상      |
+| `redirect_uri`  | string | 서비스 이용 약관과 관련된 내용을 제공하는 페이지 URI. HTTP 응답 메시지가 `451 Unavailable For Legal Reasons`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. 클라이언트는 이 필드에 포함된 URI로 이동하여 페이지를 표시해야 합니다. 사용자가 이용 약관에 동의하면 클라이언트는 `302 Found`(URL redirection) 상태 코드를 가진 응답을 다음 URL과 함께 수신하게 됩니다. <ul><li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li><li><code>clova://agreement-failure</code>: 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li></ul> | 항상      |
+| `state`         | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 토큰을 복호화한 값(URL 디코딩 적용). HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. | 항상      |
 
 ### Status codes
 
@@ -110,7 +110,7 @@ GET|POST /token?grant_type=authorization_code
 ### Query parameter
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
 | `code`          | string  | [발급받은 authorization code](#RequestAuthorizationCode)                                                               | 필수 |
@@ -135,12 +135,12 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response JSON object fields
 
-| 필드 이름       | 자료형    | 필드 설명                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | Clova access token                               |
-| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
-| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     |
-| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `access_token`  | string  | Clova access token                               | 항상      |
+| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              | 항상      |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     | 항상      |
+| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. | 항상      |
 
 ### Status codes
 
@@ -184,7 +184,7 @@ GET|POST /token?grant_type=refresh_token
 ### Query parameter
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
 | `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 선택 |
@@ -209,12 +209,12 @@ GET|POST /token?grant_type=refresh_token
 
 ### Response JSON object fields
 
-| 필드 이름       | 자료형    | 필드 설명                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | Clova access token                               |
-| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
-| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     |
-| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `access_token`  | string  | Clova access token                               | 항상      |
+| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              | 항상      |
+| `refresh_token` | string  | Clova access token을 갱신하기 위한 refresh token     | 항상      |
+| `token_type`    | string  | Clova access token의 타입. "Bearer"로 고정 반환됩니다. | 항상      |
 
 ### Status codes
 
@@ -257,7 +257,7 @@ GET|POST /token?grant_type=delete
 ### Query parameter
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `access_token`  | string  | 인증 성공 후 발급받은 Clova access token                                                                                 | 필수 |
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
@@ -282,11 +282,11 @@ GET|POST /token?grant_type=delete
 
 ### Response JSON object fields
 
-| 필드 이름       | 자료형    | 필드 설명                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | Clova access token                               |
-| `client_id`     | string  | 클라이언트 ID                                       |
-| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              |
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `access_token`  | string  | Clova access token                               | 항상      |
+| `client_id`     | string  | 클라이언트 ID                                       | 항상      |
+| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              | 항상      |
 
 ### Status codes
 

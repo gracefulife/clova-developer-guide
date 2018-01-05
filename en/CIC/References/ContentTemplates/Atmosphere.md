@@ -1,32 +1,34 @@
 # Atmosphere Template
-Provides atmosphere information. It is used to display find dust, ultra fine dust, ozone, UV rays and yellow dust on the screen.
+
+The Atmosphere template is used in providing atmosphere information for the client to display on the client's screen.
+The type of atmosphere information provided includes information on fine dust, ultra-fine dust, ozone, UV rays and yellow dust.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>See <a href="#UIExample">Screen UI example</a> on how atmosphere information are displayed.</p>
+<p>See a <a href="#UIExample">UI example</a> for the Atmosphere template used in display.</p>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `announcementOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing forecast guide. This field is eliminated when displaying current atmosphere status. When eliminated, a `value` field of the object will have an empty string (`""`). |
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing URL of the background video file.<div class="danger"><p><strong>Caution!</strong></p><p>Due to license issue, this field cannot be used by your partner company.</p></div> |
-| `concentrationOfAtmosphere` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current status or level of an air quality.  This field is eliminated during the forecast. When eliminated, a `value` field of the object will have an empty string (`""`). |
-| `halfDayAtmosphereList[]`             | object array | An object array containing atmosphere information in half day unit (morning/evening)                                    |
-| `halfDayAtmosphereList[].atmosphereImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object entered on `halfDayAtmosphereList[].durationHalfDay` field is containing URL of the image file displaying the status of atmosphere at the time |
-| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current status or level of an air quality at a time entered on a `halfDayAtmosphereList[].durationHalfDay` field.   |
-| `halfDayAtmosphereList[].durationHalfDay`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing atmosphere information in time range. The object of `value` field has `내일 오전`, `내일 오후`, `모레 오전` and `모레 오후` values.  |
-| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | An object containing a link path to the content. The `value` field of this object can have an empty string (`""`).  |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing the location |
-| `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | An object containing current atmosphere index. Includes ndex unit. The `value` field of this object can have an empty string (`""`). |
-| `type`          | string | A content template delimiter. It has an `"Atmosphere"` value. |
+| `announcementOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Contains a statement on the forecast. An empty string (`""`) indicates that the information received contains the current atmosphere information, not a forecast. |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `concentrationOfAtmosphere` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The _current_ level of air quality. An empty string (`""`) indicates that the information received contains forecasts, not the current information. |
+| `halfDayAtmosphereList[]`             | object array | Contains multiple atmosphere information blocks in half day (morning/afternoon) units.                                   |
+| `halfDayAtmosphereList[].atmosphereImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to the image associated with the atmosphere information specified by the `halfDayAtmosphereList[].durationHalfDay` field. |
+| `halfDayAtmosphereList[].concentrationOfAtmosphere`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The level of air quality for the time specified by the `halfDayAtmosphereList[].durationHalfDay` field.   |
+| `halfDayAtmosphereList[].durationHalfDay`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The time scope the associated atmosphere information is for. Available values are:<ul><li><code>Tomorrow morning</code></li><li><code>Tomorrow afternoon</code></li><li><code>The day after tomorrow's morning</code></li><li><code>The day after tomorrow's afternoon</code></li></ul>  |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to the content to display when the air quality information is tapped by the user. An empty string (`""`) indicates that no content is to be displayed.  |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location which the atmosphere information is for. |
+| `valueOfAtmosphere`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The current air quality index, with the index unit. An empty string (`""`) indicates that this information is unavailable. |
+| `type`          | string | The type of this template. The value is always `"Atmosphere"`. |
 
 ## Template example
 
 {% raw %}
 ```json
-// Request for current atmosphere information
+// Current atmosphere information
 {
   "announcementOfAtmosphere": {
     "type": "string",
@@ -38,11 +40,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
   },
   "concentrationOfAtmosphere": {
     "type": "string",
-    "value": "좋음"
+    "value": "Good"
   },
   "failureMessage": {
     "type": "string",
-    "value": "경기도 성남시 분당구 정자1동 현재 미세먼지 지수는 좋음 입니다"
+    "value": "The current fine dust level for Shinjuku is good"
   },
   "halfDayAtmosphereList": [
     {
@@ -52,11 +54,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Moderate"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "내일 오전"
+        "value": "Tomorrow morning"
       }
     },
     {
@@ -66,11 +68,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Moderate"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "내일 오후"
+        "value": "Tomorrow afternoon"
       }
     },
     {
@@ -80,11 +82,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Moderate"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "모레 오전"
+        "value": "The day after tomorrow's morning"
       }
     },
     {
@@ -94,17 +96,17 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Moderate"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "모레 오후"
+        "value": "The day after tomorrow's afternoon"
       }
     }
   ],
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Shinjuku"
   },
   "meta": {
     "version": {
@@ -119,11 +121,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
   }
 }
 
-// Request for atmosphere of tomorrow
+// Atmosphere information for tomorrow
 {
   "announcementOfAtmosphere": {
     "type": "string",
-    "value": "내일 미세먼지에요"
+    "value": "Here is tomorrow's fine dust level"
   },
   "bgClipUrl": {
     "type": "url",
@@ -135,7 +137,7 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
   },
   "failureMessage": {
     "type": "string",
-    "value": "경기도 성남시 분당구 정자1동 내일 미세먼지 지수는 보통 입니다"
+    "value": "Tomorrow's fine dust level is moderate for Shinjuku"
   },
   "halfDayAtmosphereList": [
     {
@@ -145,11 +147,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Normal"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "내일 오전"
+        "value": "Tomorrow morning"
       }
     },
     {
@@ -159,11 +161,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Normal"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "내일 오후"
+        "value": "Tomorrow afternoon"
       }
     },
     {
@@ -173,11 +175,11 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Normal"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "모레 오전"
+        "value": "The day after tomorrow's morning"
       }
     },
     {
@@ -187,17 +189,17 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
       },
       "concentrationOfAtmosphere": {
         "type": "string",
-        "value": "보통"
+        "value": "Normal"
       },
       "durationHalfDay": {
         "type": "string",
-        "value": "모레 오후"
+        "value": "The day after tomorrow's afternoon"
       }
     }
   ],
   "location": {
     "type": "string",
-    "value": "정자1동"
+    "value": "Shinjuku"
   },
   "meta": {
     "version": {
@@ -214,14 +216,16 @@ Provides atmosphere information. It is used to display find dust, ultra fine dus
 ```
 {% endraw %}
 
-## Screen UI example {#UIExample}
-The following example shows how the Atmosphere template is presented in the Clova mobile app distributed by {{ book.OrientedService }}.
+## UI example {#UIExample}
 
-| Current atmosphere status | Atmosphere status of tomorrow |
-|-------------|------------|
+The following examples show how the Atmosphere template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+| Current atmosphere status | Atmosphere status for tomorrow |
+|:-------------:|:------------:|
 | ![Now](/CIC/Resources/Images/Content-Template-Atmosphere_Now.png) | ![Original](/CIC/Resources/Images/Content-Template-Atmosphere_Tomorrow.png) |
 
 ## See also
+
 * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

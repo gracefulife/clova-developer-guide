@@ -1,26 +1,30 @@
 # ActionTimerList Template
-When the user request for a list of action timer, CIC passes the actiontimer list registered to the user in ActionTimerList template format to the client. The client should display the actiontimer list registered by the user on the screen using the received template.
+
+The ActionTimerList template is used in providing a list of action timers for the client to display on the client's screen.
+When the user requests for a list of action timers, CIC sends the list of action timers registered by the user to the client, in the form of the ActionTimerList template.
+
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the ActionTimerList template as below.</p>
+<p>The following is the restrictions in using action timers:</p>
 <ul>
-  <li>With the voice command, the user can only request to add an action timer or to check the list.</li>
-  <li>In order to modify or delete an action timer, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add an action timer or to check a list of action timers.</li>
+  <li>To modify or delete an action timer, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `actionTimerList[]`               | object array  | An object array containing the action timer list registered by the user.                                         |
-| `actionTimerList[].action`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing an action set by the user on the action timer. **Empty string(`""`) is being entered for now. The field is reserved for an extension in the future.** |
-| `actionTimerList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing date information if it is a weekly repeated action timer |
-| `actionTimerList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time action timer</li><li><code>"daily"</code> : Daily repeated action timer</li><li><code>"weekly"</code> : Every week repeated action timer</li></ul> |
-| `actionTimerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the action timer will ring      |
-| `actionTimerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an action timer.              |
-| `type`        | string                                                                                                | A content template delimiter. It has an `"ActionTimerList"` value.             |
+| `actionTimerList[]`               | object array  | Contains the action timers registered by the user.                                         |
+| `actionTimerList[].action`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The action the user has set on this action timer. **The value is always an empty string(`""`). This field is reserved for future extension.** |
+| `actionTimerList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ action timer |
+| `actionTimerList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li><code>""</code>(Empty string):  One-time action timer</li><li><code>"daily"</code>: Daily action timer</li><li><code>"weekly"</code>: Weekly action timer</li></ul> |
+| `actionTimerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this action timer is to go off.      |
+| `actionTimerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this action timer.              |
+| `type`        | string           | The type of this template. The value is always `"ActionTimerList"`.             |
+
 
 ## Template example
 
@@ -98,13 +102,14 @@ When the user request for a list of action timer, CIC passes the actiontimer lis
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied an ActionTimerList template.</p>
+<p>An example for the ActionTimer template is in preparation.</p>
 </div>
 
 ## See also
+
 * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface

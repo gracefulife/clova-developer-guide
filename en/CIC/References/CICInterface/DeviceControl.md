@@ -1,50 +1,54 @@
 # DeviceControl
 
-Controls client devices or reports to CIC on results of executing client device control.
+The DeviceControl namespace provides interfaces for controlling client devices or reporting to CIC the result of changing client device settings.
 
-Some user requests may involve controlling of a client device. If a user request is related to controlling of a client device, you will receive a directive message of `DeviceControl` namespace. Implement your client to control a device based on a received directive message. After executing device control, send the result to CIC using event messages.
+Users may request to manipulating their client devices. If the user's request is on controlling the client device, the client will receive a directive of this namespace, `DeviceControl`. The client has to perform the task instructed by the directive and then send the result to CIC.
 
-DeviceControl provides the following event and directive messages.
+The DeviceControl namespace provides the following events and directives.
 
 | Message name         | Message type  | Message description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ActionExecuted`](#ActionExecuted)       | Event     | Send this event message to CIC after your client executes device control.           |
-| [`ActionFailed`](#ActionFailed)           | Event     | Send this event message to CIC if your client cannot or fails to execute device control. |
-| [`BtConnect`](#BtConnect)                 | Directive | Instructs your client to connect a specified Bluetooth device.                               |
-| [`BtDisconnect`](#BtDisconnect)           | Directive | Instructs your client to disconnect a specified Bluetooth device.                               |
-| [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs your client to start a Bluetooth pairing mode.                                   |
-| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs your client to stop a Bluetooth pairing mode.                                   |
-| [`Decrease`](#Decrease)                   | Directive | Instructs your client to turn down speaker volume or decrease screen brightness by a default unit.                     |
-| [`ExpectReportState`](#ExpectReportState)  | Directive | Instructs your client to report the current state of the appliance to CIC.                             |
-| [`Increase`](#Increase)                   | Directive | Instructs your client to turn up speaker volume or increase screen brightness by a default unit.                     |
-| [`LaunchApp`](#LaunchApp)                 | Directive | Instructs your client to launch a specified app.                                             |
-| [`OpenScreen`](#OpenScreen)               | Directive | Instructs your client to open a setting screen.                                              |
-| [`ReportState`](#ReportState)             | Event     | The client should use this message to report the current state of the appliance to CIC.                 |
-| [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | Send this event message to CIC to acquire current state of other client's devices registered on the user's account.  |
-| [`SetValue`](#SetValue)                   | Directive | Instructs your client to set speaker volume or screen brightness to a specified value.                    |
-| [`SynchronizeState`](#SynchronizeState)     | Directive | Instructs your client to update states of other client's devices registered on the user account.         |
-| [`TurnOff`](#TurnOff)                     | Directive | Instructs your client to turn off or disable a specified feature or mode.                           |
-| [`TurnOn`](#TurnOn)                       | Directive | Instructs your client to turn on or enable a specified feature or mode.                                   |
+| [`ActionExecuted`](#ActionExecuted)       | Event     | A message to notify CIC that the client has successfully changed the specified settings.           |
+| [`ActionFailed`](#ActionFailed)           | Event     | A message to notify CIC that the client cannot or has failed to change the specified settings. |
+| [`BtConnect`](#BtConnect)                 | Directive | Instructs a client to connect a Bluetooth speaker.                               |
+| [`BtDisconnect`](#BtDisconnect)           | Directive | Instructs a client to disconnect a Bluetooth speaker.                               |
+| [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs a client to start the Bluetooth pairing mode.                                   |
+| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs a client to terminate the Bluetooth pairing mode.                                   |
+| [`Decrease`](#Decrease)                   | Directive | Instructs a client to turn down speaker volume or decrease screen brightness by a default unit.                     |
+| [`ExpectReportState`](#ExpectReportState)  | Directive | Instructs a client to report the current state of the client device to CIC.                             |
+| [`Increase`](#Increase)                   | Directive | Instructs a client to turn up speaker volume or increase screen brightness by a default unit.                     |
+| [`LaunchApp`](#LaunchApp)                 | Directive | Instructs a client to launch the specified app.                                             |
+| [`OpenScreen`](#OpenScreen)               | Directive | Instructs a client to open the settings screen.                                              |
+| [`ReportState`](#ReportState)             | Event     | A message to notify CIC the current state of the appliance to CIC.                |
+| [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | A message to notify CIC to acquire current state of other client's devices registered on the user's account.  |
+| [`SetValue`](#SetValue)                   | Directive | Instructs a client to set speaker volume or screen brightness to a specified value.                    |
+| [`SynchronizeState`](#SynchronizeState)     | Directive | Instructs a client to update states of other client's devices registered on the user account.         |
+| [`TurnOff`](#TurnOff)                     | Directive | Instructs a client to turn off or disable a specified feature or mode.                           |
+| [`TurnOn`](#TurnOn)                       | Directive | Instructs a client to turn on or enable a specified feature or mode.                                   |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The DeviceControl API is scheduled to be implemented soon. Its specification is described to define an interface and is subject to change.</p>
+  <p>The DeviceControl API is yet to be implemented. This specification is provided only for the defining process and is subject to change.</p>
 </div>
 
 ## ActionExecuted event {#ActionExecuted}
 
-Send this event message to CIC after your client executes device control.
+A message for reporting to CIC that the client has taken an action on the specified feature or mode.
 
-### Payload field
+### Context fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions executed.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+None
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The feature or mode that the client has taken an action on:<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: WiFi</li></ul> | Required |
+| `command`     | string  | The successful action taken by the client.  <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Required |
 
 ### Remarks
 
-When CIC receives this event message, it sends a [`SynchronizeState`](#SynchronizeState) directive message to all clients registered on the user account to notify the state change of the client's device.
+When CIC receives this event, CIC sends the [`SynchronizeState`](#SynchronizeState) directive to all the clients registered to the current user's account to notify the state change of the client device.
 
 ### Message example
 
@@ -52,6 +56,7 @@ When CIC receives this event message, it sends a [`SynchronizeState`](#Synchroni
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -69,6 +74,7 @@ When CIC receives this event message, it sends a [`SynchronizeState`](#Synchroni
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
@@ -83,19 +89,23 @@ When CIC receives this event message, it sends a [`SynchronizeState`](#Synchroni
 
 ## ActionFailed event {#ActionFailed}
 
-Send this event message to CIC if your client cannot or fails to execute device control.
+A message for reporting to CIC that the client cannot or has failed to take an action on the specified feature or mode.
 
-### Payload field
+### Context fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
-| `command`     | string  | Actions failed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Yes   |
+None
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The feature or mode the client cannot or has failed to take an action on:<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: WiFi</li></ul>| Required     |
+| `command`     | string  | The action the client cannot perform or has failed. <ul><li>BtConnect</li><li>BtDisconnect</li><li>BtStartPairing</li><li>BtStopPairing</li><li>Decrease</li><li>Increase</li><li>LaunchApp</li><li>OpenScreen</li><li>SetValue</li><li>TurnOn</li><li>TurnOff</li></ul> | Required   |
 
 ### Remarks
 
-* When CIC receives this event message, it sends a [`SynchronizeState`](#SynchronizeState) directive message to all clients registered on the user account to notify the state change of the client's device.
-* If you fail to launch an app after receiving a [`LaunchApp`](#LaunchApp) directive message, set the `target` field to `"app"`.
+* Upon receiving this event, CIC sends the [`SynchronizeState`](#SynchronizeState) directive to all the clients registered to the user's account to notify the state change of the client's device.
+* If the client has failed to launch an app after for the [`LaunchApp`](#LaunchApp) directive, set the `target` field to `"app"`.
 
 ### Message example
 
@@ -103,6 +113,7 @@ Send this event message to CIC if your client cannot or fails to execute device 
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -120,6 +131,7 @@ Send this event message to CIC if your client cannot or fails to execute device 
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.BtConnect`](#BtConnect)
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
@@ -135,17 +147,17 @@ Send this event message to CIC if your client cannot or fails to execute device 
 
 ## BtConnect directive {#BtConnect}
 
-Instructs your client to connect one of the paired Bluetooth devices. If it is paired with more than one device, the client must have defined criteria to decide which device it will connect to. For example, it can attempt to connect in the order of latest to oldest devices it connected to.
+Instructs a client to connect to one of the paired Bluetooth speakers to send the sound out. If the client is paired with more than one device, the client shall connect to the one based on its pre-defined policy. For example, a client may have a policy to attempt connecting in the order of the latest to oldest connections .
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
 
-* Only speaker type Bluetooth devices are supported.
-* Your client must send states of Bluetooth devices to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* This directive is only for Bluetooth speakers for sending sound out.
+* The client must frequently report the states of paired Bluetooth devices to CIC frequently, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -168,6 +180,7 @@ None
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
@@ -178,17 +191,17 @@ None
 
 ## BtDisconnect directive {#BtDisconnect}
 
-Instructs your client to disconnect a Bluetooth device.
+Instructs a client to disconnect a Bluetooth speaker for sending sound out.
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
 
-* Only speaker type Bluetooth devices are supported.
-* Your client must send states of Bluetooth devices to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* This directive is only for Bluetooth speakers for sending sound out.
+* The client must frequently report the states of paired Bluetooth devices to CIC frequently, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -211,6 +224,7 @@ None
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtConnect`](#BtConnect)
@@ -221,17 +235,17 @@ None
 
 ## BtStartPairing directive {#BtStartPairing}
 
-Instructs your client to start a Bluetooth pairing mode.
+Instructs a client to start the Bluetooth pairing mode.
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
 
-* Only speaker type Bluetooth devices are supported.
-* Your client must send states of Bluetooth devices to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* This directive is only for Bluetooth speakers for sending sound out.
+* The client must frequently report the states of paired Bluetooth devices to CIC frequently, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -254,6 +268,7 @@ None
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtConnect`](#BtConnect)
@@ -264,17 +279,17 @@ None
 
 ## BtStopPairing directive {#BtStopPairing}
 
-Instructs your client to stop a Bluetooth pairing mode.
+Instructs a client to turn off the Bluetooth pairing mode.
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
 
-* Only speaker type Bluetooth devices are supported.
-* Your client must send states of Bluetooth devices to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* This directive is only for Bluetooth speakers for sending sound out.
+* The client must frequently report the states of paired Bluetooth devices to CIC frequently, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -297,6 +312,7 @@ None
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.BtConnect`](#BtConnect)
@@ -307,19 +323,19 @@ None
 
 ## Decrease directive {#Decrease}
 
-Instructs your client to turn down speaker volume or decrease screen brightness by a default unit, or change a TV channel to a previous channel.
+Instructs a client to turn down the client's speaker volume or make the client screen darker by the default unit defined on the client, or change the TV channel down.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The settings to change:<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Always |
 
 ### Remarks
 
-* A default unit can be determined by a client side.
-* Your client must send speaker volume and screen brightness to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* The default unit by which the volume or brightness is changed is up to the client.
+* The client must frequently inform the CIC of the current speaker volume level and screen brightness level, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -344,6 +360,7 @@ Instructs your client to turn down speaker volume or decrease screen brightness 
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Increase`](#Increase)
@@ -351,19 +368,19 @@ Instructs your client to turn down speaker volume or decrease screen brightness 
 
 ## ExpectReportState directive {#ExpectReportState}
 
-Instructs your client to report the current state of the appliance to CIC. As soon as the client receives this message, he should use the [`DeviceControl.ReportState`](#ReportState) event message to report the current state of the appliance. Afterwards, during the designated time on `durationInSeconds` field, the client should report the status of the appliance according to the designated cycle on `intervalInSeconds` field.
+Instructs a client to report the current state of the client to CIC. When receiving this directive, the client shall immediately report the current state to CIC using the [`DeviceControl.ReportState`](#ReportState) event. After reporting, the client shall report the state at every `intervalInSeconds` for `durationInSeconds`.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `durationInSeconds` | number  | Reporting period. During the designated period, report the current state of the appliance. Unit is in millisecond. If this field is missing, report only once as the first time. | No     |
-| `intervalInSeconds` | number  | Reporting cycle. At the designated cycle, report the current state of the appliance. Unit is in millisecond. This field is valid only when `durationInSeconds` field is available. If it is missing, then the field is omitted as well. | No     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `durationInSeconds` | number  | The period during which the client shall repeat reporting its state to CIC. The unit is second. If this field is undefined, report to CIC only once. | Conditional |
+| `intervalInSeconds` | number  | The reporting cycle. At every interval defined by this field, report the current client state to CIC. The unit is second. This field is valid only if the `durationInSeconds` field is defined. If `durationInSeconds` is undefined, so is this field. | Conditional |
 
 ### Remarks
 
-* A `DeviceControl.ExpectReportState` directive message is received when a [`DeviceControl.RequestStateSynchronization`](#RequestStateSynchronization) event message is sent to CIC from other client for synchronization.
-* This directive message is sent through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event message.
+* The `DeviceControl.ExpectReportState` directive is received when the [`DeviceControl.RequestStateSynchronization`](#RequestStateSynchronization) event is sent to CIC from other clients for synchronization.
+* This directive is sent through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event.
 
 ### Message example
 
@@ -389,24 +406,25 @@ Instructs your client to report the current state of the appliance to CIC. As so
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ReportState`](#ReportState)
 * [`DeviceControl.RequestStateSynchronization`](#RequestStateSynchronization)
 
 ## Increase directive {#Increase}
 
-Instructs your client to turn up speaker volume or increase screen brightness by a default unit, or change a TV channel to a next channel.
+Instructs a client to turn up the client's speaker volume or make the client screen brighter by the default unit defined on the client, or change the TV channel up.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The settings to change: <ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Always |
 
 ### Remarks
 
-* A default unit can be determined by a client side.
-* Your client must send speaker volume and screen brightness to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* The default unit by which the volume or brightness is changed is up to the client.
+* The client must frequently inform the CIC of the current speaker volume level and screen brightness level, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -431,6 +449,7 @@ Instructs your client to turn up speaker volume or increase screen brightness by
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Decrease`](#Decrease)
@@ -438,17 +457,17 @@ Instructs your client to turn up speaker volume or increase screen brightness by
 
 ## LaunchApp directive {#LaunchApp}
 
-Instructs your client to launch a specified app. To specify an app, it returns a custom URL scheme of the app, a relay page URL or the name of the app.
+Instructs a client to launch the specified app. The app is specified by a custom URL scheme or a relay page URL or the app name.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Information of the target app. It can have app information as follows<ul><li>Custom URL scheme: A custom URL scheme of the target app (for example, <code>"naversearchapp://..."</code>)</li><li>Relay page URL: A relay page URL that launches the app if the app is already installed (for example, <code>"http://naverapp.naver.com/..."</code>)</li><li>App name: The name of the app recognized from user speech (for example, <code>"NAVER App"</code>)</li></ul> | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | Specifies the app to launch. The app can be specified in one of the following ways: <ul><li>Custom URL scheme: A custom URL scheme of the target app. e.g. <code>"naversearchapp://..."</code></li><li>Relay page URL: A relay page URL that launches the app if the app is already installed. e.g. <code>"http://naverapp.naver.com/..."</code></li><li>App name: The name of the app recognized from user's speech. e.g. <code>"NAVER App"</code></li></ul> | Always |
 
 ### Remarks
 
-* If your client cannot or fails to launch a specified app, send the result to CIC using an [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* If the client cannot or has failed to launch the specified app, send the result to CIC using the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -473,21 +492,22 @@ Instructs your client to launch a specified app. To specify an app, it returns a
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 
 ## OpenScreen directive {#OpenScreen}
 
-Instructs your client to open a setting screen.
+Instructs a client to open the setting screen.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | A screen to display. Currently only `"settings"` is entered, which is a value that opens a setting screen. | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The screen to display. Available values are: <ul><li><code>"settings"</code></li></ul> | Always |
 
 ### Remarks
 
-After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -512,27 +532,28 @@ After your client processes this directive message, it must send the result to C
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 
 ## ReportState event {#ReportState}
 
-The client should use this message to report the current state of the appliance to CIC.
+A message for reporting to CIC the current state of the client to CIC.
 
-### Context field
+### Context fields
 
-To deliver the current state of the appliance to the client's device, include [Context information(Context)](/CIC/References/Context_Objects.md) on an event message.
+To deliver the current state of the client device, send the following [Context information(Context)](/CIC/References/Context_Objects.md) with this event.
 
 * [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
 
-### Payload field
+### Payload fields
 
 None
 
 ### Remarks
 
-* If received a [`DeviceControl.ExpectReportState`](#ExpectReportState) directive message from CIC, report the current state of the appliance by using a `DeviceControl.ReportState` event message.
-* The status reported through the event message will be delivered to all clients registered on the user's account through a [`DeviceControl.SynchronizeState`](#SynchronizeState) directive message.
+* Send this event to report the current client state, when you receive the [`DeviceControl.ExpectReportState`](#ExpectReportState) directive from CIC.
+* The state reported through this event will be delivered to all the clients registered to the current user's account, through the [`DeviceControl.SynchronizeState`](#SynchronizeState) directive.
 
 ### Message example
 
@@ -540,11 +561,9 @@ None
 
 ```json
 {
-  "context": {
-    "header": {
-      "namespace": "Device",
-      "name": "DeviceState"
-    },
+  "context": [
+      {{Device.DeviceState}}
+    ],
     "payload": {
       "localTime": "2017-04-06T13:34:15.074361+08:28",
       "bluetooth": {
@@ -615,21 +634,26 @@ None
 {% endraw %}
 
 ### See also
+
 * [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
 ## RequestStateSynchronization event {#RequestStateSynchronization}
 
-Send this event message to CIC to acquire current state of other client's devices registered on the user's account. Once CIC receives the event message, it will send a [`DeviceControl.ExpectReportState`](#ExpectReportState) directive message to all clients registered on the user's account.
+A message for reporting to CIC to acquire the current state of other client devices registered to the current user's account. In return, CIC will send the [`DeviceControl.ExpectReportState`](#ExpectReportState) directive to all the clients registered to the current user's account.
 
-### Payload field
+### Context fields
+
+None
+
+### Payload fields
 
 None
 
 ### Remarks
 
-A [`DeviceControl.SynchronizeState`](#SynchronizeState) directive message will be sent in the future as a result to this event message through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection).
+As a response to this event, CIC will send the [`DeviceControl.SynchronizeState`](#SynchronizeState) directive through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection).
 
 ### Message example
 
@@ -637,6 +661,7 @@ A [`DeviceControl.SynchronizeState`](#SynchronizeState) directive message will b
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -651,24 +676,25 @@ A [`DeviceControl.SynchronizeState`](#SynchronizeState) directive message will b
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
 ## SetValue directive {#SetValue}
 
-Instructs your client to set speaker volume or screen brightness to a specified value, or change to a specified TV channel.
+Instructs a client to set the speaker volume level or screen brightness level to the given value, or change the TV channel to the given value.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Yes     |
-| `value`       | string  | The value or TV channel number to change to       | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The settings to change:<ul><li><code>"channel"</code>: TV channel</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"volume"</code>: Speaker volume</li></ul> | Always |
+| `value`       | string  | The level or TV channel to change to.       | Always |
 
 ### Remarks
 
-* Your client must send speaker volume and screen brightness to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* The client must frequently inform the CIC of the current speaker volume level and screen brightness level, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -694,6 +720,7 @@ Instructs your client to set speaker volume or screen brightness to a specified 
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.Decrease`](#Decrease)
@@ -702,23 +729,23 @@ Instructs your client to set speaker volume or screen brightness to a specified 
 
 ## SynchronizeState directive {#SynchronizeState}
 
-Instructs your client to update states of other client devices registered on a user account. Users can use several clients simultaneously with one user account. For instance, a client type may be an app or a speaker such as exclusive speaker for Clova, Wave. An app-type client can control other speaker-type clients. It receives results of executing client control through `DeviceControl.SynchronizeState` directive messages and update client states accordingly.
+Instructs a client to update the states of other client devices registered to the current user's account. Users can use several clients simultaneously with a single user account. For instance, a client may be an app or Wave, an exclusive speaker for Clova. Suppose a client app can control other speaker clients. The app will receive the results of controlling other clients through the `DeviceControl.SynchronizeState` directive, and update other clients' states.
 
-The client may receive the directive message on the following situations.
+A client may receive this directive in the following cases:
 
-* When CIC receives an [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message, it sends a `DeviceControl.SynchronizeState` directive message to all clients registered on the user account to notify the state change of the client device.
-* When CIC receives a [`DeviceControl.ReportState`](#ReportState) event message, it sends a `DeviceControl.SynchronizeState` directive message to all clients registered on the user account to notify the state change of the client device.
+* When CIC receives the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or [`DeviceControl.ActionFailed`](#ActionFailed) event: CIC broadcasts the `DeviceControl.SynchronizeState` directive to all the clients registered to the current user's account to notify the state change of the client device.
+* When CIC receives the [`DeviceControl.ReportState`](#ReportState) event: CIC broadcasts the `DeviceControl.SynchronizeState` directive to all the clients registered to the current user's account to notify the state change of the client device.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `deviceId`    | string  | The ID of the client device with an updated state. | Yes     |
-| `deviceState` | [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState) object | An object containing an updated state of the device.         | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `deviceId`    | string  | The ID of the client device with an updated state. | Always |
+| `deviceState` | [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState) object | Contains the updated state of the device.    | Always |
 
 ### Remarks
 
-`DeviceControl.SynchronizeState` The directive message is being broadcast to all clients registered on the user account through [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection). The message does not contain [communication ID(`dialogRequestId`)](/CIC/CIC_Overview.md#DialogModel).
+The `DeviceControl.SynchronizeState` directive is broadcasted to all the clients registered to a user's account through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection) and does not contain a [communication ID (`dialogRequestId`)](/CIC/CIC_Overview.md#DialogModel).
 
 ### Message example
 
@@ -743,29 +770,30 @@ The client may receive the directive message on the following situations.
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.ReportState`](#ReportState)
 
 ## TurnOff directive {#TurnOff}
 
-Instructs your client to turn off or disable a specified feature or mode. For example, this directive message can instruct to turn off Bluetooth on a client device.
+Instructs a client to turn off or disable the specified feature or mode on the client, such as Bluetooth.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The feature or mode to turn off:<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Always |
 
 ### Remarks
 
-* When turning off or disabling a certain control target, you must follow policies of the client device and execute device control appropriately to various situations. For example, to disable a ring mode, you may have to implement to enter a vibration mode or mute mode depending on the client device.
-* Your client must send states of features or modes to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* When turning off or disabling a certain feature or mode, follow the policy of the client device. For example, when disabling sound, the client policy will determine whether the client activates vibration mode or mutes.
+* The client must frequently report the client state to CIC, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>A client device must be turned off when its <code>target</code> field is set to <code>"power"</code>.</p>
+  <p>Turn the power off of the client device when the <code>target</code> field is set to <code>"power"</code>.</p>
 </div>
 
 ### Message example
@@ -791,24 +819,25 @@ Instructs your client to turn off or disable a specified feature or mode. For ex
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)
 
 ## TurnOn directive {#TurnOn}
 
-Instructs your client to turn on or enable a specified feature or mode. For example, this directive message can instruct to turn on Bluetooth on a client device.
+Instructs a client to turn on or enable the specified feature or mode on the client, such as Bluetooth.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `target`      | string  | Target to control<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Yes     |
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `target`      | string  | The feature or mode to turn on:<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Mobile communication</li><li><code>"energysave"</code>: Energy saving mode</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"power"</code>: Power state</li><li><code>"ring"</code>: Ring mode</li><li><code>"silent"</code>: Silent mode</li><li><code>"vibrate"</code>: Vibration mode</li><li><code>"wifi"</code>: Wireless LAN</li></ul> | Always     |
 
 ### Remarks
 
-* Your client must send states of features or modes to CIC frequently, using a [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
-* After your client processes this directive message, it must send the result to CIC, using [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event message.
+* The client must frequently report the client state to CIC, using the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context object.
+* The client must send the result of processing this directive to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) event or the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -833,6 +862,7 @@ Instructs your client to turn on or enable a specified feature or mode. For exam
 {% endraw %}
 
 ### See also
+
 * [`DeviceControl.ActionExecuted`](#ActionExecuted)
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 * [`DeviceControl.TurnOn`](#TurnOn)

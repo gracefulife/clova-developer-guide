@@ -1,47 +1,92 @@
 # AudioPlayer
 
-Instructs your client to play an audio stream or reports to CIC on events that occur during playback. AudioPlayer provides the following event and directive messages.
+The AudioPlayer namespace provides interfaces for playing an audio stream or reporting to CIC about events that occur during playback. The AudioPlayer namespace provides the following directives and events.
 
-| Message name         | Message type  | Message description                                   |
+| Message name         | Message type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Play`](#Play)                       | Directive | Instructs your client to start playback of a specified audio stream or add it to a playback queue.                         |
-| [`PlayFinished`](#PlayFinished)       | Event     | Reports to CIC on audio stream details when your client finishes playback of an audio stream.     |
-| [`PlayPaused`](#PlayPaused)           | Event     | Reports to CIC on audio stream details when your client pauses playback of an audio stream. |
-| [`PlayResumed`](#PlayResumed)         | Event     | Reports to CIC on audio stream details when your client resumes playback of an audio stream.         |
-| [`PlayStarted`](#PlayStarted)         | Event     | Reports to CIC on audio stream details when your client starts playback of an audio stream.    |
-| [`PlayStopped`](#PlayStopped)         | Event     | Reports to CIC on audio stream details when your client stops playback of an audio stream.    |
-| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) when a specified delay time has passed after playback has started. You can check the delay time for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client. |
-| [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) regularly at a specified interval of time after playback has started. You can check the reporting interval for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client. |
-| [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at a specified reporting point after playback has started. You can check the reporting point for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client. |
-| [`StreamDeliver`](#StreamDeliver)     | Directive | Returns audio stream details necessary for playback. This is a response message to an [`AudioPlayer.StreamRequested`](#StreamRequested) event message. |
-| [`StreamRequested`](#StreamRequested) | Event     | Requests CIC for additional audio stream details necessary for playback, such as a streaming URL.               |
+| [`ClearQueue`](#Play)                 | Directive | Instructs a client to initialize the playback queue.                         |
+| [`Play`](#Play)                       | Directive | Instructs a client to start playing the specified audio stream or add the audio to the playback queue.                         |
+| [`PlayFinished`](#PlayFinished)       | Event     | A message to notify CIC that the client has finished playing an audio stream, along with the information of the audio stream the client has just finished playing.  |
+| [`PlayPaused`](#PlayPaused)           | Event     | A message to notify CIC that the client has paused an audio stream, along with the information of the paused audio stream. |
+| [`PlayResumed`](#PlayResumed)         | Event     | A message to notify CIC that the client has resumed playing an audio stream, along with the information of the resumed audio stream. |
+| [`PlayStarted`](#PlayStarted)         | Event     | A message to notify CIC that the client has started playing an audio stream, along with the information of the audio stream the client has just started playing.     |
+| [`PlayStopped`](#PlayStopped)         | Event     | A message to notify CIC that the client has stopped playing an audio stream, along with the information of the stopped audio stream.  |
+| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | A message to report to CIC the current playback state  ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) after the specified time (delay) has passed from playing audio stream. The delay period for each audio stream is specified in the  [`AudioPlayer.Play`](#Play) directive. |
+| [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | A message to regularly report to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) by the specified interval once playing an audio stream. The reporting interval for an audio stream is specified in the [`AudioPlayer.Play`](#Play) directive. |
+| [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | A message to report to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) when the client is playing the specified point. The reporting point for an audio stream is specified in the [`AudioPlayer.Play`](#Play) directive. |
+| [`StreamDeliver`](#StreamDeliver)     | Directive | Returns the audio stream itself as a response to the [`AudioPlayer.StreamRequested`](#StreamRequested) event.  |
+| [`StreamRequested`](#StreamRequested) | Event     | A message to request to CIC for additional audio stream information required for playback, such as a stream URL.               |
 
-## Play directive {#Play}
-Instructs your client to start playback of a specified audio stream or add it to a playback queue.
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `audioItem`               | object | An object containing metadata of an audio stream and audio stream details necessary for playback                     | Yes |
-| `audioItem.audioItemId`   | string | The ID for distinguishing audio streams. You can remove redundant Play directive messages based on this value. | Yes |
-| `audioItem.stream`        | [AudioStreamInfoObject](#AudioStreamInfoObject) | An object containing audio stream details necessary for the playback                        | Yes |
-| `audioItem.type`          | string | A music service delimiter. It is the name of a business entity or service that provides a music streaming service. You can use this value to figure out which fields are used for the audioItem object in different services and select an appropriate parser to analyze them. | Yes |
-| `audioItem.[CustomField]` | any    | Service providers can add extra metadata to the audio stream for playback.                     | No |
-| `playBehavior`            | string | A delimiter that determines when your client will play the audio stream included in the directive message <ul><li><code>"REPLACE_ALL"</code>: Clears all existing playback queues and play this audio stream immediately.</li><li><code>"ENQUEUE"</code>: Adds this audio stream to a playback queue.</li></ul> | Yes |
-| `source`                  | object | Source of the audio streaming service                                                    | Yes |
-| `source.name`             | string | Name of the audio streaming service                                                        | Yes |
-| `source.logoUrl`          | string | Logo image URL of the audio streaming service If there is no value in the field or if the logo image cannot be displayed, at least the name of audio streaming service from `source.name` field has to be labeled.  | No |
+## ClearQueue directive {#ClearQueue}
 
-### Remarks
-Sometimes, due to the way music services charge users, streaming details such as a streaming URL can only be obtained right before playback. Depending on the value of the `audioItem.stream.urlPlayable` field, it can be either one of the following.
-* If `urlPlayable` is set to `true`, you can play the audio stream directly from the URL in the `audioItem.stream.url` field.
-* If `urlPlayable` is set to `false`, you cannot play the audio stream directly from the URL in the `audioItem.stream.url` field. Instead, you must request additional audio stream details by sending an [`AudioPlayer.StreamRequested`](#StreamRequested) event message.
+Instructs a client to initialize the playback queue. A client is instructed either to stop playing audio stream or keep playing.
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `clearBehavior`           | string | Indicates whether to stop or keep playing audio stream when initializing the playback queue.<ul><li><code>"CLEAR_ALL"</code>: Initialize the queue and stop playing audio stream. </li><li><code>"CLEAR_ENQUEUED"</code>: Initialize the queue only. Keep playing the audio stream being played.</li></ul> | Always |
 
 ### Message example
+
 {% raw %}
 
 ```json
-// Example of an audio stream URL which you can play directly
+{
+  "directive": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "ClearQueue",
+      "dialogRequestId": "8b81296d-218e-4a08-897a-bee51daad907",
+      "messageId": "823a703d-9447-438a-bad5-21fa7a62b623"
+    },
+    "payload": {
+      "clearBehavior": "CLEAR_ALL"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+
+* [`AudioPlayer.Play`](#Play)
+* [`AudioPlayer.PlayStarted`](#PlayStarted)
+* [`AudioPlayer.PlayStopped`](#PlayStopped)
+
+## Play directive {#Play}
+
+Instructs a client to either play or add to the playback queue the specified audio stream.
+
+### Payload fields
+
+| Field name       | Type    | Description                     | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `audioItem`               | object | Contains metadata of an audio stream to play and also the audio stream information required for playback.                     | Always |
+| `audioItem.audioItemId`   | string | The ID of an audio stream. Use the value in removing redundant `Play` directives. | Always |
+| `audioItem.stream`        | [AudioStreamInfoObject](#AudioStreamInfoObject) | Contains audio stream information required for playback.                        | Always |
+| `audioItem.type`          | string | The name of the music service provider. Use this value to figure out which fields of the `audioItem` object are used for different service providers and select an appropriate parser to analyze them. | Always |
+| `audioItem.[CustomField]` | any    | Contains the metadata added by the music service provider about the audio stream for playback.                     | Conditional |
+| `playBehavior`            | string | Indicates when to play the given audio stream. <ul><li><code>"REPLACE_ALL"</code>: Empty the playback queue, and start playing the given audio stream immediately.</li><li><code>"ENQUEUE"</code>: Add the given audio stream to the playback queue.</li></ul> | Always |
+| `source`                  | object | Contains information of the music service provider.                                                   | Always |
+| `source.name`             | string | The name of the music service provider.                                                        | Always |
+| `source.logoUrl`          | string | The URL for the logo of the music service provider. If this field is unavailable or undefined or somehow if the logo cannot be displayed, you must at least display the name of the music service provider specified in the `source.name` field.  | Conditional |
+
+### Remarks
+
+Based on the policy of music service providers, certain information required for playback (e.g. streaming URL) may not be shared to clients until right before playback. If not all information is provided before playback, you need to make an additional request to CIC to obtain the information. Whether extra information shall be requested is specified in the `audioItem.stream.urlPlayable` field as shown below:
+
+* `urlPlayable` is `true`: No extra information is required. You can play the audio stream only with the URL specified in the `audioItem.stream.url` field.
+* `urlPlayable` is `false`: Extra information is required for you to play the given audio stream. Make a request for extra information with the [`AudioPlayer.StreamRequested`](#StreamRequested) event.
+
+### Message example
+
+{% raw %}
+
+```json
+// Example: The given audio stream can be played only with the stream URL
 {
   "directive": {
     "header": {
@@ -64,21 +109,22 @@ Sometimes, due to the way music services charge users, streaming details such as
             "progressReportIntervalInMilliseconds": 60000,
             "progressReportPositionInMilliseconds": null
           },
-          "url": "https://steaming.example.com/1212334548/2231122",
+          "url": "https://streaming.example.com/1212334548/2231122",
           "urlPlayable": true
         },
         "type": "podcast"
       },
       "source": {
-        "name": "팟빵",
-        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.podbbang/source_logo.png"
+        "name": "SamplePodCast",
+        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.samplepodcast/source_logo.png"
       },
       "playBehavior": "REPLACE_ALL"
     }
   }
 }
 
-// Example of an audio stream URL which you cannot play directly
+// Example: The given audio stream cannot be played only with the URL.
+// Extra information is required.
 {
   "directive": {
     "header": {
@@ -93,8 +139,8 @@ Sometimes, due to the way music services charge users, streaming details such as
         "album": {
           "albumId": "2000240",
           "genres": [
-            "발라드",
-            "알앤비/어반"
+            "Ballard",
+            "R&B/Urban"
           ],
           "title": "Palette"
         },
@@ -111,11 +157,11 @@ Sometimes, due to the way music services charge users, streaming details such as
           "url": "clova:TR-NM-17716562",
           "urlPlayable": false
         },
-        "title": "이 지금",
+        "title": "All I want for Christmas is You",
         "type": "navermusic"
       },
       "source": {
-        "name": "Sample Music Service",
+        "name": "Naver Music",
         "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.music/source_logo.png"
       },
       "playBehavior": "REPLACE_ALL"
@@ -127,6 +173,7 @@ Sometimes, due to the way music services charge users, streaming details such as
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.PlayPaused`](#PlayPaused)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
@@ -137,23 +184,27 @@ Sometimes, due to the way music services charge users, streaming details such as
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
 
 ## PlayFinished event {#PlayFinished}
-Reports to CIC on audio stream details when your client finishes playback of an audio stream.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+A message for reporting to CIC that the client has finished playing an audio stream. Send along the information of the audio stream that the client has just finished playing.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -169,30 +220,36 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 
 ## PlayPaused event {#PlayPaused}
-Reports to CIC on audio stream details when your client pauses playback of an audio stream. Send this event message in the following scenario.
 
-1. Your client sends CIC a user's spoken request to pause playback of an audio stream, using a [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event message.
-2. The Clova platform recognizes the pause request and CIC returns it to your client, using a [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause) directive message.
-3. Your client pauses playback of the audio stream and sends CIC a PlayPaused event message.
+A message for notifying CIC that the client has paused playing an audio stream, along with the information of the audio stream that the client has just paused.
+Send this event in the following scenario:
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+1. A client sends CIC a user's voice request ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) to pause playback of an audio stream.
+2. CIC responds with the [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause) directive, as the result of voice recognition by Clova.
+3. The client pauses playback of the audio stream and sends CIC the `PlayPaused` event.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -208,22 +265,28 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayResumed`](#PlayResumed)
 * [`PlaybackController.Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)
 
 ## PlayResumed event {#PlayResumed}
-l
 
-## PlayStarted event {#PlayStarted}
-Reports to CIC on audio stream details when your client starts playback of an audio stream.
+A message for notifying CIC that the client has resumed playing an audio stream, along with the information of the resumed audio stream.
+Send this event in the following scenario:
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+1. A client sends CIC a user's voice request ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) to resume the paused audio stream.
+2. CIC responds with the [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume) directive, as the result of voice recognition by Clova.
+3. The client resumes playback of the audio stream and sends CIC the `PlayResumed` event.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
@@ -232,7 +295,48 @@ None
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "AudioPlayer",
+      "name": "PlayResumed",
+      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
+    },
+    "payload": {}
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`AudioPlayer.Play`](#Play)
+* [`AudioPlayer.PlayPaused`](#PlayPaused)
+* [`PlaybackController.Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)
+
+
+## PlayStarted event {#PlayStarted}
+
+A message for notifying CIC that the client has started playing an audtio stream, along with the information of the audio stream playing.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+
+### Payload fields
+
+None
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -248,31 +352,37 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStopped`](#PlayStopped)
 
 ## PlayStopped event {#PlayStopped}
-Reports to CIC on audio stream details when your client stops playback of an audio stream. Send this event message in the following scenario.
 
-1. Your client sends CIC a user's spoken request to pause playback of an audio stream, using a [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event message.
-2. The Clova platform recognizes the stop request and CIC returns it to your client, using a [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop) directive message.
-3. Your client stops playback of the audio stream and sends CIC a PlayStopped event message.
+A message for notifying CIC that the client has stopped playing an audio stream, along with the information of the stopped audio stream.
+Send this event in the following scenario:
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+1. A client sends CIC a user's voice request ([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)) to pause playback of an audio stream.
+2. CIC responds with the [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop), as the result of voice recognition by Clova.
+3. The client stops playback of the audio stream and sends CIC the `PlayStopped` event.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -288,28 +398,33 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayStarted`](#PlayStarted)
 * [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
-Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) when a specified delay time has passed after playback has started. You can check the delay time for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+A message for reporting to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) when the specified time (delay) has elapsed after playback has started. The time for reporting is specified in the [`AudioPlayer.Play`](#Play) directive.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -325,28 +440,33 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 
 ## ProgressReportIntervalPassed event {#ProgressReportIntervalPassed}
-Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) regularly at a specified interval of time after playback has started. You can check the reporting interval for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+A message for regularly reporting to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -362,28 +482,33 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 
 ## ProgressReportPositionPassed event {#ProgressReportPositionPassed}
-Reports to CIC on a current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at a specified reporting point after playback has started. You can check the reporting point for each audio stream when an [`AudioPlayer.Play`](#Play) directive message is returned to your client.
 
-### Context field
-Send the following [context information](/CIC/References/Context_Objects.md) together.
+A message for reporting to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at the time specified, which is measured from the start of the audio stream. The reporting point is specified in the [`AudioPlayer.Play`](#Play) directive.
+
+### Context fields
+
+Send the following [context information](/CIC/References/Context_Objects.md) with this event.
 
 * [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
-### Payload field
+### Payload fields
+
 None
 
 ### Message example
+
 {% raw %}
 
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -399,23 +524,29 @@ None
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)
 * [`AudioPlayer.ProgressReportIntervalPassed`](#ProgressReportIntervalPassed)
 
 ## StreamDeliver directive {#StreamDeliver}
-Returns audio stream details necessary for playback. This is a response message to an [`AudioPlayer.StreamRequested`](#StreamRequested) event message. It contain a streaming URL in audio stream details from which your client can play music.
 
-### Payload field
-| Field name | Type | Field description | Required |
-|---------|------|--------|---------|
-| `audioItemId` | string | A value for distinguishing audio stream details. You can remove redundant Play directive messages based on this value. | Yes |
-|`audioStream`| [AudioStreamInfoObject](#AudioStreamInfoObject) | An object containing audio stream details necessary for the playback.               | Yes |
+Returns audio stream information required for playback. This is a response message to the [`AudioPlayer.StreamRequested`](#StreamRequested) event. This directive always returns the stream URL for the client to play.
+
+### Payload fields
+
+| Field name | Type | Description | Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `audioItemId` | string | Identifies for which audio stream the information is for. Make use of this ID to remove redundant `Play` directives. | Always |
+| `audioStream` | [AudioStreamInfoObject](#AudioStreamInfoObject) | Contains audio stream information required for playback.               | Always |
 
 ### Remarks
-You can implement audio stream playback by combining ㅁ StreamDeliver directive message with `payload.audioStream` of a previously received [Play](#Play) directive message. However, you must not replace the values of the previous Play directive message with the new values passed through the `StreamDeliver` directive message. The reason is that, if any content of `AudioStreamInfoObject` in the `StreamDeliver` directive message overlaps with the content of the previous [`AudioPlayer.Play`](#Play) directive message, that overlapping content might be omitted. This may cause unexpected behaviors when you process a same Play directive message more than once, for example, to play a track repeatedly or to play a previous track.
+You can make a use of a combination of the `StreamDeliver` directive and the `payload.audioStream` field of the [Play](#Play) directive for playback. Do NOT replace the values contained in the `Play` directive received with the values contained in the `StreamDeliver` directive.
+
+The reason being that, if any content of the `AudioStreamInfoObject` in the `StreamDeliver` directive overlaps with the content of the previous [`AudioPlayer.Play`](#Play) directive message, that overlapping content could be omitted. This may cause unexpected behaviors when you process the same `Play` directive message more than once, for example, to play a track repeatedly or to play a previous track.
 
 ### Message example
+
 {% raw %}
 
 ```json
@@ -441,25 +572,31 @@ You can implement audio stream playback by combining ㅁ StreamDeliver directive
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamRequested`](#StreamRequested)
 
 ## StreamRequested event {#StreamRequested}
-Requests CIC for additional audio stream details necessary for playback, such as a streaming URL.
 
-### Context field
+A message for requesting to CIC for additional audio stream details necessary for playback, such as a streaming URL.
+
+### Context fields
+
 None
 
-### Payload field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `audioItemId`   | string  | `audioItemId` of the Play directive message                                              | Yes |
-| `audioStream`   | [AudioStreamInfoObject](#AudioStreamInfoObject) | `audioItem.stream` of the Play directive message | Yes |
+### Payload fields
+
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `audioItemId`   | string  | The ID of the audio stream to request for. Set the value specified in the `audioItemId` field of the `Play` directive.                                              | Required |
+| `audioStream`   | [AudioStreamInfoObject](#AudioStreamInfoObject) | The audio stream information. Set the values specified in the `audioItem.stream` field of the `Play` directive. | Required |
 
 ### Remarks
-Sometimes, due to the way music services charge users, obtaining specific streaming details must be delayed until right before playback. This event message API is designed for cases where you must not prepare audio stream details in advance. You must implement your client not to send this event message earlier than right before playback.
+
+Based on the policy of music service providers, certain information required for playback (e.g. streaming URL) may not be shared to clients until right before playback. This event is an interface for the cases where the stream information has to be held back. Do not send this event earlier than right before playing an audio stream.
 
 ### Message example
+
 {% raw %}
 
 ```json
@@ -492,43 +629,50 @@ Sometimes, due to the way music services charge users, obtaining specific stream
 {% endraw %}
 
 ### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
 
-## Shared objects
-Shared objects are included in a message body (`payload`) of event or directive messages when they are sent with the AudioPlayer API.
+## Common objects
+
+Common objects are included in the message body (`payload`) of events or directives when they are sent with the AudioPlayer API.
 
 | Object name            | Object description                                            |
 |--------------------|---------------------------------------------------|
-| [AudioStreamInfoObject](#AudioStreamInfoObject) | An object containing playback details of an audio stream, such as a streaming address or credentials |
+| [AudioStreamInfoObject](#AudioStreamInfoObject) | Contains playback details of an audio stream, such as a streaming address or credentials. |
 
 ### AudioStreamInfoObject {#AudioStreamInfoObject}
-Contains streaming details of an audio stream. It is used when CIC returns playback streaming details to your client or when your client sends streaming details of a currently playing music to CIC.
 
-#### Object field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `beginAtInMilliseconds`  | number | A starting point of playback. Unit is millisecond. If this field is specified as a non-zero value, play the audio stream from the specified point. If this field is specified as 0, play the audio stream from the beginning.          | Yes |
-| `durationInMilliseconds` | number | Playback time of the audio stream. It is the length of the audio stream. The client can search and play the audio until a designated time in the field. Unit is millisecond. This field cannot have a null value.  | No  |
-| `progressReport`         | object  | An object that specifies the time to report on a playback state after playback has started                                                  | No |
-| `progressReport.progressReportDelayInMilliseconds`    | number | A value designated to receive the report of the playback status when a specified time has passed after the playback has started. Unit is millisecond. This field can have a null value.  | No |
-| `progressReport.progressReportIntervalInMilliseconds` | number | A value designated to receive the report of the playback status at a specified interval of time during the playback. Unit is millisecond. This field can have a null value.        | No |
-| `progressReport.progressReportPositionInMilliseconds` | number | A value designated to receive the report of the playback status as passing a specified point during the playback. Unit is millisecond. This field can have a null value.    | No |
-| `token`                  | string  | An audio stream token.                                                                                  | Yes |
-| `url`                    | string  | An audio stream URL                                                                                     | Yes |
-| `urlPlayable`            | boolean | A value determining whether the audio stream URL in the `url` field is directly playable or not. <ul><li><code>true</code>: Can play directly from the URL</li><li><code>false</code>: Cannot play directly from the URL Send an <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event message to request for audio stream details.</li></ul>        | Yes |
-| `[Custom Field]`         | any     | Service providers can add necessary value on the context of audio stream playback arbitrarily.<div class="danger"><p><strong>Caution!</strong></p><p>The client should not use the arbitrary field value added by the service providers. Or else it may cause an issue. The added field value should be attached to `stream` field located at <a href="/CIC/References/Context_Objects.html#PlaybackState">PlaybackState context information</a> when passing the audio playback status.</p></div>                                | No |
+Contains streaming details of an audio stream. This object is used when CIC returns streaming details to a client or when the client sends the details of the currently playing audio stream to CIC.
+
+#### Object fields
+
+| Field name       | Type    | Description                     | Required/Provided |
+|---------------|:---------:|-----------------------------|:---------:|
+| `beginAtInMilliseconds`  | number | A starting point of playback in milliseconds. If this field is specified, play the audio stream from the specified point from the starting point of the stream. If 0, play the audio stream from the beginning.          | Required/Always |
+| `durationInMilliseconds` | number | The length of the audio stream in milliseconds. The client can seek within and play by the time defined. This field CANNOT be a `null`.  | Optional/Conditional  |
+| `progressReport`         | object  | Specifies the time(s) to report the playback state after playback has started.                                                  | Optional/Conditional  |
+| `progressReport.progressReportDelayInMilliseconds`    | number | The time after which the client is to report the playback state to CIC after playback has started. Unit is millisecond. This field can have a `null`.  | Optional/Conditional  |
+| `progressReport.progressReportIntervalInMilliseconds` | number | The interval by which the client is to report the playback state to CIC after playback has started. Unit is millisecond. This field can have a `null`.        | Optional/Conditional  |
+| `progressReport.progressReportPositionInMilliseconds` | number | The time from the start of the audio stream at which the client is to report the playback state to CIC. Unit is millisecond. This field can have a `null`.    | Optional/Conditional  |
+| `token`                  | string  | The ID of an audio stream.                                                                                  | Required/Always |
+| `url`                    | string  | The URL of the audio stream.                                                                                     | Required/Always |
+| `urlPlayable`            | boolean | Indicates whether the client can play the given audio stream only with a URL or requires additional information to play.<ul><li><code>true</code>: The client can play only with the URL provided.</li><li><code>false</code>: The client requires additional information. To obtain additional information, the client is to send the <a href="#StreamRequested"><code>AudioPlayer.StreamRequested</code></a> event to CIC.</li></ul>        | Required/Always |
+| `[Custom Field]`         | any     | Music service providers may provide custom values through the context of audio stream playback.<div class="danger"><p><strong>Caution!</strong></p><p>Clients must not use the custom fields added by the service providers to avoid possible issues. Note that the custom values must be specified in the `stream` field of the <a href="/CIC/References/Context_Objects.html#PlaybackState">PlaybackState context information</a> exactly as they are, when reporting the playback state to CIC.</p></div>                                | Optional/Conditional |
+
 
 #### Remarks
-* A [`AudioPlayer.PlayFinished`](#PlayFinished) directive message should be sent to CIC if the client finishes playing the audio at a designated time on `durationInMilliseconds` field.
-* The client should exceed the time designated on the `durationInMilliseconds` field to provide UI where the user cannot seek the audio stream.
-* The client should enter `totalInMilliseconds` field value of [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState) on `durationInMilliseconds` field as a designated value when reporting the current playback status to CIC.
+
+* A client must send the [`AudioPlayer.PlayFinished`](#PlayFinished) event to CIC when finished with playing an audio stream by the end, i.e. when finished with playing for the `durationInMilliseconds` seconds.
+* The audio player UI of a client shall prohibit users to seek past the point defined by the `durationInMilliseconds` field.
+* When reporting the current playback state to CIC, set the `totalInMilliseconds` field of the [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState) with the value specified in the `durationInMilliseconds` field.
 
 #### Object Example
+
 {% raw %}
 
 ```json
-// Example of an audio stream URL which you can play directly
+// An example of an audio stream which can be played only with the URL
 {
   "beginAtInMilliseconds": 0,
   "episodeId": 22346122,
@@ -543,7 +687,7 @@ Contains streaming details of an audio stream. It is used when CIC returns playb
   "urlPlayable": true
 }
 
-// Example of an audio stream URL which you cannot play directly
+// An example of an audio stream which cannot be played only with the URL
 {
   "beginAtInMilliseconds": 0,
   "progressReport": {
@@ -560,6 +704,7 @@ Contains streaming details of an audio stream. It is used when CIC returns playb
 {% endraw %}
 
 #### See also
+
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.PlayFinished`](#PlayFinished)
 * [`AudioPlayer.ProgressReportDelayPassed`](#ProgressReportDelayPassed)

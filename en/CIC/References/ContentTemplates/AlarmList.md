@@ -1,25 +1,27 @@
 # AlarmList Template
-When the user requests for a list of alarm, CIC passes the alarm list registered to the user in AlarmList template format to the client. The client should display the alarm list registered by the user on the screen using the received template.
+
+The AlarmList template is used in providing information of multiple alarms for the client to display on the client's screen.
+When the user requests for a list of alarms, CIC sends the list of alarms registered by the user to the client, in the form of the AlarmList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the AlarmList template as below.</p>
+<p>The following is the restrictions in using alarm:</p>
 <ul>
-  <li>With the voice command, the user can only request to add an alarm and check the list.</li>
-  <li>In order to modify or delete an alarm, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add an alarm or to check a list of alarms.</li>
+  <li>To modify or delete an alarm, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `alarmList[]`               | object array  | An object array containing the alarm list registered by the user.                                                                                          |
-| `alarmList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing repeated date information if it is a weekly repeated alarm |  |
-| `alarmList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time alarm</li><li><code>"daily"</code> : Daily repeated alarm</li><li><code>"weekly"</code> : Every week repeated alarm</li></ul> |
-| `alarmList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the alarm will ring                       |
-| `alarmList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an alarm.                               |
-| `type`                      | string                                                                              | A content template delimiter. The value is always `"AlarmList"`.             |
+| `alarmList[]`               | object array  | Contains a list of alarms registered by the user.                                                                                          |
+| `alarmList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ alarm.  |
+| `alarmList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available cycles are: <ul><li><code>""</code>(Empty string): One-time alarm</li><li><code>"daily"</code>: Daily  alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
+| `alarmList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                      |
+| `alarmList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this alarm.                               |
+| `type`                      | string                                                                              | The type of this template. The value is always `"AlarmList"`.             |
 
 ## Template example
 
@@ -89,11 +91,11 @@ When the user requests for a list of alarm, CIC passes the alarm list registered
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied an AlarmList template.</p>
+<p>An example for the AlarmList template is in preparation.</p>
 </div>
 
 ## See also

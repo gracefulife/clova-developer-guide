@@ -1,37 +1,40 @@
 # Clova Auth API reference
-To connect your client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). The following explains the Clova Auth API, which is provided by a Clova authorization server to help you with generating and managing Clova access tokens.
+
+To connect a client with CIC, you must [create a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken). The Clova authorization server provides the Clova Authorization API for you to create and manage Clova access tokens.
 
 ## Base URL
+
 The base URL of the Clova authorization server is as follows.
 
 <pre><code>{{ book.AuthServerBaseURL }}
 </code></pre>
 
-## Requesting authorization code {#RequestAuthorizationCode}
-Requests an authorization code by passing {{ book.TargetServiceForClientAuth }} account access token and [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) as parameters. The authorization code will be used when generating a Clova access token.
-
-Typically, user authentication is processed on an app paired with a client device. However, transferring a Clova access token from a paired app to a client may have a potential security issue and thus the app forwards an authorization code instead. Upon receiving authorization code, the client should pass it to Clova authentication server and [request a Clova access token](#RequestClovaAccessToken).
+## Requesting an authorization code {#RequestAuthorizationCode}
 
 ```
 GET|POST /authorize
 ```
 
+This API requests an authorization code. Specify the parameters with the {{ book.TargetServiceForClientAuth }} account access token and the [client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo). The authorization code obtained will be used in generating a Clova access token.
+
+Typically, user authentication is processed on the pair app. However, transferring a Clova access token from the pair app to the client may have a potential security issue. To avoid security issues, the app forwards the authorization code to the client instead of the Clova access token. Upon receiving an authorization code, the client is to pass the code to the Clova authorization server and [request a Clova access token](#RequestClovaAccessToken).
+
 ### Request header
 
-| Request header | Explanations                                                                |
+| Request header | Description                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | `application/json`                                                 |
-| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">Enter the aquired {{ book.TargetServiceForClientAuth }} access token</a>:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
+| Accept         | <p>Set the header with the following:</p><p><pre><code>`application/json`</code></pre><p>                                              |
+| Authorization  | <p>Use the <a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">{{ book.TargetServiceForClientAuth }} access token</a> acquired:</p><p><pre><code>Bearer [{{ book.TargetServiceForClientAuth }} access token]</code></pre></p>  |
 
-### Query parameter
+### Query parameters
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `client_id`     | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))          | Yes |
-| `device_id`     | string  | The UUID of the client device. Use a MAC address or create a UUID hash value.                          | Yes |
-| `model_id`      | string  | The model ID of the client device                                                                          | No |
-| `response_type` | string  | The response type. Only `"code"` is supported at the moment.                                                             | Yes |
-| `state`         | string  | The state token (URL encoding applied) used by the client to prevent cross-site request forgery attacks | Yes |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `client_id`     | string  | The client ID. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))          | Required |
+| `device_id`     | string  | The client's MAC address or a hashed UUID created by you.                          | Required |
+| `model_id`      | string  | The model ID of the client device.                                                                          | Optional |
+| `response_type` | string  | The response type. The value is always `"code"`.                                                            | Required |
+| `state`         | string  | The state token (URL encoding applied) used by the client to prevent cross-site request forgery attacks. | Required |
 
 ### Request example
 
@@ -46,38 +49,39 @@ GET|POST /authorize
 
 ### Response header
 
-| Response header | Explanations                                                                |
+| Response header | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>Specifies the content type of the HTTP response.</p> <p><pre><code>application/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response object
 
-| Field name       | Type    | Field description                     |
-|---------------|---------|-----------------------------|
-| `code`          | string | The authorization code generated from the authorization server It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code.      |
-| `redirect_uri`  | string | A URI page providing terms and conditions for the service. It is a field included in the body of a HTTP response message when the message is having `451 Unavailable For Legal Reasons` status code. The client should move to URI included in this field and mark the page. When the user agree to the terms and conditions, the client will receive a response containing a `302 Found`(URL redirection) status code along with the following URL. <ul><li><code>clova://agreement-success</code> : The user successfully agreed to the terms and conditions. The client can continue to the next process to create a Clova access token.</li><li><code>clova://agreement-failure</code> : The user failed to agree to the terms and conditions due to a server error. The client should exclude the failure properly.</li></ul> |
-| `state`         | string | The decrypted state token (URL decoding applied) passed from the client to prevent cross-site request forgery attacks | It is a field included in the body of a HTTP response message when the message is having `200`or `451` status code. |
+| Field name       | Type    | Description                     |
+|---------------|:---------:|-----------------------------|
+| `code`          | string | The authorization code issued by the Clova authorization server. This field is returned in the body of the HTTP response message if the status code is `200`or `451`.      |
+| `redirect_uri`  | string | The URI of the terms and conditions page. The field is returned in the body of the HTTP response message if the status code is `451 Unavailable For Legal Reasons`. Display the page of the URI. When the user agrees to the terms and conditions, the client will receive the following URL, with the status code `302 Found`(URL redirection): <ul><li><code>clova://agreement-success</code>: The user has successfully agreed to the terms and conditions. The client can continue to the next process to create a Clova access token.</li><li><code>clova://agreement-failure</code>: The user has failed to agree to the terms and conditions due to a server error. Handle the error appropriately.</li></ul> |
+| `state`         | string | The state token from the client, decrypted (URL decoding) to prevent cross-site request forgery attacks. This field is returned in the body of the HTTP response message if the status code is `200`or `451`. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK           | The response will be received if a request is processed successfully                      |
-| 400 Bad Request  | The response will be received if entered an invalid data as a parameter or missed entering the required parameter just as `client_id` field |
-| 451 Unavailable For Legal Reasons | The response will be received if the user did not agree to the terms and conditions. Upon receiving the response, the client should move to the address found from `redirect_uri` field and mark the web page. The URI is a page asking users to agree to the terms and conditions.  |
-| 403 Forbidden    | The response is received when the {{ book.TargetServiceForClientAuth }} access token contained in the header is invalid |
-| 500 Server Internal Error | The response is received when failed to generate an authorization code due to an internal server error |
+| 200 OK           | The user's request has been processed successfully.                     |
+| 400 Bad Request  | Required parameters such as `client_id` are missing or invalid parameters have been used. |
+| 451 Unavailable For Legal Reasons | The user has not agreed to the terms and conditions. Open the webpage specified by the `redirect_uri` field. The URI points to the terms and conditions page.  |
+| 403 Forbidden    | The {{ book.TargetServiceForClientAuth }} access token specified in the header is invalid. |
+| 500 Server Internal Error | Failed to issue an authorization code due to an internal server error. |
 
 ### Response example
+
 {% raw %}
 ```json
-// Example 1: If HTTP response message has 200 OK status code
+// Example 1: If the HTTP response message has 200 OK
 {
     "code": "cnl__eCSTdsdlkjfweyuxXvnlA",
     "state": "FKjaJfMlakjdfTVbES5ccZ"
 }
 
-// Example 2: If HTTP response message has 451 Unavailable For Legal Reasons status code
+// Example 2: If the HTTP response message has 451 Unavailable For Legal Reasons
 {
   "code":"4mrklvwoC_KNgDlvmslka",
   "redirect_uri":"https://ssl.pstatic.net/static/clova/service/terms/place/terms_3rd.html?code=4mrklvwoC_KNgDlvmslka&grant_type=code&state=FKjaJfMlakjdfTVbES5ccZ",
@@ -89,33 +93,35 @@ GET|POST /authorize
 {% include "./CICAuthAPI/GuestMode.md" %}
 
 ### See also
+
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
-* [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [Requesting Clova access token](#RequestClovaAccessToken)
+* [Creating a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
+* [Requesting a Clova access token](#RequestClovaAccessToken)
 
 
-## Requesting Clova access token {#RequestClovaAccessToken}
-Requests a Clova access token to a Clova authorization server with an [obtained authorization code](#RequestAuthorizationCode).
+## Requesting a Clova access token {#RequestClovaAccessToken}
 
 ```
 GET|POST /token?grant_type=authorization_code
 ```
 
+This API requests for a Clova access token to the Clova authorization server with the [authorization code obtained](#RequestAuthorizationCode).
+
 ### Request header
 
-| Request header | Explanations                                                                |
+| Request header | Description                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>Set the header with the following:</p><p><pre><code>`application/json`</code></pre><p>                    |
 
-### Query parameter
+### Query parameters
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `client_id`     | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Yes |
-| `client_secret` | string  | The client secret (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Yes |
-| `code`          | string  | [The obtained authorization code](#RequestAuthorizationCode).             | Yes |
-| `device_id`     | string  | The UUID of the client device                                                                                              | Yes |
-| `model_id`      | string  | The model ID of the client device                                                                                                 | No |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `client_id`     | string  | The client ID. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Required |
+| `client_secret` | string  | The client secret. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Required |
+| `code`          | string  | [The obtained authorization code](#RequestAuthorizationCode).             | Required |
+| `device_id`     | string  | The client's MAC address or a hashed UUID created by you.                                                                                               | Required |
+| `model_id`      | string  | The model ID of the client device.                                                                                                 | Optional |
 
 ### Request example
 
@@ -129,28 +135,29 @@ GET|POST /token?grant_type=authorization_code
 
 ### Response header
 
-| Response header | Explanations                                                                |
+| Response header | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>Specifies the content type of the HTTP response.</p> <p><pre><code>application/json</code></pre></p>                   |
 
-### Response JSON object field
+### Response object
 
-| Field name       | Type    | Field description                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | The Clova access token                               |
-| `expires_in`    | number  | The amount of time that the Clova access token is deemed to be valid (in seconds)              |
-| `refresh_token` | string  | The refresh token to refresh the Clova access token.          |
-| `token_type`    | string  | The type of the Clova access token. Always returns "Bearer". |
+| Field name       | Type    | Description                     |
+|---------------|:---------:|-----------------------------|
+| `access_token`  | string  | The Clova access token issued.                               |
+| `expires_in`    | number  | Specifies how long the Clova access token is valid for, in seconds.              |
+| `refresh_token` | string  | The refresh token to required to refresh the Clova access token.          |
+| `token_type`    | string  | The type of the Clova access token. The value is always `"Bearer"`. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK        | The request was processed successfully                      |
-| 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
-| 500 Internal Server Error | Failed to generate an access token due to an internal server error |
+| 200 OK        | The request was processed successfully.                      |
+| 400 Bad Request  | Required parameters such as `client_id` are missing or invalid parameters have been used. |
+| 500 Internal Server Error | Failed to issue an access token due to an internal server error |
 
 ### Response example
+
 {% raw %}
 ```json
 {
@@ -163,33 +170,35 @@ GET|POST /token?grant_type=authorization_code
 {% endraw %}
 
 ### See also
+
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
-* [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
-* [Requesting authorization code](#RequestAuthorizationCode)
+* [Creating a Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
+* [Requesting an authorization code](#RequestAuthorizationCode)
 
 
-## Refreshing Clova access token {#RefreshClovaAccessToken}
-Refreshes a Clova access token with a refresh token.
+## Refreshing a Clova access token {#RefreshClovaAccessToken}
 
 ```
 GET|POST /token?grant_type=refresh_token
 ```
 
+This API refreshes the Clova access token with a refresh token.
+
 ### Request header
 
-| Request header | Explanations                                                                |
+| Request header | Description                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>Set the header with the following:</p><p><pre><code>`application/json`</code></pre><p>                     |
 
-### Query parameter
+### Query parameters
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `client_id`     | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Yes |
-| `client_secret` | string  | The client secret (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Yes |
-| `device_id`     | string  | The UUID of the client device                                                    | Yes |
-| `model_id`      | string  | The model of the client device                                                           | No |
-| `refresh_token` | string  | The refresh token generated after authorization succeeds.                                            | Yes |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `client_id`     | string  | The client ID. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Required |
+| `client_secret` | string  | The client secret. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Required |
+| `device_id`     | string  | The client's MAC address or a hashed UUID created by you.                                                     | Required |
+| `model_id`      | string  | The model of the client device.                                                           | Optional |
+| `refresh_token` | string  | The refresh token issued with the Clova access token.                                           | Required |
 
 ### Request example
 
@@ -203,28 +212,29 @@ GET|POST /token?grant_type=refresh_token
 
 ### Response header
 
-| Response header | Explanations                                                                |
+| Response header | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>Specifies the content type of the HTTP response.</p> <p><pre><code>application/json</code></pre></p>                  |
 
-### Response JSON object field
+### Response object
 
-| Field name       | Type    | Field description                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | The Clova access token                               |
-| `expires_in`    | number  | The amount of time that the Clova access token is deemed to be valid (in seconds)              |
-| `refresh_token` | string  | The refresh token to refresh the Clova access token.    |
-| `token_type`    | string  | The type of the Clova access token. Always returns "Bearer". |
+| Field name       | Type    | Description                     |
+|---------------|:---------:|-----------------------------|
+| `access_token`  | string  | The Clova access token refreshed.                              |
+| `expires_in`    | number  | Specifies how long the Clova access token is valid for, in seconds.              |
+| `refresh_token` | string  | The refresh token required to refresh the Clova access token with.    |
+| `token_type`    | string  | The type of the Clova access token. The value is always `"Bearer"`. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK        | The request was processed successfully                      |
-| 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
-| 500 Internal Server Error | Failed to refresh the access token due to an internal server error |
+| 200 OK        | The request was processed successfully.                      |
+| 400 Bad Request  | Required parameters such as `client_id` are missing or invalid parameters have been used. |
+| 500 Internal Server Error | Failed to refresh the access token due to an internal server error. |
 
 ### Response example
+
 {% raw %}
 ```json
 {
@@ -237,32 +247,34 @@ GET|POST /token?grant_type=refresh_token
 {% endraw %}
 
 ### See also
+
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
-* [Requesting Clova access token](#RequestClovaAccessToken)
+* [Requesting a Clova access token](#RequestClovaAccessToken)
 
 
-## Deleting Clova access token {#DeleteClovaAccessToken}
-Deletes a [generated Clova access token](#RequestClovaAccessToken).
+## Deleting a Clova access token {#DeleteClovaAccessToken}
 
 ```
 GET|POST /token?grant_type=delete
 ```
 
+This API deletes the [Clova access token issued](#RequestClovaAccessToken).
+
 ### Request header
 
-| Request header | Explanations                                                                |
+| Request header | Description                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>Specifies the content type of the HTTP response.</p> <p><pre><code>application/json</code></pre></p>                  |
 
-### Query parameter
+### Query parameters
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `access_token`  | string  | The Clova access token generated after authorization succeeds.                                 | Yes |
-| `client_id`     | string  | The client ID (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Yes |
-| `client_secret` | string  | The client secret (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Yes |
-| `device_id`     | string  | The UUID of the client device                                                     | Yes |
-| `model_id`      | string  | The model of the client device                                                           | No |
+| Field name       | Type    | Description                     | Required |
+|---------------|:---------:|-----------------------------|:---------:|
+| `access_token`  | string  | The Clova access token to delete.                                | Required |
+| `client_id`     | string  | The client ID. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                                  | Required |
+| `client_secret` | string  | The client secret. (See [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo))                              | Required |
+| `device_id`     | string  | The client's MAC address or a hashed UUID created by you.                                                     | Required |
+| `model_id`      | string  | The model of the client device.                                                           | Optional |
 
 ### Request example
 
@@ -276,28 +288,29 @@ GET|POST /token?grant_type=delete
 
 ### Response header
 
-| Response header | Explanations                                                                |
+| Response header | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>Specifies the content type of the HTTP response.</p> <p><pre><code>application/json</code></pre></p>                  |
 
-### Response JSON object field
+### Response object
 
-| Field name       | Type    | Field description                     |
-|---------------|---------|-----------------------------|
-| `access_token`  | string  | The Clova access token                               |
+| Field name       | Type    | Description                     |
+|---------------|:---------:|-----------------------------|
+| `access_token`  | string  | The Clova access token deleted.                              |
 | `client_id`     | string  | The client ID.                                      |
-| `expires_in`    | number  | The amount of time that the Clova access token is deemed to be valid (in seconds)              |
+| `expires_in`    | number  | The expiry time the deleted Clova access token had, in seconds. |
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
-| 200 OK        | The request was processed successfully                      |
-| 400 Bad Request  | Failed to process the request because required parameters such as `client_id` were not provided or provided parameters were invalid |
-| 401 Unauthorized | The client credentials (`client_id` or `client_secret`) or user information (`device_id` or `model_id`) which were passed as parameters are invalid |
-| 500 Internal Server Error | Failed to delete the access token due to an internal server error |
+| 200 OK        | The request was processed successfully.                      |
+| 400 Bad Request  | Required parameters such as `client_id` are missing or invalid parameters have been used. |
+| 401 Unauthorized | The client credentials (`client_id` or `client_secret`) or the client information (`device_id` or `model_id`) passed as parameters are invalid. |
+| 500 Internal Server Error | Failed to delete the access token due to an internal server error. |
 
 ### Response example
+
 {% raw %}
 ```json
 {
@@ -309,5 +322,6 @@ GET|POST /token?grant_type=delete
 {% endraw %}
 
 ### See also
+
 * [Client credentials](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)
-* [Requesting Clova access token](#RequestClovaAccessToken)
+* [Requesting a Clova access token](#RequestClovaAccessToken)

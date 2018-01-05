@@ -1,32 +1,34 @@
 # ActionTimer Template
-When the user creates an action timer, CIC passes the action timer details in ActionTimer template format to the client. The client should display the action timer details on the screen using the received template.
+
+The ActionTimer template is used in providing action timer information for the client to display on the client's screen.
+When the user creates an action timer, CIC sends the action timer information to the client, in the form of the ActionTimer template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Currently, there are limits to the ActionTimer template as below.</p>
+<p>The following is the restrictions in using action timers:</p>
 <ul>
-  <li>With the voice command, the user can only request to add an action timer or to check the list.</li>
-  <li>In order to modify or delete an action timer, the user should use the Clova app.</li>
+  <li>Voice requests can be used only to add an action timer or to check a list of action timers.</li>
+  <li>To modify or delete an action timer, the user must use the Clova app.</li>
 </ul>
 </div>
 
-## Template field
+## Template fields
 
-| Field name       | Type    | Field description                     |
+| Field name       | Type    | Description                     |
 |---------------|---------|-----------------------------|
-| `action`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)      | An object containing an action set by the user on the added action timer. **Empty string(`""`) is being entered for now. The field is reserved for an extension in the future.** |
-| `repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | An object array containing date information if it is a weekly repeated action timer |
-| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing a repeated cycle. The `value` field of the object has the following values. <ul><li>Empty string(<code>""</code>) : One-time action timer</li><li><code>"daily"</code> : Daily repeated action timer</li><li><code>"weekly"</code> : Every week repeated action timer</li></ul> |
-| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | An object containing date and time of when the action timer will ring      |
-| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | An object containing identifier of an added action timer.   |
-| `type`          | string                                                                              | A content template delimiter. It has an `"ActionTimer"` value.  |
+| `action`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)      | The action the user has set on this action timer. **The value is always an empty string(`""`). This field is reserved for future extension.** |
+| `repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ action timer. |
+| `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle for this action timer. Available cycles are: <ul><li><code>""</code>(Empty string): One-time action timer</li><li><code>"daily"</code>: Daily action timer</li><li><code>"weekly"</code>: Weekly action timer</li></ul> |
+| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this action timer is to go off.      |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this action timer.   |
+| `type`          | string                                                                              | The type of this template. The value is always `"ActionTimer"`.  |
 
 ## Template example
 
 {% raw %}
 
 ```json
-// One-time actiontimer
+// One-time action timer
 {
   "type": "ActionTimer",
   "token": {
@@ -48,7 +50,7 @@ When the user creates an action timer, CIC passes the action timer details in Ac
   "repeatDay": []
 }
 
-// Daily repeated actiontimer
+// Daily action timer
 {
   "type": "ActionTimer",
   "token": {
@@ -70,7 +72,7 @@ When the user creates an action timer, CIC passes the action timer details in Ac
   "repeatDay": []
 }
 
-// Every week repeated actiontimer
+// Weekly action timer
 {
   "type": "ActionTimer",
   "token": {
@@ -100,13 +102,14 @@ When the user creates an action timer, CIC passes the action timer details in Ac
 
 {% endraw %}
 
-## Screen UI example {#UIExample}
+## UI example {#UIExample}
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Preparing for an example of a screen which applied an ActionTimer template.</p>
+<p>An example for the ActionTimer template is in preparation.</p>
 </div>
 
 ## See also
+
 * [ActionTimerList](/CIC/References/ContentTemplates/ActionTimerList.md)
 * [Alerts](/CIC/References/CICInterface/Alerts.md) Interface

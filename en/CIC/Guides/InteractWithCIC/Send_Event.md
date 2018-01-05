@@ -1,12 +1,12 @@
-## Sending event message {#SendEvent}
-Clients can send [event messages](/CIC/References/CIC_API.md#Event) to CIC. You use event messages to send client requests to CIC. An event message can be either a JSON-format message or a [multipart message](/CIC/References/CIC_API.md#MultipartMessage) that carries user's speech input.
+## Sending events {#SendEvent}
+Clients deliver their requests to CIC in [events](/CIC/References/CIC_API.md#Event), in the form of [multipart messages](/CIC/References/CIC_API.md#MultipartMessage). Multipart messages may contain JSON objects and/or binary data.
 
-To send user's speech data to CIC, use a [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event message. The following explains how to send an event message to CIC using `SpeechRecognizer.Recognize`.
+To send a user's vocal data to CIC, use the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event as instructed below:
 
 <ol>
-<li><p>Prepare <a href="#RequiredLibrary">HTTP/2 library</a> and <a href="#Authorization">Clova access token</a> in your client.</p>
+<li><p>Import an <a href="#RequiredLibrary">HTTP/2 library</a> library on the client and make sure you have a <a href="#Authorization">Clova access token</a> ready.</p>
 </li>
-<li><p>Fill in the HTTP header with appropriate values as described in <a href="/CIC/References/CIC_API.html#SendEvent">CIC API</a> and send a request using the HTTP/2 library.</p>
+<li><p>Specify the HTTP header based on the <a href="/CIC/References/CIC_API.html#SendEvent">CIC API</a> specification, and send the HTTP request using the HTTP/2 library.</p>
 <pre><code>:method = POST
 :scheme = https
 :path = /v1/events
@@ -14,13 +14,28 @@ Authorization = Bearer XHapQasdfsdfFsdfasdflQQ7w-Example
 content-type = multipart/form-data; boundary=Boundary-Text
 </code></pre>
 </li>
-<li><p>Create a <a href="/CIC/CIC_Overview.html#DialogModel">dialog ID</a> (<code>dialogRequestId</code>) and a message ID (messageId) in UUID format to include in the event message. You create and send a uniquely identifiable dialog ID and a message ID to find a matching directive message from <a href="#ManageMessageQ">message queues</a> later.</p></li>
-<li><p>In the first message part, write a JSON-format event message and a message header as described in the <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API specification and send it to CIC.</p>
+<li><p>Create a <a href="/CIC/CIC_Overview.html#DialogModel">dialog ID</a> (<code>dialogRequestId</code>) and a message ID (<code>messageId</code>), both in UUID format. Make sure the IDs are unique as they will later be used to find a matching directive message from <a href="#ManageMessageQ">message queues</a>.</p></li>
+<li><p>Write the first part of the message and send it to CIC. The first part of the message shall contain the message header and the message body in JSON, containing event information based on the <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize"><code>SpeechRecognizer.Recognize</code></a> API specification.</p>
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8<br/>
 {
   "context": [
+    {
+      "header": {
+        "namespace": "Alerts",
+        "name": "AlertsState"
+      },
+      "payload": {
+        "allAlerts": [
+          ...
+        ],
+        "activeAlerts": [
+          ...
+        ]
+      }
+    },
+    ...
     {
       "header": {
         "namespace": "Speaker",
@@ -44,10 +59,10 @@ Content-Type: application/json; charset=UTF-8<br/>
     }
   }
 }
---Boundary-Text--
+--Boundary-Text
 </code></pre>
 </li>
-<li>From the second message part, send the user's speech data by capturing it with the interval of 200ms. As the data type has changed, write the message header as follows.
+<li>From the second message part, send the user's speech in 200ms units. Since the message body is to contain binary data and not JSON, make sure you change the message header accordingly. Here is an example:
 <pre><code>--Boundary-Text
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream<br/>
@@ -55,11 +70,11 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
 </li>
-<li><p>Continue to send the speech data until the user finishes speech input or CIC returns a <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> directive message. Once the sending is complete, CIC returns an HTTP response message.</p>
+<li><p>Continue sending the vocal data until the user finishes speaking to Clova or until CIC returns the <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> directive. Once the sending is complete, CIC returns an HTTP response message to the client.</p>
 </li>
 </ol>
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Using <a href="/CIC/References/CICInterface/TextRecognizer.html#Recognize"><code>TextRecognizer.Recognize</code></a> allows you to process text input by users.</p>
+  <p>To process a user's request in text, use the  <a href="/CIC/References/CICInterface/TextRecognizer.html#Recognize"><code>TextRecognizer.Recognize</code></a> event.</p>
 </div>

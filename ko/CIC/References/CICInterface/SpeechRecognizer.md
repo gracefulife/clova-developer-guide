@@ -23,7 +23,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `expectContentType`        | string  | 클라이언트가 추가로 사용자의 음성을 입력 받으면 해당 음성 데이터를 어떤 형식으로 보내야 할지 지정한 값입니다. 다음과 같은 값을 가질 수 있습니다. <ul><li><code>"audio/l16"</code>: 음성 인식을 위해 에코/잡음 제거 및 음성 인식에 특징적인 후처리를 수행하지 않은 PCM 포맷의 음성 데이터</li><li><code>"application/x-clova-feat"</code>: 음성 인식을 위해 에코/잡음 제거 및 음성 인식에 특징적인 후처리를 수행한 PCM 포맷의 음성 데이터</li></ul>  | 조건부  |
 | `expectSpeechId`        | string  | 사용자의 음성 입력을 추가로 받을 때 CIC가 이를 식별하기 위한 ID. 추후 이 값은 사용자의 추가 음성 입력을 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지로 CIC에게 보낼 때 `speechId` 필드에 입력되어야 합니다.    | 항상 |
 | `explicit`              | boolean | 사용자 음성 입력의 필수 여부.`explicit`는 주로 `true`로 설정되며, 사용자로부터 필수 정보를 추가로 알아내야 할 때 사용됩니다.<ul><li><code>true</code>: 필수</li><li><code>false</code>: 선택</li></ul>예를 들면, 사용자가 "피자 주문해줘."와 같은 요청을 했고 CIC는 수량과 같은 필수 정보를 얻기 위해 "몇 판 주문할까요?"라는 음성과 함께 `explicit` 필드가 `true`로 설정된 `SpeechRecognizer.ExpectSpeech` 지시 메시지를 보낼 수 있습니다. 이 경우 사용자로부터 수량 정보를 입력받지 않는다면 주문을 제대로 수행할 수 없게 됩니다. 따라서, `explicit` 필드가 `true`인 경우 반드시 사용자 음성 입력을 받아야 합니다. | 항상  |
@@ -108,7 +108,7 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
 | `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
 | `format`           | string   | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
@@ -191,7 +191,7 @@ Clova 음성 인식 시스템은 [`SpeechRecognizer.Recognize`](#Recognize) 이�
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `text`  | string | 입력된 사용자 음성이 어떤 어떻게 인식이 되고 있는지 그 결과를 실시간으로 담고 있습니다. | 항상    |
 
 ### Remarks
@@ -262,7 +262,7 @@ CIC가 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지를 받은 
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `recognizedText` | string | 입력된 사용자 음성이 어떻게 인식이 되었는지 그 결과를 담고 있습니다. 기본적으로 이 필드는 `SpeechRecognizer.StopCapture` 지시 메시지에 포함되지 않으며, 일부 특수한 조건에 이 필드가 포함됩니다. | 조건부 |
 
 ### Remarks
