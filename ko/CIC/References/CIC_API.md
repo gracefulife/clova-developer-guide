@@ -443,7 +443,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 #### Message fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `context[]`                      | object array | CIC에 전달할 클라이언트의 상태 정보를 담고 있는 배열. 다음과 같은 [맥락 정보](/CIC/References/Context_Objects.md) 객체를 이 배열의 원소로 포함시킬 수 있습니다. 이벤트 메시지에 상황에 따라 필요한 맥락 정보를 포함시키면 됩니다.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: 알람 또는 타이머 상태 정보</li><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: 최근 재생 정보</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: 클라이언트의 기기 정보</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: 클라이언트의 디스플레이 정보</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: 클라이언트의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: 사전 정의 위치 정보</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: 스피커 정보</li></ul> | 필수 |
 | `event`                        | object       | 이벤트 메시지의 헤더와 필요한 데이터(payload)를 가지고 있는 객체                                                                 | 필수 |
 | `event.header`                 | object       | 이벤트 메시지의 헤더                                                                                                 | 필수 |
@@ -517,7 +517,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 #### Message fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `directive`                        | object | 지시 메시지의 헤더와 필요한 데이터(`payload`)를 가지고 있는 객체                                                                 | 항상     |
 | `directive.header`                 | object | 지시 메시지의 헤더                                                                                                 | 항상     |
 | `directive.header.dialogRequestId` | string | 대화 ID(Dialog ID). 클라이언트 쪽에서 어떤 대화의 응답인지 파악하기 위해 사용됩니다. 지시 메시지가 [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지에 대한 응답이 아닌 경우 이 필드가 지시 메시지에 포함되어 있지 않을 수도 있습니다.  | 조건부  |
@@ -576,7 +576,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 #### Message fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|---------|
+|---------------|---------|-----------------------------|:---------:|
 | `header`                 | object | 오류 메시지의 헤더                                             | 항상 |
 | `header.messageId`       | string | 메시지 ID. 개별 메시지를 구분하기 위해 사용하는 식별자입니다.            | 항상 |
 | `header.name`            | string | 오류 메시지의 이름. `"Exception"`으로 고정됩니다.                | 항상 |
