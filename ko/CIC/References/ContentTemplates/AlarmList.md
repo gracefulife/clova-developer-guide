@@ -91,10 +91,9 @@ CIC는 사용자가 알람의 목록을 요청하면 사용자에게 등록된 �
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>AlarmList 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
-</div>
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 AlarmList 템플릿의 내용을 표현한 UI 예제입니다.
+
+![](/CIC/Resources/Images/Content_Template-AlarmList.png)
 
 ## See also
 * [Alarm](/CIC/References/ContentTemplates/Alarm.md)

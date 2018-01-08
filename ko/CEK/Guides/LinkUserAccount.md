@@ -220,4 +220,4 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 | Access Token URI  | Authorization code로 access token을 획득하기 위한 주소. Authorization code grant 방식을 설정한 경우 입력합니다. |
 | Client Secret     | Authorization code로 access token을 획득할 때 **Client ID**와 함께 전달되어야 하는 클라이언트 Secret. Authorization code grant 방식을 설정한 경우 입력합니다. |
 | Client Authentication Scheme | Access Token URI로 access token을 요청할 때 사용하는 scheme              |
-| Privacy Policy URL | 서비스와 관련하여 개인 정보 보호 정책과 관련된 내용이 제공되는 페이지. Clova App이나 페어링 앱에 표시됩니다. |
+| Privacy Policy URL | 서비스와 관련하여 개인 정보 보호 정책과 관련된 내용이 제공되는 페이지. Clova 앱이나 페어링 앱에 표시됩니다. |

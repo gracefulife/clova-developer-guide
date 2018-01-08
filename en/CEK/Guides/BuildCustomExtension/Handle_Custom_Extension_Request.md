@@ -3,7 +3,7 @@ Custom extensions receive user requests by receiving [custom extension messages]
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png)
 
-A user request can be a one-time request but it can also be a multi-turn request that has to maintain context. The Freetalk mode is one such example.
+A user request can be a one-time request but it can also be a multi-turn request that has to maintain context.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Multi-turn_Sequence_Diagram.png)
 
@@ -14,7 +14,7 @@ A user request can be one of the following three types. Implement your custom ex
 * [When receiving SessionEndedRequest](#HandleSessionEndedRequest)
 
 ### Handling LaunchRequest {#HandleLaunchRequest}
-[`LaunchRequest`](/CEK/References/CEK_API.md#CustomExtLaunchRequest) notifies that a user has requested to start a certain mode or custom extension. For example, when a user gives a command such as "Let's talk in English", the client starts the Freetalk mode and CEK sends `LaunchRequest` to an extension that provides English conversation service.
+[`LaunchRequest`](/CEK/References/CEK_API.md#CustomExtLaunchRequest) notifies that a user has requested to start a certain mode or custom extension. For example, when a user gives a command such as "Run the pizza bot", CEK sends `LaunchRequest` to the extension that provides pizza delivery service.
 
 When the message type is LaunchRequest, the `request.type` field is set to `"LaunchRequest"` and `request` field does not contain analysis details of the user's speech. When your extension receives this message, make the necessary preparations or return a [response message](#ReturnCustomExtensionResponse) to the user to notify that the requested service is ready.
 
@@ -116,11 +116,11 @@ This is an example of an `IntentRequest` type message.
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "FreeTalk",
+      "name": "OrderPizza",
       "slots": {
-        "q": {
-          "name": "q",
-          "value": "How are you"
+        "pizzaType": {
+          "name": "pizzaType",
+          "value": "pepperoni"
         }
       }
     }
@@ -135,7 +135,7 @@ Each field in this example indicates the following.
 * `version`: The message format version of the current custom extension is v0.1.0.
 * `session`: **The request is from a previous session**. It contains the previous session ID and user details (ID, accessToken).
 * `context`: This provides details of the client device. It contains the device ID and details of the default device user.
-* `request`: The request type is `IntentRequest`. It has called an intent named `"FreeTalk"`. The necessary intent information has been passed along with `"q"` slot and the slot has a value of `"How are you"`.
+* `request`: The request type is `IntentRequest`. It has called an intent named `"OrderPizza"`. The necessary intent information has been passed along with `"pizzaType"` slot and the slot has a value of `"pepperoni"`.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -144,7 +144,7 @@ Each field in this example indicates the following.
 
 ### Handling SessionEndedRequest {#HandleSessionEndedRequest}
 
-[`SessionEndedRequest`](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) notifies that a user has requested to end a certain mode or custom extension. The client will stop the extension if a user commands to "End the service", "Please end the service" or "Stop". CEK will pass a request of a `SessionEndedRequest` type to an extension providing dialog service.  Yet, in case of the Freetalk mode, the extension will be ended with an English expression such as "See you later".
+[`SessionEndedRequest`](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) notifies that a user has requested to end a certain mode or custom extension. The client will stop the extension if a user commands to "End the service", "Please end the service" or "Stop". CEK will pass a request of a `SessionEndedRequest` type to an extension providing dialog service.
 
 When the message type is `SessionEndedReqeust`, the `request.type` field is set to `"EndRequest"`. Same as the `LaunchRequest` type, the `request` field does not contain analysis details of the user's speech. When you receive this message, end the service and return a [response message](#ReturnCustomExtensionResponse) to notify that the service has ended.
 

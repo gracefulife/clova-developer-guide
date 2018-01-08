@@ -1,11 +1,9 @@
-# Extension 배포하기
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 Clova Home extension을 [Clova developer console에 등록](/DevConsole/Guides/CEK/Register_Extension.md)했다면 등록한 extension을 Clova 서비스에 배포할 수 있습니다. 배포하면 일반 사용자들이 **확장 기능 관리**라는 메뉴에서 배포된 extension을 사용할 수 있게 됩니다.
-
-Extension을 배포할 때 일반적으로 다음 항목을 순차적으로 수행해야 합니다.
+# Extension 테스트하기
+등록한 extension이나 interaction 모델은 배포하기 전에 테스트해볼 수 있습니다. 다음을 항목을 수행하여 extension과 interaction 모델을 테스트합니다.
 
 * (Custom extension 전용) [Interaction 모델 빌드하기](#BuildInteractionModel)
 * (Custom extension 전용) [Interaction 모델 테스트하기](#TestInteractionModel)
-* [테스트 모드 사용하기](#UsingTestMode)
+* [Clova 앱으로 extension 테스하기](#TestOnClovaApp)
 
 ## Interaction 모델 빌드하기 {#BuildInteractionModel}
 
@@ -22,8 +20,6 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
   <p><strong>Note!</strong></p>
   <p>빌드 중에 <strong>Interaction 모델: 대시보드</strong> 내에서 다른 메뉴로 이동하더라도 빌드가 취소되지 않습니다. 빌드를 시작한 이후에 얼마든지 메뉴 이동 및 내용 편집이 가능합니다.</p>
 </div>
-
-
 
 ## Interaction 모델 테스트하기 {#TestInteractionModel}
 
@@ -45,13 +41,13 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 
 ![](/DevConsole/Resources/Images/DevConsole-Test_Result.png)
 
-## 테스트 모드 사용하기 {#UsingTestMode}
+## Clova 앱으로 extension 테스트하기 {#TestOnClovaApp}
 
-Extension의 실제 테스트를 위해 **테스트 모드**를 제공하고 있습니다. Extension에서 **테스트 모드**를 활성화하면 별도의 설정 없이 개발자 본인의 <strong>{{ book.OrientedService }} 계정이 인증된 Clova 앱</strong>에서 등록한 extension을 바로 테스트해볼 수 있도록 지원할 예정입니다. **테스트 모드**를 활성화하려면 다음과 같이 등록한 extension 목록에서 테스트 모드를 활성화하려는 extension 항목의 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Check_Button.png" /> 버튼을 클릭합니다.
+Extension을 실제 클라이언트인 Clova 앱에서 테스트해볼 수 있습니다. 이를 위해 extension 기본 정보를 등록하는 페이지의 **테스터 아이디** 필드에 개발자 본인이나 extension을 테스트할 사람의 <strong>{{ book.OrientedService }} 계정</strong>을 입력해야 합니다. 계정을 추가한 후 **저장** 버튼을 클릭하면 입력한 계정이 인증된 Clova 앱에서 개발 중인 extension을 테스트할 수 있습니다.
 
-![](/DevConsole/Resources/Images/DevConsole-Enable_Extension_Test_Mode.png)
+![](/DevConsole/Resources/Images/DevConsole-Add_Tester_ID.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>테스트 모드가 활성화한 후 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Check_Button.png" /> 버튼을 한번 더 클릭하면 언제든지 테스트 모드 사용을 중지할 수 있습니다.</p>
+  <p>Clova 앱에서 테스트를 중지하려면 입력한 계정 정보를 삭제하면 됩니다.</p>
 </div>

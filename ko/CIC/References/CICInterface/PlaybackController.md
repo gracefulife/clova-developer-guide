@@ -81,7 +81,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-필수 상태 정보 없음
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
 ### Payload fields
 
@@ -96,7 +98,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{AudioPlayer.PlaybackState}}
+  ],
   "event": {
     "header": {
       "namespace": "PlaybackController",
@@ -110,7 +114,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% endraw %}
 
 ### See also
-* [`PalybackController.PreviousCommandIssued`](#PreviousCommandIssued)
+* [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 
 ## Pause directive {#Pause}
 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생을 일시 정지해야 합니다.
@@ -172,7 +176,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-필수 상태 정보 없음
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
 
 ### Payload fields
 
@@ -187,7 +193,9 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{AudioPlayer.PlaybackState}}
+  ],
   "event": {
     "header": {
       "namespace": "PlaybackController",
@@ -201,7 +209,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% endraw %}
 
 ### See also
-* [`PalybackController.NextCommandIssued`](#NextCommandIssued)
+* [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
 
 ## Replay directive {#Replay}
 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 재생 위치를 오디오 스트림의 처음으로 이동시켜야 하며, 이동시킨 후 바로 오디오 스트림 재생을 시작해야 합니다. 만약 오디오 스트림 재생이 일시 정지(paused)되어 있었다면 오디오 스트림 재생을 재개(resume)해야 합니다.
@@ -373,7 +381,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용하길 권장합니다.</p>
+  <p><code>PlaybackController.VolumeDown</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.md#Decrease"><code>DiviceControl.Decrease</code></a>지시 메시지를 사용하길 권장합니다.</p>
 </div>
 
 ### Payload fields
@@ -406,7 +414,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.html#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용하길 권장합니다.</p>
+  <p><code>PlaybackController.VolumeUp</code> 지시 메시지는 더 이상 지원하지 않을 예정입니다. 이 지시 메시지 대신 <a href="/CIC/References/CICInterface/DeviceControl.md#Increase"><code>DiviceControl.Increase</code></a>지시 메시지를 사용하길 권장합니다.</p>
 </div>
 
 ### Payload fields

@@ -8,13 +8,14 @@ Clova 인증 서버의 base URL은 다음과 같습니다.
 </code></pre>
 
 ## Authorization code 요청 {#RequestAuthorizationCode}
-{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등을 파라미터로 전달해 authorization code를 요청합니다. Authorization code는 Clova access token을 발급받을 때 사용됩니다.
-
-일반적으로 사용자 인증을 받기 위해 클라이언트 기기와 페어링(Pairing)된 앱에서 인증을 처리합니다. 다만, 페어링된 앱에서 클라이언트 쪽으로 Clova access token을 전송하는 것은 보안상 이슈가 있기 때문에 이 코드를 대신 클라이언트로 보냅니다. 클라이언트는 전달받은 authorization code를 다시 Clova 인증 서버로 전달하여 [Clova access token을 요청](#RequestClovaAccessToken)해야 합니다.
 
 ```
 GET|POST /authorize
 ```
+
+{{ book.TargetServiceForClientAuth }} 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 등을 파라미터로 전달해 authorization code를 요청합니다. Authorization code는 Clova access token을 발급받을 때 사용됩니다.
+
+일반적으로 사용자 인증을 받기 위해 클라이언트 기기와 페어링(Pairing)된 앱에서 인증을 처리합니다. 다만, 페어링된 앱에서 클라이언트 쪽으로 Clova access token을 전송하는 것은 보안상 이슈가 있기 때문에 이 코드를 대신 클라이언트로 보냅니다. 클라이언트는 전달받은 authorization code를 다시 Clova 인증 서버로 전달하여 [Clova access token을 요청](#RequestClovaAccessToken)해야 합니다.
 
 ### Request header
 
@@ -28,7 +29,7 @@ GET|POST /authorize
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `client_id`     | string  | 클라이언트 ID ([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)          | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID. MAC 주소를 사용하거나 UUID 해쉬 값을 생성하면 됩니다.                          | 필수 |
+| `device_id`     | string  | 클라이언트 기기의 MAC 주소나 생성한 UUID                                                              | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
 | `response_type` | string  | 응답 유형. 현재 `"code"`만 지원합니다.                                                             | 필수 |
 | `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
@@ -48,7 +49,7 @@ GET|POST /authorize
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Response JSON object fields
 
@@ -69,7 +70,9 @@ GET|POST /authorize
 | 500 Server Internal Error | 서버 내부 오류로 인한 authorization code 발급 실패 시 받는 응답 |
 
 ### Response example
+
 {% raw %}
+
 ```json
 // 예제 1: HTTP 응답 메시지가 200 OK 상태 코드를 가지는 경우
 {
@@ -84,6 +87,7 @@ GET|POST /authorize
   "state":"FKjaJfMlakjdfTVbES5ccZ"
 }
 ```
+
 {% endraw %}
 
 {% include "./CICAuthAPI/GuestMode.md" %}
@@ -95,17 +99,18 @@ GET|POST /authorize
 
 
 ## Clova access token 요청 {#RequestClovaAccessToken}
-[발급받은 authorization code](#RequestAuthorizationCode)를 사용하여 Clova 인증 서버에 Clova access token을 요청합니다.
 
 ```
 GET|POST /token?grant_type=authorization_code
 ```
 
+[발급받은 authorization code](#RequestAuthorizationCode)를 사용하여 Clova 인증 서버에 Clova access token을 요청합니다.
+
 ### Request header
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -114,7 +119,7 @@ GET|POST /token?grant_type=authorization_code
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
 | `code`          | string  | [발급받은 authorization code](#RequestAuthorizationCode)                                                               | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                                                              | 필수 |
+| `device_id`     | string  | 클라이언트 기기의 MAC 주소나 생성한 UUID                                                                                     | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                                                 | 선택 |
 
 ### Request example
@@ -131,7 +136,7 @@ GET|POST /token?grant_type=authorization_code
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Response JSON object fields
 
@@ -169,17 +174,18 @@ GET|POST /token?grant_type=authorization_code
 
 
 ## Clova access token 갱신 {#RefreshClovaAccessToken}
-발급받은 refresh token을 사용하여 Clova access token을 갱신합니다.
 
 ```
 GET|POST /token?grant_type=refresh_token
 ```
 
+발급받은 refresh token을 사용하여 Clova access token을 갱신합니다.
+
 ### Request header
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -187,7 +193,7 @@ GET|POST /token?grant_type=refresh_token
 |---------------|---------|-----------------------------|:---------:|
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 선택 |
+| `device_id`     | string  | 클라이언트 기기의 MAC 주소나 생성한 UUID                                            | 선택 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 | `refresh_token` | string  | 인증 성공 후 발급받은 refresh token                                              | 필수 |
 
@@ -205,7 +211,7 @@ GET|POST /token?grant_type=refresh_token
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Response JSON object fields
 
@@ -242,17 +248,18 @@ GET|POST /token?grant_type=refresh_token
 
 
 ## Clova access token 삭제 {#DeleteClovaAccessToken}
-[발급받은 Clova access token](#RequestClovaAccessToken)을 삭제합니다.
 
 ```
 GET|POST /token?grant_type=delete
 ```
 
+[발급받은 Clova access token](#RequestClovaAccessToken)을 삭제합니다. 응답으로 삭제한 Clova access token에 대한 정보가 반환됩니다.
+
 ### Request header
 
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
-| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Query parameter
 
@@ -261,7 +268,7 @@ GET|POST /token?grant_type=delete
 | `access_token`  | string  | 인증 성공 후 발급받은 Clova access token                                                                                 | 필수 |
 | `client_id`     | string  | 클라이언트 ID([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                                  | 필수 |
 | `client_secret` | string  | 클라이언트 Secret([클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo) 참조)                              | 필수 |
-| `device_id`     | string  | 생성한 클라이언트 기기의 UUID                                                     | 필수 |
+| `device_id`     | string  | 클라이언트 기기의 MAC 주소나 생성한 UUID                                            | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델                                                           | 선택 |
 
 ### Request example
@@ -278,15 +285,15 @@ GET|POST /token?grant_type=delete
 
 | Response header | 설명                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>appliacation/json</code></pre></p>                   |
+| Content-Type    | <p>다음 값을 포함하고 있습니다.</p><p><pre><code>application/json</code></pre></p>                   |
 
 ### Response JSON object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `access_token`  | string  | Clova access token                               | 항상      |
+| `access_token`  | string  | 삭제한 Clova access token                               | 항상      |
 | `client_id`     | string  | 클라이언트 ID                                       | 항상      |
-| `expires_in`    | number  | Clova access token의 유효 기간(초 단위)              | 항상      |
+| `expires_in`    | number  | 삭제한 Clova access token이 가졌던 유효 기간(초 단위)              | 항상      |
 
 ### Status codes
 

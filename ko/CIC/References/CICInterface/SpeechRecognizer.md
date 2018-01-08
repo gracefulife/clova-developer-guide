@@ -14,7 +14,7 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 | [`KeepRecording`](#KeepRecording)               | Directive | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.            |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
 | [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.      |
-| [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.      |
+| [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.  |
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
@@ -103,7 +103,13 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * Little endian
 
 ### Context fields
-Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
 * [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ### Payload fields
@@ -121,13 +127,31 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 // 일반적인 사용자 음성 입력
 {
   "context": [
-    {{Alerts.AlertsState}},
-    {{AudioPlayer.PlayerState}},
-    {{Device.DeviceState}},
-    {{Device.Display}},
-    {{Clova.Location}},
-    {{Clova.SavedPlace}},
-    {{Speaker.VolumeState}}
+    {
+      "header": {
+        "namespace": "Alerts",
+        "name": "AlertsState"
+      },
+      "payload": {
+        "allAlerts": [
+          ...
+        ],
+        "activeAlerts": [
+          ...
+        ]
+      }
+    },
+    ...
+    {
+      "header": {
+        "namespace": "Speaker",
+        "name": "VolumeState"
+      },
+      "payload": {
+        "volume": 25,
+        "muted": false
+      }
+    }
   ],
   "event": {
     "header": {
@@ -146,25 +170,26 @@ Recognize 이벤트 메시지는 다음과 같은 [맥락 정보(Context)](/CIC/
 
 // SpeechRecognizer.ExpectSpeech 지시 메시지에 따른 추가적인 사용자 음성 입력
 {
-        "header": {
-            "dialogRequestId": "4951cbfe-0064-41e2-ac3a-b0e4e1b0a570",
-            "messageId": "6ab89102-668b-42eb-89d0-639253db10ba",
-            "namespace": "SpeechRecognizer",
-            "name": "Recognize"
-        },
-        "payload": {
-            "profile": "CLOSE_TALK",
-            "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
-            "speechId": "561aeecf-2096-40fa-ba17-6612e28b339f",
-            "explicit": false
-        }
+  "header": {
+      "dialogRequestId": "4951cbfe-0064-41e2-ac3a-b0e4e1b0a570",
+      "messageId": "6ab89102-668b-42eb-89d0-639253db10ba",
+      "namespace": "SpeechRecognizer",
+      "name": "Recognize"
+  },
+  "payload": {
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "speechId": "561aeecf-2096-40fa-ba17-6612e28b339f",
+      "explicit": false
+  }
 }
 
 ```
 {% endraw %}
 
 ### Audio Data
-`SpeechRecognizer.Recognize` 이벤트 메시지를 전송한 이후 다음과 같은 음성 데이터를 사용자가 음성 입력을 마치거나 [StopCapture](#StopCapture) 지시 메시지를 받기 전까지 계속 전달합니다. 단, 이 경우 별도의 메시지 파트로 메세지를 전송하는게 아니라 같은 메시지 파트 내에서 계속 스트리밍 해야 함을 의미합니다.
+`SpeechRecognizer.Recognize` 이벤트 메시지를 전송한 이후 다음과 같은 음성 데이터를 사용자가 음성 입력을 마치거나 [StopCapture](#StopCapture) 지시 메시지를 받기 전까지 계속 전달합니다. 이때, 음성 데이터는 같은 HTTP 요청 안에서 멀티 파트 메시지로 계속 전딜되어야 합니다.
+
 ```
 [ Message Header ]
 Content-Disposition: form-data; name="audio"

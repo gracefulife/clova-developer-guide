@@ -42,6 +42,7 @@
   * [이벤트 메시지 전송하기](/CIC/Guides/Interact_with_CIC.md#SendEvent)
   * [지시 메시지 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
   * [메시지 큐 관리하기](/CIC/Guides/Interact_with_CIC.md#ManageMessageQ)
+  * [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
 * [CIC API 레퍼런스](/CIC/References/CIC_API.md)
   * [API 기본 정보](/CIC/References/CIC_API.md#BasicInfo)
     * [Base URL](/CIC/References/CIC_API.md#BaseURL)
@@ -145,6 +146,7 @@
       * [Discovery](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md)
       * [Error](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
       * [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
+* [Extension 예제](/CEK/Examples/Extension_Examples.md)
 
 ## Clova Developer Console
 * [Clova developer console 개요](/DevConsole/ClovaDevConsole_Overview.md)
@@ -162,7 +164,7 @@
   * [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)
     * [Interaction 모델 빌드하기](/DevConsole/Guides/CEK/Test_Extension.md#BuildInteractionModel)
     * [Interaction 모델 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md#TestInteractionModel)
-    * [테스트 모드 사용하기](/DevConsole/Guides/CEK/Test_Extension.md#UsingTestMode)
+    * [Clova 앱으로 extension 테스하기](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
   * [Extension 배포하기](/DevConsole/Guides/CEK/Deploy_Extension.md)
     * [배포 정보 입력](/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo)
     * [개인 정보 및 규정 준수 정보 입력](/DevConsole/Guides/CEK/Deploy_Extension.md#InputComplianceInfo)
