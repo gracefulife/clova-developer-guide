@@ -178,11 +178,11 @@ Verify that the access token is present in the field and that it is valid.
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "FreeTalk",
+      "name": "OrderPizza",
       "slots": {
-        "q": {
-          "name": "q",
-          "value": "How are you"
+        "pizzaType": {
+          "name": "pizzaType",
+          "value": "pepperoni"
         }
       }
     }

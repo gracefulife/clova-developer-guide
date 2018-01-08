@@ -6,7 +6,7 @@
   "author": "NAVER Corp.",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v2.6",
+    "DocVersion": "v2.7",
     "Locale": "ko-KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",

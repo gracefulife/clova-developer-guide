@@ -28,7 +28,7 @@ Clova 플랫폼과 연동하는 클라이언트 기기나 [Clova extension](#Clo
 * Clova 서비스 관련 통계 자료 제공 (추후 제공 예정)
 
 ### Clova extension {#ClovaExtension}
-음악, 쇼핑, 금융 등과 같은 외부 서비스(3rd party service)나 집안의 IoT 기기 제어 등 사용자가 Clova를 통해 다양한 경험을 제공받을 수 있도록 Clova에게 확장된 기능을 제공하는 웹 애플리케이션입니다. 일반적으로 extension이라 부르며, Clova 플랫폼은 현재 다음과 같은 두 종류의 Clova extension을 지원 및 제공하고 있습니다. 일반 사용자에게는 "확장 기능"이라는 표현으로 제공됩니다.
+음악, 쇼핑, 금융 등과 같은 외부 서비스(3rd party service)나 집안의 IoT 기기 제어 등 사용자가 Clova를 통해 다양한 경험을 제공받을 수 있도록 Clova에게 확장된 기능을 제공하는 웹 애플리케이션입니다. 일반적으로 extension이라 부르며, Clova 플랫폼은 현재 다음과 같은 두 종류의 Clova extension을 지원 및 제공하고 있습니다. 일반 사용자에게는 "확장 서비스"라는 표현으로 제공됩니다.
 * [Custom extension](#CustomExtension)
 * [Clova Home extension](#ClovaHomeExtension)
 
@@ -110,7 +110,7 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 사용자의 요청 발화가 어떤 식으로 입력될 수 있는지 예문을 표현한 목록입니다. [Intent](#Intent)별로 복수의 사례를 정의할 수 있으며, 예문에는 [slot](#Slot)이 표시됩니다. 자세한 내용은 [Interaction 모델 정의](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)를 참조합니다.
 
 ### 세션 ID {#SessionID}
-세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드(예, 프리토킹)나 이어지는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extensions Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 `false`로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
+세션 ID는 [extension](#ClovaExtension)이 사용자 요청의 맥락을 구분하기 위한 세션 식별자입니다. 일반적으로 일회성의 사용자 요청은 매번 달라지는 세션 ID를 가지지만, 특정 모드나 연속되는(multi-turn) 사용자의 요청인 경우 같은 세션 ID를 가집니다. 이 세션 ID는 [Clova Extensions Kit](#CEK)가 extension에 사용자 요청을 전달할 때 생성됩니다. 세션 ID가 유지되는 경우는 [LaunchRequest](#LaunchRequest)와 같은 요청을 받거나 extension이 필요에 의해 `response.shouldEndSession` 필드를 `false`로 설정한 경우입니다. 자세한 내용은 [Custom extension 만들기](/CEK/Guides/Build_Custom_Extension.md) 문서를 참조합니다.
 
 ### 이벤트 메시지 (Event) {#Event}
 이벤트 메시지는 클라이언트에서 [Clova Interface Connect](#CIC)로 전달하는 메시지이며, 사용자 요청(음성 입력)을 전달하거나 클라이언트의 상태 값이 변경된 것을 알릴 때 이 메시지를 전송합니다.

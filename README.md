@@ -35,7 +35,7 @@ git clone https://oss.navercorp.com/JTF-P6/platform_technical_doc.git
 gitbook install
 ```
 
-3. Run one of following commands:
+3. Run one of the following commands:
 
 ```bash
 # If you want to make PDF file.

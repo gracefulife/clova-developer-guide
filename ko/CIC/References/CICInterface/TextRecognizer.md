@@ -7,7 +7,14 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 
 ### Context fields
 
-필수 상태 정보 없음
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -18,7 +25,15 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 {% raw %}
 ```json
 {
-  "context":[],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}}
+  ],
   "event": {
     "header": {
       "namespace": "TextRecognizer",
@@ -36,3 +51,10 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 
 ### See also
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)

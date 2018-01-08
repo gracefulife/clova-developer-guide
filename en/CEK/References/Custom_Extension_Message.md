@@ -157,11 +157,11 @@ Once Clova analyzes a user request, CEK forwards a request message to your custo
   "request": {
     "type": "IntentRequest",
     "intent": {
-      "name": "FreeTalk",
+      "name": "OrderPizza",
       "slots": {
-        "q": {
-          "name": "q",
-          "value": "How are you"
+        "pizzaType": {
+          "name": "pizzaType",
+          "value": "pepperoni"
         }
       }
     }
