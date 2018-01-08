@@ -117,16 +117,17 @@ Content-Type: application/octet-stream
 
 
 ## Downchannel 구성 {#EstablishDownchannel}
+
+```
+GET /v1/directives
+```
+
 클라이언트는 제일 먼저 CIC와 downchannel을 구성해야 합니다. Downchannel은 특정 조건이나 필요에 의해 CIC의 주도(Cloud-initiated)로 클라이언트에 보내지는 지시 메시지를 수신할 때 사용됩니다. Downchannel을 구성하는 방법에 대한 자세한 내용은 [CIC 연결하기](/CIC/Guides/Interact_with_CIC.md#CreateConnection)를 참조합니다.
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
   <p>Downchannel을 구성하지 않으면 CIC로 <a href="#SendEvent">이벤트 메시지를 전송</a>할 수 없습니다.</p>
 </div>
-
-```
-GET /v1/directives
-```
 
 ### Request header
 
@@ -222,11 +223,12 @@ Content-Type: application/json; charset=utf-8
 {% endraw %}
 
 ## 이벤트 메시지 전송 {#SendEvent}
-클라이언트는 사용자의 음성 입력을 보내거나 클라이언트의 현재 상태 정보를 보낼 때 이벤트 메시지를 전송해야 합니다. HTTP 요청으로 CIC에 이벤트 메시지를 전송하며, HTTP 응답으로 지시 메시지를 받게 됩니다. 이벤트 메시지를 전송하거나 받은 지시 메시지를 처리하는 방법에 대한 자세한 내용은 [이벤트 메시지 전송하기](/CIC/Guides/Interact_with_CIC.md#SendEvent)와 [지시 메시지 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDirective)를 참조합니다.
 
 ```
 POST /v1/events
 ```
+
+클라이언트는 사용자의 음성 입력을 보내거나 클라이언트의 현재 상태 정보를 보낼 때 이벤트 메시지를 전송해야 합니다. HTTP 요청으로 CIC에 이벤트 메시지를 전송하며, HTTP 응답으로 지시 메시지를 받게 됩니다. 이벤트 메시지를 전송하거나 받은 지시 메시지를 처리하는 방법에 대한 자세한 내용은 [이벤트 메시지 전송하기](/CIC/Guides/Interact_with_CIC.md#SendEvent)와 [지시 메시지 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDirective)를 참조합니다.
 
 ### Request header
 
@@ -261,18 +263,33 @@ Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8
 
 {
-  "context": [
-    {
-      "header": {
-        "namespace": "Speaker",
-        "name": "VolumeState"
-      },
-      "payload": {
-        "volume": 25,
-        "muted": false
-      }
+"context": [
+  {
+    "header": {
+      "namespace": "Alerts",
+      "name": "AlertsState"
+    },
+    "payload": {
+      "allAlerts": [
+        ...
+      ],
+      "activeAlerts": [
+        ...
+      ]
     }
-  ],
+  },
+  ...
+  {
+    "header": {
+      "namespace": "Speaker",
+      "name": "VolumeState"
+    },
+    "payload": {
+      "volume": 25,
+      "muted": false
+    }
+  }
+],
   "event": {
     "header": {
       "namespace": "SpeechRecognizer",
@@ -305,8 +322,8 @@ Content-Type: application/octet-stream
 | Response message header | 설명                                                                |
 |-------------------------|--------------------------------------------------------------------|
 | Content-Disposition     | 내부적 사용을 위한 콘텐츠 메타 정보                                         |
-| Content-Id              | 메시지 식별자<ul><li>UUID 형태</li><li>클라이언트는 지시 메시지의 <code>payload</code> 필드에 포함된 <code>cid:[UUID]</code> 값으로 처리해야 할 메시지를 식별할 수 있습니다.</li></ul> |
-| content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul>                     |
+| Content-ID              | 메시지 식별자<ul><li>UUID 형태</li><li>클라이언트는 지시 메시지의 <code>payload</code> 필드에 포함된 <code>cid:[UUID]</code> 값으로 처리해야 할 메시지를 식별할 수 있습니다.</li></ul> |
+| Content-Type            | <ul><li>JSON 데이터: <code>application/json; charset=UTF-8</code></li><li>바이너리 음성 데이터: <code>application/octet-stream</code></li></ul>                     |
 
 ### Response message
 CIC는 HTTP 응답으로 클라이언트에게 동작을 수행하도록 명세한 [지시 메시지](#Directive)와 부가적인 음성 정보를 [multipart 메시지](#MultipartMessage)로 보냅니다. 지시 메시지에 어떤 정보를 담겼는지는 CIC가 내려준 지시 메시지에 따라 그 내용과 구성이 달라질 수 있으며, 이를 [인터페이스](#CICInterface)로 구분하고 있습니다.
@@ -355,7 +372,7 @@ Content-Type: application/json; charset=utf-8
 
 --b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 Content-Disposition: form-data; name="attachment-39b2f844-b168-4dc2-bea7-d5c249e446e3"
-Content-Id: d329085c-379e-48aa-b871-7ecebdbe831d
+Content-ID: d329085c-379e-48aa-b871-7ecebdbe831d
 Content-Type: application/octet-stream
 
 [[ binary audio attachment ]]
@@ -458,6 +475,21 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 ```json
 {
   "context": [
+    {
+      "header": {
+        "namespace": "Alerts",
+        "name": "AlertsState"
+      },
+      "payload": {
+        "allAlerts": [
+          ...
+        ],
+        "activeAlerts": [
+          ...
+        ]
+      }
+    },
+    ...
     {
       "header": {
         "namespace": "Speaker",

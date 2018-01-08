@@ -100,10 +100,9 @@ CIC는 사용자가 액션 타이머의 목록을 요청하면 사용자에게 �
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>ActionTimerList 템플릿이 사용된 화면 예제를 준비하고 있습니다.</p>
-</div>
+다음은 {{ book.OrientedService }}가 배포한 모바일용 Clova 앱에서 ActionTimerList 템플릿의 내용을 표현한 UI 예제입니다.
+
+![](/CIC/Resources/Images/Content_Template-ActionTimerList.png)
 
 ## See also
 * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)

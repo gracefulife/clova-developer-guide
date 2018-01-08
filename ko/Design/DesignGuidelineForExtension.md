@@ -91,7 +91,7 @@ Interaction 모델을 Clova developer console에서 정의하기 전에 우선 i
 
 ### Intent {#Intent}
 
-Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 주로 사용자 발화문에 사용된 **동사**형 요소에 의해 Intent가 구분됩니다. Intent는 custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다. Extension에서 어떤 built-in intent를 사용할지 선택할 수 있습니다. 어떤 built-in intent를 사용할지 결정했다면 선택한 built-in intent를 등록하려는 extension에서 처리할 수 있게 만들어야 합니다.
+Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 주로 사용자 발화문에 사용된 **동사**형 요소에 의해 Intent가 구분됩니다. Intent는 custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다.
 
 | Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
 |---------------------------|-------------------|----------------------------------------------------------|

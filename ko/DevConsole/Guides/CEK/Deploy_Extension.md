@@ -1,5 +1,5 @@
 # Extension 배포하기
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 Clova Home extension을 [Clova developer console에 등록](/DevConsole/Guides/CEK/Register_Extension.md)했다면 등록한 extension을 Clova 서비스에 배포할 수 있습니다. 배포하면 일반 사용자들이 **확장 기능 관리**라는 메뉴에서 배포된 extension을 사용할 수 있게 됩니다.
+[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 Clova Home extension을 [Clova developer console에 등록](/DevConsole/Guides/CEK/Register_Extension.md)했다면 등록한 extension을 Clova 서비스에 배포할 수 있습니다. 배포하면 일반 사용자들이 **확장 서비스 관리**라는 메뉴(Extension 스토어)에서 배포된 extension을 사용할 수 있게 됩니다.
 
 Extension을 배포할 때 일반적으로 다음 항목을 수행해야 합니다.
 
@@ -17,26 +17,26 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ![](/DevConsole/Resources/Images/DevConsole-Input_Deployment_Info.png)
 
-* Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확장 기능 관리** 메뉴에서 사용자에게 제공됩니다. 다음과 같은 정보들이 입력됩니다.
+* Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확장 서비스 관리** 메뉴(Extension 스토어)에서 사용자에게 제공됩니다. 다음과 같은 정보들이 입력됩니다.
   - **분류**: Extension의 종류로서 사용자가 extension 종류별로 목록을 확인하거나 검색할 때 이용됩니다.
-  - **Extension 요약 설명**: Extension 상세 페이지에 표시할 요약 설명입니다.
-  - **Extension 상세 설명**: Extension 상세 페이지에서 사용자가 좀 더 자세한 설명을 원할 경우 제공할 상세 설명입니다.
-  - **대표 발화 예시**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. 첫 번째 예시문은 extension 목록을 보여줄 때 표시됩니다.
+  - **Extension 설명**: **Extension 페이지**에서 사용자에게 제공할 extension의 설명입니다.
+  - **Extension 요약 설명**: **Extension 스토어 홈**에서 프로모션 등의 안내 문구를 표시할 때 사용될 수 있는 설명입니다.
+  - **대표 발화 예시**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. **Extension 페이지**에 표시됩니다. 특히, 첫 번째 예시문은 **Extension 스토어 홈**에서 extension 목록을 보여줄 때 표시됩니다.
   - **검색 키워드**: 사용자가 extension을 검색할 때 특정 키워드가 포함되면 검색 결과에 표시되도록 해주는 검색어입니다.
-  - **작은 아이콘**: Extension 아이콘을 나타낼 이미지 파일입니다.(108px X 108px)
-  - **큰 아이콘**: Extension 아이콘의 큰 이미지로서 추후 사용 예정입니다.(512px X 512px)
+  - **작은 아이콘**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **Extension 스토어 홈**이나 **Extension 페이지**에 표시됩니다.
+  - **큰 아이콘**: 큰 크기(512px X 512px)의 extension 아이콘 파일로서 추후 사용될 예정입니다.
 * **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LinkUserAccount.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시와 해당 동작이 제대로 동작했는지 판단할 수 있는 [세부 목표](/Design/DesignGuidelineForExtension.md#SettingGoal) 등을 입력합니다.
 * 서비스 국가 및 지역: 해당 extension이 서비스를 제공할 국가나 지역으로 현재 선택할 수 있는 지역이 없고 한국에만 extension을 배포할 수 있습니다.
 
-이렇게 입력된 정보는 Clova 앱 **확장 기능 관리** 메뉴에서 다음과 같이 표시됩니다.
+이렇게 입력된 정보는 Clova 앱 **확장 서비스 관리** 메뉴(Extension 스토어)에서 다음과 같이 표시됩니다.
 
-| Extension 목록 표시 | Extension 상세 표시 |
+| Extension 스토어 홈 | Extension 페이지    |
 |-------------------|-------------------|
-| ![Extension List](/DevConsole/Resources/Images/DevConsole-Store_UI_Example_Extension_List.png) | ![Extension Details](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Details.png) |
+| ![Extension List](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Store_Home.png) | ![Extension Details](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Page.png) |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Extension 상세 설명 페이지에 표시되는 일부 정보는 <a href="/DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">Extension 기본 정보를 등록</a>할 때 입력된 정보를 활용합니다.</p>
+  <p><strong>Extension 페이지</strong>에 표시되는 일부 정보는 <a href="/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo">Extension 기본 정보를 등록</a>할 때 입력된 정보를 활용합니다.</p>
 </div>
 
 ## 개인 정보 관리 및 규정 준수 정보 입력 {#InputComplianceInfo}
@@ -55,7 +55,7 @@ Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개�
 * **개인 정보 정책 제공 URL**: Extension이 개인 정보를 수집하는 경우 이와 관련된 정책 정보 페이지를 입력합니다. 이는 extension 설명 페이지의 맨 아래에 표시됩니다.
 * **면책 조항 제공 URL**: Extension과 관련한 면책 조항을 보여주는 페이지를 입력합니다. 이는 개인 정보 정책 URL과 같이 extension 설명 페이지의 맨 아래에 표시됩니다.
 
-**개인 정보 정책 제공 URL**과 **면책 조항 제공 URL**에 입력된 내용은 extension 상세 설명 페이지에서 다음과 같이 표시됩니다.
+**개인 정보 정책 제공 URL**과 **면책 조항 제공 URL**에 입력된 내용은 **Extension 페이지**에서 다음과 같이 표시됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Policy.png)
 
