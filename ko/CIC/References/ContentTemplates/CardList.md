@@ -30,7 +30,7 @@
 | `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.          |
 | `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             |
 | `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오 혹은 오디오의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
-| `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    |
+| `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>, <code>Type5</code>, <code>Type6</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    |
 | `type`                      | string  | Content template 구분자. `"CardList"` 값을 가집니다.                                                                       |
 
 ## Template example
@@ -355,6 +355,118 @@
     },
     ...
   ]
+}
+
+// Type5 예제
+// 사용자 요청: ASMR 들려줘
+{
+  "cardList": [
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "07:25"
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://tvcast1.phinf.naver.net/20180105_40/rYaFz_1515134168871cxwhn_JPEG/1515134043644.jpg"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
+      },
+      "title": {
+        "type": "string",
+        "value": "[<mark>ASMR</mark>] 커피 한잔하실래요?"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": "http://m.tv.naver.com/v/2509121"
+      }
+    },
+    {
+      "description": [
+        {
+          "type": "string",
+          "value": "05:05"
+        },
+        {
+          "type": "string",
+          "value": ""
+        },
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "imageUrl": {
+        "type": "url",
+        "value": "http://tvcast2.phinf.naver.net/20180104_140/7QzKq_15150467287668gEkL_JPEG/1515046724731.jpg"
+      },
+      "linkUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "press": {
+        "type": "string",
+        "value": ""
+      },
+      "publishDate": {
+        "type": "date",
+        "value": ""
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
+      },
+      "title": {
+        "type": "string",
+        "value": "[<mark>ASMR</mark>] 물 끓는 소리 영상"
+      },
+      "videoUrl": {
+        "type": "url",
+        "value": "http://m.tv.naver.com/v/2503662"
+      }
+    },
+    ...
+  ],
+  "meta": {
+    "version": {
+      "type": "string",
+      "value": "v0.1"
+    }
+  },
+  "subType": "",
+  "type": "CardList"
 }
 
 ```

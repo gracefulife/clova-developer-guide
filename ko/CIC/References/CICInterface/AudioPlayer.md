@@ -189,7 +189,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -228,7 +228,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -270,7 +270,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -307,7 +307,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -347,7 +347,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -384,7 +384,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -421,7 +421,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -458,7 +458,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ```json
 {
   "context": [
-    {{AudioPlayer.PlaybackState}},
+    {{AudioPlayer.PlaybackState}}
   ],
   "event": {
     "header": {
@@ -595,7 +595,7 @@ AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보�
 | `[Custom Field]`         | any     | 오디오 스트림 재생 문맥에 추가로 필요한 값을 서비스 제공자 임의대로 추가할 수 있습니다.<div class="danger"><p><strong>Caution!</strong></p><p>서비스 제공자에 의해 추가된 임의의 필드 값을 클라이언트가 이용해서는 안되며 이는 문제를 발생시킬 수 있습니다. 또한, 이 필드 값은 오디오 재생 상태를 전달할 때 <a href="/CIC/References/Context_Objects.html#PlaybackState">PlaybackState 문맥 정보</a>의 `stream` 필드에 그대로 첨부되어야 합니다.</p></div>                                | 선택/조건부 |
 
 #### Remarks
-* 클라이언트가 `durationInMilliseconds` 필드에 지정된 시간까지 음악 재생을 완료하면 [`AudioPlayer.PlayFinished`](#PlayFinished) 지시 메시지를 CIC로 전송해야 합니다.
+* 클라이언트가 `durationInMilliseconds` 필드에 지정된 시간까지 음악 재생을 완료하면 [`AudioPlayer.PlayFinished`](#PlayFinished) 이벤트 메시지를 CIC로 전송해야 합니다.
 * 클라이언트는 `durationInMilliseconds` 필드에 지정된 시간을 초과하여 사용자가 오디오 스트림을 탐색(seek)할 수 없도록 UI를 제공해야 합니다.
 * 클라이언트가 현재 재생 중인 상태를 CIC에 보고할 때 [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)의 `totalInMilliseconds` 필드 값을 `durationInMilliseconds` 필드에 지정된 값으로 입력하면 됩니다.
 

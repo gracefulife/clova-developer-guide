@@ -10,6 +10,7 @@
 | AudioPlayer        | [`StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)    | [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | Clova              | [`ExpectLogin`](/CIC/References/CICInterface/Clova.md#ExpectLogin)              | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다.          |
 | Clova              | [`FinishExtension`](/CIC/References/CICInterface/Clova.md#FinishExtension)      | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.                                             |
+| Clova              | [`HandleDelegatedEvent`](/CIC/References/CICInterface/Clova.md#HandleDelegatedEvent) | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)하도록 지시합니다.   |
 | Clova              | [`Hello`](/CIC/References/CICInterface/Clova.md#Hello)                          | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.                                       |
 | Clova              | [`Help`](/CIC/References/CICInterface/Clova.md#Help)                            | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.                                       |
 | Clova              | [`RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate)        | 클라이언트에게 템플릿을 표시하도록 지시합니다.                                                     |

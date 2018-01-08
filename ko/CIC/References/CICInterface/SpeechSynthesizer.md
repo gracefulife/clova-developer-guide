@@ -14,7 +14,7 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 
 ### Context fields
 
-필수 상태 정보 없음
+없음
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -70,8 +70,8 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 
 {% raw %}
 ```
-// cid:{Content-Id} 포맷
-// Content-Id가 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369인 오디오 데이터 메시지를 재생해야 합니다.
+// cid:{Content-ID} 포맷
+// Content-ID가 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369인 오디오 데이터 메시지를 재생해야 합니다.
 
 --Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"
@@ -97,7 +97,7 @@ Content-Type: application/json; charset=utf-8
 
 --Boundary-Text
 Content-Disposition: form-data; name="attachment"
-Content-Id: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
+Content-ID: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 Content-Type: application/octet-stream
 
 { Audio Attachment }

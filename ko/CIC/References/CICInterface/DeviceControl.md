@@ -2,7 +2,7 @@
 
 DeviceControl 인터페이스는 클라이언트 기기를 제어하거나 클라이언트 기기 제어 수행 결과를 CIC로 보고할 때 사용되는 네임스페이스입니다.
 
-일부 사용자의 요청은 클라이언트 기기를 제어하는 요청일 수 있습니다. 분석된 사용자의 요청이 클라이언트 기기를 제어하는 요청이면 네임스페이스 `DeviceControl`인 지시 메시지를 받게 되며 클라이언트는 수신한 지시 메시지에 맞게 클라이언트 기기를 제어해야 합니다. 클라이언트 기기 제어를 수행한 후 그 결과를 이벤트 메시지를 사용하여 CIC에 전송해야 합니다.
+일부 사용자의 요청은 클라이언트 기기를 제어하는 요청일 수 있습니다. 분석된 사용자의 요청이 클라이언트 기기를 제어하는 요청이면 네임스페이스 `DeviceControl`인 지시 메시지를 받게 되며 클라이언트는 수신한 지시 메시지에 맞게 클라이언트 기기를 제어해야 합니다. 클라이언트 기기 제어를 수행한 후 그 결과를 이벤트 메시지를 사용하여 CIC에 전송해야 합니다. 자세한 설명은 [클라이언트 기기 제어 동작 구조](#DeviceContorlWorkFlow)를 참조합니다.
 
 DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
@@ -26,14 +26,39 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | [`TurnOff`](#TurnOff)                     | Directive | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                           |
 | [`TurnOn`](#TurnOn)                       | Directive | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                   |
 
+## 클라이언트 기기 제어 동작 구조 {#DeviceContorlWorkFlow}
+
+일반적으로 클라이언트 기기의 제어는 다음과 같은 순서로 이뤄집니다.
+
+![](/CIC/Resources/Images/CIC_DeviceControl_Work_Flow1.png)
+
+1. 사용자가 클라이언트 기기의 제어를 발화로 요청([`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize))합니다. 이때, 이벤트 메시지에는 [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) 맥락 정보가 포함되어 있어야 합니다.
+2. CIC는 [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) 맥락 정보에 있는 `actions[]` 필드를 분석하여 사용자의 클라이언트 기기 제어 요청을 해당 클라이언트가 수행할 수 있는지 판단합니다.
+3. 클라이언트가 해당 요청을 처리할 수 있을 경우 CIC는 관련 제어 요청이 담긴 DeviceControl API의 지시 메시지를 클라이언트에게 전송합니다.
+4. 클라이언트는 전달받은 지시 메시지를 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+
+또한, Clova 앱이 사용자의 계정에 등록된 클라이언트 기기의 상태를 파악하기 위해 다음과 같이 상태 정보를 요청할 때도 있습니다.
+
+![](/CIC/Resources/Images/CIC_DeviceControl_Work_Flow2.png)
+
+1. 클라이언트(주로 Clova 앱)가 [`DeviceControl.ReqeustStateSynchronization`](#ReqeustStateSynchronization) 이벤트 메시지를 CIC에게 전송합니다.
+2. CIC는 사용자 계정에 등록된 모든 클라이언트(Clova 앱 제외)에게 [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)로 전송합니다.
+3. [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 수신한 클라이언트는 [`DeviceControl.ReportState`](#ReportState) 이벤트 메시지를 CIC에게 전송하여 현재 자신의 상태를 보고 해야 합니다.
+4. CIC는 수집된 클라이언트 상태 정보를 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지를 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 이용하여 Clova 앱에게 보냅니다.
+5. [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지를 받게 되면 Clova 앱은 다른 클라이언트 기기의 상태를 업데이트합니다.
+
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>DeviceControl API는 현재 구현 예정인 명세입니다. 사전 인터페이스 협의를 위해 미리 기술되었으며, 추후 내용이 변경될 수도 있습니다.</p>
+  <p>클라이언트는 사용자 계정에 새로이 추가되거나 CIC에 다시 연결되었을 때 <a href="#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a> 지시 메시지를 받게 됩니다. 이때, 클라이언트는 Clova 앱에 상태를 공유할 때처럼 동작하면 됩니다.</p>
 </div>
 
 ## ActionExecuted event {#ActionExecuted}
 
 클라이언트는 기기 제어를 정상적으로 수행한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다.
+
+### Context fields
+
+없음
 
 ### Payload fields
 
@@ -52,6 +77,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -85,6 +111,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패한 경우 이 이벤트 메시지를 CIC로 전송해야 합니다.
 
+### Context fields
+
+없음
+
 ### Payload fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -103,6 +133,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -535,6 +566,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 * CIC로부터 [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 받은 경우 `DeviceControl.ReportState` 이벤트 메시지를 사용하여 현재 상태를 보고해야 합니다.
 * 이 이벤트 메시지를 통해 보고된 상태 정보는 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지 통해 사용자 계정에 등록된 모든 클라이언트에게 보내집니다.
+* 이 이벤트 메시지에 대해 응답으로 반환되는 지시 메시지는 없으며, HTTP 응답이 `204 No Content`로 반환됩니다.
 
 ### Message example
 
@@ -542,67 +574,9 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "context": {
-    "header": {
-      "namespace": "Device",
-      "name": "DeviceState"
-    },
-    "payload": {
-      "localTime": "2017-04-06T13:34:15.074361+08:28",
-      "bluetooth": {
-          "actions": [
-              "BtConnect",
-              "BtDisconnect",
-              "BtStartPairing",
-              "BtStopPairing",
-              "TurnOff",
-              "TurnOn"
-          ],
-          "btlist": [
-              {
-                  "name": "My Phone",
-                  "address": "44:00:10:f1:1f:f5",
-                  "connected": false
-              },
-              {
-                  "name": "My Speaker",
-                  "address": "29:01:11:1f:12:89",
-                  "connected": true
-              }
-          ],
-          "state": "on"
-      },
-      "wifi": {
-          "actions": [
-              "TurnOff",
-              "TurnOn"
-          ],
-          "networks": [
-            {
-              "name": "home_wlan",
-              "connected": true
-            },
-            {
-              "name": "guest_wlan",
-              "connected": false
-            }
-          ],
-          "state": "on"
-      },
-      "battery": {
-          "actions": [],
-          "value": 99,
-          "charging": true
-      },
-      "flashLight": {
-          "actions": [
-              "TurnOff",
-              "TurnOn"
-          ],
-          "state": "off"
-      }
-    }
-  },
+  "context": [
+    {{Device.DeviceState}}
+  ],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -625,13 +599,18 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다. CIC는 이 이벤트 메시지를 받으면, 사용자의 계정에 등록된 모든 클라이언트에게 [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 전송합니다.
 
+### Context fields
+
+없음
+
 ### Payload fields
 
 없음
 
 ### Remarks
 
-이 이벤트 메시지에 대한 결과로 추후 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지를 받게 됩니다.
+* 이 이벤트 메시지에 대한 결과로 추후 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지를 받게 됩니다.
+* 이 이벤트 메시지에 대해 응답으로 반환되는 지시 메시지는 없으며, HTTP 응답이 `204 No Content`로 반환됩니다.
 
 ### Message example
 
@@ -639,6 +618,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
+  "context": [],
   "event": {
     "header": {
       "namespace": "DeviceControl",

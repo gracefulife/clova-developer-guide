@@ -4,13 +4,15 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectLogin`](#ExpectLogin)               | Directive | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다. |
-| [`FinishExtension`](#FinishExtension)       | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
-| [`Hello`](#Hello)                           | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
-| [`Help`](#Help)                             | Directive | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.       |
-| [`RenderTemplate`](#RenderTemplate)         | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
-| [`RenderText`](#RenderText)                 | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
-| [`StartExtension`](#StartExtension)         | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
+| [`ExpectLogin`](#ExpectLogin)                    | Directive | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다. |
+| [`FinishExtension`](#FinishExtension)            | Directive | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.             |
+| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)하도록 지시합니다.   |
+| [`Hello`](#Hello)                                | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
+| [`Help`](#Help)                                  | Directive | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.       |
+| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | 클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다.  |
+| [`RenderTemplate`](#RenderTemplate)              | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
+| [`RenderText`](#RenderText)                      | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
+| [`StartExtension`](#StartExtension)              | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
 
 ## ExpectLogin directive {#ExpectLogin}
 
@@ -29,14 +31,14 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "RequestLogin"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "RequestLogin"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -81,6 +83,45 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 ### See also
 * [`Clova.StartExtension`](#StartExtension)
 
+## HandleDelegatedEvent directive {#HandleDelegatedEvent}
+
+클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)하도록 지시합니다. 사용자는 Clova 앱을 사용할 때 요청에 대한 처리 결과를 Clova 앱이 아닌 사용자의 다른 클라이언트 기기가 결과를 받아서 처리하도록 지정할 수 있습니다. 이 지시 메시지는 결과 처리를 위임받은 클라이언트 기기에게 전달되며, 이 지시 메시지를 받은 클라이언트는 [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) 이벤트 메시지를 CIC로 전송하여 사용자가 위임한 요청의 처리 결과를 받아야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `delegationId` | string  | 위임된 요청의 ID. 추후 [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) 이벤트 메시지를 전송할 때 `payload`에 이 값을 포함시켜야 합니다.         | 항상     |
+
+### Remarks
+
+이 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "messageId": "b17df741-2b5b-4db4-a608-85ecb1307b33",
+      "namespace": "Clova",
+      "name": "HandleDelegatedEvent"
+    },
+    "payload": {
+      "delegationId": "99e86204-710a-4e94-b949-a763e78348a7"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [Clova.ProcessDelegatedEvent](#ProcessDelegatedEvent)
+* [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
+
 ## Hello directive {#Hello}
 
 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다. 클라이언트는 이 지시 메시지를 통해 Clova 서비스에 대한 [접속 시도](/CIC/Guides/Interact_with_CIC.md#CreateConnection)가 제대로 수행되었는지 확인할 수 있습니다.
@@ -98,14 +139,14 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "Hello"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "Hello"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -128,14 +169,14 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "Help"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "Help"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -143,6 +184,66 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ### See also
 없음
+
+## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
+
+클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다. 이 이벤트 메시지를 CIC로 보낼 때 [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 값을 이 메시지의 `payload` 필드에 포함시켜야 합니다. 클라이언트는 이 지시 메시지에 대한 응답으로 사용자가 Clova 앱으로 요청했던 것에 대한 결과를 받게 됩니다.
+
+### Context fields
+
+다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
+* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `delegationId` | string  | 위임된 요청의 ID. [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 필드 값을 그대로 입력해야 합니다.         | 필수     |
+
+### Message example
+{% raw %}
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "Clova",
+      "name": "ProcessDelegatedEvent",
+      "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
+    },
+    "payload": {
+      "delegationId": "99e86204-710a-4e94-b949-a763e78348a7"
+    }
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`Clova.HandleDelegatedEvent`](#HandleDelegatedEvent)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
+* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
+* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
+* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+* [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
 
 ## RenderTemplate directive {#RenderTemplate}
 
