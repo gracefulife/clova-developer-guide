@@ -1,0 +1,2249 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <title>Clova Developer Guide</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="LINE Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CIC_Overview.html" />
+    
+    
+    <link rel="prev" href="../Terms.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Documentation summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Copyright.html">
+            
+                <a href="../Copyright.html">
+            
+                    
+                    Copyright
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Terms.html">
+            
+                <a href="../Terms.html">
+            
+                    
+                    Terms and abbreviations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="CIC_Overview.html">
+            
+                <a href="CIC_Overview.html">
+            
+                    
+                    CIC overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="CIC_Overview.html">
+            
+                <a href="CIC_Overview.html#WhatisCIC">
+            
+                    
+                    What is CIC?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="CIC_Overview.html">
+            
+                <a href="CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="CIC_Overview.html">
+            
+                <a href="CIC_Overview.html#DialogModel">
+            
+                    
+                    Dialog model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html">
+            
+                    
+                    Interacting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    Connecting with CIC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Creating Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    Creating connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    Getting authorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    Managing connection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    Sending events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    Handling directives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="Guides/Interact_with_CIC.html">
+            
+                <a href="Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    Managing message queues
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html">
+            
+                    
+                    CIC API reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#BasicInfo">
+            
+                    
+                    API basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.1" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#BaseURL">
+            
+                    
+                    Base URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#MultipartMessage">
+            
+                    
+                    Multipart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#EstablishDownchannel">
+            
+                    
+                    Establishing downchannel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#SendEvent">
+            
+                    
+                    Sending events to CIC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#CICMessageFormat">
+            
+                    
+                    Message format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.4.1" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#Event">
+            
+                    
+                    Event message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4.2" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#Directive">
+            
+                    
+                    Directive message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4.3" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#Error">
+            
+                    
+                    Error message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="References/CIC_API.html">
+            
+                <a href="References/CIC_API.html#CICInterface">
+            
+                    
+                    Interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.5.1" data-path="References/CICInterface/Alerts.html">
+            
+                <a href="References/CICInterface/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.2" data-path="References/CICInterface/AudioPlayer.html">
+            
+                <a href="References/CICInterface/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.3" data-path="References/CICInterface/Clova.html">
+            
+                <a href="References/CICInterface/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.4" data-path="References/CICInterface/DeviceControl.html">
+            
+                <a href="References/CICInterface/DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.5" data-path="References/CICInterface/Notifier.html">
+            
+                <a href="References/CICInterface/Notifier.html">
+            
+                    
+                    Notifier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.6" data-path="References/CICInterface/PlaybackController.html">
+            
+                <a href="References/CICInterface/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.7" data-path="References/CICInterface/SpeechRecognizer.html">
+            
+                <a href="References/CICInterface/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.8" data-path="References/CICInterface/SpeechSynthesizer.html">
+            
+                <a href="References/CICInterface/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.9" data-path="References/CICInterface/System.html">
+            
+                <a href="References/CICInterface/System.html">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.10" data-path="References/CICInterface/TextRecognizer.html">
+            
+                <a href="References/CICInterface/TextRecognizer.html">
+            
+                    
+                    TextRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.11" data-path="References/CICInterface/Index_for_Events.html">
+            
+                <a href="References/CICInterface/Index_for_Events.html">
+            
+                    
+                    Event messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5.12" data-path="References/CICInterface/Index_for_Directives.html">
+            
+                <a href="References/CICInterface/Index_for_Directives.html">
+            
+                    
+                    Directive messages index
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html">
+            
+                    
+                    Context information
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.6.1" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#AlertsState">
+            
+                    
+                    Alert.AlertsState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.2" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.3" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.4" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.5" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.6" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#Display">
+            
+                    
+                    Device.Display
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6.7" data-path="References/Context_Objects.html">
+            
+                <a href="References/Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="References/Content_Templates.html">
+            
+                <a href="References/Content_Templates.html">
+            
+                    
+                    Content template reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="References/ContentTemplates/ActionTimer.html">
+            
+                <a href="References/ContentTemplates/ActionTimer.html">
+            
+                    
+                    ActionTimer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="References/ContentTemplates/ActionTimerList.html">
+            
+                <a href="References/ContentTemplates/ActionTimerList.html">
+            
+                    
+                    ActionTimerList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="References/ContentTemplates/Alarm.html">
+            
+                <a href="References/ContentTemplates/Alarm.html">
+            
+                    
+                    Alarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="References/ContentTemplates/AlarmList.html">
+            
+                <a href="References/ContentTemplates/AlarmList.html">
+            
+                    
+                    AlarmList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="References/ContentTemplates/Atmosphere.html">
+            
+                <a href="References/ContentTemplates/Atmosphere.html">
+            
+                    
+                    Atmosphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="References/ContentTemplates/CardList.html">
+            
+                <a href="References/ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="References/ContentTemplates/Humidity.html">
+            
+                <a href="References/ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" data-path="References/ContentTemplates/ImageList.html">
+            
+                <a href="References/ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" data-path="References/ContentTemplates/ImageText.html">
+            
+                <a href="References/ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="References/ContentTemplates/Memo.html">
+            
+                <a href="References/ContentTemplates/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" data-path="References/ContentTemplates/MemoList.html">
+            
+                <a href="References/ContentTemplates/MemoList.html">
+            
+                    
+                    MemoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" data-path="References/ContentTemplates/Popup.html">
+            
+                <a href="References/ContentTemplates/Popup.html">
+            
+                    
+                    Popup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="References/ContentTemplates/Reminder.html">
+            
+                <a href="References/ContentTemplates/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="References/ContentTemplates/ReminderList.html">
+            
+                <a href="References/ContentTemplates/ReminderList.html">
+            
+                    
+                    ReminderList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.15" data-path="References/ContentTemplates/Schedule.html">
+            
+                <a href="References/ContentTemplates/Schedule.html">
+            
+                    
+                    Schedule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.16" data-path="References/ContentTemplates/ScheduleList.html">
+            
+                <a href="References/ContentTemplates/ScheduleList.html">
+            
+                    
+                    ScheduleList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.17" data-path="References/ContentTemplates/Text.html">
+            
+                <a href="References/ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.18" data-path="References/ContentTemplates/Timer.html">
+            
+                <a href="References/ContentTemplates/Timer.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.19" data-path="References/ContentTemplates/TimerList.html">
+            
+                <a href="References/ContentTemplates/TimerList.html">
+            
+                    
+                    TimerList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.20" data-path="References/ContentTemplates/TodayWeather.html">
+            
+                <a href="References/ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.21" data-path="References/ContentTemplates/TomorrowWeather.html">
+            
+                <a href="References/ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.22" data-path="References/ContentTemplates/WeeklyWeather.html">
+            
+                <a href="References/ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.23" data-path="References/ContentTemplates/WindSpeed.html">
+            
+                <a href="References/ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.24" data-path="References/ContentTemplates/Common_Fields.html">
+            
+                <a href="References/ContentTemplates/Common_Fields.html">
+            
+                    
+                    Common fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.25" data-path="References/ContentTemplates/Shared_Objects.html">
+            
+                <a href="References/ContentTemplates/Shared_Objects.html">
+            
+                    
+                    Common objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="References/Clova_Auth_API.html">
+            
+                <a href="References/Clova_Auth_API.html">
+            
+                    
+                    Clova Auth API reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="References/Clova_Auth_API.html">
+            
+                <a href="References/Clova_Auth_API.html#RequestAuthorizationCode">
+            
+                    
+                    Requesting an authorization code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="References/Clova_Auth_API.html">
+            
+                <a href="References/Clova_Auth_API.html#RequestClovaAccessToken">
+            
+                    
+                    Requesting a Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="References/Clova_Auth_API.html">
+            
+                <a href="References/Clova_Auth_API.html#RefreshClovaAccessToken">
+            
+                    
+                    Refreshing a Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="References/Clova_Auth_API.html">
+            
+                <a href="References/Clova_Auth_API.html#DeleteClovaAccessToken">
+            
+                    
+                    Deleting a Clova access token
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extensions Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../CEK/CEK_Overview.html">
+            
+                <a href="../CEK/CEK_Overview.html">
+            
+                    
+                    CEK overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../CEK/CEK_Overview.html">
+            
+                <a href="../CEK/CEK_Overview.html#WhatisCEK">
+            
+                    
+                    What is CEK?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../CEK/CEK_Overview.html">
+            
+                <a href="../CEK/CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK interaction structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../CEK/CEK_Overview.html">
+            
+                <a href="../CEK/CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension type
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html">
+            
+                    
+                    Building custom extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Handling custom extension request
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    Handling LaunchRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    Handling IntentRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    Handling SessionEndedRequest
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Returning custom extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../CEK/Guides/Build_Custom_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Having multi-turn dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                    
+                    Building Clova Home extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    Preparation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Providing device discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Handling Clova Home extension request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../CEK/Guides/Build_Clova_Home_Extension.html">
+            
+                <a href="../CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Returning Clova Home extension response
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html">
+            
+                    
+                    Linking user account
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#UnderstandAccountLinking">
+            
+                    
+                    Understanding account linking
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1.1" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#SetupAccountLinking">
+            
+                    
+                    Configuring account linking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.1.2" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#ExtensionInvokingAfterAccountLinking">
+            
+                    
+                    Invoking extension after account is linked
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#ApplyAccountLinking">
+            
+                    
+                    Applying account linking
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.2.1" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#BuildAuthServer">
+            
+                    
+                    Building authorization server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.2" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#AddValidationLogic">
+            
+                    
+                    Validating account access permission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2.3" data-path="../CEK/Guides/LinkUserAccount.html">
+            
+                <a href="../CEK/Guides/LinkUserAccount.html#RegisterAccountLinkingInfo">
+            
+                    
+                    Registering account linking information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html">
+            
+                    
+                    CEK API reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#HTTPMessage">
+            
+                    
+                    HTTP message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#CustomExtMessage">
+            
+                    
+                    Custom extension message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.2.1" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#CustomExtRequestMessage">
+            
+                    
+                    Request message
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2.2" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#CustomExtRequestType">
+            
+                    
+                    Request type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2.3" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#CustomExtResponseMessage">
+            
+                    
+                    Response message
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#ClovaHomeExtMessage">
+            
+                    
+                    Clova Home extension message
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.3.1" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#ClovaHomeExtMessageFormat">
+            
+                    
+                    Message format
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3.2" data-path="../CEK/References/CEK_API.html">
+            
+                <a href="../CEK/References/CEK_API.html#ClovaHomeExtInterface">
+            
+                    
+                    Interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.3.2.1" data-path="../CEK/References/ClovaHomeInterface/Control_Interfaces.html">
+            
+                <a href="../CEK/References/ClovaHomeInterface/Control_Interfaces.html">
+            
+                    
+                    Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3.2.2" data-path="../CEK/References/ClovaHomeInterface/Discovery_Interfaces.html">
+            
+                <a href="../CEK/References/ClovaHomeInterface/Discovery_Interfaces.html">
+            
+                    
+                    Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3.2.3" data-path="../CEK/References/ClovaHomeInterface/Error_Interfaces.html">
+            
+                <a href="../CEK/References/ClovaHomeInterface/Error_Interfaces.html">
+            
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3.2.4" data-path="../CEK/References/ClovaHomeInterface/Shared_Objects.html">
+            
+                <a href="../CEK/References/ClovaHomeInterface/Shared_Objects.html">
+            
+                    
+                    Shared objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Developer Console</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../DevConsole/ClovaDevConsole_Overview.html">
+            
+                <a href="../DevConsole/ClovaDevConsole_Overview.html">
+            
+                    
+                    Clova developer console overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    Using CIC menu (to be available in the future)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../DevConsole/Guides/CEK/Using_CEK_Menu.html">
+            
+                <a href="../DevConsole/Guides/CEK/Using_CEK_Menu.html">
+            
+                    
+                    Using CEK Menu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                    
+                    Registering Extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1.1" data-path="../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">
+            
+                    
+                    Enter basic information of your extensions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.1.2" data-path="../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">
+            
+                    
+                    Server configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1.2.1" data-path="../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Register_Extension.html#SetAccountLinkning">
+            
+                    
+                    Configure account linking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                    
+                    Defining interaction model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.2.1" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#UnderstandInteractionModel">
+            
+                    
+                    Understanding the interaction model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.2.1.1" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#Intent">
+            
+                    
+                    Intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.1.2" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#Slot">
+            
+                    
+                    Slot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.1.3" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#UtteranceExample">
+            
+                    
+                    User speech example
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.2" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#AddBuiltinSlotType">
+            
+                    
+                    Adding a built-in slot type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.3" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#AddCustomSlotType">
+            
+                    
+                    Adding a custom slot type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.4" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#AddBuiltinIntent">
+            
+                    
+                    Adding a built-in intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2.5" data-path="../DevConsole/Guides/CEK/Define_Interaction_Model.html">
+            
+                <a href="../DevConsole/Guides/CEK/Define_Interaction_Model.html#AddCustomIntent">
+            
+                    
+                    Adding a custom intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                    
+                    Deploying extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.3.1" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html#BuildInteractionModel">
+            
+                    
+                    Building interaction model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.2" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html#TestInteractionModel">
+            
+                    
+                    Testing interaction model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.3" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html#InputDeploymentInfo">
+            
+                    
+                    Entering deployment information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.4" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html#InputComplianceInfo">
+            
+                    
+                    Entering personal information and compliance to regulation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3.5" data-path="../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../DevConsole/Guides/CEK/Deploy_Extension.html#RequestExtensionSubmission">
+            
+                    
+                    Requesting extension approval
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >CIC overview</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cic-overview">CIC overview</h1>
+<p>Learn what Clova Interface Connect (&apos;CIC&apos; hereinafter) is and how it works.</p>
+<h2 id="WhatisCIC">What is CIC? </h2>
+<p>CIC is a platform that serves as an interface between Clova and a client providing AI assistant services on computers, mobile apps, mobile devices or home appliances. CIC provides the <a href="References/CIC_API.html">CIC API</a> with which clients can send user requests to Clova and Clova can return responses to clients.</p>
+<p><img src="Resources/Images/CIC_Interaction_Structure.png" alt=""></p>
+<h2 id="CICInteractionStructure">CIC interaction structure </h2>
+<p>Clients use the CIC API to send user requests to CIC and also to receive responses from CIC. All communications with CIC is made over the <a href="https://tools.ietf.org/html/rfc7540" target="_blank">HTTP/2 protocol</a>. The <a href="References/CIC_API.html">CIC API</a> provides interfaces for speech recognition, playing synthesized speech and music, calendar management, setting alarms/timers, and many other features.</p>
+<p>Through the CIC API, various communications are made between clients and CIC in the form of messages. Two types of messages are available. The message type depends on who the message sender is as follows.</p>
+<ul>
+<li><p><a href="References/CIC_API.html#Event">Event</a>: Messages that clients send to CIC. Send events to CIC to pass user&apos;s voice requests (speech input) to CIC and to notify CIC when your client states have changed.</p>
+</li>
+<li><p><a href="References/CIC_API.html#Directive">Directive</a>: Messages that CIC sends to clients to control client behavior. For example, a directive can instruct an app to display certain information or play synthesized speech. Directives are sent to clients when:</p>
+<ul>
+<li>Responding to user requests. After recognizing user&apos;s voice request (user intent), CIC returns directives to instruct clients to perform certain actions relevant to the user intent.</li>
+<li>Certain conditions require CIC to send directives to clients without any preceding user requests.</li>
+</ul>
+</li>
+</ul>
+<p>The following sequence diagram shows how messages are sent back and forth between CIC and a client.</p>
+<p><img src="Resources/Images/CIC_Interaction_Example_in_Sequence_Diagram.png" alt=""></p>
+<h2 id="DialogModel">Dialog model </h2>
+<p>Learn about CIC&apos;s dialog model.</p>
+<ul>
+<li><a href="#IndirectDialog">Indirect dialog structure</a></li>
+<li><a href="#DialogIDandClientOP">Dialog ID and client behavior</a></li>
+</ul>
+<h3 id="IndirectDialog">Indirect dialogs </h3>
+<p>Users can have a series of dialogs with Clova. In general, users make requests to Clova to get information or to perform certain actions. Clova returns requested information or perform the requested action. Such dialogs between users and Clova are relayed by clients and CIC.</p>
+<p>Dialogs between users and Clova usually proceed in the following steps:</p>
+<ol>
+<li>A user starts to speak to Clova.</li>
+<li>A client records the user&apos;s speech and sends the record to CIC.</li>
+<li>CIC returns result to the client.</li>
+<li>The client delivers the result to the user through synthesized speech or display.</li>
+</ol>
+<p>Having CIC and client in between, dialogs between users and Clova are rather indirect, having the following limitations:</p>
+<ul>
+<li>Delivering requests and receiving responses take more time compared to direct dialogs.</li>
+<li>Immediate response is unavailable when new requests are made or new dialogs are initiated by users.</li>
+</ul>
+<p>Suppose a user asks Clova, &quot;How&apos;s the weather today?&quot;. Before Clova responds or while Clova is responding, the user makes another request, &quot;Play some upbeat music.&quot; The user will probably no longer want the weather information. Had the dialog been a direct dialog, you would simply ignore the weather information returned. However, since dialogs are relayed by a client to Clova, the client must recognize the dialog status and take appropriate actions to provide what user wants.</p>
+<h3 id="DialogIDandClientOP">Using Dialog ID  </h3>
+<p>To overcome the restrictions of indirect dialogs, we use a <strong>dialog ID</strong>. To identify individual user request, a <strong>dialog ID</strong> is created every time a user starts speaking to Clova. This leaves you to do the following:</p>
+<ul>
+<li>Keep a copy of the dialog ID of the latest user request sent to CIC.</li>
+<li>Update the latest dialog ID every time you send a user request to CIC.</li>
+</ul>
+<p>A directive, returned from CIC as a response to the user request contains a dialog ID. This dialog ID is identical to the one that had been embedded in the user request. In short, dialog IDs help you identify whether Clova&apos;s response corresponds to the latest user request or not.</p>
+<p>To use dialog IDs:</p>
+<ol>
+<li>Create a <strong>new dialog ID</strong> every time a user initiates a dialog.</li>
+<li>Send the user request to CIC with the <a href="References/CICInterface/SpeechRecognizer.html">SpeechRecognizer.Recognize</a> event.<ul>
+<li>Replace the <strong>latest dialog ID</strong> with the newly created dialog ID.</li>
+<li>When the latest dialog ID is replaced, discard all directives associated to dialog IDs other than the latest, regardless whether the directives are being processed or are to be processed.</li>
+</ul>
+</li>
+<li>When CIC returns a directive with the request result, compare the dialog ID of the directive with the latest dialog ID kept on the client.<ul>
+<li><strong>If the IDs match</strong>, return the result contained in the directive to the user.</li>
+<li><strong>If the IDs mismatch</strong>, discard the directive received.</li>
+</ul>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Terms.html" class="navigation navigation-prev " aria-label="Previous page: Terms and abbreviations">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CIC_Overview.html#WhatisCIC" class="navigation navigation-next " aria-label="Next page: What is CIC?">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CIC overview","level":"2.1","depth":1,"next":{"title":"What is CIC?","level":"2.1.1","depth":2,"anchor":"#WhatisCIC","path":"CIC/CIC_Overview.md","ref":"CIC/CIC_Overview.md#WhatisCIC","articles":[]},"previous":{"title":"Terms and abbreviations","level":"1.3","depth":1,"path":"Terms.md","ref":"Terms.md","articles":[]},"dir":"ltr"},"config":{"plugins":"-search","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-toc-button":{"maxTocDepth":4,"minTocSize":2},"toggle-children":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"LINE Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v2.0","CICBaseURL":"https://clova-cic.line-apps.com/","ClassifiedInfo":"Confidential","RedirectURLforAccountLinking":"https://prod-ni-cic.clova.ai/v1/al/token/","OrientedService":"LINE","AuthServerBaseURL":"https://clova-authgw.line-apps.com/","TargetServiceForClientAuth":"LINE","Locale":"en-JP","DocOwner":"LINE","LoginAPIofTargetService":"https://developers.line.me/en/docs/line-login/web/integrate-line-login-v2/"},"title":"Clova Developer Guide","language":"en","gitbook":"*","description":"This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.","direction":"ltr"},"file":{"path":"CIC/CIC_Overview.md","mtime":"2018-01-08T14:08:11.410Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-08T14:08:56.073Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-children/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
