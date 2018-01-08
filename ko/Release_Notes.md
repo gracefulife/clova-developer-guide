@@ -2,6 +2,34 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-01-08
+
+### 플랫폼 변경 사항
+
+* CIC
+  - 사용자 요청 위임 처리를 위한 [Clova.HandleDelegatedEvent](/CIC/References/CICInterface/Clova.html#HandleDelegatedEvent) 지시 메시지와 [Clova.ProcessDelegatedEvent](/CIC/References/CICInterface/Clova.html#ProcessDelegatedEvent) 이벤트 메시지 추가
+
+* Clova developer console
+  - Extension 테스트 수행을 위해 **테스터 아이디** 필드를 extension 기본 정보 등록 메뉴에 추가
+
+### 문서 변경 사항
+
+* Design
+  - 플랫폼 구현 상황에 맞게 [built-in intent](/Design/DesignGuidelineForExtension.html#DefineInteractionModel)에 대한 설명 수정
+
+* CIC
+  - [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.html#HandleDelegation) 절 추가
+  - [PlaybackController.NextCommandIssued](/CIC/References/CICInterface/PlaybackController.html#NextCommandIssued)와 [PlaybackController.PreviousCommandIssued](/CIC/References/CICInterface/PlaybackController.html#PreviousCommandIssued) 이벤트 메시지에 [AudioPlayer.PlaybackState](/CIC/References/CICInterface/PlaybackController.html#PlaybackState) 맥락 정보를 포함하도록 설명 추가
+  - [Alerts](/CIC/References/CICInterface/Alerts.html) API의 [동작 구조](/CIC/References/CICInterface/Alerts.html#AlertsWorkFlow)에 대한 설명 개선
+  - [DeviceControl](/CIC/References/CICInterface/DeviceControl.html) API의 [동작 구조](/CIC/References/CICInterface/DeviceControl.html#DeviceContorlWorkFlow)에 대한 설명 추가
+  - 일부 [content template](/CIC/References/Content_Templates.md) 및 공유 객체에 대한 오류 교정 내용 수정
+
+* CEK
+  - [Extension 예제](/CEK/Examples/Extension_Examples.html) 페이지 추가
+
+* Clova developer console
+  - **테스터 아이디** 필드 추가에 따른 [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.html) 설명 업데이트
+
 ## 2018-01-02
 
 ### 플랫폼 변경 사항

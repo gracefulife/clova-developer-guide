@@ -25,6 +25,21 @@ Content-Type: application/json; charset=UTF-8<br/>
   "context": [
     {
       "header": {
+        "namespace": "Alerts",
+        "name": "AlertsState"
+      },
+      "payload": {
+        "allAlerts": [
+          ...
+        ],
+        "activeAlerts": [
+          ...
+        ]
+      }
+    },
+    ...
+    {
+      "header": {
         "namespace": "Speaker",
         "name": "VolumeState"
       },

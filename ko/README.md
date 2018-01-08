@@ -81,6 +81,7 @@
             <li><a href="/CEK/References/CEK_API.md#CustomExtMessage">Custom extension 메시지</a></li>
             <li><a href="/CEK/References/CEK_API.md#ClovaHomeExtMessage">Clova Home extension 메시지</a></li>
           </ul>
+          <li><a href="/CEK/Examples/Extension_Examples.md">Extension 예제</a></li>
         </ul>
       </td>
     </tr>
