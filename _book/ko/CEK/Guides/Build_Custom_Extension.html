@@ -1,0 +1,2955 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <title>Clova 개발자 가이드</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="NAVER Corp.">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Build_Custom_Extension.html" />
+    
+    
+    <link rel="prev" href="../CEK_Overview.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">About This Document</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    문서 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Copyright.html">
+            
+                <a href="../../Copyright.html">
+            
+                    
+                    저작권
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Terms.html">
+            
+                <a href="../../Terms.html">
+            
+                    
+                    용어 및 약어
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Design</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html">
+            
+                    
+                    클라이언트 기기 디자인 가이드라인
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html#ClientState">
+            
+                    
+                    클라이언트 상태
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html#Button">
+            
+                    
+                    버튼
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html#Light">
+            
+                    
+                    조명
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html#Audio">
+            
+                    
+                    소리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../Design/DesignGuidelineForClientHardware.html">
+            
+                <a href="../../Design/DesignGuidelineForClientHardware.html#Screen">
+            
+                    
+                    화면
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html">
+            
+                    
+                    Extension 디자인 가이드라인
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#SettingGoal">
+            
+                    
+                    목표 수립
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#MakeUseCaseScenarioScript">
+            
+                    
+                    사용 시나리오 스크립트 작성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#DefineInteractionModel">
+            
+                    
+                    Interaction 모델 정의
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#Intent">
+            
+                    
+                    Intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#Slot">
+            
+                    
+                    Slot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#UtteranceExample">
+            
+                    
+                    발화 예시
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#Precautions">
+            
+                    
+                    유의사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../Design/DesignGuidelineForExtension.html">
+            
+                <a href="../../Design/DesignGuidelineForExtension.html#ContinuousUpdate">
+            
+                    
+                    지속적인 업데이트
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Interface Connect</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html">
+            
+                    
+                    CIC 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#WhatisCIC">
+            
+                    
+                    CIC란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#CICInteractionStructure">
+            
+                    
+                    CIC 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../CIC/CIC_Overview.html">
+            
+                <a href="../../CIC/CIC_Overview.html#DialogModel">
+            
+                    
+                    대화 모델
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html">
+            
+                    
+                    CIC 연동하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#RequiredLibrary">
+            
+                    
+                    HTTP/2 라이브러리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#UserAgentString">
+            
+                    
+                    User-Agent string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ClientAuthInfo">
+            
+                    
+                    클라이언트 인증 정보
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ConnectToCIC">
+            
+                    
+                    CIC 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">
+            
+                    
+                    Clova access token 생성하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.2" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#CreateConnection">
+            
+                    
+                    연결하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#Authorization">
+            
+                    
+                    인증하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageConnection">
+            
+                    
+                    연결 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#HandleDirective">
+            
+                    
+                    지시 메시지 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#ManageMessageQ">
+            
+                    
+                    메시지 큐 관리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../CIC/Guides/Interact_with_CIC.html">
+            
+                <a href="../../CIC/Guides/Interact_with_CIC.html#HandleDelegation">
+            
+                    
+                    위임된 사용자 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html">
+            
+                    
+                    CIC API 레퍼런스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#BasicInfo">
+            
+                    
+                    API 기본 정보
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#BaseURL">
+            
+                    
+                    Base URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.1.2" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#MultipartMessage">
+            
+                    
+                    Multipart
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#EstablishDownchannel">
+            
+                    
+                    Downchannel 구성
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#SendEvent">
+            
+                    
+                    이벤트 메시지 전송
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#CICMessageFormat">
+            
+                    
+                    메시지 포맷
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.4.1" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#Event">
+            
+                    
+                    이벤트 메시지 (Event)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.2" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#Directive">
+            
+                    
+                    지시 메시지 (Directive)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4.3" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#Error">
+            
+                    
+                    오류 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../CIC/References/CIC_API.html">
+            
+                <a href="../../CIC/References/CIC_API.html#CICInterface">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.5.1" data-path="../../CIC/References/CICInterface/Alerts.html">
+            
+                <a href="../../CIC/References/CICInterface/Alerts.html">
+            
+                    
+                    Alerts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.2" data-path="../../CIC/References/CICInterface/AudioPlayer.html">
+            
+                <a href="../../CIC/References/CICInterface/AudioPlayer.html">
+            
+                    
+                    AudioPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.3" data-path="../../CIC/References/CICInterface/Clova.html">
+            
+                <a href="../../CIC/References/CICInterface/Clova.html">
+            
+                    
+                    Clova
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.4" data-path="../../CIC/References/CICInterface/DeviceControl.html">
+            
+                <a href="../../CIC/References/CICInterface/DeviceControl.html">
+            
+                    
+                    DeviceControl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.5" data-path="../../CIC/References/CICInterface/Notifier.html">
+            
+                <a href="../../CIC/References/CICInterface/Notifier.html">
+            
+                    
+                    Notifier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.6" data-path="../../CIC/References/CICInterface/PlaybackController.html">
+            
+                <a href="../../CIC/References/CICInterface/PlaybackController.html">
+            
+                    
+                    PlaybackController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.7" data-path="../../CIC/References/CICInterface/SpeechRecognizer.html">
+            
+                <a href="../../CIC/References/CICInterface/SpeechRecognizer.html">
+            
+                    
+                    SpeechRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.8" data-path="../../CIC/References/CICInterface/SpeechSynthesizer.html">
+            
+                <a href="../../CIC/References/CICInterface/SpeechSynthesizer.html">
+            
+                    
+                    SpeechSynthesizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.9" data-path="../../CIC/References/CICInterface/System.html">
+            
+                <a href="../../CIC/References/CICInterface/System.html">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.10" data-path="../../CIC/References/CICInterface/TextRecognizer.html">
+            
+                <a href="../../CIC/References/CICInterface/TextRecognizer.html">
+            
+                    
+                    TextRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.11" data-path="../../CIC/References/CICInterface/Index_for_Events.html">
+            
+                <a href="../../CIC/References/CICInterface/Index_for_Events.html">
+            
+                    
+                    이벤트 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5.12" data-path="../../CIC/References/CICInterface/Index_for_Directives.html">
+            
+                <a href="../../CIC/References/CICInterface/Index_for_Directives.html">
+            
+                    
+                    지시 메시지 색인
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html">
+            
+                    
+                    맥락 정보(Context)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.6.1" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#AlertsState">
+            
+                    
+                    Alert.AlertsState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.2" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#PlaybackState">
+            
+                    
+                    AudioPlayer.PlaybackState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.3" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#Location">
+            
+                    
+                    Clova.Location
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.4" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#SavedPlace">
+            
+                    
+                    Clova.SavedPlace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.5" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#DeviceState">
+            
+                    
+                    Device.DeviceState
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.6" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#Display">
+            
+                    
+                    Device.Display
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.7" data-path="../../CIC/References/Context_Objects.html">
+            
+                <a href="../../CIC/References/Context_Objects.html#VolumeState">
+            
+                    
+                    Speaker.VolumeState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../CIC/References/Content_Templates.html">
+            
+                <a href="../../CIC/References/Content_Templates.html">
+            
+                    
+                    Content template 레퍼런스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../CIC/References/ContentTemplates/ActionTimer.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ActionTimer.html">
+            
+                    
+                    ActionTimer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../CIC/References/ContentTemplates/ActionTimerList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ActionTimerList.html">
+            
+                    
+                    ActionTimerList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../CIC/References/ContentTemplates/Alarm.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Alarm.html">
+            
+                    
+                    Alarm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../../CIC/References/ContentTemplates/AlarmList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/AlarmList.html">
+            
+                    
+                    AlarmList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../../CIC/References/ContentTemplates/Atmosphere.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Atmosphere.html">
+            
+                    
+                    Atmosphere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="../../CIC/References/ContentTemplates/CardList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/CardList.html">
+            
+                    
+                    CardList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Humidity.html">
+            
+                    
+                    Humidity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.8" data-path="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageList.html">
+            
+                    
+                    ImageList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.9" data-path="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ImageText.html">
+            
+                    
+                    ImageText
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.10" data-path="../../CIC/References/ContentTemplates/Memo.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Memo.html">
+            
+                    
+                    Memo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.11" data-path="../../CIC/References/ContentTemplates/MemoList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/MemoList.html">
+            
+                    
+                    MemoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.12" data-path="../../CIC/References/ContentTemplates/Popup.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Popup.html">
+            
+                    
+                    Popup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.13" data-path="../../CIC/References/ContentTemplates/Reminder.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Reminder.html">
+            
+                    
+                    Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.14" data-path="../../CIC/References/ContentTemplates/ReminderList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ReminderList.html">
+            
+                    
+                    ReminderList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.15" data-path="../../CIC/References/ContentTemplates/Schedule.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Schedule.html">
+            
+                    
+                    Schedule
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.16" data-path="../../CIC/References/ContentTemplates/ScheduleList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/ScheduleList.html">
+            
+                    
+                    ScheduleList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.17" data-path="../../CIC/References/ContentTemplates/Text.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Text.html">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.18" data-path="../../CIC/References/ContentTemplates/Timer.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Timer.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.19" data-path="../../CIC/References/ContentTemplates/TimerList.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TimerList.html">
+            
+                    
+                    TimerList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.20" data-path="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TodayWeather.html">
+            
+                    
+                    TodayWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.21" data-path="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/TomorrowWeather.html">
+            
+                    
+                    TomorrowWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.22" data-path="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WeeklyWeather.html">
+            
+                    
+                    WeeklyWeather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.23" data-path="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                <a href="../../CIC/References/ContentTemplates/WindSpeed.html">
+            
+                    
+                    WindSpeed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.24" data-path="../../CIC/References/ContentTemplates/Common_Fields.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Common_Fields.html">
+            
+                    
+                    공통 필드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.25" data-path="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                <a href="../../CIC/References/ContentTemplates/Shared_Objects.html">
+            
+                    
+                    공유 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html">
+            
+                    
+                    Clova 인증 API 레퍼런스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.5.1" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">
+            
+                    
+                    Authorization code 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.2" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">
+            
+                    
+                    Clova access token 요청
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.3" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#RefreshClovaAccessToken">
+            
+                    
+                    Clova access token 갱신
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5.4" data-path="../../CIC/References/Clova_Auth_API.html">
+            
+                <a href="../../CIC/References/Clova_Auth_API.html#DeleteClovaAccessToken">
+            
+                    
+                    Clova access token 삭제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Extensions Kit</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html">
+            
+                    
+                    CEK 개요
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#WhatisCEK">
+            
+                    
+                    CEK란?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#CEKInteractionStructure">
+            
+                    
+                    CEK 동작 구조
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../CEK_Overview.html">
+            
+                <a href="../CEK_Overview.html#ExtensionType">
+            
+                    
+                    Extension 종류
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html">
+            
+                    
+                    Custom extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#HandleCustomExtensionRequest">
+            
+                    
+                    Custom extension 요청 처리하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#HandleLaunchRequest">
+            
+                    
+                    LaunchRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#HandleIntentRequest">
+            
+                    
+                    IntentRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.3" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#HandleSessionEndedRequest">
+            
+                    
+                    SessionEndedRequest 요청 처리
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#ReturnCustomExtensionResponse">
+            
+                    
+                    Custom extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="Build_Custom_Extension.html">
+            
+                <a href="Build_Custom_Extension.html#DoMultiturnDialog">
+            
+                    
+                    Multi-turn 대화 수행하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Build_Clova_Home_Extension.html">
+            
+                <a href="Build_Clova_Home_Extension.html">
+            
+                    
+                    Clova Home extension 만들기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="Build_Clova_Home_Extension.html">
+            
+                <a href="Build_Clova_Home_Extension.html#Preparation">
+            
+                    
+                    사전 준비사항
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="Build_Clova_Home_Extension.html">
+            
+                <a href="Build_Clova_Home_Extension.html#ProvideDeviceDiscovery">
+            
+                    
+                    Discovery 제공하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="Build_Clova_Home_Extension.html">
+            
+                <a href="Build_Clova_Home_Extension.html#HandleClovaHomeExtensionRequest">
+            
+                    
+                    Clova Home extension 요청 처리하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="Build_Clova_Home_Extension.html">
+            
+                <a href="Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">
+            
+                    
+                    Clova Home extension 응답 반환하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html">
+            
+                    
+                    사용자 계정 연결하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#UnderstandAccountLinking">
+            
+                    
+                    계정 연결 동작 이해하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1.1" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#SetupAccountLinking">
+            
+                    
+                    계정 연결 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.2" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#ExtensionInvokingAfterAccountLinking">
+            
+                    
+                    계정 연결 후 extension 호출
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#ApplyAccountLinking">
+            
+                    
+                    계정 연결 적용하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.2.1" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#BuildAuthServer">
+            
+                    
+                    인증 서버 구축
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2.2" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#AddValidationLogic">
+            
+                    
+                    계정 권한 검증 구현
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2.3" data-path="LinkUserAccount.html">
+            
+                <a href="LinkUserAccount.html#RegisterAccountLinkingInfo">
+            
+                    
+                    계정 연결 정보 등록
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html">
+            
+                    
+                    CEK API 레퍼런스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#HTTPMessage">
+            
+                    
+                    HTTP 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#CustomExtMessage">
+            
+                    
+                    Custom extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.2.1" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#CustomExtRequestMessage">
+            
+                    
+                    요청 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2.2" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#CustomExtRequestType">
+            
+                    
+                    요청 타입
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2.3" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#CustomExtResponseMessage">
+            
+                    
+                    응답 메시지
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#ClovaHomeExtMessage">
+            
+                    
+                    Clova Home extension 메시지
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.3.1" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#ClovaHomeExtMessageFormat">
+            
+                    
+                    메시지 포맷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3.2" data-path="../References/CEK_API.html">
+            
+                <a href="../References/CEK_API.html#ClovaHomeExtInterface">
+            
+                    
+                    인터페이스
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.3.2.1" data-path="../References/ClovaHomeInterface/Control_Interfaces.html">
+            
+                <a href="../References/ClovaHomeInterface/Control_Interfaces.html">
+            
+                    
+                    Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3.2.2" data-path="../References/ClovaHomeInterface/Discovery_Interfaces.html">
+            
+                <a href="../References/ClovaHomeInterface/Discovery_Interfaces.html">
+            
+                    
+                    Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3.2.3" data-path="../References/ClovaHomeInterface/Error_Interfaces.html">
+            
+                <a href="../References/ClovaHomeInterface/Error_Interfaces.html">
+            
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3.2.4" data-path="../References/ClovaHomeInterface/Shared_Objects.html">
+            
+                <a href="../References/ClovaHomeInterface/Shared_Objects.html">
+            
+                    
+                    공유 객체
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Examples/Extension_Examples.html">
+            
+                <a href="../Examples/Extension_Examples.html">
+            
+                    
+                    Extension 예제
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clova Developer Console</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../DevConsole/ClovaDevConsole_Overview.html">
+            
+                <a href="../../DevConsole/ClovaDevConsole_Overview.html">
+            
+                    
+                    Clova developer console 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../DevConsole/Guides/CEK/Using_CEK_Menu.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Using_CEK_Menu.html">
+            
+                    
+                    CEK Menu 사용하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                    
+                    Extension 등록하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.1" data-path="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Extension.html#AgreeTermsOfUse">
+            
+                    
+                    이용 약관 및 개인 정보 수집 동의
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.2" data-path="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">
+            
+                    
+                    Extension 기본 정보 입력
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.3" data-path="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">
+            
+                    
+                    서버 연동 설정
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.3.1" data-path="../../DevConsole/Guides/CEK/Register_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Extension.html#SetAccountLinking">
+            
+                    
+                    계정 연결 설정
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                    
+                    Interaction 모델 등록하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.2.1" data-path="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Interaction_Model.html#AddBuiltinSlotType">
+            
+                    
+                    Built-in slot 타입 추가하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.2" data-path="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Interaction_Model.html#AddCustomSlotType">
+            
+                    
+                    Custom slot 타입 추가하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.3" data-path="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Interaction_Model.html#AddBuiltinIntent">
+            
+                    
+                    Built-in intent 추가하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.4" data-path="../../DevConsole/Guides/CEK/Register_Interaction_Model.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Register_Interaction_Model.html#AddCustomIntent">
+            
+                    
+                    Custom intent 추가하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../DevConsole/Guides/CEK/Test_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Test_Extension.html">
+            
+                    
+                    Extension 테스트하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.3.1" data-path="../../DevConsole/Guides/CEK/Test_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Test_Extension.html#BuildInteractionModel">
+            
+                    
+                    Interaction 모델 빌드하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3.2" data-path="../../DevConsole/Guides/CEK/Test_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Test_Extension.html#TestInteractionModel">
+            
+                    
+                    Interaction 모델 테스트하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3.3" data-path="../../DevConsole/Guides/CEK/Test_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Test_Extension.html#TestOnClovaApp">
+            
+                    
+                    Clova 앱으로 extension 테스하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                    
+                    Extension 배포하기
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.4.1" data-path="../../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Deploy_Extension.html#InputDeploymentInfo">
+            
+                    
+                    배포 정보 입력
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.2" data-path="../../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Deploy_Extension.html#InputComplianceInfo">
+            
+                    
+                    개인 정보 및 규정 준수 정보 입력
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.3" data-path="../../DevConsole/Guides/CEK/Deploy_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Deploy_Extension.html#RequestExtensionSubmission">
+            
+                    
+                    배포 요청하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5" data-path="../../DevConsole/Guides/CEK/Update_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Update_Extension.html">
+            
+                    
+                    Extension 업데이트하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.6" data-path="../../DevConsole/Guides/CEK/Remove_Extension.html">
+            
+                <a href="../../DevConsole/Guides/CEK/Remove_Extension.html">
+            
+                    
+                    Extension 중지 및 삭제하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Custom extension 만들기</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="custom-extension-&#xB9CC;&#xB4E4;&#xAE30;">Custom extension &#xB9CC;&#xB4E4;&#xAE30;</h1>
+<p>Custom extension&#xC774;&#xB780; Clova&#xAC00; &#xAE30;&#xBCF8;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC774;&#xB098; &#xC11C;&#xBE44;&#xC2A4;&#xAC00; &#xC544;&#xB2CC; &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC784;&#xC758;&#xB85C; &#xD655;&#xC7A5;&#xD55C; &#xAE30;&#xB2A5;&#xC774;&#xB098; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC8FC;&#xB294; extension&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC6F9; &#xAC80;&#xC0C9;, &#xB274;&#xC2A4; &#xD074;&#xB9AC;&#xD551;&#xACFC; &#xAC19;&#xC740; &#xC11C;&#xBE44;&#xC2A4; &#xBFD0;&#xB9CC; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC758; &#xC778;&#xC99D;&#xC774; &#xD544;&#xC694;&#xD55C; &#xC74C;&#xC545;, &#xC1FC;&#xD551;, &#xAE08;&#xC735; &#xC11C;&#xBE44;&#xC2A4;&#xC640; &#xAC19;&#xC740; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; extension&#xC785;&#xB2C8;&#xB2E4;. Custom extension&#xC740; CEK&#xB85C;&#xBD80;&#xD130; &#xBD84;&#xC11D;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654; &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xBC1B;&#xAC8C; &#xB418;&#xBA70;, &#xC774;&#xC5D0; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xB0B4;&#xC6A9;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xACE0; &#xADF8; &#xC11C;&#xBE44;&#xC2A4; &#xCC98;&#xB9AC; &#xACB0;&#xACFC;&#xB97C; &#xBC18;&#xD658;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. Custom extension&#xC744; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC804;&#xC5D0; &#xC900;&#xBE44;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC774; &#xBB34;&#xC5C7;&#xC774; &#xC788;&#xACE0; CEK&#xC640; &#xC5B4;&#xB5A4; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC8FC;&#xACE0; &#xBC1B;&#xC73C;&#xBA74;&#xC11C; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xC744; &#xC218;&#xD589;&#xD574;&#xC57C; &#xD558;&#xB294;&#xC9C0; &#xC124;&#xBA85;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC21C;&#xC11C;&#xB85C; custom extension &#xAC1C;&#xBC1C;&#xC790;&#xAC00; &#xC54C;&#xC544;&#xC57C; &#xD560; &#xB0B4;&#xC6A9;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ol>
+<li><a href="#Preparation">&#xC0AC;&#xC804; &#xC900;&#xBE44;&#xC0AC;&#xD56D;</a></li>
+<li><a href="#HandleCustomExtensionRequest">Custom extension &#xC694;&#xCCAD; &#xCC98;&#xB9AC;&#xD558;&#xAE30;</a><ul>
+<li><a href="#HandleLaunchRequest"><code>LaunchRequest</code> &#xC694;&#xCCAD; &#xCC98;&#xB9AC;</a></li>
+<li><a href="#HandleIntentRequest"><code>IntentRequest</code> &#xC694;&#xCCAD; &#xCC98;&#xB9AC;</a></li>
+<li><a href="#HandleSessionEndedRequest"><code>SessionEndedRequest</code> &#xC694;&#xCCAD; &#xCC98;&#xB9AC;</a></li>
+</ul>
+</li>
+<li><a href="#ReturnCustomExtensionResponse">Custom extension &#xC751;&#xB2F5; &#xBC18;&#xD658;&#xD558;&#xAE30;</a></li>
+<li><a href="#DoMultiturnDialog">Multi-turn &#xB300;&#xD654; &#xC218;&#xD589;&#xD558;&#xAE30;</a></li>
+</ol>
+<h2 id="Preparation">&#xC0AC;&#xC804; &#xC900;&#xBE44;&#xC0AC;&#xD56D; </h2>
+<p>Custom extension &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xB2E4;&#xC74C;&#xC744; &#xBBF8;&#xB9AC; &#xC900;&#xBE44;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<table>
+<thead>
+<tr>
+<th>&#xAD6C;&#xBD84;</th>
+<th>&#xC124;&#xBA85;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interaction &#xBAA8;&#xB378;</td>
+<td>Custom extension&#xC744; &#xB9CC;&#xB4E4; &#xB54C; &#xC0AC;&#xC6A9;&#xC790;&#xB85C;&#xBD80;&#xD130; &#xC5B4;&#xB5A4; &#xC694;&#xCCAD;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xBC1B;&#xC744;&#xC9C0; interaction &#xBAA8;&#xB378;&#xC744; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. Interaction &#xBAA8;&#xB378;&#xC740; custom extension&#xC774; &#xBC1B;&#xAC8C; &#xB420; &#xC694;&#xCCAD;&#xC744; &#xC815;&#xD615;&#xD654;&#xD55C; &#xC2A4;&#xD0A4;&#xB9C8;&#xB85C;&#xC11C; <a href="../../DevConsole/ClovaDevConsole_Overview.html">Clova Developer Console</a>&#xC744; &#xD1B5;&#xD574; &#xC0AC;&#xC804; &#xB4F1;&#xB85D;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+<tr>
+<td>(&#xC120;&#xD0DD;) &#xC778;&#xC99D; &#xC11C;&#xBC84;</td>
+<td>&#xC74C;&#xC545;, &#xC1FC;&#xD551;, &#xAE08;&#xC735; &#xC11C;&#xBE44;&#xC2A4; &#xB4F1;&#xACFC; &#xAC19;&#xC774; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC778;&#xC99D;&#xC774; &#xD544;&#xC694;&#xD55C; &#xC678;&#xBD80; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; custom extension&#xC758; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815;&#xC744; &#xC5F0;&#xACB0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; &#xC778;&#xC99D; &#xC11C;&#xBC84; &#xB4F1;&#xC744; &#xAD6C;&#xCD95;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="LinkUserAccount.html">&#xC0AC;&#xC6A9;&#xC790; &#xACC4;&#xC815; &#xC5F0;&#xACB0;&#xD558;&#xAE30;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HandleCustomExtensionRequest">Custom extension &#xC694;&#xCCAD; &#xCC98;&#xB9AC;&#xD558;&#xAE30; </h2>
+<p>Custom extension&#xC740; CEK&#xB85C;&#xBD80;&#xD130; <a href="../References/CEK_API.html#CustomExtMessage">custom extension &#xBA54;&#xC2DC;&#xC9C0;</a> &#xD615;&#xD0DC;&#xC758; &#xC0AC;&#xC6A9;&#xC790; &#xC694;&#xCCAD;&#xC744; &#xC218;&#xC2E0;&#xD569;&#xB2C8;&#xB2E4;(HTTPS Request). Custom extension&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC694;&#xCCAD;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xACE0; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><img src="../Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png" alt=""></p>
+<p>&#xC774;&#xB7F0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC740; &#xB2E8;&#xBC88;&#xC5D0; &#xB05D;&#xB098;&#xB294; &#xC694;&#xCCAD;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xACC4;&#xC18D; &#xB9E5;&#xB77D;&#xC774; &#xC720;&#xC9C0;&#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294; multi-turn &#xB300;&#xD654;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p><img src="../Resources/Images/CEK_Custom_Extension_Multi-turn_Sequence_Diagram.png" alt=""></p>
+<p>&#xC774;&#xB97C; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC744; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC138; &#xAC00;&#xC9C0; &#xD0C0;&#xC785;&#xC758; &#xC694;&#xCCAD;&#xC73C;&#xB85C; &#xAD6C;&#xBD84;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. Custom extension &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xAC01; &#xBA54;&#xC2DC;&#xC9C0;&#xC5D0; &#xB530;&#xB77C; &#xADF8;&#xC5D0; &#xC0C1;&#xC751;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><a href="#HandleLaunchRequest">LaunchRequest &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xC740; &#xACBD;&#xC6B0;</a></li>
+<li><a href="#HandleIntentRequest">IntentRequest &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xC740; &#xACBD;&#xC6B0;</a></li>
+<li><a href="#HandleSessionEndedRequest">SessionEndedRequest &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xC740; &#xACBD;&#xC6B0;</a></li>
+</ul>
+<h3 id="HandleLaunchRequest">LaunchRequest &#xC694;&#xCCAD; &#xCC98;&#xB9AC; </h3>
+<p><a href="../References/CEK_API.html#CustomExtLaunchRequest"><code>LaunchRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;</a>&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xD2B9;&#xC815; extension&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;&#xB85C; &#xC120;&#xC5B8;&#xD55C; &#xAC83;&#xC744; &#xC54C;&#xB9B4; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xBA74;, &quot;&#xD53C;&#xC790;&#xBD07; &#xC2DC;&#xC791;&#xD574;&#xC918;&quot;&#xC640; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB0B4;&#xB9B0; &#xACBD;&#xC6B0; CEK&#xB294; &#xD53C;&#xC790; &#xBC30;&#xB2EC; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; extension&#xC5D0;&#xAC8C; <code>LaunchRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>LaunchRequest &#xD0C0;&#xC785; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <code>request.type</code> &#xD544;&#xB4DC;&#xC5D0; <code>&quot;LaunchRequest&quot;</code>&#xB77C;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xBA70; <code>request</code> &#xD544;&#xB4DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xAC00; &#xBD84;&#xC11D;&#xB41C; &#xC815;&#xBCF4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. Extension &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xC740; &#xACBD;&#xC6B0; &#xC0AC;&#xC804; &#xC900;&#xBE44; &#xC0AC;&#xD56D;&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xAC70;&#xB098; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC900;&#xBE44;&#xAC00; &#xB418;&#xC5C8;&#xB2E4;&#xB294; <a href="#ReturnCustomExtensionResponse">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xB97C; &#xBCF4;&#xB0B4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xC740; &#xD6C4;&#xBD80;&#xD130; <a href="#HandleSessionEndedRequest"><code>SessionEndedRequest</code> &#xD0C0;&#xC785;</a> &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xAE30; &#xC804;&#xAE4C;&#xC9C0; <a href="#HandleIntentRequest"><code>IntentRequest</code> &#xD0C0;&#xC785;</a>&#xC758; &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xAC8C; &#xB418;&#xBA70;, <code>session.sessionId</code> &#xD544;&#xB4DC;&#xB294; &#xC774;&#xC804; &#xBA54;&#xC2DC;&#xC9C0;&#xC640; &#xAC19;&#xC740; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>LaunchReqeust</code> &#xD0C0;&#xC785;&#xC758; &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;session&quot;</span>: {
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+    <span class="hljs-string">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;a29cfead-c5ba-474d-8745-6c1a6625f0c5&quot;</span>,
+    <span class="hljs-string">&quot;user&quot;</span>: {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+      <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;context&quot;</span>: {
+    <span class="hljs-string">&quot;System&quot;</span>: {
+      <span class="hljs-string">&quot;user&quot;</span>: {
+        <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+        <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+      },
+      <span class="hljs-string">&quot;device&quot;</span>: {
+        <span class="hljs-string">&quot;deviceId&quot;</span>: <span class="hljs-string">&quot;096e6b27-1717-33e9-b0a7-510a48658a9b&quot;</span>,
+        <span class="hljs-string">&quot;display&quot;</span>: {
+          <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;l100&quot;</span>,
+          <span class="hljs-string">&quot;orientation&quot;</span>: <span class="hljs-string">&quot;landscape&quot;</span>,
+          <span class="hljs-string">&quot;dpi&quot;</span>: <span class="hljs-number">96</span>,
+          <span class="hljs-string">&quot;contentLayer&quot;</span>: {
+            <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">640</span>,
+            <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-number">360</span>
+          }
+        }
+      }
+    }
+  },
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;LaunchRequest&quot;</span>
+  }
+}
+</code></pre>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xAC01; &#xD544;&#xB4DC;&#xC758; &#xC758;&#xBBF8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>version</code>: &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; custom extension &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC758; &#xBC84;&#xC804;&#xC774; v0.1.0&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>session</code>: <strong>&#xC0C8;&#xB85C;&#xC6B4; &#xC138;&#xC158;&#xC774;&#xBA70;</strong>, &#xC0C8;&#xB85C;&#xC6B4; &#xC138;&#xC158;&#xC5D0; &#xC0AC;&#xC6A9;&#xB420; &#xC138;&#xC158;&#xC758; ID&#xC640; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC815;&#xBCF4;(ID, accessToken)&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>context</code>: &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xAE30;&#xAE30;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC774;&#xBA70;, &#xAE30;&#xAE30; ID&#xC640; &#xAE30;&#xAE30;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>request</code>: <code>LaunchRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC73C;&#xB85C; &#xB300;&#xC0C1; extension&#xC758; &#xC0AC;&#xC6A9; &#xC2DC;&#xC791;&#xC744; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xAC00; &#xBD84;&#xC11D;&#xB41C; &#xC815;&#xBCF4;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h3 id="HandleIntentRequest">IntentRequest &#xC694;&#xCCAD; &#xCC98;&#xB9AC; </h3>
+<p><a href="../References/CEK_API.html#CustomExtIntentRequest"><code>IntentRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;</a>&#xC740; CEK&#xAC00; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xD574; &#xB454; <a href="../../Design/DesignGuidelineForExtension.html#DefineInteractionModel">interaction &#xBAA8;&#xB378;</a>&#xC5D0; &#xB530;&#xB77C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC744; extension&#xC5D0; &#xC804;&#xB2EC;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. <code>IntentRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC740; &#xC77C;&#xD68C;&#xC801;&#xC778; &#xC694;&#xCCAD; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC5F0;&#xC18D;&#xB418;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC694;&#xCCAD;(Multi-turn request)&#xC744; &#xCC98;&#xB9AC;&#xD560; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>IntentRequest &#xD0C0;&#xC785; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <code>request.type</code> &#xD544;&#xB4DC;&#xC5D0; <code>&quot;IntentRequest&quot;</code>&#xB77C;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. &#xD638;&#xCD9C;&#xB41C; intent&#xC758; &#xC774;&#xB984;&#xACFC; &#xBD84;&#xC11D;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654; &#xC815;&#xBCF4;&#xB294; <code>request.intent</code> &#xD544;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xD544;&#xB4DC;&#xB97C; &#xBD84;&#xC11D;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC744; &#xCC98;&#xB9AC;&#xD55C; &#xD6C4; <a href="#ReturnCustomExtensionResponse">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xB97C; &#xBCF4;&#xB0B4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>IntentRequest</code> &#xD0C0;&#xC785;&#xC758; &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;session&quot;</span>: {
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+    <span class="hljs-string">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;a29cfead-c5ba-474d-8745-6c1a6625f0c5&quot;</span>,
+    <span class="hljs-string">&quot;user&quot;</span>: {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+      <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;context&quot;</span>: {
+    <span class="hljs-string">&quot;System&quot;</span>: {
+      <span class="hljs-string">&quot;user&quot;</span>: {
+        <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+        <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+      },
+      <span class="hljs-string">&quot;device&quot;</span>: {
+        <span class="hljs-string">&quot;deviceId&quot;</span>: <span class="hljs-string">&quot;096e6b27-1717-33e9-b0a7-510a48658a9b&quot;</span>,
+        <span class="hljs-string">&quot;display&quot;</span>: {
+          <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;l100&quot;</span>,
+          <span class="hljs-string">&quot;orientation&quot;</span>: <span class="hljs-string">&quot;landscape&quot;</span>,
+          <span class="hljs-string">&quot;dpi&quot;</span>: <span class="hljs-number">96</span>,
+          <span class="hljs-string">&quot;contentLayer&quot;</span>: {
+            <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">640</span>,
+            <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-number">360</span>
+          }
+        }
+      }
+    }
+  },
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;IntentRequest&quot;</span>,
+    <span class="hljs-string">&quot;intent&quot;</span>: {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;OrderPizza&quot;</span>,
+      <span class="hljs-string">&quot;slots&quot;</span>: {
+        <span class="hljs-string">&quot;pizzaType&quot;</span>: {
+          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pizzaType&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xD398;&#xD37C;&#xB85C;&#xB2C8;&quot;</span>
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xAC01; &#xD544;&#xB4DC;&#xC758; &#xC758;&#xBBF8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>version</code>: &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; custom extension &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC758; &#xBC84;&#xC804;&#xC774; v0.1.0&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>session</code>: <strong>&#xAE30;&#xC874; &#xC138;&#xC158;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC774;&#xBA70;</strong>, &#xAE30;&#xC874; &#xC138;&#xC158;&#xC758; ID&#xC640; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC815;&#xBCF4;(ID, accessToken)&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>context</code>: &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xAE30;&#xAE30;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC774;&#xBA70;, &#xAE30;&#xAE30; ID&#xC640; &#xAE30;&#xAE30;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>request</code>: <code>IntentRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC774;&#xBA70;, <code>&quot;OrderPizza&quot;</code>&#xB77C;&#xB294; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xB4F1;&#xB85D;&#xB41C; <a href="../../Design/DesignGuidelineForExtension.html#Intent">intent</a>&#xB97C; &#xD638;&#xCD9C;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9; intent&#xC758; &#xD544;&#xC694; &#xC815;&#xBCF4;&#xB85C; <code>&quot;pizzaType&quot;</code>&#xB77C;&#xB294; <a href="../../Design/DesignGuidelineForExtension.html#Slot">slot</a>&#xC774; &#xD568;&#xAED8; &#xC804;&#xB2EC;&#xB418;&#xC5C8;&#xACE0; &#xD574;&#xB2F9; slot&#xC740; <code>&quot;&#xD398;&#xD37C;&#xB85C;&#xB2C8;&quot;</code>&#xB77C;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p><code>IntentRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC740; <code>LaunchRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xACFC; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xC5C6;&#xC774; &#xC0C8;&#xB85C;&#xC6B4; &#xC138;&#xC158;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xC5EC; &#xC694;&#xCCAD;&#xC744; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<h3 id="HandleSessionEndedRequest">SessionEndedRequest &#xC694;&#xCCAD; &#xCC98;&#xB9AC; </h3>
+<p><a href="../References/CEK_API.html#CustomExtSessionEndedRequest"><code>SessionEndedRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;</a>&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xD2B9;&#xC815; &#xBAA8;&#xB4DC;&#xB098; &#xD2B9;&#xC815; custom extension&#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC911;&#xC9C0;&#xD558;&#xAE30;&#xB85C; &#xC120;&#xC5B8;&#xD55C; &#xAC83;&#xC744; &#xC54C;&#xB9B4; &#xB54C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &quot;&#xC885;&#xB8CC;&quot;, &quot;&#xC885;&#xB8CC;&#xD574;&#xC918;&quot;, &quot;&#xADF8;&#xB9CC;&quot; &#xB4F1;&#xACFC; &#xAC19;&#xC740; &#xBA85;&#xB839;&#xC744; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xB0B4;&#xB9B0; &#xACBD;&#xC6B0; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB294; extension &#xC0AC;&#xC6A9;&#xC744; &#xC911;&#xC9C0;&#xD558;&#xBA70;, CEK&#xB294; &#xB300;&#xD654; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB294; extension&#xC5D0;&#xAC8C; <code>SessionEndedRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC744; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p><code>SessionEndedReqeust</code> &#xD0C0;&#xC785; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; <code>request.type</code> &#xD544;&#xB4DC;&#xC5D0; <code>&quot;SessionEndedRequest&quot;</code>&#xB77C;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xBA70; <code>LaunchRequest</code> &#xD0C0;&#xC785;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; <code>request</code> &#xD544;&#xB4DC;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xAC00; &#xBD84;&#xC11D;&#xB41C; &#xC815;&#xBCF4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. Extension &#xAC1C;&#xBC1C;&#xC790;&#xB294; &#xC774; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBC1B;&#xC740; &#xACBD;&#xC6B0; &#xC11C;&#xBE44;&#xC2A4; &#xC81C;&#xACF5;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC0AC;&#xC6A9; &#xC885;&#xB8CC; &#xC0C1;&#xD669;&#xC758; &#xC778;&#xC0AC; &#xC815;&#xB3C4;&#xB97C; <a href="#ReturnCustomExtensionResponse">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xB85C; &#xBCF4;&#xB0B4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<p>&#xB2E4;&#xC74C;&#xC740; <code>SessionEndedRequest</code> &#xD0C0;&#xC785;&#xC758; &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0; &#xC608;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;session&quot;</span>: {
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {}
+    <span class="hljs-string">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;a29cfead-c5ba-474d-8745-6c1a6625f0c5&quot;</span>,
+    <span class="hljs-string">&quot;user&quot;</span>: {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+      <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;context&quot;</span>: {
+    <span class="hljs-string">&quot;System&quot;</span>: {
+      <span class="hljs-string">&quot;user&quot;</span>: {
+        <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+        <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+      },
+      <span class="hljs-string">&quot;device&quot;</span>: {
+        <span class="hljs-string">&quot;deviceId&quot;</span>: <span class="hljs-string">&quot;096e6b27-1717-33e9-b0a7-510a48658a9b&quot;</span>,
+        <span class="hljs-string">&quot;display&quot;</span>: {
+          <span class="hljs-string">&quot;size&quot;</span>: <span class="hljs-string">&quot;l100&quot;</span>,
+          <span class="hljs-string">&quot;orientation&quot;</span>: <span class="hljs-string">&quot;landscape&quot;</span>,
+          <span class="hljs-string">&quot;dpi&quot;</span>: <span class="hljs-number">96</span>,
+          <span class="hljs-string">&quot;contentLayer&quot;</span>: {
+            <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">640</span>,
+            <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-number">360</span>
+          }
+        }
+      }
+    }
+  },
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SessionEndedRequest&quot;</span>
+  }
+}
+</code></pre>
+<p>&#xC704; &#xC608;&#xC81C;&#xC5D0;&#xC11C; &#xAC01; &#xD544;&#xB4DC;&#xC758; &#xC758;&#xBBF8;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>version</code>: &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; custom extension &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC758; &#xBC84;&#xC804;&#xC774; v0.1.0&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>session</code>: <strong>&#xAE30;&#xC874; &#xC138;&#xC158;&#xC5D0; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC774;&#xBA70;</strong>, &#xAE30;&#xC874; &#xC138;&#xC158;&#xC758; ID&#xC640; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC815;&#xBCF4;(ID, accessToken)&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>context</code>: &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xAE30;&#xAE30;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xC774;&#xBA70;, &#xAE30;&#xAE30; ID&#xC640; &#xAE30;&#xAE30;&#xC758; &#xAE30;&#xBCF8; &#xC0AC;&#xC6A9;&#xC790; &#xC815;&#xBCF4;&#xAC00; &#xB2F4;&#xACA8; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>request</code>: <code>SessionEndedRequest</code> &#xD0C0;&#xC785; &#xC694;&#xCCAD;&#xC73C;&#xB85C; &#xB300;&#xC0C1; extension&#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC911;&#xC9C0;&#xD588;&#xC74C;&#xC744; &#xC54C;&#xB9BD;&#xB2C8;&#xB2E4;. &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xAC00; &#xBD84;&#xC11D;&#xB41C; &#xC815;&#xBCF4;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="ReturnCustomExtensionResponse">Custom extension &#xC751;&#xB2F5; &#xBC18;&#xD658;&#xD558;&#xAE30; </h2>
+<p><a href="#HandleCustomExtensionRequest">&#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xCC98;&#xB9AC;</a>&#xD558;&#xACE0; &#xB098;&#xBA74; &#xB2E4;&#xC2DC; CEK&#xB85C; <a href="../References/CEK_API.html#CustomExtResponseMessage">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xB97C; &#xB3CC;&#xB824;&#xC918;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;(HTTPS Response). &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xD0C0;&#xC785;&#xC5D0; &#xB530;&#xB77C; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD558;&#xB294; &#xB0B4;&#xC6A9;&#xC774; &#xB2EC;&#xB77C;&#xC9C8; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xC758; &#xAD6C;&#xC870;&#xB294; &#xD06C;&#xAC8C; &#xB2E4;&#xB974;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xC740; LaunchRequest &#xD0C0;&#xC785; &#xC694;&#xCCAD;(&quot;&#xC601;&#xC5B4; &#xB300;&#xD654;&#xD558;&#xC790;&quot;&#xB77C;&#xB294; &#xC0AC;&#xC6A9;&#xC790; &#xC694;&#xCCAD;)&#xC744; &#xCC98;&#xB9AC;&#xD558;&#xACE0; &#xBCF4;&#xB0B8; &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;outputSpeech&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SimpleSpeech&quot;</span>,
+      <span class="hljs-string">&quot;values&quot;</span>: {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;PlainText&quot;</span>,
+          <span class="hljs-string">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;Hi, nice to meet you&quot;</span>
+      }
+    },
+    <span class="hljs-string">&quot;card&quot;</span>: {},
+    <span class="hljs-string">&quot;directives&quot;</span>: [],
+    <span class="hljs-string">&quot;shouldEndSession&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<p>&#xAC01; &#xD544;&#xB4DC;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC740; &#xC758;&#xBBF8;&#xB97C; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>version</code>: &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; custom extension &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC758; &#xBC84;&#xC804;&#xC774; v0.1.0&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>response.outputSpeech</code>: &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC601;&#xC5B4;&#xB85C; &quot;Hi, nice to meet you&quot;&#xC758; &#xBB38;&#xC7A5;&#xC744; &#xB9D0;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</li>
+<li><code>response.card</code>: &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. <a href="../../CIC/References/Content_Templates.html">Content template</a> &#xD615;&#xD0DC;&#xC758; &#xB370;&#xC774;&#xD130;&#xC774;&#xBA70;, &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xCF58;&#xD150;&#xD2B8;&#xB97C; &#xC774; &#xD544;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>response.shouldEndSession</code>: &#xC138;&#xC158;&#xC744; &#xC885;&#xB8CC;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xACC4;&#xC18D; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC785;&#xB825;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9CC;&#xC57D; &#xC774; &#xD544;&#xB4DC; &#xAC12;&#xC774; true&#xC774;&#xBA74; <a href="#HandleSessionEndedRequest"><code>SessionEndedRequest</code></a> &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xAE30; &#xC804;&#xC5D0; extension&#xC774; &#xC8FC;&#xB3C4;&#xD558;&#xC5EC; &#xC138;&#xC158;&#xC744; &#xC885;&#xB8CC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p><code>sessionAttributes</code> &#xD544;&#xB4DC;&#xB294; &#xD655;&#xC7A5;&#xC744; &#xC704;&#xD574; &#xC608;&#xC57D;&#xD574; &#xB454; &#xD544;&#xB4DC;&#xC774;&#xBA70;, <code>response.directives</code> &#xD544;&#xB4DC;&#xB294; extension&#xC774; CEK&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xC785;&#xB2C8;&#xB2E4;. <code>response.directives</code> &#xD544;&#xB4DC;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC9C0;&#xC2DC; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xCD94;&#xD6C4; API&#xB97C; &#xC81C;&#xACF5;&#xD560; &#xC608;&#xC815;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<p>&#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xACBD;&#xC6B0;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xC5EC;&#xB7EC; &#xBB38;&#xC7A5;&#xC744; &#xCD9C;&#xB825;&#xD558;&#xB3C4;&#xB85D; &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xACE0;, &#xC778;&#xD130;&#xB137; &#xC0C1;&#xC5D0; &#xC788;&#xB294; &#xC74C;&#xC131; &#xD30C;&#xC77C;&#xC774;&#xB098; &#xC74C;&#xC545; &#xD30C;&#xC77C;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xB3C4;&#xB85D; &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC791;&#xC131;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;outputSpeech&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SpeechList&quot;</span>,
+      <span class="hljs-string">&quot;values&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;PlainText&quot;</span>,
+          <span class="hljs-string">&quot;lang&quot;</span>: <span class="hljs-string">&quot;ko&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xB178;&#xB798;&#xB97C; &#xBD88;&#xB7EC;&#xBCFC;&#xAC8C;&#xC694;.&quot;</span>
+        },
+        {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;URL&quot;</span>,
+          <span class="hljs-string">&quot;lang&quot;</span>: <span class="hljs-string">&quot;&quot;</span> ,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;https://tts.com/song.mp3&quot;</span>
+        }
+      ]
+    },
+    <span class="hljs-string">&quot;card&quot;</span>: {},
+    <span class="hljs-string">&quot;directives&quot;</span>: [],
+    <span class="hljs-string">&quot;shouldEndSession&quot;</span>: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<p>&#xAC01; <code>response.outputSpeech</code> &#xD544;&#xB4DC;&#xB97C; &#xC124;&#xBA85;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<ul>
+<li><code>response.outputSpeech.type</code>: &#xBCF5;&#xBB38; &#xD0C0;&#xC785;(SpeechList)&#xC758; &#xC74C;&#xC131; &#xC815;&#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</li>
+<li><code>response.outputSpeech.values[0]</code>: &#xC77C;&#xBC18; &#xD14D;&#xC2A4;&#xD2B8; &#xD615;&#xD0DC;&#xC758; &#xC74C;&#xC131; &#xC815;&#xBCF4;&#xC774;&#xBA70;, &#xD55C;&#xAD6D;&#xC5B4;&#xB85C; &quot;&#xB178;&#xB798;&#xB97C; &#xBD88;&#xB7EC;&#xBCFC;&#xAC8C;&#xC694;&quot;&#xB77C;&#xACE0; &#xBC1C;&#xD654;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+<li><code>response.outputSpeech.values[1]</code>: URL &#xD615;&#xD0DC;&#xC758; &#xC74C;&#xC131; &#xC815;&#xBCF4;&#xC774;&#xBA70;, <code>value</code> &#xD544;&#xB4DC;&#xC5D0; &#xC785;&#xB825;&#xB41C; URL&#xC758; &#xD30C;&#xC77C;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>&#xB2E8;&#xBB38;&#xC774;&#xB098; &#xBCF5;&#xBB38; &#xD615;&#xD0DC;&#xC758; &#xC74C;&#xC131; &#xC815;&#xBCF4; &#xC678;&#xC5D0;&#xB3C4; &#xC2A4;&#xD06C;&#xB9B0; &#xC5C6;&#xB294; &#xAE30;&#xAE30;&#xC640; &#xAC19;&#xC774; &#xC0C1;&#xC138; &#xB0B4;&#xC6A9;&#xC744; GUI&#xB85C; &#xD45C;&#xD604;&#xD558;&#xAE30; &#xD798;&#xB4E0; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xB97C; &#xC704;&#xD574; &#xBCF5;&#xD569; &#xD615;&#xD0DC;(SpeechSet)&#xC758; &#xC74C;&#xC131; &#xC815;&#xBCF4;&#xB3C4; &#xC9C0;&#xC6D0;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xC138;&#xD55C; &#xC0AC;&#xD56D;&#xC740; custom extension &#xBA54;&#xC2DC;&#xC9C0; &#xD3EC;&#xB9F7;&#xC758; <a href="../References/CEK_API.html#CustomExtResponseMessage">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xB97C; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</div>
+
+<p>&#xC74C;&#xC131; &#xCD9C;&#xB825;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xAE30;&#xAE30;&#xC758; &#xD654;&#xBA74;&#xC774;&#xB098; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; &#xC571; &#xD654;&#xBA74;&#xC5D0; &#xC6D0;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xCD9C;&#xB825;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; <code>response.card</code> &#xD544;&#xB4DC;&#xC5D0; <a href="../../CIC/References/Content_Templates.html">content template</a>&#xC5D0; &#xB9DE;&#xCDB0; &#xD45C;&#xC2DC;&#xD560; &#xCF58;&#xD150;&#xCE20;&#xB97C; &#xCC44;&#xC6B0;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;outputSpeech&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SimpleSpeech&quot;</span>,
+      <span class="hljs-string">&quot;values&quot;</span>: {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;PlainText&quot;</span>,
+          <span class="hljs-string">&quot;lang&quot;</span>: <span class="hljs-string">&quot;ko&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xACF5;&#xD3EC; &#xC601;&#xD654; &#xCD94;&#xCC9C;&#xD574; &#xB4DC;&#xB824;&#xC694;.&quot;</span>
+      }
+    },
+    <span class="hljs-string">&quot;card&quot;</span>: {
+      <span class="hljs-string">&quot;subType&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;CardList&quot;</span>,
+      <span class="hljs-string">&quot;cardList&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;description&quot;</span>: [
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xACF5;&#xD3EC;, &#xC2A4;&#xB9B4;&#xB7EC;&quot;</span>
+            },
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xC544;&#xB860; &#xC5D0;&#xD06C;&#xD558;&#xD2B8;, &#xB370;&#xC774;&#xBE44;&#xB4DC; &#xB9E4;&#xC8FC;&#xC988;, &#xCE90;&#xB9AC;&#xC2A4; &#xBC34; &#xD5C8;&#xC2A8;, &#xCE74;&#xD0C0;&#xB9AC;&#xB098; &#xC0B0;&#xB514;&#xB178; &#xBAA8;&#xB808;&#xB178;, &#xD0A4;&#xC5B4; &#xC624;&#xB3C4;&#xB12C;, &#xB9E4;&#xD2B8; &#xB124;&#xC774;&#xBE14;, &#xC874; &#xD53C;&#xB8E8;&#xCCBC;&#xB85C;, &#xC5E0;&#xC81C;&#xC774; &#xC548;&#xC18C;&#xB2C8;, &#xCE74;&#xB864;&#xB9AC;&#xB098; &#xC704;&#xB4DC;&#xB77C;, &#xB9C8;&#xD06C; &#xC2A4;&#xD14C;&#xAC70;, &#xD1A0;&#xB9C8;&#xC2A4; &#xC544;&#xB77C;&#xB098;, &#xD398;&#xD2B8;&#xB77C; &#xC2A4;&#xD504;&#xB808;&#xCC98;, &#xB9C8;&#xD06C; &#xD5E8;&#xB9AC;, &#xC560;&#xC290;&#xB9AC; &#xADF8;&#xB9B0; &#xC5D8;&#xB9AC;&#xC790;&#xBCA0;&#xC2A4;&quot;</span>
+            },
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+            }
+          ],
+          <span class="hljs-string">&quot;imageUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;http://movie.phinf.naver.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2&quot;</span>
+          },
+          <span class="hljs-string">&quot;linkUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;http://movie.naver.com/movie/bi/mi/basic.nhn?code=118965&quot;</span>
+          },
+          <span class="hljs-string">&quot;press&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          },
+          <span class="hljs-string">&quot;publishDate&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;date&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          },
+          <span class="hljs-string">&quot;referenceText&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xB124;&#xC774;&#xBC84; &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&quot;</span>
+          },
+          <span class="hljs-string">&quot;referenceUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;https://m.search.naver.com/search.naver?where=m&amp;sm=mob_lic&amp;query=+%ec%98%81%ed%99%94&quot;</span>
+          },
+          <span class="hljs-string">&quot;title&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xC778;&#xCE74;&#xB124;&#xC774;&#xD2B8;&quot;</span>
+          },
+          <span class="hljs-string">&quot;videoUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          }
+        },
+        {
+          <span class="hljs-string">&quot;description&quot;</span>: [
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xACF5;&#xD3EC;&quot;</span>
+            },
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xB9C8;&#xD2F8;&#xB2E4; &#xC548;&#xB098; &#xC789;&#xADF8;&#xB9AC;&#xB4DC; &#xB8E8;&#xCE20;, &#xC54C;&#xB809;&#xC2A4; &#xB85C;, &#xC790;&#xB2C8; &#xAC08;&#xB809;&#xD0A4;, &#xBE48;&#xC13C;&#xD2B8; &#xB3C4;&#xB178;&#xD504;&#xB9AC;&#xC624;, &#xC5D0;&#xC774;&#xBBF8; &#xD2F0;&#xAC00;&#xB4E0;, &#xBCF4;&#xB2C8; &#xBAA8;&#xAC74;, &#xB85C;&#xB77C; &#xC704;&#xAE34;&#xC2A4;, &#xC7AD; &#xB85C;&#xC5B4;&#xB9AC;&#xADF8;, &#xB9AC;&#xC9C0; &#xBE0C;&#xB85C;&#xCCB4;&#xB974;&quot;</span>
+            },
+            {
+              <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+            }
+          ],
+          <span class="hljs-string">&quot;imageUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;http://movie.phinf.naver.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2&quot;</span>
+          },
+          <span class="hljs-string">&quot;linkUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;http://movie.naver.com/movie/bi/mi/basic.nhn?code=137909&quot;</span>
+          },
+          <span class="hljs-string">&quot;press&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          },
+          <span class="hljs-string">&quot;publishDate&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;date&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          },
+          <span class="hljs-string">&quot;referenceText&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xB124;&#xC774;&#xBC84; &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&quot;</span>
+          },
+          <span class="hljs-string">&quot;referenceUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;https://m.search.naver.com/search.naver?where=m&amp;sm=mob_lic&amp;query=+%ec%98%81%ed%99%94&quot;</span>
+          },
+          <span class="hljs-string">&quot;title&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xB9C1;&#xC2A4;&quot;</span>
+          },
+          <span class="hljs-string">&quot;videoUrl&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;url&quot;</span>,
+            <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+          }
+        },
+        ...
+      ]
+    },
+    <span class="hljs-string">&quot;directives&quot;</span>: [],
+    <span class="hljs-string">&quot;shouldEndSession&quot;</span>: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<h2 id="DoMultiturnDialog">Multi-turn &#xB300;&#xD654; &#xC218;&#xD589;&#xD558;&#xAE30; </h2>
+<p>CEK&#xB85C;&#xBD80;&#xD130; &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC0AC;&#xC6A9;&#xC790; &#xC694;&#xCCAD; &#xC815;&#xBCF4;(<a href="Build_Custom_Extension.html#HandleIntentRequest"><code>IntentRequest</code></a>)&#xAC00; custom extension&#xC774; &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xAC70;&#xB098; &#xB3D9;&#xC791;&#xC744; &#xC218;&#xD589;&#xD558;&#xAE30;&#xC5D0; &#xBD80;&#xC871;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xB294; Single-turn &#xD615;&#xD0DC;&#xC758; &#xB300;&#xD654;&#xB85C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC694;&#xCCAD;&#xC744; &#xD55C;&#xBC88;&#xC5D0; &#xBC1B;&#xAE30; &#xC5B4;&#xB824;&#xC6B8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0; custom extension&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xBD80;&#xC871;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xBC1B;&#xAE30; &#xC704;&#xD574; multi-turn &#xB300;&#xD654;&#xB97C; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC608;&#xB97C; &#xB4E4;&#xBA74;, &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &quot;&#xD398;&#xD37C;&#xB85C;&#xB2C8; &#xD53C;&#xC790; &#xC8FC;&#xBB38;&#xD574;&#xC918;&quot;&#xB77C;&#xACE0; &#xD588;&#xACE0; CEK&#xC5D0;&#xC11C; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xBCF4;&#xB0C8;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD574; &#xBD05;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;session&quot;</span>: {
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {},
+    <span class="hljs-string">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;a29cfead-c5ba-474d-8745-6c1a6625f0c5&quot;</span>,
+    <span class="hljs-string">&quot;user&quot;</span>: {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+      <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;context&quot;</span>: {
+    ...
+  },
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;IntentRequest&quot;</span>,
+    <span class="hljs-string">&quot;intent&quot;</span>: {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;OrderPizza&quot;</span>,
+      <span class="hljs-string">&quot;slots&quot;</span>: {
+        <span class="hljs-string">&quot;pizzaType&quot;</span>: {
+          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pizzaType&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xD398;&#xD37C;&#xB85C;&#xB2C8;&quot;</span>
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>Custom extension&#xC5D0;&#xC11C; &#xD53C;&#xC790; &#xC885;&#xB958;&#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC8FC;&#xBB38; &#xC218;&#xB7C9; &#xC815;&#xBCF4;&#xAC00; &#xCD94;&#xAC00;&#xB85C; &#xD544;&#xC694;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C;, <a href="../References/CEK_API.html#CustomExtResponseMessage">&#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xC758; <code>response.shouldEndSession</code> &#xD544;&#xB4DC;&#xB97C; <code>false</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74;, &#xBD80;&#xC871;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xCD94;&#xAC00;&#xB85C; &#xD655;&#xC778;&#xD558;&#xAE30; &#xC704;&#xD574; multi-turn &#xB300;&#xD654;&#xB97C; &#xC2DC;&#xB3C4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xAE30;&#xC874;&#xC5D0; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xBA3C;&#xC800; &#xBCF4;&#xB0C8;&#xB358; &#xC815;&#xBCF4;&#xB97C; <code>sessionAttributes</code> &#xD544;&#xB4DC;&#xC5D0; &#xD0A4;(key)-&#xAC12;(value) &#xD615;&#xD0DC;&#xB85C; &#xC800;&#xC7A5;&#xD574;&#xB458; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xC751;&#xB2F5;&#xD558;&#xBA74; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC774;&#xBBF8; &#xC694;&#xCCAD;&#xD588;&#xB358; <code>intent</code> &#xD544;&#xB4DC;&#xC640; <code>pizzaType</code>&#xC758; &#xC815;&#xBCF4;&#xB97C; &#xBCF4;&#xAD00;&#xD574;&#xB450;&#xB3C4;&#xB85D; Clova&#xC5D0; &#xC694;&#xCCAD;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70;, &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC218;&#xB7C9;&#xACFC; &#xAD00;&#xB828;&#xB41C; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC694;&#xCCAD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {
+    <span class="hljs-string">&quot;intent&quot;</span>: <span class="hljs-string">&quot;OrderPizza&quot;</span>,
+    <span class="hljs-string">&quot;pizzaType&quot;</span>: <span class="hljs-string">&quot;pepperoni&quot;</span>
+  },
+  <span class="hljs-string">&quot;response&quot;</span>: {
+    <span class="hljs-string">&quot;outputSpeech&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;SimpleSpeech&quot;</span>,
+      <span class="hljs-string">&quot;values&quot;</span>: {
+          <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;PlainText&quot;</span>,
+          <span class="hljs-string">&quot;lang&quot;</span>: <span class="hljs-string">&quot;ko&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;&#xBA87; &#xD310; &#xC8FC;&#xBB38;&#xD560;&#xAE4C;&#xC694;?&quot;</span>
+      }
+    },
+    <span class="hljs-string">&quot;card&quot;</span>: {},
+    <span class="hljs-string">&quot;directives&quot;</span>: [],
+    <span class="hljs-string">&quot;shouldEndSession&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre>
+<p>&#xCD94;&#xD6C4; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xD544;&#xC694;&#xD55C; &#xC218;&#xB7C9; &#xC815;&#xBCF4;&#xAE4C;&#xC9C0; &#xC751;&#xB2F5;&#xD558;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xBD84;&#xC11D;&#xB41C; &#xC218;&#xB7C9; &#xC815;&#xBCF4;&#xC640; &#xD568;&#xAED8; Clova &#xD50C;&#xB7AB;&#xD3FC;&#xC740; &#xC800;&#xC7A5;&#xD574;&#xB454; <code>sessionAttributes</code> &#xAC1D;&#xCCB4; &#xC815;&#xBCF4;&#xB97C; <a href="../References/CEK_API.html#CustomExtRequestMessage">&#xC694;&#xCCAD; &#xBA54;&#xC2DC;&#xC9C0;</a>&#xC758; <code>session.sessionAttributes</code> &#xD544;&#xB4DC;&#xC5D0; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &#xB2E4;&#xC2DC; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB54C;, &#xCD94;&#xAC00;&#xB85C; &#xC804;&#xB2EC;&#xB41C; &#xBA54;&#xC2DC;&#xC9C0;&#xB294; &#xC774;&#xC804; &#xBA54;&#xC2DC;&#xC9C0;&#xC640; &#xAC19;&#xC740; <code>session.sessionId</code> &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xAC8C; &#xB418;&#xBA70;, custom extension&#xC740; &#xBC1B;&#xC740; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xB2E4;&#xC74C; &#xB3D9;&#xC791;&#xC744; &#xC218;&#xD589;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.1.0&quot;</span>,
+  <span class="hljs-string">&quot;session&quot;</span>: {
+    <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">&quot;sessionAttributes&quot;</span>: {
+        <span class="hljs-string">&quot;intent&quot;</span>: <span class="hljs-string">&quot;OrderPizza&quot;</span>,
+        <span class="hljs-string">&quot;pizzaType&quot;</span>: <span class="hljs-string">&quot;&#xD398;&#xD37C;&#xB85C;&#xB2C8;&quot;</span>
+    },
+    <span class="hljs-string">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;a29cfead-c5ba-474d-8745-6c1a6625f0c5&quot;</span>,
+    <span class="hljs-string">&quot;user&quot;</span>: {
+      <span class="hljs-string">&quot;userId&quot;</span>: <span class="hljs-string">&quot;V0qe&quot;</span>,
+      <span class="hljs-string">&quot;accessToken&quot;</span>: <span class="hljs-string">&quot;XHapQasdfsdfFsdfasdflQQ7&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;context&quot;</span>: {
+    ...
+  },
+  <span class="hljs-string">&quot;request&quot;</span>: {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;IntentRequest&quot;</span>,
+    <span class="hljs-string">&quot;intent&quot;</span>: {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;AddInfo&quot;</span>,
+      <span class="hljs-string">&quot;slots&quot;</span>: {
+        <span class="hljs-string">&quot;pizzaAmount&quot;</span>: {
+          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pizzaAmount&quot;</span>,
+          <span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../CEK_Overview.html#ExtensionType" class="navigation navigation-prev " aria-label="Previous page: Extension 종류">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Build_Custom_Extension.html#Preparation" class="navigation navigation-next " aria-label="Next page: 사전 준비사항">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Custom extension 만들기","level":"4.2","depth":1,"next":{"title":"사전 준비사항","level":"4.2.1","depth":2,"anchor":"#Preparation","path":"CEK/Guides/Build_Custom_Extension.md","ref":"CEK/Guides/Build_Custom_Extension.md#Preparation","articles":[]},"previous":{"title":"Extension 종류","level":"4.1.3","depth":2,"anchor":"#ExtensionType","path":"CEK/CEK_Overview.md","ref":"CEK/CEK_Overview.md#ExtensionType","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","toggle-children","page-toc-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-toc-button":{"maxTocDepth":4,"minTocSize":2},"toggle-children":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"NAVER Corp.","pdf":{"pageNumbers":true,"fontSize":11,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":40,"bottom":40}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"DocVersion":"v2.7","CICBaseURL":"https://prod-ni-cic.clova.ai/","ClassifiedInfo":"대외비","RedirectURLforAccountLinking":"https://prod-ni-cic.clova.ai/v1/al/token/","OrientedService":"NAVER","AuthServerBaseURL":"https://auth.clova.ai/","TargetServiceForClientAuth":"NAVER","Locale":"ko-KR","DocOwner":"NAVER","LoginAPIofTargetService":"https://developers.naver.com/docs/login/overview/"},"title":"Clova 개발자 가이드","language":"ko","gitbook":"*","description":"이 문서는 Clova가 제공하는 CIC와 CEK 플랫폼에 대한 개발 가이드 및 API 레퍼런스를 제공합니다.","direction":"ltr"},"file":{"path":"CEK/Guides/Build_Custom_Extension.md","mtime":"2017-12-30T10:36:32.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-09T02:40:09.991Z"},"basePath":"../..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-toggle-children/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
