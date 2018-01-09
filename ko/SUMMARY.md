@@ -155,7 +155,7 @@
     * [이용 약관 및 개인 정보 수집 동의](/DevConsole/Guides/CEK/Register_Extension.md#AgreeTermsOfUse)
     * [Extension 기본 정보 입력](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)
     * [서버 연동 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetServerConnection)
-      * [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning)
+      * [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)
   * [Interaction 모델 등록하기](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
     * [Built-in slot 타입 추가하기](/DevConsole/Guides/CEK/Register_Interaction_Model.md#AddBuiltinSlotType)
     * [Custom slot 타입 추가하기](/DevConsole/Guides/CEK/Register_Interaction_Model.md#AddCustomSlotType)
