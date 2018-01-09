@@ -36,7 +36,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><strong>Extension 페이지</strong>에 표시되는 일부 정보는 <a href="/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo">Extension 기본 정보를 등록</a>할 때 입력된 정보를 활용합니다.</p>
+  <p><strong>Extension 페이지</strong>에 표시되는 일부 정보는 <a href="/DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">Extension 기본 정보를 등록</a>할 때 입력된 정보를 활용합니다.</p>
 </div>
 
 ## 개인 정보 관리 및 규정 준수 정보 입력 {#InputComplianceInfo}

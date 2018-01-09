@@ -302,7 +302,7 @@ Clova가 제공하는 UI 화면에 Clova 로고를 다음과 같은 레이아웃
 
 #### 로고 레이아웃 B {#LogoLayoutB}
 
-[로고 레이아웃 A](#LayboutA)와 비슷하게 화면 하단의 일부나 전체를 덮는 UI 화면으로 Clova 로고가 우측 상단에 배치되는 레이아웃입니다.
+[로고 레이아웃 A](#LogoLayoutA)와 비슷하게 화면 하단의 일부나 전체를 덮는 UI 화면으로 Clova 로고가 우측 상단에 배치되는 레이아웃입니다.
 
 ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Bottom_Overlay.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Full_Screen_Overlay.png)
 

@@ -8,7 +8,7 @@ Extension을 등록할 때 일반적으로 다음 항목을 순차적으로 수�
 1. [이용 약관 및 개인 정보 수집 동의](#AgreeTermsOfUse)
 2. [Extension 기본 정보 입력](#InputExtensionInfo)
 3. [서버 연동 설정](#SetServerConnection)
-  * [계정 연결 설정](#SetAccountLinkning)
+  * [계정 연결 설정](#SetAccountLinking)
 
 ## 이용 약관 및 개인 정보 수집 동의 {#AgreeTermsOfUse}
 
@@ -61,7 +61,7 @@ Extension은 CEK와 HTTPS 통신을 수행하게 되니다. 이때, CEK는 Exten
   <li>서버 연동 설정과 관련된 내용을 입력한 후 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-### 계정 연결 설정 {#SetAccountLinkning}
+### 계정 연결 설정 {#SetAccountLinking}
 
 Extension으로 제공하려는 서비스의 사용자 계정이 Clova의 사용자 계정과 연결이 필요한 경우 [서버 연동 설정](#SetServerConnection) 중에 [계정 연결(account linking)](/CEK/Guides/LinkUserAccount.md)에 관련된 정보를 입력해야 합니다.
 
