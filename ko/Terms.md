@@ -79,7 +79,7 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 사용자의 요청이 분석된 결과([Intent](#Intent))를 [custom extension](#CustomExtension)으로 전달할 때 사용되는 요청 메시지 타입입니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) 문서를 참조합니다.
 
 ### Interaction 모델 {#InteractionModel}
-[Custom extension](#CustomeExtension)이 음성으로부터 인식된 사용자의 요청을 extension에 전달하기 위해 정형화된 포맷(JSON)으로 바꿔주는 규칙을 명세한 것입니다. 자세한 내용은 [Interaction 모델](/DevConsole/Guides/CEK/Create_Interaction_Model.md) 문서를 참조합니다.
+[Custom extension](#CustomExtension)이 음성으로부터 인식된 사용자의 요청을 extension에 전달하기 위해 정형화된 포맷(JSON)으로 바꿔주는 규칙을 명세한 것입니다. 자세한 내용은 [Interaction 모델](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 문서를 참조합니다.
 
 ### LaunchRequest {#LaunchRequest}
 사용자가 특정 모드나 특정 [custom extension](#CustomExtension)을 사용하기로 선언한 것을 알리기 위해 보내는 요청 메시지입니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) 문서를 참조합니다.

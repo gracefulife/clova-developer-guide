@@ -73,7 +73,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 * `state` 파라미터를 redirect URL(`redirect_uri`)로 계속 전달해야 합니다.
 
 
-사용자가 계정을 인증할 수 있도록 로그인 UI를 제공하는 페이지의 주소를 **Authorization URL**이라 부르며, Clova Developer Console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)할 때 입력해야 합니다. 사용자가 extension의 [계정 연결을 사용하도록 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning)할 때 이 **Authorization URL**이 다음 파라미터와 함께 호출됩니다.
+사용자가 계정을 인증할 수 있도록 로그인 UI를 제공하는 페이지의 주소를 **Authorization URL**이라 부르며, Clova Developer Console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)할 때 입력해야 합니다. 사용자가 extension의 [계정 연결을 사용하도록 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)할 때 이 **Authorization URL**이 다음 파라미터와 함께 호출됩니다.
 
 | 파라미터 이름     | 설명                                         |
 |---------------|---------------------------------------------|
@@ -81,7 +81,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 | `client_id`     | Clova가 외부 서비스의 access token을 발급 받기 위해 사용할 ID. 개발자는 Clova Developer Console을 통해 미리 `cliend_id`를 등록해둬야 합니다. |
 | `response_type` | OAuth 2.0 인가 타입(`"code"` 또는 `"token"`)을 정의해 둔 파라미터. 높은 보안이 필요한 경우 `"code"` 타입을 사용합니다. Clova Home extension은 항상 `"code"` 타입을 사용합니다. Clova Developer Console을 통해 미리 `reponse_type`을 등록해둬야 합니다. |
 | `scope`         | OAuth의 `scope` 필드. 접근 수준을 정의할 수 있습니다. Clova Developer Console을 통해 미리 `scope`를 등록해둬야 합니다. |
-| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
+| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -210,7 +210,7 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 
 
 ### 계정 연결 정보 등록 {#RegisterAccountLinkingInfo}
-인증 서버 구축과 extension에 계정 연결을 적용하는 것이 완료되면 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)에 [인증 서버 구축](#BuildAuthServer)에서 언급했던 정보를 등록해야 합니다. Clova Developer Console에 등록된 extension에서 다음과 같은 [계정 연결 정보를 입력](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning)합니다.
+인증 서버 구축과 extension에 계정 연결을 적용하는 것이 완료되면 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)에 [인증 서버 구축](#BuildAuthServer)에서 언급했던 정보를 등록해야 합니다. Clova Developer Console에 등록된 extension에서 다음과 같은 [계정 연결 정보를 입력](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)합니다.
 
 | 필드 이름           | 설명                                         |
 |-------------------|---------------------------------------------|
