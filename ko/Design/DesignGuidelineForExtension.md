@@ -212,7 +212,7 @@ BBQ 피자 하나만 배달시켜줄래?
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>추후 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#TestInteractionModel">interaction 모델 테스트</a>나 실제 사용자 로그를 통해 완성도를 높여 나갈 수 있습니다. Interaction 모델을 테스트할 때는 발화 예시를 작성한 사람이 아닌 다른 사람이 테스트해보는 것이 좋습니다. 이 방법은 새로운 표현 패턴을 찾는데 도움이 됩니다.</p>
+  <p>추후 <a href="/DevConsole/Guides/CEK/Test_Extension.html#TestInteractionModel">interaction 모델 테스트</a>나 실제 사용자 로그를 통해 완성도를 높여 나갈 수 있습니다. Interaction 모델을 테스트할 때는 발화 예시를 작성한 사람이 아닌 다른 사람이 테스트해보는 것이 좋습니다. 이 방법은 새로운 표현 패턴을 찾는데 도움이 됩니다.</p>
 </div>
 
 

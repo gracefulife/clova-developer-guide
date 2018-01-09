@@ -12,7 +12,7 @@
 |---------------|---------|-----------------------------|
 | `bgClipUrl`                       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 배경 영상 파일의 URL 정보가 담긴 객체. <div class="danger"><p><strong>Caution!</strong></p><p>해당 필드의 데이터는 라이센스 문제로 제휴처에서는 사용하실 수 없습니다.</p></div> |
 | `dailyWeatherList[]`              | object array | 일일 날씨 정보를 가지는 객체 배열 |
-| `dailyWeatherList[].date`         | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#Datebject) | 날짜 정보를 가진 객체 |
+| `dailyWeatherList[].date`         | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject) | 날짜 정보를 가진 객체 |
 | `dailyWeatherList[].highTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | 해당 날짜의 최고 기온 정보가 담긴 객체 |
 | `dailyWeatherList[].iconImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 날짜별 [날씨 코드](#WeatherCode) 정보가 담긴 객체 |
 | `dailyWeatherList[].iconImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | 해당 날짜의 날씨 정보를 표현하는 이미지 아이콘의 URL 정보를 가지는 객체 |
