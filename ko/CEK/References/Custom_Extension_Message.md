@@ -71,7 +71,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `content.System.device.display.size`        | string | 디스플레이 장치의 해상도 크기를 나타내는 값. 크기가 미리 지정된 값 또는 임의의 해상도 크기를 의미하는 값(`"custom"`)이 입력되어 있을 수도 있습니다. 또는 디스플레이 장치가 없음을 의미하는 값(`"none"`)이 입력되어 있을 수도 있습니다. <ul><li><code>"none"</code>: 클라이언트 기기에 디스플레이 장치가 없음</li><li><code>"s100"</code>: 저해상도(160px X 107px)</li><li><code>"m100"</code>: 중간 해상도(427px X 240px)</li><li><code>"l100"</code>: 고해상도(640px X 360px)</li><li><code>"xl100"</code>: 초고해상도(xlarge type, 899px X 506px)</li><li><code>"custom"</code>: 미리 정의된 규격이 아닌 해상도.</li></ul><div class="note"><p><strong>Note!</strong></p><p>클라이언트 기기의 화면 비율과 DPI에 맞는 화질의 미디어 콘텐츠를 제공해야 합니다.</p></div> | 항상 |
 | `context.System.user`                      | object  | 클라이언트 기기에 인증된 기본 사용자 정보를 가지고 있는 객체                 | 항상 |
 | `context.System.user.userId`               | string  | 기기 기본 사용자의 Clova ID                                    | 항상 |
-| `context.System.user.accessToken`          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다. | 항상 |
+| `context.System.user.accessToken`          | string  | 특정 서비스의 사용자 계정의 access token. 기기 기본 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LInk_User_Account.md)를 참조합니다. | 항상 |
 | `request`                                 | object  | 분석된 사용자의 발화 정보를 가지고 있는 객체. [요청 타입](#CustomExtRequestType)에 따라 구성되는 필드가 달라집니다. | 항상 |
 | `session`                                  | object  | 세션 정보를 가지고 있는 객체. 여기서 세션은 사용자의 요청을 구분하는 논리적 단위입니다.     | 항상 |
 | `session.new`                              | boolean | 요청 메시지가 새로운 세션에 대한 것인지 아니면 기존 세션에 대한 것인지 구분합니다. <ul><li>true: 새로운 세션</li><li>false: 기존 세션</li></ul>  | 항상 |
@@ -79,7 +79,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `session.sessionId`                        | string  | 세션 ID                                                    | 항상 |
 | `session.user`                             | object  | 현재 사용자의 정보를 가지고 있는 객체                             | 항상 |
 | `session.user.userId`                      | string  | 현재 사용자의 Clova ID. `context.System.user.userId` 값과 다를 수 있습니다. | 항상 |
-| `session.user.accessToken`                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md)를 참조합니다.| 조건부 |
+| `session.user.accessToken`                 | string  | 특정 서비스의 사용자 계정의 access token. 현재 사용자와 연결된 사용자 계정의 access token이 전달됩니다. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/LInk_User_Account.md)를 참조합니다.| 조건부 |
 | `version`                                  | string  | 메시지 포맷의 버전 (CEK 버전)                          | 항상 |
 
 #### Message example
