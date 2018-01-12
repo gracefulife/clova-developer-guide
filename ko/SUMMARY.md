@@ -23,9 +23,9 @@
   * [유의사항](/Design/DesignGuidelineForExtension.md#Precautions)
   * [지속적인 업데이트](/Design/DesignGuidelineForExtension.md#ContinuousUpdate)
 
-## Clova Interface Connect
+## Clova Interface Connect - Partner only
 
-* [CIC 개요](/CIC/CIC_Overview.md) <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />
+* [CIC 개요](/CIC/CIC_Overview.md)
   * [CIC란?](/CIC/CIC_Overview.md#WhatisCIC)
   * [CIC 동작 구조](/CIC/CIC_Overview.md#CICInteractionStructure)
   * [대화 모델](/CIC/CIC_Overview.md#DialogModel)
@@ -120,7 +120,7 @@
     * [SessionEndedRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
   * [Custom extension 응답 반환하기](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
   * [Multi-turn 대화 수행하기](/CEK/Guides/Build_Custom_Extension.md#DoMultiturnDialog)
-* [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md)
+* [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md) - Partner only
   * [사전 준비사항](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
   * [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
   * [Clova Home extension 요청 처리하기](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
