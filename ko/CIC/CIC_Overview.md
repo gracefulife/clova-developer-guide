@@ -6,6 +6,11 @@ CIC는 인공 지능 비서 서비스를 제공하려는 PC/모바일용 앱, �
 
 ![](/CIC/Resources/Images/CIC_Interaction_Structure.png)
 
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>Clova와 연동하는 클라이언트를 개발하려는 회사나 개인은 사전에 <a target="_blank" href="https://www.navercorp.com/ko/company/proposalRegister.nhn">NAVER 제휴 제안</a> 페이지를 방문하여 미리 제휴를 맺어야 합니다. 따라서, 현재 CIC와 관련된 문서 내용은 제휴를 맺은 파트너에게만 유효합니다.</p>
+</div>
+
 ## CIC 동작 구조 {#CICInteractionStructure}
 클라이언트는 CIC API를 통해 사용자의 요청을 CIC로 전달하며 응답 결과를 CIC로부터 전달받습니다. CIC에 접속하기 위해 <a target="_blank" href="https://tools.ietf.org/html/rfc7540">HTTP/2 프로토콜</a>을 사용해야 하며, 음성 인식, 음성 출력, 음악 재생, 개인 일정 관리, 알람, 타이머 설정과 같은 기능을 [CIC API](/CIC/References/CIC_API.md)를 통해 제공하고 있습니다.
 

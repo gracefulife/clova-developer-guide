@@ -4,6 +4,11 @@ Clova Home extension이란 외부 IoT 서비스를 통해 가정 내 IoT 기기�
 
 ![](/CEK/Resources/Images/CEK_Clova_Home_Extension_Operation_Structure.png)
 
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>IoT 서비스를 제공하는 Clova Home extension을 개발하려는 회사나 개인은 사전에 <a target="_blank" href="https://www.navercorp.com/ko/company/proposalRegister.nhn">NAVER 제휴 제안</a> 페이지를 방문하여 미리 제휴를 맺어야 합니다. 따라서, 현재 Clova Home extension과 관련된 문서 내용은 제휴를 맺은 파트너에게만 유효합니다.</p>
+</div>
+
 Clova Home extension을 만들기 위해 사전에 준비해야 할 것이 무엇이 있고 CEK와 어떤 메시지를 주고 받으면서 어떻게 동작을 수행해야 하는지 설명합니다.
 
 다음과 같은 순서로 Clova Home extension 개발자가 알아야 할 내용을 전달합니다.
