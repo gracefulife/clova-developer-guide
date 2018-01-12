@@ -25,7 +25,7 @@
 
 ## Clova Interface Connect
 
-* <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />[CIC 개요](/CIC/CIC_Overview.md)
+* [CIC 개요](/CIC/CIC_Overview.md) <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />
   * [CIC란?](/CIC/CIC_Overview.md#WhatisCIC)
   * [CIC 동작 구조](/CIC/CIC_Overview.md#CICInteractionStructure)
   * [대화 모델](/CIC/CIC_Overview.md#DialogModel)
