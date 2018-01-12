@@ -120,7 +120,7 @@
     * [SessionEndedRequest 요청 처리](/CEK/Guides/Build_Custom_Extension.md#HandleSessionEndedRequest)
   * [Custom extension 응답 반환하기](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
   * [Multi-turn 대화 수행하기](/CEK/Guides/Build_Custom_Extension.md#DoMultiturnDialog)
-* [Clova Home extension 만들기](/CEK/Guides/Build_Clova_Home_Extension.md) - Partner only
+* [Clova Home extension 만들기 - Partner only](/CEK/Guides/Build_Clova_Home_Extension.md)
   * [사전 준비사항](/CEK/Guides/Build_Clova_Home_Extension.md#Preparation)
   * [Discovery 제공하기](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)
   * [Clova Home extension 요청 처리하기](/CEK/Guides/Build_Clova_Home_Extension.md#HandleClovaHomeExtensionRequest)
