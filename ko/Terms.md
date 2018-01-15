@@ -103,7 +103,7 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 메시지 ID는 개개의 메시지를 구분하기 위한 식별자이며, [이벤트 메시지](#Event)와 [지시 메시지](#Directive)는 모두 개개의 메시지 ID를 가집니다.
 
 ### 사용자 계정 연결 (Account Linking) {#AccountLinking}
-사용자의 계정 인증(authentication)이 필요한 외부 서비스를 [extension](#ClovaExtension)이 제공해야 할 때 사용됩니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LinkUserAccount.md) 문서를 참조합니다.
+사용자의 계정 인증(authentication)이 필요한 외부 서비스를 [extension](#ClovaExtension)이 제공해야 할 때 사용됩니다. 자세한 내용은 [사용자 계정 연결하기](/CEK/Guides/LInk_User_Account.md) 문서를 참조합니다.
 
 ### 사용자 발화 예시 {#UserUtteranceExample}
 
