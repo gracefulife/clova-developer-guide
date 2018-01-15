@@ -6,7 +6,7 @@
 </div>
 
 ### Account Linking {#AccountLinking}
-Used when an [extension](#ClovaExtension) provides a 3rd party service that requires users to authenticate their account. See [Linking user account](/CEK/Guides/LinkUserAccount.md) for more details.
+Used when an [extension](#ClovaExtension) provides a 3rd party service that requires users to authenticate their account. See [Linking user account](/CEK/Guides/LInk_User_Account.md) for more details.
 
 ### CEK
 The abbreviation of [Clova Extension Kit](#CEK)
@@ -105,7 +105,7 @@ A type of request message that notifies that a user has requested to start a cer
 A message ID is an identifier for distinguishing individual messages. All [event messages](#Event) and [directive messages](#Directive) have their own message ID.
 
 ### OAuth 2.0
-A public standard for delegation of access permission. The protocol allows internet users to grant account access right to other web services or applications. On the Clova platform, it is used for [account linking](/CEK/Guides/LinkUserAccount.md) when clients try to obtain [Clova access tokens](#ClovaAccessToken) or users try to use a certain extension. Refer to [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749) for more details.
+A public standard for delegation of access permission. The protocol allows internet users to grant account access right to other web services or applications. On the Clova platform, it is used for [account linking](/CEK/Guides/LInk_User_Account.md) when clients try to obtain [Clova access tokens](#ClovaAccessToken) or users try to use a certain extension. Refer to [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749) for more details.
 
 ### SessionEndedRequest {#SessionEndedRequest}
 A type of request message that notifies that a user has requested to end a certain mode or [custom extension](#CustomExtension). See [Handling custom extension request](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) for more details.
