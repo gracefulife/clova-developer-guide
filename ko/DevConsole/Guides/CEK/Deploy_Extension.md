@@ -25,7 +25,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
   - **검색 키워드**: 사용자가 extension을 검색할 때 특정 키워드가 포함되면 검색 결과에 표시되도록 해주는 검색어입니다.
   - **작은 아이콘**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **Extension 스토어 홈**이나 **Extension 페이지**에 표시됩니다.
   - **큰 아이콘**: 큰 크기(512px X 512px)의 extension 아이콘 파일로서 추후 사용될 예정입니다.
-* **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LinkUserAccount.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시와 해당 동작이 제대로 동작했는지 판단할 수 있는 [세부 목표](/Design/DesignGuidelineForExtension.md#SettingGoal) 등을 입력합니다.
+* **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LInk_User_Account.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시와 해당 동작이 제대로 동작했는지 판단할 수 있는 [세부 목표](/Design/DesignGuidelineForExtension.md#SettingGoal) 등을 입력합니다.
 * 서비스 국가 및 지역: 해당 extension이 서비스를 제공할 국가나 지역으로 현재 선택할 수 있는 지역이 없고 한국에만 extension을 배포할 수 있습니다.
 
 이렇게 입력된 정보는 Clova 앱 **확장 서비스 관리** 메뉴(Extension 스토어)에서 다음과 같이 표시됩니다.
@@ -81,7 +81,7 @@ Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 
   <p>심사 중에는 extension의 정보와 interaction 모델을 수정할 수 없습니다.</p>
 </div>
 
-심사는 개별 심사로 진행되며 심사를 위한 별도 환경에서 진행됩니다. 만약, [사용자 계정 연결](/CEK/Guides/LinkUserAccount.md)이 필요한 서비스인 경우에는 [배포 정보를 입력](#InputDeploymentInfo)할 때 테스트를 위한 계정 정보를 **테스트용 지시어** 항목에 입력해야 합니다.
+심사는 개별 심사로 진행되며 심사를 위한 별도 환경에서 진행됩니다. 만약, [사용자 계정 연결](/CEK/Guides/LInk_User_Account.md)이 필요한 서비스인 경우에는 [배포 정보를 입력](#InputDeploymentInfo)할 때 테스트를 위한 계정 정보를 **테스트용 지시어** 항목에 입력해야 합니다.
 
 Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습니다.
 
@@ -92,7 +92,7 @@ Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습
 2. [사용 시나리오](/Design/DesignGuidelineForExtension.md#MakeUseCaseScenarioScript) 검증
   * 대화 문맥 상 어색한 부분이 있는지 확인합니다.
   * 시나리오 상 사용되는 발화 데이터에 금칙어, 민감어 등이 있는지 확인합니다.
-  * Extension이 [사용자 계정을 연결](/CEK/Guides/LinkUserAccount.md)하는 경우 서비스에 특화된 부분을 더 검토할 수 있습니다.
+  * Extension이 [사용자 계정을 연결](/CEK/Guides/LInk_User_Account.md)하는 경우 서비스에 특화된 부분을 더 검토할 수 있습니다.
 3. 배포 정보 검증
   * Extension의 설명, 카테고리, 검색 키워드와 같이 입력된 배포 정보가 extension에 맞게 입력되었는지 확인합니다.
   * Extension이 개인 정보 관리 규정 등 입력된 정책에 맞게 동작하는지 확인합니다.
