@@ -2,7 +2,7 @@
 
 Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관된 UI/UX를 제공해야 사용자가 제품을 사용할 때 혼란을 느끼지 않고 편리하게 사용할 수 있습니다. 이를 위해 Clova에 접속하는 클라이언트 기기를 만들 때 다음과 같은 항목에 대해 디자인 가이드라인을 제공하고 있습니다.
 
-* [클라이언트 상태](#ClientState)
+* [클라이언트 상태 및 이벤트](#ClientStateAndEvent)
 * [버튼](#Button)
 * [조명](#Light)
 * [소리](#Audio)
@@ -13,13 +13,13 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
   <p>여기에서 언급되지 않은 가이드라인이나 스펙은 제조사의 재량이나 정책에 맞게 구현하시면 됩니다. 만약, 직접 판단하기 힘든 부분이 있다면 제휴 담당자에게 연락하시기 바랍니다.</p>
 </div>
 
-## 클라이언트 상태 {#ClientState}
+## 클라이언트 상태 및 이벤트 {#ClientStateAndEvent}
 
 사용자 음성 입력, Clova 음성 출력, 마이크 상태, 오류 발생(Clova 서비스 오류, 네트워크 오류 등) 등을 사용자가 쉽게 인지하거나 조작할 수 있도록 클라이언트 기기를 설계하거나 구현해야 합니다. 이를 위해 클라이언트 기기가 가지는 상태와 상태 사이의 동작 및 흐름을 이해해야 합니다. 다음은 클라이언트의 상태를 표현한 상태 다이어그램입니다.
 
 ![](/Design/Resources/Images/Clova-Client-State_Diagram.png)
 
-각 상태에 대한 설명은 다음과 같습니다.
+클라이언트의 각 상태에 대한 설명은 다음과 같습니다.
 
 | 상태 이름                | 상태 설명                                                            |
 |------------------------|--------------------------------------------------------------------|
@@ -30,8 +30,15 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Mute on                | 마이크 음소거를 설정한 상태                                               |
 | Processing & reporting | Clova가 사용자의 음성 요청을 처리 중이거나 스피커를 통해 Clova 음성을 출력 중인 상태 |
 
-위에서 언급된 상태는 [조명](#Light), [효과음](#SoundEffect), [화면](#Screen) 등을 통해 표현될 수 있으며, 상태 사이의 전이 동작은 사용자의 음성이나 [버튼](#Button) 조작, 환경 요인 등으로 실행되거나 발현될 수 있습니다.
+위에서 언급된 상태나 이벤트는 [조명](#Light), [효과음](#SoundEffect), [화면](#Screen) 등을 통해 표현될 수 있으며, 상태 사이의 전이 동작은 사용자의 음성이나 [버튼](#Button) 조작, 환경 요인 등으로 실행되거나 발현될 수 있습니다.
 
+또한, 클라이언트에서 다음과 같은 이벤트가 발생할 수 있으며, 이 이벤트도 소리나 조명으로 표현해야 합니다.
+
+| 이벤트 이름               | 이벤트 설명                                                           |
+|------------------------|--------------------------------------------------------------------|
+| 알람(Alarm)             | 지정한 날짜와 시간에 울리는 알람                                           |
+| 리마인더(Reminder)       | 지정한 날짜와 시간에 사용자가 입력한 내용을 표시하거나 들려주면서 울리는 알람         |
+| 타이머(Timer)            | 지정한 시간이 경과한 후 울리는 알람                                        |
 
 ## 버튼 {#Button}
 
@@ -74,7 +81,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 ## 조명(LED) {#Light}
 
-클라이언트 기기는 [클라이언트 상태](#ClientState)나 사용자 요청의 피드백 등을 표현하기 위해 조명(LED)을 제공해야 합니다. 클라이언트가 사용자에게 어떤 조명을 어떻게 제공해야 하는지 설명합니다.
+클라이언트 기기는 [클라이언트 상태 및 이벤트](#ClientStateAndEvent)나 사용자 요청의 피드백 등을 표현하기 위해 조명(LED)을 제공해야 합니다. 클라이언트가 사용자에게 어떤 조명을 어떻게 제공해야 하는지 설명합니다.
 
 * [조명 색상](#LightColor)
 * [조명 효과](#LightEffect)
@@ -89,7 +96,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Green       | <span style="color:#32C864; font-size:150%; vertical-align:middle;">&#9724;</span> 50, 200, 100(#32C864)   | 사용자의 음성 입력 수신                                  | 필수  |
 | Yellow Green | <span style="color:#B4FF00; font-size:150%; vertical-align:middle;">&#9724;</span> 180, 255, 0(#B4FF00)    | Clova 알림(Notification)                             | 필수  |
 | Red         | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255, 0, 0(#FF0000)      | 마이크 음소거, 네트워크 연결 오류, 배터리 부족 등의 오류 상황     | 필수  |
-| Warm White   | <span style="color:#EDE9E5; font-size:150%; vertical-align:middle;">&#9724;</span> 237, 233, 229(#EDE9E5)  | 스피커를 통한 Clova 음성 출력                            | 필수  |
+| Warm White   | <span style="color:#EDE9E5; font-size:150%; vertical-align:middle;">&#9724;</span> 237, 233, 229(#EDE9E5)  | 스피커를 통한 Clova 음성 출력, 알람/리마인더/타이머 이벤트 수신                             | 필수  |
 
 다음은 Wave 기기의 조명 색상 적용 사례입니다.
 
@@ -108,10 +115,11 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | 점등(Lights up)                     | 특별한 효과 없이 조명을 바로 켠 상태로 전환합니다.   | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Sustain.gif)              |
 | 천천히 점멸 반복(Repeat pulse)         | 조명의 조도를 천천히 높였다가 낮추는 것을 반복합니다. | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Repeat_Blink_Slowly.gif)  |
 | 천천히 소등(Fade out)                 | 조명의 조도를 천천히 낮추면서 마지막에 조명을 끕니다. | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Fade_Out.gif)             |
+| 물결 표현 반복(Repeat Splash)          | 조명이 좌우로 출렁이는 물결이 느껴지도록 조명 효과를 반복합니다. | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Splash.gif)         |
 
-다음은 클라이언트의 [상태 및 동작](#ClientState)을 조명으로 어떻게 표현해야 하는지 나타낸 표입니다.
+다음은 클라이언트의 [상태 및 이벤트](#ClientStateAndEvent)를 조명으로 어떻게 표현해야 하는지 나타낸 표입니다.
 
-| 상태 설명                    | 조명 효과 적용                | 필수 여부 |
+| 상태 또는 이벤트               | 조명 효과 적용                | 필수 여부 |
 |----------------------------|----------------------------|:---------:|
 | Attending, hearing 상태     | Green 조명 점등              | 필수     |
 | End 상태                    | Warm White 조명 천천히 소등     | 필수     |
@@ -120,6 +128,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Processing & reporting 상태 | Warm White 조명 천천히 점멸 반복 | 필수     |
 | Mute on 상태 해제            | Red 조명 천천히 소등           | 필수     |
 | 대기 시간 초과한 직후           | Green 조명 천천히 소등         | 필수     |
+| 알람, 리마인더, 타이머 시작      | Warm White 조명 물결 표현 반복  | 선택     |
 
 ### 조명 가이드라인 {#LightGuideline}
 
@@ -160,7 +169,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 * 물리 버튼의 효과음은 즉시 재생되어야 하며 이를 위해 mixing 방식으로 효과음을 출력해야 합니다.
 * 오디오 콘텐츠는 즉시 재생되어야 합니다. 만약, 이미 재생 중인 오디오 콘텐츠가 있다면 이를 배경음(background)으로 처리하고 새로운 오디오 콘텐츠를 재생해야 합니다.
-* 다만, 이미 재생 중인 오디오 콘텐츠와 새로 재생해야 할 오디오 콘텐츠의 타입이 서로 같다면 다음과 같이 처리합니다.
+* 다만, 이미 재생 중인 오디오 콘텐츠와 새로 재생해야 할 오디오 [콘텐츠의 타입](#AudioInterruptionRule)이 서로 같다면 다음과 같이 처리합니다.
   - **Alert, Dialogue, Content 타입**: 재생 중인 오디오 콘텐츠의 재생을 중지(cancel)하고 새로운 오디오 콘텐츠를 재생합니다.
   - **Notification 타입**: 현재 재생 중인 오디오 콘텐츠를 계속 재생하고 새로운 오디오 콘텐츠를 재생 대기열(queue)에 보관합니다. 이미 재생 중인 오디오 콘텐츠를 재생한 후 재생 대기열에 있는 순서대로 오디오 콘텐츠를 재생합니다.
 
@@ -236,14 +245,16 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 #### 효과음 종류 {#SoundEffects}
 
-클라이언트의 [상태](#ClientState) 표현을 위해 다음과 같은 효과음을 제공해야 합니다.
+클라이언트의 [상태 및 이벤트](#ClientStateAndEvent) 표현을 위해 다음과 같은 효과음을 제공해야 합니다.
 
-| 상태 설명                   | 효과음 샘플                     | 필수 여부 |
+| 상태 또는 이벤트              | 효과음 샘플                     | 필수 여부 |
 |---------------------------|------------------------------|:---------:|
 | Attending 상태 진입         | <audio title="Attending" controls><source src="./Resources/Sounds/Clova-Client-Soundeffect-Attending.wav" type="audio/wav" /></audio> | 필수     |
-| Error 상태 진입             | <audio title="Error" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>     | 필수     |
-| Mute on 상태 진입           | <audio title="Mute on" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>   | 필수     |
-| Mute on 상태 해제          | <audio title="Mute off" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>  | 필수     |
+| Error 상태 진입             | <audio title="Error" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>         | 필수     |
+| Mute on 상태 진입           | <audio title="Mute on" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>     | 필수     |
+| Mute on 상태 해제           | <audio title="Mute off" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>   | 필수     |
+| 알람/리마인더(이벤트 발생 시, 효과음 반복) | <audio title="Alarm" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Alarm.wav" type="audio/wav" /></audio>         | 필수     |
+| 타이머(이벤트 발생 시, 효과음 반복)      | <audio title="Timer" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Timer.wav" type="audio/wav" /></audio>         | 필수     |
 
 #### 효과음 가이드라인 {#SoundEffectGuideline}
 
@@ -337,7 +348,7 @@ Voice agent는 사용자의 음성 입력 수신, Clova 음성 출력 등 Clova 
 
 #### Voice agent 색상 {#VoiceAgentColor}
 
-클라이언트는 다음과 같은 색상을 사용하여 voice agent에서 [클라이언트의 상태](#ClientState)를 표현할 수 있어야 합니다.
+클라이언트는 다음과 같은 색상을 사용하여 voice agent에서 [클라이언트의 상태](#ClientStateAndEvent)를 표현할 수 있어야 합니다.
 
 | 색상 이름      | RGB 값             | 색상 이름      | RGB 값             |
 |--------------|-------------------|--------------|-------------------|
