@@ -43,6 +43,12 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 
 ## Clova 앱으로 extension 테스트하기 {#TestOnClovaApp}
 
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>앱에서 테스트하려면 extension 호출 이름이 Clova에 등록되어야 하며, 현재는 <a href="http://forum.developers.naver.com/" target="_blank">개발자 포럼</a>를 통해 테스트 용 호출 이름 처리를 요청해야합니다. 처리 기간은 약 1주일 정도 소요됩니다.</p>
+  <p>이 프로세스는 차후 변경될 수 있습니다.</p>
+</div>
+
 Extension을 실제 클라이언트인 Clova 앱에서 테스트해볼 수 있습니다. 이를 위해 extension 기본 정보를 등록하는 페이지의 **테스터 아이디** 필드에 개발자 본인이나 extension을 테스트할 사람의 <strong>{{ book.OrientedService }} 계정</strong>을 입력해야 합니다. 계정을 추가한 후 **저장** 버튼을 클릭하면 입력한 계정이 인증된 Clova 앱에서 개발 중인 extension을 테스트할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Add_Tester_ID.png)

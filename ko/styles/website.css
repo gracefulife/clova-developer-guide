@@ -119,3 +119,18 @@ a.btn.pull-right.js-toolbar-action {
 .dropdown.pull-right.js-toolbar-action {
     display: none;
 }
+
+li > div.note, li > div.danger {
+    margin-bottom: 0;
+    padding-bottom: 0.85em;
+}
+
+blockquote p.ldiag {
+  padding-right:10px;
+}
+
+blockquote p.rdiag {
+  text-align: right;
+  max-width:500px;
+  padding-left:10px;
+}
