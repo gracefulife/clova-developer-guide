@@ -9,7 +9,7 @@
 Used when an [extension](#ClovaExtension) provides a 3rd party service that requires users to authenticate their account. See [Linking user account](/CEK/Guides/LInk_User_Account.md) for more details.
 
 ### CEK
-The abbreviation of [Clova Extension Kit](#CEK)
+The abbreviation of [Clova Extensions Kit](#CEK)
 
 ### CIC
 The abbreviation of [Clova Interface Connect](#CIC)
