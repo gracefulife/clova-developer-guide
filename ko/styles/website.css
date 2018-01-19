@@ -124,6 +124,13 @@ li > div.note, li > div.danger {
     padding-bottom: 0.85em;
 }
 
+blockquote {
+  margin: 0;
+  margin-bottom: .85em;
+  padding: 0 15px;
+  border-left: 4px solid #a7a7a7;
+}
+
 blockquote p.ldiag {
   padding-right:10px;
 }
