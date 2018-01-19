@@ -68,6 +68,10 @@
       </td>
       <td>
         <ul>
+          <li>튜토리얼</li>
+          <ul>
+            <li><a href="/CEK/Tutorials/Build_Simple_Extension.md">기초적인 Extension 만들기</a></li>
+          </ul>
           <li>가이드</li>
           <ul>
             <li><a href="/DevConsole/Guides/CEK/Register_Extension.md">Extension 등록하기</a></li>
@@ -81,7 +85,13 @@
             <li><a href="/CEK/References/CEK_API.md#CustomExtMessage">Custom extension 메시지</a></li>
             <li><a href="/CEK/References/CEK_API.md#ClovaHomeExtMessage">Clova Home extension 메시지</a></li>
           </ul>
-          <li><a href="/CEK/Examples/Extension_Examples.md">Extension 예제</a></li>
+          <li>Extension 예제</li>
+          <ul>
+            <li><a href="/CEK/Examples/Extension_Examples.md#MagicBall">마법 구슬(Magic ball)</a></li>
+            <li><a href="/CEK/Examples/Extension_Examples.md#RainSound">빗소리(Rain sound)</a></li>
+            <li><a href="/CEK/Examples/Extension_Examples.md#DiceDrawer">주사위 놀이(Dice drawer)</a></li>
+            <li><a href="/CEK/Examples/Extension_Examples.md#CoinHelper">코인 헬퍼(Coin helper)</a></li>
+          </ul>
         </ul>
       </td>
     </tr>
