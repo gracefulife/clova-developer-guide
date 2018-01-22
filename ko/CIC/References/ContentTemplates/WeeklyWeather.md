@@ -22,7 +22,7 @@
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 지역 정보가 담긴 객체 |
 | `type`                      | string | Content template 구분자. `"WeeklyWeather"` 값을 가집니다. |
 
-{% include "./Shared_Weather_Code.md" %}
+{% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
 
 ## Template example
 

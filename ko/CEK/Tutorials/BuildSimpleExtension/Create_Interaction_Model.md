@@ -1,6 +1,6 @@
 <a href="https://developers.naver.com/console/clova/cek/#/list" target="_blank">Clova developer console</a>에서 interaction 모델을 등록합니다.
 
-Interaction 모델에 저장하는 정보는 [intent](/Design/DesignGuidelineForExtension.md#Intent)와 [slot](/Design/DesignGuidelineForExtension.md#Slot)으로, intent는 입력된 문장을 분석하여 extension 서버에 전달할 명령이고, slot은 이 intent에 필요한 정보입니다.
+Interaction 모델에 저장하는 정보는 [intent](/Design/Design_Guideline_For_Extension.md#Intent)와 [slot](/Design/Design_Guideline_For_Extension.md#Slot)으로, intent는 입력된 문장을 분석하여 extension 서버에 전달할 명령이고, slot은 이 intent에 필요한 정보입니다.
 
 샘플 주사위는 사용자가 개수를 지정하지 않고 주사위를 던져달라는 요청을 하면 기본적으로 주사위 1개를 던집니다. 여기서는 이렇게 주사위 1개를 던지는 명령을 처리하는 단순한 interaction 모델을 사용하기로 합시다. 주사위 개수를 수집하지 않으므로 slot이 없는 intent 하나를 등록하면 됩니다.
 

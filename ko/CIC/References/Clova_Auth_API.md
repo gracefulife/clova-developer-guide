@@ -22,7 +22,7 @@ NAVER 계정 access token 및 [클라이언트 인증 정보](/CIC/Guides/Intera
 | Request header | 설명                                                                |
 |----------------|--------------------------------------------------------------------|
 | Accept         | <p>다음 값을 입력합니다.</p><p><pre><code>application/json</code></pre></p>  |
-| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.html#CreateClovaAccessToken">획득한 NAVER access token</a>을 입력:</p><p><pre><code>Bearer [NAVER access token]</code></pre></p>  |
+| Authorization  | <p><a href="/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken">획득한 NAVER access token</a>을 입력:</p><p><pre><code>Bearer [NAVER access token]</code></pre></p>  |
 
 ### Query parameter
 

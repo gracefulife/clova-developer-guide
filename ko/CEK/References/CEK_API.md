@@ -4,8 +4,8 @@ CEK API는 CEK와 extension 사이에 정보를 교환하기 위해 사용되는
 * [Custom extension 메시지](#CustomExtMessage)
 * [Clova Home extension 메시지](#ClovaHomeExtMessage)
 
-{% include "./HTTP_Message.md" %}
+{% include "/CEK/References/HTTP_Message.md" %}
 
-{% include "./Custom_Extension_Message.md" %}
+{% include "/CEK/References/Custom_Extension_Message.md" %}
 
-{% include "./Clova_Home_Extension_Message.md" %}
+{% include "/CEK/References/Clova_Home_Extension_Message.md" %}

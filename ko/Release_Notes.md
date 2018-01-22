@@ -2,6 +2,24 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-01-22
+
+### 플랫폼 변경 사항
+
+* Clova developer console
+  * [Built-in intent 목록 표시](/DevConsole/Guides/CEK/Register_Interaction_Model.md#AddCustomSlotType), [심사 신청](/DevConsole/Guides/CEK/Deploy_Extension.md#InputComplianceInfo) 시 심사 요청 메시지 작성을 위한 UI 추가
+
+### 문서 변경 사항
+
+* Design
+  * 플랫폼 지원 오디오 압축 포맷 내용을 [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md#SupportedAudioCompressionFormat)과 [extension 디자인 가이드라인](/Design/Design_Guideline_For_Extension.md#SupportedAudioCompressionFormat)에 각각 추가
+
+* CEK
+  * [튜토리얼](/CEK/Tutorials/Introduction.md) 페이지와 [기초적인 extension 만들기](/CEK/Tutorials/Build_Simple_Extension.md) 페이지 추가
+
+* 공통 사항
+  * UML 다이어그램의 이미지 포맷 변경
+
 ## 2018-01-15
 
 ### 문서 변경 사항
@@ -62,7 +80,7 @@
   - [Interaction 모델 등록하기](DevConsole/Guides/CEK/Register_Interaction_Model.md)에서 [interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용을 [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md) 문서로 이동
   - [Interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용에 [발화 예시](/Design/DesignGuidelineForExtension.md#UtteranceExample)문 작성 가이드라인 추가
 
-* Clova developer DevConsole
+* Clova developer console
   - [Interaction 모델 정의하기](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 [발화 예시문](/DevConsole/Guides/CEK/Define_Interaction_Model.md#UtteranceExample) 작성 가이드라인 추가
   - [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)에 [테스트 모드 사용하기](/DevConsole/Guides/CEK/Test_Extension.md#UsingTestMode) 추가
   - [Extension 업데이트하기](/DevConsole/Guides/CEK/Update_Extension.md), [Extension 중지 및 삭제하기](/DevConsole/Guides/CEK/Remove_Extension.md) 추가

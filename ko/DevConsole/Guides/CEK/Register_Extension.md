@@ -37,7 +37,7 @@ Extension을 등록하는 과정에서 가장 먼저 할 일은 등록할 extens
   </li>
   <li>(Extension이 <a href="/CIC/References/CICInterface/AudioPlayer.md">AudioPlayer</a> 지시 메시지를 이용할 경우)<strong>오디오 플레이어 사용</strong> 항목을 <strong>네</strong>로 선택합니다. Extension이 음악 스트리밍 서비스를 제공할 때 사용됩니다.</li>
   <li><strong>서비스 담당자 정보</strong> 항목에 연락 가능한 이메일 주소를 입력합니다.</li>
-  <li><strong>테스트 아이디</strong> 항목에 개발 중인 extension을 테스트할 때 이용할 NAVER 계정을 입력하면 됩니다. 당장 입력하지 않아도 되며 추후 <a href="/DevConsole/Guides/CEK/Test_Extension.html">extension을 테스트</a>해야 할 때 이 필드에 값을 입력할 수 있습니다.</li>
+  <li><strong>테스트 아이디</strong> 항목에 개발 중인 extension을 테스트할 때 이용할 NAVER 계정을 입력하면 됩니다. 당장 입력하지 않아도 되며 추후 <a href="/DevConsole/Guides/CEK/Test_Extension.md">extension을 테스트</a>해야 할 때 이 필드에 값을 입력할 수 있습니다.</li>
   <li>Extension 기본 정보를 모두 입력한 후 <strong>만들기</strong> 버튼을 클릭합니다.</li>
 </ol>
 
