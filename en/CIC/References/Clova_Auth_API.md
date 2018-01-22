@@ -90,7 +90,7 @@ Typically, user authentication is processed on the pair app. However, transferri
 ```
 {% endraw %}
 
-{% include "./CICAuthAPI/GuestMode.md" %}
+{% include "/CIC/References/CICAuthAPI/Guest_Mode.md" %}
 
 ### See also
 

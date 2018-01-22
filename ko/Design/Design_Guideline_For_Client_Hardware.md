@@ -148,6 +148,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 * [기본 오디오 재생 규칙](#AudioInterruptionRule)
 * [사용자 발화 시 오디오 재생 규칙](#AudioInterruptionRuleForUserUtterance)
 * [효과음](#SoundEffect)
+* [플랫폼 지원 오디오 압축 포맷](#SupportedAudioCompressionFormat)
 
 ### 기본 오디오 재생 규칙 {#AudioInterruptionRule}
 
@@ -266,6 +267,11 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 * 조명 효과나 화면의 상황에 맞게 일관성있는 효과음을 제공해야 합니다.
 * 버튼 피드백에 대한 효과음을 제공하는 경우 버튼의 물성과 촉감에 어울리는 효과음을 제공해야 합니다.
 
+### 플랫폼 지원 오디오 압축 포맷 {#SupportedAudioCompressionFormat}
+
+클라이언트는 Clova가 전달하는 음원을 재생해야 하므로 반드시 Clova가 제공하는 오디오 압축 포맷을 지원해야 합니다.
+
+{% include "/Design/SupportedMediaFormat/Supported_Audio_Format_For_KR.md" %}
 
 ## 화면 {#Screen}
 

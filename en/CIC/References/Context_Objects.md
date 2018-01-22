@@ -10,16 +10,16 @@ A context is a state of a client and is specified in context objects. Context ob
 * [`Clova.SavedPlace`](#SavedPlace)
 * [`Speaker.VolumeState`](#VolumeState)
 
-{% include "./ContextObjects/AlertsState.md" %}
+{% include "/CIC/References/ContextObjects/AlertsState.md" %}
 
-{% include "./ContextObjects/PlaybackState.md" %}
+{% include "/CIC/References/ContextObjects/PlaybackState.md" %}
 
-{% include "./ContextObjects/DeviceState.md" %}
+{% include "/CIC/References/ContextObjects/DeviceState.md" %}
 
-{% include "./ContextObjects/Display.md" %}
+{% include "/CIC/References/ContextObjects/Display.md" %}
 
-{% include "./ContextObjects/Location.md" %}
+{% include "/CIC/References/ContextObjects/Location.md" %}
 
-{% include "./ContextObjects/SavedPlace.md" %}
+{% include "/CIC/References/ContextObjects/SavedPlace.md" %}
 
-{% include "./ContextObjects/VolumeState.md" %}
+{% include "/CIC/References/ContextObjects/VolumeState.md" %}

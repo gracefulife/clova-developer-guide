@@ -25,7 +25,7 @@ The TodayWeather template is used in providing today's weather information for t
 | `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The current weather.  |
 | `type`                      | string | The type of this template. The value is always `"TodayWeather"`. |
 
-{% include "./Shared_Weather_Code.md" %}
+{% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
 
 ## Template example
 

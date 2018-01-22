@@ -25,7 +25,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
   - **검색 키워드**: 사용자가 extension을 검색할 때 특정 키워드가 포함되면 검색 결과에 표시되도록 해주는 검색어입니다.
   - **작은 아이콘**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **Extension 스토어 홈**이나 **Extension 페이지**에 표시됩니다.
   - **큰 아이콘**: 큰 크기(512px X 512px)의 extension 아이콘 파일로서 추후 사용될 예정입니다.
-* **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LInk_User_Account.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시와 해당 동작이 제대로 동작했는지 판단할 수 있는 [세부 목표](/Design/DesignGuidelineForExtension.md#SettingGoal) 등을 입력합니다.
+* **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. Extension이 제공하는 기능(intent) 목록, 테스트 계정([계정 연결](/CEK/Guides/LInk_User_Account.md)이 필요하다면) 그리고 열거한 기능을 테스트할 수 있는 발화문 예시와 해당 동작이 제대로 동작했는지 판단할 수 있는 [세부 목표](/Design/Design_Guideline_For_Extension.md#SettingGoal) 등을 입력합니다.
 * 서비스 국가 및 지역: 해당 extension이 서비스를 제공할 국가나 지역으로 현재 선택할 수 있는 지역이 없고 한국에만 extension을 배포할 수 있습니다.
 
 이렇게 입력된 정보는 Clova 앱 **확장 서비스 관리** 메뉴(Extension 스토어)에서 다음과 같이 표시됩니다.
@@ -76,6 +76,10 @@ Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_2.png)
 
+**심사 신청**을 클릭하면 다음과 같이 운영자에게 해당 심사 신청에 대한 정보를 남길 수 있습니다. Extension의 첫 번째 심사 신청이라면 최초 심사 요청이라는 메시지와 어떤 extension인지 설명하는 메시지를 남기면 됩니다. Extension의 기능이나 interaction 모델을 업데이트했거나 반려된 extension을 수정하여 재심사를 요청할 때는 개선된 사항이나 반려 의견 반영 여부를 입력하면 됩니다.
+
+![](/DevConsole/Resources/Images/DevConsole-Submission_Request_Message.png)
+
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>심사 중에는 extension의 정보와 interaction 모델을 수정할 수 없습니다.</p>
@@ -85,15 +89,15 @@ Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 
 
 Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습니다.
 
-1. Extension 빌드 검증
+* Extension 빌드 검증
   * Extension 서비스에 적합한 용어를 사용하고 있는지 확인합니다.
   * Intent, slot 등 interaction 모델을 검증합니다.
-  * Extension [세부 목표](/Design/DesignGuidelineForExtension.md#SettingGoal)에 부합되는 서비스를 제공하고 있는지 확인합니다.
-2. [사용 시나리오](/Design/DesignGuidelineForExtension.md#MakeUseCaseScenarioScript) 검증
+  * Extension [세부 목표](/Design/Design_Guideline_For_Extension.md#SettingGoal)에 부합되는 서비스를 제공하고 있는지 확인합니다.
+* [사용 시나리오](/Design/Design_Guideline_For_Extension.md#MakeUseCaseScenarioScript) 검증
   * 대화 문맥 상 어색한 부분이 있는지 확인합니다.
   * 시나리오 상 사용되는 발화 데이터에 금칙어, 민감어 등이 있는지 확인합니다.
   * Extension이 [사용자 계정을 연결](/CEK/Guides/LInk_User_Account.md)하는 경우 서비스에 특화된 부분을 더 검토할 수 있습니다.
-3. 배포 정보 검증
+* 배포 정보 검증
   * Extension의 설명, 카테고리, 검색 키워드와 같이 입력된 배포 정보가 extension에 맞게 입력되었는지 확인합니다.
   * Extension이 개인 정보 관리 규정 등 입력된 정책에 맞게 동작하는지 확인합니다.
 

@@ -10,12 +10,12 @@ Follow the guide as provided below to learn how to develop a client for Clova.
 4. [Handling directives](#HandleDirective)
 5. [Managing message queues](#ManageMessageQ)
 
-{% include "./InteractWithCIC/Preparation.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Preparation.md" %}
 
-{% include "./InteractWithCIC/Connect_to_CIC.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Connect_to_CIC.md" %}
 
-{% include "./InteractWithCIC/Send_Event.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Send_Event.md" %}
 
-{% include "./InteractWithCIC/Handle_Directive.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Handle_Directive.md" %}
 
-{% include "./InteractWithCIC/Manage_Message_Q.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Manage_Message_Q.md" %}

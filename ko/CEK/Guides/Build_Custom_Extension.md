@@ -12,10 +12,10 @@ Custom extension이란 Clova가 기본으로 제공하고 있는 기능이나 �
 3. [Custom extension 응답 반환하기](#ReturnCustomExtensionResponse)
 4. [Multi-turn 대화 수행하기](#DoMultiturnDialog)
 
-{% include "./BuildCustomExtension/Preparation.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Preparation.md" %}
 
-{% include "./BuildCustomExtension/Handle_Custom_Extension_Request.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Handle_Custom_Extension_Request.md" %}
 
-{% include "./BuildCustomExtension/Return_Custom_Extension_Response.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Return_Custom_Extension_Response.md" %}
 
-{% include "./BuildCustomExtension/Do_Multiturn_Dialog.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Do_Multiturn_Dialog.md" %}

@@ -8,6 +8,7 @@
 * [사용 시나리오 스크립트 작성](#MakeUseCaseScenarioScript)
 * [Interaction 모델 정의](#DefineInteractionModel)
 * [유의사항](#Precautions)
+* [플랫폼 지원 오디오 압축 포맷](#SupportedAudioCompressionFormat)
 * [지속적인 업데이트](#ContinuousUpdate)
 
 ## 목표 수립 {#SettingGoal}
@@ -305,6 +306,17 @@ Extension을 설계할 때 다음과 같은 사회적인 또는 법적인 문제
 * 개인 정보 보호 의무에 대한 위반 사항이 없는지 검토
 * 서비스 연결이나 데이터 제공이 일회적이지 않고 지속적일 수 있는지 검토
 * 아동 또는 일반 사용자에게 해를 줄 수 있는 선정적인 콘텐츠가 없는지 검토
+
+## 플랫폼 지원 오디오 압축 포맷 {#SupportedAudioCompressionFormat}
+
+Extension을 통해 오디오 콘텐츠를 제공하는 경우 반드시 Clova가 지원하는 오디오 압축 포맷으로 음원을 제공해야 합니다.
+
+{% include "/Design/SupportedMediaFormat/Supported_Audio_Format_For_KR.md" %}
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>Clova가 지원하지 않는 오디오 압축 포맷으로 음원을 제공할 경우 클라이언트가 정상적으로 음원을 재생하지 못 할 수 있습니다.</p>
+</div>
 
 ## 지속적인 업데이트 {#ContinuousUpdate}
 

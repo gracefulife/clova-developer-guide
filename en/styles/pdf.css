@@ -106,3 +106,21 @@ img.inlineImage {
 ol ol {
   list-style-type: lower-alpha;
 }
+
+
+blockquote {
+  margin: 0;
+  margin-bottom: .85em;
+  padding: 0 15px;
+  border-left: 4px solid #a7a7a7;
+}
+
+blockquote p.ldiag {
+  padding-right:10px;
+}
+
+blockquote p.rdiag {
+  text-align: right;
+  max-width:500px;
+  padding-left:10px;
+}

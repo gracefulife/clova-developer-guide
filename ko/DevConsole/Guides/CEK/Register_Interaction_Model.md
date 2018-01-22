@@ -1,6 +1,6 @@
 # Interaction 모델 등록하기
 
-CEK가 extension으로 사용자의 요청 정보를 보낼 때 사용자의 발화를 어떻게 분석하고 이를 어떤 형식으로 보낼지 [interaction 모델을 미리 정의](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)해야 합니다. Interaction 모델은 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이 받게 될 요청을 정형화한 스키마입니다.
+CEK가 extension으로 사용자의 요청 정보를 보낼 때 사용자의 발화를 어떻게 분석하고 이를 어떤 형식으로 보낼지 [interaction 모델을 미리 정의](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)해야 합니다. Interaction 모델은 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이 받게 될 요청을 정형화한 스키마입니다.
 
 Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)한 후 Interaction 모델을 등록할 수 있습니다. 다음과 같이 CEK 메뉴에서 interaction 모델을 등록할 extension의 **수정** 버튼을 클릭합니다.
 
@@ -10,7 +10,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
-Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)은 다음과 같은 순서로 등록하면 됩니다.
+Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)은 다음과 같은 순서로 등록하면 됩니다.
 
 1. [Built-in slot 타입 추가하기](#AddBuiltinSlotType)
 2. [Custom slot 타입 추가하기](#AddCustomSlotType)
@@ -24,7 +24,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 
 ## Built-in slot 타입 추가하기 {#AddBuiltinSlotType}
 
-서비스를 제공할 extension이 어떤 [built-in slot 타입](/Design/DesignGuidelineForExtension.md#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
+서비스를 제공할 extension이 어떤 [built-in slot 타입](/Design/Design_Guideline_For_Extension.md#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
 
 <ol>
   <li><strong>등록된 slot 타입</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>등록된 slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>Interaction 모델: Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
@@ -39,7 +39,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 
 ## Custom slot 타입 추가하기 {#AddCustomSlotType}
 
-이제 extension에서 사용할 [custom slot 타입](/Design/DesignGuidelineForExtension.md#Slot)을 정의해야 합니다. [Built-in slot 타입 추가하기](#AddBuiltinSlotType) 절에 이어 피자 배달 서비스 extension 계속 예로 들면, 사용자의 발화 중 피자 종류에 해당하는 부분을 custom slot 타입으로 정의해야 할 것 입니다. 다음과 같은 대표어와 동의어를 가지는 "PIZZA_TYPE"이라는 custom slot 타입을 추가한다고 가정하겠습니다.
+이제 extension에서 사용할 [custom slot 타입](/Design/Design_Guideline_For_Extension.md#Slot)을 정의해야 합니다. [Built-in slot 타입 추가하기](#AddBuiltinSlotType) 절에 이어 피자 배달 서비스 extension 계속 예로 들면, 사용자의 발화 중 피자 종류에 해당하는 부분을 custom slot 타입으로 정의해야 할 것 입니다. 다음과 같은 대표어와 동의어를 가지는 "PIZZA_TYPE"이라는 custom slot 타입을 추가한다고 가정하겠습니다.
 
 | 대표어           | 동의어                                        |
 |----------------|----------------------------------------------|
@@ -82,11 +82,13 @@ Clova developer console은 다음과 같이 **업로드** 버튼과 **다운로�
 
 ## Built-in intent 추가하기 {#AddBuiltinIntent}
 
-[Built-in intent](/Design/DesignGuidelineForExtension.md#Intent)는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 intent입니다. 예를 들면, 일반적으로 빈번히 발생할 수 있는 사용자의 긍정/부정 요청, 중지나 취소와 같은 요청을 intent로 미리 정의해 둔 것입니다. Extension에서 사용할 built-in intent를 선택적으로 추가할 수 있습니다.
+[Built-in intent](/Design/Design_Guideline_For_Extension.md#Intent)는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 intent입니다. 예를 들면, 일반적으로 빈번히 발생할 수 있는 사용자의 긍정/부정 요청, 취소와 같은 요청을 intent로 미리 정의해 둔 것입니다. 현재 모든 extension은 Clova가 제공하는 built-in intent를 모두 처리할 수 있어야 하며, 다음과 같이 built-in intent가 기본 등록되어 있습니다.
+
+![](/DevConsole/Resources/Images/DevConsole-Built-in_Intent_List.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>현재 모든 extension은 Clova가 제공하는 built-in intent를 모두 처리할 수 있어야 합니다. 추후 extension별로 필요한 built-in intent를 선택적으로 사용할 수 있게 변경할 예정입니다. 따라서, 이 절에 대한 내용은 조만간 업데이트될 예정입니다.</p>
+  <p> 추후 extension별로 필요한 built-in intent를 선택적으로 사용할 수 있게 변경할 예정입니다.</p>
 </div>
 
 ## Custom intent 추가하기 {#AddCustomIntent}

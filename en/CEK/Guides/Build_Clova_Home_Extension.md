@@ -13,10 +13,10 @@ The following topics provide essential information for building a Clova Home ext
 3. [Handling Clova Home extension request](#HandleClovaHomeExtensionRequest)
 4. [Returning Clova Home extension response](#ReturnClovaHomeExtensionResponse)
 
-{% include "./BuildClovaHomeExtension/Preparation.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Preparation.md" %}
 
-{% include "./BuildClovaHomeExtension/Provide_Device_Discovery.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Provide_Device_Discovery.md" %}
 
-{% include "./BuildClovaHomeExtension/Handle_Clova_Home_Extension_Request.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Handle_Clova_Home_Extension_Request.md" %}
 
-{% include "./BuildClovaHomeExtension/Return_Clova_Home_Extension_Response.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Return_Clova_Home_Extension_Response.md" %}
