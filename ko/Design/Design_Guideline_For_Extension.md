@@ -92,14 +92,12 @@ Interaction 모델을 Clova developer console에서 정의하기 전에 우선 i
 
 ### Intent {#Intent}
 
-Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 주로 사용자 발화문에 사용된 **동사**형 요소에 의해 Intent가 구분됩니다. Intent는 custom intent와 built-in intent로 나뉩니다. 이 중 Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다.
+Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 주로 사용자 발화문에 사용된 **동사**형 요소에 의해 Intent가 구분됩니다. Intent는 다시 custom intent와 built-in intent로 나뉩니다.
 
-| Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
-|---------------------------|-------------------|----------------------------------------------------------|
-| Clova.GuideIntent         | 도움말 요청          | "너 뭐 할 줄 아니?", "할 줄 아는 거 말해봐", "너 할 줄 아는게 뭐냐?" |
-| Clova.CancelIntent        | 실행 취소 요청        | "취소", "취소해줘"                                          |
-| Clova.YesIntent           | 긍정 응답(예, Yes)   | "응", "그래", "알겠어", "알겠습니다", "오케이"                   |
-| Clova.NoIntent            | 부정 응답(아니오, No) | "아니", "아니요", "싫어"                                     |
+* [Custom intent](#CustomIntent)
+* [Built-in intent](#BuiltinIntent)
+
+#### Custom intent](#CustomIntent)
 
 Custom intent는 built-in intent와 달리 제공하려는 서비스에 특화된 사용자 요청 범주를 정의한 것입니다. Custom intent는 다음과 같은 것을 정의한 명세입니다.
 * 서비스에 어떤 범주의 사용자 요청이 있는지?
@@ -120,11 +118,29 @@ Custom intent는 built-in intent와 달리 제공하려는 서비스에 특화�
 
 이제 "OrderPizza" intent가 사용자의 발화로부터 **어떤 정보([Slot](#Slot))를 취해야 하는지 정의**해야 하며, 어떤 식의 사용자 발화를 처리할 수 있는지 **다양한 [발화 예시](#UtteranceExample)를 열거**해야 합니다.
 
+#### Built-in intent {#BuiltinIntent}
+
+Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범주를 정하고 이를 공유하여 사용하기 위해 선언한 명세입니다. 일반적으로 빈번히 발생할 수 있는 intent로 다음과 같은 요청을 미리 정의해 두고 있습니다.
+
+| Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
+|---------------------------|-------------------|----------------------------------------------------------|
+| Clova.GuideIntent         | 도움말 요청          | "너 뭐 할 줄 아니?", "할 줄 아는 거 말해봐", "너 할 줄 아는게 뭐냐?" |
+| Clova.CancelIntent        | 실행 취소 요청        | "취소", "취소해줘"                                          |
+| Clova.YesIntent           | 긍정 응답(예, Yes)   | "응", "그래", "알겠어", "알겠습니다", "오케이"                   |
+| Clova.NoIntent            | 부정 응답(아니오, No) | "아니", "아니요", "싫어"                                     |
+
 ### Slot {#Slot}
 
 Slot은 사용자의 발화로부터 획득하는 정보이며, 사용자 발화문에 사용된 **명사**형 요소가 Slot이 될 수 있습니다. [custom intent](#Intent)를 정의할 때 해당 intent가 필요한 slot이 무엇인지 정의해야 합니다. 소프트웨어 개발에 비유해 설명하자면 intent는 특정 범주의 사용자 요청을 처리하는 함수 또는 핸들러이고 slot은 이 함수나 핸들러에 필요한 파라미터가 됩니다. 위에서 언급했던 "페퍼로니 피자 2판 주문해줘"라는 사용자 발화를 보면 "OrderPizza" intent를 처리하려면 "페퍼로니 피자"와 같은 피자 종류에 대한 정보와 "2판"과 같은 수량 정보가 필요하다는 것을 알 수 있습니다. Intent를 정의할 때 어떤 정보(slot)가 필요한지 미리 파악해둬야 합니다.
 
-Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다. Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보를 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
+Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 이를 slot 타입이라고 합니다. slot 타입은 built-in slot 타입과 custom slot 타입으로 나뉩니다.
+
+* [Built-in slot 타입](#BuiltinSlotType)
+* [Custom slot 타입](#CustomSlotType)
+
+#### Built-in slot 타입 {#BuiltinSlotType}
+
+Built-in slot 타입은 Clova에서 미리 정의해둔 정보 유형으로서 모든 서비스(extension)에서 범용적으로 사용될 수 있는 정보 표현을 정의한 것입니다. Built-in slot 타입은 주로 시간, 장소, 수량 등과 같은 정보를 인식해야 할 때 사용됩니다. 위 발화를 예로 들면 "2판"에 해당하는 정보를 인식하기 위해 built-in slot 타입을 사용할 수 있습니다. Clova는 다음과 같은 built-in slot 타입을 제공하고 있습니다.
 
 | Built-in slot 타입 이름 | 설명                                            |
 | ----------------------|------------------------------------------------|
@@ -139,6 +155,8 @@ Slot을 선언할 때 slot이 어떤 유형의 정보인지 구분해야 하며 
 | CLOVA.WORLD_CITY    | 세계의 도시명 표현에 해당하는 정보입니다. (예: "뉴욕", "파리", "런던") |
 | CLOVA.CURRENCY      | 화폐 표현에 해당하는 정보입니다. (예: "위안", "엔", "달러", "러시아 돈", "영국 통화") |
 | CLOVA.OFFICIALDATE  | 공휴일 및 국경일, 기념일 표현에 해당하는 정보입니다. (예: "입춘", "신정", "석가탄신일", "광복절") |
+
+#### Custom slot 타입 {#CustomSlotType}
 
 Custom slot 타입은 제공하는 서비스(extension)의 도메인에 특화된 정보 유형을 정의한 것으로 custom slot 타입을 만들 때 주로 고유 명사 또는 명사를 지정합니다. 위 발화를 예를 들면 "OrderPizza" intent는 피자의 종류에 해당하는 정보(slot)를 사용자 발화에서 파악해야 하며 피자 종류를 나타내는 표현은 피자와 관련된 서비스에서만 사용될 가능성이 큽니다. 따라서 "PIZZA_TYPE"과 같은 custom slot 타입을 정의하고 "PIZZA_TYPE"에는 피자 배달 서비스에서 주문 가능한 "페퍼로니 피자", "콤비네이션 피자", "치즈 피자"와 같은 항목들이 표현될 수 있음을 선언할 수 있습니다.
 
