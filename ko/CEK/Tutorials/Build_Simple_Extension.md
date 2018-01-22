@@ -1,6 +1,12 @@
 # 기초적인 extension 만들기
 이 튜토리얼에서는 주사위를 굴려달라는 사용자의 요청에 1개의 주사위만 굴려주는 기초적인 extension을 만듭니다.
 
+Custom extension을 서비스하려면 아래 두 가지 요소가 꼭 필요합니다.
+
+{% include "/CEK/Guides/Mandatory_Components.md" %}
+
+다음과 같은 과정을 통해 위 두 요소를 만들고 등록하는 방법을 알아봅니다.
+
 {% include "/CEK/Tutorials/BuildSimpleExtension/Development_Process.md" %}
 
 ## 1단계. Extension 서버 준비 {#Step1}

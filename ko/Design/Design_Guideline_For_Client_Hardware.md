@@ -271,7 +271,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 클라이언트는 Clova가 전달하는 음원을 재생해야 하므로 반드시 Clova가 제공하는 오디오 압축 포맷을 지원해야 합니다.
 
-{% include "/Design/SupportedMediaFormat/Supported_Audio_Format_For_KR.md" %}
+{% include "/Design/SupportedMediaFormat/Supported_Audio_Compression_Format_For_KR.md" %}
 
 ## 화면 {#Screen}
 

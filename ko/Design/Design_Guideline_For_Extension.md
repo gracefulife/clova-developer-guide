@@ -97,7 +97,7 @@ Intent는 extension이 처리할 사용자의 요청을 구별한 범주이며 �
 * [Custom intent](#CustomIntent)
 * [Built-in intent](#BuiltinIntent)
 
-#### Custom intent](#CustomIntent)
+#### Custom intent {#CustomIntent}
 
 Custom intent는 built-in intent와 달리 제공하려는 서비스에 특화된 사용자 요청 범주를 정의한 것입니다. Custom intent는 다음과 같은 것을 정의한 명세입니다.
 * 서비스에 어떤 범주의 사용자 요청이 있는지?
@@ -329,7 +329,7 @@ Extension을 설계할 때 다음과 같은 사회적인 또는 법적인 문제
 
 Extension을 통해 오디오 콘텐츠를 제공하는 경우 반드시 Clova가 지원하는 오디오 압축 포맷으로 음원을 제공해야 합니다.
 
-{% include "/Design/SupportedMediaFormat/Supported_Audio_Format_For_KR.md" %}
+{% include "/Design/SupportedMediaFormat/Supported_Audio_Compression_Format_For_KR.md" %}
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
