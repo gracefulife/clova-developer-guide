@@ -556,7 +556,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 클라이언트 기기의 현재 상태를 전달하기 위해 이벤트 메시지에 다음 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 포함하여 전송합니다.
 
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
 
 ### Payload fields
 
@@ -591,7 +591,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 {% endraw %}
 
 ### See also
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
@@ -717,7 +717,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5"
     },
     "payload": {
-      "deviceId": {{CLOVA_OAUTH_CLIENT_ID}},
+      "deviceId": "90de78d7-0735-43a8-8bdc-acc3c8bc4a80",
       "deviceState": {{Device.DeviceState}}
     }
   }
