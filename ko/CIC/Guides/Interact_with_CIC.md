@@ -12,14 +12,14 @@
 * [메시지 큐 관리하기](#ManageMessageQ)
 * [위임된 사용자 요청 처리하기](#HandleDelegation)
 
-{% include "./InteractWithCIC/Preparation.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Preparation.md" %}
 
-{% include "./InteractWithCIC/Connect_to_CIC.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Connect_to_CIC.md" %}
 
-{% include "./InteractWithCIC/Send_Event.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Send_Event.md" %}
 
-{% include "./InteractWithCIC/Handle_Directive.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Handle_Directive.md" %}
 
-{% include "./InteractWithCIC/Manage_Message_Q.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Manage_Message_Q.md" %}
 
-{% include "./InteractWithCIC/Handle_Delegation.md" %}
+{% include "/CIC/Guides/InteractWithCIC/Handle_Delegation.md" %}
