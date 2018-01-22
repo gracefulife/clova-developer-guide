@@ -13,10 +13,10 @@ Clova Home extension을 만들기 위해 사전에 준비해야 할 것이 무�
 3. [Clova Home extension 요청 처리하기](#HandleClovaHomeExtensionRequest)
 4. [Clova Home extension 응답 반환하기](#ReturnClovaHomeExtensionResponse)
 
-{% include "./BuildClovaHomeExtension/Preparation.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Preparation.md" %}
 
-{% include "./BuildClovaHomeExtension/Provide_Device_Discovery.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Provide_Device_Discovery.md" %}
 
-{% include "./BuildClovaHomeExtension/Handle_Clova_Home_Extension_Request.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Handle_Clova_Home_Extension_Request.md" %}
 
-{% include "./BuildClovaHomeExtension/Return_Clova_Home_Extension_Response.md" %}
+{% include "/CEK/Guides/BuildClovaHomeExtension/Return_Clova_Home_Extension_Response.md" %}
