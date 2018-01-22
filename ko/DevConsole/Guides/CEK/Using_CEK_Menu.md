@@ -12,6 +12,6 @@ CEK 메뉴를 통해 다음과 같은 작업을 처리할 수 있습니다.
 * [Extension 업데이트하기](/DevConsole/Guides/CEK/Update_Extension.md)
 * [Extension 중지 및 삭제하기](/DevConsole/Guides/CEK/Remove_Extension.md)
 
-참고로 Clova developer console에서 extension의 lifecycle은 다음 그림과 같습니다.
+위에서 언급한 것 중 등록, 배포, 업데이트, 중지 및 삭제하는 작업은 extension 관리에 속하는 개념이며, Clova developer console에서 extension의 lifecycle은 다음 그림과 같습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_LifeCycle.png)

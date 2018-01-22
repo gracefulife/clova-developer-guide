@@ -139,7 +139,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 다음 표는 `location` 필드에서 지원하는 위치 정보입니다. 이 정보는 사용자의 발화를 분석하거나 사용자에게 기기를 보여줄 때 사용됩니다.
 
-{% include "./Location.md" %}
+{% include "/CEK/References/ClovaHomeInterface/Location.md" %}
 
 ### Object Example
 {% raw %}

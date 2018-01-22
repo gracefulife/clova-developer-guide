@@ -26,7 +26,7 @@ The TomorrowWeather template is used in providing tomorrow's weather forecast fo
 | `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Describes the weather at the lowest temperature.  |
 | `type`                      | string | The type of this template. The value is always `"TomorrowWeather"`. |
 
-{% include "./Shared_Weather_Code.md" %}
+{% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
 
 ## Template example
 

@@ -71,7 +71,7 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
 
-[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 CEK가 미리 정의해 둔 [interaction 모델](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)에 따라 사용자의 요청을 extension에 전달할 때 사용됩니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
+[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 CEK가 미리 정의해 둔 [interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)에 따라 사용자의 요청을 extension에 전달할 때 사용됩니다. `IntentRequest` 타입 요청은 일회적인 요청 뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때 사용됩니다.
 
 IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 `request.intent` 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
@@ -131,7 +131,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 * `version`: 현재 사용하는 custom extension 메시지 포맷의 버전이 v0.1.0입니다.
 * `session`: **기존 세션에 이어지는 사용자의 요청이며**, 기존 세션의 ID와 사용자의 정보(ID, accessToken)가 담겨 있습니다.
 * `context`: 클라이언트 기기에 대한 정보이며, 기기 ID와 기기의 기본 사용자 정보가 담겨 있습니다.
-* `request`: `IntentRequest` 타입 요청이며, `"OrderPizza"`라는 이름으로 등록된 [intent](/Design/DesignGuidelineForExtension.md#Intent)를 호출했습니다. 해당 intent의 필요 정보로 `"pizzaType"`라는 [slot](/Design/DesignGuidelineForExtension.md#Slot)이 함께 전달되었고 해당 slot은 `"페퍼로니"`라는 값을 가지고 있습니다.
+* `request`: `IntentRequest` 타입 요청이며, `"OrderPizza"`라는 이름으로 등록된 [intent](/Design/Design_Guideline_For_Extension.md#Intent)를 호출했습니다. 해당 intent의 필요 정보로 `"pizzaType"`라는 [slot](/Design/Design_Guideline_For_Extension.md#Slot)이 함께 전달되었고 해당 slot은 `"페퍼로니"`라는 값을 가지고 있습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>

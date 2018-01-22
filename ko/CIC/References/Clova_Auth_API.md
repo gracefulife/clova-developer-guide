@@ -90,7 +90,7 @@ GET|POST /authorize
 
 {% endraw %}
 
-{% include "./CICAuthAPI/GuestMode.md" %}
+{% include "/CIC/References/CICAuthAPI/Guest_Mode.md" %}
 
 ### See also
 * [클라이언트 인증 정보](/CIC/Guides/Interact_with_CIC.md#ClientAuthInfo)

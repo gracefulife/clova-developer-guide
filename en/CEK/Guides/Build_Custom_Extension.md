@@ -12,10 +12,10 @@ The following topics provide essential information for building a custom extensi
 3. [Returning custom extension response](#ReturnCustomExtensionResponse)
 4. [Having multi-turn dialog](#DoMultiturnDialog)
 
-{% include "./BuildCustomExtension/Preparation.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Preparation.md" %}
 
-{% include "./BuildCustomExtension/Handle_Custom_Extension_Request.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Handle_Custom_Extension_Request.md" %}
 
-{% include "./BuildCustomExtension/Return_Custom_Extension_Response.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Return_Custom_Extension_Response.md" %}
 
-{% include "./BuildCustomExtension/Do_Multiturn_Dialog.md" %}
+{% include "/CEK/Guides/BuildCustomExtension/Do_Multiturn_Dialog.md" %}

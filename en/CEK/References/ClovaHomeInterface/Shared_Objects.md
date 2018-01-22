@@ -136,7 +136,7 @@ This table lists the [interfaces](/CEK/References/CEK_API.md#ClovaHomeExtInterfa
 
 The following table shows location details supported from `location` field. The details are used to analyze user's speech or to reveal the appliance to the user.
 
-{% include "./Location.md" %}
+{% include "/CEK/References/ClovaHomeInterface/Location.md" %}
 
 #### Object Example
 {% raw %}

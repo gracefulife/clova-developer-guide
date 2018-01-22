@@ -2,7 +2,7 @@
     background-color: #ffdddd;
     border-left: 8px solid #f44336;
     padding: 15px 6px 2px 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     line-height: 1.4;
 }
 
@@ -10,7 +10,7 @@
     background-color: #ddffdd;
     border-left: 8px solid #4CAF50;
     padding: 15px 6px 2px 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     line-height: 1.4;
 }
 
@@ -18,8 +18,15 @@
     background-color: #ffffcc;
     border-left: 8px solid #ffeb3b;
     padding: 15px 6px 2px 15px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     line-height: 1.4;
+}
+
+.note p, .info p, .danger p {
+  margin-bottom: 0.85em;
+}
+.note img, .info img, .danger img {
+  margin: 0px;
 }
 
 td .danger {
@@ -110,4 +117,26 @@ a.btn.pull-right.js-toolbar-action {
 
 .dropdown.pull-right.js-toolbar-action {
     display: none;
+}
+
+li > div.note, li > div.danger {
+    margin-bottom: 0;
+    padding-bottom: 0.85em;
+}
+
+blockquote {
+  margin: 0;
+  margin-bottom: .85em;
+  padding: 0 15px;
+  border-left: 4px solid #a7a7a7;
+}
+
+blockquote p.ldiag {
+  padding-right:10px;
+}
+
+blockquote p.rdiag {
+  text-align: right;
+  max-width:500px;
+  padding-left:10px;
 }

@@ -23,7 +23,7 @@ The WeeklyWeather template is used in providing weekly weather information for t
 | `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this forecast is for. |
 | `type`                      | string | The type of this template. The value is always `"WeeklyWeather"`. |
 
-{% include "./Shared_Weather_Code.md" %}
+{% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
 
 ## Template example
 
