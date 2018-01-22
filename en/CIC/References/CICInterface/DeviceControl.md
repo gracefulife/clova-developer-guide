@@ -544,7 +544,7 @@ A message for reporting to CIC the current state of the client to CIC.
 
 To deliver the current state of the client device, send the following [Context information(Context)](/CIC/References/Context_Objects.md) with this event.
 
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
 
 ### Payload fields
 
@@ -635,7 +635,7 @@ None
 
 ### See also
 
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeivceState)
+* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
@@ -760,7 +760,7 @@ The `DeviceControl.SynchronizeState` directive is broadcasted to all the clients
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5"
     },
     "payload": {
-      "deviceId": "{{CLOVA_OAUTH_CLIENT_ID}}",
+      "deviceId": "2cd9a306-a7d4-45be-943a-0f4e4a70812b",
       "deviceState": {{Device.DeviceState}}
     }
   }
