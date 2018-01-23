@@ -8,5 +8,5 @@
 
 이 튜토리얼을 따라하면 다음과 같은 것을 익힐 수 있습니다.
 * [첫 번째 튜토리얼: 기초적인 extension 만들고 테스트하기](/CEK/Tutorials/Build_Simple_Extension.md)
-* 두 번째 튜토리얼(추가 예정): 예, 아니오 등과 같은 기본적인 의사 표현 처리하기
+* [두 번째 튜토리얼: 예, 아니오 같은 기본적인 의사 표현 처리하기](/CEK/Tutorials/Handle_Builtin_Intents.md)
 * 세 번째 튜토리얼(추가 예정): 사용자가 입력한 정보를 활용하는 interaction 모델 적용하기
