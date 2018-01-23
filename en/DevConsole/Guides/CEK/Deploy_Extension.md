@@ -62,7 +62,7 @@ Enter deployment information as below.
   - **Search keywords**: If a specific keyword is included in a users’ search, the search keyword will help to find better search result.
   - **Small icon**: An image file displaying an extension icon (108px X 108px).
   - **Big icon**: A big size image file of an extension icon. It will be displayed in the future (512 px X 512 px).
-* Instruction for test: An information for personnel in charge of the [extension approval](#RequestExtensionSubmission) process refers to approve an extension. It is not exposed to regular users. On the information, enter the list of intent provided by the extension and a test account (if required to [connect to the account](/CEK/Guides/LInk_User_Account.md)) and the speech examples to test listed features.
+* Instruction for test: An information for personnel in charge of the [extension approval](#RequestExtensionSubmission) process refers to approve an extension. It is not exposed to regular users. On the information, enter the list of intent provided by the extension and a test account (if required to [connect to the account](/CEK/Guides/Link_User_Account.md)) and the speech examples to test listed features.
 * Service country and district: The deployment of the extension can only be done in Republic of Korea. At the moment, there is no other countries or districts where the extension service can be provided.
 
 The above information will be displayed as below from the Clova app **Managing extension feature** menu.
@@ -107,7 +107,7 @@ A Clova manager will review registered extension details and check execution pos
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
 
-The review will be done individually at a particular environment only for the review. In case of a service requiring [user account connection](/CEK/Guides/LInk_User_Account.md), a test account information has to be entered on the **Instruction for test** when [entering the deployment information](#InputDeploymentInfo).
+The review will be done individually at a particular environment only for the review. In case of a service requiring [user account connection](/CEK/Guides/Link_User_Account.md), a test account information has to be entered on the **Instruction for test** when [entering the deployment information](#InputDeploymentInfo).
 
 Review items are as below when reviewing your extension.
 
@@ -118,7 +118,7 @@ Review items are as below when reviewing your extension.
 2. Verify user scenario
   * Check if there are inappropriate sentences in the contexts.
   * Check if there are any banned words or sensitive words in speech data of the scenario.
-  * If the extension is [connected to the user account](/CEK/Guides/LInk_User_Account.md), specific part of the service can be examined.
+  * If the extension is [connected to the user account](/CEK/Guides/Link_User_Account.md), specific part of the service can be examined.
 3. Verify deployment information
   * Check if the deployment information such as explanation, category, and search keyword are correctly entered on the extension.
   * Check if the extension is working properly by following the policies such as Personal information and compliance to regulation.

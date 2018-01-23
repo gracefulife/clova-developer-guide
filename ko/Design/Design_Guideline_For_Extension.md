@@ -329,7 +329,7 @@ Extension을 설계할 때 다음과 같은 사회적인 또는 법적인 문제
 
 Extension을 통해 오디오 콘텐츠를 제공하는 경우 반드시 Clova가 지원하는 오디오 압축 포맷으로 음원을 제공해야 합니다.
 
-{% include "/Design/SupportedMediaFormat/Supported_Audio_Compression_Format_For_KR.md" %}
+{% include "/Design/SupportedMediaFormat/Supported_Audio_Compression_Format.md" %}
 
 <div class="danger">
   <p><strong>Caution!</strong></p>

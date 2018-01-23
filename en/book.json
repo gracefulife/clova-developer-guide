@@ -7,7 +7,7 @@
   "variables": {
     "ClassifiedInfo": "Confidential",
     "DocVersion": "v2.0",
-    "Locale": "en-JP",
+    "TargetCountryCode": "JP",
     "DocOwner": "LINE",
     "OrientedService": "LINE",
     "TargetServiceForClientAuth": "LINE",

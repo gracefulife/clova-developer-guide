@@ -7,7 +7,7 @@
   "variables": {
     "ClassifiedInfo": "대외비",
     "DocVersion": "v2.9",
-    "Locale": "ko-KR",
+    "TargetCountryCode": "KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
     "TargetServiceForClientAuth": "NAVER",
