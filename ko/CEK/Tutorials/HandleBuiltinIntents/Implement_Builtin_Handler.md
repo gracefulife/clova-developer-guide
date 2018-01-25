@@ -24,9 +24,8 @@ intentRequest(cekResponse) {
   switch (intent) {
     ...
     case 'Clova.GuideIntent':
-      cekResponse.appendSpeechText("주사위 한 개 던져줘, 라고 시도해보세요.")
-      break
-    ...
+    default:
+      cekResponse.setSimpleSpeechText('주사위 한 개 던져줘, 라고 시도해보세요.')
   }
   ...
 }
