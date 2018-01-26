@@ -61,13 +61,13 @@ Enter [information required](/CEK/Guides/Link_User_Account.md#RegisterAccountLin
   <img src="/DevConsole/Resources/Images/DevConsole-Extension_Accoun_Linking_Settings_1.png" />
   <li>Select <strong>Yes</strong> from the <strong>Account linking</strong> field. </li>
   <li>Enter an Authorization URL providing a UI page for users to authorize account on <strong>Login URL</strong>. If users activate the extension, it will navigate to this page. </li>
-  <li>Enter <strong>Client ID</strong> required for HTTPS request when authorizing user account. The client ID is a value created when <a href="/CEK/Guides/Link_Account.html#BuildAuthServer">building authorization server</a>.</li>
+  <li>Enter <strong>Client ID</strong> required for HTTPS request when authorizing user account. The client ID is a value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building authorization server</a>.</li>
   <li>Enter a URL of the page with personal information policy of extension services on <strong>Personal information policy URL</strong>. This page will be exposed to the Clova extension store.</li>
   <li>Add a domain required from the <strong>Domain list field</strong> (if bringing resources for domains besides the domain with <strong>Login URL</strong> or <strong>Personal information policy URL</strong> pages).</li>
   <li>Add the predesignated scope on <strong>Scope</strong> field (if the scope of an access token issued by user account linking is predesignated).</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Extension_Accoun_Linking_Settings_2.png" />
   <li>Enter URL which acquires a service access token on <strong>Access token URI</strong> field. As of now, the <strong>grant type supports the code grant method only.</li>
-  <li>Enter <strong>Client secret</strong> required for HTTPS request to acquire the service access token. The client secret is a value created when <a href="/CEK/Guides/Link_Account.html#BuildAuthServer">building authorization server</a>.</li>
+  <li>Enter <strong>Client secret</strong> required for HTTPS request to acquire the service access token. The client secret is a value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building authorization server</a>.</li>
   <li><strong>Client verification schema</strong> configures a value that matches to the authorization server interface from the following.
     <ul>
       <li><strong>HTTP Basic (Recommended)</strong>: If entering the authorization credential to the header to acquire a service access token.</li>
