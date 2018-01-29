@@ -32,7 +32,7 @@ GET|POST /authorize
 | `device_id`     | string  | 클라이언트 기기의 MAC 주소나 생성한 UUID                                                              | 필수 |
 | `model_id`      | string  | 클라이언트 기기의 모델 ID                                                                          | 선택 |
 | `response_type` | string  | 응답 유형. 현재 `"code"`만 지원합니다.                                                             | 필수 |
-| `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 토큰 값(URL 인코딩 적용) | 필수 |
+| `state`         | string  | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 사용하는 상태 token 값(URL 인코딩 적용) | 필수 |
 
 ### Request example
 
@@ -57,7 +57,7 @@ GET|POST /authorize
 |---------------|---------|-----------------------------|:---------:|
 | `code`          | string | 인증 서버로부터 발급받은 authorization code. HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다.      | 항상      |
 | `redirect_uri`  | string | 서비스 이용 약관과 관련된 내용을 제공하는 페이지 URI. HTTP 응답 메시지가 `451 Unavailable For Legal Reasons`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. 클라이언트는 이 필드에 포함된 URI로 이동하여 페이지를 표시해야 합니다. 사용자가 이용 약관에 동의하면 클라이언트는 `302 Found`(URL redirection) 상태 코드를 가진 응답을 다음 URL과 함께 수신하게 됩니다. <ul><li><code>clova://agreement-success</code>: 사용자가 이용 약관 동의를 완료함. 클라이언트는 Clova access token 발급을 위해 다음 단계를 계속 진행할 수 있습니다.</li><li><code>clova://agreement-failure</code>: 서버 오류로 이용 약관 동의에 실패함. 클라이언트는 적절한 예외 처리를 해야 합니다.</li></ul> | 항상      |
-| `state`         | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 토큰을 복호화한 값(URL 디코딩 적용). HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. | 항상      |
+| `state`         | string | 요청 위조(cross-site request forgery) 공격을 방지하기 위해 클라이언트에서 전달받은 상태 token을 복호화한 값(URL 디코딩 적용). HTTP 응답 메시지가 `200`이나 `451`의 상태 코드를 가질 때 HTTP 응답 메시지 본문에 포함되는 필드입니다. | 항상      |
 
 ### Status codes
 

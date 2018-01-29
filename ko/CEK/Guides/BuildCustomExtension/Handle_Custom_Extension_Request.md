@@ -37,6 +37,9 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -92,6 +95,9 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -153,7 +159,7 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
   "version": "0.1.0",
   "session": {
     "new": false,
-    "sessionAttributes": {}
+    "sessionAttributes": {},
     "sessionId": "a29cfead-c5ba-474d-8745-6c1a6625f0c5",
     "user": {
       "userId": "V0qe",
@@ -162,6 +168,9 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
