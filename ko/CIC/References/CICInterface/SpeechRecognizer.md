@@ -103,23 +103,17 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 * Little endian
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
-| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 음성 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
 | `format`           | string   | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
 | `lang`             | string   | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li></ul> | 필수    |
 | `profile`          | string   | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
+| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
 
 ### Message example
 {% raw %}
@@ -127,31 +121,14 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 // 일반적인 사용자 음성 입력
 {
   "context": [
-    {
-      "header": {
-        "namespace": "Alerts",
-        "name": "AlertsState"
-      },
-      "payload": {
-        "allAlerts": [
-          ...
-        ],
-        "activeAlerts": [
-          ...
-        ]
-      }
-    },
-    ...
-    {
-      "header": {
-        "namespace": "Speaker",
-        "name": "VolumeState"
-      },
-      "payload": {
-        "volume": 25,
-        "muted": false
-      }
-    }
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -170,6 +147,16 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 // SpeechRecognizer.ExpectSpeech 지시 메시지에 따른 추가적인 사용자 음성 입력
 {
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "header": {
       "dialogRequestId": "4951cbfe-0064-41e2-ac3a-b0e4e1b0a570",
       "messageId": "6ab89102-668b-42eb-89d0-639253db10ba",
@@ -201,13 +188,6 @@ Content-Type: application/octet-stream
 ### See also
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.StopCapture`](#StopCapture)
-* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 
 ## ShowRecognizedText directive {#ShowRecognizedText}
 

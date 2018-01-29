@@ -122,17 +122,17 @@ Send the following [context information](/CIC/References/Context_Objects.md) wit
 
 | Field name       | Type    | Description                     | Required |
 |---------------|:---------:|-----------------------------|:---------:|
-| `speechId`   | string   | If receiving additional vocal input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
-| `explicit`         | boolean  | If receiving additional vocal input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of `explicit` field specified in `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
+| `explicit`         | boolean  | If receiving additional input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of `explicit` field specified in `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
 | `format`           | string   | Audio data format of the user's request. The value is always `AUDIO_L16_RATE_16000_CHANNELS_1`.                             | Optional |
 | `lang`             | string   | The language CIC shall recognize user's request in: <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li></ul> | Required |
 | `profile`          | string   | A field reserved for future use. The value is always `CLOSE_TALK`.                                     | Optional |
+| `speechId`   | string   | If receiving additional vocal input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
 
 ### Message example
 
 {% raw %}
 ```json
-// General user request
+// General user vocal input
 {
   "context": [
     {{Alerts.AlertsState}},

@@ -30,7 +30,7 @@ System 인터페이스는 Clova와 클라이언트 사이에 알람, 일정과 �
 
 ### Context fields
 
-없음
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -40,7 +40,16 @@ System 인터페이스는 Clova와 클라이언트 사이에 알람, 일정과 �
 {% raw %}
 ```json
 {
-  "context":[],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "System",

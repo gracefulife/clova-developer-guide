@@ -26,6 +26,9 @@
 | PlaybackController | [`NextCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#NextCommandIssued) | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | PlaybackController | [`PreviousCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#PreviousCommandIssued) | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | SpeechRecognizer  | [`Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)  | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.                                          |
-| SpeechSynthesizer | [`Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)     | CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.                                             |
+| SpeechSynthesizer | [`Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)     | CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.                                             |
+| SpeechSynthesizer | [`SpeechFinished`](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechFinished)   | 클라이언트가 TTS 재생을 완료했음을 CIC로 보고하기 위해 사용됩니다.                                 |
+| SpeechSynthesizer | [`SpeechStarted`](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechStarted)     | 클라이언트가 TTS 재생을 시작했음을 CIC로 보고하기 위해 사용됩니다.                                 |
+| SpeechSynthesizer | [`SpeechStopped`](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechStopped)     | 클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.                                 |
 | System          | [`RequestSynchronizeState`](/CIC/References/CICInterface/System.md#RequestSynchronizeState) | 클라이언트가 Clova의 클라우드 환경에 저장된 공유 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. |
 | TextRecognizer  | [`Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize)      | 사용자 텍스트 입력을 CIC로 전송하여 사용자가 무엇을 원하는지 인식하도록 요청합니다.                           |

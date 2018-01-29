@@ -27,12 +27,15 @@ Send the following [context information](/CIC/References/Context_Objects.md) wit
 
 | Field name       | Type    | Description                     | Required |
 |---------------|:---------:|-----------------------------|:---------:|
+| `explicit`         | boolean  | If receiving additional input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of `explicit` field specified in `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
+| `speechId`   | string   | If receiving additional input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
 | `text`        | string  | The text entered by a user. | Required     |
 
 ### Message example
 
 {% raw %}
 ```json
+// General user text input
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -53,6 +56,21 @@ Send the following [context information](/CIC/References/Context_Objects.md) wit
     "payload": {
       "text": "How is the weather now?"
     }
+  }
+}
+
+// Additional text input for the SpeechRecognizer.ExpectSpeech directive
+{
+  "header": {
+      "dialogRequestId": "d3f81fec-4cb9-4ce9-a046-1ea9a71018df",
+      "messageId": "8526a048-4141-4c30-98a4-c61e223afece",
+      "namespace": "TextRecognizer",
+      "name": "Recognize"
+  },
+  "payload": {
+      "text": "How about tomorrow?",
+      "speechId": "1a4cd9ac-8fd8-4929-9c30-3a592dd2c298",
+      "explicit": false
   }
 }
 ```

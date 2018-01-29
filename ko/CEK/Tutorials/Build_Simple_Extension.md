@@ -3,7 +3,9 @@
 
 Custom extension을 서비스하려면 아래 두 가지 요소가 꼭 필요합니다.
 
-{% include "/CEK/Guides/Mandatory_Components.md" %}
+{% include "/CEK/Guides/RequiredComponents/Interaction_Model.md" %}
+
+{% include "/CEK/Guides/RequiredComponents/Extension_Server.md" %}
 
 다음과 같은 과정을 통해 위 두 요소를 만들고 등록하는 방법을 알아봅니다.
 
