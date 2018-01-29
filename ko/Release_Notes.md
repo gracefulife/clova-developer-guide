@@ -2,6 +2,30 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-01-29
+
+### 플랫폼 변경 사항
+
+* Design
+  * [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)에 [Reminder용 효과음](/Design/Design_Guideline_For_Client_Hardware.md#SoundEffect) 추가
+
+* CIC
+  * [Notifier](/CIC/References/CICInterface/Notifier.md) 네임스페이스에 [Notifier.Notify](/CIC/References/CICInterface/Notifier.md#Notify) 이벤트 메시지 추가 및 해당 네임스페이스 메시지의 payload 필드 업데이트
+  * [SpeechSynthesizer.SpeechState](/CIC/References/ContextObjects/SpeechState.md) 및 [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md) 네임스페이스에 [SpeechFinished](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechFinished), [SpeechStarted](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechStarted), [SpeechStopped](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechStopped) 이벤트 메시지 추가
+  * Multi-turn 대화를 위해 [TextRecognizer.Recognize](/CIC/References/CICInterface/TextRecognizer.md) 이벤트 메시지에 speechId, explicit 필드 추가
+
+* CEK
+  * Clova Home extension 메시지 레퍼런스 중 [Error 인터페이스](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)에 [NoSuchTargetError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#NoSuchTargetError), [NotSupportedInCurrentModeError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#NotSupportedInCurrentModeError), [UnsupportedOperationError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#UnsupportedOperationError) 그리고 [ValueOutOfRangeError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#ValueOutOfRangeError) 추가
+
+* Clova developer console
+  * [테스터 아이디 적용 자동화](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
+
+### 문서 변경 사항
+
+* Clova developer console
+  * [Extension 서버 연동 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetServerConnection) 전 연결 확인하는 방법 추가
+  * Clova developer console의 일부 UI 업데이트 문서 적용
+
 ## 2018-01-22
 
 ### 플랫폼 변경 사항
