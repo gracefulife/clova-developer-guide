@@ -124,7 +124,7 @@ Built-in intent는 Clova 플랫폼이 일부 공통적인 사용자 요청 범�
 
 | Built-in intent 이름       | 의도               | 대응하는 사용자 발화 예시                                      |
 |---------------------------|-------------------|----------------------------------------------------------|
-| Clova.GuideIntent         | 도움말 요청          | "너 뭐 할 줄 아니?", "할 줄 아는 거 말해봐", "너 할 줄 아는게 뭐냐?" |
+| Clova.GuideIntent         | 도움말 요청          | "너 뭐 할 줄 알아?", "사용법 알려줘."                           |
 | Clova.CancelIntent        | 실행 취소 요청        | "취소", "취소해줘"                                          |
 | Clova.YesIntent           | 긍정 응답(예, Yes)   | "응", "그래", "알겠어", "알겠습니다", "오케이"                   |
 | Clova.NoIntent            | 부정 응답(아니오, No) | "아니", "아니요", "싫어"                                     |
@@ -254,6 +254,9 @@ BBQ 피자 하나만 배달시켜줄래?
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -295,6 +298,9 @@ BBQ 피자 하나만 배달시켜줄래?
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"

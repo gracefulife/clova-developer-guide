@@ -18,8 +18,8 @@
 | Clova              | [`StartExtension`](/CIC/References/CICInterface/Clova.md#StartExtension)        | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.                                             |
 | DeviceControl      | [`BtConnect`](/CIC/References/CICInterface/DeviceControl.md#BtConnect)          | 클라이언트에게 특정 블루투스 기기와 연결을 설정하도록 지시합니다.                                       |
 | DeviceControl      | [`BtDisconnect`](/CIC/References/CICInterface/DeviceControl.md#BtDisconnect)    | 클라이언트에게 특정 블루투스 기기와 연결을 해제하도록 지시합니다.                                       |
-| DeviceControl      | [`BtStartPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStartPairing) | 클라이언트에게 블루투스 페어링을 시작하도록 지시합니다.                                          |
-| DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | 클라이언트에게 블루투스 페어링을 중지하도록 지시합니다.                                          |
+| DeviceControl      | [`BtStartPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStartPairing) | 클라이언트에게 블루투스 페어링을 시작하도록 지시합니다.                                              |
+| DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | 클라이언트에게 블루투스 페어링을 중지하도록 지시합니다.                                              |
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                            |
 | DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                  |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                            |
@@ -30,12 +30,13 @@
 | DeviceControl      | [`TurnOff`](/CIC/References/CICInterface/DeviceControl.md#TurnOff)               | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                                  |
 | DeviceControl      | [`TurnOn`](/CIC/References/CICInterface/DeviceControl.md#TurnOn)                 | 클라이언트에게 지정한 기능을 켜거나 활성화하도록 지시합니다.                                          |
 | Notifier           | [`ClearIndicator`](/CIC/References/CICInterface/Notifier.md#ClearIndicator)      | 클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다.                                         |
-| Notifier           | [`SetIndicator`](/CIC/References/CICInterface/Notifier.md#SetIndicator)         | 클라이언트에게 확인하지 않은 알림이 있음을 나타내는 표시를 켜도록 지시합니다.                              |
+| Notifier           | [`Notify`](/CIC/References/CICInterface/Notifier.md#Notify)                      | 클라이언트에게 알림 내용을 사용자에게 전달하도록 지시합니다.                                          |
+| Notifier           | [`SetIndicator`](/CIC/References/CICInterface/Notifier.md#SetIndicator)          | 클라이언트에게 사용자가 읽지 않은 알림이 있음을 표시하도록 지시합니다.                                  |
 | PlaybackController | [`Mute`](/CIC/References/CICInterface/PlaybackController.md#Mute)               | 클라이언트에게 스피커 볼륨을 음소거하도록 지시합니다.                                                |
 | PlaybackController | [`Next`](/CIC/References/CICInterface/PlaybackController.md#Next)               | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.                               |
 | PlaybackController | [`Pause`](/CIC/References/CICInterface/PlaybackController.md#Pause)             | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.                                    |
 | PlaybackController | [`Previous`](/CIC/References/CICInterface/PlaybackController.md#Previous)       | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다.                              |
-| PlaybackController | [`Replay`](/CIC/References/CICInterface/PlaybackController.md#Replay)           | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.                              |
+| PlaybackController | [`Replay`](/CIC/References/CICInterface/PlaybackController.md#Replay)           | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.                                     |
 | PlaybackController | [`Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)           | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                                            |
 | PlaybackController | [`Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)               | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                                            |
 | PlaybackController | [`TurnOffRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode) | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                                  |
@@ -47,5 +48,5 @@
 | SpeechRecognizer   | [`KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                                                |
 | SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
 | SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
-| SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다.                                   |
-| System             | [`SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다. |
+| SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다.                                |
+| System             | [`SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다.                                   |

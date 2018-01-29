@@ -1,5 +1,5 @@
 # Extension 등록하기
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 개발 중이거나 개발한 경우 이를 Clova developer console에 등록해야 합니다. CEK 메뉴 페이지에서 페이지 하단에 있는 **새로운 익스텐션 만들기** 버튼을 클릭하면 신규 extension을 등록할 수 있습니다.
+[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 개발 중이거나 개발한 경우 이를 Clova developer console에 등록해야 합니다. CEK 메뉴 페이지에서 페이지 하단에 있는 **새로운 extension 만들기** 버튼을 클릭하면 신규 extension을 등록할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)
 
@@ -29,10 +29,10 @@ Extension을 등록하는 과정에서 가장 먼저 할 일은 등록할 extens
   <li><strong>사용 언어</strong> 항목에서 extension에서 사용할 언어를 선택합니다. 현재 <strong>한국어</strong>만 지원하고 있습니다.</li>
   <li>Extension의 ID, 이름, 호출 이름에 해당하는 정보를 다음 항목에 입력합니다.
     <ol>
-      <li><strong>익스텐션 아이디</strong>: Extension의 고유 ID입니다. Reversed FQDN 형식으로 입력합니다. (예: com.yourdomain.extension.pizzabot)</li>
+      <li><strong>Extension 아이디</strong>: Extension의 고유 ID입니다. Reverse domain name 표기 형식으로 입력합니다. (예: com.yourdomain.extension.pizzabot)</li>
       <li><strong>이름</strong>: Extension의 이름입니다. 추후 Clova extension 스토어에 노출됩니다.</li>
       <li><strong>호출 이름</strong>: 사용자가 extension을 호출할 때 부르는 이름입니다. 일반적으로 보유하고 있는 서비스, 회사 또는 조직의 이름이 될 수 있으나 사용자의 편의 등을 위해 간결하고 특색있는 단어를 지정하는 것이 좋습니다. 범용적인 단어나 타사의 이름이나 서비스에 해당하는 용어는 사용할 수 없습니다. <strong>호출 이름</strong>은 extension 심사 시 검수받게 됩니다.</li>
-      <li><strong>제작사</strong>: Extension의 제작 주체(회사나 개인)의 이름 또는 별칭을 입력합니다. 추후 Clova extension 스토어에 노출되며, extension 승인 과정에서 심사를 받게 됩니다.</li>
+      <li><strong>제작사</strong>: Extension의 제작 주체(회사나 개인)의 이름 또는 별칭을 입력합니다. 추후 extension 스토어에 노출되며, extension 승인 과정에서 심사를 받게 됩니다.</li>
     </ol>
   </li>
   <li>(Extension이 <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a> 지시 메시지를 이용할 경우)<strong>오디오 플레이어 사용</strong> 항목을 <strong>네</strong>로 선택합니다. Extension이 음악 스트리밍 서비스를 제공할 때 사용됩니다.</li>
@@ -47,7 +47,15 @@ Extension 기본 정보 입력이 끝나면 생성된 Extension의 정보를 수
 
 ## 서버 연동 설정 {#SetServerConnection}
 
-Extension은 CEK와 HTTPS 통신을 수행하게 되니다. 이때, CEK는 Extension쪽으로 HTTP 요청를 보내고, Extension은 HTTP 응답을 CEK에게 보냅니다. CEK가 extension으로 HTTP 요청을 보내려면 Clova developer console에서 서버 연동 설정을 수행해야 합니다. [Extension 기본 정보를 입력](#InputExtensionInfo)한 후 생성된 extension에 대해 서버 연동 설정을 수행할 수 있습니다.
+Extension은 CEK와 HTTPS 통신을 수행하게 됩니다. 이때, CEK는 Extension쪽으로 HTTP 요청를 보내고, Extension은 HTTP 응답을 CEK에게 보냅니다. CEK가 extension으로 HTTP 요청을 보내려면 Clova developer console에서 서버 연동 설정을 수행해야 합니다. [Extension 기본 정보를 입력](#InputExtensionInfo)한 후 생성된 extension에 대해 서버 연동 설정을 수행할 수 있습니다.
+
+Extension 서버를 등록하기 전에 우선 extension 서버와 통신이 되는지 확인해야 합니다. 다음 예와 같이 간단한 curl 명령으로 통신 상태를 확인할 수 있습니다.
+
+{% raw %}
+```bash
+$ curl "https://yourdomain.com/pizzabot" -X POST
+```
+{% endraw %}
 
 다음 절차에 따라 서버 연동 설정을 수행합니다.
 

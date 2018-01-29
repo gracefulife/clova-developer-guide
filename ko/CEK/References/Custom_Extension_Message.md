@@ -17,6 +17,9 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
       "totalInMilliseconds": {{number}},
     },
     "System": {
+      "application": {
+        "applicationId": {{string}}
+      },
       "device": {
         "deviceId": {{string}},
         "display": {
@@ -60,6 +63,8 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `context.AudioPlayer.stream`               | [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | 재생 중인 미디어의 상세 정보를 보관한 객체. `playerActivity` 값이 `"IDLE"`이면 이 필드 값이 비어 있을 수도 있습니다.    | 조건부 |
 | `context.AudioPlayer.totalInMilliseconds`  | number  | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, `playerActivity` 값이 "IDLE"이면 이 필드 값이 비어 있을 수도 있습니다.                                                                  | 조건부 |
 | `context.System`                           | object  | 클라이언트 시스템의 맥락 정보를 가지고 있는 객체                          | 항상 |
+| `context.System.application`               | object  | 사용자 의도에 의해 실행되어야 하는 extension의 정보를 가지고 있는 객체       | 항상 |
+| `context.System.application.applicationId` | string  | Extension의 ID                                                 | 항상 |
 | `context.System.device`                    | object  | 클라이언트 기기의 정보를 가지고 있는 객체                               | 항상 |
 | `context.System.device.deviceId`           | string  | 클라이언트 기기 ID. 모델명과 기기 시리얼 번호가 조합된 정보와 같이 사용자 기기를 식별할 수 있는 정보가 전달됩니다. | 항상 |
 | `context.System.device.display`            | object  | 클라이언트 기기의 디스플레이 정보를 가지고 있는 객체                                                 | 항상 |
@@ -99,6 +104,9 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -136,6 +144,9 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -182,6 +193,9 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"

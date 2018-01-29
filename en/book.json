@@ -14,7 +14,8 @@
     "LoginAPIofTargetService": "https://developers.line.me/en/docs/line-login/web/integrate-line-login-v2/",
     "AuthServerBaseURL": "https://clova-authgw.line-apps.com/",
     "CICBaseURL": "https://clova-cic.line-apps.com/",
-    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/"
+    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/",
+    "ReleaseYear": "2018"
   },
   "pdf": {
     "fontSize": 11,

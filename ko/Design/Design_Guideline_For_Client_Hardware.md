@@ -179,46 +179,24 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 <table style="text-align:center">
   <thead>
     <tr>
-      <th rowspan="2">재생 중인 타입</th>
-      <th colspan="4">재생해야 할 타입</th>
-      <th rowspan="2">물리 버튼 효과음</th>
+      <th rowspan="2">재생 중인 타입</th><th colspan="4">재생해야 할 타입</th><th rowspan="2">물리 버튼 효과음</th>
     </tr>
     <tr>
-      <th>Alert</th>
-      <th>Content</th>
-      <th>Dialogue</th>
-      <th>Notification</th>
+      <th>Alert</th><th>Content</th><th>Dialogue</th><th>Notification</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Alert</th>
-      <td>재생 중지</td>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
-      <td rowspan="4">Mixing 처리</td>
+      <th>Alert</th><td>재생 중지</td><td>배경음 처리</td><td>배경음 처리</td><td>배경음 처리</td><td rowspan="4">Mixing 처리</td>
     </tr>
     <tr>
-      <th>Content</th>
-      <td>배경음 처리</td>
-      <td>재생 중지</td>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
+      <th>Content</th><td>배경음 처리</td><td>재생 중지</td><td>배경음 처리</td><td>배경음 처리</td>
     </tr>
     <tr>
-      <th>Dialogue</th>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
-      <td>재생 중지</td>
-      <td>배경음 처리</td>
+      <th>Dialogue</th><td>배경음 처리</td><td>배경음 처리</td><td>재생 중지</td><td>배경음 처리</td>
     </tr>
     <tr>
-      <th>Notification</th>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
-      <td>배경음 처리</td>
-      <td>계속 재생(queue)</td>
+      <th>Notification</th><td>배경음 처리</td><td>배경음 처리</td><td>배경음 처리</td><td>계속 재생(queue)</td>
     </tr>
   </tbody>
 </table>
@@ -254,8 +232,9 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Error 상태 진입             | <audio title="Error" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Error.wav" type="audio/wav" /></audio>         | 필수     |
 | Mute on 상태 진입           | <audio title="Mute on" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_On.wav" type="audio/wav" /></audio>     | 필수     |
 | Mute on 상태 해제           | <audio title="Mute off" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Mute_Off.wav" type="audio/wav" /></audio>   | 필수     |
-| 알람/리마인더(이벤트 발생 시, 효과음 반복) | <audio title="Alarm" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Alarm.wav" type="audio/wav" /></audio>         | 필수     |
-| 타이머(이벤트 발생 시, 효과음 반복)      | <audio title="Timer" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Timer.wav" type="audio/wav" /></audio>         | 필수     |
+| 알람(이벤트 발생 시, 효과음 반복 재생) | <audio title="Alarm" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Alarm.wav" type="audio/wav" /></audio>         | 필수     |
+| 리마인더(이벤트 발생 시, 효과음과 리마인더 내용 TTS 순서로 반복 재생) | <audio title="Reminder" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Reminder.wav" type="audio/wav" /></audio>         | 필수     |
+| 타이머(이벤트 발생 시, 효과음 반복 재생)      | <audio title="Timer" controls><source src="./Resources/Sounds/Clova-Client-SoundEffect-Timer.wav" type="audio/wav" /></audio>         | 필수     |
 
 #### 효과음 가이드라인 {#SoundEffectGuideline}
 

@@ -4,11 +4,12 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ClearIndicator`](#ClearIndicator)         | Directive | 클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. |
-| [`SetIndicator`](#SetIndicator)             | Directive | 클라이언트에게 확인하지 않은 알림이 있음을 나타내는 표시를 켜도록 지시합니다. |
+| [`ClearIndicator`](#ClearIndicator)         | Directive | 클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다.             |
+| [`Notify`](#Notify)                         | Directive | 클라이언트에게 알림 내용을 사용자에게 전달하도록 지시합니다.              |
+| [`SetIndicator`](#SetIndicator)             | Directive | 클라이언트에게 사용자가 읽지 않은 알림이 있음을 표시하도록 지시합니다.      |
 
 ## ClearIndicator directive {#ClearIndicator}
-클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. 알림을 표시하는 조명이나 소리 효과를 모두 꺼야 합니다.
+클라이언트에게 알림을 나타내는 표시를 모두 끄도록 지시합니다. 클라이언트는 알림을 표시하는 조명이나 소리 효과를 모두 꺼야 합니다.
 
 ### Payload fields
 없음
@@ -36,16 +37,78 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 {% endraw %}
 
 ### See also
+* [`Notifier.Notify`](#Notify)
 * [`Notifier.SetIndicator`](#SetIndicator)
 
+
+## Notify directive {#Notify}
+클라이언트에게 알림 내용을 사용자에게 전달하도록 지시합니다. 클라이언트는 지정된 방식으로 알림용 조명을 켜고 알림과 관련된 오디오 콘텐츠를 순서대로 재생해야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `assets[]`           | object array | 알림과 관련된 오디오 콘텐츠를 담고 있는 객체 배열                          | 항상 |
+| `assets[].assetId`   | string       | 오디오 콘텐츠를 구분하는 식별자                                        | 항상 |
+| `assets[].url`       | string       | 오디오 콘텐츠의 URL 정보입니다. 다음과 같은 scheme 값이나 오디오 콘텐츠의 URL 값을 가집니다.<ul><li><code>"clova://notifier/sound/default"</code>: 기본 알림음을 지칭하는 scheme입니다. 미리 정의된 기본 알림음을 재생합니다.</li><li>오디오 콘텐츠의 URL(<code>"http(s)://~</code>): 알림 내용이 담긴 오디오 콘텐츠의 URL. 해당 URL의 오디오 콘텐츠를 재생합니다.</li></ul>    | 항상 |
+| `assetPlayOrder[]`   | string array | `assets[]` 필드에 등록된 알림음을 어떤 순서로 재생해야 하는지 표현하고 있는 문자열 배열입니다. 배열에 저장된 오디오 콘텐츠 식별자의 순서대로 알림음을 재생하면 됩니다.            | 항상  |
+| `light`              | string       | 조명 설정 정보<ul><li><code>"DEFAULT"</code>: 알림 표시용 조명을 점등해야 합니다.</li><li><code>"NONE"</code>: 알림 표시용 조명을 점등하지 않습니다.</li></ul>   | 항상  |
+
+### Remarks
+해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "Notifier",
+      "name": "Notify",
+      "messageId": "688a3d72-06c4-4628-b238-9ac454d3ea65",
+    },
+    "payload": {
+      "light": "DEFAULT",
+      "assets": [
+        {
+          "assetId": "e5179318-d061-42f9-af1b-417180142934",
+          "url": "clova://notifier/sound/default"
+        },
+        {
+          "assetId": "9d3df3c1-d0b4-4375-84a6-67c7ae000292",
+          "url": "https://steaming.example.com/3325-b5c75045b4ae426885343f9b6abd0bfc-1508160634257"
+        }
+      ],
+      "assetPlayOrder": [
+        "e5179318-d061-42f9-af1b-417180142934",
+        "9d3df3c1-d0b4-4375-84a6-67c7ae000292"
+      ]
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`Notifier.ClearIndicator`](#ClearIndicator)
+* [`Notifier.SetIndicator`](#SetIndicator)
+* [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)
+
 ## SetIndicator directive {#SetIndicator}
-클라이언트에게 알림 표시를 켜도록 지시합니다.
+클라이언트에게 사용자가 읽지 않은 알림이 있음을 표시하도록 지시합니다. 클라이언트는 알림용 조명을 켜거나 지정된 알림음을 재생해야 합니다.
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `new`         | boolean | 새로운 알림에 대한 지시 메시지인지 알려주는 필드입니다. <ul><li><code>true</code>: 새로운 알림인 경우</li><li><code>false</code>: 새로운 알림이 아닌 경우</li></ul> | 항상    |
-| `light`       | string  | 조명 설정 정보<ul><li><code>"on"</code>: 사용자가 확인하지 않은 알림이 있는 경우입니다. 주로 알림 표시용 조명을 점등하게 됩니다.</li><li><code>"off"</code>: 사용자가 확인하지 않은 알림이 없는 경우입니다.</li></ul> | 항상    |
+| `assets[]`           | object array | 알림과 관련된 오디오 콘텐츠를 담고 있는 객체 배열                          | 항상 |
+| `assets[].assetId`   | string       | 오디오 콘텐츠를 구분하는 식별자                                        | 항상 |
+| `assets[].url`       | string       | 오디오 콘텐츠의 URL 정보입니다. 다음과 같은 scheme 값이나 오디오 콘텐츠의 URL 값을 가집니다.<ul><li><code>"clova://notifier/sound/default"</code>: 기본 알림음을 지칭하는 scheme입니다. 미리 정의된 기본 알림음을 재생합니다.</li><li>오디오 콘텐츠의 URL(<code>"http(s)://~</code>): 알림 내용이 담긴 오디오 콘텐츠의 URL. 해당 URL의 오디오 콘텐츠를 재생합니다.</li></ul>    | 항상 |
+| `assetPlayOrder[]`   | string array | `assets[]` 필드에 등록된 알림음을 어떤 순서로 재생해야 하는지 표현하고 있는 문자열 배열입니다. 배열에 저장된 오디오 콘텐츠 식별자의 순서대로 알림음을 재생하면 됩니다.            | 항상  |
+| `new`                | boolean      | 새로운 알림에 대한 지시 메시지인지 알려주는 필드입니다. <ul><li><code>true</code>: 새로운 알림인 경우</li><li><code>false</code>: 새로운 알림이 아닌 경우</li></ul> | 항상    |
+| `light`              | string       | 조명 설정 정보<ul><li><code>"DEFAULT"</code>: 알림 표시용 조명을 점등해야 합니다.</li><li><code>"NONE"</code>: 알림 표시용 조명을 점등하지 않습니다.</li></ul> | 항상    |
 
 ### Remarks
 해당 지시 메시지는 이벤트 메시지에 대한 응답이 아닌 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 통해 전달됩니다.
@@ -63,8 +126,13 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
       "messageId": "29745c13-0d70-408e-a4cc-946afba67524"
     },
     "payload": {
+      "assets": [{
+        "assetId": "3ea201e8-135f-42fd-a75c-f125331ff9bd",
+        "url": "clova://notifier/sound/default"
+      }],
+      "assetPlayOrder": ["3ea201e8-135f-42fd-a75c-f125331ff9bd"],
       "new": true,
-      "light": "on"
+      "light": "DEFAULT"
     }
   }
 }
@@ -74,3 +142,5 @@ Notifier 인터페이스는 CIC가 클라이언트기기에 알림이 있음을 
 
 ### See also
 * [`Notifier.ClearIndicator`](#ClearIndicator)
+* [`Notifier.Notify`](#Notify)
+* [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)

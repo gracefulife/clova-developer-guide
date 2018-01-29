@@ -14,7 +14,8 @@
     "LoginAPIofTargetService": "https://developers.naver.com/docs/login/overview/",
     "AuthServerBaseURL": "https://auth.clova.ai/",
     "CICBaseURL": "https://prod-ni-cic.clova.ai/",
-    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/"
+    "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/",
+    "ReleaseYear": "2018"
   },
   "pdf": {
     "fontSize": 11,

@@ -7,23 +7,19 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 
 ### Context fields
 
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
+| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
 | `text`        | string  | 사용자가 입력한 텍스트를 설정합니다. | 필수     |
 
 ### Message example
 {% raw %}
 ```json
+// 일반적인 사용자 텍스트 입력
 {
   "context": [
     {{Alerts.AlertsState}},
@@ -32,7 +28,8 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
     {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
-    {{Speaker.VolumeState}}
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -46,15 +43,24 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
     }
   }
 }
+
+// SpeechRecognizer.ExpectSpeech 지시 메시지에 따른 추가적인 사용자 텍스트 입력
+{
+  "header": {
+      "dialogRequestId": "d3f81fec-4cb9-4ce9-a046-1ea9a71018df",
+      "messageId": "8526a048-4141-4c30-98a4-c61e223afece",
+      "namespace": "TextRecognizer",
+      "name": "Recognize"
+  },
+  "payload": {
+      "text": "내일은?",
+      "speechId": "1a4cd9ac-8fd8-4929-9c30-3a592dd2c298",
+      "explicit": false
+  }
+}
 ```
 {% endraw %}
 
 ### See also
+* [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
