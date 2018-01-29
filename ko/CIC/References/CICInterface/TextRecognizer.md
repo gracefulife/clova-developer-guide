@@ -7,7 +7,7 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 
 ### Context fields
 
-{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+{% include "./Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
