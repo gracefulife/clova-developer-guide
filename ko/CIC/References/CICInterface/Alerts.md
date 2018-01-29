@@ -81,9 +81,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 알람이 시작되었음을 CIC로 보고하기 위해 사용됩니다. 클라이언트는 알람이 시작되어 울리게 된 경우 반드시 이 이벤트 메시지를 CIC에게 전송해야 합니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -98,7 +97,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -117,7 +123,6 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 {% endraw %}
 
 ### See also
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 * [`Alerts.AlertStopped`](#AlertStopped)
 
 ## AlertStopped event {#AlertStopped}
@@ -127,9 +132,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 * **반복 알람이 중지된 경우** CIC로부터 다음 반복 알람을 설정하기 위해 [`Alerts.SetAlert`](#SetAlert) 지시 메시지를 받게 됩니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -144,7 +148,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -163,7 +174,6 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 {% endraw %}
 
 ### See also
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
 * [`Alerts.AlertStarted`](#AlertStarted)
 
 ## DeleteAlert directive {#DeleteAlert}
@@ -211,9 +221,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. 클라이언트는 [Alerts.DeleteAlert](#DeleteAlert) 지시 메시지를 수신한 후 특정 알람을 삭제하는데 실패하면 반드시 이 이벤트 메시지를 CIC에게 전송해야 합니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -228,7 +237,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -255,9 +271,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. 클라이언트는 [Alerts.DeleteAlert](#DeleteAlert) 지시 메시지를 수신한 후 특정 알람을 삭제하는데 성공하면 반드시 이 이벤트 메시지를 CIC에게 전송해야 합니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -272,7 +287,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -299,9 +321,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 현재 울리고 있는 알람을 중지하도록 Clova에게 요청할 때 사용됩니다. 클라이언트는 사용자가 발화가 아닌 물리 버튼(Hardware)이나 소프트웨어 버튼으로 알람을 중지했을 때 CIC에게 이 이벤트 메시지를 전송해야 합니다. 클라이언트가 CIC에게 이 이벤트를 전송하면 추후 CIC로부터 [`Alerts.StopAlert`](#StopAlert) 지시 메시지를 받게됩니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -319,7 +340,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -407,9 +435,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 특정 알람을 추가 또는 수정하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. 클라이언트는 [Alerts.SetAlert](#SetAlert) 지시 메시지를 수신한 후 특정 알람을 추가 또는 수정하는데 실패하면 반드시 이 이벤트 메시지를 CIC에게 전송해야 합니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -424,7 +451,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -452,9 +486,8 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 클라이언트가 특정 알람을 추가 또는 수정하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. 클라이언트는 [Alerts.SetAlert](#SetAlert) 지시 메시지를 수신한 후 특정 알람을 추가 또는 수정하는데 성공하면 반드시 이 이벤트 메시지를 CIC에게 전송해야 합니다.
 
 ### Context fields
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
 
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -469,7 +502,14 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ```json
 {
   "context": [
-    {{Alerts.AlertState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {

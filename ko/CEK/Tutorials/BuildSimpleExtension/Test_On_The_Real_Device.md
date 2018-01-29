@@ -8,33 +8,19 @@ Interaction 모델이 잘 동작하는 것을 확인했다면, 심사 요청 전
 3. 나타난 화면에서 **테스터 아이디**를 찾아 여러분의 {{ book.OrientedService }} 계정 아이디를 입력합니다.
 4. **저장** 버튼을 누릅니다.
 
-	<div class="danger">
-		<p><strong>Caution!</strong></p>
-	  <p>실제 기기에서 테스트 하려면 <strong>extension 정보</strong>에 반드시 외부에서 접속 가능한 실제 extension 서버 주소를 등록해야 합니다.</p></li>
-	</div>
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>테스터 아이디를 등록한 후 조금 기다리면 extension을 테스트해 볼 수 있습니다. 만약, 1시간 정도가 지나도 extension을 테스트할 수 없을 경우 포럼이나 제휴 담당자를 통해 문의하시기 바랍니다.</p>
+</div>
 
-### Extension 호출 이름 처리 요청하기
-Clova가 테스트할 extension의 호출 이름을 처리하도록 요청합니다.
-
-1. <a href="http://forum.developers.naver.com/" target="_blank">개발자 포럼</a>에 접속합니다.
-2. **+ 새 토픽 만들기** 버튼을 누릅니다.
-3. 제목 입력 창에 '테스트 용 extension 호출 이름 처리 요청'을 입력합니다.
-4. 카테고리에서 **Clova extension**를 선택합니다.
-5. Clova developer console에 등록한 **extension 아이디**와 **extension 호출 이름**이 포함된 요청 글을 작성합니다.
-
-	<div class="note">
-	  <p><strong>Note!</strong></p>
-		<p>최종 처리까지는 1주일 정도 소요됩니다.</p>
-	</div>
-	<br/>
-	<div class="danger">
-	  <p><strong>Note!!</strong></p>
-		<p>호출 이름 처리 요청 방식이 달라질 수 있으니 반드시 업데이트 되는 <a href="/DevConsole/Guides/CEK/Using_CEK_Menu.md">Clova developer console 가이드</a>를 확인하십시오.</p>
-	</div>
+<div class="danger">
+	<p><strong>Caution!</strong></p>
+  <p>실제 기기에서 테스트 하려면 <strong>extension 정보</strong>에 반드시 외부에서 접속 가능한 실제 extension 서버 주소를 등록해야 합니다.</p></li>
+</div>
 
 ### Clova 앱에서 실행하기
 Clova 앱을 통해 샘플 주사위 extension을 실행합니다.
- 
+
 1. 테스트할 기기에 Clova 앱을 설치합니다.
 2. 테스터 아이디로  입력한 {{ book.OrientedService }} 계정으로 로그인합니다.
 3. 테스트 용 extension 호출 이름으로 음성 명령을 내립니다. 예를 들어, "클로바, 샘플 주사위에 주사위 던지라고 해"라고 명령해봅니다.

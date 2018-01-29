@@ -95,7 +95,7 @@ MCN/SampleClient/1.7.0 (SampleIoTOS 2.1;SmartHub)
 </div>
 
 ### 클라이언트 인증 정보 {#ClientAuthInfo}
-사용자는 클라이언트에서 {{ book.TargetServiceForClientAuth }} 계정을 인증해야 Clova가 제공하는 서비스를 사용할 수 있습니다. 클라이언트는 사용자로부터 입력받은 {{ book.TargetServiceForClientAuth }}의 계정 정보를 토대로 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득할 수 있습니다. 이 토큰을 다시 Clova 인증 서버로 전달하여 [Clova access token를 획득](#CreateClovaAccessToken)해야 합니다.
+사용자는 클라이언트에서 {{ book.TargetServiceForClientAuth }} 계정을 인증해야 Clova가 제공하는 서비스를 사용할 수 있습니다. 클라이언트는 사용자로부터 입력받은 {{ book.TargetServiceForClientAuth }}의 계정 정보를 토대로 {{ book.TargetServiceForClientAuth }} 계정 access token을 획득할 수 있습니다. 이 access token을 다시 Clova 인증 서버로 전달하여 [Clova access token를 획득](#CreateClovaAccessToken)해야 합니다.
 
 {{ book.TargetServiceForClientAuth }} 계정 access token뿐만 아니라 Clova Developer Console을 통해 획득한 클라이언트 인증 정보를 함께 인증 서버로 전달해야 합니다([Clova 인증 API](/CIC/References/Clova_Auth_API.md) 사용). 따라서 Clova Developer Console을 통해 클라이언트 인증 정보를 미리 확보해야 해야 합니다. 클라이언트 인증 정보는 다음과 같습니다.
 

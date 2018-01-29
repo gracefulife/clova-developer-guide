@@ -191,14 +191,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ### Context fields
 
-다음과 같은 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 함께 전송해야 합니다.
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -217,7 +210,8 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
     {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
-    {{Speaker.VolumeState}}
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -236,13 +230,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 ### See also
 * [`Clova.HandleDelegatedEvent`](#HandleDelegatedEvent)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [`Alert.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
 * [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
 
 ## RenderTemplate directive {#RenderTemplate}
