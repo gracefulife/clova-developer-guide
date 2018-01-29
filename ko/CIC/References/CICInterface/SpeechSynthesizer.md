@@ -1,32 +1,44 @@
 # SpeechSynthesizer
 
-SpeechSynthesizer 인터페이스는 클라이언트가 특정 텍스트를 TTS(text-to-speech) 음성 파일로 합성되도록 CIC에 요청하거나, CIC가 합성된 음성 파일을 클라이언트에 전달할 때 사용되는 네임스페이스입니다. SpeechSynthesizer가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
+SpeechSynthesizer 인터페이스는 클라이언트가 특정 텍스트를 TTS(text-to-speech)로 합성되도록 CIC에 요청하거나, CIC가 생성된 TTS를 클라이언트에 전달할 때 사용되는 네임스페이스입니다. SpeechSynthesizer가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같습니다.
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Request`](#Request) | Event     | CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다. |
-| [`Speak`](#Speak)     | Directive | 클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. |
+| [`Request`](#Request)                 | Event     | CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.                                               |
+| [`Speak`](#Speak)                     | Directive | 클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다.                                        |
+| [`SpeechFinished`](#SpeechFinished)   | Event     | 클라이언트가 TTS 재생을 완료했음을 CIC로 보고하기 위해 사용됩니다.                                 |
+| [`SpeechStarted`](#SpeechStarted)     | Event     | 클라이언트가 TTS 재생을 시작했음을 CIC로 보고하기 위해 사용됩니다.                                 |
+| [`SpeechStopped`](#SpeechStopped)     | Event     | 클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.                                 |
 
 
 ## Request event {#Request}
 
-CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
+CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.
 
 ### Context fields
 
-없음
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `text`  | string | TTS 음성 합성을 요청할 대상 텍스트           | 필수    |
+| `text`  | string | TTS 생성을 요청할 대상 텍스트           | 필수    |
 | `lang`  | string | 음성 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 필수    |
 
 ### Message example
 {% raw %}
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "SpeechSynthesizer",
@@ -43,18 +55,18 @@ CIC에 특정 텍스트를 TTS 음성 파일로 합성되도록 요청합니다.
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)
+* [`SpeechSynthesizer.Speak`](#Speak)
 
 ## Speak directive {#Speak}
-클라이언트에게 합성된 TTS 음성 파일을 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 Speak 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 음성 파일을 재생해야 합니다. 음성 파일은 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage)로 전달될 수도 있고 오디오 스트리밍 주소 형태로 전달될 수도 있습니다.
+클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다. 클라이언트는 하나의 요청에 대한 응답으로 복수의 `SpeechSynthesizer.Speak` 지시 메시지를 전달받을 수 있습니다. 따라서, 클라이언트는 메시지를 수신한 순서대로 TTS를 재생해야 합니다. TTS는 [multipart 메시지](/CIC/References/CIC_API.md#MultipartMessage)로 전달될 수도 있고 오디오 스트리밍 주소 형태로 전달될 수도 있습니다.
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `format`               | string  | 파일 포맷. 현재 `"AUDIO_MPEG"`로 고정되어 있습니다. | 항상    |
 | `url`                  | string  | 재생할 음성 파일의 URL                        | 항상    |
-| `token`                | string  | TTS 파일을 식별하는 토큰 값                    | 항상    |
-| `ttsLang`              | string  | 음성 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 조건부    |
+| `token`                | string  | TTS를 식별하는 token 값                    | 항상    |
+| `ttsLang`              | string  | TTS 합성에 사용할 언어. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li><li><code>"zh"</code>: 중국어</li></ul> | 조건부    |
 | `x-clova-pause-before` | number  | 파일 재생 전 유휴 시간. 정수 형태 값이며, 단위는 밀리초(millisecond)입니다.        | 조건부    |
 
 ### Remarks
@@ -127,4 +139,151 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ### See also
-* [`SpeechSynthesizer.Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)
+* [`SpeechSynthesizer.Request`](#Request)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+## SpeechFinished event {#SpeechFinished}
+클라이언트가 TTS 재생을 완료했음을 CIC로 보고하기 위해 사용됩니다.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | [`SpeechSynthesizer.Speak`](#Speak) 지시 메시지를 통해 전달받은 TTS 식별용 token 값 | 항상    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechFinished",
+      "messageId": "15472673-49a0-4aa1-8cf0-6355669ea473"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+## SpeechStarted event {#SpeechStarted}
+클라이언트가 TTS 재생을 시작했음을 CIC로 보고하기 위해 사용됩니다.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | [`SpeechSynthesizer.Speak`](#Speak) 지시 메시지를 통해 전달받은 TTS 식별용 token 값 | 항상    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechStarted",
+      "messageId": "380c805c-0f19-4ed2-84e2-056f2f4016de"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+## SpeechStopped event {#SpeechStopped}
+클라이언트가 TTS 재생을 중지했음을 CIC로 보고하기 위해 사용됩니다.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | [`SpeechSynthesizer.Speak`](#Speak) 지시 메시지를 통해 전달받은 TTS 식별용 token 값 | 항상    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechStopped",
+      "messageId": "9a511e5c-4f20-413a-94cc-48172fc8710e"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)

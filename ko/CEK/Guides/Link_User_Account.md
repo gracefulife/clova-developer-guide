@@ -156,6 +156,9 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"

@@ -58,7 +58,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 ### Context fields
 
-없음
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -77,7 +77,16 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -113,7 +122,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-없음
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -133,7 +142,16 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "DeviceControl",
@@ -554,9 +572,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-클라이언트 기기의 현재 상태를 전달하기 위해 이벤트 메시지에 다음 [맥락 정보(Context)](/CIC/References/Context_Objects.md)를 포함하여 전송합니다.
-
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -575,7 +591,14 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ```json
 {
   "context": [
-    {{Device.DeviceState}}
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -591,7 +614,6 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 {% endraw %}
 
 ### See also
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
 * [`DeviceControl.ExpectReportState`](#ExpectReportState)
 * [`DeviceControl.SynchronizeState`](#SynchronizeState)
 
@@ -601,7 +623,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-없음
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -618,7 +640,16 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "DeviceControl",

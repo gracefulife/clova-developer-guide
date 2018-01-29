@@ -4,22 +4,25 @@
 
 * [`Alerts.AlertsState`](#AlertsState)
 * [`AudioPlayer.PlaybackState`](#PlaybackState)
-* [`Device.DeviceState`](#DeviceState)
-* [`Device.Display`](#Display)
 * [`Clova.Location`](#Location)
 * [`Clova.SavedPlace`](#SavedPlace)
+* [`Device.DeviceState`](#DeviceState)
+* [`Device.Display`](#Display)
 * [`Speaker.VolumeState`](#VolumeState)
+* [`SpeechSynthesizer.SpeechState`](#SpeechState)
 
 {% include "./ContextObjects/AlertsState.md" %}
 
 {% include "./ContextObjects/PlaybackState.md" %}
 
-{% include "./ContextObjects/DeviceState.md" %}
-
-{% include "./ContextObjects/Display.md" %}
-
 {% include "./ContextObjects/Location.md" %}
 
 {% include "./ContextObjects/SavedPlace.md" %}
 
+{% include "./ContextObjects/DeviceState.md" %}
+
+{% include "./ContextObjects/Display.md" %}
+
 {% include "./ContextObjects/VolumeState.md" %}
+
+{% include "./ContextObjects/SpeechState.md" %}
