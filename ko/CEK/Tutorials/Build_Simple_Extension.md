@@ -14,6 +14,9 @@ Custom extension을 서비스하려면 아래 두 가지 요소가 꼭 필요합
 ## 1단계. Extension 서버 준비 {#Step1}
 {% include "/CEK/Tutorials/BuildSimpleExtension/Prepare_Extension_Server.md" %}
 
+### Extension 서버 개발 팁 {#Tip}
+{% include "/CEK/Tutorials/BuildSimpleExtension/Extension_Server_Development_Tip.md" %}
+
 ## 2단계. Extension 기본 정보 등록 {#Step2}
 {% include "/CEK/Tutorials/BuildSimpleExtension/Register_Your_Extension.md" %}
 
