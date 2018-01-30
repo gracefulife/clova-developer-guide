@@ -3,7 +3,7 @@
 
 * (Custom extension 전용) [Interaction 모델 빌드하기](#BuildInteractionModel)
 * (Custom extension 전용) [Interaction 모델 테스트하기](#TestInteractionModel)
-* [Clova 앱으로 extension 테스하기](#TestOnClovaApp)
+* [Clova 앱으로 extension 테스트하기](#TestOnClovaApp)
 
 ## Interaction 모델 빌드하기 {#BuildInteractionModel}
 

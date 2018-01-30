@@ -196,7 +196,7 @@
   * [Extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md)
     * [Interaction 모델 빌드하기](/DevConsole/Guides/CEK/Test_Extension.md#BuildInteractionModel)
     * [Interaction 모델 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md#TestInteractionModel)
-    * [Clova 앱으로 extension 테스하기](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
+    * [Clova 앱으로 extension 테스트하기](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
   * [Extension 배포하기](/DevConsole/Guides/CEK/Deploy_Extension.md)
     * [배포 정보 입력](/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo)
     * [개인 정보 및 규정 준수 정보 입력](/DevConsole/Guides/CEK/Deploy_Extension.md#InputComplianceInfo)
