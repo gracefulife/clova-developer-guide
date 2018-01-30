@@ -3,7 +3,7 @@ Custom Home extension 개발자는 다음을 미리 준비해야 합니다.
 
 {% include "/CEK/Guides/RequiredComponents/Extension_Server.md" %}
 
-{% include "CEK/Guides/RequiredComponents/Authorization_Server.md" %}
+{% include "/CEK/Guides/RequiredComponents/Authorization_Server.md" %}
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
