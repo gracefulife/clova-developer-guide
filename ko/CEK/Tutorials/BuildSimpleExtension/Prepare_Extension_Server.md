@@ -12,13 +12,13 @@ Clova가 서비스하는 '주사위 놀이'라는 extension은 소스 코드가 
 | <a href="https://nodejs.org/" target="_blank">node.js</a> | Extension 서버 실행에 필요합니다.          | 필수     |
 | <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop" target="_blank">Postman Chrome extension</a> | Extension 서버가 동작하는지 확인할 때 필요합니다. | 선택     |
 
-필요한 소프트웨어를 설치한 후 아래처럼 주사위 놀이 extension 소스 코드를 다운로드 받고 실행합니다. `tutorial-dice` 브랜치를 사용합니다.
+필요한 소프트웨어를 설치한 후 아래처럼 주사위 놀이 extension 소스 코드를 다운로드 받고 실행합니다. `tutorial1` 브랜치를 사용합니다.
 
 {% raw %}
 ```bash
 git clone https://github.com/naver/clova-extension-sample-dice.git
 cd clova-extension-sample-dice
-git checkout tutorial-dice
+git checkout tutorial1
 npm install
 node app.js
 ```
