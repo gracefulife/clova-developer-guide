@@ -27,6 +27,3 @@ node app.js
 이렇게 실행한 extension 서버가 잘 동작하는지 확인하려면 Postman을 사용해 요청을 보내면 됩니다. 자세한 방법은 <a href="https://github.com/naver/clova-extension-sample-dice" target="_blank">주사위 놀이 extension github 페이지</a>에서 볼 수 있습니다.
 
 위의 방식대로 잘 실행되는 것을 확인하면, 외부에서 접근 가능한 서버로 옮겨 실행합니다.
-
-### Extension 서버 개발 팁 {#Tip}
-{% include "/CEK/Tutorials/BuildSimpleExtension/Extension_Server_Development_Tip.md" %}
