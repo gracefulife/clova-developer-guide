@@ -80,14 +80,14 @@ Extension으로 제공하려는 서비스의 사용자 계정이 Clova의 사용
   <li><strong>계정 연결 여부</strong> 항목에서 <strong>네</strong>를 선택합니다.</li>
   <li>사용자가 계정 인증을 할 수 있도록 UI를 제공하는 Authorization URL을 <strong>로그인 URL</strong> 항목에 입력합니다. 사용자가 extension을 활성화하면 이 페이지로 이동됩니다.</li>
   <li>(만야, 사용자가 본인 계정을 바로 설정할 수 있도록 하고 싶은 경우) <strong>계정 설정 페이지 URL</strong> 항목에 계정 설정 페이지의 URL을 입력합니다.</li>
-  <li>사용자 계정 인증 시 HTTPS 요청에 필요한 <strong>클라이언트 ID</strong>를 입력합니다. 클라이언트 ID는 <a href="/CEK/Guides/Link_Account.html#BuildAuthServer">인증 서버를 구축</a>할 때 생성한 값입니다.</li>
+  <li>사용자 계정 인증 시 HTTPS 요청에 필요한 <strong>클라이언트 ID</strong>를 입력합니다. 클라이언트 ID는 <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">인증 서버를 구축</a>할 때 생성한 값입니다.</li>
   <li><strong>개인 정보 정책 URL</strong> 항목에 extension이 제공하는 서비스의 개인 정보 보호 정책과 관련된 내용이 제공되는 페이지의 URL을 입력합니다. 이 페이지의 내용은 추후 스토어에 노출됩니다.</li>
   <li>(만약, <strong>로그인 URL</strong>이나 <strong>개인 정보 정책 제공 URL</strong>에서 제공하는 페이지가 다른 도메인에서 필요한 자원을 가져오는 경우) <strong>도메인 리스트</strong> 항목에 필요한 도메인을 추가합니다.</li>
   <li>(만약, 사용자 계정 연결 시 발급되는 access token의 사용 범위(scope)를 미리 정의한 경우) <strong>권한 범위</strong> 항목에 미리 정의한 범위를 추가합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Extension_Accoun_Linking_Settings_2.png" />
   <li><strong>Access token URI</strong> 항목에 서비스의 access token을 발급 받을 수 있는 URL을 입력합니다. 현재 <strong>허가 승인 타입(grant type)은 code grant 방식만 지원</strong>하고 있습니다.</li>
   <li><strong>Access token 재발급 URI</strong> 항목에 서비스의 access token을 갱신할 수 있는 URL을 입력합니다.</li>
-  <li>서비스의 access token을 획득 시 HTTPS 요청에 필요한 <strong>클라이언트 secret</strong>을 입력합니다. 클라이언트 secret은 <a href="/CEK/Guides/Link_Account.html#BuildAuthServer">인증 서버를 구축</a>할 때 생성한 값입니다.</li>
+  <li>서비스의 access token을 획득 시 HTTPS 요청에 필요한 <strong>클라이언트 secret</strong>을 입력합니다. 클라이언트 secret은 <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">인증 서버를 구축</a>할 때 생성한 값입니다.</li>
   <li><strong>클라이언트 인증 정보 전송 방식</strong>은 다음 중 인증 서버의 인터페이스 구현에 맞는 값을 설정합니다.
     <ul>
       <li><strong>HTTP Basic (Recommended)</strong>: 서비스 access token을 획득하기 위해 인증 정보(Credentials)를 헤더에 입력받는 경우</li>
