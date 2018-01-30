@@ -82,7 +82,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -133,7 +133,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -222,7 +222,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -272,7 +272,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -322,7 +322,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -436,7 +436,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -487,7 +487,7 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

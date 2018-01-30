@@ -58,7 +58,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -122,7 +122,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -572,7 +572,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -623,7 +623,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

@@ -17,7 +17,7 @@ CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
@@ -149,7 +149,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -197,7 +197,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -245,7 +245,7 @@ Content-Type: application/octet-stream
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

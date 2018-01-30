@@ -25,7 +25,7 @@
 | `lowTempWeather`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 기온이 가장 낮을 때의 날씨 정보가 담긴 객체  |
 | `type`                      | string | Content template 구분자. `"TomorrowWeather"` 값을 가집니다. |
 
-{% include "./Shared_Weather_Code.md" %}
+{% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
 
 ## Template example
 

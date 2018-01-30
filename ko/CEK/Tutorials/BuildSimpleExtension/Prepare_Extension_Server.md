@@ -29,4 +29,4 @@ node app.js
 위의 방식대로 잘 실행되는 것을 확인하면, 외부에서 접근 가능한 서버로 옮겨 실행합니다.
 
 ### Extension 서버 개발 팁 {#Tip}
-{% include "./Extension_Server_Development_Tip.md" %}
+{% include "/CEK/Tutorials/BuildSimpleExtension/Extension_Server_Development_Tip.md" %}

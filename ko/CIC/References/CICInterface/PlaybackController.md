@@ -80,7 +80,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
@@ -179,7 +179,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

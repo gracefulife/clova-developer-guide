@@ -30,7 +30,7 @@ System 인터페이스는 Clova와 클라이언트 사이에 알람, 일정과 �
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 

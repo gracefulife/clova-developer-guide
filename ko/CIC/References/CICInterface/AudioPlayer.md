@@ -177,7 +177,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -222,7 +222,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -270,7 +270,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -313,7 +313,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -359,7 +359,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -402,7 +402,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -445,7 +445,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -488,7 +488,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 없음
@@ -572,7 +572,7 @@ StreamDeliver 지시 메시지와 이미 수신한 [`Play`](#Play) 지시 메시
 
 ### Context fields
 
-{% include "./Context_Objects_List.md" %}
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
