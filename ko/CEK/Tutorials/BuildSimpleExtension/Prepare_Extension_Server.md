@@ -30,4 +30,4 @@ node app.js
 
 ### Extension 서버 개발 팁 {#Tip}
 
-{% include "/CEK/Tutorials/BuildSimpleExtension/Extension_Server_Development_Tip.md" %}
+{% include "./Extension_Server_Development_Tip.md" %}
