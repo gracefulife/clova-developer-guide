@@ -29,12 +29,12 @@
 ```json
 {
   "header": {
-      "namespace": "Speaker",
-      "name": "VolumeState"
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechState"
   },
   "payload": {
-      "volume": 8,
-      "muted": false
+      "token": "dc706e02-fe16-4337-9a6c-51f670b5adb2",
+      "playerActivity": "FINISHED"
   }
 }
 ```
