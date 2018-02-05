@@ -20,14 +20,16 @@
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `cardList[]`                | object array | 카드 목록을 표현하는 객체 배열 |
+| `cardList[].contentProviderText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 콘텐츠 제공자의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
+| `cardList[].description[]`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
 | `cardList[].description[]`    | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 콘텐츠의 설명이 담긴 객체 배열          |
 | `cardList[].imageUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 표시해야 할 이미지의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
 | `cardList[].linkUrl`        | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 콘텐츠의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.         |
 | `cardList[].press`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 언론사의 이름이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.             |
 | `cardList[].pressIconUrl`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 언론사 아이콘의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
 | `cardList[].publishDate`    | [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)           | 기사 발표 일자가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.            |
-| `cardList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 출처의 텍스트 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.         |
-| `cardList[].referenceURL`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 출처의 URL 정보가 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.          |
+| `cardList[].referenceText`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 참조한 서비스의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
+| `cardList[].referenceUrl`   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 참조한 서비스의 이용 결과 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.   |
 | `cardList[].title`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)       | 콘텐츠의 제목이 담긴 객체             |
 | `cardList[].videoUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)             | 재생해야 할 비디오 혹은 오디오의 URL이 담긴 객체. 카드 타입에 따라 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.    |
 | `subType`                   | string  | Card 타입 구분자. 다음과 같이 4가지 타입이 지정됩니다. <ul><li><code>Type1</code></li><li><code>Type2</code></li><li><code>Type3</code></li><li><code>Type4</code></li></ul><div class="note"><p><strong>Note!</strong></p><p>현재 <code>Type1</code>, <code>Type2</code>, <code>Type3</code>, <code>Type5</code>, <code>Type6</code>은 <strong>빈 문자열로 표현</strong>됩니다. 따라서 <code>card</code> 객체의 필드 구성을 보고 타입을 판단해야 합니다.</p></div>                                                    |
@@ -45,6 +47,10 @@
   "type": "CardList",
   "cardList": [
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 영화"
+      },
       "description": [
         {
           "type": "string",
@@ -93,6 +99,10 @@
       }
     },
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 영화"
+      },
       "description": [
         {
           "type": "string",
@@ -151,6 +161,10 @@
   "type": "CardList",
   "cardList": [
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 TV"
+      },
       "description": [
         {
           "type": "string",
@@ -199,6 +213,10 @@
       }
     },
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 TV"
+      },
       "description": [
         {
           "type": "string",
@@ -258,6 +276,10 @@
   "type": "CardList",
   "cardList": [
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 뉴스"
+      },
       "description": [
         {
           "type": "string",
@@ -306,6 +328,10 @@
       }
     },
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 뉴스"
+      },
       "description": [
         {
           "type": "string",
@@ -362,6 +388,10 @@
 {
   "cardList": [
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 뮤직"
+      },
       "description": [
         {
           "type": "string",
@@ -410,6 +440,10 @@
       }
     },
     {
+      "contentProviderText" : {
+        "type" : "string",
+        "value" : "네이버 뮤직"
+      },
       "description": [
         {
           "type": "string",

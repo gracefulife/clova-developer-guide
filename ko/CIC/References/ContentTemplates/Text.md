@@ -18,8 +18,8 @@
 | `mainText`               | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 메인 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                     |
 | `motionCode`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 동작이 정의된 코드. 동작 코드를 활용하여 클라이언트 기기에서 미리 정의된 움직임을 수행할 수 있습니다. 기기에 동작을 표현하는 기능이 존재하지 않으면 이 코드를 무시하면 됩니다. <div class="note"><p><strong>Note!</strong></p><p>동작 코드에 대한 자세한 스펙은 관련 제휴 담당자에게 별도 문의하시기 바랍니다.</p></div> |
 | `paragraphText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문단 형태의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
-| `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 출처의 텍스트 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                               |
-| `referenceURL`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 출처의 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
+| `referenceText`          | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 참조한 서비스의 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.  |
+| `referenceUrl`           | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | 참조한 서비스의 이용 결과 URL 정보가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.   |
 | `sentenceText`           | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 문장 형태의 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                |
 | `subText`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 보조 문구가 담긴 객체. 이 객체의 `value` 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                     |
 | `tableList[]`           | object array                                                                    | 표 형태의 문구가 담긴 객체 배열. 행이 두 개 또는 세 개인 표를 구성합니다.     |
