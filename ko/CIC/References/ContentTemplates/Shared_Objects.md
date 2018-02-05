@@ -17,13 +17,13 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 
 
 # ActionObject {#ActionObject}
-클라이언트가 수행할 수 있는 동작 정보를 가지는 객체입니다.
+클라이언트가 사용자에게 제공해야 할 동작 정보를 가지는 객체입니다.
 
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `type`          | string  | `"action"` 값으로 고정되어 있습니다.  |
-| `value`         | string  | [Action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme) 형태의 동작 정보 |
+| `value`         | string  | [Action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme) 형태의 값 |
 
 ### Object Example
 {% raw %}
