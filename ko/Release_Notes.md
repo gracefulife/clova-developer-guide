@@ -2,6 +2,26 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-02-05
+
+### 플랫폼 변경 사항
+
+* CIC
+  * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md), [CardList](/CIC/References/ContentTemplates/CardList.md), [Humidity](/CIC/References/ContentTemplates/Humidity.md), [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md), [TomorrowWeather](CIC/References/ContentTemplates/TomorrowWeather.html), [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md), [WindSpeed](CIC/References/ContentTemplates/WindSpeed.html) 템플릿에 출처 관련 필드 등 추가
+
+### 문서 변경 사항
+
+* CIC
+  * [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject)의 durationInMilliseconds 필드에 대한 설명 수정
+
+* CEK
+  * Extension 시작 호출([LaunchRequest](CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest))에 대한 설명 수정 및 [Extension 디자인 가이드라인 문서 반영](/Design/Design_Guideline_For_Extension.md)
+  * CEK와 extension간 통신에 사용되는 [HTTP 프로토콜 버전](/CEK/CEK_Overview.md#WhatisCEK) 명시
+  * [튜토리얼](/CEK/Tutorials/Introduction.md) 페이지에 [기본적인 의사 표현 처리하기](/CEK/Tutorials/Handle_Builtin_Intents.md) 페이지 추가
+
+* Clova developer console
+  * Extension 서버에서 사용해야 할 [포트](/DevConsole/Guides/CEK/Register_Extension.md#SetServerConnection)를 명시
+
 ## 2018-01-29
 
 ### 플랫폼 변경 사항
