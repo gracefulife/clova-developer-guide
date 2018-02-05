@@ -236,7 +236,7 @@ BBQ 피자 하나만 배달시켜줄래?
 <pizzaType>바베큐</pizzaType> <pizzaAmount>5개</pizzaAmount>만 얼른 시켜.
 <pizzaType>페퍼로니</pizzaType> <pizzaAmount>1판</pizzaAmount> 먹을래.
 <pizzaType>야채 피자</pizzaType> 부탁해.
-맛있는 <pizzaType>치즈 피자</pizzaType> <pizzaAmount>넷</pizzaAmount> 주문해.
+맛있는 <pizzaType>치즈 피자</pizzaType> <pizzaAmount>넷</pizzaAmount> 주문해주라.
 ...
 ```
 {% endraw %}

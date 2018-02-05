@@ -10,8 +10,8 @@
 		1단계에서 샘플 주사위 소스 코드를 실행한 서버의 주소를 입력합니다.
 
 		<div class="note">
-		<p><strong>Note!</strong></p>
-		<p>테스트 단계에서는 HTTP도 가능하나 정식 서비스를 위해서는 HTTPS여야 합니다. </p>
+	    <p><strong>Note!</strong></p>
+	    <p>테스트 단계에서는 HTTP도 가능하나 정식 서비스를 위해서는 HTTPS여야 합니다. Extension 서버는 HTTP일 때 80번 포트를 HTTPS일 때 443번 포트를 사용해야 합니다.</p>
 		</div>
 
 	* **계정 연결 여부**: 인증 서버(OAuth 2.0기반)를 사용해 3rd party의 회원정보와 연동할 경우에만 사용합니다.
