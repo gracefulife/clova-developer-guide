@@ -24,7 +24,7 @@
   * [화면](/Design/Design_Guideline_For_Client_Hardware.md#Screen)
     * [부팅 화면](/Design/Design_Guideline_For_Client_Hardware.md#BootingScreen)
     * [로고 표시](/Design/Design_Guideline_For_Client_Hardware.md#DisplayingLogo)
-    * [Voice agent](/Design/Design_Guideline_For_Client_Hardware.mds#VoiceAgent)
+    * [Voice agent](/Design/Design_Guideline_For_Client_Hardware.md#VoiceAgent)
 * [Extension 디자인 가이드라인](/Design/Design_Guideline_For_Extension.md)
   * [목표 수립](/Design/Design_Guideline_For_Extension.md#SettingGoal)
   * [사용 시나리오 스크립트 작성](/Design/Design_Guideline_For_Extension.md#MakeUseCaseScenarioScript)
