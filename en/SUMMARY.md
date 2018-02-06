@@ -24,7 +24,7 @@
   * [Screen](/Design/Design_Guideline_For_Client_Hardware.md#Screen)
     * [Booting screen](/Design/Design_Guideline_For_Client_Hardware.md#BootingScreen)
     * [Logo display](/Design/Design_Guideline_For_Client_Hardware.md#DisplayingLogo)
-    * [Voice agent](/Design/Design_Guideline_For_Client_Hardware.mds#VoiceAgent)
+    * [Voice agent](/Design/Design_Guideline_For_Client_Hardware.md#VoiceAgent)
 * [Design guidelines for extensions](/Design/Design_Guideline_For_Extension.md)
   * [Setting goals](/Design/Design_Guideline_For_Extension.md#SettingGoal)
   * [Writing user scenario scripts](/Design/Design_Guideline_For_Extension.md#MakeUseCaseScenarioScript)
