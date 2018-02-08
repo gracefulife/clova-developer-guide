@@ -4,9 +4,9 @@ Interaction 모델이 잘 동작하는 것을 확인했다면, 심사 요청 전
 특정 계정에서만 이 extension을 실행해볼 수 있도록 테스터 아이디를 등록합니다.
 
 1. <a href="https://developers.naver.com/console/clova/cek/#/list" target="_blank">Clova developer console</a>에 접속합니다.
-2. 샘플 주사위의 **Extension 정보** 항목 내 **수정** 버튼을 누릅니다.
-3. 나타난 화면에서 **테스터 아이디**를 찾아 여러분의 {{ book.OrientedService }} 계정 아이디를 입력합니다.
-4. **저장** 버튼을 누릅니다.
+2. 샘플 주사위의 **{{ book.DevConsole.cek_skill_info }}** 항목 내 **{{ book.DevConsole.cek_edit }}** 버튼을 누릅니다.
+3. 나타난 화면에서 **{{ book.DevConsole.cek_tester }}**를 찾아 여러분의 {{ book.OrientedService }} 계정 아이디를 입력합니다.
+4. **{{ book.DevConsole.cek_save }}** 버튼을 누릅니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -15,7 +15,7 @@ Interaction 모델이 잘 동작하는 것을 확인했다면, 심사 요청 전
 
 <div class="danger">
 	<p><strong>Caution!</strong></p>
-  <p>실제 기기에서 테스트 하려면 <strong>extension 정보</strong>에 반드시 외부에서 접속 가능한 실제 extension 서버 주소를 등록해야 합니다.</p></li>
+  <p>실제 기기에서 테스트 하려면 <strong>{{ book.DevConsole.cek_skill_info }}</strong>에 반드시 외부에서 접속 가능한 실제 extension 서버 주소를 등록해야 합니다.</p></li>
 </div>
 
 ### Clova 앱에서 실행하기
