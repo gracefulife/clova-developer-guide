@@ -117,7 +117,7 @@ The table below shows the light effects that must be expressed when implemented 
 | Fade out                 | Slowly dims the intensity of light to turn off in the end. | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Fade_Out.gif)             |
 | Repeat splash          | Repeats the sideways rippling effect. | ![](/Design/Resources/Images/Clova-Client-Light-Wave_Splash.gif)         |
 
-The table below shows how to express the client [States and events](#ClientStateAndEvent) using light.
+The table below shows how to express the client device's [states and events](#ClientStateAndEvent) using light.
 
 | State or event               | Light effect                | Required |
 |----------------------------|----------------------------|:---------:|
@@ -246,7 +246,7 @@ A client must provide sound effects in addition to the [Lights](#Light) in order
 
 #### Sound effect type {#SoundEffects}
 
-In order to express [States and events](#ClientStateAndEvent) of the client, the following sound effects must be provided:
+In order to express [states and events](#ClientStateAndEvent) of the client, the following sound effects must be provided:
 
 | State or event              | Sample sound effect                     | Required |
 |---------------------------|------------------------------|:---------:|

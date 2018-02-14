@@ -80,7 +80,7 @@ Below is a sample of a user scenario script.
 
 ## Defining an Interaction Model {#DefineInteractionModel}
 
-An interaction model in Clova is a set of rules to convert the voice user request into a standardized format (JSON) to be processed in the extension. For example, if a custom extension is providing a pizza delivery service, a user might say "Order two boxes of pepperoni pizza." The interaction model defines the rules to convert such requests into the format required for providing the service (JSON) as shown below.
+An interaction model in Clova is a set of rules to convert the voice user request into a standardized format (JSON) to be processed in the extension. For example, if a custom extension is providing a pizza delivery service, a user might say "Order two pepperoni pizzas." The interaction model defines the rules to convert such requests into the format required for providing the service (JSON) as shown below.
 
 ![](/Design/Resources/Images/Extension_Design-Interaction_Model_Analysis_Diagram.png)
 
@@ -131,7 +131,7 @@ The built-in intent is a specification declared by the Clova platform for shared
 
 ### Slot {#Slot}
 
-Slot is the information acquired from user utterance and the **noun** factor used in the utterance can become a slot. When defining [custom intent](#Intent), you must define the slot required by the corresponding intent. To explain this more by comparing it with software development, the intent is a function or handler to process a specific type of user request while the slots are parameters required for this function or handler. From the utterance, "Order two boxes of pepperoni pizza." mentioned above, you can see that information on pizza type "pepperoni pizza" and quantity "two" are required to process the "OrderPizza" intent. Therefore, you must identify the information (slot) needed before defining the intent.
+Slot is the information acquired from user utterance and the **noun** factor used in the utterance can become a slot. When defining [custom intent](#Intent), you must define the slot required by the corresponding intent. To explain this more by comparing it with software development, the intent is a function or handler to process a specific type of user request while the slots are parameters required for this function or handler. From the utterance, "Order two pepperoni pizzas." mentioned above, you can see that information on pizza type "pepperoni pizza" and quantity "two" are required to process the "OrderPizza" intent. Therefore, you must identify the information (slot) needed before defining the intent.
 
 When declaring a slot, you must classify the type of information in the slot– called slot type. The slot type is comprised of built-in slot type and custom slot type.
 
@@ -140,7 +140,7 @@ When declaring a slot, you must classify the type of information in the slot– 
 
 #### Built-in slot type {#BuiltinSlotType}
 
-The built-in slot type is an information type pre-defined by Clova which defines information expression that can be universally used in all services (extension). The built-in slot type is mainly used for recognizing information, such as time, place, and quantity. For the above utterance, the built-in slot type can be used to recognize information referring to "two boxes." Clova provides the following built-in slot types:
+The built-in slot type is an information type pre-defined by Clova which defines information expression that can be universally used in all services (extension). The built-in slot type is mainly used for recognizing information, such as time, place, and quantity. For the above utterance, the built-in slot type can be used to recognize information referring to "two." Clova provides the following built-in slot types:
 
 | Built-in slot type | Description                                            |
 | ----------------------|------------------------------------------------|
