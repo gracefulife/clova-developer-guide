@@ -109,11 +109,20 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
-| `format`           | string   | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
-| `lang`             | string   | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li></ul> | 필수    |
-| `profile`          | string   | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
-| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `explicit`                                               | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `format`                                                 | string   | 음성 데이터 포맷. `AUDIO_L16_RATE_16000_CHANNELS_1`으로 고정 입력합니다.                             | 선택    |
+| `initiator`                                              | object   | Clova를 호출 시 사용된 방법, 음성 입력 경로, 호출어(wake word)에 대한 정보를 담는 객체                      | 필수    |
+| `initiator.inputSource`                                  | string   | 사용자의 음성이 유입 경로 정보(source). 다음과 같은 값을 입력해야 합니다.<ul><li><code>SELF</code>: <code>SpeechRecognizer.Recognize</code> 이벤트 메시지를 전송한 클라이언트 기기가 직접 사용자의 음성을 입력받은 경우 이 값을 지정합니다.</li><li><code>CUSTOM_{Model_ID}</code>: <code>SpeechRecognizer.Recognize</code> 이벤트 메시지를 전송한 클라이언트 기기가 아닌 리모컨과 같이 다른 기기가 음성 입력을 받은 경우 해당 기기의 모델 ID를 지정합니다.</li></ul> <div class="note"><p><strong>Note!</strong></p><p>기기의 모델 ID는 사전에 제휴 담당자와 논의된 값을 사용해야 합니다.</p></div>  | 필수 |
+| `initiator.payload`                                      | object   | 호출어(wake word)의 상세한 정보를 담는 객체                                                                       | 선택 |
+| `initiator.payload.wakeWordConfidence`                   | number   | 기기에서 호출어 인식을 확신하는 정도(confidence)를 나타내는 값. 실수(float) 형태의 값으로 입력합니다.                         | 선택 |
+| `initiator.payload.wakeWordIndices`                      | object   | 사용자 음성 입력을 담은 오디오 스트림에서 호출어 부분이 포함된 구간 정보를 담는 객체                                           | 선택 |
+| `initiator.payload.wakeWordIndices.endIndexInSmaples`    | number   | 오디오 스트림에서 호출어가 끝나는 시점의 index 정보. 음성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어에 해당하는 구간이 전체 오디오 스트림의 재생 시간 중 0에서 1초 사이에 위치한다면 호출어가 끝나는 시점의 index 값으로 16000을 입력해야 합니다.  | 선택  |
+| `initiator.payload.wakeWordIndices.startIndexInSamples`  | number   | 오디오 스트림에서 호출어가 시작되는 시점의 index 정보. 으성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어는 대체로 사용자 발화의 첫 부분에 위치하기 때문에 index 값을 0으로 입력하게 됩니다.   | 선택 |
+| `initiator.payload.wakeWordName`                         | string   | 클라이언트 기기에 설정된 호출어. 다음과 같은 값을 입력할 수 있습니다.<ul><li><code>"clova"</code></li><li><code>"jesika"</code></li><li><code>"jjangguya"</code></li><li><code>"seliya"</code></li><li><code>"pinokio"</code></li></ul>                        | 선택  |
+| `initiator.type`                                         | string   | 호출 시 사용된 방법. 다음과 같은 값을 입력할 수 있습니다. <ul><li><code>"PRESS_AND_HOLD"</code>: 음성 입력 수신 버튼(wake up)을 누른 채로 음성 입력</li><li><code>"TAP"</code>: 읍성 입력 수신 버튼(wake up)을 눌렀다 뗀 후 음성 입력</li><li><code>"WAKEWORD"</code>: 호출어를 말한 후 음성 입력</li></ul>  | 필수 |
+| `lang`                                                   | string   | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li></ul> | 필수    |
+| `profile`                                                | string   | 추후 사용을 위해 예약해 놓은 필드. `CLOSE_TALK`으로 고정 입력합니다.                                     | 선택    |
+| `speechId`                                               | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
 
 ### Message example
 {% raw %}
@@ -140,7 +149,19 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
     "payload": {
       "lang": "ko",
       "profile": "CLOSE_TALK",
-      "format": "AUDIO_L16_RATE_16000_CHANNELS_1"
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "wakeWordName": "clova",
+          "wakeWordConfidence": ,
+          "wakeWordIndices": {
+            "startIndexInSamples": 0,
+            "endIndexInSamples": 16000,
+          }
+        }
+      }
     }
   }
 }
@@ -184,6 +205,11 @@ Content-Type: application/octet-stream
 
 [ PCM Audio Attachment ]
 ```
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p><code>initiator.type</code>의 값이 <code>"WAKEWORD"</code>인 경우 음성 데이터를 전송할 때 반드시 호출어 부분에 해당하는 음성도 포함시켜야 합니다.</p>
+</div>
 
 ### See also
 * [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)

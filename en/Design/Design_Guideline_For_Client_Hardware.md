@@ -1,4 +1,4 @@
-# Design guidelines for client devices
+﻿# Design guidelines for client devices
 
 A consistent UI and UX must be provided to users of Clova client devices for a familiar, convenient experience when using the product. The design guidelines on the following items are provided for designing the client devices which access Clova.
 
@@ -10,12 +10,12 @@ A consistent UI and UX must be provided to users of Clova client devices for a f
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Any guidelines or specifications not mentioned in this document can be implemented according to the manufacturer's needs or policies. However, if you are uncertain and need help to decide, please contact the partnership team.</p>
+  <p>Any guidelines or specifications not mentioned in this document can be implemented according to the manufacturer's needs or policies. However, if you are uncertain and need help to decide, contact the partnership team.</p>
 </div>
 
 ## Client states and events {#ClientStateAndEvent}
 
-You should design and implement the client devices for easy user recognition and operation, such as for user voice inputs, Clova voice outputs, microphone states, or error occurrences (e.g. an error in the Clova service or network). For this, you need to understand the states of the client device and the actions and flow between states. The following diagram shows the client state cycle.
+You should design and implement the client devices for easy user recognition and operation, such as for user voice inputs, Clova voice outputs, microphone states, or error occurrences (e.g. an error in the Clova service or network). For this, you need to understand the states of the client device, and the actions and flow between states. The following diagram shows the client state cycle.
 
 ![](/Design/Resources/Images/Clova-Client-State_Diagram.png)
 
@@ -23,14 +23,14 @@ The description on the client states are as follows:
 
 | State                | Description                                                            |
 |------------------------|--------------------------------------------------------------------|
-| Attending              | The client is in a waiting state for user's voice input.                        |
+| Attending              | A state where the client is waiting for user's voice input.                        |
 | Error                  | A state where a system error has occurred.                                                |
-| Hearing                | The client is in a receiving state of the user's voice input.                            |
+| Hearing                | A state where the client is receiving user's voice input.                            |
 | Idle                   | A state where client is not performing any tasks.                             |
 | Mute on                | A state where microphone is set to mute.                                               |
 | Processing & reporting | A state where Clova is processing the user's voice request or Clova's voice is being output through the speakers. |
 
-The above states or events can be expressed using [Lights](#Light), [Sound effects](#SoundEffect), or [Screens](#Screen). And the transition action between states can be initiated or executed by the user's voice, [Buttons](#Button) controls, or other environmental factors.
+The above states can be expressed using [Lights](#Light), [Sound effects](#SoundEffect), or [Screens](#Screen). And the transition between states can be initiated or executed by the user's voice, [Buttons](#Button) controls, or other environmental factors.
 
 The following events can occur in the client and it must also be expressed using sounds or lights.
 
@@ -58,7 +58,7 @@ A client device must provide the following buttons:
 | Volume up       | Increases volume of the speaker.                                         | Required      |
 | Volume down   | Decreases volume of the speaker.                                          | Required      |
 | Play/Pause | Plays or pauses the music. Or, pauses a task in progress.         | Required      |
-| Wake up   | Switches to the Attending state, a mode to receive the user's voice input. An example of this action is a user saying "Clova." | Optional      |
+| Wake up   | Switches to the attending state, a mode to receive the user's voice input. An example of this action is a user saying "Clova." | Optional      |
 | Wi-Fi          | Connects or disconnects to a wireless network.                                 | Optional      |
 | Bluetooth     | Pairs with, connects to, or disconnects from the Bluetooth device.                              | Optional      |
 | Reset          | Resets the device.                                              | Optional      |
@@ -68,9 +68,9 @@ A client device must provide the following buttons:
 The following guidelines must be followed when providing buttons.
 
 * The power and the mic mute buttons are recommended to be provided as physical buttons.
-* Buttons other than the power and the mic mute buttons can be provided in various forms according to the manufacturer's policy, such as a physical or touch user interface (TUI) buttons.
+* Buttons other than the power and the mic mute buttons can be provided in various forms according to the manufacturer's policy, such as a physical or touch UI buttons.
 * The most commonly used buttons are recommended to be placed on the front or the top of the client device for easy operation.
-* If you are providing a TUI button, make sure that the defined action is executed upon the touch release gesture.
+* If you are providing a touch UI button, make sure that the defined action is executed upon the touch release gesture.
 * If there are no predefined combinations of buttons, only the function of the first recognized button must be executed at a simultaneous input of multiple buttons.
 * If there is new button input while a task is already in progress from a previous input, the feedback effect on the previous input must be stopped to provide the feedback effect on the latest input.
 * It is permitted to provide the play and pause button as GUIs for devices supporting UI screens.
@@ -79,9 +79,9 @@ The following guidelines must be followed when providing buttons.
   - Using the long-press gesture on the button to provide a function (e.g. reset via the long press gesture of the power button)
   - Using a combination of buttons to provide a function (e.g. reset by pressing the power and play button simultaneously)
 
-## Lights {#Light}
+## LED {#Light}
 
-A client device must provide the LED lights to indicate the [Client states and events](#ClientStateAndEvent) or the feedback on user request. This section describes the lights that can be provided by the client and the guidelines for implementation.
+A client device must provide lights to indicate the [Client states and events](#ClientStateAndEvent) or the feedback on user request. This section describes the lights that can be provided by the client and the guidelines for implementation.
 
 * [Light colors](#LightColor)
 * [Light effects](#LightEffect)
@@ -98,7 +98,7 @@ The client must use the following colors of light:
 | Red         | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255, 0, 0(#FF0000)      | Errors, such as mic mute, network connection error, or low battery     | Required  |
 | Warm White   | <span style="color:#EDE9E5; font-size:150%; vertical-align:middle;">&#9724;</span> 237, 233, 229(#EDE9E5)  | Output Clova voice through speakers, receive alarm/reminder/timer events                             | Required  |
 
-The following image shows the implementation of light colors on the Wave device:
+The following image shows the implementation of light colors on Wave:
 
 | Green       | Yellow Green | Red         | Warm White   |
 |-------------|-------------|-------------|-------------|
@@ -108,7 +108,7 @@ The following image shows the implementation of light colors on the Wave device:
 
 Light effects are used for the purpose of delivering a more detailed on the meaning or state on top of the meaning delivered by the [Light colors](#LightColor).
 
-The table below shows the light effects that must be expressed when implemented on a Clova device along with its descriptions and examples.
+The table below shows the light effects that must be expressed when implemented on a client device along with its descriptions and examples.
 
 | Light effect                            | Description                                      | Example                                                               |
 |------------------------------------|------------------------------------------|-------------------------------------------------------------------|
@@ -136,10 +136,10 @@ The following guidelines must be followed when providing lights.
   - A person with eyesight of 0.7 (decimal visual acuity) must be able to distinguish the [Light colors](#LightColor) within 1 meter distance.
   - For light colors, avoid applying states or meanings other than the predefined.
   - The light colors must be applied so that the user can perceive the graphic RGB color and the actual light color as the same.
-  - In addition to the essential [Light effects](#LightEffect), you can add other light colors and effects depending on the your UX policies or for appropriate situations, such as booting, speaker volume controls, charging status, and button feedback.
-  - Do not express too many meanings or states with one light color or effect.
-  - For screenless devices, indicate the level of the speaker volume by methods, such as brightness of lights.
-  - For battery powered portable devices, implement the light effect so the information on the charging status can be gained from the light.
+  - In addition to the essential [Light effects](#LightEffect), you can add other light colors or effects depending on your UX policies or for appropriate situations, such as bootup, speaker volume controls, charging status, and button feedback.
+  - It is recommended that you do not express too many meanings or states with a single light color or effect.
+  - For screenless devices, it is recommended to indicate the level of the speaker volume by methods, such as brightness of lights.
+  - For battery powered portable devices, it is recommended to implement the light effect so the information on the charging status can be gained from the light.
 
 ## Sound {#Audio}
 
@@ -152,7 +152,7 @@ This section describes the guidelines for outputting audio content or sound effe
 
 ### Rules for basic audio playback {#AudioInterruptionRule}
 
-A client may have to play other audio content during audio playback. In this case, the client must play audio content according to the rules for audio playback. The rules for audio playback were written based on the types of audio content. Thus, an understanding of the types of audio content is required before understanding the audio playback rules. The types of audio content are classified as follows:
+A client may have to play other audio content during audio playback. In this case, the client must play audio content according to the rules for audio playback. The rules for audio playback were written based on the types of audio content. Thus, an understanding of the types of audio content is required before understanding the audio playback rules. The types of audio content are as follows:
 
 | Audio content type | Description                                                                          |
 |---------------|-------------------------------------------------------------------------------|
@@ -232,7 +232,7 @@ If a user attempts voice input while the client is playing audio content, follow
 * In case of having to play other audio content depending on the processed result of the request, audio contents must be played in accordance with the [Rules for basic audio playback](#AudioInterruptionRule).
 * The same rules apply for the hearing and processing & reporting states gained from attempting multi-turn conversations.
 
-If there is a request to play a new audio content during the Attending and Hearing state, process the request as follows:
+If there is a request to play a new audio content during the attending and hearing state, process the request as follows:
 
 * For playing audio content of **alert/dialogue/content** type, the audio content must be played after canceling the receipt of user's voice input.
 * For playing audio content of **notification** type, the notification audio content must be played as the background audio.
@@ -261,7 +261,7 @@ In order to express [States and events](#ClientStateAndEvent) of the client, the
 
 The following guidelines must be followed when providing sound effects.
 
-* Use the provided sound effect source without any alterations.
+* It is recommended that the provided sound effects are used without any alteration.
 * Other sound effects may be added depending on your UX policies or for appropriate situations.
 * Users must be able to recognize each situation by the sound.
 * The sound effects must be consistent with the light effects or screen states.
@@ -269,36 +269,36 @@ The following guidelines must be followed when providing sound effects.
 
 ### Supported audio compression formats {#SupportedAudioCompressionFormat}
 
-Since a client must play the sound source delivered by Clova, it must support the audio compression format provided by Clova.
+Since a client must play the audio content delivered by Clova, it must be able to play the audio compression formats supported by Clova.
 
 {% include "/Design/SupportedMediaFormat/Supported_Audio_Compression_Format.md" %}
 
 ## Screens {#Screen}
 
-The following UI menus must be provided on the screen via the display device of the client.
+The following UI components must be provided on the screen via the display device of the client.
 
-* [Booting screen](#BootingScreen)
+* [Bootscreen](#BootingScreen)
 * [Logo display](#DisplayingLogo)
 * [Voice agent](#VoiceAgent)
 
-### Booting screen {#BootingScreen}
+### Bootscreen {#BootingScreen}
 
-This is a screen displayed when device is turned on until booting is complete. A logo is usually displaying on the booting screen, and the Clova logo must be solely displayed without other logos.
+This is a screen displayed when device is turned on until booting is complete. A logo is usually displaying on the bootscreen, and the Clova logo must be solely displayed without other logos.
 
 <ul>
   <li>
-    <p><strong>Good example</strong></p>
+    <p><strong>Good examples</strong></p>
     <img src="/Design/Resources/Images/Clova-Client-Partner_Logo_on_Loading_Screen.png" /> <img src="/Design/Resources/Images/Clova-Client-Clova_Logo_on_Loading_Screen.png" />
   </li>
   <li>
-    <p><strong>Bad example</strong></p>
+    <p><strong>Bad examples</strong></p>
     <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example1.png" /> <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example2.png" />
   </li>
 </ul>
 
 ### Logo display {#DisplayingLogo}
 
-The Clova logo can be placed in one of the following layouts on the UI screen provided by Clova.
+The Clova logo can be placed in one of the following layouts on the UI screen.
 
 * [Logo layout A](#LogoLayoutA)
 * [Logo layout B](#LogoLayoutB)
@@ -324,7 +324,7 @@ Similar to [Logo layout A](#LogoLayoutA), the UI screen covers the entire screen
 ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Bottom_Overlay.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Full_Screen_Overlay.png)
 
 * The Clova logo must be placed on the top right section.
-* The opacity of the Clova logo is recommended to be set to 100%.
+* The Clova logo must not be transparent.
 
 Below is a screen example of Logo layout B.
 
@@ -345,12 +345,12 @@ Below is a screen example of Logo layout C.
 
 ### Voice agent {#VoiceAgent}
 
-The voice agent is a UI to express statuses related to Clova's voice actions, such as receipt of user audio input or Clova audio output. A client device with a screen must implement the voice agent. This section describes the colors used by the voice agent and the guidelines for expressing actions and states according to voice agent types.
+The voice agent is a UI to express states related to Clova's voice actions, such as receipt of user audio input or Clova audio output. A client device with a screen must implement the voice agent. This section describes the colors used by the voice agent and the guidelines for expressing actions and states according to voice agent types.
 
 * [Voice agent colors](#VoiceAgentColor)
 * [Bar type](#BarType)
-* [Icon A type](#IconAType)
-* [Icon B type](#IconBType)
+* [A type icon](#IconAType)
+* [B type icon](#IconBType)
 
 #### Voice agent colors {#VoiceAgentColor}
 
@@ -379,7 +379,7 @@ The bar-type voice agent must be expressed as follows for the corresponding situ
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Please note that the contents for bar-type UIs are scheduled to be updated in the future.</p>
+  <p>Note that the contents for bar-type UIs are scheduled to be updated in the future.</p>
 </div>
 
 #### A type Icon {#IconAType}
@@ -388,7 +388,7 @@ The voice agent of A type icons are displayed in the form of icons on the left a
 
 ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type.png)
 
-The A type voice agent must be expressed as follows for the corresponding situation:
+The voice agent of A type icon must be expressed as follows for the corresponding situation:
 
 | State                | Animation effect                                                                  | Example                                                                              |
 |------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -406,11 +406,11 @@ The A type voice agent must be expressed as follows for the corresponding situat
 
 #### B type Icon {#IconBType}
 
-The B type icon is used when expressing the voice agent from the app type clients, in other words, mobile devices. Below is an example of an B type voice agent displayed on a screen.
+The B type icons are used when expressing the voice agent from the app type clients, in other words, mobile devices. Below is an example of an B type voice agent displayed on a screen.
 
 ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type.png)
 
-The B type voice agent must be expressed as follows for the corresponding situation:
+The voice agent of B type icon must be expressed as follows for the corresponding situation:
 
 | State                  | Animation effect                                                                | Example       |
 |--------------------------|----------------------------------------------------------------------------|-----------|

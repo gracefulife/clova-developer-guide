@@ -1,8 +1,8 @@
-# Design guidelines for extensions
+﻿# Design guidelines for extensions
 
 When creating an extension, you must first consider how your technology and services can bring convenience and the most benefit to users through Clova. The document provides guidelines for designing an extension to bring a healthy and beneficial service to users.
 
-It is possible to create an extension for web service information lookup, shopping and delivery services, interactive games, broadcasts, real-time briefings, IoT device control, and even for other voice-initiated activities or services. Once you know the type of extension you want to create, make sure to create it in accordance with the design guidelines. The details covered here are only the basic recommendations for designing the extension with examples. You can further design and implement the extension according to your own business experience and service characteristics.
+It is possible to create an extension for web service information lookup, shopping and delivery services, interactive games, broadcasts, real-time briefings, IoT device control, and even for other voice-initiated activities or services. When you develop an extension, make sure to create it in accordance with the design guidelines. The details covered here are only the basic recommendations for designing the extension with examples. You can further design and implement the extension according to your own business experience and service characteristics.
 
 * [Setting goals](#SettingGoal)
 * [Writing user scenario scripts](#MakeUseCaseScenarioScript)
@@ -13,7 +13,7 @@ It is possible to create an extension for web service information lookup, shoppi
 
 ## Setting goals {#SettingGoal}
 
-The first thing you should do when designing an extension is to set the goals of extension. Setting goals of an extension is a process of deciding what to deliver to users and the method that will be used for delivering it. This process becomes the basis for anticipating the functions to provide to users later on and the user scenarios for using the functions. It may be a single basic and abstract goal for the extension, as shown below.
+The first thing you should do when designing an extension is to set the goals of extension. Setting goals of an extension is a process of deciding what and how to to deliver to users and the method that will be used for delivering it. This process becomes the basis for anticipating the functions to provide to users later on and the user scenarios for using the functions. It may be a single basic and abstract goal for the extension, as shown below.
 
 ```
 Provide a pizza delivery service to users.
@@ -25,16 +25,16 @@ This goal can be written again into a series of detailed, more specific goals. S
 * Include the details on the ways that the user will call the extension.
 * Include the prerequisites fulfilling the detailed goals and the outcomes that can be achieved. The prerequisites may include:
   - Actions or states required in advance
-  - Functions or resources required by the extension (e.g. GPS, camera, or microphone)
+  - Functions or resources (e.g. GPS, camera, or microphone) required by the extension
   - Information on external services or platforms (e.g. information on mobile device contacts or SNS accounts)
 * Check to that the collection of detailed goals meets the scopes of extension goals.
-* Each detailed goal is recommended to be written on the level of a single user action–a unit that is classified and processed in the service.
+* Each detailed goal is recommended to be written on the level of a single user action– a unit that is classified and processed in the service.
 
 Below is an example of detailed goals for a pizza delivery service.
 
 | Detailed goal ID | Classification                | Goal                                                            |
 |------------|--------------------|---------------------------------------------------------------|
-| #1         | Call service           | A user can start using the pizza delivery service by saying, "On the Pizzabot."    |
+| #1         | Call the service           | A user can start using the pizza delivery service by saying, "~~ on the Pizzabot."    |
 | #2         | Usage suggestions or recommendations     | Once the pizza delivery service starts, the user can receive information on the next or the anticipated action for pizza delivery. |
 | #3         | Brand lookup and selection     | The user can select a pizza brand of their choice.                                 |
 | #4         | Menu lookup and selection      | The user can view the pizza menu.                                   |
@@ -47,7 +47,7 @@ Below is an example of detailed goals for a pizza delivery service.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The detailed goals prepared this way become the basis for <a href="#MakeUseCaseScenarioScript">writing user scenario scripts</a> or defining the <a href="#DefineInteractionModel">interaction model</a>. Also, this information is required for <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo">deploying the extension</a> and will be used as a basis to <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission">evaluate</a> the proper operation of the extension.</p>
+  <p>The detailed goals prepared this way become the basis for <a href="#MakeUseCaseScenarioScript">writing user scenario scripts</a> or defining the <a href="#DefineInteractionModel">interaction model</a>. Also, this information is required for <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo">deploying the extension</a> and will be used as a basis to <a href="/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission">review</a> the proper operation of the extension.</p>
 </div>
 
 ## Writing user scenario scripts {#MakeUseCaseScenarioScript}
@@ -58,17 +58,17 @@ See the following recommendations for writing user scenario scripts:
 
 * Write in a colloquial style rather than a written style.
 * Do not give too much information or choices when providing information.
-* The extension must make suggestions on the next action or make recommendations on service usage to the user.
+* Make suggestions on the next action or make recommendations on service usage to the user.
 * Avoid use of repetitive expressions.
 * Keep in mind that an unexpected user request or situation can occur at any point.
 
 
-Below is an sample of a user scenario script.
+Below is a sample of a user scenario script.
 
 | Speaker   | Sample utterance                                              | Relevant detailed goal  |
 |-----------|------------------------------------------------------|-------------|
 | User      | Order a pizza from Pizzabot.                                   | #1           |
-| Extension | We have your order history from XX Pizza and YY Pizza. Which one would you like?      | #2, #3       |
+| Extension | You can order from XX Pizza and YY Pizza. Which one would you like?      | #2, #3       |
 | User      | XX Pizza.                                         | #3           |
 | Extension | I can order you one combination pizza and one 1.5 liter coke from XX Pizza in XX, to Apartment AA-111. The total is 15 USD and you can pay directly to the deliveryman. Shall I order it?   | #2, #6  |
 | User      | Tell me another menu.                                        | #7           |
@@ -80,7 +80,7 @@ Below is an sample of a user scenario script.
 
 ## Defining an Interaction Model {#DefineInteractionModel}
 
-An interaction model in Clova is a set of rules to convert the voice user request into a standardized format (JSON) to be processed in the extension. For example, if a custom extension is providing a pizza delivery service, a user might say "Order two pepperoni pizzas." The interaction model defines the rules to convert such requests into the format required for providing the service (JSON) as shown below.
+An interaction model in Clova is a set of rules to convert the voice user request into a standardized format (JSON) to be processed in the extension. For example, if a custom extension is providing a pizza delivery service, a user might say "Order two boxes of pepperoni pizza." The interaction model defines the rules to convert such requests into the format required for providing the service (JSON) as shown below.
 
 ![](/Design/Resources/Images/Extension_Design-Interaction_Model_Analysis_Diagram.png)
 
@@ -106,15 +106,15 @@ Unlike the built-in intent, custom intent defines the type of user request speci
 
 Continuing with the example of the pizza delivery service, the service would contain the following request types:
 
-* Request to view menu
+* Request to retrieve menu
 * Request to order
-* Request to update on delivery status
+* Request to update delivery status
 
-Based on this example we can see that defining the interaction model of a pizza delivery service (extension) is declaring the intent list, such as view menu intent, order intent, view delivery status intent, and listing the possible utterances and information (slot) required by each intent. Therefore, **the first thing to do when defining an interaction model is to define and list the type of requests that will be processed by the extension.** This also becomes the standard for dividing the business logic–in other words, the branch of program–when developing an extension.
+Based on this example we can see that defining the interaction model of a pizza delivery service (extension) is declaring the intent list, such as retrieve menu intent, order intent, update delivery status intent, and listing the possible utterances and information (slot) required by each intent. Therefore, **the first thing to do when defining an interaction model is to define and list the type of requests that will be processed by the extension.** This also becomes the standard for dividing the business logic–in other words, the branch of program–when developing an extension.
 
 ![](/Design/Resources/Images/Extension_Design-Design_Interaction_Model.png)
 
-**Once we have divided the type of user requests, we must name each type.** This will later on become the name of the intent. The "order intent" of a pizza delivery service is an abstract concept and it must be declared as a specific name that can be known by the extension–an indemnifiable string. For example, "order intent" can be declared a name like "OrderPizza.”
+**Once we have divided the type of user requests, we must name each type.** This will later on become the name of the intent. The "order intent" of a pizza delivery service is an abstract concept and it must be declared as a specific name that can be known by the extension– an identifiable string. For example, "order intent" can be declared a name like "OrderPizza.”
 
 Then, you must **define what information ([Slot](#Slot)) is to be recognized** from the utterance of the "OrderPizza" intent and **list various [sample utterances](#UtteranceExample)** on the types of user utterances that can be processed.
 
@@ -131,16 +131,16 @@ The built-in intent is a specification declared by the Clova platform for shared
 
 ### Slot {#Slot}
 
-Slot is the information acquired from user utterance and the **noun**factor used in the utterance can become a slot. When defining [custom intent](#Intent), you must define the slot required by the corresponding intent. To explain this more by comparing it with software development, the intent is a function or handler to process a specific type of user request and the slot becomes a parameter required for this function or handler. From the utterance, "Order two pepperoni pizzas." mentioned above, you can see that information on pizza type "pepperoni pizza" and quantity "two" are required to process the "OrderPizza" intent. Therefore, you must identify the information (slot) needed before defining the intent.
+Slot is the information acquired from user utterance and the **noun** factor used in the utterance can become a slot. When defining [custom intent](#Intent), you must define the slot required by the corresponding intent. To explain this more by comparing it with software development, the intent is a function or handler to process a specific type of user request while the slots are parameters required for this function or handler. From the utterance, "Order two boxes of pepperoni pizza." mentioned above, you can see that information on pizza type "pepperoni pizza" and quantity "two" are required to process the "OrderPizza" intent. Therefore, you must identify the information (slot) needed before defining the intent.
 
-When declaring a slot, you must classify the type of information in the slot–called slot type. The slot type is comprised of built-in slot type and custom slot type.
+When declaring a slot, you must classify the type of information in the slot– called slot type. The slot type is comprised of built-in slot type and custom slot type.
 
 * [Built-in slot type](#BuiltinSlotType)
 * [Custom slot type](#CustomSlotType)
 
 #### Built-in slot type {#BuiltinSlotType}
 
-The built-in slot type is an information type pre-defined by Clova which defines information expression that can be universally used in all services (extension). The built-in slot type is mainly used for recognizing information, such as time, place, and quantity. For the above utterance, the built-in slot type can be used to recognize information referring to "2 boxes." Clova provides the following built-in slot types:
+The built-in slot type is an information type pre-defined by Clova which defines information expression that can be universally used in all services (extension). The built-in slot type is mainly used for recognizing information, such as time, place, and quantity. For the above utterance, the built-in slot type can be used to recognize information referring to "two boxes." Clova provides the following built-in slot types:
 
 | Built-in slot type | Description                                            |
 | ----------------------|------------------------------------------------|
@@ -158,11 +158,11 @@ The built-in slot type is an information type pre-defined by Clova which defines
 
 #### Custom slot type {#CustomSlotType}
 
-The custom slot type defines information type specialized to the domain of the provided service (extension) and is mainly comprised of proper nouns or nouns. For the aforementioned utterance, the "OrderPizza" intent must identify the relevant information (slot) for the pizza type from user utterance, but there is also a high possibility that the pizza type expressions will be used only in services related to pizza. Therefore, you can define a custom slot type like "PIZZA_TYPE" and declare various items in "PIZZA_TYPE", such as "pepperoni pizza," "combination pizza," and "cheese pizza," which can be ordered from the pizza delivery service.
+The custom slot type is an information type specialized to the domain of the provided service (extension) and is mainly comprised of proper nouns or nouns. For the aforementioned utterance, the "OrderPizza" intent must identify the relevant information (slot) for the pizza type from user utterance, but there is also a high possibility that the pizza type expressions will be used only in services related to pizza. Therefore, you can define a custom slot type like "PIZZA_TYPE" and declare various items in "PIZZA_TYPE", such as "pepperoni pizza," "combination pizza," and "cheese pizza," which can be ordered from the pizza delivery service.
 
 In a sentence however, these items can be expressed in various ways with a same or similar meaning. "Barbecue pizza" has the same meaning as "BBQ pizza" and long names, such as "shrimp golden crust pizza," may be shortened to "shrimp gold-crust pizza." Therefore, there is a need to not only declare the items classified by the concept, but also the representative term in each item and its synonyms when declaring custom slot types. This allows for converting the various synonyms used in the user utterance to the representative term during the recognition process and helps to receive a unified value of information under a similar concept for when the extension is handling the intent.
 
-Once the slot type is defined in this way, you must define the name of the slot to be used in each intent and declare its slot type. For example, you can declare a "pizzaType" slot for the pizza type information and "pizzaAmount" for the pizza cost for the "OrderPizza" intent and designate the "PIZZA_TYPE" custom slot type predefined to each slot and the CLOVA.NUMBER built-in slot type from the library.
+Once the slot type is defined in this way, you must define the name of the slot to be used in each intent and declare its slot type. For example, you can declare a "pizzaType" slot for the pizza type information and "pizzaAmount" for the number of pizza for the "OrderPizza" intent and designate the "PIZZA_TYPE” you defined as a custom slot type and CLOVA.NUMBER predefined built-in slot type to the slots respectively.
 
 ###  Sample utterances {#UtteranceExample}
 You can list various sample of user utterances when defining the intent. These sample become the base data necessary for Clova to recognize diverse user expressions with similar intentions and can be used for identifying the location of the aforementioned slot within user utterance. Well written sample utterances help to build a strong interaction model for user intention recognition. When writing sample utterances, it is highly recommended that you follow the recommendations below:
@@ -174,7 +174,7 @@ You can list various sample of user utterances when defining the intent. These s
   * For a slot type of an intent with a massive dictionary, such as singer names, song titles, movie titles, or company names, there should be at least 100 utterance sentences including the slot.
   * For an intent in a simple form, only around 10 utterance sentences are required.
 * If a new expression is found or there has been a recognition problem with the exiting expression, you should add new samples even after completing the sample utterances in accordance to the recommendations.
-* If there is an ambiguous value that is difficult to determine as a slot among the values preregistered in the slot type dictionary, you should specify it as a slot by using it as a sample utterance. However, it is even better to not define any ambiguous values as a slot type in the first place.
+* If there is an ambiguous value that is difficult to determine as a slot among the values registered in the slot type dictionary, you should specify it as a slot by using it in a sample utterance. However, it is even better to not use any ambiguous values as a slot.
 
 The image below provides an understanding on the variations needed for sample utterance without duplicated patterns.
 
@@ -186,12 +186,12 @@ For example, let's assume that the following sample utterances was written on in
 Order one box of pepperoni pizza.
 Get me one pepperoni pizza.
 Call for one box of pepperoni pizza.
-I wanna one pepperoni pizza.
+I want one pepperoni pizza.
 ```
 
 If Clova learns with the above sample utterances where the value `"pepperoni"` and `"one"` is included in the user utterance, the possibility for the utterance to be recognized as the `OrderPizza` intent becomes very high. For example, this means that an utterance that intends to check the menu, such as "How much is one pepperoni pizza?" is likely to be processed as a request to order pizza.
 
-Therefore, writing the sample utterances in the following format is recommended:
+To avoid this, writing the sample utterances in the following format is recommended:
 
 ```
 Order two boxes of pepperoni pizza.
@@ -200,10 +200,10 @@ Please order three combinations.
 Get one shrimp gold-crust pizza.
 ```
 
-The above utterances are organized in the pattern of noun (pizza type), noun (quantity), and verb (intention), and it also includes commonly used prepositions, endings, adverbs, and interjections. Once you have used up all of the possible utterance patterns, you can reuse the patterns but change the slot values to meet the recommended number of utterance sentences. Add to the sample utterances by complying with the following details:
+The above utterances are organized in the pattern of noun (pizza type), noun (quantity), and verb (intention), and it also includes commonly used prepositions, endings, adverbs, and interjections. Once you have used up all of the possible utterance patterns, you can reuse the patterns but change the slot values to meet the recommended number of utterance sentences. Add sample utterances by complying with the following details:
 * Add new sentences by changing the slot value used in the sample utterance.
 * Add new sentences by changing the style of the sentence, such as the use of prepositions, endings, adverbs, and interjections.
-* **Please make sure to avoid repeated use of set combination values.** For example, the utterance "Order two boxes of pepperoni pizza." and "Please order just one pepperoni pizza for me." may have different endings, prepositions, and quantity values, but they have an overlapping combination of values `"pepperoni"` and `"order"`.
+* **Make sure to avoid repeated use of set combination values.** For example, the utterance "Order two boxes of pepperoni pizza." and "Please order just one pepperoni pizza for me." may have different endings, prepositions, and quantity values, but they have an overlapping combination of values `"pepperoni"` and `"order"`.
 
 ```
 Quick, order 5 BBQs.
@@ -240,7 +240,7 @@ If you [register the interaction model](/DevConsole/Guides/CEK/Register_Interact
 {% raw %}
 
 ```json
-// Custom intent: Order two pepperoni pizzas.
+// Custom intent: Order two boxes of pepperoni pizza.
 {
   "version": "0.1.0",
   "session": {
@@ -333,11 +333,11 @@ If audio content is provided by the extension, it must be in an audio compressio
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>If music is provided using an audio compression format not supported by Clova, the client may not be able to play the music properly.</p>
+  <p>If audio content is provided using an audio compression format not supported by Clova, the client may not be able to play it properly.</p>
 </div>
 
 ## Continuous updates {#ContinuousUpdate}
 
 During the extension development phase, user scenarios are created based on anticipated user utterances which is then applied to the extension. This helps to develop the extension, however, the actual way that it is used by users can be different and there can even be some unexpected use patterns from users. Basically, users can use the extension differently than anticipated. Therefore, continuous improvement efforts are required to enhance user satisfaction after deploying the extension, such as efforts to improve the extension functions and conversation flow.
 
-Please update the extension after registration, by analyzing the statistics provided by the Clova platform or the incoming user utterance record (scheduled to be provided in the future).
+Update the extension after registration, by analyzing the statistics provided by the Clova platform or the incoming user utterance record (scheduled to be provided in the future).
