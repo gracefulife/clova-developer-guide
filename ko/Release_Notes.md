@@ -69,7 +69,7 @@
 ### 문서 변경 사항
 
 * Design
-  - [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)에 알람, 리마인더, 타이머에 대한 조명 효과 및 효과음 가이드라인 설명 추가
+  - [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)에 알람, 리마인더, 타이머에 대한 조명 효과 및 효과음 가이드라인 설명 추가
 
 ## 2018-01-08
 
@@ -84,7 +84,7 @@
 ### 문서 변경 사항
 
 * Design
-  - 플랫폼 구현 상황에 맞게 [built-in intent](/Design/DesignGuidelineForExtension.md#DefineInteractionModel)에 대한 설명 수정
+  - 플랫폼 구현 상황에 맞게 [built-in intent](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)에 대한 설명 수정
 
 * CIC
   - [위임된 사용자 요청 처리하기](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) 절 추가
@@ -121,8 +121,8 @@
 ### 문서 변경 사항
 
 * Design
-  - [Interaction 모델 등록하기](DevConsole/Guides/CEK/Register_Interaction_Model.md)에서 [interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용을 [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md) 문서로 이동
-  - [Interaction 모델 정의하기](/Design/DesignGuidelineForExtension.md#DefineInteractionModel) 절 내용에 [발화 예시](/Design/DesignGuidelineForExtension.md#UtteranceExample)문 작성 가이드라인 추가
+  - [Interaction 모델 등록하기](DevConsole/Guides/CEK/Register_Interaction_Model.md)에서 [interaction 모델 정의하기](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel) 절 내용을 [Extension 디자인 가이드라인](/Design/Design_Guideline_For_Extension.md) 문서로 이동
+  - [Interaction 모델 정의하기](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel) 절 내용에 [발화 예시](/Design/Design_Guideline_For_Extension.md#UtteranceExample)문 작성 가이드라인 추가
 
 * Clova developer console
   - [Interaction 모델 정의하기](/DevConsole/Guides/CEK/Define_Interaction_Model.md)에 [발화 예시문](/DevConsole/Guides/CEK/Define_Interaction_Model.md#UtteranceExample) 작성 가이드라인 추가
@@ -139,15 +139,15 @@
 ### 문서 변경 사항
 
 * Design
-  - [Extension 디자인 가이드라인](/Design/DesignGuidelineForExtension.md) 추가
+  - [Extension 디자인 가이드라인](/Design/Design_Guideline_For_Extension.md) 추가
 
 ## 2017-12-04
 
 ### 문서 변경 사항
 
 * Design
-  - [오디오 재생 규칙(audio interruption rule)](/Design/DesignGuidelineForClientHardware.md#AudioInterruptionRule)을 [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)에 추가
-  - [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md)에 사용된 이미지 개선
+  - [오디오 재생 규칙(audio interruption rule)](/Design/Design_Guideline_For_Client_Hardware.md#AudioInterruptionRule)을 [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)에 추가
+  - [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)에 사용된 이미지 개선
 
 * CIC
   - [CIC 연동하기](/CIC/Guides/Interact_with_CIC.md)의 사전 준비사항에 [User-Agent string](/CIC/Guides/Interact_with_CIC.md#UserAgentString)을 추가
@@ -171,7 +171,7 @@
 ### 문서 변경 사항
 
 * Design
-  - [클라이언트 기기 디자인 가이드라인](/Design/DesignGuidelineForClientHardware.md) 추가
+  - [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md) 추가
 
 ## 2017-11-13
 

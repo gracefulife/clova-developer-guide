@@ -40,12 +40,12 @@
       <td style="text-align: center;">디자인</td>
       <td>
         <ul>
-          <li><a href="/Design/DesignGuidelineForClientHardware.md">클라이언트 기기 디자인 가이드라인</a></li>
+          <li><a href="/Design/Design_Guideline_For_Client_Hardware.md">클라이언트 기기 디자인 가이드라인</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li><a href="/Design/DesignGuidelineForExtension.md">Extension 디자인 가이드라인</a></li>
+          <li><a href="/Design/Design_Guideline_For_Extension.md">Extension 디자인 가이드라인</a></li>
         </ul>
       </td>
     </tr>
