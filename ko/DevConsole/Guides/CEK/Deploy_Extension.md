@@ -23,8 +23,8 @@ Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **{{ 
 * **{{ book.DevConsole.cek_test_instructions }}**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. 안내 문구에 따라 작성합니다.
 * 서비스 국가 및 지역: 현재는 한국에만 extension을 배포할 수 있습니다.
 * **{{ book.DevConsole.cek_full_skill_desc }}**: **{{ book.DevConsole.ExtensionPage }}**에서 사용자에게 제공할 extension의 설명입니다. 안내 문구에 따라 작성합니다.
-* **{{ book.DevConsole.cek_short_skill_desc }}**: **{{ book.DevConsole.StoreHome }}**에서 프로모션 등의 안내 문구를 표시할 때 사용될 수 있는 설명입니다.
-* **{{ book.DevConsole.cek_example_phrases }}**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. **{{ book.DevConsole.ExtensionPage }}**에 표시됩니다. 특히, 첫 번째 예시문은 **{{ book.DevConsole.StoreHome }}**에서 extension 목록을 보여줄 때 표시됩니다.
+* **{{ book.DevConsole.cek_short_skill_desc }}**: {{ book.DevConsole.StoreHome }}에서 프로모션 등의 안내 문구를 표시할 때 사용될 수 있는 설명입니다.
+* **{{ book.DevConsole.cek_example_phrases }}**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. **{{ book.DevConsole.ExtensionPage }}**에 표시됩니다. 특히, 첫 번째 예시문은 {{ book.DevConsole.StoreHome }}에서 extension 목록을 보여줄 때 표시됩니다.
 * **{{ book.DevConsole.cek_keywords }}**: 사용자가 특정 키워드로 extension을 검색할 때 그 검색 결과에 extension이 나타날 수 있도록 해줍니다.
 * **{{ book.DevConsole.cek_small_icon }}**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **{{ book.DevConsole.ManageExtensions }}**이나 **{{ book.DevConsole.ExtensionPage }}**에 표시됩니다.
 * **{{ book.DevConsole.cek_large_icon }}**: 큰 크기(512px X 512px)의 extension 아이콘 파일로서 추후 사용될 예정입니다.

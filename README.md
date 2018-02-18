@@ -58,8 +58,7 @@ Due to the various purposes, this repository has the following branches:
   <li>Common branches
     <ul>
       <li><strong>document</strong><br />Main branch that holds whole content of Clova developer guide. Working branches are forked from this branch and after job is done the branches are merged back to this branch.</li>
-      <li><strong>master</strong> (document -> master)<br />Backup branch for <strong>document</strong> branch</li>
-      <li><strong>gh-pages</strong> (All lang., Online doc)<br />Web content for internal use (http://pages.oss.navercorp.com/JTF-P6/platform_technical_doc).</li>
+      <li><strong>master</strong> (document -> master)<br />Branch for internal documentation release</li>
     </ul>
   </li>
   <li>Branches for Japan business

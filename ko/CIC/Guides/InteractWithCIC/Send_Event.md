@@ -57,7 +57,21 @@ Content-Type: application/json; charset=UTF-8<br/>
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "profile": "CLOSE_TALK"
+      "lang": "ko",
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "wakeWordName": "clova",
+          "wakeWordConfidence": ,
+          "wakeWordIndices": {
+            "startIndexInSamples": 0,
+            "endIndexInSamples": 16000,
+          }
+        }
+      }
     }
   }
 }

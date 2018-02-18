@@ -1,6 +1,6 @@
 샘플 주사위 extension이 도움말 요청을 하는 built-in intent를 잘 처리하는지 테스트해야 합니다.
 
-[첫 번째 튜토리얼](/CEK/Tutorials/Build_Simple_Extension.md)에서처럼 두 가지 테스트 방법이 있습니다. 하나는 Clova developer console에서 interaction 모델 동작을 확인하는 것이고, 다른 하나는 테스터 아이디를 등록하여 Clova 앱에서 실제 동작을 확인하는 것입니다.
+[첫 번째 튜토리얼](/CEK/Tutorials/Build_Simple_Extension.md)에서처럼 두 가지 테스트 방법이 있습니다. 하나는 Clova developer console에서 interaction 모델 동작을 확인하는 것이고, 다른 하나는 테스터 ID를 등록하여 Clova 앱에서 실제 동작을 확인하는 것입니다.
 이 튜토리얼에서는 interaction 모델 동작만 확인합니다.
 
 <div class="note">

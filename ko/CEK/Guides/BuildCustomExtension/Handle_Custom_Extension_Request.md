@@ -12,8 +12,8 @@ Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CE
 
 | 요청 타입 | 사용자 발화 패턴 | 발화 예시 |
 |---------|--------------|---------|
-|[LaunchRequest](#HandleLaunchRequest) | _[extension 호출명]_ + "시작해줘/열어줘/동작해줘" | "피자봇 시작해줘" |
-| [IntentRequest](#HandleIntentRequest) | _[extension 호출명]_ + "에게/에서/한테/로" + _[extension 별로 등록한 실행 명령어]_, 혹은 <br/>(`LaunchRequest` 타입 요청 받은 상태에서) _[extension 별로 등록한 실행 명령어]_ | "피자봇에서 피자 시켜줘" <br/> (피자봇 시작 상태에서) "주문 조회해줘" |
+|[LaunchRequest](#HandleLaunchRequest) | _[extension 호출 이름]_ + "시작해줘/열어줘/동작해줘" | "피자봇 시작해줘" |
+| [IntentRequest](#HandleIntentRequest) | _[extension 호출 이름]_ + "에게/에서/한테/로" + _[extension 별로 등록한 실행 명령어]_, 혹은 <br/>(`LaunchRequest` 타입 요청 받은 상태에서) _[extension 별로 등록한 실행 명령어]_ | "피자봇에서 피자 시켜줘" <br/> (피자봇 시작 상태에서) "주문 조회해줘" |
 | [SessionEndedRequest](#HandleSessionEndedRequest) | (`LaunchRequest` 타입 요청 받은 상태에서) "종료해줘/종료/그만" | "(피자봇) 종료해줘" |
 
 ### LaunchRequest 요청 처리 {#HandleLaunchRequest}
@@ -77,7 +77,7 @@ LaunchRequest 타입 메시지는 `request.type` 필드에 `"LaunchRequest"`라�
 
 ### IntentRequest 요청 처리 {#HandleIntentRequest}
 
-[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 CEK가 미리 정의해 둔 [interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)에 따라 사용자의 요청을 extension에 전달할 때 사용됩니다. `IntentRequest`는 사용자가 extension 호출명을 지정하여 명령을 내리거나, `LaunchRequest` 발생 이후 호출명 없이 명령을 내릴 때 extension으로 전달됩니다. 예를 들면, 사용자가 "피자봇에서 피자 시켜줘"나, 별도의 명령으로 서비스를 시작한 후 "피자 주문해 달라고 해"와 같은 명령을 내린 경우 CEK는 피자 배달 서비스를 제공하는 extension에게 `IntentRequest` 타입 요청을 전달합니다. `IntentRequest` 타입 요청은 일회적인 요청뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때도 사용됩니다.
+[`IntentRequest` 타입 요청](/CEK/References/CEK_API.md#CustomExtIntentRequest)은 CEK가 미리 정의해 둔 [interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)에 따라 사용자의 요청을 extension에 전달할 때 사용됩니다. `IntentRequest`는 사용자가 extension 호출 이름을 지정하여 명령을 내리거나, `LaunchRequest` 발생 이후 호출 이름 없이 명령을 내릴 때 extension으로 전달됩니다. 예를 들면, 사용자가 "피자봇에서 피자 시켜줘"나, 별도의 명령으로 서비스를 시작한 후 "피자 주문해 달라고 해"와 같은 명령을 내린 경우 CEK는 피자 배달 서비스를 제공하는 extension에게 `IntentRequest` 타입 요청을 전달합니다. `IntentRequest` 타입 요청은 일회적인 요청뿐만 아니라 연속되는 사용자 요청(Multi-turn request)을 처리할 때도 사용됩니다.
 
 IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라는 값을 가집니다. 호출된 intent의 이름과 분석된 사용자의 발화 정보는 `request.intent` 필드를 통해 확인할 수 있습니다. 이 필드를 분석하여 사용자의 요청을 처리한 후 [응답 메시지](#ReturnCustomExtensionResponse)를 보내면 됩니다.
 
