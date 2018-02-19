@@ -10,52 +10,11 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ConfirmWakeUp`](#ConfirmWakeUp)               | Directive | 클라이언트에게 호출 이름에 대한 인식 검증 결과를 확인하도록 지시합니다.     |
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.                  |
 | [`KeepRecording`](#KeepRecording)               | Directive | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                     |
 | [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.          |
 | [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.               |
 | [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.           |
-
-## ConfirmWakeUp directive {#ConfirmWakeUp}
-
-클라이언트에게 호출 이름에 대한 인식 검증 결과를 확인하도록 지시합니다. CIC는 [`SpeechRecognizer.Recognize`](#Recognize) 이벤트 메시지의 `initiator` 필드를 통해 전달받은 호출 이름의 음성 정보 검증한 후 `SpeechRecognizer.ConfirmWakeUp` 지시 메시지를 통해 그 결과를 클라이언트에게 통보합니다. 검증 결과에 따라 사용자가 발화한 음성이 호출 이름을 불렀다고 판단할 수도 있고 잘못 인식되었다고 판단할 수도 있습니다. 클라이언트는 이 지시 메시지로 전달되는 결과에 따라 다음 동작을 빠르게 수행해야 합니다.
-
-* **사용자가 호출 이름을 부른 것으로 판단한 경우**: 사용자에게 서비스를 계속 제공
-* **사용자가 호출 이름을 부르지 않은 것으로 판단한 경우**: Idle 상태로 복귀
-
-### Payload fields
-
-| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
-|---------------|---------|-----------------------------|:---------:|
-| `success`     | boolean | 호출 이름 인식 검증 결과<ul><li><code>true</code>: 사용자가 호출 이름을 부른 것으로 판단</li><li><code>false</code>: 사용자가 호출 이름을 부르지 않은 것으로 판단</li></ul>  | 항상  |
-
-### Message example
-
-{% raw %}
-
-```json
-
-{
-  "directive": {
-    "header": {
-      "namespace": "SpeechRecognizer",
-      "name": "ConfirmWakeUp",
-      "dialogRequestId": "277b40c3-b046-4f61-a551-783b1547e7b7",
-      "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
-    },
-    "payload": {
-        "success": true
-    }
-  }
-}
-```
-
-{% endraw %}
-
-### See also
-
-* [`SpeechRecognizer.Recognize`](#Recognize)
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
@@ -157,8 +116,8 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 | `initiator.payload`                                      | object   | 호출어(wake word)의 상세한 정보를 담는 객체                                                                       | 선택 |
 | `initiator.payload.wakeWordConfidence`                   | number   | 기기에서 호출어 인식을 확신하는 정도(confidence)를 나타내는 값. 0에서 1사이의 실수(float) 형태의 값으로 입력합니다. 현재 이 필드는 유효하지 않으며 나중을 위해 예약해둔 필드입니다.                 | 선택 |
 | `initiator.payload.wakeWordIndices`                      | object   | 사용자 음성 입력을 담은 오디오 스트림에서 호출어 부분이 포함된 구간 정보를 담는 객체                                           | 선택 |
-| `initiator.payload.wakeWordIndices.endIndexInSmaples`    | number   | 오디오 스트림에서 호출어가 끝나는 시점의 index 정보. 음성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어에 해당하는 구간이 전체 오디오 스트림의 재생 시간 중 0에서 1초 사이에 위치한다면 호출어가 끝나는 시점의 index 값으로 16000을 입력해야 합니다.  | 선택  |
-| `initiator.payload.wakeWordIndices.startIndexInSamples`  | number   | 오디오 스트림에서 호출어가 시작되는 시점의 index 정보. 으성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어는 대체로 사용자 발화의 첫 부분에 위치하기 때문에 index 값을 0으로 입력하게 됩니다.   | 선택 |
+| `initiator.payload.wakeWordIndices.endIndexInSmaples`    | number   | 오디오 스트림에서 호출어가 끝나는 시점의 index 정보. 음성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어에 해당하는 구간이 전체 오디오 스트림의 재생 시간 중 0에서 1초 사이에 위치한다면 호출어가 끝나는 시점의 index 값으로 16000을 입력해야 합니다.  | 필수  |
+| `initiator.payload.wakeWordIndices.startIndexInSamples`  | number   | 오디오 스트림에서 호출어가 시작되는 시점의 index 정보. 으성 입력이 16 kHz sample rate를 가지므로 index의 1 단위는 16,000 분의 1초를 의미합니다. 호출어는 대체로 사용자 발화의 첫 부분에 위치하기 때문에 index 값을 0으로 입력하게 됩니다.   | 필수 |
 | `initiator.payload.wakeWordName`                         | string   | 클라이언트 기기에 설정된 호출어. 다음과 같은 값을 입력할 수 있습니다.<ul><li><code>"clova"</code></li><li><code>"jesika"</code></li><li><code>"jjangguya"</code></li><li><code>"seliya"</code></li><li><code>"pinokio"</code></li></ul>                        | 선택  |
 | `initiator.type`                                         | string   | 호출 시 사용된 방법. 다음과 같은 값을 입력할 수 있습니다. <ul><li><code>"PRESS_AND_HOLD"</code>: 음성 입력 수신 버튼(wake up)을 누른 채로 음성 입력</li><li><code>"TAP"</code>: 읍성 입력 수신 버튼(wake up)을 눌렀다 뗀 후 음성 입력</li><li><code>"WAKEWORD"</code>: 호출어를 말한 후 음성 입력</li></ul>  | 필수 |
 | `lang`                                                   | string   | 사용자 음성 입력이 어떤 언어로 인식되도록 할지 결정합니다. <ul><li><code>"en"</code>: 영어</li><li><code>"ja"</code>: 일본어</li><li><code>"ko"</code>: 한국어</li></ul> | 필수    |
@@ -196,10 +155,10 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
         "inputSource": "SELF",
         "payload": {
           "wakeWordName": "clova",
-          "wakeWordConfidence": ,
+          "wakeWordConfidence": 0.812312,
           "wakeWordIndices": {
             "startIndexInSamples": 0,
-            "endIndexInSamples": 16000,
+            "endIndexInSamples": 16000
           }
         }
       }

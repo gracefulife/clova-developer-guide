@@ -65,10 +65,10 @@ Content-Type: application/json; charset=UTF-8<br/>
         "inputSource": "SELF",
         "payload": {
           "wakeWordName": "clova",
-          "wakeWordConfidence": ,
+          "wakeWordConfidence": 0.812312,
           "wakeWordIndices": {
             "startIndexInSamples": 0,
-            "endIndexInSamples": 16000,
+            "endIndexInSamples": 16000
           }
         }
       }

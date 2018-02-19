@@ -306,10 +306,10 @@ Content-Type: application/json; charset=UTF-8
         "inputSource": "SELF",
         "payload": {
           "wakeWordName": "clova",
-          "wakeWordConfidence": ,
+          "wakeWordConfidence": 0.812312,
           "wakeWordIndices": {
             "startIndexInSamples": 0,
-            "endIndexInSamples": 16000,
+            "endIndexInSamples": 16000
           }
         }
       }
@@ -531,10 +531,10 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
         "inputSource": "SELF",
         "payload": {
           "wakeWordName": "clova",
-          "wakeWordConfidence": ,
+          "wakeWordConfidence": 0.812312,
           "wakeWordIndices": {
             "startIndexInSamples": 0,
-            "endIndexInSamples": 16000,
+            "endIndexInSamples": 16000
           }
         }
       }
