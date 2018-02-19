@@ -46,7 +46,7 @@ IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova
 
 ### Clova 앱 {#ClovaApp}
 
-{{ book.OrientedService }}가 개발하여 iOS나 Android 플랫폼으로 배포한 Clova 앱입니다. Clova에 명령을 내릴 수 있을 뿐만 아니라 Clova 기기를 등록하고 관리할 수 있는 앱입니다.
+{{ book.OrientedService }}가 개발하여 iOS나 Android 플랫폼으로 배포한 Clova 앱입니다. Clova에 명령을 내릴 수 있을 뿐만 아니라 클라이언트 기기를 등록하고 관리할 수 있는 앱입니다.
 
 ### Clova 인증 API {#ClovaAuthAPI}
 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하기 위해 사용해야 하는 API입니다. 자세한 내용은 [Clova 인증 API](/CIC/References/Clova_Auth_API.md) 문서를 참조합니다.
