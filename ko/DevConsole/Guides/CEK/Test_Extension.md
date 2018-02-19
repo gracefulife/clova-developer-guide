@@ -28,7 +28,7 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 <ol>
   <li>왼쪽 사이드 메뉴바 아래 <strong>테스트</strong> 메뉴를 클릭합니다. 메뉴를 클릭하면 <strong>Interaction 모델: 테스트</strong> 화면이 표시됩니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Menu.png" />
-  <li><strong>사용자 표현 문장입력</strong> 필드에 테스트할 발화문을 입력하고 <strong>테스트 요청</strong> 버튼을 클릭합니다.</li>
+  <li><strong>사용자 발화 예시 입력</strong> 필드에 테스트할 발화문을 입력하고 <strong>테스트 요청</strong> 버튼을 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Utterance_Example.png" />
 </ol>
 
@@ -43,11 +43,11 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 
 ## Clova 앱으로 extension 테스트하기 {#TestOnClovaApp}
 
-Extension을 실제 클라이언트인 Clova 앱에서 테스트해볼 수 있습니다. 이를 위해 extension 기본 정보를 등록하는 페이지의 **테스터 아이디** 필드에 개발자 본인이나 extension을 테스트할 사람의 <strong>NAVER 계정</strong>을 입력해야 합니다. 계정을 추가한 후 **저장** 버튼을 클릭하면 입력한 계정이 인증된 Clova 앱에서 개발 중인 extension을 테스트할 수 있습니다. Clova 앱에서 테스트를 중지하려면 입력한 계정 정보를 삭제하면 됩니다.
+Extension을 실제 클라이언트인 Clova 앱에서 테스트해볼 수 있습니다. 이를 위해 extension 기본 정보를 등록하는 페이지의 **테스터 ID** 필드에 개발자 본인이나 extension을 테스트할 사람의 <strong>NAVER 계정</strong>을 입력해야 합니다. 계정을 추가한 후 **저장** 버튼을 클릭하면 입력한 계정이 인증된 Clova 앱에서 개발 중인 extension을 테스트할 수 있습니다. Clova 앱에서 테스트를 중지하려면 입력한 계정 정보를 삭제하면 됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Add_Tester_ID.png)
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>테스터 아이디를 등록한 후 조금 기다리면 extension을 테스트해 볼 수 있습니다. 만약, 1시간 정도가 지나도 extension을 테스트할 수 없을 경우 포럼이나 제휴 담당자를 통해 문의하시기 바랍니다.</p>
+  <p>테스터 ID를 등록한 후 조금 기다리면 extension을 테스트해 볼 수 있습니다. 만약, 1시간 정도가 지나도 extension을 테스트할 수 없을 경우 포럼이나 제휴 담당자를 통해 문의하시기 바랍니다.</p>
 </div>

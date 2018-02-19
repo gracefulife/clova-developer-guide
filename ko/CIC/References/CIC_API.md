@@ -304,7 +304,21 @@ Content-Type: application/json; charset=UTF-8
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "profile": "CLOSE_TALK"
+      "lang": "ko",
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "wakeWordName": "clova",
+          "wakeWordConfidence": 0.812312,
+          "wakeWordIndices": {
+            "startIndexInSamples": 0,
+            "endIndexInSamples": 16000
+          }
+        }
+      }
     }
   }
 }
@@ -522,7 +536,21 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "profile": "CLOSE_TALK"
+      "lang": "ko",
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "wakeWordName": "clova",
+          "wakeWordConfidence": 0.812312,
+          "wakeWordIndices": {
+            "startIndexInSamples": 0,
+            "endIndexInSamples": 16000
+          }
+        }
+      }
     }
   }
 }

@@ -14,7 +14,8 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
 
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
-| `content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 리마인더에 사용자가 입력한 내용이 담긴 객체 |
+| `content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | (Deprecated) 추가한 리마인더에 사용자가 입력한 내용이 담긴 객체. `label` 필드로 대체될 예정입니다. |
+| `label`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 추가한 리마인더에 사용자가 입력한 내용이 담긴 객체. |
 | `repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 매주 반복되는 리마인더일 경우 반복할 요일 정보를 가지고 있는 객체 배열 |
 | `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 반복 주기 정보를 가지는 객체입니다. 이 객체의 `value` 필드는 다음과 같은 값을 가집니다. <ul><li>빈 문자열(<code>""</code>): 일회성 리마인더</li><li><code>"daily"</code>: 매일 반복되는 리마인더</li><li><code>"weekly"</code>: 매주 반복되는 리마인더</li></ul> |
 | `status`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 리마인더의 처리 여부를 나타내는 객체입니다. 이 객체의 `value` 필드는 다음과 같은 값을 가집니다. <ul><li><code>"TODO"</code>: 미완료된 리마인더</li><li><code>"DONE"</code>: 완료된 리마인더</li></ul> |
@@ -47,6 +48,10 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
     "type": "string",
     "value": "입금하기"
   },
+  "label": {
+    "type": "string",
+    "value": "입금하기"
+  },
   "status": {
     "type": "string",
     "value": "DONE"
@@ -70,6 +75,10 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
   },
   "repeatDay": [],
   "content": {
+    "type": "string",
+    "value": "비타민 먹기"
+  },
+  "label": {
     "type": "string",
     "value": "비타민 먹기"
   },
@@ -101,6 +110,10 @@ CIC는 사용자가 리마인더를 생성하면 생성한 리마인더의 정�
     }
   ],
   "content": {
+    "type": "string",
+    "value": "청소하기"
+  },
+  "label": {
     "type": "string",
     "value": "청소하기"
   },

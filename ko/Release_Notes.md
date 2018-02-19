@@ -2,6 +2,15 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-02-19
+
+### 플랫폼 변경 사항
+
+* CIC
+  * 사용자의 호출을 정확히 판단하기 위해 [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지에 initiator 필드를 추가
+  * 리마인더 및 동작 예약의 내용을 확인하기 위해 [Alerts.SetAlert](/CIC/References/CICInterface/Alerts.md#SetAlert) 지시 메시지에 label 필드를 추가
+  * 리마인더 및 동작 예약의 내용을 표시하기 위해 [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md), [ActionTimerList](/CIC/References/ContentTemplates/ActionTimerList.md), [Reminder](/CIC/References/ContentTemplates/Reminder.md), [ReminderList](/CIC/References/ContentTemplates/ReminderList.md) 템플릿에 label 필드를 추가
+
 ## 2018-02-05
 
 ### 플랫폼 변경 사항

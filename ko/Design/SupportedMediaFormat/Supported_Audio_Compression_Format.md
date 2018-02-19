@@ -6,5 +6,5 @@ Clova가 지원하는 오디오 압축 포맷은 다음과 같습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova가 제공하는 오디오 압축 포맷과 전송 방식은 더 늘어날 수 있습니다.</p>
+  <p>Clova가 지원하는 오디오 압축 포맷과 전송 방식은 더 늘어날 수 있습니다.</p>
 </div>

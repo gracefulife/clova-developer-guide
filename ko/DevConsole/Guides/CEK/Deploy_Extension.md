@@ -9,7 +9,7 @@ Extension을 배포할 때 일반적으로 다음 항목을 수행해야 합니�
 
 ## 배포 정보 입력 {#InputDeploymentInfo}
 
-Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)과 [Interaction 모델을 등록](/DevConsole/Guides/CEK/Register_Interaction_Model.md)한 후 배포 정보를 입력할 수 있습니다. Extension 등록 메뉴에서 **배포 정보**을 선택합니다.
+Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)과 [Interaction 모델을 등록](/DevConsole/Guides/CEK/Register_Interaction_Model.md)한 후 배포 정보를 입력할 수 있습니다. Extension 등록 메뉴에서 **배포 정보**를 선택합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Deployment_Info_Menu.png)
 
@@ -23,15 +23,15 @@ Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확
 * **Extension 심사용 설명**: [Extension 승인](#RequestExtensionSubmission) 프로세스에서 승인 담당자가 extension을 검증하는데 필요한 참고 정보로서 일반 사용자에게는 노출되지 않습니다. 안내 문구에 따라 작성합니다.
 * 서비스 국가 및 지역: 현재는 한국에만 extension을 배포할 수 있습니다.
 * **Extension 설명**: **Extension 페이지**에서 사용자에게 제공할 extension의 설명입니다. 안내 문구에 따라 작성합니다.
-* **Extension 요약 설명**: **Extension 스토어 홈**에서 프로모션 등의 안내 문구를 표시할 때 사용될 수 있는 설명입니다.
-* **대표 발화 예시**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. **Extension 페이지**에 표시됩니다. 특히, 첫 번째 예시문은 **Extension 스토어 홈**에서 extension 목록을 보여줄 때 표시됩니다.
+* **Extension 요약 설명**: Extension 스토어 홈에서 프로모션 등의 안내 문구를 표시할 때 사용될 수 있는 설명입니다.
+* **대표 발화 예시**: 사용자가 extension을 어떻게 사용할 수 있는지 보여주는 예시문입니다. **Extension 페이지**에 표시됩니다. 특히, 첫 번째 예시문은 Extension 스토어 홈에서 extension 목록을 보여줄 때 표시됩니다.
 * **검색 키워드**: 사용자가 특정 키워드로 extension을 검색할 때 그 검색 결과에 extension이 나타날 수 있도록 해줍니다.
-* **작은 아이콘**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **Extension 스토어 홈**이나 **Extension 페이지**에 표시됩니다.
+* **작은 아이콘**: 작은 크기(108px X 108px)의 extension 아이콘 파일입니다. **확장 서비스 관리**이나 **Extension 페이지**에 표시됩니다.
 * **큰 아이콘**: 큰 크기(512px X 512px)의 extension 아이콘 파일로서 추후 사용될 예정입니다.
 
 이렇게 입력된 정보는 Clova 앱 **확장 서비스 관리** 메뉴(Extension 스토어)에서 다음과 같이 표시됩니다.
 
-| Extension 스토어 홈 | Extension 페이지    |
+| Extension 스토어 홈 | Extension 페이지   |
 |-------------------|-------------------|
 | ![Extension List](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Store_Home.png) | ![Extension Details](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Page.png) |
 
@@ -40,9 +40,9 @@ Extension을 사용자에게 설명하기 위한 정보로서 Clova 앱의 **확
   <p><strong>Extension 페이지</strong>에 표시되는 일부 정보는 <a href="/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo">Extension 기본 정보를 등록</a>할 때 입력된 정보를 활용합니다.</p>
 </div>
 
-## 개인 정보 관리 및 규정 준수 정보 입력 {#InputComplianceInfo}
+## 개인 정보 보호 및 규정 준수 정보 입력 {#InputComplianceInfo}
 
-Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개인 정보 관리 및 규정 준수에 관련된 내용을 입력해야 합니다. Extension 등록 메뉴에서 **개인 정보 및 규정 준수**를 선택합니다.
+Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개인 정보 관리 및 규정 준수에 관련된 내용을 입력해야 합니다. Extension 등록 메뉴에서 **개인 정보 보호 및 규정 준수**를 선택합니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Policy_Menu.png)
 
@@ -62,22 +62,22 @@ Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개�
 
 ## 심사 신청하기 {#RequestExtensionSubmission}
 
-Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 최종적으로 등록한 extension에 대해 extension 심사를 신청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 심사하게 됩니다.
+Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 보호 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 최종적으로 등록한 extension에 대해 extension 심사를 신청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 심사하게 됩니다.
 
 * Extension이 정상 동작하고 검수 시 특별한 문제 사항이 없다면 extension은 심사를 통과하게 될 것이며, 심사를 통과하면 즉시 혹은 원하는 시간에 extension을 배포할 수 있게 됩니다.
 * 만약, 심사 과정에서 실행 오류가 있거나 사용자 시나리오 상의 심각한 문제 발견되면 운영자에 의해 배포 요청이 거절되며 신사 신청하기 전 단계로 돌아가게 됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
 
-등록한 extension 목록에서 **심사 신청** 메뉴를 클릭하여 extension 심사를 신청할 수 있습니다.
+등록한 extension 목록에서 **심사신청** 메뉴를 클릭하여 extension 심사를 신청할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_1.png)
 
-또는 [개인 정보 관리 및 규정 준수 정보](#InputComplianceInfo)를 입력하는 화면 마지막에 있는 **심사 신청** 버튼을 클릭해도 됩니다.
+또는 [개인 정보 보호 및 규정 준수 정보](#InputComplianceInfo)를 입력하는 화면 마지막에 있는 **심사신청** 버튼을 클릭해도 됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_2.png)
 
-**심사 신청**을 클릭하면 다음과 같이 운영자에게 해당 심사 신청에 대한 정보를 남길 수 있습니다. Extension의 첫 번째 심사 신청이라면 최초 심사 요청이라는 메시지와 어떤 extension인지 설명하는 메시지를 남기면 됩니다. Extension의 기능이나 interaction 모델을 업데이트했거나 반려된 extension을 수정하여 재심사를 요청할 때는 개선된 사항이나 반려 의견 반영 여부를 입력하면 됩니다.
+**심사신청**을 클릭하면 다음과 같이 운영자에게 해당 심사 신청에 대한 정보를 남길 수 있습니다. Extension의 첫 번째 심사 신청이라면 최초 심사 요청이라는 메시지와 어떤 extension인지 설명하는 메시지를 남기면 됩니다. Extension의 기능이나 interaction 모델을 업데이트했거나 반려된 extension을 수정하여 재심사를 요청할 때는 개선된 사항이나 반려 의견 반영 여부를 입력하면 됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Submission_Request_Message.png)
 
@@ -86,7 +86,7 @@ Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 관리 및 
   <p>심사 중에는 extension의 정보와 interaction 모델을 수정할 수 없습니다.</p>
 </div>
 
-심사는 개별 심사로 진행되며 심사를 위한 별도 환경에서 진행됩니다. 만약, [사용자 계정 연결](/CEK/Guides/Link_User_Account.md)이 필요한 서비스인 경우에는 [배포 정보를 입력](#InputDeploymentInfo)할 때 테스트를 위한 계정 정보를 **테스트용 지시어** 항목에 입력해야 합니다.
+심사는 개별 심사로 진행되며 심사를 위한 별도 환경에서 진행됩니다. 만약, [사용자 계정 연결](/CEK/Guides/Link_User_Account.md)이 필요한 서비스인 경우에는 [배포 정보를 입력](#InputDeploymentInfo)할 때 테스트를 위한 계정 정보를 **Extension 심사용 설명** 항목에 입력해야 합니다.
 
 Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습니다.
 
@@ -102,7 +102,7 @@ Extension을 심사할 때 살펴보는 기본 평가 항목은 다음과 같습
   * Extension의 설명, 카테고리, 검색 키워드와 같이 입력된 배포 정보가 extension에 맞게 입력되었는지 확인합니다.
   * Extension이 개인 정보 관리 규정 등 입력된 정책에 맞게 동작하는지 확인합니다.
 
-심사 중에 **심사 취소** 메뉴를 클릭하면 언제든지 심사 신청을 취소할 수 있습니다. 심사 신청을 취소하면 이전 상태로 돌아갑니다.
+심사 중에 **심사취소** 메뉴를 클릭하면 언제든지 심사 신청을 취소할 수 있습니다. 심사 신청을 취소하면 이전 상태로 돌아갑니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Cancel_Submission.png)
 

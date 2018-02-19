@@ -15,6 +15,7 @@ CIC는 사용자가 액션 타이머를 생성하면 생성한 액션 타이머�
 | 필드 이름       | 자료형    | 필드 설명                     |
 |---------------|---------|-----------------------------|
 | `action`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)      | 추가한 액션 타이머에 사용자가 설정한 동작이 담긴 객체. **현재 빈 문자열(`""`)이 입력되며 추후 확장을 위해 예약해둔 필드입니다.** |
+| `label`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)      | 사용자가 입력한 동작 내용이 담긴 객체 |
 | `repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | 매주 반복되는 액션 타이머일 경우 반복할 요일 정보를 가지고 있는 객체 배열 |
 | `repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | 반복 주기 정보를 가지는 객체입니다. 이 객체의 `value` 필드는 다음과 같은 값을 가집니다. <ul><li>빈 문자열(<code>""</code>): 일회성 액션 타이머</li><li><code>"daily"</code>: 매일 반복되는 액션 타이머</li><li><code>"weekly"</code>: 매주 반복되는 액션 타이머</li></ul> |
 | `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | 액션 타이머가 울릴 날짜와 시간 정보를 가지는 객체      |
@@ -41,6 +42,10 @@ CIC는 사용자가 액션 타이머를 생성하면 생성한 액션 타이머�
     "type": "string",
     "value": ""
   },
+  "label": {
+    "type": "string",
+    "value": "음악재생"
+  },
   "repeatPeriod": {
     "type": "string",
     "value": ""
@@ -63,6 +68,10 @@ CIC는 사용자가 액션 타이머를 생성하면 생성한 액션 타이머�
     "type": "string",
     "value": ""
   },
+  "label": {
+    "type": "string",
+    "value": "음악재생"
+  },
   "repeatPeriod": {
     "type": "string",
     "value": "daily"
@@ -84,6 +93,10 @@ CIC는 사용자가 액션 타이머를 생성하면 생성한 액션 타이머�
   "action": {
     "type": "string",
     "value": ""
+  },
+  "label": {
+    "type": "string",
+    "value": "음악재생"
   },
   "repeatPeriod": {
     "type": "string",

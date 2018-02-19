@@ -2,7 +2,7 @@
 주요 항목은 아래와 같습니다.
 
 * Extension 정보
-	* **Extension 아이디**: extension의 고유한 아이디값으로, 일반적으로 패키지 이름과 extension 이름의 조합으로 작성합니다. 샘플 주사위 extension의 아이디는 'my.clova.extension.sampledice'로 입력합니다.
+	* **Extension ID**: extension의 고유한 ID 값으로, 일반적으로 패키지 이름과 extension 이름의 조합으로 작성합니다. 샘플 주사위 extension의 ID는 'my.clova.extension.sampledice'로 입력합니다.
 	* **호출 이름**: extension을 실행할 때 부르는 이름으로 Clova 앱이나 스피커 형태의 기기에서 음성 인식이 잘 되는 단어를 선택합니다. 샘플 주사위 extension의 호출 이름은 '샘플 주사위' 입니다.
 
 * 서버 연동 설정
@@ -15,7 +15,7 @@
 		</div>
 
 	* **계정 연결 여부**: 인증 서버(OAuth 2.0기반)를 사용해 3rd party의 회원정보와 연동할 경우에만 사용합니다.
-		샘플 주사위 extension은 **아니오**로 설정합니다.
+		샘플 주사위 extension은 **아니요**로 설정합니다.
 * 배포 정보 및 개인 정보 보호 및 규정 준수
 
 	Extension 배포와 심사에 필요한 정보입니다. 이 튜토리얼의 내용을 수행할 때는 입력하지 않아도 됩니다.
