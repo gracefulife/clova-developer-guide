@@ -4,9 +4,11 @@
 주사위 놀이 extension은 이름처럼 주사위를 굴려 그 결과를 알려주는 extension 입니다.
 여기서는 실제로 서비스되고 있는 '주사위 놀이'와 중복되지 않도록 '샘플 주사위'라는 이름으로 만듭니다.
 
+사용자는 다음과 같이 샘플 주사위를 사용할 수 있습니다.
+
 {% include "/CEK/Tutorials/BasicInformation/DICE_Sample_Dialog.md" %}
 
 이 튜토리얼을 따라하면 다음과 같은 것을 익힐 수 있습니다.
 * [첫 번째 튜토리얼: 기초적인 extension 만들고 테스트하기](/CEK/Tutorials/Build_Simple_Extension.md)
 * [두 번째 튜토리얼: 예, 아니오 같은 기본적인 의사 표현 처리하기](/CEK/Tutorials/Handle_Builtin_Intents.md)
-* 세 번째 튜토리얼(추가 예정): 사용자가 입력한 정보를 활용하는 interaction 모델 적용하기
+* [세 번째 튜토리얼: 사용자가 입력한 정보 활용하기](/CEK/Tutorials/Use_Builtin_Type_Slots.md)

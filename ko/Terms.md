@@ -52,7 +52,7 @@ IoT 기기를 제어하는 [Clova Home extension](#ClovaHomeExtension)이 [Clova
 클라이언트가 [Clova access token](#ClovaAccessToken)을 획득하기 위해 사용해야 하는 API입니다. 자세한 내용은 [Clova 인증 API](/CIC/References/Clova_Auth_API.md) 문서를 참조합니다.
 
 ### Content Template {#ContentTemplate}
-CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화한 것입니다. 자세한 내용은 [content template](/CIC/References/Content_Templates.md) 문서를 참고합니다.
+CIC를 통해 전달되는 콘텐츠 정보를 일정 범주에 맞게 정형화한 것입니다. 자세한 내용은 [content template](/CIC/References/Content_Templates.md) 문서를 참조합니다.
 
 ### Context objects {#ContextObjects}
 클라이언트의 현재 [맥락 정보](#Context)를 표현하는 객체입니다. 자세한 내용은 [맥락 정보(Context)](/CIC/References/Context_Objects.md) 문서를 참조합니다.

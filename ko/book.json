@@ -27,7 +27,6 @@
       "IsBuilding": "빌드중",
       "CreateCustomIntent": "새로운 커스텀 intent 만들기",
       "CreateSlotType": "새로운 slot 타입 만들기",
-      "UseBuiltInSlotType": "Clova가 제공하는 built-in slot 타입 사용하기",
       "cek_publishing": "배포 정보",
       "cek_configuration": "서버 연동 설정",
       "cek_category": "분류",
@@ -63,8 +62,9 @@
       "cek_interaction_model": "Interaction 모델",
       "cek_builder_list_title_slottype": "등록된 slot 타입",
       "cek_builder_test_service_response": "서비스 응답",
-      "cek_builder_test_intent_result": "분석된 intent'",
+      "cek_builder_test_intent_result": "분석된 intent",
       "cek_builder_test_slot_result": "분석된 slot",
+      "cek_builder_test_slot_data": "분석된 slot 데이터",
       "cek_builder_test_request_json": "서비스 요청 JSON",
       "cek_builder_test_test_again": "테스트 재요청",
       "cek_builder_test_response_json": "서비스 응답 JSON",
@@ -110,7 +110,13 @@
       "cek_create": "만들기",
       "cek_builder_slottype_dictionary_title": "Slot 타입 사전",
       "cek_builder_intent_slot_title": "Slot 목록",
-      "cek_builder_intent_expression_title": "발화 예시 목록"
+      "cek_builder_intent_expression_title": "발화 예시 목록",
+      "cek_builder_new_slottype_builtin_title": "Clova가 제공하는 built-in slot 타입 사용하기",
+      "cek_builder_intent_slot_placeholder": "새로운 slot을 추가해보세요",
+      "cek_builder_utterance_select_slot": "Slot 타입을 선택해주세요",
+      "cek_builder_select_slottype_builtin": "Built-in slot 타입",
+      "cek_builder_slot_layer_select_slot": "등록된 slot 선택하기",
+      "cek_builder_test_no_response": "Response가 없습니다"
     }
   },
   "pdf": {
