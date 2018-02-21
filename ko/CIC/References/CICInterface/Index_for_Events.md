@@ -7,6 +7,7 @@
 | Alerts            | [`DeleteAlertFailed`](/CIC/References/CICInterface/Alerts.md#DeleteAlertFailed)       | 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. |
 | Alerts            | [`DeleteAlertSucceeded`](/CIC/References/CICInterface/Alerts.md#DeleteAlertSucceeded) | 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. |
 | Alerts            | [`RequestAlertStop`](/CIC/References/CICInterface/Alerts.md#RequestAlertStop)         | 클라이언트가 현재 울리고 있는 알람을 중지하도록 Clova에게 요청할 때 사용됩니다.  |
+| Alerts            | [`RequestSynchronizeAlert`](/CIC/References/CICInterface/Alerts.md#RequestSynchronizeAlert) | 클라이언트가 Clova의 클라우드 환경에 저장된 사용자의 알람 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. |
 | Alerts            | [`SetAlertFailed`](/CIC/References/CICInterface/Alerts.md#SetAlertFailed)             | 클라이언트가 특정 알람을 추가 또는 수정하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. |
 | Alerts            | [`SetAlertSucceeded`](/CIC/References/CICInterface/Alerts.md#SetAlertSucceeded)       | 클라이언트가 특정 알람을 추가 또는 수정하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. |
 | AudioPlayer       | [`PlayFinished`](/CIC/References/CICInterface/AudioPlayer.md#PlayFinished) | 클라이언트가 오디오 스트림 재생을 완료할 때 재생 완료된 오디오 스트림 정보를 CIC로 보고하기 위해 사용됩니다.        |

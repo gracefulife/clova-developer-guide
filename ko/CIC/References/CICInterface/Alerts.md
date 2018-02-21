@@ -32,10 +32,24 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 | [`DeleteAlertFailed`](#DeleteAlertFailed)       | Event     | 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. |
 | [`DeleteAlertSucceeded`](#DeleteAlertSucceeded) | Event     | 클라이언트가 클라이언트에 설정된 특정 알람을 삭제하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. |
 | [`RequestAlertStop`](#RequestAlertStop)         | Event     | 클라이언트가 현재 울리고 있는 알람을 중지하도록 Clova에게 요청할 때 사용됩니다.  |
+| [`RequestSynchronizeAlert`](#RequestSynchronizeAlert) | Event | 클라이언트가 Clova의 클라우드 환경에 저장된 사용자의 알람 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. |
 | [`SetAlert`](#SetAlert)                         | Directive | 클라이언트에게 알람을 새로 추가하거나 특정 알람을 수정하도록 지시합니다. |
 | [`SetAlertFailed`](#SetAlertFailed)             | Event     | 클라이언트가 특정 알람을 추가 또는 수정하는데 실패했음을 CIC로 보고하기 위해 사용됩니다. |
 | [`SetAlertSucceeded`](#SetAlertSucceeded)       | Event     | 클라이언트가 특정 알람을 추가 또는 수정하는데 성공했음을 CIC로 보고하기 위해 사용됩니다. |
 | [`StopAlert`](#StopAlert)                       | Directive | 클라이언트에게 특정 알람을 중지하도록 지시합니다.  |
+| [`SynchronizeAlert`](#SynchronizeAlert)         | Directive | 클라이언트에게 `payload` 필드에 있는 사용자의 알람 데이터를 동기화하도록 지시합니다.  |
+
+위 메시지 중 [`RequestSynchronizeAlert`](#RequestSynchronizeAlert) 이벤트 메시지와 [`SynchronizeAlert`](#SynchronizeAlert) 지시 메시지는 Clova와 클라이언트 사이에 알람, 일정과 같이 사용자 계정 관련된 정보를 동기화해야 할 때 사용됩니다. 이런 동기화 작업은 다음과 같은 상황에서 발생할 수 있습니다.
+
+* 사용자 계정을 이용하는 클라이언트 기기가 추가되었을 때
+* 클라이언트가 네트워크 접속 장애 등의 이유로 CIC에 다시 연결될 때
+* 다른 사용자가 사용을 시작하여 클라이언트 기기에 등록된 사용자 계정이 변경될 때
+* 클라이언트 기기가 페어링 앱과 연결이 해제된 후 다시 설정될 때
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>네트워크가 끊어지거나 사용자 계정 연결이 해제될 경우 사용자 계정에 등록된 알람 정보를 기기에서 제거해야 합니다.</p>
+</div>
 
 ## 알람 동작 구조 {#AlertsWorkFlow}
 
@@ -368,6 +382,47 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 ### See also
 * [`Alerts.StopAlert`](#StopAlert)
 
+## RequestSynchronizeAlert event {#RequestSynchronizeAlert}
+
+클라이언트가 Clova의 클라우드 환경에 저장된 사용자의 알람 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. CIC는 이 이벤트 메시지를 받으면, 클라이언트에게 [`Alerts.SynchronizeAlert`](#SynchronizeAlert) 지시 메시지를 전송합니다.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+없음
+
+### Message example
+{% raw %}
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "Alerts",
+      "name": "RequestSynchronizeAlert",
+      "messageId": "dd4f2794-6b14-4cc4-ae1b-5bfa1c469028"
+    },
+    "payload": {}
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`System.SynchronizeAlert`](/CIC/References/CICInterface/Alerts.md#SynchronizeAlert)
+
 ## SetAlert directive {#SetAlert}
 
 클라이언트에게 알람을 새로 추가하거나 특정 알람을 수정하도록 지시합니다. 클라이언트는 다음과 같이 알람 추가나 알람 수정을 수행할 수 있습니다.
@@ -569,3 +624,60 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ### See also
 * [`Alerts.AlertStopped`](#AlertStopped)
+
+## SynchronizeAlert directive {#SynchronizeAlert}
+클라이언트에게 `payload` 필드에 있는 사용자의 알람 데이터를 동기화하도록 지시합니다. 클라이언트는 Clova로부터 전달된 데이터에 맞게 클라이언트에 설정된 알람 값을 변경해야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `allAlerts[]`   | object array | 클라이언트가 동기화해야 할 알람 목록을 가지는 객체 배열. [`Alerts.SetAlert`](#SetAlert) 지시 메시지에 사용되는 [`payload`](#SetAlertPayload) 객체와 같은 포맷을 가집니다. | 항상    |
+
+### Message example
+
+{% raw %}
+
+```json
+// Deprecated example
+{
+  "directive": {
+    "header": {
+      "namespace": "Alerts",
+      "name": "SynchronizeAlert",
+      "messageId": "29745c13-0d70-408e-a4cc-946afba67524"
+    },
+    "payload": {
+      "allAlerts": [
+        {
+          "type": "REMINDER",
+          "token": "77179dbd-b65f-4341-a579-c1b2b97fc5b7",
+          "scheduledTime": "2017-09-25T09:00:50+09:00",
+          "assets": [
+            {
+              "assetId": "5141f693-5b39-46b7-80e4-3d71ed5508da",
+              "url": "clova://alert/bell/reminder"
+            },
+            {
+              "assetId": "b403ebe5-f911-4c5c-98b3-9f5320510235",
+              "url": "http://abc.de.fe/tts2"
+            }
+          ],
+          "assetPlayOrder": ["5141f693-5b39-46b7-80e4-3d71ed5508da", "b403ebe5-f911-4c5c-98b3-9f5320510235"]
+        },
+        {
+          "type": "ALARM",
+          "token": "ee4da70c-8328-4456-ab6f-c28cec626ae6",
+          "scheduledTime": "2017-09-26T11:00:50+09:00"
+        },
+        ...
+      ]
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`Alerts.RequestSynchronizeAlert`](#RequestSynchronizeAlert)
