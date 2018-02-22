@@ -639,7 +639,6 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 {% raw %}
 
 ```json
-// Deprecated example
 {
   "directive": {
     "header": {
