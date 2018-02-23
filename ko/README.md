@@ -32,7 +32,7 @@
       <td>
         <ul>
           <li><a href="/CEK/CEK_Overview.md#WhatisCEK">CEK란?</a></li>
-          <li><a href="/DevConsole/Guides/CEK/Define_Interaction_Model.md#UnderstandInteractionModel">Interaction 모델 이해하기</a></li>
+          <li><a href="/Design/Design_Guideline_For_Extension.md#DefineInteractionModel">Interaction 모델 이해하기</a></li>
         </ul>
       </td>
     </tr>
@@ -75,11 +75,11 @@
           </ul>
           <li>가이드</li>
           <ul>
-            <li><a href="/DevConsole/Guides/CEK/Register_Extension.md">Extension 등록하기</a></li>
-            <li><a href="/DevConsole/Guides/CEK/Define_Interaction_Model.md">Interaction 모델 정의하기</a></li>
             <li><a href="/CEK/Guides/Build_Custom_Extension.md">Custom extension 만들기</a></li>
             <li><a href="/CEK/Guides/Build_Clova_Home_Extension.md">Clova Home extension 만들기</a></li>
-            <li><a href="/CEK/Guides/LinkUserAccount.md">사용자 계정 연결하기</a></li>
+            <li><a href="/CEK/Guides/Link_User_Account.md">사용자 계정 연결하기</a></li>
+            <li><a href="/DevConsole/Guides/CEK/Register_Extension.md">Extension 등록하기</a></li>
+            <li><a href="/DevConsole/Guides/CEK/Register_Interaction_Model.md">Interaction 모델 등록하기</a></li>
           </ul>
           <li>레퍼런스</li>
           <ul>
