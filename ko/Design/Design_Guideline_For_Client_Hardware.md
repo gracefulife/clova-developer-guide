@@ -133,7 +133,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 ### 조명 가이드라인 {#LightGuideline}
 
 조명을 제공할 때 다음과 같은 사항을 따라야 합니다.
-  - 1 미터 내의 거리에서 시력이 0.7인 사람이 [조명 색상](#LightColor)을 구분할 수 있어야 합니다.
+  - 1m 내의 거리에서 시력이 0.7인 사람이 [조명 색상](#LightColor)을 구분할 수 있어야 합니다.
   - 조명 색상에 정의된 의미 외에 다른 상태나 의미를 적용하지 않을 것을 권고합니다.
   - 사용자가 그래픽 RGB 값의 색과 조명 색상이 동일하다고 인지할 수 있도록 조명 색상을 적용해야 합니다.
   - 필수로 표현해야 하는 [조명 효과](#LightEffect) 외에도 기기 부팅, 스피커 볼륨 조절, 충전 상태, 버튼 피드백과 같이 상황에 적절하거나 제조사의 UX 정책에 따라 조명 색상과 조명 효과를 추가할 수 있습니다.
@@ -159,6 +159,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 | Alert         | 알람 소리, 타이머 소리, 리마인더 소리, 리마인더 발화, 긴급 경보음 등의 오디오 콘텐츠             |
 | Content       | 사용자 요청에 대한 음악, 동화, 뉴스, Podcast 등의 오디오 콘텐츠                            |
 | Dialogue      | 사용자 요청에 대한 TTS 오디오 콘텐츠                                                  |
+| Feedback      | 초기화음, 벨소리(ring tone), 통화 연결음(ringback tone)                              |
 | Notification  | 비프음, 시스템 상태 발화(배터리 부족 알림, 블루투스 연결 해제 알림 등), 알림음, 알림 발화         |
 
 <div class="note">
@@ -171,32 +172,62 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 * 물리 버튼의 효과음은 즉시 재생되어야 하며 이를 위해 mixing 방식으로 효과음을 출력해야 합니다.
 * 오디오 콘텐츠는 즉시 재생되어야 합니다. 만약, 이미 재생 중인 오디오 콘텐츠가 있다면 이를 배경음(background)으로 처리하고 새로운 오디오 콘텐츠를 재생해야 합니다.
 * 다만, 이미 재생 중인 오디오 콘텐츠와 새로 재생해야 할 오디오 [콘텐츠의 타입](#AudioInterruptionRule)이 서로 같다면 다음과 같이 처리합니다.
-  - **Alert, Dialogue, Content 타입**: 재생 중인 오디오 콘텐츠의 재생을 중지(cancel)하고 새로운 오디오 콘텐츠를 재생합니다.
+  - **Alert, Content, Dialogue, Feedback 타입**: 재생 중인 오디오 콘텐츠의 재생을 중지(cancel)하고 새로운 오디오 콘텐츠를 재생합니다.
   - **Notification 타입**: 현재 재생 중인 오디오 콘텐츠를 계속 재생하고 새로운 오디오 콘텐츠를 재생 대기열(queue)에 보관합니다. 이미 재생 중인 오디오 콘텐츠를 재생한 후 재생 대기열에 있는 순서대로 오디오 콘텐츠를 재생합니다.
+* 오디오 재생을 중지할 경우 현재 재생 중인 오디오 콘텐츠부터 재생을 중지해야 합니다.
 
 다음은 위 규칙을 토대로 오디오 콘텐츠 타입에 따라 이미 재생 중인 오디오 콘텐츠를 어떻게 처리해야 하는지 나타냅니다.
 
 <table style="text-align:center">
   <thead>
     <tr>
-      <th rowspan="2">재생 중인 타입</th><th colspan="4">재생해야 할 타입</th><th rowspan="2">물리 버튼 효과음</th>
+      <th rowspan="2">재생 중인 타입</th><th colspan="5">재생해야 할 타입</th><th rowspan="2">물리 버튼 효과음</th>
     </tr>
     <tr>
-      <th>Alert</th><th>Content</th><th>Dialogue</th><th>Notification</th>
+      <th>Alert</th><th>Content</th><th>Dialogue</th><th>Feedback</th><th>Notification</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Alert</th><td>재생 중지</td><td>배경음 처리</td><td>배경음 처리</td><td>배경음 처리</td><td rowspan="4">Mixing 처리</td>
+      <th>Alert</th>
+      <td><span class="audioInterruptionRule cancelPlayback">재생 중지</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td rowspan="5"><span class="audioInterruptionRule">Mixing 처리</span></td>
     </tr>
     <tr>
-      <th>Content</th><td>배경음 처리</td><td>재생 중지</td><td>배경음 처리</td><td>배경음 처리</td>
+      <th>Content</th>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule cancelPlayback">재생 중지</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
     </tr>
     <tr>
-      <th>Dialogue</th><td>배경음 처리</td><td>배경음 처리</td><td>재생 중지</td><td>배경음 처리</td>
+      <th>Dialogue</th>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule cancelPlayback">재생 중지</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
     </tr>
     <tr>
-      <th>Notification</th><td>배경음 처리</td><td>배경음 처리</td><td>배경음 처리</td><td>계속 재생(queue)</td>
+      <th>Feedback</th>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule cancelPlayback">재생 중지</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+    </tr>
+    <tr>
+      <th>Notification</th>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule backgroundPlay">배경음 처리</span></td>
+      <td><span class="audioInterruptionRule continuePlayback">계속 재생(queue)</span></td>
     </tr>
   </tbody>
 </table>
@@ -213,7 +244,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 사용자 음성 입력을 수신하는 attending, hearing 상태에서 새로운 오디오 콘텐츠 재생 요청이 들어오면 다음과 같이 처리해야 합니다.
 
 * **Alert/dialogue/content** 타입의 오디오 콘텐츠를 재생해야 하는 경우 사용자 음성 입력 수신을 취소하고 해당 오디오 콘텐츠를 재생해야 합니다.
-* **Notification** 타입의 오디오 콘텐츠를 재생해야 하는 경우 Notification 오디오 콘텐츠를 배경음으로 재생해야 합니다.
+* **Notification** 타입이나 **Feedback**의 오디오 콘텐츠를 재생해야 하는 경우 해당 오디오 콘텐츠를 배경음으로 재생해야 합니다.
 
 ### 효과음 {#SoundEffect}
 
