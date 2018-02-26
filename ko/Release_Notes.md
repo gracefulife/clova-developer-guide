@@ -2,6 +2,15 @@
 
 이 페이지는 Clova 플랫폼과 문서의 릴리즈 노트를 제공합니다.
 
+## 2018-02-26
+
+### 플랫폼 변경 사항
+
+* CIC
+  * [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지 initiator 필드에 deviceUUID 필드를 추가
+  * 알람 동기화와 관련된 [RequestSynchronizeAlert](/CIC/References/CICInterface/Alerts.md#RequestSynchronizeAlert) 이벤트 메시지와 [SynchronizeAlert](/CIC/References/CICInterface/Alerts.md#SynchronizeAlert) 지시 메시지를 [Alerts](/CIC/References/CICInterface/Alerts.md) 네임스페이스에 추가
+  * System 네임스페이스에서 알람 동기화와 관련된 일부 필드를 제거할 예정
+
 ## 2018-02-19
 
 ### 플랫폼 변경 사항
