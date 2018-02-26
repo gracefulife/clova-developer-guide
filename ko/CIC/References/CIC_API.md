@@ -305,11 +305,14 @@ Content-Type: application/json; charset=UTF-8
         "type": "WAKEWORD",
         "inputSource": "SELF",
         "payload": {
-          "wakeWordName": "clova",
-          "wakeWordConfidence": 0.812312,
-          "wakeWordIndices": {
-            "startIndexInSamples": 0,
-            "endIndexInSamples": 16000
+          "deviceUUID": "f003af9d-14c5-424b-b1f9-f0134bd0ed86",
+          "wakeWord": {
+            "name": "clova",
+            "confidence": 0.812312,
+            "indices": {
+              "startIndexInSamples": 0,
+              "endIndexInSamples": 16000
+            }
           }
         }
       }
@@ -530,11 +533,14 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
         "type": "WAKEWORD",
         "inputSource": "SELF",
         "payload": {
-          "wakeWordName": "clova",
-          "wakeWordConfidence": 0.812312,
-          "wakeWordIndices": {
-            "startIndexInSamples": 0,
-            "endIndexInSamples": 16000
+          "deviceUUID": "f003af9d-14c5-424b-b1f9-f0134bd0ed86",
+          "wakeWord": {
+            "name": "clova",
+            "confidence": 0.812312,
+            "indices": {
+              "startIndexInSamples": 0,
+              "endIndexInSamples": 16000
+            }
           }
         }
       }
