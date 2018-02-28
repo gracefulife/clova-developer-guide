@@ -1,5 +1,5 @@
 # Extensionをテストする
-登録したExtensionとinteraction modelは、配布する前にテストすることができます。次の項目を確認して、Extensionとinteraction modelをテストします。
+登録したExtensionと対話モデルは、配布する前にテストすることができます。次の項目を確認して、Extensionと対話モデルをテストします。
 
 * (Custom Extension専用)[対話モデルをビルドする](#BuildInteractionModel)
 * (Custom Extension専用)[対話モデルをテストする](#TestInteractionModel)
@@ -7,12 +7,12 @@
 
 ## 対話モデルをビルドする {#BuildInteractionModel}
 
-Custom Extensionを配布する場合、先に[interaction modelを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)する必要があります。また、定義されたinteraction modelを[テスト](#TestInteractionModel)または使用するには、そのinteraction modelをビルドする必要があります。次のように定義されたinteraction modelをビルドできます。
+Custom Extensionを配布する場合、先に[対話モデルを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)する必要があります。また、定義された対話モデルを[テスト](#TestInteractionModel)または使用するには、その対話モデルをビルドする必要があります。次のように定義された対話モデルをビルドできます。
 
 <ol>
-  <li>登録したExtensionのリストから、ビルドするinteraction modelの<strong>{{ book.DevConsole.cek_edit }}</strong>メニューをクリックします。</li>
+  <li>登録したExtensionのリストから、ビルドする対話モデルの<strong>{{ book.DevConsole.cek_edit }}</strong>メニューをクリックします。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png" />
-  <li><strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}</strong>画面で、左上にある<strong>{{ book.DevConsole.BuildButton }}</strong>ボタンをクリックすると、interaction modelのビルドが開始されます。対話モデルのサイズなどによって、3~5分ぐらいかかることがあります。</li>
+  <li><strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}</strong>画面で、左上にある<strong>{{ book.DevConsole.BuildButton }}</strong>ボタンをクリックすると、対話モデルのビルドが開始されます。対話モデルのサイズなどによって、3~5分ぐらいかかることがあります。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Build_Interaction_Model.png" />
 </ol>
 
@@ -23,7 +23,7 @@ Custom Extensionを配布する場合、先に[interaction modelを登録](/DevC
 
 ## 対話モデルをテストする {#TestInteractionModel}
 
-[対話モデルのビルド](#BuildInteractionModel)が完了すると、interaction modelをテストできます。次のように発話をテストできます。
+[対話モデルのビルド](#BuildInteractionModel)が完了すると、対話モデルをテストできます。次のように発話をテストできます。
 
 <ol>
   <li>左側のナビゲーションで<strong>{{ book.DevConsole.cek_test }}</strong>メニューをクリックします。メニューをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_test }}</strong>画面が表示されます。</li>
@@ -32,7 +32,7 @@ Custom Extensionを配布する場合、先に[interaction modelを登録](/DevC
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Utterance_Example.png" />
 </ol>
 
-テストが完了すると、次のような結果を確認できます。結果を基に、下記の項目を確認します。
+テストが完了すると、次のような結果を確認できます。結果から、下記の項目を確認します。
 
 * **{{ book.DevConsole.cek_builder_test_service_response }}**項目から、[登録したCustom Extension](/DevConsole/Guides/CEK/Register_Extension.md)が正しく応答しているか確認します。
 * **{{ book.DevConsole.cek_builder_test_intent_result }}**項目と**{{ book.DevConsole.cek_builder_test_slot_result }}**項目から、intentとslotが正しく認識されているか確認します。

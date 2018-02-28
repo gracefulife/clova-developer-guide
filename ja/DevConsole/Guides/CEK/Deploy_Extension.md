@@ -1,5 +1,4 @@
-# Extensionを配布する
-[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(スキルストア)で配布されたExtensionを使用できるようになります。
+# Extensionを配布する [Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(スキルストア)で配布されたExtensionを使用できるようになります。
 
 Extensionの配布は、通常、次の順で行われます。
 
@@ -20,7 +19,7 @@ Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Ex
 Extensionをユーザーに説明するための情報として、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)でユーザーに提供されます。次の情報を入力する必要があります。
 
 * **{{ book.DevConsole.cek_category }}**：Extensionのカテゴリです。ユーザーがカテゴリごとにExtensionのリストを確認したり、検索する際に利用されます。
-* **{{ book.DevConsole.cek_test_instructions }}**：[Extensionの承認](#RequestExtensionSubmission)プロセスで承認担当者がExtensionを検討する際、必要とされる参考情報です。エンドユーザーには表示されません。案内に従って作成します。
+* **{{ book.DevConsole.cek_test_instructions }}**：[Extensionの審査](#RequestExtensionSubmission)プロセスで審査担当者がExtensionを確認する際、必要とされる参考情報です。エンドユーザーには表示されません。案内に従って作成します。
 * サービス国および地域：現在、韓国にのみExtensionを配布できます。
 * **{{ book.DevConsole.cek_full_skill_desc }}**：**{{ book.DevConsole.ExtensionPage }}**でユーザーに提供するExtensionの説明です。案内に従って作成します。
 * **{{ book.DevConsole.cek_short_skill_desc }}**：**{{ book.DevConsole.ExtensionHome }}**でプロモーションなどの案内を表示する際に使用される説明です。
@@ -65,7 +64,7 @@ Extensionの配布に必要な情報を入力する最後の段階です。プ�
 Extensionの[配布情報](#InputDeploymentInfo)と[プライバシーポリシーおよびコンプライアンス情報](#InputComplianceInfo)まで入力すると、登録したExtensionの審査をリクエストできます。Clovaの運営者は、登録されたExtensionの情報、実際の動作確認と適合性などを審査します。
 
 * Extensionが正常に動作し、検討した結果特に異常がない場合、Extensionは審査を通過します。審査を通過すると、直ちに、または好きな時にExtensionを配布できます。
-* もし審査中に実行エラーが発生したり、ユーザーシナリオの深刻な問題が見つかったりした場合、運営者によって配布のリクエストがリジェクトされ、審査をリクエストする前に戻ります。
+* もし審査中に実行エラーが発生したり、ユーザーシナリオに深刻な問題が見つかったりした場合、運営者によって配布のリクエストがリジェクトされ、審査をリクエストする前に戻ります。
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
 
@@ -77,22 +76,22 @@ Extensionの審査をリクエストするには、登録したExtensionのリ�
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_2.png)
 
-**{{ book.DevConsole.cek_request_submit }}**をクリックすると、次のように審査のリクエストに関する情報を運営者に送信できます。Extensionの最初の審査リクエストの場合、最初の審査リクエストというメッセージと、Extensionを説明するメッセージを記載します。Extensionの機能やinteraction modelにアップデートがあったか、またはリジェクトされたExtensionを修正して再審査をリクエストする場合、改善事項やリジェクト意見の反映有無を入力します。
+**{{ book.DevConsole.cek_request_submit }}**をクリックすると、次のように審査のリクエストに関する情報を運営者に送信できます。Extensionの最初の審査リクエストの場合、最初の審査リクエストというメッセージと、Extensionを説明するメッセージを記載します。Extensionの機能や対話モデルにアップデートがあったか、またはリジェクトされたExtensionを修正して再審査をリクエストする場合、改善事項やリジェクト意見の反映有無を入力します。
 
 ![](/DevConsole/Resources/Images/DevConsole-Submission_Request_Message.png)
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>審査中には、Extensionの情報とinteraction modelを修正できません。</p>
+  <p>審査中には、Extensionの情報と対話モデルを修正できません。</p>
 </div>
 
-審査はExtensionごとに、審査のための別の環境で行われます。もし、[ユーザーアカウントとのリンク](/CEK/Guides/Link_User_Account.md)が必要なサービスの場合、[配布情報を入力](#InputDeploymentInfo)する際、テストのためのアカウントを**{{ book.DevConsole.cek_test_instructions }}**項目に入力する必要があります。
+審査はExtensionごとに、審査環境で行われます。もし、[ユーザーアカウントとのリンク](/CEK/Guides/Link_User_Account.md)が必要なサービスの場合、[配布情報を入力](#InputDeploymentInfo)する際、テストのためのアカウントを**{{ book.DevConsole.cek_test_instructions }}**項目に入力する必要があります。
 
 Extensionを審査する際に確認する評価項目は次のとおりです。
 
 * Extensionのビルドの検証
   * Extensionがサービスに適切な用語を使用しているか確認します。
-  * Intent、slotなどのinteraction modelを検証します。
+  * インテント、スロットなどの対話モデルを検証します。
   * Extensionの[詳細な目標](/Design/Design_Guideline_For_Extension.md#SettingGoal)に合ったサービスを提供しているか確認します。
 * [使用シナリオ](/Design/Design_Guideline_For_Extension.md#MakeUseCaseScenarioScript)の検証
   * 会話のコンテクストに不自然なところがないか確認します。

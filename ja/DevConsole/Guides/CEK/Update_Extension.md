@@ -10,7 +10,7 @@ Extensionが審査を通過し、配布が承認されると、そのExtension�
 **{{ book.DevConsole.cek_version_service }}**バージョンのExtensionは、現在サービス中の内容を反映しているため、修正することができません。Extensionをアップデートするには、コピーされた**{{ book.DevConsole.cek_version_test }}**バージョンを使用します。Extensionに次の項目に該当するアップデート事項がある場合、**{{ book.DevConsole.cek_version_test }}**バージョンのExtensionに反映後、再び審査をリクエストします。
 * [基本情報](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)
 * [サーバーとの連携情報](/DevConsole/Guides/CEK/Register_Extension.md#SetServerConnection)
-* [Iinteraction model](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
+* [対話モデル](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
 * [配布情報](/DevConsole/Guides/CEK/Deploy_Extension.md)
 
 審査を通過すると、**{{ book.DevConsole.cek_version_service }}**バージョンから、アップデートが反映された**{{ book.DevConsole.cek_version_test }}**バージョンに置き換えられます。それからまた、**{{ book.DevConsole.cek_version_service }}**バージョンのExtensionをコピーし、**{{ book.DevConsole.cek_version_test }}**バージョンのExtensionを生成します。
