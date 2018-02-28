@@ -25,7 +25,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 |------------------------|--------------------------------------------------------------------|
 | Attending              | 클라이언트가 사용자의 음성 입력을 수신하려고 대기하는 상태                        |
 | Error                  | 시스템 오류가 발생한 상태                                                |
-| Hearing                | 클라이언트가 사용자의 음성 입력을 수신하는 중인 상태                            |
+| Listening              | 클라이언트가 사용자의 음성 입력을 수신하는 중인 상태                            |
 | Idle                   | 클라이언트가 아무런 작업도 수행하고 있지 않은 상태                             |
 | Mute on                | 마이크 음소거를 설정한 상태                                               |
 | Processing & reporting | Clova가 사용자의 음성 요청을 처리 중이거나 스피커를 통해 Clova 음성을 출력 중인 상태 |
@@ -121,7 +121,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 | 상태 또는 이벤트               | 조명 효과 적용                | 필수 여부 |
 |----------------------------|----------------------------|:---------:|
-| Attending, hearing 상태     | Green 조명 점등              | 필수     |
+| Attending, listening 상태     | Green 조명 점등              | 필수     |
 | End 상태                    | Warm White 조명 천천히 소등     | 필수     |
 | Error 상태                  | Red 조명 천천히 점멸 반복       | 필수     |
 | Mute on 상태                | Red 조명 점등                | 필수     |
@@ -239,9 +239,9 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 * 이미 재생 중인 오디오 콘텐츠가 있다면 attending 상태부터 processing & reporting 상태까지 이를 배경음(background)으로 처리해야 합니다.
 * 음성 입력 대기 시간을 초과하거나 사용자 요청을 처리하는데 실패한 경우 배경음으로 처리했던 오디오 콘텐츠를 원래대로 재생해야 합니다.
 * 요청 처리 결과에 따라 다른 오디오 콘텐츠를 재생해야 하는 경우 [기본 오디오 재생 규칙](#AudioInterruptionRule)에 따라 오디오 콘텐츠를 재생해야 합니다.
-* Multi-turn 대화를 시도할 때 추가로 갖게되는 hearing, processing & reporting 상태에도 위와 같은 규칙을 따릅니다.
+* Multi-turn 대화를 시도할 때 추가로 갖게되는 listening, processing & reporting 상태에도 위와 같은 규칙을 따릅니다.
 
-사용자 음성 입력을 수신하는 attending, hearing 상태에서 새로운 오디오 콘텐츠 재생 요청이 들어오면 다음과 같이 처리해야 합니다.
+사용자 음성 입력을 수신하는 attending, listening 상태에서 새로운 오디오 콘텐츠 재생 요청이 들어오면 다음과 같이 처리해야 합니다.
 
 * **Alert/dialogue/content** 타입의 오디오 콘텐츠를 재생해야 하는 경우 사용자 음성 입력 수신을 취소하고 해당 오디오 콘텐츠를 재생해야 합니다.
 * **Notification** 타입이나 **Feedback**의 오디오 콘텐츠를 재생해야 하는 경우 해당 오디오 콘텐츠를 배경음으로 재생해야 합니다.
@@ -382,7 +382,7 @@ Bar 타입의 voice agent는 상황에 따라 다음과 같이 표현되어야 �
 | 상태 이름                | 애니메이션 효과                                                                  | 예시                                                                             |
 |------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Attending              | Green1 색상의 bar가 1초 내로 서서히 표시되어야 합니다.                                  | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Attending.gif" /> |
-| Hearing                | 말소리 크기에 따라 중앙부터 Warm White, Green2 색상 순으로 색상 영역이 확장되어야 합니다.      | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Hearing.gif" /> |
+| Listening                | 말소리 크기에 따라 중앙부터 Warm White, Green2 색상 순으로 색상 영역이 확장되어야 합니다.      | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Listening.gif" /> |
 | Processing & reporting | Warm White 색상 영역이 좌우로 움직여야 합니다.                                        | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-ProcessingAndReporting.gif" /> |
 | Mute on                | Red 색상의 bar와 음소거 또는 마이크 아이콘이 나타나고, 2초 후에 아이콘이 사라져야 합니다.       | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-MuteOn.gif" /> |
 | Error                  | Red 색상의 bar와 오류 아이콘이 나타나고, 2초 후에 아이콘은 사라져야 합니다.                  | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Bar_Type-Error.gif" />  |
@@ -404,7 +404,7 @@ Icon A 타입의 voice agent는 상황에 따라 다음과 같이 표현되어�
 |------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 | Loading                | Green1 색상의 원을 그리며 표시되어야 합니다.                                          | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Loading.gif" /> |
 | Attending              | 애니메이션 효과가 없는 Green1 색상의 원이 표시됩니다.                                   | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Attending.png" /> |
-| Hearing                | 말소리 크기에 따라 원의 색을 아래에서 위로 Warm White, Green2 색상 순으로 색상 영역이 확장되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Hearing.gif" /> |
+| Listening                | 말소리 크기에 따라 원의 색을 아래에서 위로 Warm White, Green2 색상 순으로 색상 영역이 확장되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Listening.gif" /> |
 | Processing & reporting | Green2, Warm White 색상이 원을 따라 움직여야 합니다.                                  | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-ProcessingAndReporting.gif" /> |
 | Mute on                | Red 색상의 음소거 또는 마이크 아이콘이 나타나고, "마이크 음소거 상태입니다."라는 텍스트가 표시되어야 합니다. | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-MuteOn.gif" /> |
 | Error                  | Red 색상의 오류 아이콘이 나타나고, 오류를 설명하는 간략한 텍스트가 표시되어야 합니다.            | <img style="width:600px" src="/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_A_Type-Error.gif" /> |
@@ -427,7 +427,7 @@ Icon B 타입의 voice agent는 상황에 따라 다음과 같이 표현되어�
 | Idle                     | 애니메이션 효과가 없는 Warm White 색상의 아이콘을 표시합니다.                           | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Idle.png) |
 | Loading                  | Green1 색상으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                            | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Loading.gif) |
 | Attending                | 애니메이션 효과가 없는 Green1 색상의 아이콘을 표시합니다.                                                      | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Attending.png) |
-| Hearing                  | Warm White, Green2 색상 순으로 표시된 영역이 Green1 색상의 원 위에서 원을 그리며 표시되어야 합니다.                 | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Hearing.gif) |
+| Listening                  | Warm White, Green2 색상 순으로 표시된 영역이 Green1 색상의 원 위에서 원을 그리며 표시되어야 합니다.                 | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Listening.gif) |
 | Processing & reporting   | Warm White, Green2 색상 순으로 아이콘 주변의 원을 그리며 표시되어야 합니다.                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-ProcessingAndReporting.gif) |
 | Mute on                  | Red 색상의 음소거 또는 마이크 아이콘이 표시되어야 합니다.                                                     | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-MuteOn.gif) |
 | Error                    | Red 색상의 오류 아이콘이 표시되어야 합니다.                                                                | ![](/Design/Resources/Images/Clova-Client-Voice_Agent-Icon_B_Type-Error.gif) |

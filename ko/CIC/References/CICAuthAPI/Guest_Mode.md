@@ -1,3 +1,4 @@
+{% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}
 ### Remarks {#GuestMode}
 사용자에게 {{ book.TargetServiceForClientAuth }} 계정 인증 없이 guest 모드 형태의 서비스를 제공하려면 다음 내용을 따릅니다.
 
@@ -23,3 +24,4 @@
        --data-urlencode 'response_type=code' \
        --data-urlencode 'state=FKjaJfMlakjdfTVbES5ccZ'
 </code></pre>
+{% endif %}
