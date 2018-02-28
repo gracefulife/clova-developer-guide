@@ -1,8 +1,8 @@
 # Extensionをテストする
 登録したExtensionとinteraction modelは、配布する前にテストすることができます。次の項目を確認して、Extensionとinteraction modelをテストします。
 
-* (custom Extension専用)[対話モデルをビルドする](#BuildInteractionModel)
-* (custom Extension専用)[対話モデルをテストする](#TestInteractionModel)
+* (Custom Extension専用)[対話モデルをビルドする](#BuildInteractionModel)
+* (Custom Extension専用)[対話モデルをテストする](#TestInteractionModel)
 * [ClovaアプリでExtensionをテストする](#TestOnClovaApp)
 
 ## 対話モデルをビルドする {#BuildInteractionModel}
@@ -34,10 +34,10 @@ Custom Extensionを配布する場合、先に[interaction modelを登録](/DevC
 
 テストが完了すると、次のような結果を確認できます。結果を基に、下記の項目を確認します。
 
-* **{{ book.DevConsole.cek_builder_test_service_response }}**項目から、[登録したcustom Extension](/DevConsole/Guides/CEK/Register_Extension.md)が正しく応答しているか確認します。
+* **{{ book.DevConsole.cek_builder_test_service_response }}**項目から、[登録したCustom Extension](/DevConsole/Guides/CEK/Register_Extension.md)が正しく応答しているか確認します。
 * **{{ book.DevConsole.cek_builder_test_intent_result }}**項目と**{{ book.DevConsole.cek_builder_test_slot_result }}**項目から、intentとslotが正しく認識されているか確認します。
-* **{{ book.DevConsole.cek_builder_test_request_json }}**項目から、CEKがcustom Extensionに送る[リクエストメッセージ](/CEK/References/CEK_API.md#CustomExtRequestMessage)に異常がないか確認します。JSONファイルを修正してから**{{ book.DevConsole.cek_builder_test_test_again }}**ボタンをクリックすると、再度テストできます。
-* **{{ book.DevConsole.cek_builder_test_response_json }}**項目から、登録したcustom Extensionが正しく[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)を返しているか確認します。
+* **{{ book.DevConsole.cek_builder_test_request_json }}**項目から、CEKがCustom Extensionに送る[リクエストメッセージ](/CEK/References/CEK_API.md#CustomExtRequestMessage)に異常がないか確認します。JSONファイルを修正してから**{{ book.DevConsole.cek_builder_test_test_again }}**ボタンをクリックすると、再度テストできます。
+* **{{ book.DevConsole.cek_builder_test_response_json }}**項目から、登録したCustom Extensionが正しく[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)を返しているか確認します。
 
 ![](/DevConsole/Resources/Images/DevConsole-Test_Result.png)
 

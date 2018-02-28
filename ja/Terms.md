@@ -61,7 +61,7 @@ CICから渡されるコンテンツ情報をスケジュールカテゴリに�
 任意の拡張された機能を提供する[Extension](#ClovaExtension)です。Custom Extensionを利用すると、音楽、ショッピング、金融など、外部サービスの機能を提供できます。詳細については、[Custom Extensionを作成する](/CEK/Guides/Build_Custom_Extension.md)ドキュメントを参照してください。
 
 ### Custom Extensionのメッセージ {#CustomExtMessage}
-[Clova Extensions Kit](#CEK)と[custom Extension](#CustomExtension)が情報のやり取りをする際に使用するメッセージです。詳細については、[Custom Extensionのメッセージ](/CEK/References/CEK_API.md#CustomExtMessage)ドキュメントを参照してください。
+[Clova Extensions Kit](#CEK)と[Custom Extension](#CustomExtension)が情報のやり取りをする際に使用するメッセージです。詳細については、[Custom Extensionのメッセージ](/CEK/References/CEK_API.md#CustomExtMessage)ドキュメントを参照してください。
 
 ### Discovery機能 {#Discovery}
 ユーザーアカウントに登録されたIoTデバイスのリストをクライアントデバイスに提供する機能です。詳細については、[Discoveryを提供する](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery)ドキュメントを参照してください。
@@ -92,19 +92,19 @@ Clova Extensionが処理するユーザーの意図を区分したカテゴリ�
 
 ### IntentRequest {#IntentRequest}
 
-ユーザーのリクエストを解析した結果([Intent](#Intent))を[custom Extension](#CustomExtension)に送る際に使用されるリクエストメッセージタイプです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
+ユーザーのリクエストを解析した結果([Intent](#Intent))を[Custom Extension](#CustomExtension)に送る際に使用されるリクエストメッセージタイプです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
 
 ### 対話モデル {#InteractionModel}
 [Custom Extension](#CustomExtension)が音声から認識されたユーザーのリクエストをExtensionに送るために、標準化したフォーマット(JSON)に変換するルールを指定したものです。詳細については、[対話モデル](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
 
 ### LaunchRequest {#LaunchRequest}
-ユーザーが特定のモードまたは特定の[custom Extension](#CustomExtension)を使用すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
+ユーザーが特定のモードまたは特定の[Custom Extension](#CustomExtension)を使用すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
 
 ### OAuth 2.0
 アクセス権限を委任するためのオープン標準です。インターネットのユーザーが他のウェブサービスやアプリケーションのユーザーアカウントにアクセスできる権限を付与する規約です。Clovaプラットフォームでは、クライアントが[Clovaアクセストークン](#ClovaAccessToken)を取得したり、ユーザーが特定のExtensionを使用する際、自身の[アカウントをリンク](/CEK/Guides/Link_User_Account.md)するために使用されます。詳細については、[https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)を参照してください。
 
 ### SessionEndedRequest {#SessionEndedRequest}
-ユーザーが特定のモードまたは特定の[custom Extension](#CustomExtension)の使用を中止すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
+ユーザーが特定のモードまたは特定の[Custom Extension](#CustomExtension)の使用を中止すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
 
 ### Slot {#Slot}
 [Intent](#Intent)に宣言されたリクエストを処理する際に必要な情報です。Intentを定義するとき、共に定義する必要があります。Clovaはユーザーのリクエストを解析して、slotに該当する情報を抽出します。詳細については、[対話モデルを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
