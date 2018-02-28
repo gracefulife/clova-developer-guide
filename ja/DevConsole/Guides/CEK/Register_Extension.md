@@ -1,5 +1,5 @@
 # Extensionを登録する
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md)または[Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)を開発しているか、または開発済みの場合、そのextensionをClova developer consoleに登録する必要があります。CEKのメニューページで、ページの下にある**新規のextensionを作成**ボタンをクリックすると、新規のextensionを登録できます。
+[Custom extension](/CEK/Guides/Build_Custom_Extension.md)または[Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)を開発しているか、または開発済みの場合、そのextensionをClova Developer Centerに登録する必要があります。CEKのメニューページで、ページの下にある**新規のextensionを作成**ボタンをクリックすると、新規のextensionを登録できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)
 
@@ -19,7 +19,7 @@ Extensionを登録するには、先にCEKのAPIサービスの利用規約と�
 ## Extensionの基本情報を入力する {#InputExtensionInfo}
 
 Extensionを登録する最初のステップは、登録するextensionの基本情報を入力することです。
-Extensionの基本情報は、Clova developer consoleでextensionを作成するための必須で最小限の情報です。Extensionの基本情報を入力すると、CEKメニューで、作成したextensionに自由にアクセスし、また修正できるようになります。
+Extensionの基本情報は、Clova Developer Centerでextensionを作成するための必須で最小限の情報です。Extensionの基本情報を入力すると、CEKメニューで、作成したextensionに自由にアクセスし、また修正できるようになります。
 
 次の順でextensionを登録します。
 
@@ -48,7 +48,7 @@ Extensionの基本情報をすべて入力すると、作成されたextension�
 
 ## サーバーとの連携を設定する {#SetServerConnection}
 
-ExtensionはCEKとHTTPSで通信します。その際、CEKはExtensionにHTTPリクエストを送り、extensionはCEKにHTTPレスポンスを返します。CEKがextensionにHTTPリクエストを送るためには、Clova developer consoleでサーバーとの連携を設定する必要があります。[Extensionの基本情報を入力](#InputExtensionInfo)すると、作成されたextensionに対し、サーバーとの連携を設定できます。
+ExtensionはCEKとHTTPSで通信します。その際、CEKはExtensionにHTTPリクエストを送り、extensionはCEKにHTTPレスポンスを返します。CEKがextensionにHTTPリクエストを送るためには、Clova Developer Centerでサーバーとの連携を設定する必要があります。[Extensionの基本情報を入力](#InputExtensionInfo)すると、作成されたextensionに対し、サーバーとの連携を設定できます。
 
 Extensionのサーバーを登録するには、先にextensionのサーバーと通信できるか確認する必要があります。次の例のように、簡単なcurlコマンドで通信状況を確認できます。
 

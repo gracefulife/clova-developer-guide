@@ -181,7 +181,7 @@
 
 ## Clova Developer Console
 
-* [Clova developer consoleの概要](/DevConsole/ClovaDevConsole_Overview.md)
+* [Clova Developer Centerの概要](/DevConsole/ClovaDevConsole_Overview.md)
 * [CEKメニューを使用する](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
   * [Extensionを登録する](/DevConsole/Guides/CEK/Register_Extension.md)
     * [利用規約および個人情報の取得に同意する](/DevConsole/Guides/CEK/Register_Extension.md#AgreeTermsOfUse)

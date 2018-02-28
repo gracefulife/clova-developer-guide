@@ -2,7 +2,7 @@
 
 CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめinteraction modelを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。Interaction modelは、[custom extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
 
-Interaction modelを登録するには、先にClova developer consoleで[extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するextensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
+Interaction modelを登録するには、先にClova Developer Centerで[extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するextensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
@@ -19,7 +19,7 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>Custom intentを追加してから必要なslotタイプを追加することもできますが、Clova developer consoleの提供するUIの特性上、先にslotタイプを追加してからintentを追加することをお勧めします。</p>
+  <p>Custom intentを追加してから必要なslotタイプを追加することもできますが、Clova Developer Centerの提供するUIの特性上、先にslotタイプを追加してからintentを追加することをお勧めします。</p>
 </div>
 
 ## Built-in slotタイプを追加する {#AddBuiltinSlotType}
@@ -76,7 +76,7 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 シュリンプゴールドクラスト　　シュリンプゴールドクラストピザ　　シュリンプゴルクラピザ　　シュリンプゴルクラ
 ```
 
-Clova developer consoleは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom slotタイプをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova developer consoleで作成中のcustom slotタイプをTSV形式でダウンロードできます。
+Clova Developer Centerは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom slotタイプをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova Developer Centerで作成中のcustom slotタイプをTSV形式でダウンロードできます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Custom_Slot_Upload_and_Download_Button.png)
 
@@ -132,7 +132,7 @@ pizzaAmount	CLOVA.NUMBER
 ...
 ```
 
-Clova developer consoleは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom intentをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova developer consoleで作成しているcustom intentをTSV形式でダウンロードできます。
+Clova Developer Centerは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom intentをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova Developer Centerで作成しているcustom intentをTSV形式でダウンロードできます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Utterance_Example_Upload_and_Download_Button.png)
 

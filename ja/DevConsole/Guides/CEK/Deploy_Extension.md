@@ -1,5 +1,5 @@
 # Extensionを配布する
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home extensionを[Clova developer consoleに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したextensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(Extensionストア)で配布されたextensionを使用できるようになります。
+[Custom extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したextensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(Extensionストア)で配布されたextensionを使用できるようになります。
 
 Extensionの配布は、通常、次の順で行われます。
 
@@ -9,7 +9,7 @@ Extensionの配布は、通常、次の順で行われます。
 
 ## 配布情報を入力する {#InputDeploymentInfo}
 
-Clova developer consoleで[extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[Interaction modelを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)してから、配布情報を入力できます。Extensionの登録メニューで**{{ book.DevConsole.cek_publishing }}**を選択します。
+Clova Developer Centerで[extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[Interaction modelを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)してから、配布情報を入力できます。Extensionの登録メニューで**{{ book.DevConsole.cek_publishing }}**を選択します。
 
 ![](/DevConsole/Resources/Images/DevConsole-Deployment_Info_Menu.png)
 
