@@ -1,83 +1,109 @@
-# Registering extensions
-If developing or developed a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or a [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), it should be registered on the Clova developer console. You may register a new extension by clicking **Create new extension** button at the bottom of the CEK menu page.
+﻿# Registering an extension
+If you are developing or have developed a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or a [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), you must register it on the Clova developer console. To register a new extension, click **create a new extension** button on the bottom of the CEK menu page.
 
-![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_list.png)
+![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)
 
-Process the below entries in order to register extensions.
+To register an extension, you must typically complete the following steps in order:
 
-1. [Enter basic information of your extension](#InputExtensionInfo)
-2. [Server configuration](#SetServerConnection)
-  * [Configure account linking](#SetAccountLinkning)
+1. [Agreeing to terms and conditions and privacy policy](#AgreeTermsOfUse)
+2. [Entering basic extension information](#InputExtensionInfo)
+3. [Setting a server connection](#SetServerConnection)
+  * [Setting account linking](#SetAccountLinking)
 
-## Enter basic information of your extension {#InputExtensionInfo}
+## Agreeing to the terms and conditions and privacy policy {#AgreeTermsOfUse}
 
-The first thing that must take place to register an extension is to enter basic information of your extension. The basic information is the most fundamental and essential data to register the extension. Registered extensions on the CEK menu can always be accessed and modified once they are registered with the basic information.
+In order to register an extension, you must first agree to the terms and conditions of the CEK API service and the privacy policy. The details on the terms and conditions and privacy policy will be displayed only once and will not be displayed after you agree.
 
-Register extensions following the below procedure
+![](/DevConsole/Resources/Images/DevConsole-Agree_Terms_of_Use_and_Collecting_Personal_Info.png)
+
+## Entering basic extension information {#InputExtensionInfo}
+
+The first thing to do when registering an extension is to enter the basic extension information. The basic information of the extension is the first and essential information required for creating the extension in the Clova developer console. After you enter the basic extension information, you can access or edit the created extension on the CEK menu at any time.
+
+Follow the steps below to register the extension:
 
 ![](/DevConsole/Resources/Images/DevConsole-Create_New_Extension.png)
 
 <ol>
-  <li>Select extension type from the <strong>Type</strong> field. If the extension type is selected, a relevant input field will appear.</li>
-  <li>From <strong>Select Language</strong> field, select a language to be used from your extension. Only <strong>Korean</strong> is supported at the moment.</li>
-  <li>Enter Extension ID, name, call name data on the following entries.
+  <li>Select the type of extension to register from the <strong>{{ book.DevConsole.cek_type }}</strong> item. Once you select an extension type, an input field corresponding to the type will be displayed.</li>
+  <li>Select a language supported from the <strong>{{ book.DevConsole.cek_lang }}</strong> item. Currently, only <strong>{{ book.DevConsole.ko_KR }}</strong> is supported.</li>
+  <li>Enter extension ID, name, and call name in the following fields:
     <ol>
-      <li><strong>Extension ID</strong>: A unique ID of your extension. Enter in reversed FQDN format (Ex. com.yourdomain.extension.weathernotifier).</li>
-      <li><strong>Name</strong>: A name of your extension. The name will be exposed to the Clova extension store.</li>
-      <li><strong>Call name</strong>: A name for a user to call your extension. Common words cannot be used.</li>
+      <li><strong>{{ book.DevConsole.cek_id }}</strong>: Unique ID of the extension. Use the reverse domain name notation for the ID. (e.g.: com.yourdomain.extension.pizzabot)</li>
+      <li><strong>{{ book.DevConsole.cek_name }}</strong>: Name of the extension. The name will be shown later on the Clova Extension Store.</li>
+      <li><strong>{{ book.DevConsole.cek_invocation_name }}</strong>: Name of the extension that can be used by users to call the extension. The name can be a general name of an owned service, company, or organization, but it is more preferable to use a concise and unique name to increase user convenience. A universal word, or names of another company or its service, cannot be used. The <strong>{{ book.DevConsole.cek_invocation_name }}</strong> will be evaluated during the extension review process.</li>
+      <li><strong>{{ book.DevConsole.cek_provider }}</strong>: Enter the name or alias of the extension manufacturer (company or individual). This will be reviewed in the extension approval process and will be shown later in the extension store.</li>
     </ol>
   </li>
-  <li>Select <strong>Audio Player Use</strong> field as <strong>Yes</strong> (if your extension is using a <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a> directive message). The audio player will be used to serve music streaming service.</li>
-  <li>Click <strong>Create</strong> button after inputting all the basic information.</li>
+  <li>If the extension uses the directive messages of the <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a>, select <strong>{{ book.DevConsole.cek_yes }}</strong> from the <strong>{{ book.DevConsole.cek_audioplayer }}</strong> item. The extension uses the directive messages when it provides a music streaming service.</li>
+  <li>Enter an email address for contact in the <strong>{{ book.DevConsole.cek_email }}</strong> item.</li>
+  <li>Enter the {{ book.OrientedService }} account for testing the extension under development in the <strong>{{ book.DevConsole.cek_tester }}</strong> item. You don’t need to enter the account information when registering the extension, but can enter it in this field when <a href="/DevConsole/Guides/CEK/Test_Extension.html">testing the extension</a> later on.</li>
+  <li>After filling out the basic extension information, click the<strong>{{ book.DevConsole.cek_create }}</strong> button.</li>
 </ol>
 
-Upon clicking the button, the page will be navigated to a modification page where created extension information can be modified. Added information can be saved at anytime by clicking **Save** button at the bottom of the page. The extension list registered on the CEK menu can be viewed as below.
+Once you complete entering the basic extension information, you will be directed to the screen to edit this information. From this point, you can click the **{{ book.DevConsole.cek_save }}** button at the bottom of the page anytime to save the changed details. You can also find the list of registered extensions in the CEK menu as shown below.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
 
-## Server configuration {#SetServerConnection}
+## Setting a server connection {#SetServerConnection}
 
-Your extension communicate with CEK by using HTTPS. CEK will dispatch HTTP request to the extension and the extension will return HTTP response to CEK. For CEK to send HTTP request to the extension, the server configuration has to be performed from the Clova developer console. After [entering basic information of your extension](#InputExtensionInfo), the server configuration can be performed at the created extension.
+The extension will make an HTTPS connection to the CEK. Here, the CEK sends an HTTP request to the extension and the extension sends an HTTP response to the CEK. In order for the CEK to send an HTTP request to the extension, you must set up a server connection from the Clova developer console. You can set up a server connection after you [enter the basic extension information](#InputExtensionInfo) for the created extension.
 
-Process the server configuration by following the procedure.
+Make sure to check whether a connection with the extension server is available before registering the extension server. You can check the connection state using a simple curl command as shown in the example below.
+
+{% raw %}
+```bash
+$ curl "https://yourdomain.com/pizzabot" -X POST
+```
+{% endraw %}
+
+Follow the steps below to set up a connection with the server.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Server_Settings.png)
 
 <ol>
-  <li>Click <strong>server configuration</strong> tab located at the top of Entering extension information UI.</li>
-  <li>Enter server URL (endpoint) of your extension data on the <strong>Service server URL</strong> field.</li>
-  <li>Select <strong>Yes</strong> from <strong>Account connection</strong> field (if a user account of your extension service and a user account of Clova should be connected). To find more about account connection, see <a href="#SetAccountLinking">Configure account linking</a> </li>
-  <li>Click the radio button from <strong>SSL authentication</strong> field. A server providing extensions must use a certificate officially approved from certificate authority. (Self-signed certificate is not allowed)</li>
-  <li>Click <strong>Save</strong> after entering server configuration.</li>
+  <li>Click on the <strong>{{ book.DevConsole.cek_configuration }}</strong> tab above the extension information input UI.</li>
+  <li>Enter the endpoint URL of the extension server in the <strong>{{ book.DevConsole.cek_service_endpoint_url }}</strong> item.
+    <div class="note">
+    <p><strong>Note!</strong></p>
+    <p>An HTTP connection can be used for testing but an HTTPS connection is required for the official service. The extension server must use port 80 and 443 for HTTP and HTTPS connection respectively.</p>
+  </div>
+  </li>
+  <li>If there is a need for linking the user account of the extension service and the Clova user account, select <strong>{{ book.DevConsole.cek_yes }}</strong> from the <strong>{{ book.DevConsole.cek_account_linking }}</strong> item. For more information on account linking, see <a href="#SetAccountLinking">setting account linking</a>.</li>
+  <li>Click the radio button of the <strong>{{ book.DevConsole.cek_ssl_certificate }}</strong> item. The extension server must use the certificate of an authorized certificate agency.  (Self-signed certificates cannot be used.)</li>
+  <li>Fill out the details for setting up the server connection and click the <strong>{{ book.DevConsole.cek_save }}</strong> button.</li>
 </ol>
 
-### Configure account linking {#SetAccountLinkning}
+### Setting account linking {#SetAccountLinking}
 
-Enter [account linking](/CEK/Guides/Link_User_Account.md) information on the [Server configuration](#SetServerConnection) precedure if a user account of your extension service and a user account of Clova should to be connected.
+If a link between the user account of the extension service and the Clova user account is required, you must enter the [account linking](/CEK/Guides/Link_User_Account.md) information in [server connection settings](#SetServerConnection).
 
-Enter [information required](/CEK/Guides/Link_User_Account.md#RegisterAccountLinkingInfo) to configure account linking according to the following procedure.
+Follow the steps below to enter the [information required](/CEK/Guides/Link_User_Account.md#RegisterAccountLinkingInfo) to set up account linking.
 
 <ol>
   <img src="/DevConsole/Resources/Images/DevConsole-Extension_Accoun_Linking_Settings_1.png" />
-  <li>Select <strong>Yes</strong> from the <strong>Account linking</strong> field. </li>
-  <li>Enter an Authorization URL providing a UI page for users to authorize account on <strong>Login URL</strong>. If users activate the extension, it will navigate to this page. </li>
-  <li>Enter <strong>Client ID</strong> required for HTTPS request when authorizing user account. The client ID is a value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building authorization server</a>.</li>
-  <li>Enter a URL of the page with personal information policy of extension services on <strong>Personal information policy URL</strong>. This page will be exposed to the Clova extension store.</li>
-  <li>Add a domain required from the <strong>Domain list field</strong> (if bringing resources for domains besides the domain with <strong>Login URL</strong> or <strong>Personal information policy URL</strong> pages).</li>
-  <li>Add the predesignated scope on <strong>Scope</strong> field (if the scope of an access token issued by user account linking is predesignated).</li>
+  <li>Select <strong>{{ book.DevConsole.cek_yes }}</strong> from the <strong>{{ book.DevConsole.cek_account_linking }}</strong> item.</li>
+  <li>In the <strong>{{ book.DevConsole.cek_authorization_url }}</strong> item, enter the authorization URL where user can verify their account. The user will be directed to this URL when the extension is activated.</li>
+  <li>If you want to allow a user to set up their own account right away, enter the URL for the account setup page in the <strong>{{ book.DevConsole.cek_configuration_url }}</strong> item.</li>
+  <li>Enter the <strong>{{ book.DevConsole.cek_client_id }}</strong> required for an HTTPS request when authenticating the user account. The client ID is the value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building an authentication server</a>.</li>
+  <li>In the <strong>{{ book.DevConsole.cek_privacy_policy_url }}</strong> item, enter the URL where privacy policy on the extension service is provided . The details on this page will be shown later on the extension store.</li>
+  <li>If the <strong>{{ book.DevConsole.cek_authorization_url }}</strong> or the page of the <strong>{{ book.DevConsole.cek_privacy_policy_url }}</strong> imports necessary resources from another domain, add the corresponding domain address in the <strong>{{ book.DevConsole.cek_domain_list }}</strong> item.</li>
+  <li>If the usage scope of the access token—issued when linking user account—is predefined, add the predefined scope in the <strong>{{ book.DevConsole.cek_scope }}</strong> item.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Extension_Accoun_Linking_Settings_2.png" />
-  <li>Enter URL which acquires a service access token on <strong>Access token URI</strong> field. As of now, the <strong>grant type supports the code grant method only.</li>
-  <li>Enter <strong>Client secret</strong> required for HTTPS request to acquire the service access token. The client secret is a value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building authorization server</a>.</li>
-  <li><strong>Client verification schema</strong> configures a value that matches to the authorization server interface from the following.
+  <li>In the <strong>{{ book.DevConsole.cek_access_token_uri }}</strong> item, enter the URL to get the service access token. Currently, <strong>only the code grant method is supported for grant type</strong>.</li>
+  <li>In the <strong>{{ book.DevConsole.cek_refresh_token_uri }}</strong> item, enter the URL to renew the service access token in.</li>
+  <li>Enter the <strong>{{ book.DevConsole.cek_client_secret }}</strong> required for HTTPS requests when getting the service access token. The client secret is the value created when <a href="/CEK/Guides/Link_User_Account.html#BuildAuthServer">building an authentication server</a>.</li>
+  <li>For <strong>{{ book.DevConsole.cek_client_authentication_scheme }}</strong>, set the value for implementing the authentication server interface.
     <ul>
-      <li><strong>HTTP Basic (Recommended)</strong>: If entering the authorization credential to the header to acquire a service access token.</li>
-      <li><strong>Credentials in request body</strong>: If entering the authorization credential to the body to acquire a service access token.</li>
+      <li><strong>HTTP Basic (Recommended)</strong>: Select if the credentials are sent in the HTTP header data for getting the service access token.</li>
+      <li><strong>Credentials in the request body</strong>: Select if the credentials are sent in HTTP body data for getting the service access token</li>
     </ul>
   </li>
 </ol>
 
 <div id="RedirectURI" class="note">
   <p><strong>Note!</strong></p>
-  <p>A URL (redirect URL) to be accessed for a client after the account authorization is <code>{{ book.RedirectURLforAccountLinking }}</code>. The URL can be verified from <strong>Redirect URL</strong> field.</strong></p>
+  <p>The client URL (redirect URL) to be redirected after account authentication is <code>{{ book.RedirectURLforAccountLinking }}</code> and can be found in <strong>{{ book.DevConsole.cek_redirect_urls }}</strong>.</strong></p>
   <img src="/DevConsole/Resources/Images/DevConsole-Redirect_URL_for_Extension_Accoun_Linking.png" />
 </div>
+
