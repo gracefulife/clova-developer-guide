@@ -12,8 +12,9 @@ SpeechRecognizer가 제공하는 이벤트 메시지와 지시 메시지는 다�
 |------------------|-----------|---------------------------------------------|
 | [`ExpectSpeech`](#ExpectSpeech)                 | Directive | 클라이언트에게 사용자의 음성 입력을 받도록 지시합니다.         |
 | [`KeepRecording`](#KeepRecording)               | Directive | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.            |
-| [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다. |
-| [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.  |
+| [`Recognize`](#Recognize)                       | Event     | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.          |
+{% if book.TargetReaderType == "Internal" or "Uplus" %}| [`ShowRecognizedText`](#ShowRecognizedText)     | Directive | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.              |
+| [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.           |{% elif book.TargetReaderType == "Public" %}| [`StopCapture`](#StopCapture)                   | Directive | 클라이언트에게 사용자의 음성 입력 수신을 중지하도록 지시합니다.           | {% endif %}
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
