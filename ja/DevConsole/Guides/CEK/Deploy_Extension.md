@@ -1,5 +1,5 @@
 # Extensionを配布する
-[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(Extensionストア)で配布されたExtensionを使用できるようになります。
+[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(スキルストア)で配布されたExtensionを使用できるようになります。
 
 Extensionの配布は、通常、次の順で行われます。
 
@@ -17,7 +17,7 @@ Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Ex
 
 ![](/DevConsole/Resources/Images/DevConsole-Input_Deployment_Info.png)
 
-Extensionをユーザーに説明するための情報として、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(Extensionストア)でユーザーに提供されます。次の情報を入力する必要があります。
+Extensionをユーザーに説明するための情報として、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)でユーザーに提供されます。次の情報を入力する必要があります。
 
 * **{{ book.DevConsole.cek_category }}**：Extensionのカテゴリです。ユーザーがカテゴリごとにExtensionのリストを確認したり、検索する際に利用されます。
 * **{{ book.DevConsole.cek_test_instructions }}**：[Extensionの承認](#RequestExtensionSubmission)プロセスで承認担当者がExtensionを検討する際、必要とされる参考情報です。エンドユーザーには表示されません。案内に従って作成します。
@@ -29,7 +29,7 @@ Extensionをユーザーに説明するための情報として、Clovaアプリ
 * **{{ book.DevConsole.cek_small_icon }}**：小サイズ(108x108ピクセル)のExtensionのアイコンファイルです。**{{ book.DevConsole.ManageExtensions }}**と**{{ book.DevConsole.ExtensionPage }}**に表示されます。
 * **{{ book.DevConsole.cek_large_icon }}**：大サイズ(512x512ピクセル)のExtensionのアイコンファイルです。今後使用される予定です。
 
-このように入力された情報は、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(Extensionストア)で次のように表示されます。
+このように入力された情報は、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)で次のように表示されます。
 
 | {{ book.DevConsole.ExtensionHome }} | {{ book.DevConsole.ExtensionPage }}   |
 |-------------------|-------------------|

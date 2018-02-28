@@ -72,17 +72,17 @@ CICから渡されるコンテンツ情報をスケジュールカテゴリに�
 ### Extension {#Extension}
 [Clova Extension](#ClovaExtension)の別の言い方
 
-### Extensionストア {#ExtensionStore}
+### スキルストア {#ExtensionStore}
 
 Extensionをユーザーに提供するために構築されたプラットフォームです。
 
-### Extensionストアホーム {#ExtensionStoreHome}
+### スキルストアホーム {#ExtensionStoreHome}
 
-Extensionストアに登録されたExtensionが表示されるページです。Clovaアプリの**拡張サービス管理**メニューを指す用語です。
+スキルストアに登録されたExtensionが表示されるページです。Clovaアプリの**拡張サービス管理**メニューを指す用語です。
 
 ### Extensionページ {#ExtensionPage}
 
-Extensionストアホーム(**拡張サービス管理**メニュー)で特定のExtensionを選択すると表示されるページです。Extensionに関する詳しい説明が提供されます。
+スキルストアホーム(**拡張サービス管理**メニュー)で特定のExtensionを選択すると表示されるページです。Extensionに関する詳しい説明が提供されます。
 
 ### HTTP/2 {#HTTP2}
 HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース(IETF)において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard(標準への提唱)として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に[RFC 7540](https://tools.ietf.org/html/rfc7540)として公開されました。
