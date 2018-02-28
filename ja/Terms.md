@@ -20,7 +20,7 @@ CICがクライアントに提供するREST APIです。クライアントは、
 ### Clovaアクセストークン {#ClovaAccessToken}
 クライアントが[Clova Interface Connect](#CIC)で[イベント](#Event)を送る際、Clovaがクライアントを認証する手段です。詳細については、[Clovaアクセストークンを生成する](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
-### Clova Developer Console {#ClovaDeveloperConsole}
+### Clova Developer Center {#ClovaDeveloperConsole}
 Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="https://developers.naver.com/console/clova/">ウェブツール</a>です。
 * クライアントデバイスの登録およびクライアントの認証情報を提供(今後サービス予定)
 * Clova Extensionの[登録](/DevConsole/Guides/CEK/Register_Extension.md)および[配布](/DevConsole/Guides/CEK/Deploy_Extension.md)
@@ -135,4 +135,4 @@ Clova Extensionが処理するユーザーの意図を区分したカテゴリ�
 [Clova Interface Connect](#CIC)がクライアントのアクションを制御するように指定したメッセージです。ディレクティブはクライアントがリクエストしたイベントに応答したり、特定の条件によってクライアントに情報を渡す際に使用されます。
 
 ### クライアントの認証情報 {#ClientCredentialInfo}
-[Clova Developer Console](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
+[Clova Developer Center](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。

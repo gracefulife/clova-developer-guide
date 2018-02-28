@@ -179,7 +179,7 @@
       * [Error](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
       * [共有オブジェクト](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
 
-## Clova Developer Console
+## Clova Developer Center
 
 * [Clova Developer Centerの概要](/DevConsole/ClovaDevConsole_Overview.md)
 * [CEKメニューを使用する](/DevConsole/Guides/CEK/Using_CEK_Menu.md)
