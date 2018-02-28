@@ -1,18 +1,18 @@
 # Extensionをテストする
 登録したExtensionとinteraction modelは、配布する前にテストすることができます。次の項目を確認して、Extensionとinteraction modelをテストします。
 
-* (custom Extension専用)[Interaction modelをビルドする](#BuildInteractionModel)
-* (custom Extension専用)[Interaction modelをテストする](#TestInteractionModel)
+* (custom Extension専用)[対話モデルをビルドする](#BuildInteractionModel)
+* (custom Extension専用)[対話モデルをテストする](#TestInteractionModel)
 * [ClovaアプリでExtensionをテストする](#TestOnClovaApp)
 
-## Interaction modelをビルドする {#BuildInteractionModel}
+## 対話モデルをビルドする {#BuildInteractionModel}
 
 Custom Extensionを配布する場合、先に[interaction modelを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)する必要があります。また、定義されたinteraction modelを[テスト](#TestInteractionModel)または使用するには、そのinteraction modelをビルドする必要があります。次のように定義されたinteraction modelをビルドできます。
 
 <ol>
   <li>登録したExtensionのリストから、ビルドするinteraction modelの<strong>{{ book.DevConsole.cek_edit }}</strong>メニューをクリックします。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png" />
-  <li><strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}</strong>画面で、左上にある<strong>{{ book.DevConsole.BuildButton }}</strong>ボタンをクリックすると、interaction modelのビルドが開始されます。Interaction modelのサイズなどによって、3~5分ぐらいかかることがあります。</li>
+  <li><strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}</strong>画面で、左上にある<strong>{{ book.DevConsole.BuildButton }}</strong>ボタンをクリックすると、interaction modelのビルドが開始されます。対話モデルのサイズなどによって、3~5分ぐらいかかることがあります。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Build_Interaction_Model.png" />
 </ol>
 
@@ -21,9 +21,9 @@ Custom Extensionを配布する場合、先に[interaction modelを登録](/DevC
   <p>ビルド中に<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}</strong>内で他のメニューに移動しても、ビルドはキャンセルされません。ビルドが開始されてからも、自由にメニューを移動したり、内容を編集したりできます。</p>
 </div>
 
-## Interaction modelをテストする {#TestInteractionModel}
+## 対話モデルをテストする {#TestInteractionModel}
 
-[Interaction modelのビルド](#BuildInteractionModel)が完了すると、interaction modelをテストできます。次のように発話をテストできます。
+[対話モデルのビルド](#BuildInteractionModel)が完了すると、interaction modelをテストできます。次のように発話をテストできます。
 
 <ol>
   <li>左側のナビゲーションで<strong>{{ book.DevConsole.cek_test }}</strong>メニューをクリックします。メニューをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_test }}</strong>画面が表示されます。</li>

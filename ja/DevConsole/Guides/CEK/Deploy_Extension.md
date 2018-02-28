@@ -9,7 +9,7 @@ Extensionの配布は、通常、次の順で行われます。
 
 ## 配布情報を入力する {#InputDeploymentInfo}
 
-Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[Interaction modelを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)してから、配布情報を入力できます。Extensionの登録メニューで**{{ book.DevConsole.cek_publishing }}**を選択します。
+Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[対話モデルを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)してから、配布情報を入力できます。Extensionの登録メニューで**{{ book.DevConsole.cek_publishing }}**を選択します。
 
 ![](/DevConsole/Resources/Images/DevConsole-Deployment_Info_Menu.png)
 

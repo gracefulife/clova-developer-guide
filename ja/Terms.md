@@ -24,7 +24,7 @@ CICがクライアントに提供するREST APIです。クライアントは、
 Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="https://developers.naver.com/console/clova/">ウェブツール</a>です。
 * クライアントデバイスの登録およびクライアントの認証情報を提供(今後サービス予定)
 * Clova Extensionの[登録](/DevConsole/Guides/CEK/Register_Extension.md)および[配布](/DevConsole/Guides/CEK/Deploy_Extension.md)
-* [Interaction modelの登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
+* [対話モデルの登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
 * Clovaサービスに関する統計資料の提供(今後サービス予定)
 
 ### Clova Extension {#ClovaExtension}
@@ -88,14 +88,14 @@ Extensionストアホーム(**拡張サービス管理**メニュー)で特定�
 HTTPプロトコルの2番目のバージョンです。[SPDY](https://en.wikipedia.org/wiki/SPDY)に基づき、インターネット技術タスクフォース(IETF)において開発されています。1997年にRFC 2068として規定されたHTTP/1.1をバージョンアップしたものであり、2014年12月にProposed Standard(標準への提唱)として制定され、2015年2月17日にIESGで正式な仕様として承認されました。2015年5月に[RFC 7540](https://tools.ietf.org/html/rfc7540)として公開されました。
 
 ### Intent {#Intent}
-Clova Extensionが処理するユーザーの意図を区分したカテゴリです。Custom intentとbuilt-in intentの2種類があります。[Custom Extension](#CustomExtension)を実装する前に、まずintentの集合である[interaction model](#InteractionModel)を定義する必要があります。詳細については、[Interaction modelを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
+Clova Extensionが処理するユーザーの意図を区分したカテゴリです。Custom intentとbuilt-in intentの2種類があります。[Custom Extension](#CustomExtension)を実装する前に、まずintentの集合である[interaction model](#InteractionModel)を定義する必要があります。詳細については、[対話モデルを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
 
 ### IntentRequest {#IntentRequest}
 
 ユーザーのリクエストを解析した結果([Intent](#Intent))を[custom Extension](#CustomExtension)に送る際に使用されるリクエストメッセージタイプです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
 
-### Interaction model {#InteractionModel}
-[Custom Extension](#CustomExtension)が音声から認識されたユーザーのリクエストをExtensionに送るために、標準化したフォーマット(JSON)に変換するルールを指定したものです。詳細については、[Interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
+### 対話モデル {#InteractionModel}
+[Custom Extension](#CustomExtension)が音声から認識されたユーザーのリクエストをExtensionに送るために、標準化したフォーマット(JSON)に変換するルールを指定したものです。詳細については、[対話モデル](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
 
 ### LaunchRequest {#LaunchRequest}
 ユーザーが特定のモードまたは特定の[custom Extension](#CustomExtension)を使用すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
@@ -107,7 +107,7 @@ Clova Extensionが処理するユーザーの意図を区分したカテゴリ�
 ユーザーが特定のモードまたは特定の[custom Extension](#CustomExtension)の使用を中止すると宣言したことを知らせるために送るリクエストメッセージです。詳細については、[Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)ドキュメントを参照してください。
 
 ### Slot {#Slot}
-[Intent](#Intent)に宣言されたリクエストを処理する際に必要な情報です。Intentを定義するとき、共に定義する必要があります。Clovaはユーザーのリクエストを解析して、slotに該当する情報を抽出します。詳細については、[Interaction modelを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
+[Intent](#Intent)に宣言されたリクエストを処理する際に必要な情報です。Intentを定義するとき、共に定義する必要があります。Clovaはユーザーのリクエストを解析して、slotに該当する情報を抽出します。詳細については、[対話モデルを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
 
 ### ダイアログID {#DialogID}
 ダイアログIDは、ユーザーが新しい発話を開始するたびに生成され、クライアントが[Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)[イベント](#Event)を[Clova Interface Connect](#CIC)に渡す際に含まれます。ダイアログIDは、サーバー側からレスポンスを返す際に、どのイベントに対するレスポンスか結び付けるために使用され、[ディレクティブ](#Directive)にも含まれます。クライアントはディレクティブに含まれたダイアログIDから、どのイベントに対するレスポンスかを判断する必要があります。もしクライアントが現在持っているダイアログIDとディレクティブのダイアログIDが異なる場合、受信したディレクティブを無視する必要があります。詳細については、[ダイアログモデル](/CIC/CIC_Overview.md#DialogModel)ドキュメントを参照してください。
@@ -123,7 +123,7 @@ Clova Extensionが処理するユーザーの意図を区分したカテゴリ�
 
 ### ユーザーのサンプル発話 {#UserUtteranceExample}
 
-ユーザーのリクエスト発話がどのように入力されるかを例で表現したリストです。[Intent](#Intent)ごとに複数の例を定義できます。また、例には[slot](#Slot)が表示されます。詳細については、[Interaction modelを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
+ユーザーのリクエスト発話がどのように入力されるかを例で表現したリストです。[Intent](#Intent)ごとに複数の例を定義できます。また、例には[slot](#Slot)が表示されます。詳細については、[対話モデルを定義する](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)ドキュメントを参照してください。
 
 ### セッションID {#SessionID}
 [Extension](#ClovaExtension)がユーザーリクエストのコンテクストを区分するためのセッション識別子です。通常、一回性のユーザーリクエストはそのたびにセッションIDが変わりますが、特定のモードや連続的な(マルチターン)ユーザーリクエストの場合、同じセッションIDを持ちます。このセッションIDは、[Clova Extensions Kit](#CEK)がExtensionにユーザーのリクエストを渡すとき生成されます。セッションIDが維持されるのは、[LaunchRequest](#LaunchRequest)のようなリクエストを受け取ったか、またはExtensionが必要に応じて`response.shouldEndSession`フィールドを`false`に設定した場合です。詳細については、[Custom Extensionを作成する](/CEK/Guides/Build_Custom_Extension.md)ドキュメントを参照してください。

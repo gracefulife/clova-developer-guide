@@ -1,8 +1,8 @@
-# Interaction modelを登録する
+# 対話モデルを登録する
 
-CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめinteraction modelを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。Interaction modelは、[custom Extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
+CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめinteraction modelを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。対話モデルは、[custom Extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
 
-Interaction modelを登録するには、先にClova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するExtensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
+対話モデルを登録するには、先にClova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するExtensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
