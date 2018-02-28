@@ -64,11 +64,14 @@ Content-Type: application/json; charset=UTF-8<br/>
         "type": "WAKEWORD",
         "inputSource": "SELF",
         "payload": {
-          "wakeWordName": "clova",
-          "wakeWordConfidence": ,
-          "wakeWordIndices": {
-            "startIndexInSamples": 0,
-            "endIndexInSamples": 16000,
+          "deviceUUID": "f003af9d-14c5-424b-b1f9-f0134bd0ed86",
+          "wakeWord": {
+            "name": "clova",
+            "confidence": 0.812312,
+            "indices": {
+              "startIndexInSamples": 0,
+              "endIndexInSamples": 16000
+            }
           }
         }
       }

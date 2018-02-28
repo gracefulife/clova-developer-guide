@@ -6,7 +6,7 @@
   "author": "NAVER Corp.",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v3.1",
+    "DocVersion": "v3.2",
     "TargetCountryCode": "KR",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
@@ -30,8 +30,8 @@
       "cek_publishing": "배포 정보",
       "cek_configuration": "서버 연동 설정",
       "cek_category": "분류",
-      "cek_test_instructions": "심사용 설명",
       "cek_full_skill_desc": "Extension 설명",
+      "cek_short_skill_desc": "Extension 요약 설명",
       "cek_example_phrases": "대표 발화 예시",
       "cek_keywords": "검색 키워드",
       "cek_small_icon": "작은 아이콘",
