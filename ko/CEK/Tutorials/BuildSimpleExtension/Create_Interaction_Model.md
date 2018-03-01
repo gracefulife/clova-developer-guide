@@ -1,4 +1,4 @@
-<a href="https://developers.naver.com/console/clova/cek/#/list" target="_blank">Clova developer console</a>에서 interaction 모델을 등록합니다.
+<a href="{{ book.DeveloperConsoleURL }}/cek/#/list" target="_blank">Clova developer console</a>에서 interaction 모델을 등록합니다.
 
 Interaction 모델에 저장하는 정보는 [intent](/Design/Design_Guideline_For_Extension.md#Intent)와 [slot](/Design/Design_Guideline_For_Extension.md#Slot)으로, intent는 입력된 문장을 분석하여 extension 서버에 전달할 명령이고, slot은 이 intent에 필요한 정보입니다.
 
