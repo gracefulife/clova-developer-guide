@@ -17,5 +17,5 @@ Extension이 심사 중인 경우는 심사를 취소하고 언제든지 extensi
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>서비스를 중지할 때 Clova 운영팀의 확인이 필요합니다. 따라서, extension을 중지하려면 <a href="mailto://dl_extension_admin@navercorp.com">dl_extension_admin@navercorp.com</a>로 연락합니다.</p>
+  <p>서비스를 중지할 때 Clova 운영팀의 확인이 필요합니다. 따라서, extension을 중지하려면 <a href="mailto://{{ book.ExtensionAdminEmail }}">{{ book.ExtensionAdminEmail }}</a>로 연락합니다.</p>
 </div>

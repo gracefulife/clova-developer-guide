@@ -17,7 +17,8 @@ Clova를 통해 서비스되고 있는 일부 extension을 소개합니다. 간�
 * Go 언어로 구현되어 있습니다.
 
 ### GitHub 저장소
-<a target="_blank" href="https://github.com/naver/clova-extension-sample-magicball">https://github.com/naver/clova-extension-sample-magicball</a>
+
+<a target="_blank" href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-magicball">{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-magicball</a>
 
 ## 빗소리(Rain sound) {#RainSound}
 
@@ -29,7 +30,8 @@ Clova를 통해 서비스되고 있는 일부 extension을 소개합니다. 간�
 * Node.js로 구현되어 있습니다.
 
 ### GitHub 저장소
-<a target="_blank" href="https://github.com/naver/clova-extension-sample-rainsound">https://github.com/naver/clova-extension-sample-rainsound</a>
+
+<a target="_blank" href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-rainsound">{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-rainsound</a>
 
 ## 주사위 놀이(Dice drawer) {#DiceDrawer}
 
@@ -41,7 +43,8 @@ Clova를 통해 서비스되고 있는 일부 extension을 소개합니다. 간�
 * Node.js로 구현되어 있습니다.
 
 ### GitHub 저장소
-<a target="_blank" href="https://github.com/naver/clova-extension-sample-dice">https://github.com/naver/clova-extension-sample-dice</a>
+
+<a target="_blank" href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice">{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice</a>
 
 ## 코인 헬퍼(Coin helper) {#CoinHelper}
 
@@ -55,4 +58,4 @@ Clova를 통해 서비스되고 있는 일부 extension을 소개합니다. 간�
 
 ### GitHub 저장소
 
-<a target="_blank" href="https://github.com/naver/clova-extension-sample-coinhelper">https://github.com/naver/clova-extension-sample-coinhelper</a>
+<a target="_blank" href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-coinhelper">{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-coinhelper</a>

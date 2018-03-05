@@ -123,3 +123,35 @@ blockquote p.rdiag {
   max-width:500px;
   padding-left:10px;
 }
+
+.audioInterruptionRule{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 99%;
+  margin: 0;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.backgroundPlay {
+  color: #14892c;
+  background-color: #ffffff;
+  border-color: #b2d8b9;
+}
+
+.cancelPlayback {
+  color: #d04437;
+  background-color: #ffffff;
+  border-color: #f8d3d1;
+}
+
+.continuePlayback {
+  color: #4a6785;
+  background-color: #ffffff;
+  border-color: #e4e8ed;
+}

@@ -9,6 +9,7 @@
 | AudioPlayer        | [`ClearQueue`](/CIC/References/CICInterface/AudioPlayer.md#ClearQueue)          | 클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다.                              |
 | AudioPlayer        | [`Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)                      | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                          |
 | AudioPlayer        | [`StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)    | [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
+| Clova              | [`ExpectLogin`](/CIC/References/CICInterface/Clova.md#ExpectLogin)              | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다.          |
 | Clova              | [`FinishExtension`](/CIC/References/CICInterface/Clova.md#FinishExtension)      | 클라이언트에게 특정 Extension을 종료하도록 지시합니다.                                             |
 | Clova              | [`HandleDelegatedEvent`](/CIC/References/CICInterface/Clova.md#HandleDelegatedEvent) | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)하도록 지시합니다.   |
 | Clova              | [`Hello`](/CIC/References/CICInterface/Clova.md#Hello)                          | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.                                       |
@@ -46,6 +47,7 @@
 | PlaybackController | [`VolumeUp`](/CIC/References/CICInterface/PlaybackController.md#VolumeUp)       | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                                                   |
 | SpeechRecognizer   | [`ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.                                            |
 | SpeechRecognizer   | [`KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                                                |
-| SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |
+{% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}| SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
+| SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |{% else %}| SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |{% endif %}
 | SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다.                                |
 | System             | [`SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다.                                   |

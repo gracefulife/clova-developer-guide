@@ -27,8 +27,8 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 서비스를 제공할 extension이 어떤 [built-in slot 타입](/Design/Design_Guideline_For_Extension.md#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
 
 <ol>
-  <li><strong>등록된 slot 타입</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>등록된 slot 타입</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>Interaction 모델:Slot 타입 추가하기</strong> 화면이 표시됩니다.</li>
-  <li><strong>Clova가 제공하는 built-in slot 타입 사용하기</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_slottype_builtin_title }}</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>필요한 built-in slot 타입을 선택한 후 우측 상단에 있는 <strong>저장</strong> 버튼을 클릭합니다.</li>
 </ol>
