@@ -63,7 +63,7 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>System.SynchronizeState</code> 지시 메시지를 통해 알람 정보를 동기화하는 것은 더 이상 지원하지 않을 예정이며, 해당 기능은 <a href="/CIC/References/CICInterface/Alerts.html#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> 이벤트 메시지와 <a href="/CIC/References/CICInterface/Alerts.html#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> 지시 메시지를 통해 지원됩니다. 추후 <code>System.SynchronizeState</code> 지시 메시지에 시스템 관련 정보를 동기화할 수 있는 필드가 추가될 예정입니다.</p>
+  <p><code>System.SynchronizeState</code> 지시 메시지를 통해 알람 정보를 동기화하는 것은 더 이상 지원하지 않을 예정이며, 해당 기능은 <a href="/CIC/References/CICInterface/Alerts.md#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> 이벤트 메시지와 <a href="/CIC/References/CICInterface/Alerts.md#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> 지시 메시지를 통해 지원됩니다. 추후 <code>System.SynchronizeState</code> 지시 메시지에 시스템 관련 정보를 동기화할 수 있는 필드가 추가될 예정입니다.</p>
 </div>
 
 ### Remarks
