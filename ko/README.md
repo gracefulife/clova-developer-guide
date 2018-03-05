@@ -72,6 +72,7 @@
           <ul>
             <li><a href="/CEK/Tutorials/Build_Simple_Extension.md">기초적인 Extension 만들기</a></li>
             <li><a href="/CEK/Tutorials/Handle_Builtin_Intents.md">기본적인 의사 표현 처리하기</a></li>
+            <li><a href="/CEK/Tutorials/Use_Builtin_Type_Slots.md">사용자가 입력한 정보 활용하기</a></li>
           </ul>
           <li>가이드</li>
           <ul>
