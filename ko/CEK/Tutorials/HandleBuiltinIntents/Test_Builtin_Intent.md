@@ -10,7 +10,7 @@
 </div>
 
 다음 순서대로 샘플 주사위 extension의 도움말 요청이 잘 동작하는지 확인합니다.
-1. <a href="https://developers.naver.com/console/clova/cek/#/list" target="_blank">Clova developer console</a>에 접속합니다.
+1. <a href="{{ book.DeveloperConsoleURL }}/cek/#/list" target="_blank">Clova developer console</a>에 접속합니다.
 2. 샘플 주사위의 **{{ book.DevConsole.cek_interaction_model }}** 항목 내 **{{ book.DevConsole.cek_edit}}** 버튼을 누릅니다.
 3. 화면 좌측 상단의 **{{ book.DevConsole.BuildButton }}** 버튼을 눌러 interaction 모델을 빌드합니다.
 4. 빌드가 끝난 후, 왼쪽의 메뉴 목록에서 **{{ book.DevConsole.cek_test }}** 메뉴를 누릅니다.

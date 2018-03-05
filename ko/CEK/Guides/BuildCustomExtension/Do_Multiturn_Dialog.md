@@ -46,7 +46,7 @@ Custom extension에서 피자 종류뿐만 아니라 주문 수량 정보가 추
   "version": "0.1.0",
   "sessionAttributes": {
     "intent": "OrderPizza",
-    "pizzaType": "pepperoni"
+    "pizzaType": "페퍼로니"
   },
   "response": {
     "outputSpeech": {
