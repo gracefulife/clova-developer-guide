@@ -6,5 +6,5 @@ Extension을 만드는 전체적인 과정은 다음과 같습니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>이렇게 만든 extension을 실제 서비스하려면 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md">Extension 배포하기</a>를 참고하십시오.</p>
+  <p>이렇게 만든 extension을 실제 서비스하려면 <a href="/DevConsole/Guides/CEK/Deploy_Extension.md">Extension 배포하기</a>를 참조하십시오.</p>
 </div>

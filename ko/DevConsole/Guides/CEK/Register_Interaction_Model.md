@@ -28,7 +28,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 
 <ol>
   <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
-  <li><strong>{{ book.DevConsole.UseBuiltInSlotType }}</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_slottype_builtin_title }}</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>필요한 built-in slot 타입을 선택한 후 우측 상단에 있는 <strong>{{ book.DevConsole.cek_save }}</strong> 버튼을 클릭합니다.</li>
 </ol>

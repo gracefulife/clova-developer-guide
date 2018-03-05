@@ -33,3 +33,5 @@ intentRequest(cekResponse) {
 {% endraw %}
 
 위 코드에서 보는 것처럼, Clova로부터 받은 요청 메시지에서 intent를 추출하여 그 이름이 `Clova.GuideIntent`일 때 "주사위 한 개 던져줘"라고 시도하도록 알려줍니다.
+
+변경된 코드를 extension 서버에서 실행합니다.

@@ -1,4 +1,4 @@
-<a href="https://developers.naver.com/console/clova/cek/#/list" target="_blank">Clova developer console</a>에 접속하여 extension의 기본 정보를 등록합니다.
+<a href="{{ book.DeveloperConsoleURL }}/cek/#/list" target="_blank">Clova developer console</a>에 접속하여 extension의 기본 정보를 등록합니다.
 주요 항목은 아래와 같습니다.
 
 * Extension 정보
