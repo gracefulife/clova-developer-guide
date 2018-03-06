@@ -1,8 +1,8 @@
-# Interaction modelを登録する
+# 対話モデルを登録する
 
-CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめinteraction modelを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。Interaction modelは、[custom extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
+CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめinteraction modelを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。対話モデルは、[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
 
-Interaction modelを登録するには、先にClova developer consoleで[extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するextensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
+対話モデルを登録するには、先にClova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)する必要があります。CEKのメニューで次のように、interaction modelを登録するExtensionの**{{ book.DevConsole.cek_edit }}**ボタンをクリックします。
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
@@ -19,12 +19,12 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>Custom intentを追加してから必要なslotタイプを追加することもできますが、Clova developer consoleの提供するUIの特性上、先にslotタイプを追加してからintentを追加することをお勧めします。</p>
+  <p>Custom intentを追加してから必要なslotタイプを追加することもできますが、Clova Developer Centerの提供するUIの特性上、先にslotタイプを追加してからintentを追加することをお勧めします。</p>
 </div>
 
 ## Built-in slotタイプを追加する {#AddBuiltinSlotType}
 
-サービスを提供するextensionがどの[built-in slotタイプ](/Design/Design_Guideline_For_Extension.md#Slot)を使用するか決めたなら、そのextensionのinteraction modelにbuilt-in slotタイプを追加する必要があります。例えば、ピザの宅配extensionを作成する場合、ユーザーの発話に、ピザの数量に関する情報の表現が含まれることが予想されます。従って、関連するbuilt-in slotタイプをextensionで使用する必要があります。その場合、次の順でbuilt-in slotタイプをextensionに追加します。
+サービスを提供するExtensionがどの[built-in slotタイプ](/Design/Design_Guideline_For_Extension.md#Slot)を使用するか決めたなら、そのExtensionのinteraction modelにbuilt-in slotタイプを追加する必要があります。例えば、ピザの宅配Extensionを作成する場合、ユーザーの発話に、ピザの数量に関する情報の表現が含まれることが予想されます。従って、関連するbuilt-in slotタイプをExtensionで使用する必要があります。その場合、次の順でbuilt-in slotタイプをExtensionに追加します。
 
 <ol>
   <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.SlotType }}</strong>画面が表示されます。</li>
@@ -39,7 +39,7 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 
 ## Custom slotタイプを追加する {#AddCustomSlotType}
 
-次に、extensionで使用する[custom slotタイプ](/Design/Design_Guideline_For_Extension.md#Slot)を定義します。[Built-in slotタイプを追加する](#AddBuiltinSlotType)に続き、ピザの宅配extensionを作成すると仮定します。ユーザーの発話のうち、ピザの種類に当たる部分をcustom slotタイプとして定義する必要があります。以下の表のような代表語と同義語を持つ、「PIZZA_TYPE」というcustom slotタイプを追加すると仮定します。
+次に、Extensionで使用する[custom slotタイプ](/Design/Design_Guideline_For_Extension.md#Slot)を定義します。[Built-in slotタイプを追加する](#AddBuiltinSlotType)に続き、ピザの宅配Extensionを作成すると仮定します。ユーザーの発話のうち、ピザの種類に当たる部分をcustom slotタイプとして定義する必要があります。以下の表のような代表語と同義語を持つ、「PIZZA_TYPE」というcustom slotタイプを追加すると仮定します。
 
 | 代表語           | 同義語                                        |
 |----------------|----------------------------------------------|
@@ -76,19 +76,19 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 シュリンプゴールドクラスト　　シュリンプゴールドクラストピザ　　シュリンプゴルクラピザ　　シュリンプゴルクラ
 ```
 
-Clova developer consoleは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom slotタイプをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova developer consoleで作成中のcustom slotタイプをTSV形式でダウンロードできます。
+Clova Developer Centerは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom slotタイプをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova Developer Centerで作成中のcustom slotタイプをTSV形式でダウンロードできます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Custom_Slot_Upload_and_Download_Button.png)
 
 ## Built-in intentを追加する {#AddBuiltinIntent}
 
-[Built-in intent](/Design/Design_Guideline_For_Extension.md#Intent)は、Clovaプラットフォームで一部の共通したユーザーリクエストのカテゴリを決め、それを共有して使用するために宣言したintentです。例えば、頻繁に発生すると予想されるユーザーの肯定・否定、キャンセルなどのリクエストを、intentとしてあらかじめ定義したものです。現在、すべてのextensionは、Clovaの提供するbuilt-in intentをすべて処理できる必要があります。次のbuilt-in intentがデフォルトで登録されています。
+[Built-in intent](/Design/Design_Guideline_For_Extension.md#Intent)は、Clovaプラットフォームで一部の共通したユーザーリクエストのカテゴリを決め、それを共有して使用するために宣言したintentです。例えば、頻繁に発生すると予想されるユーザーの肯定・否定、キャンセルなどのリクエストを、intentとしてあらかじめ定義したものです。現在、すべてのExtensionは、Clovaの提供するbuilt-in intentをすべて処理できる必要があります。次のbuilt-in intentがデフォルトで登録されています。
 
 ![](/DevConsole/Resources/Images/DevConsole-Built-in_Intent_List.png)
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p>今後、extensionごとに必要なbuilt-in intentのみ使用できるように変更される予定です。</p>
+  <p>今後、Extensionごとに必要なbuilt-in intentのみ使用できるように変更される予定です。</p>
 </div>
 
 ## Custom intentを追加する {#AddCustomIntent}
@@ -132,7 +132,7 @@ pizzaAmount	CLOVA.NUMBER
 ...
 ```
 
-Clova developer consoleは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom intentをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova developer consoleで作成しているcustom intentをTSV形式でダウンロードできます。
+Clova Developer Centerは、以下のように**アップロード**ボタンと**ダウンロード**ボタンを提供します。**アップロード**ボタンをクリックすると、あらかじめTSVファイルで定義したcustom intentをアップロードできます。**ダウンロード**ボタンをクリックすると、現在Clova Developer Centerで作成しているcustom intentをTSV形式でダウンロードできます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Utterance_Example_Upload_and_Download_Button.png)
 
@@ -141,6 +141,6 @@ Clova developer consoleは、以下のように**アップロード**ボタン�
   <p>1つのinteraction modelでは、intentに関わらず、slotタイプに同じ名前を宣言することをお勧めします。例えば、「OrderPizza」intentで、ピザの種類(「PIZZA_TYPE」)に関するslot名を「pizzaType」にしたとすると、他のintentで同じslotタイプを宣言する際、同じく「pizzaType」にする必要があります。ただし、「ソウルからプサンまで時間がどれぐらいかかるか教えて」のように、「ソウル」と「プサン」が同じslotタイプであっても、目的によって区別される必要のある場合、slot名を区別して作成します。</p>
 </div>
 
-これまで、1つのintentをinteraction modelに追加する方法を説明しました。ここで説明されている方法を繰り返して、extensionにintentを必要なだけ追加すると、以下のようにinteraction modelを完成できます。
+これまで、1つのintentをinteraction modelに追加する方法を説明しました。ここで説明されている方法を繰り返して、Extensionにintentを必要なだけ追加すると、以下のようにinteraction modelを完成できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Interaction_Model.png)
