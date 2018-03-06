@@ -26,7 +26,7 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 [Interaction 모델 빌드](#BuildInteractionModel)가 완료되면, interaction 모델을 테스트할 수 있습니다. 다음과 같이 발화문을 테스트해볼 수 있습니다.
 
 <ol>
-  <li>왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_test }}</strong> 메뉴를 클릭합니다. 메뉴를 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> 화면이 표시됩니다.</li>
+  <li>왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_test }}</strong> 메뉴를 클릭합니다. 메뉴를 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> 화면이 표시됩니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Menu.png" />
   <li><strong>{{ book.DevConsole.cek_builder_test_expression_title }}</strong> 필드에 테스트할 발화문을 입력하고 <strong>{{ book.DevConsole.cek_builder_test_request_test }}</strong> 버튼을 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Utterance_Example.png" />

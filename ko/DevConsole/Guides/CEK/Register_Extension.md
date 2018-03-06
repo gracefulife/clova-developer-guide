@@ -103,6 +103,6 @@ Extension으로 제공하려는 서비스의 사용자 계정이 Clova의 사용
 
 <div id="RedirectURI" class="note">
   <p><strong>Note!</strong></p>
-  <p>계정 인증 후 이동할 클라이언트가 URL(redirect URL)은 <code>{{ book.RedirectURLforAccountLinking }}</code>이며, <strong>{{ book.DevConsole.cek_redirect_urls }}</strong> 항목에서 확인할 수 있습니다.</strong></p>
+  <p>계정 인증 후 클라이언트가 이동할 URL(redirect URL)은 <code>{{ book.RedirectURLforAccountLinking }}</code>이며, <strong>{{ book.DevConsole.cek_redirect_urls }}</strong> 항목에서 확인할 수 있습니다.</strong></p>
   <img src="/DevConsole/Resources/Images/DevConsole-Redirect_URL_for_Extension_Accoun_Linking.png" />
 </div>

@@ -73,15 +73,15 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 * `state` 파라미터를 redirect URL(`redirect_uri`)로 계속 전달해야 합니다.
 
 
-사용자가 계정을 인증할 수 있도록 로그인 UI를 제공하는 페이지의 주소를 **Authorization URL**이라 부르며, Clova Developer Console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)할 때 입력해야 합니다. 사용자가 extension의 [계정 연결을 사용하도록 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)할 때 이 **Authorization URL**이 다음 파라미터와 함께 호출됩니다.
+사용자가 계정을 인증할 수 있도록 로그인 UI를 제공하는 페이지의 주소를 **Authorization URL**이라 부르며, Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Register_Extension.md)할 때 입력해야 합니다. 사용자가 extension의 [계정 연결을 사용하도록 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)할 때 이 **Authorization URL**이 다음 파라미터와 함께 호출됩니다.
 
 | 파라미터 이름     | 설명                                         |
 |---------------|---------------------------------------------|
 | `state`         | 인증 세션의 시간 만료 여부를 확인하는 상태 값. 이 값은 5분 뒤에 만료되므로 사용자가 인증을 5분 안에 마치지 않으면 인증을 다시 시도해야 합니다. |
-| `client_id`     | Clova가 외부 서비스의 access token을 발급 받기 위해 사용할 ID. 개발자는 Clova Developer Console을 통해 미리 `cliend_id`를 등록해둬야 합니다. |
-| `response_type` | OAuth 2.0 인가 타입(`"code"` 또는 `"token"`)을 정의해 둔 파라미터. 높은 보안이 필요한 경우 `"code"` 타입을 사용합니다. Clova Home extension은 항상 `"code"` 타입을 사용합니다. Clova Developer Console을 통해 미리 `reponse_type`을 등록해둬야 합니다. |
-| `scope`         | OAuth의 `scope` 필드. 접근 수준을 정의할 수 있습니다. Clova Developer Console을 통해 미리 `scope`를 등록해둬야 합니다. |
-| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova Developer Console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
+| `client_id`     | Clova가 외부 서비스의 access token을 발급 받기 위해 사용할 ID. 개발자는 Clova developer console을 통해 미리 `cliend_id`를 등록해둬야 합니다. |
+| `response_type` | OAuth 2.0 인가 타입(`"code"` 또는 `"token"`)을 정의해 둔 파라미터. 높은 보안이 필요한 경우 `"code"` 타입을 사용합니다. Clova Home extension은 항상 `"code"` 타입을 사용합니다. Clova developer console을 통해 미리 `reponse_type`을 등록해둬야 합니다. |
+| `scope`         | OAuth의 `scope` 필드. 접근 수준을 정의할 수 있습니다. Clova developer console을 통해 미리 `scope`를 등록해둬야 합니다. |
+| `redirect_uri`  | 계정 인증 후 이동할 URL(redirect URL)이며, `redirect_uri`의 값은 Clova developer console에서 extension을 등록할 때 [계정 연결 설정](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) 중에서 확인할 수 있으며, 현재 `{{ book.RedirectURLforAccountLinking }}`을 사용하고 있습니다. |
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -100,7 +100,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p><code>redirect_uri</code>는 Clova Developer Console의 <a href="/DevConsole/Guides/CEK/Register_Extension.html#RedirectURI">계정 연결을 설정</a>하는 화면에 확인할 수 있습니다.</p>
+<p><code>redirect_uri</code>는 Clova developer console의 <a href="/DevConsole/Guides/CEK/Register_Extension.html#RedirectURI">계정 연결을 설정</a>하는 화면에 확인할 수 있습니다.</p>
 </div>
 
 
@@ -108,7 +108,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 
 | 파라미터 이름     | 설명                                        |
 |---------------|---------------------------------------------|
-| `vendorId`      | Extension 개발자에게 부여된 ID. 외부 서비스 또는 기업을 구분하기 위해 Clova Developer Console에 등록된 ID입니다. `redirect_uri`에 미리 포함되어 있습니다. |
+| `vendorId`      | Extension 개발자에게 부여된 ID. 외부 서비스 또는 기업을 구분하기 위해 Clova developer console에 등록된 ID입니다. `redirect_uri`에 미리 포함되어 있습니다. |
 | `state`         | 인증 세션의 시간 만료 여부를 확인하는 상태 값. **Authorization URL**을 통해 전달받은 `state` 파라미터를 그대로 입력합니다.    |
 | `code`          | Authorization code. `response_type` 값이 `"code"`이면, 이 파라미터에 authorization code를 입력합니다.  |
 | `access_token`  | Access token. `response_type` 값이 `"token"`이면, 이 파라미터에 access token을 입력합니다.               |
@@ -129,7 +129,7 @@ Extension에 계정 연결을 적용하려면 우선 사용자가 계정 인증�
 </code></pre>
 
 
-Clova가 사용자 계정 연결을 위해 Authorization code를 획득한 경우(authorization code grant 방식), Clova는 다시 extension 개발자가 Clova Developer Console에 미리 등록해 둔 **[Access Token URI](#RegisterAccountLinkingInfo)**로 access token을 요청하게 됩니다. 이때, Clova는 획득한 authorization code를 파라미터로 전송하게 되며, 인증 서버는 외부 서비스의 계정 권한이 부여된 access token과 access token을 갱신할 수 있는 refresh token을 발급해야 합니다.
+Clova가 사용자 계정 연결을 위해 Authorization code를 획득한 경우(authorization code grant 방식), Clova는 다시 extension 개발자가 Clova developer console에 미리 등록해 둔 **[Access Token URI](#RegisterAccountLinkingInfo)**로 access token을 요청하게 됩니다. 이때, Clova는 획득한 authorization code를 파라미터로 전송하게 되며, 인증 서버는 외부 서비스의 계정 권한이 부여된 access token과 access token을 갱신할 수 있는 refresh token을 발급해야 합니다.
 
 Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경우(implicit grant 방식), refresh token을 발급받지 않으며 access token이 만료되면 사용자 계정 연결을 다시 시도해야 합니다.
 
@@ -213,7 +213,7 @@ Clava가 사용자 계정 연결을 위해 access token을 바로 획득한 경�
 
 
 ### 계정 연결 정보 등록 {#RegisterAccountLinkingInfo}
-인증 서버 구축과 extension에 계정 연결을 적용하는 것이 완료되면 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)에 [인증 서버 구축](#BuildAuthServer)에서 언급했던 정보를 등록해야 합니다. Clova Developer Console에 등록된 extension에서 다음과 같은 [계정 연결 정보를 입력](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)합니다.
+인증 서버 구축과 extension에 계정 연결을 적용하는 것이 완료되면 [Clova developer console](/DevConsole/ClovaDevConsole_Overview.md)에 [인증 서버 구축](#BuildAuthServer)에서 언급했던 정보를 등록해야 합니다. Clova developer console에 등록된 extension에서 다음과 같은 [계정 연결 정보를 입력](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)합니다.
 
 | 필드 이름           | 설명                                         |
 |-------------------|---------------------------------------------|
