@@ -1,3 +1,5 @@
+{% if book.TargetCountryCode == "KR" %}
+
 | `location` 필드 값 | 위치 정보          |
 |------------------|------------------|
 | `ATTIC`                     | 다락방  |
@@ -45,3 +47,61 @@
 | `UTILITY_ROOM`              | 다용도실 |
 | `WAREHOUSE`                 | 창고 |
 | `YARD`                      | 마당 |
+
+{% elif book.TargetCountryCode == "JP" %}
+
+{% if book.language == "en" %}
+
+| `location` field value |    Location details       |    Location details(JP)      |
+|------------------|------------------|------------------|
+| `ATTIC`                     | Attic                      | 屋根裏部屋  |
+| `BALCONY`                   | Balcony                    | ベランダ |
+| `BATH_ROOM`                 | Bathroom                   | バスルーム |
+| `BED_ROOM`                  | Bedroom                    | ベッドルーム |
+| `DINING_ROOM`               | Dining room                | ダイニング |
+| `ENTERANCE`                 | Entrance                   | 玄関 |
+| `FIRST_ROOM`                | First room                 | 部屋1 |
+| `HALLWAY`                   | Hallway                    | 廊下 |
+| `KITCHEN`                   | Kitchen                    | キッチン |
+| `LIBRARY`                   | Library                    | 書斎 |
+| `LIVING_ROOM`               | Living room                | リビング |
+| `POWDER_ROOM`               | Powder room                | 洗面所 |
+| `ROOM`                      | Room                       | 部屋 |
+| `SECOND_ROOM`               | Second room                | 部屋2 |
+| `SMALL_CHILD_ROOM`          | Younger child's room       | 子供部屋 |
+| `SMALL_BATH_ROOM`           | Toilet                     | トイレ |
+| `STAIRS`                    | Stairs                     | 階段 |
+| `THIRD_ROOM`                | Third room                 | 部屋3 |
+| `WAREHOUSE`                 | Warehouse                  | 倉庫 |
+| `YARD`                      | Yard                       | 庭 |
+| `JAPANESE_STYLE_ROOM`       | Japanese Style Room        | 和室 |
+
+{% elif book.TargetCountryCode == "ja" %}
+
+| `location` field value |    Location details(JP)      |
+|------------------------|------------------------------|
+| `ATTIC`                | 屋根裏部屋  |
+| `BALCONY`              | ベランダ |
+| `BATH_ROOM`            | バスルーム |
+| `BED_ROOM`             | ベッドルーム |
+| `DINING_ROOM`          | ダイニング |
+| `ENTERANCE`            | 玄関 |
+| `FIRST_ROOM`           | 部屋1 |
+| `HALLWAY`              | 廊下 |
+| `KITCHEN`              | キッチン |
+| `LIBRARY`              | 書斎 |
+| `LIVING_ROOM`          | リビング |
+| `POWDER_ROOM`          | 洗面所 |
+| `ROOM`                 | 部屋 |
+| `SECOND_ROOM`          | 部屋2 |
+| `SMALL_CHILD_ROOM`     | 子供部屋 |
+| `SMALL_BATH_ROOM`      | トイレ |
+| `STAIRS`               | 階段 |
+| `THIRD_ROOM`           | 部屋3 |
+| `WAREHOUSE`            | 倉庫 |
+| `YARD`                 | 庭 |
+| `JAPANESE_STYLE_ROOM`  | 和室 |
+
+{% endif %}
+
+{% endif %}

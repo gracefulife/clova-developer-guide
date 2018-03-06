@@ -1,5 +1,5 @@
 ## Custom extension 응답 반환하기 {#ReturnCustomExtensionResponse}
-[요청 메시지를 처리](#HandleCustomExtensionRequest)하고 나면 다시 CEK로 [응답 메시지](/CEK/References/CEK_API.md#CustomExtResponseMessage)를 돌려줘야 합니다(HTTPS Response). 요청 메시지의 타입에 따라 응답해야 하는 내용이 달라질 수 있지만 응답 메시지의 구조는 크게 다르지 않습니다. 다음은 LaunchRequest 타입 요청("영어 대화하자"라는 사용자 요청)을 처리하고 보낸 응답 메시지입니다.
+[요청 메시지를 처리](#HandleCustomExtensionRequest)하고 나면 다시 CEK로 [응답 메시지](/CEK/References/CEK_API.md#CustomExtResponseMessage)를 돌려줘야 합니다(HTTPS Response). 요청 메시지의 타입에 따라 응답해야 하는 내용이 달라질 수 있지만 응답 메시지의 구조는 크게 다르지 않습니다. 다음은 LaunchRequest 타입 요청("피자봇 시작해줘"라는 사용자 요청)을 처리하고 보낸 응답 메시지입니다.
 
 {% raw %}
 ```json
@@ -11,8 +11,8 @@
       "type": "SimpleSpeech",
       "values": {
           "type": "PlainText",
-          "lang": "en",
-          "value": "Hi, nice to meet you"
+          "lang": "ko",
+          "value": "안녕하세요, 피자봇입니다. 무엇을 도와드릴까요?"
       }
     },
     "card": {},
@@ -90,111 +90,41 @@
       "values": {
           "type": "PlainText",
           "lang": "ko",
-          "value": "공포 영화 추천해 드려요."
+          "value": "리오넬 메시의 사진이에요."
       }
     },
     "card": {
-      "subType": "",
-      "type": "CardList",
-      "cardList": [
+      "type": "ImageText",
+      "imageUrl": {
+        "type": "url",
+        "value": ""
+      },
+      "mainText": {
+        "type": "string",
+        "value": "리오넬 메시"
+      },
+      "referenceText": {
+        "type": "string",
+        "value": "네이버 검색결과"
+      },
+      "referenceUrl": {
+        "type": "url",
+        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%eb%a6%ac%ec%98%a4%eb%84%ac+%eb%a9%94%ec%8b%9c+%ec%86%8c%ec%86%8d%ed%8c%80"
+      },
+      "subTextList": [
         {
-          "description": [
-            {
-              "type": "string",
-              "value": "공포, 스릴러"
-            },
-            {
-              "type": "string",
-              "value": "아론 에크하트, 데이비드 매주즈, 캐리스 밴 허슨, 카타리나 산디노 모레노, 키어 오도넬, 매트 네이블, 존 피루첼로, 엠제이 안소니, 카롤리나 위드라, 마크 스테거, 토마스 아라나, 페트라 스프레처, 마크 헨리, 애슐리 그린 엘리자베스"
-            },
-            {
-              "type": "string",
-              "value": ""
-            }
-          ],
-          "imageUrl": {
-            "type": "url",
-            "value": "http://movie.phinf.naver.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2"
-          },
-          "linkUrl": {
-            "type": "url",
-            "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=118965"
-          },
-          "press": {
-            "type": "string",
-            "value": ""
-          },
-          "publishDate": {
-            "type": "date",
-            "value": ""
-          },
-          "referenceText": {
-            "type": "string",
-            "value": "네이버 검색결과"
-          },
-          "referenceUrl": {
-            "type": "url",
-            "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-          },
-          "title": {
-            "type": "string",
-            "value": "인카네이트"
-          },
-          "videoUrl": {
-            "type": "url",
-            "value": ""
-          }
-        },
-        {
-          "description": [
-            {
-              "type": "string",
-              "value": "공포"
-            },
-            {
-              "type": "string",
-              "value": "마틸다 안나 잉그리드 루츠, 알렉스 로, 자니 갈렉키, 빈센트 도노프리오, 에이미 티가든, 보니 모건, 로라 위긴스, 잭 로어리그, 리지 브로체르"
-            },
-            {
-              "type": "string",
-              "value": ""
-            }
-          ],
-          "imageUrl": {
-            "type": "url",
-            "value": "http://movie.phinf.naver.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2"
-          },
-          "linkUrl": {
-            "type": "url",
-            "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=137909"
-          },
-          "press": {
-            "type": "string",
-            "value": ""
-          },
-          "publishDate": {
-            "type": "date",
-            "value": ""
-          },
-          "referenceText": {
-            "type": "string",
-            "value": "네이버 검색결과"
-          },
-          "referenceUrl": {
-            "type": "url",
-            "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
-          },
-          "title": {
-            "type": "string",
-            "value": "링스"
-          },
-          "videoUrl": {
-            "type": "url",
-            "value": ""
-          }
-        },
-        ...
-      ]
+          "type": "string",
+          "value": "FC 바르셀로나"
+        }
+      ],
+      "thumbImageType": {
+        "type": "string",
+        "value": "인물"
+      },
+      "thumbImageUrl": {
+        "type": "url",
+        "value": "http://sstatic.naver.net/people/3/201607071816066361.jpg"
+      }
     },
     "directives": [],
     "shouldEndSession": true

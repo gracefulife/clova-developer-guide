@@ -1,4 +1,5 @@
 # Extensionを登録する
+
 [Custom Extension](/CEK/Guides/Build_Custom_Extension.md)または[Clova Home Extension](/CEK/Guides/Build_Clova_Home_Extension.md)を開発しているか、または開発済みの場合、そのExtensionをClova Developer Centerに登録する必要があります。CEKのメニューページで、ページの下にある**新規のExtensionを作成**ボタンをクリックすると、新規のExtensionを登録できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)

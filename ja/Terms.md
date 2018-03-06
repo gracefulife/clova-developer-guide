@@ -70,6 +70,7 @@ CICから渡されるコンテンツ情報をスケジュールカテゴリに�
 クライアントが[Clova Interface Connect](#CIC)からディレクティブを渡される際に使用される[HTTP/2](#HTTP2)ストリームです。詳細については、[CICに接続する](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)ドキュメントを参照してください。
 
 ### Extension {#Extension}
+
 [Clova Extension](#ClovaExtension)の別の言い方
 
 ### スキルストア {#ExtensionStore}
@@ -135,4 +136,5 @@ Clova Extensionが処理するユーザーの意図を区分したカテゴリ�
 [Clova Interface Connect](#CIC)がクライアントのアクションを制御するように指定したメッセージです。ディレクティブはクライアントがリクエストしたイベントに応答したり、特定の条件によってクライアントに情報を渡す際に使用されます。
 
 ### クライアントの認証情報 {#ClientCredentialInfo}
+
 [Clova Developer Center](#ClovaDeveloperConsole)でクライアントを登録し、取得した認証情報です。[Clovaアクセストークン](#ClovaAccessToken)の取得に使用されます。詳細については、[Clovaアクセストークンを生成する](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
