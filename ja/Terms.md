@@ -21,7 +21,7 @@ CICがクライアントに提供するREST APIです。クライアントは、
 クライアントが[Clova Interface Connect](#CIC)で[イベント](#Event)を送る際、Clovaがクライアントを認証する手段です。詳細については、[Clovaアクセストークンを生成する](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)ドキュメントを参照してください。
 
 ### Clova Developer Center {#ClovaDeveloperConsole}
-Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="https://developers.naver.com/console/clova/">ウェブツール</a>です。
+Clovaプラットフォームと連携するクライアントデバイス、または[Clova Extension](#ClovaExtension)を開発する開発者に次の内容を提供する<a target="_blank" href="{{ book.DeveloperConsoleURL }}">ウェブツール</a>です。
 * クライアントデバイスの登録およびクライアントの認証情報を提供(今後サービス予定)
 * Clova Extensionの[登録](/DevConsole/Guides/CEK/Register_Extension.md)および[配布](/DevConsole/Guides/CEK/Deploy_Extension.md)
 * [対話モデルの登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
