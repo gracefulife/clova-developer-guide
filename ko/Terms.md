@@ -149,6 +149,6 @@ Clova가 제공하는 확장 기능을 의미합니다. Skill을 사용자에게
 
 ### 확장 서비스 {#Skill}
 
-Clova가 제공하는 확장 기능을 의미합니다. 확장 서비스을 사용자에게 제공하려면 [Clova extension](#ClovaExtension)을 개발해야 합니다.
+Clova가 제공하는 확장 기능을 의미합니다. 확장 서비스를 사용자에게 제공하려면 [Clova extension](#ClovaExtension)을 개발해야 합니다.
 
 {% endif %}
