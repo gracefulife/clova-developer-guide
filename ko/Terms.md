@@ -106,9 +106,13 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 ### SessionEndedRequest {#SessionEndedRequest}
 사용자가 특정 모드나 특정 [custom extension](#CustomExtension)의 사용을 중지하기로 선언한 것을 알리기 위해 사용되며 요청 메시지에 포함됩니다. 자세한 내용은 [Custom extension 요청 처리하기](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest) 문서를 참조합니다.
 
+{% if book.language == "ja" or book.language == "en" }
+
 ### Skill {#Skill}
 
-[Clova extension](#ClovaExtension)의 다른 표현
+Clova가 제공하는 확장 기능을 의미합니다. Skill을 사용자에게 제공하려면 [Clova extension](#ClovaExtension)을 개발해야 합니다.
+
+{% endif %}
 
 ### Slot {#Slot}
 [Intent](#Intent)에 선언된 요청을 처리할 때 필요한 정보이며, intent를 정의할 때 함께 정의해야 합니다. Clova는 사용자 요청을 분석한 후 slot에 해당하는 정보를 추출하게 됩니다. 자세한 내용은 [interaction 모델 정의](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)를 참조합니다.
@@ -140,3 +144,11 @@ Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주�
 
 ### 클라이언트 인증 정보 {#ClientCredentialInfo}
 [Clova developer console](#ClovaDeveloperConsole)를 통해 클라이언트를 등록하고 획득한 인증 정보이며, [Clova access token](#ClovaAccessToken)을 획득하는데 사용됩니다. 자세한 내용은 [Clova access token 생성하기](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) 문서를 참조합니다.
+
+{% if book.language == "ko" or book.language == "en" }
+
+### 확장 서비스 {#Skill}
+
+Clova가 제공하는 확장 기능을 의미합니다. 확장 서비스을 사용자에게 제공하려면 [Clova extension](#ClovaExtension)을 개발해야 합니다.
+
+{% endif %}

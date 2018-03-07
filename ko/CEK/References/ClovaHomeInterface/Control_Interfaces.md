@@ -953,7 +953,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "airQuality": "LOCKED"
+    "lockState": "LOCKED"
   },
   "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
 }
