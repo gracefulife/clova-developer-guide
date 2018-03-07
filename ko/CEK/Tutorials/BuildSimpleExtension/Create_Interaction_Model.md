@@ -28,14 +28,14 @@
 ### 빌드 및 테스트하기
 Interaction 모델이 입력한대로 동작하는지 확인하기 위해 interaction 모델을 빌드하여 테스트 합니다.
 
-1. **Custom Extension** 화면 좌측 상단의 **{{ book.DevConsole.BuildButton }}** 버튼을 누릅니다.
+1. **Custom Extension** 화면 좌측 상단의 **{{ book.DevConsole.cek_builder_menu_build }}** 버튼을 누릅니다.
 
 	<div class="note">
 	  <p><strong>Note!</strong></p>
-		<p>빌드는 3~5분 정도 소요됩니다. 빌드가 시작되면 버튼이 <strong>{{ book.DevConsole.IsBuilding }}</strong>으로 바뀌며, 빌드가 완료된 후 다시 <strong>{{ book.DevConsole.BuildButton }}</strong>로 돌아옵니다.</p>
+		<p>빌드는 3~5분 정도 소요됩니다. 빌드가 시작되면 버튼이 <strong>{{ book.DevConsole.cek_builder_menu_build_in_progress }}</strong>으로 바뀌며, 빌드가 완료된 후 다시 <strong>{{ book.DevConsole.cek_builder_menu_build }}</strong>로 돌아옵니다.</p>
 	</div>
 
-2. 빌드가 완료되면 **{{ book.DevConsole.BuildButton }}** 버튼 아래의 **{{ book.DevConsole.cek_test }}** 메뉴를 누릅니다.
+2. 빌드가 완료되면 **{{ book.DevConsole.cek_builder_menu_build }}** 버튼 아래의 **{{ book.DevConsole.cek_test }}** 메뉴를 누릅니다.
 
 3. **{{ book.DevConsole.cek_builder_test_expression_title }}**에 테스트하고자 하는 문장을 입력합니다. 예를 들어, "주사위 던져줄래"라고 입력합니다.
 4. 엔터키 또는 **{{ book.DevConsole.cek_builder_test_request_test }}** 버튼을 누릅니다.
