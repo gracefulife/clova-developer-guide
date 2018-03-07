@@ -73,6 +73,10 @@ CICから渡されるコンテンツ情報をスケジュールカテゴリに�
 
 [Clova Extension](#ClovaExtension)の別の言い方
 
+### スキル {#Skill}
+
+[Clova Extension](#ClovaExtension)の別の言い方
+
 ### スキルストア {#ExtensionStore}
 
 Extensionをユーザーに提供するために構築されたプラットフォームです。

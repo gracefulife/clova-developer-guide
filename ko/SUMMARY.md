@@ -183,7 +183,7 @@
       * [Error](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
       * [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
 
-## Clova Developer Console
+## Clova developer console
 
 * [Clova developer console 개요](/DevConsole/ClovaDevConsole_Overview.md)
 * [CEK Menu 사용하기](/DevConsole/Guides/CEK/Using_CEK_Menu.md)

@@ -251,7 +251,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 다음은 LaunchRequest 타입의 요청 메시지 예제입니다.
 
 #### IntentRequest {#CustomExtIntentRequest}
-`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받을지 [interaction 모델을 정의](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)해야 하며, Interaction 모델은 [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md)을 통해 등록할 수 있습니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
+`IntentRequest` 타입은 분석한 사용자의 요청을 전달하여 그 내용을 수행하도록 하는 요청 타입입니다. Extension 개발자는 서비스를 만들 때 사용자의 요청을 어떻게 받을지 [interaction 모델을 정의](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)해야 하며, Interaction 모델은 [Clova developer console](/DevConsole/ClovaDevConsole_Overview.md)을 통해 등록할 수 있습니다. 이때, 구별되는 사용자의 요청을 Intent라는 정보 형태로 정의합니다. 분석된 사용자의 발화 정보는 Intent로 변환되며, `intent` 필드를 통해 extension에게 전달됩니다.
 
 `IntentRequest` 타입 메시지의 `request` 객체 필드 구성은 다음과 같습니다.
 
