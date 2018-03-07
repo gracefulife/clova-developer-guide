@@ -12,13 +12,13 @@ In order to deploy the custom extension, the [interaction model must be register
 <ol>
   <li>On the list of registered extensions, click on the <strong>{{ book.DevConsole.cek_edit }}</strong> menu of the extension to build the interaction model.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png" />
-  <li>On the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}</strong> screen, click the <strong>{{ book.DevConsole.BuildButton }}</strong> button on the top left section to build the interaction model. It may take around 3-5 minutes depending on the size of the interaction model.</li>
+  <li>On the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}</strong> screen, click the <strong>{{ book.DevConsole.cek_builder_menu_build }}</strong> button on the top left section to build the interaction model. It may take around 3-5 minutes depending on the size of the interaction model.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Build_Interaction_Model.png" />
 </ol>
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If you move to a different menu within the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}</strong> screen, the build will not be cancelled. You can move between menus or edit details after starting the build.</p>
+  <p>If you move to a different menu within the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}</strong> screen, the build will not be cancelled. You can move between menus or edit details after starting the build.</p>
 </div>
 
 ## Testing an interaction model {#TestInteractionModel}

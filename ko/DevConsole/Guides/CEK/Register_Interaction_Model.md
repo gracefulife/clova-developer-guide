@@ -6,7 +6,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
-다음과 같은 **{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.Dashboard }}** 화면이 표시됩니다.
+다음과 같은 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}** 화면이 표시됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
@@ -33,7 +33,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
   <li>필요한 built-in slot 타입을 선택한 후 우측 상단에 있는 <strong>{{ book.DevConsole.cek_save }}</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-위 과정을 수행하고 나면 **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}** 화면의 **{{ book.DevConsole.cek_builder_list_title_slottype }}** 패널에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
+위 과정을 수행하고 나면 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}** 화면의 **{{ book.DevConsole.cek_builder_list_title_slottype }}** 패널에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot_Type.png)
 
@@ -62,7 +62,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
   <li>마지막으로 우측 상단에 있는 <strong>{{ book.DevConsole.cek_save }}</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
+오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
