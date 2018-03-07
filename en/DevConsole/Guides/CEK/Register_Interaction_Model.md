@@ -6,7 +6,7 @@ You can register the interaction model after [registering the extension](/DevCon
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
-Then, the following **{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.Dashboard }}** screen will be displayed.
+Then, the following **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}** screen will be displayed.
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
@@ -27,13 +27,13 @@ Register the [interaction model predefined](/Design/Design_Guideline_For_Extensi
 Once you know the [built-in slot type](/Design/Design_Guideline_For_Extension.md#Slot) to be used by the extension service, you must add the built-in slot type to the interaction model of the extension. For example, if you create a pizza delivery extension, the expression about the pizza quantity can be used in a user utterance. Therefore, in order to use such built-in slot type in the extension, you must add it to the interaction model by following the steps below:
 
 <ol>
-  <li>On the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> panel or at the bottom of left menu bar, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button on the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> menu area. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.SlotType }}</strong> screen will be displayed.</li>
+  <li>On the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> panel or at the bottom of left menu bar, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button on the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> menu area. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_slottype }}</strong> screen will be displayed.</li>
   <li>In the <strong>{{ book.DevConsole.UseBuiltInSlotType }}</strong> item, check the necessary built-in slot type checkbox.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>Select the required built-in slot type and click the <strong>{{ book.DevConsole.cek_save }}</strong> button at the top right of the screen.</li>
 </ol>
 
-Once you complete the above steps, you can find that the built-in slot type has been added on the **{{ book.DevConsole.cek_builder_list_title_slottype }}** panel of the **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}** screen as shown below.
+Once you complete the above steps, you can find that the built-in slot type has been added on the **{{ book.DevConsole.cek_builder_list_title_slottype }}** panel of the **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}** screen as shown below.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot_Type.png)
 
@@ -52,8 +52,8 @@ Now, the [custom slot type](/Design/Design_Guideline_For_Extension.md#Slot) to u
 Follow the steps below to add a custom slot type.
 
 <ol>
-  <li>On the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> panel or at the bottom of left menu bar, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button on the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> menu area. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.SlotType }}</strong> screen will be displayed.</li>
-  <li>Enter the name of the new custom slot type in the <strong>{{ book.DevConsole.CreateSlotType }}</strong> input field and click <strong>{{ book.DevConsole.cek_create }}</strong>. Once the custom slot type is created, the screen to view detailed information on the created slot type will be displayed.</li>
+  <li>On the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> panel or at the bottom of left menu bar, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button on the top right of the <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> menu area. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_slottype }}</strong> screen will be displayed.</li>
+  <li>Enter the name of the new custom slot type in the <strong>{{ book.DevConsole.cek_builder_new_slottype_title }}</strong> input field and click <strong>{{ book.DevConsole.cek_create }}</strong>. Once the custom slot type is created, the screen to view detailed information on the created slot type will be displayed.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_1.png" />
   <li>Under the <strong>{{ book.DevConsole.cek_builder_slottype_dictionary_title }}</strong>, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button to add a representative term.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_2.png" />
@@ -62,7 +62,7 @@ Follow the steps below to add a custom slot type.
   <li>Finally, click <strong>{{ book.DevConsole.cek_save }}</strong> in the top right section.</li>
 </ol>
 
-Go to **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}** via the <strong>dashboard</strong> menu on the right to check that the custom slot type has been added.
+Go to **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}** via the <strong>dashboard</strong> menu on the right to check that the custom slot type has been added.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
@@ -95,8 +95,8 @@ The [built-in intent](/Design/Design_Guideline_For_Extension.md#Intent) is an in
 If the [built-in slot type](#AddBuiltinSlotType) and the [custom slot type](#AddCustomSlotType) to use for the extension are added, you only need to add the custom intent. Continuing with the previous example, let’s assume that the user is requesting a pizza order. Follow the steps below to add an intent called "OrderPizza":
 
 <ol>
-  <li>At the top right of the<strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> panel, at the top right of panel or at the bottom of left side menu bar, at the top right of <strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> area, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.NewIntent }}</strong> screen will be displayed.</li>
-  <li>Enter the name of the custom intent to add to the <strong>{{ book.DevConsole.CreateCustomIntent }}</strong> input field and click the <strong>{{ book.DevConsole.cek_create }}</strong>. Once the custom intent is created, the screen to view detailed information on the created custom intent will be displayed.</li>
+  <li>At the top right of the<strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> panel, at the top right of panel or at the bottom of left side menu bar, at the top right of <strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> area, click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button. When you click the button, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_intent }}</strong> screen will be displayed.</li>
+  <li>Enter the name of the custom intent to add to the <strong>{{ book.DevConsole.cek_builder_new_intent }}</strong> input field and click the <strong>{{ book.DevConsole.cek_create }}</strong>. Once the custom intent is created, the screen to view detailed information on the created custom intent will be displayed.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_1.png" />
   <li>Enter a slot name to add in the <strong>{{ book.DevConsole.cek_builder_intent_slot_title }}</strong> input field and click the <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> button on the right to add the slot.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_2.png" />
@@ -144,4 +144,3 @@ On the Clova developer console, the **upload** and **download** buttons are prov
 So far we have described the method of adding an intent to the interaction model. You can repeat the methods described above to add as much as needed intents to the extension to complete an interaction model as shown below.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Interaction_Model.png)
-

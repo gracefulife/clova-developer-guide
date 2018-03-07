@@ -6,7 +6,7 @@ CEKがExtensionにユーザーのリクエストを送る際、ユーザーの�
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
-以下のような*{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}**画面が表示されます。
+以下のような**{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_dashboard }}**画面が表示されます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
@@ -27,13 +27,13 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 サービスを提供するExtensionがどの[built-in slotタイプ](/Design/Design_Guideline_For_Extension.md#Slot)を使用するか決めたなら、そのExtensionのinteraction modelにbuilt-in slotタイプを追加する必要があります。例えば、ピザの宅配Extensionを作成する場合、ユーザーの発話に、ピザの数量に関する情報の表現が含まれることが予想されます。従って、関連するbuilt-in slotタイプをExtensionで使用する必要があります。その場合、次の順でbuilt-in slotタイプをExtensionに追加します。
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.SlotType }}</strong>画面が表示されます。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_slottype }}</strong>画面が表示されます。</li>
   <li><strong>{{ book.DevConsole.UseBuiltInSlotType }}</strong>項目で必要なbuilt-in slotタイプのチェックボックスをクリックします。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>必要なbuilt-in slotタイプにチェックを入れ、右上の<strong>{{ book.DevConsole.cek_save }}</strong>ボタンをクリックします。</li>
 </ol>
 
-すると、**{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}**画面の**{{ book.DevConsole.cek_builder_list_title_slottype }}**パネルに、次のようにbuilt-in slotタイプが追加されたことを確認できます。
+すると、**{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_dashboard }}**画面の**{{ book.DevConsole.cek_builder_list_title_slottype }}**パネルに、次のようにbuilt-in slotタイプが追加されたことを確認できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot_Type.png)
 
@@ -52,8 +52,8 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
 次の順でcustom slotタイプを追加します。
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.SlotType }}</strong>画面が表示されます。</li>
-  <li><strong>{{ book.DevConsole.CreateSlotType }}</strong>の入力フィールドに、追加するcustom slotタイプの名前を入力し、<strong>{{ book.DevConsole.cek_create }}</strong>ボタンをクリックします。Custom slotタイプが生成されると、そのcustom slotタイプの詳細を確認できる画面が表示されます。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_slottype }}</strong>画面が表示されます。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_slottype_title }}</strong>の入力フィールドに、追加するcustom slotタイプの名前を入力し、<strong>{{ book.DevConsole.cek_create }}</strong>ボタンをクリックします。Custom slotタイプが生成されると、そのcustom slotタイプの詳細を確認できる画面が表示されます。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_1.png" />
   <li><img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックして、<strong>{{ book.DevConsole.cek_builder_slottype_dictionary_title }}</strong>に代表語を追加します。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_2.png" />
@@ -62,7 +62,7 @@ Extensionを設計する段階で[定義したinteraction model](/Design/Design_
   <li>最後に、右上の<strong>{{ book.DevConsole.cek_save }}</strong>ボタンをクリックします。</li>
 </ol>
 
-右の<strong>ダッシュボード</strong>メニューで**{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.Dashboard }}**に移動すると、custom slotタイプが追加されたことを確認できます。
+右の<strong>ダッシュボード</strong>メニューで**{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_dashboard }}**に移動すると、custom slotタイプが追加されたことを確認できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
@@ -95,8 +95,8 @@ Clova Developer Centerは、以下のように**アップロード**ボタンと
 Extensionが使用する[built-in slotタイプ](#AddBuiltinSlotType)と[custom slotタイプ](#AddCustomSlotType)を追加したら、次はcustom intentを追加します。続けて、ピザを注文するユーザーのリクエストを仮定します。次の順で「OrderPizza」という名前のintentを追加します。
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong>パネルの右上か、左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong>メニューの右上の<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.NewIntent }}</strong>画面が表示されます。</li>
-  <li><strong>{{ book.DevConsole.CreateCustomIntent }}</strong>の入力フィールドに、追加するcustom intentの名前を入力し、<strong>{{ book.DevConsole.cek_create }}</strong>ボタンをクリックします。Custom intentが生成されると、そのcustom intentの詳細を確認する画面が表示されます。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong>パネルの右上か、左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong>メニューの右上の<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_intent }}</strong>画面が表示されます。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_intent }}</strong>の入力フィールドに、追加するcustom intentの名前を入力し、<strong>{{ book.DevConsole.cek_create }}</strong>ボタンをクリックします。Custom intentが生成されると、そのcustom intentの詳細を確認する画面が表示されます。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_1.png" />
   <li><strong>{{ book.DevConsole.cek_builder_intent_slot_title }}</strong>の入力フィールドに、追加するslotの名前を入力し、右の<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックしてslotを追加します。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_2.png" />
