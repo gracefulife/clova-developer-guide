@@ -26,7 +26,7 @@ In order to deploy the custom extension, the [interaction model must be register
 Once the [interaction model build](#BuildInteractionModel) is complete, you can test the interaction model. Follow the steps below to test the utterances:
 
 <ol>
-  <li>Click the <strong>{{ book.DevConsole.cek_test }}</strong> menu below the menu bar on the left. When you click the menu, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> screen will be displayed.</li>
+  <li>Click the <strong>{{ book.DevConsole.cek_test }}</strong> menu below the menu bar on the left. When you click the menu, the <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> screen is displayed.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Menu.png" />
   <li>On the <strong>{{ book.DevConsole.cek_builder_test_expression_title }}</strong> field, enter the utterance to test and click the <strong>{{ book.DevConsole.cek_builder_test_request_test }}</strong> button.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Utterance_Example.png" />
@@ -36,7 +36,7 @@ Once the test is complete, you can check the results. Based on the results below
 
 * Use the **{{ book.DevConsole.cek_builder_test_service_response }}** item to check whether the [registered custom extension](/DevConsole/Guides/CEK/Register_Extension.md) is responding properly.
 * Use the **{{ book.DevConsole.cek_builder_test_intent_result }}** and **{{ book.DevConsole.cek_builder_test_slot_result }}** item to check whether intents and slots are recognized as intended.
-* Use the **{{ book.DevConsole.cek_builder_test_request_json }}** item to check whether there are any problems with the [request messages](/CEK/References/CEK_API.md#CustomExtRequestMessage) which the CEK sends to the custom extension. In addition, you can perform the test again after editing the details of the corresponding JSON by clicking the **{{ book.DevConsole.cek_builder_test_test_again }}** button.
+* Use the **{{ book.DevConsole.cek_builder_test_request_json }}** item to check whether there are any problems with the [request messages](/CEK/References/CEK_API.md#CustomExtRequestMessage) which CEK sends to the custom extension. In addition, you can perform the test again after editing the details of the corresponding JSON by clicking the **{{ book.DevConsole.cek_builder_test_test_again }}** button.
 * Use the **{{ book.DevConsole.cek_builder_test_response_json }}** item to check whether the registered custom extension sends [response messages](/CEK/References/CEK_API.md#CustomExtResponseMessage) as intended.
 
 ![](/DevConsole/Resources/Images/DevConsole-Test_Result.png)
@@ -51,4 +51,3 @@ You can test the extensions on the actual client, the Clova app. For this, you m
   <p><strong>Note!</strong></p>
   <p>Wait a short while after registering the tester ID to test the extension. If you are unable to test the extension even after about an hour, make an inquiry through the forum or the partnerships team.</p>
 </div>
-
