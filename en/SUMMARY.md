@@ -4,7 +4,7 @@
 
 * [README](/README.md)
 * [Copyrights](/Copyright.md)
-* [Terms and abbreviations](/Terms.md)
+* [Glossary](/Glossary.md)
 
 ## Design
 * [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)
@@ -203,4 +203,3 @@
     * [Requesting a review](/DevConsole/Guides/CEK/Deploy_Extension.md#RequestExtensionSubmission)
   * [Updating an extension](/DevConsole/Guides/CEK/Update_Extension.md)
   * [Canceling and deleting an extension](/DevConsole/Guides/CEK/Remove_Extension.md)
-

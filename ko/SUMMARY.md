@@ -4,7 +4,7 @@
 
 * [문서 정보](/README.md)
 * [저작권](/Copyright.md)
-* [용어 및 약어](/Terms.md)
+* [용어 및 약어](/Glossary.md)
 
 ## Design
 * [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)

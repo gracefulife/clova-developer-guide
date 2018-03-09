@@ -4,7 +4,7 @@
 
 * [ドキュメント情報](/README.md)
 * [著作権](/Copyright.md)
-* [用語および略語](/Terms.md)
+* [用語および略語](/Glossary.md)
 
 ## Clova Developer Center
 
