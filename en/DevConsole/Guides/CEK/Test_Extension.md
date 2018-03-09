@@ -1,4 +1,4 @@
-﻿# Testing an extension
+# Testing an extension
 You can test the registered extension or interaction model prior to deployment. Follow the steps below to test the extension and the interaction model:
 
 * (Custom extension only) [Building an interaction model](#BuildInteractionModel)

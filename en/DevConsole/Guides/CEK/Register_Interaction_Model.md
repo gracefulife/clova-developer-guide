@@ -1,4 +1,4 @@
-﻿# Registering an interaction model
+# Registering an interaction model
 
 When CEK sends user request information to the extension, you must [define the interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel) in advance on how to analyze user utterances and which format to use for sending them. The interaction model is a schema that has standardized the requests to be received by the [custom extension](/CEK/Guides/Build_Custom_Extension.md).
 

@@ -1,4 +1,4 @@
-﻿# Deploying an extension
+# Deploying an extension
 If the [custom extension](/CEK/Guides/Build_Custom_Extension.md) or Clova Home extension are registered on the [Clova developer console](/DevConsole/Guides/CEK/Register_Extension.md), it can be deployed to the Clova service. Once deployed, the regular users can find the extension from the **{{ book.DevConsole.ManageExtensions }}** menu in the extension store.
 
 To deploy an extension, you must typically complete the following steps:

@@ -1,4 +1,4 @@
-﻿# Updating the extension
+# Updating the extension
 
 When your extension passes the review and deployment is approved, the extension is changed to the **{{ book.DevConsole.cek_status_prd }}** status. Along with the status change, the Clova developer console creates two versions of the extension as shown below.
 

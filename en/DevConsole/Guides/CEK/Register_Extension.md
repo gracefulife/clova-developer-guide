@@ -1,4 +1,4 @@
-﻿# Registering an extension
+# Registering an extension
 If you are developing or have developed a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or a [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), you must register it on the Clova developer console. To register a new extension, press the **{{ book.DevConsole.cek_builder_new_extension_create }}** button on the bottom of the CEK menu page.
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)

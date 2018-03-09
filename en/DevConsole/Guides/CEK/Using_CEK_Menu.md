@@ -1,4 +1,4 @@
-﻿# Using the CEK menu
+# Using the CEK menu
 The CEK menu of the Clova developer console is used when registering and deploying the extension. Use the CEK menu to register the extension, then define the interaction model in order for [CEK](/CEK/CEK_Overview.md#WhatisCEK) to correctly analyze the intent of the user request or enter the server connection information required for exchanging information between Clova and the extension. Press the menu on the left or the menu bar in the center to go to the CEK menu as shown below.
 
 ![](/DevConsole/Resources/Images/DevConsole-Entering_CEK_Menu.png)
