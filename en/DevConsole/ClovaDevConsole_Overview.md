@@ -1,6 +1,6 @@
-﻿# Clova developer console overview
+# Clova developer console overview
 
-Clova developer console is a web tool providing required information or functions when developing devices or services that connect with the Clova platform. A client developer enters the information of the client to develop through the Clova developer console and sets up the security information for the corresponding client to [access CIC](/CIC/CIC_Overview.md). An extension developer [enters the extension information](/DevConsole/Guides/CEK/Register_Extension.md) and [registers an interaction model](/DevConsole/Guides/CEK/Register_Interaction_Model.md) to allow exchange of messages between the CEK and extension. Also, an extension developer must test the extension and request an extension review for [extension deployment](/DevConsole/Guides/CEK/Deploy_Extension.md).
+Clova developer console is a web tool that provides the required information and functions for developing devices or services that connect with the Clova platform. Client developers can enter the information of their client on the Clova developer console and set up the security information required for the client to [access CIC](/CIC/CIC_Overview.md). An extension developer [enters the extension information](/DevConsole/Guides/CEK/Register_Extension.md) and [registers an interaction model](/DevConsole/Guides/CEK/Register_Interaction_Model.md) to allow the exchange of messages between CEK and their extension. Also, an extension developer must test the extension and request an extension review for [extension deployment](/DevConsole/Guides/CEK/Deploy_Extension.md).
 
 When developing clients or extensions, the Clova developer console is used in the following structure:
 
@@ -20,4 +20,3 @@ The Clova developer console provides the CIC and CEK menu. Tasks that can be per
   * Registering client devices and apps
   * Registering client credentials
   * Registering client specifications
-

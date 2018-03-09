@@ -82,6 +82,7 @@
       "cek_builder_test_result_title": "テスト結果",
       "cek_builder_test_user_expression": "サンプル発話",
       "cek_invocation_name": "呼び出し名",
+      "cek_builder_new_extension_create": "新規のExtensionを作成",
       "cek_id": "Extension ID",
       "cek_service_endpoint_url": "ExtensionサーバーのURL",
       "cek_account_linking": "アカウントリンクの有無",

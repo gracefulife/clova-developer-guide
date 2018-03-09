@@ -23,6 +23,7 @@
     "power": {{{PowerInforObject}},
     "screenBrightness": {{ScreenBrightnessInfoObject}},
     "soundMode": {{SoundModeInfoObject}},
+    "soundOutput": {{SoundOutputInfoObject}},
     "volume": {{VolumeInfoObject}},
     "wifi": {{WifiInfoObject}}
   }
@@ -45,8 +46,9 @@
 | `gps`             | [GPSInfoObject](#GPSInfoObject)                         | 클라이언트 기기의 GPS 설정 정보를 보고할 때 사용하는 객체            | 선택 |
 | `localTime`       | string | 클라이언트 기기에 설정된 현지 시간([ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷)              | 선택 |
 | `power`           | [PowerInfoObject](#PowerInfoObject)                     | 클라이언트 기기의 전원 상태 정보를 보고할 때 사용하는 객체            | 선택 |
-| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | 클라이언트 기기의 화면 밝기 정보를 보고할 때 사용하는 객체            | 선택 |
-| `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | 클라이언트 기기의 소리 출력 설정 정보를 보고할 때 사용하는 객체        | 선택 |
+| `screenBrightness` | [ScreenBrightnessInfoObject](#ScreenBrightnessInfoObject) | 클라이언트 기기의 화면 밝기 정보를 보고할 때 사용하는 객체         | 선택 |
+| `soundMode`       | [SoundModeInfoObject](#SoundModeInfoObject)             | 클라이언트 기기의 소리 재생 모드 정보를 보고할 때 사용하는 객체           | 선택 |
+| `soundOutput`     | [SoundOutputInfoObject](#SoundOutputInfoObject)         | 클라이언트 기기의 소리 출력을 위해 사용되고 있는 재생 장치나 방식에 대한 정보를 보고할 때 사용하는 객체 | 선택 |
 | `volume`          | [VolumeInfoObject](#VolumeInfoObject)                   | 클라이언트 기기의 스피커 볼륨 정보를 보고할 때 사용하는 객체           | 선택 |
 | `wifi`            | [WifiInfoObject](#WifiInfoObject)                       | 클라이언트 기기의 무선 네트워크(Wi-Fi) 기능 활성화 상태와 무선 네트워크 연결 정보를 보고할 때 사용하는 객체    | 선택 |
 
@@ -505,7 +507,7 @@
 {% endraw %}
 
 ### SoundModeInfoObject {#SoundModeInfoObject}
-클라이언트 기기의 사운드 모드 정보를 보고할 때 사용하는 객체입니다.
+클라이언트 기기의 소리 재생 모드 정보를 보고할 때 사용하는 객체입니다.
 
 #### Object fields
 
@@ -532,6 +534,37 @@
             "TurnOn"
         ],
         "state": "vibrate"
+    },
+    ...
+  }
+}
+```
+
+{% endraw %}
+
+### SoundOutputInfoObject {#SoundOutputInfoObject}
+클라이언트 기기의 소리 출력을 위해 사용되고 있는 재생 장치나 방식에 대한 정보를 보고할 때 사용하는 객체
+
+#### Object fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `type`        | string  | 소리 출력을 위해 사용되고 있는 재생 장치나 방식. <ul><li><code>"builtin"</code>: 내장 스피커</li><li><code>"aux"</code>: 유선 단자</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"airplay"</code>: <a target="_blank" href="https://en.wikipedia.org/wiki/AirPlay">AirPlay</a></li></ul> | 필수 |
+
+#### Object example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "namespace": "Device",
+    "name": "DeviceState"
+  },
+  "payload": {
+    ...
+    "soundOutput": {
+        "type": "builtin"
     },
     ...
   }
