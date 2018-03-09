@@ -1,4 +1,4 @@
-﻿# Disabling and deleting an extension
+# Disabling and deleting an extension
 
 You can delete an extension on the page where you [enter the basic extension information](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo) if you have not yet requested a review for the extension.
 
@@ -17,5 +17,5 @@ If the extension is in service after passing the review, you can delete it after
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>A check from the Clova operations team is required to disable a service. To stop the service of an extension, contact the operations team via <a href="mailto://dl_extension_admin@navercorp.com">dl_extension_admin@navercorp.com</a>.</p>
+  <p>A check from the Clova operations team is required to disable a service. To stop the service of an extension, contact the operations team via <a href="mailto://{{ book.ExtensionAdminEmail }}">{{ book.ExtensionAdminEmail }}</a>.</p>
 </div>
