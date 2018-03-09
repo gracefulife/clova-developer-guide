@@ -62,7 +62,7 @@ Follow the steps below to add a custom slot type.
   <li>Finally, click <strong>{{ book.DevConsole.cek_save }}</strong> in the top right section.</li>
 </ol>
 
-Go to **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}** via the <strong>dashboard</strong> menu on the right to check that the custom slot type has been added.
+Go to **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_builder_header_title_dashboard }}** via the <strong>dashboard</strong> menu on the right to check that the custom slot type has been added.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
