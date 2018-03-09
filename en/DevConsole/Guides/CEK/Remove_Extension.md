@@ -13,7 +13,7 @@ If the extension is under review, you can delete it any time after canceling the
 
 ![](/DevConsole/Resources/Images/DevConsole-Cancel_Submission.png)
 
-If the extension is in service after passing the review, you can delete it after disabling the service. If you disable the service, the status of the extension is changed to the **{{ book.DevConsole.cek_status_dev }}** status.
+If the extension is in service after passing the review, you can delete it after disabling the service. If you disable the service, the status of the extension is changed to **{{ book.DevConsole.cek_status_dev }}**.
 
 <div class="note">
   <p><strong>Note!</strong></p>
