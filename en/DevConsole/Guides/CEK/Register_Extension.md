@@ -1,5 +1,5 @@
 ﻿# Registering an extension
-If you are developing or have developed a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or a [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), you must register it on the Clova developer console. To register a new extension, click the **{{ book.DevConsole.cek_builder_new_extension_create }}** button on the bottom of the CEK menu page.
+If you are developing or have developed a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or a [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), you must register it on the Clova developer console. To register a new extension, press the **{{ book.DevConsole.cek_builder_new_extension_create }}** button on the bottom of the CEK menu page.
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)
 
@@ -38,10 +38,10 @@ Follow the steps below to register the extension:
   <li>If the extension uses the directive messages of the <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a>, select <strong>{{ book.DevConsole.cek_yes }}</strong> from the <strong>{{ book.DevConsole.cek_audioplayer }}</strong> item. The extension uses the directive messages when it provides a music streaming service.</li>
   <li>Enter an email address for contact in the <strong>{{ book.DevConsole.cek_email }}</strong> item.</li>
   <li>Enter the {{ book.OrientedService }} account for testing the extension under development in the <strong>{{ book.DevConsole.cek_tester }}</strong> item. You do not need to enter the account information when registering the extension, but can enter it in this field when <a href="/DevConsole/Guides/CEK/Test_Extension.html">testing the extension</a> later on.</li>
-  <li>After filling out the basic extension information, click the <strong>{{ book.DevConsole.cek_create }}</strong> button.</li>
+  <li>After filling out the basic extension information, press the <strong>{{ book.DevConsole.cek_create }}</strong> button.</li>
 </ol>
 
-When you complete entering the basic extension information, you are directed to the screen to edit this information. From this point, you can click the **{{ book.DevConsole.cek_save }}** button at the bottom of the page at any time to save the changed details. You can also find the list of registered extensions in the CEK menu as shown below.
+When you complete entering the basic extension information, you are directed to the screen to edit this information. From this point, you can press the **{{ book.DevConsole.cek_save }}** button at the bottom of the page at any time to save the changed details. You can also find the list of registered extensions in the CEK menu as shown below.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
 
@@ -62,7 +62,7 @@ Follow the steps below to set up a connection with the server.
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Server_Settings.png)
 
 <ol>
-  <li>Click on the <strong>{{ book.DevConsole.cek_configuration }}</strong> tab above the extension information input UI.</li>
+  <li>Press the <strong>{{ book.DevConsole.cek_configuration }}</strong> tab above the extension information input UI.</li>
   <li>Enter the endpoint URL of the extension server in the <strong>{{ book.DevConsole.cek_service_endpoint_url }}</strong> item.
     <div class="note">
     <p><strong>Note!</strong></p>
@@ -70,8 +70,8 @@ Follow the steps below to set up a connection with the server.
   </div>
   </li>
   <li>If there is a need for linking the user account of the extension service and the Clova user account, select <strong>{{ book.DevConsole.cek_yes }}</strong> from the <strong>{{ book.DevConsole.cek_account_linking }}</strong> item. For more information on account linking, see <a href="#SetAccountLinking">Setting up account linking</a>.</li>
-  <li>Click the radio button of the <strong>{{ book.DevConsole.cek_ssl_certificate }}</strong> item. The extension server must use the certificate of an authorized certificate agency.  (Self-signed certificates cannot be used.)</li>
-  <li>Fill out the details for setting up the server connection and click the <strong>{{ book.DevConsole.cek_save }}</strong> button.</li>
+  <li>Press the radio button of the <strong>{{ book.DevConsole.cek_ssl_certificate }}</strong> item. The extension server must use the certificate of an authorized certificate agency.  (Self-signed certificates cannot be used.)</li>
+  <li>Fill out the details for setting up the server connection and press the <strong>{{ book.DevConsole.cek_save }}</strong> button.</li>
 </ol>
 
 ### Setting up account linking {#SetAccountLinking}

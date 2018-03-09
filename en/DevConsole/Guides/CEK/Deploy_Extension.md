@@ -69,15 +69,15 @@ Once you have filled out the [deployment information](#InputDeploymentInfo) and 
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
 
-You can request a review by clicking the **{{ book.DevConsole.cek_request_submit }}** menu on the registered extensions list.
+You can request a review by pressing the **{{ book.DevConsole.cek_request_submit }}** menu on the registered extensions list.
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_1.png)
 
-Or, click the **{{ book.DevConsole.cek_request_submit }}** button at the bottom of the screen for entering [privacy and compliance information](#InputComplianceInfo).
+Or, press the **{{ book.DevConsole.cek_request_submit }}** button at the bottom of the screen for entering [privacy and compliance information](#InputComplianceInfo).
 
 ![](/DevConsole/Resources/Images/DevConsole-Submit_Extension_2.png)
 
-If you click the **{{ book.DevConsole.cek_request_submit }}** button, you can leave information on the review request for the administrator. If it is your first review request for the extension, you can mention that and describe the extension. If it is your second review request for the extension due to feature or interaction model updates, enter the improved details. Or, if it is your second review request due to a failed submission, enter whether the issues have been corrected.
+If you press the **{{ book.DevConsole.cek_request_submit }}** button, you can leave information on the review request for the administrator. If it is your first review request for the extension, you can mention that and describe the extension. If it is your second review request for the extension due to feature or interaction model updates, enter the improved details. Or, if it is your second review request due to a failed submission, enter whether the issues have been corrected.
 
 ![](/DevConsole/Resources/Images/DevConsole-Submission_Request_Message.png)
 
@@ -102,7 +102,7 @@ The assessments tasks performed during the extension review are as follows:
   * Checks whether deployment information, such as the description, category, or search keyword of the extension, is correctly entered for the extension.
   * Checks whether the extension operates according to the entered policies, such as the privacy policy.
 
-You can click on the **{{ book.DevConsole.cek_cancel_review }}** menu anytime during the review process to cancel the review request. If you cancel the review request, the extension will go back to the previous status.
+You can press the **{{ book.DevConsole.cek_cancel_review }}** menu anytime during the review process to cancel the review request. If you cancel the review request, the extension will go back to the previous status.
 
 ![](/DevConsole/Resources/Images/DevConsole-Cancel_Submission.png)
 
@@ -110,6 +110,6 @@ If the extension does not pass the review, the **{{ book.DevConsole.cek_status }
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Rejected.png)
 
-At this time, you can click the **{{ book.DevConsole.cek_view }}** menu on the **{{ book.DevConsole.cek_message }}** to check feedback on the review.
+At this time, you can press the **{{ book.DevConsole.cek_view }}** menu on the **{{ book.DevConsole.cek_message }}** to check feedback on the review.
 
 ![](/DevConsole/Resources/Images/DevConsole-Show_Submission_Feedback.png)
