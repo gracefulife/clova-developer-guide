@@ -1,4 +1,4 @@
-﻿# Terms and abbreviations
+﻿# Glossary
 
 <div class="note">
   <p><strong>Note!</strong></p>
