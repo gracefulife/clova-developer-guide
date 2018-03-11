@@ -24,7 +24,9 @@
       <td>v3.5</td><td>2018-03-12</td>
       <td>
         <ul>
-          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>에 <a href="/CIC/References/Context_Objects.html#SoundOutputInfoObject">SoundoutputInfoObject</a> 추가</li>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>에 <a href="/CIC/References/Context_Objects.html#SoundOutputInfoObject">SoundOutputInfoObject</a> 추가</li>
+          <li>[CEK] Clova Home API에 ChargeConfirmation 외 26건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a> 추가</li>
+          <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 30종 추가</li>
         </ul>
       </td>
     </tr>
