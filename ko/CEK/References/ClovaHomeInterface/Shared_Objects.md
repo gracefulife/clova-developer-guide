@@ -3,19 +3,23 @@
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
-| [AirQualityInfoObject](#AirQualityInfoObject)       | 공기질 정보가 담긴 객체            |
-| [ApplianceInfoObject](#ApplianceInfoObject)         | IoT 기기의 정보가 담긴 객체        |
-| [BatteryInfoObject](#BatteryInfoObject)             | 배터리 정보가 담긴 객체            |
-| [BrightnessInfoObject](#BrightnessInfoObject)       | 조명의 밝기 정보가 담긴 객체        |
-| [FineDustInfoObject](#FineDustInfoObject)           | 미세 먼지 정보가 담긴 객체          |
-| [ModeInfoObject](#ModeInfoObject)                   | 운전 모드 정보가 담긴 객체          |
-| [HumidityInfoObject](#HumidityInfoObject)           | 습도 정보가 담긴 객체              |
-| [SpeedInfoObject](#SpeedInfoObject)                 | 속도 정보가 담긴 객체              |
-| [TemperatureInfoObject](#TemperatureInfoObject)     | 온도 정보를 담고 있는 객체          |
-| [TVChannelNameInfoObject](#TVChannelNameInfoObject) | TV 채널의 이름 정보가 담긴 객체      |
-| [TVChannelInfoObject](#TVChannelInfoObject)         | TV 채널 정보가 담긴 객체           |
-| [UltraFineDustInfoObject](#UltraFineDustInfoObject) | 초미세 먼지 정보가 담긴 객체         |
-| [VolumeInfoObject](#VolumeInfoObject)               | 볼륨 정보를 담고 있는 객체          |
+| [AirQualityInfoObject](#AirQualityInfoObject)         | 공기질 정보가 담긴 객체            |
+| [ApplianceInfoObject](#ApplianceInfoObject)           | IoT 기기의 정보가 담긴 객체        |
+| [BatteryInfoObject](#BatteryInfoObject)               | 배터리 정보가 담긴 객체            |
+| [BillInfoObject](#BillInfoObject)                     | 요금 정보가 담긴 객체             |
+| [BrightnessInfoObject](#BrightnessInfoObject)         | 조명의 밝기 정보가 담긴 객체        |
+| [ConsumptionInfoObject](#ConsumptionInfoObject)       | 에너지 사용량 정보가 담긴 객체       |
+| [FineDustInfoObject](#FineDustInfoObject)             | 미세 먼지 정보가 담긴 객체          |
+| [IntensityLevelInfoObject](#IntensityLevelInfoObject) | 압력이나 수압 세기 정보가 담긴 객체   |
+| [ModeInfoObject](#ModeInfoObject)                     | 운전 모드 정보가 담긴 객체          |
+| [HumidityInfoObject](#HumidityInfoObject)             | 습도 정보가 담긴 객체              |
+| [PhaseInfoObject](#PhaseInfoObject)                   | 기기 동작의 단계 정보가 담긴 객체     |
+| [SpeedInfoObject](#SpeedInfoObject)                   | 속도 정보가 담긴 객체              |
+| [TemperatureInfoObject](#TemperatureInfoObject)       | 온도 정보를 담고 있는 객체          |
+| [TVChannelNameInfoObject](#TVChannelNameInfoObject)   | TV 채널의 이름 정보가 담긴 객체      |
+| [TVChannelInfoObject](#TVChannelInfoObject)           | TV 채널 정보가 담긴 객체           |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject)   | 초미세 먼지 정보가 담긴 객체         |
+| [VolumeInfoObject](#VolumeInfoObject)                 | 볼륨 정보를 담고 있는 객체          |
 
 ## AirQualityInfoObject {#AirQualityInfoObject}
 공기질 정보를 담고 있는 객체입니다. 기기가 측정한 공기질 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -24,8 +28,6 @@
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
 | `index`       | string  | 공기질 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수/항상     |
-
-*[필수]: ㅁㅁㅁㅁ
 
 ### Object Example
 {% raw %}
@@ -62,7 +64,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `actions[]`                  | string array  | 기기가 지원하는 동작 목록. 클라이언트는 기기가 지원하는 동작 내에서 사용자가 IoT 기기를 제어하도록 제한해야 합니다. | 선택/항상    |
 | `additionalApplianceDetails` | object        | 제조사나 IoT 서비스에서 제공하는 추가 정보를 담고 있는 필드                                 | 선택/조건부    |
 | `applianceId`                | string        | 기기 ID                                                                        | 필수/항상    |
-| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다.<ul><li><code>"AIRCONDITIONER"</code>: 냉난방기 타입</li><li><code>"AIRPURIFIER"</code>: 공기청정기 타입</li><li><code>"AIRSENSOR"</code>: 공기질 측정기 타입</li><li><code>"DEHUMIDIFIER"</code>: 제습기 타입</li><li><code>"HUMIDIFIER"</code>: 가습기 타입</li><li><code>"LIGHT"</code>: 조명 기기 타입</li><li><code>"ROBOTVACUUM"</code>: 로봇 청소기 타입</li><li><code>"SETTOPBOX"</code>: TV 셋톱 박스 타입</li><li><code>"SMARTHUB"</code>: 스마트 허브 타입</li><li><code>"SMARTPLUG"</code>: 기기 전원을 제어하는 플러그</li><li><code>"SMARTTV"</code>: 스마트 TV 타입</li><li><code>"SMARTVALVE"</code>: 스마트 밸브 타입</li><li><code>"SWITCH"</code>: 가정 내 콘센트 전원을 제어하는 스위치</li><li><code>"THERMOSTAT"</code>: 온도 조절 기기 타입</li></ul>          | 필수/항상    |
+| `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다. Remarks 항목을 참고하여 기기 타입을 입력합니다.                                                                              | 필수/항상    |
 | `friendlyName`               | string        | 사용자가 붙여준 기기의 이름                                                           | 선택/항상    |
 | `friendlyDescription`        | string        | 기기에 대한 설명                                                                  | 선택/항상    |
 | `isReachable`                | boolean       | 원격 제어 가능 여부 <ul><li>true: 원격 제어 가능</li><li>false: 원격 제어 불가</li></ul> | 선택/항상    |
@@ -74,22 +76,51 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ## Remarks
 [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) 메시지를 통해 사용자 기기 목록을 요청하면 Clova Home extension은 `additionalApplianceDetails` 필드를 제외한 모든 필드의 정보를 채워서 전달해야 합니다. 이때, `actions` 필드의 값은 보통 `applianceTypes` 필드에 의해 결정되며, `applianceTypes` 필드 값에 따라 다음과 같은 값을 가질 수 있습니다.
 
-| applianceTypes | 허용되는 actions                                |
-|----------------|-----------------------------------------------|
-| `"AIRCONDITIONER"` | DecrementFanSpeed, DecrementTargetTemperature, GetCurrentTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
-| `"AIRPURIFIER"`    | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn                  |
-| `"AIRSENSOR"`      | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetCurrentTemperature, HealthCheck                                                   |
-| `"DEHUMIDIFIER"`   | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
-| `"HUMIDIFIER"`     | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                                                         |
-| `"LIGHT"`          | DecrementBrightness, HealthCheck, IncrementBrightness, SetBrightness, TurnOff, TurnOn                                                          |
-| `"ROBOTVACUUM"`    | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                                           |
-| `"SETTOPBOX"`      | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `"SMARTHUB"`       | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                                                        |
-| `"SMARTPLUG"`      | HealthCheck, TurnOff, TurnOn                                                                                                                   |
-| `"SMARTTV"`        | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `"SMARTVALVE"`     | GetLockState, SetLockState                                                                                                                     |
-| `"SWITCH"`         | HealthCheck, TurnOff, TurnOn                                                                                                                   |
-| `"THERMOSTAT"`     | GetCurrentTemperature, HealthCheck, SetMode, TurnOff, TurnOn                                                                                                          |
+| applianceTypes | 설명         | 허용되는 actions                                  |
+|----------------|-------------|-------------------------------------------------|
+| `"AIRCONDITIONER"`  | 냉난방기 타입         | DecrementFanSpeed, DecrementTargetTemperature, GetCurrentTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
+| `"AIRPURIFIER"`     | 공기청정기 타입        | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn    |
+| `"AIRSENSOR"`       | 공기질 측정기 타입     | GetAirQuality, GetFineDust, GetHumidity, GetUltraFineDust, GetCurrentTemperature, HealthCheck                                     |
+| `"BEDET"`           | 비데 타입            | Close, GetState, HealthCheck, Open, TurnOn, TurnOff                                                                              |
+| `"BODYWEIGHTSCALE"` | 체중계 타입          | GetState, HealthCheck                                                                                                             |
+| `"CLOTHESDRYER"`    | 의류 건조기 타입       | GetState, HealthCheck, TurnOn, TurnOff                                                                                           |
+| `"CLOTHESWASHER"`   | 의류 세탁기 타입       | GetDetailState, GetPhase, HealthCheck, TurnOn, TurnOff                                                                           |
+| `"CLOTHESCAREMACHINE"` | 의류 관리기 타입    | GetDetailState, HealthCheck, TurnOn, TurnOff                                                                                     |
+| `"DEHUMIDIFIER"`    | 제습기 타입           | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                    |
+| `"DISHWASHER"`      | 식기 세척기 타입       | GetDetailState, GetPhase, HealthCheck, TurnOn, TurnOff                                                                           |
+| `"ELECTRICTOOTHBRUSH"` | 전동 칫솔 타입     | GetState, HealthCheck                                                                                                            |
+| `"FAN"`             | 선풍기 타입           | HealthCheck, TurnOn, TurnOff, SetMode                                                                                            |
+| `"HEATER"`          | 히터 타입            | DecrementTargetTemperature, GetCurrentTemperature, HealthCheck, IncrementTargetTemperature, TurnOn, TurnOff                      |
+| `"HUMIDIFIER"`      | 가습기 타입           | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                    |
+| `"ELECTRICKETTLE"`  | 전기 주전자 타입       | GetCurrentTemperature, HealthCheck, TurnOn, TurnOff                                                                              |
+| `"KIMCHIREFRIGERATOR"` | 김치 냉장고 타입    | GetState, HealthCheck                                                                                                            |
+| `"LIGHT"`           | 조명 기기 타입        | DecrementBrightness, HealthCheck, IncrementBrightness, SetBrightness, TurnOff, TurnOn                                             |
+| `"MASSAGECHAIR"`    | 안마 의자 타입        | HealthCheck, Raise, Lower, TurnOn, TurnOff                                                                                        |
+| `"MICROWAVE"`       | 전자 레인지 타입      | GetDetailState, HealthCheck, TurnOn, TurnOff                                                                                      |
+| `"MOTIONSENSOR"`    | 동작 감지 센서 타입    | HealthCheck, GetState                                                                                                             |
+| `"MULTITAP"`        | 멀티 탭 타입         | HealthCheck, TurnOff, TurnOn, GetConsumption, GetEstimateBill                                                                     |
+| `"OPENCLOSESENSOR"` | 열림 감지 센서 타입    | GetLockState, HealthCheck                                                                                                         |
+| `"OVEN"`            | 오븐 타입            | GetState, HealthCheck                                                                                                             |
+| `"PURIFIER"`        | 정수기 타입          | GetState, HealthCheck, SetMode, SetTargetTemperature                                                                              |
+| `"RANGE"`           | 조리대 타입          | GetState, HealthCheck                                                                                                             |
+| `"RANGEHOOD"`       | 조리대 후드 타입      | HealthCheck, TurnOn, TurnOff                                                                                                      |
+| `"RICECOOKER"`      | 전기 밥솥 타입        | GetPhase, GetDetailState, HealthCheck, SetMode, SetOffMode, Stop, TurnOff, TurnOn                                                 |
+| `"ROBOTVACUUM"`     | 로봇 청소기 타입       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
+| `"SETTOPBOX"`       | TV 셋톱 박스 타입     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
+| `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetState, HealthCheck, TurnOn, TurnOff                                                                                            |
+| `"SMARTBED"`        | 스마트 침대 타입      | HealthCheck, Raise, Lower, Stop                                                                                                   |
+| `"SMARTCHAIR"`      | 스마트 의자 타입      | GetState, HealthCheck                                                                                                             |
+| `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Open, Raise, Lower, Stop                                                                                      |
+| `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
+| `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, HealthCheck                                                                      |
+| `"SMARTPLUG"`       | 스마트 플러그 타입     | HealthCheck, TurnOff, TurnOn                                                                                                     |
+| `"SMARTTV"`         | 스마트 TV 타입       | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
+| `"SMARTVALVE"`      | 스마트 밸브 타입      | GetLockState, SetLockState                                                                                                        |
+| `"SMOKESENSOR"`     | 연기 센서 타입       | GetState, HealthCheck                                                                                                             |
+| `"SWITCH"`          | 가정 내 콘센트 전원을 제어하는 스위치 타입 | HealthCheck, TurnOff, TurnOn                                                                                       |
+| `"THERMOSTAT"`      | 온도 조절 기기 타입   | GetCurrentTemperature, HealthCheck, SetMode, TurnOff, TurnOn                                                                      |
+| `"VENTILATOR"`      | 환풍기 타입          | GetState, HealthCheck, TurnOn, TurnOff                                                                                           |
+| `"WATERBOILER"`     | 온수기 타입          | DecrementTargetTemperature, GetCurrentTemperature, HealthCheck, IncrementTargetTemperature, TurnOn, TurnOff                      |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -216,6 +247,95 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)
 * [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
+## BatteryInfoObject {#BatteryInfoObject}
+기기의 배터리 정보를 담고 있는 객체입니다. 배터리 정보를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | number  | 배터리 잔량(%)                 | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제 1: GetBatteryInfoRequest 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "GetBatteryInfoRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-010"
+    }
+  }
+}
+
+// 예제 2: GetBatteryInfoResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "GetBatteryInfoResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "batteryInfo": {
+      "value": 40
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest)
+* [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
+
+## BillInfoObject {#BillInfoObject}
+기기가 측정한 에너지 사용량을 기반으로 도출된 요금 정보를 담고 있는 객체입니다. 요금 정보는 액수와 통화 단위를 나누어 표시합니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `currency`    | string  | 통화 단위 (<a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>)  | 필수 |
+| `value`       | number  | 요금의 액수                    | 필수   |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: GetCurrentBillResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetCurrentBillResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "currentBill": {
+        "value": 29900,
+        "currency": "KRW"
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetCurrentBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillRequest)
+* [`GetCurrentBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillResponse)
+* [`GetEstimateBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillRequest)
+* [`GetEstimateBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillResponse)
+
 ## BrightnessInfoObject {#BrightnessInfoObject}
 조명의 밝기 정보를 담고 있는 객체입니다. 변경할 조명의 밝기나 변경 전후의 밝기를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
 
@@ -278,46 +398,33 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetBrightnessConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetBrightnessConfirmation)
 * [`SetBrightnessRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetBrightnessRequest)
 
-## BatteryInfoObject {#BatteryInfoObject}
-기기의 배터리 정보를 담고 있는 객체입니다. 배터리 정보를 나타낼 때 사용되며 백분율을 의미하는 정수(0~100)로 표현됩니다.
+## ConsumptionInfoObject {#ConsumptionInfoObject}
+기기가 측정한 에너지 사용량 정보를 담고 있는 객체입니다. 에너지 사용 수치와 단위를 나누어 표시합니다.
 
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `value`       | number  | 배터리 잔량(%)                 | 필수/항상     |
+| `unit`        | string  | 에너지 단위 (예, 전기: kW)           | 필수  |
+| `value`       | number  | 에너지 사용 수치                    | 필수   |
 
 ### Object Example
 {% raw %}
 
 ```json
-// 예제 1: GetBatteryInfoRequest 메시지에서 사용된 예
+// 예제: GetCurrentBillResponse 메시지에서 사용된 예
 {
   "header": {
-    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
-    "name": "GetBatteryInfoRequest",
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetCurrentBillResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
-    "accessToken": "92ebcb67fe33",
-    "appliance": {
-      "applianceId": "device-010"
-    }
-  }
-}
-
-// 예제 2: GetBatteryInfoResponse 메시지에서 사용된 예
-{
-  "header": {
-    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
-    "name": "GetBatteryInfoResponse",
-    "namespace": "ClovaHome",
-    "payloadVersion": "1.0"
-  },
-  "payload": {
-    "batteryInfo": {
-      "value": 40
-    }
+    "currentBill": {
+        "value": 79.7,
+        "unit": "kW"
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
 ```
@@ -325,8 +432,10 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 ### See also
-* [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest)
-* [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse)
+* [`GetCurrentBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillRequest)
+* [`GetCurrentBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillResponse)
+* [`GetEstimateBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillRequest)
+* [`GetEstimateBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillResponse)
 
 ## FineDustInfoObject {#FineDustInfoObject}
 미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 미세 먼지 지수나 수준을 나타낼 때 사용되며 숫자로 표현됩니다.
@@ -363,6 +472,48 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### See also
 * [`GetFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustRequest)
 * [`GetFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetFineDustResponse)
+
+## IntensityLevelInfoObject {#IntensityLevelInfoObject}
+압력/수압의 세기 정보를 담고 있는 객체입니다. 주로 기기마다 가진 수준으로 압력/수압의 세기가 표시됩니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | number  | 압력/수압의 세기 정보            | 선택/조건부    |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: IncrementIntensityLevelConfirmation 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "be3dde71-84c0-48cf-80d8-440c1ede54d8",
+    "name": "IncrementIntensityLevelConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "intensityLevel": {
+      "value": 1
+    },
+    "previousState": {
+      "intensityLevel": {
+        "value": 2
+      }
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+
+* [`DecrementIntensityLevelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementIntensityLevelConfirmation)
+* [`DecrementIntensityLevelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementIntensityLevelRequest)
+* [`IncrementIntensityLevelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementIntensityLevelConfirmation)
+* [`IncrementIntensityLevelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementIntensityLevelRequest)
 
 ## ModeInfoObject {#ModeInfoObject}
 운전 모드(operation mode) 정보를 담고 있는 객체입니다. 변경할 우전 모드의 이름이나 변경 전후의 운전 모드를 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -531,6 +682,61 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`IncrementFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementFanSpeedRequest)
 * [`SetFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedConfirmation)
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
+
+## PhaseInfoObject {#PhaseInfoObject}
+
+기기 동작의 단계 정보를 담고 있는 객체입니다. 현재 동작 단계를 나타내거나 이전 동작 단계가 무엇이었는지 나타낼 때 사용됩니다.
+속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.
+
+### Object fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | string  | 동작 단계를 설명하는 문자열        | 필수/항상      |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제 1: GetPhaseResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetPhaseResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "phase": {
+        "value": "탈수",
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+
+// 예제 2: StopConfirmation 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "a4349fd5-7c1c-4fae-9bbd-291749bdd63a",
+    "name": "StopConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "phase": {
+      "value": "세탁"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetPhaseRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetPhaseRequest)
+* [`GetPhaseResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetPhaseResponse)
+* [`StopConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#StopConfirmation)
+* [`StopRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#StopRequest)
 
 ## TemperatureInfoObject {#TemperatureInfoObject}
 온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기, 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
