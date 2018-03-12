@@ -303,8 +303,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `currency`    | string  | 통화 단위 (<a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>)  | 필수 |
-| `value`       | number  | 요금의 액수                    | 필수   |
+| `currency`    | string  | 통화 단위 (<a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a>)  | 필수/항상 |
+| `value`       | number  | 요금의 액수                    | 필수/항상   |
 
 ### Object Example
 {% raw %}
@@ -404,8 +404,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `unit`        | string  | 에너지 단위 (예, 전기: kW)           | 필수  |
-| `value`       | number  | 에너지 사용 수치                    | 필수   |
+| `unit`        | string  | 에너지 단위(예, 전기: kW)            | 필수/항상  |
+| `value`       | number  | 에너지 사용 수치                    | 필수/항상   |
 
 ### Object Example
 {% raw %}
@@ -420,7 +420,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "currentBill": {
+    "consumption": {
         "value": 79.7,
         "unit": "kW"
     },

@@ -6,8 +6,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 |------------------|-----------|---------------------------------------------|
 | [`ChargeConfirmation`](#ChargeConfirmation)                                   | Response | [`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 설정한 결과를 CEK에게 전달합니다. |
 | [`ChargeRequest`](#ChargeRequest)                                             | Request  | 대상 기기가 스스로를 충전하도록 Clova Home extension에게 요청합니다. |
-| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | [`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 대상 기기가 뚜껑을 닫거나 일광 등 외부 조명을 차양하도록 설정한 결과를 CEK에게 전달합니다. |
-| [`CloseRequest`](#CloseRequest)                                               | Request  | 커튼이나 비데 등의 제품을 제어할 때 사용되며, 대상 기기가 일광을 차단하거나, 대상 기기의 뚜껑을 닫도록 Clova Home extension에게 요청합니다.  |
+| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | [`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 설정한 결과를 CEK에게 전달합니다. |
+| [`CloseRequest`](#CloseRequest)                                               | Request  | 스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 Clova Home extension에게 요청합니다.  |
 | [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)         | Response | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
 | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest)                   | Request  | 대상 기기가 지정한 수준만큼 조명의 밝기를 낮추도록 Clova Home extension에게 요청합니다. |
 | [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)               | Response | [`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 설정한 결과를 CEK에게 전달합니다. |
@@ -22,9 +22,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`DecrementVolumeRequest`](#DecrementVolumeRequest)                           | Request  | 대상 기기가 지정한 값만큼 볼륨 크기를 낮추도록 Clova home extension에게 요청합니다. |
 | [`GetAirQualityRequest`](#GetAirQualityRequest)                               | Request  | 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. |
 | [`GetAirQualityResponse`](#GetAirQualityResponse)                             | Response | [`GetAirQualityRequest`](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다. |
-| [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request  | 대상 기기의 배터리 정보를 Clova Home extension에게 요청합니다. |
-| [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다. |
-| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 사용량을 확인할 때 사용되며, 대상 기기가 측정한 에너지 사용량 정보를 Clova Home extension에게 요청합니다.  |
+| [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request 77w3################################################################################################################################################################78 A$1$CQCQQ CNN1QA@1 | 대상 기기의 배터리 정보를 Clova Home extension에게 요청합니다. |
+aw3| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 사용량을 확인할 때 사용되며, 대상 기기가 측정한 에너지 사용량 정보를 Clova Home ex4tension에게 요청합니다.  |
 | [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 사용량 정보를 CEK에게 전달합니다.  |
 | [`GetCurrentBillRequest`](#GetCurrentBillRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 측정된 현재까지의 사용량의 기반으로 요금을 확인할 때 사용되며, 대상 기기가 측정한 요금 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetCurrentBillResponse`](#GetCurrentBillResponse)                           | Response | [`GetCurrentBillRequest`](#GetCurrentBillRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 요금 정보를 CEK에게 전달합니다.   |
@@ -64,8 +63,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`LowerRequest`](#LowerRequest)                                               | Request  | 주로 커튼이나 블라인드, 침대 같은 기기를 제어할 때 사용되며, 대상 기기의 높낮이를 내리도록 Clova Home extension에게 요청합니다.  |
 | [`MuteConfirmation`](#MuteConfirmation)                                       | Response | [`MuteRequest`](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다. |
 | [`MuteRequest`](#MuteRequest)                                                 | Request  | 대상 기기의 소리를 끄도록(음소거) Clova Home extension에게 요청합니다. |
-| [`OpenConfirmation`](#OpenConfirmation)                                       | Response |  [`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 대상 기기가 뚜껑을 열거나 일광 등 외부 조명의 차양을 해제하도록 설정한 결과를 CEK에게 전달합니다. |
-| [`OpenRequest`](#OpenRequest)                                                 | Request  | 커튼이나 비데 등의 제품을 제어할 때 사용되며, 대상 기기가 일광 차양을 해제하거나, 대상 기기의 뚜껑을 열도록 Clova Home extension에게 요청합니다.  |
+| [`OpenConfirmation`](#OpenConfirmation)                                       | Response | [`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 설정한 결과를 CEK에게 전달합니다. |
+| [`OpenRequest`](#OpenRequest)                                                 | Request  | 스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 Clova Home extension에게 요청합니다.  |
 | [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | [`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 설정한 결과를 CEK에게 전달합니다.  |
 | [`RaiseRequest`](#RaiseRequest)                                               | Request  | 주로 커튼이나 블라인드, 침대 같은 기기를 제어할 때 사용되며, 대상 기기의 높낮이를 높이도록 Clova Home extension에게 요청합니다.  |
 | [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
@@ -156,7 +155,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`ChargeConfirmation`](#ChargeConfirmation)
 
 ## CloseConfirmation {#CloseConfirmation}
-[`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 대상 기기가 뚜껑을 닫거나 일광 등 외부 조명을 차양하도록 설정한 결과를 CEK에게 전달합니다.
+[`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 설정한 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -184,7 +183,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`CloseRequest`](#CloseRequest)
 
 ## CloseRequest {#CloseRequest}
-커튼이나 비데 등의 제품을 제어할 때 사용되며, 대상 기기가 일광을 차단하거나, 대상 기기의 뚜껑을 닫도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`CloseConfirmation`](#CloseConfirmation) 메시지를 사용해야 합니다.
+스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`CloseConfirmation`](#CloseConfirmation) 메시지를 사용해야 합니다.
 
 ### Payload fields
 
@@ -2120,7 +2119,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 |---------------|---------|-----------------------------|:---------:|
 | `previousState`     | object                                 | 기기의 이전 상황 정보를 담고 있는 객체                              | 선택    |
 | `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject) | 이전 볼륨 정보를 담고 있는 객체                 | 선택    |
-| `targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)               | 현재 볼륨 정보를 담고 있는 객체                               | 선택    |
+| `targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)               | 설정 요청한 볼륨 정보를 담고 있는 객체                 | 선택    |
 
 ### Message example
 
@@ -2324,7 +2323,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`MuteConfirmation`](#MuteConfirmation)
 
 ## OpenConfirmation {#OpenConfirmation}
-[`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 대상 기기가 뚜껑을 열거나 일광 등 외부 조명의 차양을 해제하도록 설정한 결과를 CEK에게 전달합니다.
+[`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 설정한 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -2352,7 +2351,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`OpenRequest`](#OpenRequest)
 
 ## OpenRequest {#OpenRequest}
-커튼이나 비데 등의 제품을 제어할 때 사용되며, 대상 기기가 일광 차양을 해제하거나, 대상 기기의 뚜껑을 열도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`OpenConfirmation`](#OpenConfirmation) 메시지를 사용해야 합니다.
+스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`OpenConfirmation`](#OpenConfirmation) 메시지를 사용해야 합니다.
 
 ### Payload fields
 
