@@ -85,7 +85,7 @@ Extension 스토어에 등록된 extension이 표시되는 페이지입니다. C
 Extension 스토어 홈 (**확장 서비스 관리** 메뉴)에서 특정 extension을 선택했을 때 표시되는 페이지로 extension에 대한 자세한 설명을 제공하는 페이지입니다.
 
 ### HTTP/2 {#HTTP2}
-HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wiki/SPDY)에 기반하고 있으며, 국제 인터넷 표준화 기구(IETF)에서 개발되고 있다. 1997년 RFC 2068로 표준이 된 HTTP 1.1을 개선한 것으로, 2014년 12월 표준안 제안(Proposed Standard)으로 고려되어, 2015년 2월 17일 IESG에서 제안안으로 승인되었다. 2015년 5월, [RFC 7540](https://tools.ietf.org/html/rfc7540)로 공개되었다.
+HTTP 프로토콜의 두 번째 버전이다. [SPDY](https://en.wikipedia.org/wiki/SPDY)에 기반하고 있으며, 국제 인터넷 표준화 기구(IETF)에서 개발되고 있다. 1997년 RFC 2068로 표준이 된 HTTP 1.1을 개선한 것으로, 2014년 12월 표준안 제안(Proposed Standard)으로 고려되어, 2015년 2월 17일 IESG에서 제안안으로 승인되었다. 2015년 5월, <a href="https://tools.ietf.org/html/rfc7540" target="_blank">RFC 7540</a>]로 공개되었다.
 
 ### Intent {#Intent}
 Intent는 Clova extension이 처리할 사용자의 요청을 구별한 범주이며, custom intent와 built-in intent로 나뉩니다. [Custom extension](#CustomExtension)을 구현하기 전에 먼저 intent의 집합으로 구성된 [interaction 모델](#InteractionModel)을 정의해야 합니다. 자세한 내용은 [interaction 모델 정의](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)를 참조합니다.

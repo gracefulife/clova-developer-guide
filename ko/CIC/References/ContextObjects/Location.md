@@ -24,7 +24,7 @@
 |---------------|---------|-----------------------------|:---------:|
 | `latitude`      | string  | 위도                                                                                     | 필수 |
 | `longitude`     | string  | 경도                                                                                     | 필수 |
-| `refreshedAt`   | string  | 위치를 마지막으로 확인한 시점(UTC 기준, [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 포맷) | 필수 |
+| `refreshedAt`   | string  | 위치를 마지막으로 확인한 시점(UTC 기준, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> 포맷) | 필수 |
 
 ### Object example
 {% raw %}
