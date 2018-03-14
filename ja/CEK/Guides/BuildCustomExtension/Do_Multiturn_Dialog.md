@@ -1,6 +1,6 @@
-## マルチターン対話をする {#DoMultiturnDialog}
+## 複数回の対話でやり取りをする {#DoMultiturnDialog}
 
-CEKから渡されたユーザーのリクエスト([`IntentRequest`](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest))に、Custom Extensionがサービスを提供したり、または動作するために必要な情報がすべて含まれていないことがあります。また、シングルターンの対話では、1回の発話でユーザーのリクエストを受け付けることが難しい場合もあります。その場合、Custom Extensionはユーザーから足りない情報を引き出すために、マルチターンの対話を行うことができます。
+発話の設計によっては、ユーザーのリクエスト([`IntentRequest`](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest))に、Custom Extensionが必要な情報を1つの発話からすべて抽出することができない場合があります。また、UXとしてもユーザーが必要な情報を全て含めて1回で発話するのが難しい場合もあります。その場合、Custom Extensionはユーザーの1度目の発話の中で足りない情報を引き出すために、複数回の対話を行うことができます。
 
 例えば、ユーザーが「ペパロニピザを頼んで」と発話したと仮定します。それを受け、CEKは次のようなリクエストメッセージを送信します。
 
@@ -36,9 +36,9 @@ CEKから渡されたユーザーのリクエスト([`IntentRequest`](/CEK/Guide
 ```
 {% endraw %}
 
-Custom Extensionがピザの種類だけでなく、注文する数量に関する情報を必要とすることがあります。その際、[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)の`response.shouldEndSession`フィールドを`false`に設定すると、マルチターン対話で足りない情報を確認することができます。また、ユーザーが先に入力した情報を`sessionAttributes`フィールドにキー(key)-値(value)の形で保存することもできます。
+ピザの注文を受け付けるには、Custom Extensionがピザの種類だけでなく、注文する数量も必要です。その際、[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)の`response.shouldEndSession`フィールドを`false`に設定すると、もう一度ユーザからの発話を受け付けることができ、対話の中で足りない情報を聴取することができます。また、ユーザーが先に入力した情報を`sessionAttributes`フィールドにキー(key)-値(value)の形で保存することもできます。
 
-以下のようにレスポンスを返すことで、ユーザーがすでにリクエストした`intent`フィールドと`pizzaType`の情報を保存するようにClovaにリクエストすることができます。また、ユーザーに数量に関する追加の情報を求めることができます。
+以下のようにレスポンスを返すことで、ユーザーが既にリクエストした`intent`フィールドと`pizzaType`の情報を保存するようにClovaにリクエストすることができます。また、ユーザーに数量に関する追加の情報を求めることができます。
 
 {% raw %}
 ```json
@@ -54,7 +54,7 @@ Custom Extensionがピザの種類だけでなく、注文する数量に関す�
       "values": {
           "type": "PlainText",
           "lang": "ja",
-          "value": "何枚注文しますか?"
+          "value": "ピザを何枚注文しますか?"
       }
     },
     "card": {},
@@ -65,7 +65,7 @@ Custom Extensionがピザの種類だけでなく、注文する数量に関す�
 ```
 {% endraw %}
 
-ユーザーが必要な数量まで話すと、Clovaプラットフォームは、次のように解析された数量情報と一緒に、保存していた`sessionAttributes`オブジェクトの情報を[リクエストメッセージ](/CEK/References/CEK_API.md#CustomExtRequestMessage)の`session.sessionAttributes`フィールドに含めて再送信します。その際、追加に送信されたメッセージは前のメッセージと同じ`session.sessionId`値を持ち、Custom Extensionは受信した追加の情報を使用して次の動作を行います。
+ユーザーから必要な数量を聞くと、Clovaプラットフォームは、次のように解析された数量情報と一緒に、保存していた`sessionAttributes`オブジェクトの情報を[リクエストメッセージ](/CEK/References/CEK_API.md#CustomExtRequestMessage)の`session.sessionAttributes`フィールドに含めて再送信します。その際、追加で送信されたメッセージは前のメッセージと同じ`session.sessionId`値を持ち、Custom Extensionは受信した追加の情報を使用して次の動作をします。
 
 {% raw %}
 ```json

@@ -1,5 +1,5 @@
 ## Custom Extensionレスポンスを返す {#ReturnCustomExtensionResponse}
-[リクエストメッセージを処理](#HandleCustomExtensionRequest)すると、CEKに[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)を返す必要があります(HTTPSレスポンス)。リクエストメッセージのタイプによって異なる内容を返すこともありますが、レスポンスメッセージの構造に大差はありません。次は、LaunchRequestタイプのリクエスト(「英会話を始めよう」というユーザーリクエスト)を処理して返したレスポンスメッセージです。
+[リクエストメッセージを処理](#HandleCustomExtensionRequest)すると、CEKに[レスポンスメッセージ](/CEK/References/CEK_API.md#CustomExtResponseMessage)を返す必要があります(HTTPSレスポンス)。リクエストメッセージのタイプによって異なる内容を返すこともありますが、レスポンスメッセージの構造に大差はありません。次は、LaunchRequestタイプのリクエスト(「英会話を始めよう」というユーザーリクエスト)を処理して返したレスポンスメッセージの例です。
 
 {% raw %}
 ```json
@@ -28,7 +28,7 @@
 * `version`：使用しているCustom Extensionメッセージフォーマットのバージョンです。現在のバージョンはv0.1.0です。
 * `response.outputSpeech`：ユーザーが英語で「Hi, nice to meet you」の文章を話すように設定します。
 * `response.card`：クライアントの画面に表示するデータがありません。[コンテンツテンプレート](/CIC/References/Content_Templates.md)形式のデータで、クライアントの画面に表示するコンテンツをこのフィールドで渡すことができます。
-* `response.shouldEndSession`：セッションを終了せず、引き続きユーザーの入力を受け付けます。このフィールドの値がtrueの場合、[`SessionEndedRequest`](#HandleSessionEndedRequest)リクエストを受け取る前に、Extensionからセッションを終了できます。
+* `response.shouldEndSession`：セッションを終了せず、引き続きユーザーの入力を受け付けるかを管理します。このフィールドの値がtrueの場合、[`SessionEndedRequest`](#HandleSessionEndedRequest)リクエストを受け取る前に、Extensionからセッションを終了できます。
 
 <div class="note">
   <p><strong>メモ</strong></p>

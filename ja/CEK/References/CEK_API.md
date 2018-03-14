@@ -1,5 +1,5 @@
 # CEK APIのリファレンス
-CEK APIは、CEKとExtensionの間で情報を交換するために使用されるメッセージ仕様です。CEK APIについて次の内容を説明します。
+CEK APIは、CEKとExtensionの間で情報を交換するために使用されるメッセージ仕様です。CEK APIについては以下をご確認ください。
 * [HTTPメッセージ](#HTTPMessage)
 * [Custom Extensionメッセージ](#CustomExtMessage)
 

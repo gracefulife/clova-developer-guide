@@ -1,6 +1,7 @@
 ﻿対話モデルが正しく動作することを確認したら、審査をリクエストする前に、実際のデバイスでテストして、音声の認識と応答が想定した通りに動作するか確認する必要があります。
 
 ### テスターIDを登録する
+{% if book.language !== "ja" %}
 特定のアカウントでのみ、このExtensionを実行できるように、テスターIDを登録します。
 
 1. <a href="{{ book.DeveloperConsoleURL }}" target="_blank">Clova Developer Center</a>に接続します。
@@ -25,5 +26,13 @@ ClovaアプリでサンプルサイコロExtensionを実行します。
 2. テスターIDとして入力した{{ book.OrientedService }}アカウントでログインします。
 3. テスト用のExtensionの呼び出し名で、音声指示を出します。例えば、「クローバー、サンプルサイコロにサイコロを振らせて」と指示します。
 4. Clovaアプリが「サイコロを1つ振ります」と応答するか確認します。
+
+{% else %}
+
+現在、テスター登録はご利用頂けません。
+Clova Developer CenterでExtensionを登録したLINEアカウントでログインしているClova端末から、開発中のExtensionを利用可能です。
+テスト用のExtensionの呼び出し名で、音声指示を出します。例えば、「クローバー、サンプルサイコロにサイコロを振らせて」と指示します。
+
+{% endif %}
 
 Extensionが実際のデバイスでも正しく動作したら、サービスの準備は完了です。Clova Developer Centerで審査をリクエストして、Extensionを配布することができます。

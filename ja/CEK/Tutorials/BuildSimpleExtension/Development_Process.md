@@ -1,5 +1,5 @@
 ﻿Extensionを作成する基本的な流れは、以下のようになります。
-* ステップ1Extensionサーバーを用意する(個別に作業)
+* ステップ1Extensionサーバーを用意する(ご自身でお願いします)
 * ステップ2Extensionの基本情報を登録する(Clova Developer Centerで作業)
 * ステップ3対話モデルを登録する(Clova Developer Centerで作業)
 * ステップ4Extensionの動作をテストする(Clova Developer Centerと実際のデバイスで作業)
