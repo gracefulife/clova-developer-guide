@@ -5,10 +5,8 @@ Clovaでサービス提供中の一部のExtensionを紹介します。簡単な
 {% if book.language !== "ja" %}
 * [マジックボール(Magic ball)](#MagicBall)
 * [雨音(Rain sound)](#RainSound)
-{% endif %}
 
 * [サイコロ遊び(Dice drawer)](#DiceDrawer)
-{% if book.language !== "ja" %}
 * [コインヘルパー(Coin helper)](#CoinHelper)
 
 ## マジックボール(Magic ball) {#MagicBall}
@@ -34,7 +32,6 @@ https://github.com/naver/clova-extension-sample-magicball
 
 ### GitHubリポジトリ
 https://github.com/naver/clova-extension-sample-rainsound
-{% endif %}
 
 ## サイコロ遊び(Dice drawer) {#DiceDrawer}
 
@@ -48,7 +45,6 @@ https://github.com/naver/clova-extension-sample-rainsound
 ### GitHubリポジトリ
 {{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice
 
-{% if book.language !== "ja" %}
 ## コインヘルパー(Coin helper) {#CoinHelper}
 
 コインヘルパーは、ユーザーのリクエストに対し、外部の仮想通貨の取引所から提供されるREST APIを呼び出し、相場情報を返すExtensionです。
@@ -62,4 +58,11 @@ https://github.com/naver/clova-extension-sample-rainsound
 ### GitHubリポジトリ
 
 https://github.com/naver/clova-extension-sample-coinhelper
+
+{% else %}
+
+### 準備中
+日本向けのsample codeは準備中です。
+もう少々お待ち下さい。
+
 {% endif %}
