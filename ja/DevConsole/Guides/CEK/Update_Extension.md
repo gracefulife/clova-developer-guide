@@ -13,7 +13,7 @@ Extensionが審査を通過し、配布が承認されると、そのExtension�
 * [対話モデル](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
 * [配布情報](/DevConsole/Guides/CEK/Deploy_Extension.md)
 
-審査を通過すると、**{{ book.DevConsole.cek_version_service }}**バージョンから、アップデートが反映された**{{ book.DevConsole.cek_version_test }}**バージョンに置き換えられます。それからまた、**{{ book.DevConsole.cek_version_service }}**バージョンのExtensionをコピーし、**{{ book.DevConsole.cek_version_test }}**バージョンのExtensionを生成します。
+審査を通過すると、**{{ book.DevConsole.cek_version_service }}**バージョンから、アップデートが反映された**{{ book.DevConsole.cek_version_test }}**バージョンに置き換えられます。その後、**{{ book.DevConsole.cek_version_service }}**バージョンのExtensionをコピーし、**{{ book.DevConsole.cek_version_test }}**バージョンのExtensionが生成されます。
 
 以下の図は、Clova Developer CenterでExtensionがアップデートされる仕組みを示します。
 
