@@ -50,6 +50,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`GetOpenTimeResponse`](#GetOpenTimeResponse)                                 | Response | [`GetOpenTimeRequest`](#GetOpenTimeRequest) 메시지에 대한 응답으로 대상 기기가 감지한 내용 중 감지 대상이 마지막으로 열렸던 시점의 시간 정보를 CEK에게 전달합니다.  |
 | [`GetPhaseRequest`](#GetPhaseRequest)                                         | Request  | 주로 밥솥이나 세탁기와 같이 동작 단계가 있는 기기에서 현재 동작 단계 정보를 확인할 때 사용되며, 대상 기기의 현재 동작 단계 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetPhaseResponse`](#GetPhaseResponse)                                       | Response | [`GetPhaseRequest`](#GetPhaseRequest) 메시지에 대한 응답으로 대상 기기의 현재 동작 단계 정보를 CEK에게 전달합니다.  |
+| [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest)         | Request  | [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest) 메시지에 대한 응답으로 대상 기기가 판단한 누진세 단계 정보를 CEK에게 전달합니다.  |
+| [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)         | Response | [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest) 메시지에 대한 응답으로 대상 기기가 판단한 누진세 단계 정보를 CEK에게 전달합니다. |
 | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)                         | Request  | 주로 밥솥이나 세탁기와 같은 기기에서 동작 종료까지 남은 시간을 확인할 때 사용되며, 대상 기기의 동작 종료까지 남은 시간에 대한 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetRemainingTimeResponse`](#GetRemainingTimeResponse)                       | Response | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다. |
 | [`GetRightPostureRequest`](#GetRightPostureRequest)                           | Request  | 사용자가 바른 자세로 대상 기기를 사용한 비율이 얼마인지 확인할 때 사용하며, 사용자가 대상 기기를 사용할 때 특정 기간이나 현재까지 바른 자세를 유지한 비율 정보를 Clova Home extension에게 요청합니다.  |
@@ -1805,6 +1807,75 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 ### See also
 * [`GetPhaseRequest`](#GetPhaseRequest)
+
+## GetProgressiveTaxBracketRequest {#GetProgressiveTaxBracketRequest}
+주로 전기 계량기나 스마트 플러그와 같은 기기에서 누진세 단계를 확인할 때 사용되며, 대상 기기가 판단한 누진세 단계 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse) 메시지를 사용해야 합니다.
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/Link_User_Account.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "59a3f5bc-4c38-4d4c-9b71-3a037bf9f9b0",
+    "name": "GetProgressiveTaxBracketRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-017"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)
+
+## GetProgressiveTaxBracketResponse {#GetProgressiveTaxBracketResponse}
+
+[`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest) 메시지에 대한 응답으로 대상 기기가 판단한 누진세 단계 정보를 CEK에게 전달합니다.
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
+| `progressiveTaxBracket`      | [ProgressiveTaxBracketInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ProgressiveTaxBracketInfoObject) | 누진세 단계 정보를 가지는 객체  | 필수    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetProgressiveTaxBracketResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "progressiveTaxBracket": {
+      "value": 1
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest)
 
 ## GetRemainingTimeRequest {#GetRemainingTimeRequest}
 주로 밥솥이나 세탁기와 같은 기기에서 동작 종료까지 남은 시간을 확인할 때 사용되며, 대상 기기의 동작 종료까지 남은 시간에 대한 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetRemainingTimeResponse`](#GetRemainingTimeResponse) 메시지를 사용해야 합니다.

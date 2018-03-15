@@ -21,11 +21,11 @@
   </thead>
   <tbody>
     <tr>
-      <td>v3.5</td><td>2018-03-12</td>
+      <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>
           <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>에 <a href="/CIC/References/Context_Objects.html#SoundOutputInfoObject">SoundOutputInfoObject</a> 추가</li>
-          <li>[CEK] Clova Home API에 CloseConfirmation 외 45건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 약 10종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
+          <li>[CEK] Clova Home API에 CloseConfirmation 외 47건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 약 10종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
           <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 30종 추가</li>
         </ul>
       </td>

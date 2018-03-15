@@ -19,6 +19,7 @@
 | [HumidityInfoObject](#HumidityInfoObject)             | 습도 정보가 담긴 객체              |
 | [PeriodInfoObject](#PeriodInfoObject)                 | 대상 기간에 대한 정보를 담고 있는 객체 |
 | [PhaseInfoObject](#PhaseInfoObject)                   | 기기 동작의 단계 정보가 담긴 객체     |
+| [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | 누진세 단계 정보  |
 | [SpeedInfoObject](#SpeedInfoObject)                   | 속도 정보가 담긴 객체              |
 | [TemperatureInfoObject](#TemperatureInfoObject)       | 온도 정보를 담고 있는 객체          |
 | [TimeAmountInfoObject](#TimeAmountInfoObject)         | 경과 시간이나 남은 시간 등 시간의 양에 대한 정보를 담고 있는 객체  |
@@ -87,7 +88,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"AIRCONDITIONER"`  | 냉난방기 타입         | DecrementFanSpeed, DecrementTargetTemperature, GetCurrentTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
 | `"AIRPURIFIER"`     | 공기청정기 타입        | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn    |
 | `"AIRSENSOR"`       | 공기질 측정기 타입     | GetAirQuality, GetCurrentTemperature, GetFineDust, GetHumidity, GetUltraFineDust, HealthCheck                                     |
-| `"BEDET"`           | 비데 타입            | Close, GetDeviceState, HealthCheck, Open, TurnOff, TurnOn                                                         |
+| `"BIDET"`           | 비데 타입            | Close, GetDeviceState, GetExpendableState, HealthCheck, Open, TurnOff, TurnOn                                                         |
 | `"BODYWEIGHTSCALE"` | 체중계 타입          | GetDeviceState, HealthCheck                                                                                                             |
 | `"CLOTHESCAREMACHINE"` | 의류 관리기 타입    | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                     |
 | `"CLOTHESDRYER"`    | 의류 건조기 타입       | GetDeviceState, HealthCheck, TurnOff, TurnOn                                                                                           |
@@ -104,14 +105,14 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"MASSAGECHAIR"`    | 안마 의자 타입        | HealthCheck, Raise, TurnOff, TurnOn                                                                                              |
 | `"MICROWAVE"`       | 전자 레인지 타입      | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                      |
 | `"MOTIONSENSOR"`    | 동작 감지 센서 타입    | GetDeviceState, HealthCheck                                                                                                             |
-| `"MULTITAP"`        | 멀티 탭 타입         | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                     |
 | `"OPENCLOSESENSOR"` | 열림 감지 센서 타입    | GetCloseTime, GetLockState, GetOpenTime, HealthCheck                                                                                   |
 | `"OVEN"`            | 오븐 타입            | GetDeviceState, HealthCheck                                                                                                             |
-| `"PURIFIER"`        | 정수기 타입          | GetDeviceState, HealthCheck, SetMode, SetTargetTemperature                                                                              |
-| `"RANGE"`           | 조리대 타입          | GetDeviceState, HealthCheck                                                                                                             |
-| `"RANGEHOOD"`       | 조리대 후드 타입      | HealthCheck, TurnOff, TurnOn                                                                                                      |
+| `"POWERSTRIP"`      | 멀티 탭 타입         | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                     |
+| `"PURIFIER"`        | 정수기 타입          | GetDeviceState, GetExpendableState, HealthCheck, SetMode, SetTargetTemperature                                                     |
+| `"RANGE"`           | 레인지 타입          | GetDeviceState, HealthCheck                                                                                                             |
+| `"RANGEHOOD"`       | 레인지 후드 타입      | HealthCheck, TurnOff, TurnOn                                                                                                      |
 | `"REFRIGERATOR"`    | 냉장고 타입          | GetDeviceState, HealthCheck, SetFreezerTargetTemperature, SetFridgeTargetTemperature, SetMode                                           |
-| `"RICECOOKER"`      | 전기 밥솥 타입        | GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, SetOffMode, Stop, TurnOff, TurnOn                             |
+| `"RICECOOKER"`      | 전기 밥솥 타입        | GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
 | `"ROBOTVACUUM"`     | 로봇 청소기 타입       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
 | `"SETTOPBOX"`       | TV 셋톱 박스 타입     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetDeviceState, HealthCheck, TurnOff, TurnOn                                                                                            |
@@ -119,8 +120,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"SMARTCHAIR"`      | 스마트 의자 타입      | GetRightPostureRatio, GetUsageTime, HealthCheck                                                                                       |
 | `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Lower, Open, Raise, Stop                                                                                      |
 | `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
-| `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, HealthCheck                                                                      |
-| `"SMARTPLUG"`       | 스마트 플러그 타입     | HealthCheck, TurnOff, TurnOn                                                                                                     |
+| `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
+| `"SMARTPLUG"`       | 스마트 플러그 타입     | GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                                                     |
 | `"SMARTTV"`         | 스마트 TV 타입       | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SMARTVALVE"`      | 스마트 밸브 타입      | GetLockState, SetLockState                                                                                                        |
 | `"SMOKESENSOR"`     | 연기 센서 타입       | GetDeviceState, HealthCheck                                                                                                             |
@@ -161,6 +162,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | GetLockState               | [`GetLockStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetLockStateRequest), [`GetLockStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetLockStateResponse) |
 | GetOpenTime                | [`GetOpenTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetOpenTimeRequest), [`GetOpenTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetOpenTimeResponse)  |
 | GetPhase                   | [`GetPhaseRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetPhaseRequest), [`GetPhaseResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetPhaseResponse)  |
+| GetProgressiveTaxBracket   | [`GetProgressiveTaxBracketRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketRequest), [`GetProgressiveTaxBracketResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketResponse) |
 | GetRemainingTime           | [`GetRemainingTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeRequest), [`GetRemainingTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeResponse)  |
 | GetRightPostureRatio       | [`GetRightPostureRatioRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRightPostureRatioRequest), [`GetRightPostureRatioResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRightPostureRatioResponse)  |
 | GetTargetTemperature       | [`GetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureRequest), [`GetTargetTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureResponse) |
@@ -801,6 +803,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
       <td><code>"RICECOOKER"</code></td>
       <td>
         <ul>
+          <li><code>"general"</code>: 일반 모드</li>
           <li><code>"keepwarm"</code>: 보온 모드</li>
           <li><code>"powersaving"</code>: 절전 모드</li>
           <li><code>"reheating"</code>: 재가열 모드</li>
@@ -1031,6 +1034,41 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetPhaseResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetPhaseResponse)
 * [`StopConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#StopConfirmation)
 * [`StopRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#StopRequest)
+
+## ProgressiveTaxBracketInfoObject {#ProgressiveTaxBracketInfoObject}
+누진세 단계 정보를 담고 있는 객체입니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | number  | 누진세 단계                    | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제 1: GetProgressiveTaxBracketResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetProgressiveTaxBracketResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "progressiveTaxBracket": {
+      "value": 1
+    },
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetProgressiveTaxBracketRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketRequest)
+* [`GetProgressiveTaxBracketResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketResponse)
 
 ## SpeedInfoObject {#SpeedInfoObject}
 속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.
