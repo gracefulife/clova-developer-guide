@@ -20,7 +20,7 @@ Extensionを登録するには、先にCEKのAPIサービスの利用規約と�
 ## Extensionの基本情報を入力する {#InputExtensionInfo}
 
 Extensionを登録する最初のステップは、登録するExtensionの基本情報を入力することです。
-Extensionの基本情報は、Clova Developer CenterでExtensionを作成するための必須で最小限の情報です。Extensionの基本情報を入力すると、CEKメニューで、作成したExtensionに自由にアクセスし、また修正できるようになります。
+Extensionの基本情報は、Clova Developer CenterでExtensionを作成するための最小限必要な情報です。Extensionの基本情報を入力すると、CEKメニューで、作成したExtensionに自由にアクセスし、また修正できるようになります。
 
 次の順でExtensionを登録します。
 
@@ -28,10 +28,10 @@ Extensionの基本情報は、Clova Developer CenterでExtensionを作成する�
 
 <ol>
   <li><strong>{{ book.DevConsole.cek_type }}</strong>項目で、登録するExtensionのタイプを選択します。Extensionのタイプを選択すると、該当する入力フィールドが表示されます。</li>
-  <li><strong>{{ book.DevConsole.cek_lang }}</strong>項目で、Extensionで使用する言語を選択します。現在、<strong>{{ book.DevConsole.ko_KR }}</strong>のみサポートされています。</li>
+  <li><strong>{{ book.DevConsole.cek_lang }}</strong>項目で、Extensionで使用する言語を選択します。現在、<strong>{{ book.DevConsole.ja_JP }}</strong>のみサポートされています。</li>
   <li>ExtensionのID、名前、呼び出し名を次の項目に入力します。
     <ol>
-      <li><strong>{{ book.DevConsole.cek_id }}</strong>Extensionの一意のIDです。リバースドメインネームの形式で入力します。(例：com.yourdomain.Extension.pizzabot)</li>
+      <li><strong>{{ book.DevConsole.cek_id }}</strong>：Extensionの一意のIDです。リバースドメインネームの形式で入力します。(例：com.yourdomain.Extension.pizzabot)</li>
       <li><strong>{{ book.DevConsole.cek_name }}</strong>：Extensionの名前です。今後スキルストアで表示されます。</li>
       <li><strong>{{ book.DevConsole.cek_invocation_name }}</strong>：ユーザーがExtensionを呼び出す際に呼ぶ名前です。保有しているサービス、会社および組織の名前を使用できますが、ユーザーにとって呼びやすい、シンプルで独特な言葉を指定することをお勧めします。一般的に使われている言葉、他社の名前やサービスに該当する言葉は使用できません。<strong>{{ book.DevConsole.cek_invocation_name }}</strong>は、Extensionを審査する際にチェックされます。</li>
       <li><strong>{{ book.DevConsole.cek_provider }}</strong>：Extensionを作成した主体(会社や個人)の名前、またはニックネームを入力します。後ほどスキルストアで表示され、Extensionを審査する際にチェックされます。</li>
@@ -72,7 +72,7 @@ $ curl "https://yourdomain.com/pizzabot" -X POST
   </div>
   </li>
   <li>Extensionが提供するサービスのアカウントが、Clovaのユーザーアカウントとのリンクを必要とする場合、<strong>{{ book.DevConsole.cek_account_linking }}</strong>項目で<strong>{{ book.DevConsole.cek_yes }}</strong>を選択します。アカウントリンクの詳細については、<a href="#SetAccountLinking">アカウントリンクを設定する</a>を参照してください。</li>
-  <li><strong>{{ book.DevConsole.cek_ssl_certificate }}</strong>項目のオプションボタンをクリックします。Extensionを提供するサーバーは、必ず信頼された認証局から発行された証明書を使用しなければなりません。(自己署名証明書は使用できません)</li>
+  <li><strong>{{ book.DevConsole.cek_ssl_certificate }}</strong>項目のボタンをクリックします。Extensionを提供するサーバーは、必ず信頼された認証局から発行された証明書を使用しなければなりません。(自己署名証明書は使用できません)</li>
   <li>サーバーとの連携に関する内容を入力して、<strong>{{ book.DevConsole.cek_save }}</strong>ボタンをクリックします。</li>
 </ol>
 
