@@ -102,12 +102,12 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"HUMIDIFIER"`      | 가습기 타입           | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                    |
 | `"KIMCHIREFRIGERATOR"` | 김치 냉장고 타입    | GetDeviceState, HealthCheck                                                                                                            |
 | `"LIGHT"`           | 스마트 조명 기기 타입   | DecrementBrightness, DecrementVolume HealthCheck, IncrementBrightness, IncrementVolume SetBrightness, TurnOff, TurnOn            |
-| `"MASSAGECHAIR"`    | 안마 의자 타입        | HealthCheck, Raise, TurnOff, TurnOn                                                                                              |
+| `"MASSAGECHAIR"`    | 안마 의자 타입        | DecrementIntensityLevel, HealthCheck, IncrementIntensityLevel, TurnOff, TurnOn                                                     |
 | `"MICROWAVE"`       | 전자 레인지 타입      | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                      |
 | `"MOTIONSENSOR"`    | 동작 감지 센서 타입    | GetDeviceState, HealthCheck                                                                                                             |
 | `"OPENCLOSESENSOR"` | 열림 감지 센서 타입    | GetCloseTime, GetLockState, GetOpenTime, HealthCheck                                                                                   |
 | `"OVEN"`            | 오븐 타입            | GetDeviceState, HealthCheck                                                                                                             |
-| `"POWERSTRIP"`      | 멀티 탭 타입         | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                     |
+| `"POWERSTRIP"`      | 멀티 탭 타입         | GetConsumption, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                     |
 | `"PURIFIER"`        | 정수기 타입          | GetDeviceState, GetExpendableState, HealthCheck, SetMode, SetTargetTemperature                                                     |
 | `"RANGE"`           | 레인지 타입          | GetDeviceState, HealthCheck                                                                                                             |
 | `"RANGEHOOD"`       | 레인지 후드 타입      | HealthCheck, TurnOff, TurnOn                                                                                                      |
@@ -118,7 +118,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetDeviceState, HealthCheck, TurnOff, TurnOn                                                                                            |
 | `"SMARTBED"`        | 스마트 침대 타입      | HealthCheck, Lower, Raise, Stop                                                                                                   |
 | `"SMARTCHAIR"`      | 스마트 의자 타입      | GetRightPostureRatio, GetUsageTime, HealthCheck                                                                                       |
-| `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Lower, Open, Raise, Stop                                                                                      |
+| `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Open, Stop                                                                                                    |
 | `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
 | `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
 | `"SMARTPLUG"`       | 스마트 플러그 타입     | GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                                                     |
