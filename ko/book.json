@@ -5,7 +5,7 @@
   "author": "NAVER Corporation",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v3.4",
+    "DocVersion": "v3.5",
     "TargetCountryCode": "KR",
     "TargetReaderType": "Internal",
     "ExtensionAdminEmail": "dl_extension_admin@navercorp.com",

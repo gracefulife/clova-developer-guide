@@ -17,7 +17,7 @@
 | `BOILER_ROOM`               | 보일러실 |
 | `DINING_ROOM`               | 식당 |
 | `DRESS_ROOM`                | 드레스룸 |
-| `ENTERANCE`                 | 현관 |
+| `ENTRANCE`                  | 현관 |
 | `FAMILY_ROOM`               | 가족룸  |
 | `FATHER_ROOM`               | 아버님방 |
 | `FIFTH_ROOM`                | 다섯째 방  |
@@ -59,7 +59,7 @@
 | `BATH_ROOM`                 | Bathroom                   | バスルーム |
 | `BED_ROOM`                  | Bedroom                    | ベッドルーム |
 | `DINING_ROOM`               | Dining room                | ダイニング |
-| `ENTERANCE`                 | Entrance                   | 玄関 |
+| `ENTRANCE`                  | Entrance                   | 玄関 |
 | `FIRST_ROOM`                | First room                 | 部屋1 |
 | `HALLWAY`                   | Hallway                    | 廊下 |
 | `KITCHEN`                   | Kitchen                    | キッチン |
@@ -76,16 +76,16 @@
 | `YARD`                      | Yard                       | 庭 |
 | `JAPANESE_STYLE_ROOM`       | Japanese Style Room        | 和室 |
 
-{% elif book.TargetCountryCode == "ja" %}
+{% elif book.TargetCountryCode == "JP" %}
 
-| `location` field value |    Location details(JP)      |
+| `location` field value | Location details(Japanese)   |
 |------------------------|------------------------------|
-| `ATTIC`                | 屋根裏部屋  |
+| `ATTIC`                | 屋根裏部屋 |
 | `BALCONY`              | ベランダ |
 | `BATH_ROOM`            | バスルーム |
 | `BED_ROOM`             | ベッドルーム |
 | `DINING_ROOM`          | ダイニング |
-| `ENTERANCE`            | 玄関 |
+| `ENTRANCE`             | 玄関 |
 | `FIRST_ROOM`           | 部屋1 |
 | `HALLWAY`              | 廊下 |
 | `KITCHEN`              | キッチン |
