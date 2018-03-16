@@ -15,8 +15,3 @@ Clova developer console은 CIC 메뉴와 CEK 메뉴를 제공합니다. 각 메�
   * [Extension 배포하기](/DevConsole/Guides/CEK/Deploy_Extension.md)
   * [Extension 업데이트하기](/DevConsole/Guides/CEK/Update_Extension.md)
   * [Extension 중지 및 삭제하기](/DevConsole/Guides/CEK/Remove_Extension.md)
-
-* CIC 메뉴(추후 제공 예정)
-  * 클라이언트 기기 및 앱 등록
-  * 클라이언트 인증 관련 정보 등록
-  * 클라이언트 기기 사양 등록
