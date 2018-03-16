@@ -10,7 +10,7 @@ Custom Extensionの開発者は、次の内容を知っておく必要があり�
    * [`IntentRequest`リクエストを処理する](#HandleIntentRequest)
    * [`SessionEndedRequest`リクエストを処理する](#HandleSessionEndedRequest)
 3.[Custom Extensionレスポンスを返す](#ReturnCustomExtensionResponse)
-4.[マルチターン対話をする](#DoMultiturnDialog)
+4.[複数回の対話でやり取りをする](#DoMultiturnDialog)
 
 {% include "/CEK/Guides/BuildCustomExtension/Preparation.md" %}
 

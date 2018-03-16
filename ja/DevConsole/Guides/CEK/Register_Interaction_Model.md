@@ -1,4 +1,4 @@
-ビルトインインテントビルトインインテントビルトインスロット# 対話モデルを登録する
+# 対話モデルを登録する
 
 CEKがExtensionにユーザーのリクエストを送る際、ユーザーの発話をどう解析し、どんな形式で送るかを決めるために、[あらかじめ対話モデルを定義](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)する必要があります。対話モデルは、[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)に渡されるリクエストを標準化したスキーマです。
 
