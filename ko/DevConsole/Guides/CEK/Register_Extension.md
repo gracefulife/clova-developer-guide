@@ -5,10 +5,15 @@
 
 Extension을 등록할 때 일반적으로 다음 항목을 순차적으로 수행해야 합니다.
 
-1. [이용 약관 및 개인 정보 수집 동의](#AgreeTermsOfUse)
-2. [Extension 기본 정보 입력](#InputExtensionInfo)
-3. [서버 연동 설정](#SetServerConnection)
-  * [계정 연결 설정](#SetAccountLinking)
+<ol>
+  <li><a href="#AgreeTermsOfUse">이용 약관 및 개인 정보 수집 동의</a></li>
+  <li><a href="#InputExtensionInfo">Extension 기본 정보 입력</a></li>
+  <li><a href="#SetServerConnection">서버 연동 설정</a>
+    <ul>
+      <li><a href="#SetAccountLinking">계정 연결 설정</a></li>
+    </ul>
+  </li>
+</ol>
 
 ## 이용 약관 및 개인 정보 수집 동의 {#AgreeTermsOfUse}
 

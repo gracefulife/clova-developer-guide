@@ -5,10 +5,15 @@ If you are developing or have developed a [custom extension](/CEK/Guides/Build_C
 
 To register an extension, you must typically complete the following steps in order:
 
-1. [Agreeing to the terms and conditions and privacy policy](#AgreeTermsOfUse)
-2. [Entering basic extension information](#InputExtensionInfo)
-3. [Setting up a server connection](#SetServerConnection)
-  * [Setting up account linking](#SetAccountLinking)
+<ol>
+  <li><a href="#AgreeTermsOfUse">Agreeing to the terms and conditions and privacy policy</a></li>
+  <li><a href="#InputExtensionInfo">Entering basic extension information</a></li>
+  <li><a href="#SetServerConnection">Setting up a server connection</a>
+    <ul>
+      <li><a href="#SetAccountLinking">Setting up account linking</a></li>
+    </ul>
+  </li>
+</ol>
 
 ## Agreeing to the terms and conditions and privacy policy {#AgreeTermsOfUse}
 
