@@ -48,7 +48,7 @@ Follow the steps below to register the extension:
 
 When you complete entering the basic extension information, you are directed to the screen to edit this information. From this point, you can press the **{{ book.DevConsole.cek_save }}** button at the bottom of the page at any time to save the changed details. You can also find the list of registered extensions in the CEK menu as shown below.
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
 
 ## Setting up a server connection {#SetServerConnection}
 
