@@ -1,6 +1,6 @@
 # Extensionを中止および削除する
 
-審査をリクエストする前のExtensionは、[Extensionの基本情報を入力](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)するページでそのExtensionを削除できます。
+審査をリクエストする前のExtensionは、[Extensionの基本情報を入力](/DevConsole/Guides/CEK/Register_Extension.md#InputExtensionInfo)するページで削除できます。
 
 ![](/DevConsole/Resources/Images/DevConsole-Remove_Extension.png)
 
@@ -13,7 +13,7 @@ Extensionが審査中の場合、審査をキャンセルして、自由にExten
 
 ![](/DevConsole/Resources/Images/DevConsole-Cancel_Submission.png)
 
-もし、Extensionが審査を通過し、サービスが開始されている場合には、サービスを一度中止してからExtensionを削除できます。サービスを中止すると、Extensionは**{{ book.DevConsole.cek_status_dev }}**状態に戻ります。
+もし、Extensionが審査を通過し、サービスが開始されている場合には、サービスを一度中止の状態にする事で削除できるようになります。サービスを中止すると、Extensionは**{{ book.DevConsole.cek_status_dev }}**状態に戻ります。
 
 <div class="note">
   <p><strong>メモ</strong></p>

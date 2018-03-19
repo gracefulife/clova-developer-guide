@@ -15,8 +15,3 @@ The Clova developer console provides the CIC and CEK menu. Tasks that can be per
   * [Deploying an extension](/DevConsole/Guides/CEK/Deploy_Extension.md)
   * [Updating an extension](/DevConsole/Guides/CEK/Update_Extension.md)
   * [Canceling and deleting an extension](/DevConsole/Guides/CEK/Remove_Extension.md)
-
-* CIC menu (coming soon)
-  * Registering client devices and apps
-  * Registering client credentials
-  * Registering client specifications

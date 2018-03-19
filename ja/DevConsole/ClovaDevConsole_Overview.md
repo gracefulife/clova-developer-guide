@@ -15,8 +15,3 @@ Clova Developer Centerは、CICメニューとCEKメニューを提供します�
   * [Extensionを配布する](/DevConsole/Guides/CEK/Deploy_Extension.md)
   * [Extensionをアップデートする](/DevConsole/Guides/CEK/Update_Extension.md)
   * [Extensionを中止および削除する](/DevConsole/Guides/CEK/Remove_Extension.md)
-
-* CICメニュー(今後サービス予定)
-  * クライアントデバイスおよびアプリを登録する
-  * クライアント認証関連情報を登録する
-  * クライアントデバイス仕様を登録する

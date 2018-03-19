@@ -1,5 +1,5 @@
 # Extensionを配布する
-[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(スキルストア)で配布されたExtensionを使用できるようになります。
+[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)またはClova Home Extensionを[Clova Developer Centerに登録](/DevConsole/Guides/CEK/Register_Extension.md)すると、登録したExtensionをClovaサービスに配布できます。Extensionを配布すると、エンドユーザーが**{{ book.DevConsole.ManageExtensions }}**というメニュー(スキルストア)から選んで使用することができます。
 
 Extensionの配布は、通常、次の順で行われます。
 
@@ -9,19 +9,19 @@ Extensionの配布は、通常、次の順で行われます。
 
 ## 配布情報を入力する {#InputDeploymentInfo}
 
-Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[対話モデルを登録](/DevConsole/Guides/CEK/Register_Interaction_Model.md)してから、配布情報を入力できます。Extensionの登録メニューで**{{ book.DevConsole.cek_publishing }}**を選択します。
+Clova Developer Centerで[Extensionを登録](/DevConsole/Guides/CEK/Register_Extension.md)し、[対話モデルを作成](/DevConsole/Guides/CEK/Register_Interaction_Model.md)すると、配布情報の入力が可能になります。Extensionのメニュー画面で**{{ book.DevConsole.cek_publishing }}**を選択してください。
 
 ![](/DevConsole/Resources/Images/DevConsole-Deployment_Info_Menu.png)
 
-次のように配布情報を入力します。
+必要な情報は以下の通りです。
 
 ![](/DevConsole/Resources/Images/DevConsole-Input_Deployment_Info.png)
 
-Extensionをユーザーに説明するための情報として、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)でユーザーに提供されます。次の情報を入力する必要があります。
+Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)に掲載する情報を以下の手順で登録してください。
 
-* **{{ book.DevConsole.cek_category }}**：Extensionのカテゴリです。ユーザーがカテゴリごとにExtensionのリストを確認したり、検索する際に利用されます。
+* **{{ book.DevConsole.cek_category }}**：Extensionのカテゴリです。ユーザーがカテゴリごとにExtensionを探したり、検索する際に利用されます。
 * **{{ book.DevConsole.cek_test_instructions }}**：[Extensionの審査](#RequestExtensionSubmission)プロセスで審査担当者がExtensionを確認する際、必要とされる参考情報です。エンドユーザーには表示されません。案内に従って作成します。
-* サービス国および地域：現在、韓国にのみExtensionを配布できます。
+* サービス国および地域：現在、日本にのみExtensionを配布できます。
 * **{{ book.DevConsole.cek_full_skill_desc }}**：**{{ book.DevConsole.ExtensionPage }}**でユーザーに提供するExtensionの説明です。案内に従って作成します。
 * **{{ book.DevConsole.cek_short_skill_desc }}**：**{{ book.DevConsole.ExtensionHome }}**でプロモーションなどの案内を表示する際に使用される説明です。
 * **{{ book.DevConsole.cek_example_phrases }}**：ユーザーがExtensionをどのように使用できるかを示す例です。**{{ book.DevConsole.ExtensionPage }}**に表示されます。特に、一番目の例は、**{{ book.DevConsole.ExtensionHome }}**でExtensionのリストを表示する際に使用されます。
@@ -37,7 +37,7 @@ Extensionをユーザーに説明するための情報として、Clovaアプリ
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><strong>{{ book.DevConsole.ExtensionPage }}</strong>に表示される一部の情報は、<a href="/DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">Extensionの基本情報を登録</a>する際に入力された情報を活用します。</p>
+  <p><strong>{{ book.DevConsole.ExtensionPage }}</strong>に表示される一部の情報には、登録されている<a href="/DevConsole/Guides/CEK/Register_Extension.html#InputExtensionInfo">Extensionの基本情報</a>が使用されます。</p>
 </div>
 
 ## プライバシーポリシーおよびコンプライアンス情報を入力する {#InputComplianceInfo}
