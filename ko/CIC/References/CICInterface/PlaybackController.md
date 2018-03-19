@@ -67,8 +67,8 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 ### See also
 * [`AudioPlayer.Play`](#Play)
-* [`NextCommandIssued`](#NextCommandIssued)
-* [`PreviousCommandIssued`](#PreviousCommandIssued)
+* [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
+* [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 
 ## Mute directive {#Mute}
 클라이언트에게 오디오 플레이어 볼륨을 음소거하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 무음이 되도록 변경해야 합니다.
@@ -169,6 +169,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% endraw %}
 
 ### See also
+* [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 
 ## Pause directive {#Pause}
@@ -268,6 +269,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% endraw %}
 
 ### See also
+* [`PlaybackController.CustomCommandIssued`](#CustomCommandIssued)
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
 
 ## Replay directive {#Replay}
