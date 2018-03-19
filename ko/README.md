@@ -16,7 +16,7 @@
 <table>
   <thead>
     <tr>
-      <th style="width:5%">버전</th><th style="width:15%">배포 일자</th><th style="width:80%">이력 사항</th>
+      <th style="width:10%">버전</th><th style="width:15%">배포 일자</th><th style="width:75%">이력 사항</th>
     </tr>
   </thead>
   <tbody>
