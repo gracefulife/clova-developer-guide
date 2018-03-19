@@ -24,9 +24,9 @@
 | DeviceControl     | [`ActionFailed`](/CIC/References/CICInterface/DeviceControl.md#ActionFailed) | 클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패했음을 CIC에 보고하기 위해 사용됩니다.                   |
 | DeviceControl     | [`ReportState`](/CIC/References/CICInterface/DeviceControl.md#ReportState)   | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                              |
 | DeviceControl     | [`RequestStateSynchronization`](/CIC/References/CICInterface/DeviceControl.md#RequestStateSynchronization) | 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다.  |
-| PlaybackController | [`CustomCommandIssued`](#CustomCommandIssued) | 사용자가 클라이언트의 기기에서 임의의 기능을 설정한 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |
-| PlaybackController | [`NextCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#NextCommandIssued) | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
-| PlaybackController | [`PreviousCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#PreviousCommandIssued) | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
+| PlaybackController | [`CustomCommandIssued`](#CustomCommandIssued) | 사용자가 클라이언트의 기기에서 임의의 기능을 설정한 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |
+| PlaybackController | [`NextCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#NextCommandIssued) | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
+| PlaybackController | [`PreviousCommandIssued`](/CIC/References/CICInterface/PlaybackController.md#PreviousCommandIssued) | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
 | SpeechRecognizer  | [`Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)  | 입력되는 사용자의 음성을 전달하여 음성 인식을 CIC에 요청합니다.                                          |
 | SpeechSynthesizer | [`Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)     | CIC에 특정 텍스트를 TTS로 생성하도록 요청합니다.                                             |
 | SpeechSynthesizer | [`SpeechFinished`](/CIC/References/CICInterface/SpeechSynthesizer.md#SpeechFinished)   | 클라이언트가 TTS 재생을 완료했음을 CIC로 보고하기 위해 사용됩니다.                                 |
