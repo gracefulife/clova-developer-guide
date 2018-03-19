@@ -25,6 +25,7 @@
       <td>
         <ul>
           <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>에 <a href="/CIC/References/Context_Objects.html#SoundOutputInfoObject">SoundOutputInfoObject</a> 추가</li>
+          <li>[CIC] 사용자가 설정한 임의의 명령을 실행할 수 있는 <a href="/CIC/References/CICInterface/PlaybackController.html#CustomCommandIssued">CustomCommandIssued</a> 이벤트 메시지를 <a href="/CIC/References/CICInterface/PlaybackController.html#CustomCommandIssued">PlaybackController</a> 네임스페이스에 추가</li>
           <li>[CEK] Clova Home API에 CloseConfirmation 외 47건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 약 10종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
           <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 30종 추가</li>
         </ul>
