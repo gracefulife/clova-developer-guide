@@ -12,13 +12,13 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 <ol>
   <li>등록한 extension 목록에서 interaction 모델을 빌드하려는 extension 항목의 <strong>{{ book.DevConsole.cek_edit }}</strong> 메뉴를 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png" />
-  <li><strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}</strong> 화면에서 왼쪽 상단에 있는 <strong>{{ book.DevConsole.BuildButton }}</strong> 버튼을 클릭하면 interaction 모델을 빌드합니다. Interaction 모델의 크기 등에 따라 3~5분 정도 소요될 수 있습니다.</li>
+  <li><strong>{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}</strong> 화면에서 왼쪽 상단에 있는 <strong>{{ book.DevConsole.cek_builder_menu_build }}</strong> 버튼을 클릭하면 interaction 모델을 빌드합니다. Interaction 모델의 크기 등에 따라 3~5분 정도 소요될 수 있습니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Build_Interaction_Model.png" />
 </ol>
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>빌드 중에 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}</strong> 내에서 다른 메뉴로 이동하더라도 빌드가 취소되지 않습니다. 빌드를 시작한 이후에 얼마든지 메뉴 이동 및 내용 편집이 가능합니다.</p>
+  <p>빌드 중에 <strong>{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}</strong> 내에서 다른 메뉴로 이동하더라도 빌드가 취소되지 않습니다. 빌드를 시작한 이후에 얼마든지 메뉴 이동 및 내용 편집이 가능합니다.</p>
 </div>
 
 ## Interaction 모델 테스트하기 {#TestInteractionModel}
@@ -26,7 +26,7 @@ Custom extension을 배포하는 경우 [interaction 모델이 등록](/DevConso
 [Interaction 모델 빌드](#BuildInteractionModel)가 완료되면, interaction 모델을 테스트할 수 있습니다. 다음과 같이 발화문을 테스트해볼 수 있습니다.
 
 <ol>
-  <li>왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_test }}</strong> 메뉴를 클릭합니다. 메뉴를 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> 화면이 표시됩니다.</li>
+  <li>왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_test }}</strong> 메뉴를 클릭합니다. 메뉴를 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_test }}</strong> 화면이 표시됩니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Menu.png" />
   <li><strong>{{ book.DevConsole.cek_builder_test_expression_title }}</strong> 필드에 테스트할 발화문을 입력하고 <strong>{{ book.DevConsole.cek_builder_test_request_test }}</strong> 버튼을 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Test_Utterance_Example.png" />
