@@ -13,7 +13,7 @@ Extension이 심사를 통과하여 extension 배포가 승인되면 extension�
 * [interaction 모델](/DevConsole/Guides/CEK/Register_Interaction_Model.md)
 * [배포 정보](/DevConsole/Guides/CEK/Deploy_Extension.md)
 
-심사를 통과하면 **상용** 버전이 업데이트 사항이 반영된 **테스트** 버전으로 교체됩니다. 그리고 다시 **상용** 버전의 extension 정보를 복사하여 새로운 **테스트** 버전의 extension 정보를 생성합니다.
+심사를 통과하면 **{{ book.DevConsole.cek_version_service }}** 버전에 업데이트 사항이 반영된 **{{ book.DevConsole.cek_version_test }}** 버전으로 교체됩니다. 그리고 다시 **{{ book.DevConsole.cek_version_service }}** 버전의 extension 정보를 복사하여 새로운 **{{ book.DevConsole.cek_version_test }}** 버전의 extension 정보를 생성합니다.
 
 다음 그림은 Clova developer console에서 extension이 업데이트되는 구조를 보여줍니다.
 

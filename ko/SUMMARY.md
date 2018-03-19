@@ -4,7 +4,7 @@
 
 * [시작하기 전에](/README.md)
 * [릴리즈 노트](/Release_Notes.md)
-* [용어 및 약어](/Terms.md)
+* [용어 및 약어](/Glossary.md)
 
 ## Design
 * [클라이언트 기기 디자인 가이드라인](/Design/Design_Guideline_For_Client_Hardware.md)
@@ -183,7 +183,7 @@
       * [Error](/CEK/References/ClovaHomeInterface/Error_Interfaces.md)
       * [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
 
-## Clova Developer Console
+## Clova developer console
 
 * [Clova developer console 개요](/DevConsole/ClovaDevConsole_Overview.md)
 * [CEK Menu 사용하기](/DevConsole/Guides/CEK/Using_CEK_Menu.md)

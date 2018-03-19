@@ -62,7 +62,7 @@ Extension 배포에 필요한 정보를 입력하는 마지막 단계로서 개�
 
 ## 심사 신청하기 {#RequestExtensionSubmission}
 
-Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 보호 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 최종적으로 등록한 extension에 대해 extension 심사를 신청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 심사하게 됩니다.
+Extension의 [배포 정보](#InputDeploymentInfo)와 [개인 정보 보호 및 규정 준수 정보](#InputComplianceInfo)까지 입력이 완료되었다면 마지막 단계로 등록한 extension에 대해 extension 심사를 신청할 수 있습니다. Clova의 운영자는 등록한 extension의 정보와 실제 실행 여부 및 적합성 등을 심사하게 됩니다.
 
 * Extension이 정상 동작하고 검수 시 특별한 문제 사항이 없다면 extension은 심사를 통과하게 될 것이며, 심사를 통과하면 즉시 혹은 원하는 시간에 extension을 배포할 수 있게 됩니다.
 * 만약, 심사 과정에서 실행 오류가 있거나 사용자 시나리오 상의 심각한 문제 발견되면 운영자에 의해 배포 요청이 거절되며 신사 신청하기 전 단계로 돌아가게 됩니다.

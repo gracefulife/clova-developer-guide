@@ -1,5 +1,5 @@
 # Extension 등록하기
-[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 개발 중이거나 개발한 경우 이를 Clova developer console에 등록해야 합니다. CEK 메뉴 페이지에서 페이지 하단에 있는 **새로운 extension 만들기** 버튼을 클릭하면 신규 extension을 등록할 수 있습니다.
+[Custom extension](/CEK/Guides/Build_Custom_Extension.md) 또는 [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)을 개발 중이거나 개발한 경우 이를 Clova developer console에 등록해야 합니다. CEK 메뉴 페이지에서 페이지 하단에 있는 **{{ book.DevConsole.cek_builder_new_extension_create }}** 버튼을 클릭하면 신규 extension을 등록할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-First_Look_of_Extension_List.png)
 
@@ -103,6 +103,6 @@ Extension으로 제공하려는 서비스의 사용자 계정이 Clova의 사용
 
 <div id="RedirectURI" class="note">
   <p><strong>Note!</strong></p>
-  <p>계정 인증 후 이동할 클라이언트가 URL(redirect URL)은 <code>https://prod-ni-cic.clova.ai/v1/al/token/</code>이며, <strong>Redirect URL</strong> 항목에서 확인할 수 있습니다.</strong></p>
+  <p>계정 인증 후 클라이언트가 이동할 URL(redirect URL)은 <code>{{ book.RedirectURLforAccountLinking }}</code>이며, <strong>{{ book.DevConsole.cek_redirect_urls }}</strong> 항목에서 확인할 수 있습니다.</strong></p>
   <img src="/DevConsole/Resources/Images/DevConsole-Redirect_URL_for_Extension_Accoun_Linking.png" />
 </div>

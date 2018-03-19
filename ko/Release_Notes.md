@@ -2,6 +2,23 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-03-19
+
+* CIC
+  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
+에 [SoundOutputInfoObject](/CIC/References/Context_Objects.md#SoundOutputInfoObject)
+ 추가
+  * 사용자가 설정한 임의의 명령을 실행할 수 있는 [CustomCommandIssued](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued)
+ 이벤트 메시지를 [PlaybackController](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued)
+ 네임스페이스에 추가
+
+* CEK
+  * Clova Home API에 CloseConfirmation 외 47건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md)
+와 약 10종의 [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
+ 추가
+  * Clova Home API [지원 기기](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)
+ 30종 추가
+
 ## 2018-03-05
 
 * CIC
