@@ -14,16 +14,14 @@ Clova가 서비스하는 '주사위 놀이'라는 extension은 소스 코드가 
 
 필요한 소프트웨어를 설치한 후 아래처럼 주사위 놀이 extension 소스 코드를 다운로드 받고 실행합니다. `tutorial1` 브랜치를 사용합니다.
 
-{% raw %}
 ```bash
-git clone https://github.com/naver/clova-extension-sample-dice.git
+git clone {{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice.git
 cd clova-extension-sample-dice
 git checkout tutorial1
 npm install
 node app.js
 ```
-{% endraw %}
 
-이렇게 실행한 extension 서버가 잘 동작하는지 확인하려면 Postman을 사용해 요청을 보내면 됩니다. 자세한 방법은 <a href="https://github.com/naver/clova-extension-sample-dice" target="_blank">주사위 놀이 extension github 페이지</a>에서 볼 수 있습니다.
+이렇게 실행한 extension 서버가 잘 동작하는지 확인하려면 Postman을 사용해 요청을 보내면 됩니다. 자세한 방법은 <a href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice" target="_blank">주사위 놀이 extension github 페이지</a>에서 볼 수 있습니다.
 
 위의 방식대로 잘 실행되는 것을 확인하면, 외부에서 접근 가능한 서버로 옮겨 실행합니다.

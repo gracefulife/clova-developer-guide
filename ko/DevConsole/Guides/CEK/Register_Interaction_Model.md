@@ -6,7 +6,7 @@ Clova developer console에서 [extension을 등록](/DevConsole/Guides/CEK/Regis
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Menu.png)
 
-다음과 같은 **{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.Dashboard }}** 화면이 표시됩니다.
+다음과 같은 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}** 화면이 표시됩니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Interaction_Model_Dashboard.png)
 
@@ -27,13 +27,13 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 서비스를 제공할 extension이 어떤 [built-in slot 타입](/Design/Design_Guideline_For_Extension.md#Slot)을 사용할지 결정했다면 해당 extension의 interaction 모델에 built-in slot 타입을 추가해야 합니다. 예를 들어 피자 배달 extension을 만든다면, 피자 수량에 대한 정보 표현이 사용자 발화에 사용될 수 있습니다. 따라서 이와 관련된 built-in slot 타입을 extension에서 사용해야 한다면 다음과 같은 단계로 built-in slot 타입을 extension에 추가할 수 있습니다.
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}:{{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
   <li><strong>{{ book.DevConsole.cek_builder_new_slottype_builtin_title }}</strong> 항목에서 필요한 built-in slot 타입의 체크 박스를 클릭합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>필요한 built-in slot 타입을 선택한 후 우측 상단에 있는 <strong>{{ book.DevConsole.cek_save }}</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-위 과정을 수행하고 나면 **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}** 화면의 **{{ book.DevConsole.cek_builder_list_title_slottype }}** 패널에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
+위 과정을 수행하고 나면 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}** 화면의 **{{ book.DevConsole.cek_builder_list_title_slottype }}** 패널에 다음과 같이 built-in slot 타입이 추가된 것을 확인할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Built-in_Slot_Type.png)
 
@@ -52,7 +52,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 다음 절차에 따라 custom slot 타입을 추가합니다.
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
   <li><strong>{{ book.DevConsole.CreateSlotType }}</strong>의 입력 필드에 추가할 custom slot 타입의 이름을 입력하고 <strong>{{ book.DevConsole.cek_create }}</strong> 버튼을 클릭합니다. Custom slot 타입이 생성되면 해당 custom slot 타입에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_1.png" />
   <li><strong>{{ book.DevConsole.cek_builder_slottype_dictionary_title }}</strong>에 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 대표어를 추가합니다.</li>
@@ -62,7 +62,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
   <li>마지막으로 우측 상단에 있는 <strong>{{ book.DevConsole.cek_save }}</strong> 버튼을 클릭합니다.</li>
 </ol>
 
-오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.Dashboard }}**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
+오른쪽의 <strong>대시 보드</strong> 메뉴를 통해 **{{ book.DevConsole.cek_interaction_model }} : {{ book.DevConsole.cek_builder_header_title_dashboard }}**로 이동하면 custom slot 타입이 추가된 것을 확인할 수 있습니다.
 
 ![](/DevConsole/Resources/Images/DevConsole-Added_Custom_Slot_Type.png)
 
@@ -95,7 +95,7 @@ Clova developer console은 다음과 같이 **업로드** 버튼과 **다운로�
 Extension에서 사용할 [built-in slot 타입](#AddBuiltinSlotType)과 [custom slot 타입](#AddCustomSlotType)을 추가했다면 이제 custom intent를 추가하면 됩니다. 이전 설명에 이어서 피자를 주문하는 사용자의 요청을 가정하고 다음 절차에 따라 "OrderPizza"라는 이름의 intent를 추가합니다.
 
 <ol>
-  <li><strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> 패널의 우측 상단이나 패널의 우측 상단이나 왼쪽 사이드 메뉴바 아래 <strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.NewIntent }}</strong> 화면이 표시됩니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_builder_list_title_intent }}</strong> 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.NewIntent }}</strong> 화면이 표시됩니다.</li>
   <li><strong>{{ book.DevConsole.CreateCustomIntent }}</strong>의 입력 필드에 추가할 custom intent의 이름을 입력하고 <strong>{{ book.DevConsole.cek_create }}</strong> 버튼을 클릭합니다. Custom intent가 생성되면 해당 custom intent에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Intent_1.png" />
   <li><strong>{{ book.DevConsole.cek_builder_intent_slot_title }}</strong>의 입력 필드에 추가할 slot의 이름을 입력하고 오른쪽에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 slot을 추가합니다.</li>

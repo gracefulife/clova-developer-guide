@@ -7,7 +7,7 @@ CEK는 Clova extension(이하 extension)을 개발 및 배포할 때 필요한 �
 ![](/CEK/Resources/Images/CEK_Concept_Diagram.png)
 
 CEK는 다음과 같은 기능을 제공합니다.
-* [Interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel) 관리([Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md) 제공)
+* [Interaction 모델](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel) 관리([Clova developer console](/DevConsole/ClovaDevConsole_Overview.md) 제공)
 * Clova와 extension 간 인터페이스 제공
 
 ## CEK 동작 구조 {#CEKInteractionStructure}
