@@ -22,17 +22,17 @@ Clovaは、[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)、または
 
 ![](/CEK/Resources/Images/CEK_Account_Linking_Setup_Sequence_Diagram.png)
 
-1.ユーザーが特定のCustom ExtensionまたはClova Home Extensionをアクティブにします。
+1. ユーザーが特定のCustom ExtensionまたはClova Home Extensionをアクティブにします。
 
-2.Clovaアプリまたはクライアントデバイスとペアリングするアプリで、外部サービスのログインページを表示します。その際、Extensionの開発者があらかじめ登録し認可サーバーの**[認証URL](#BuildAuthServer)**を使用します。
+2. Clovaアプリまたはクライアントデバイスとペアリングするアプリで、外部サービスのログインページを表示します。その際、Extensionの開発者があらかじめ登録し認可サーバーの**[認証URL](#BuildAuthServer)**を使用します。
 
-3.ユーザーがアカウント認証を完了すると、認可コードまたはアクセストークンが返されます。
+3. ユーザーがアカウント認証を完了すると、認可コードまたはアクセストークンが返されます。
 
-4.渡された認可コードまたはアクセストークンがリダイレクトURLからClovaに渡されます。
+4. 渡された認可コードまたはアクセストークンがリダイレクトURLからClovaに渡されます。
 
-5.**(ステップ3で認可コードが渡された場合)**Clovaは、**[アクセストークンURI](#RegisterAccountLinkingInfo)**にアクセストークンとリフレッシュトークンをリクエストします。その際、認可コードを渡し、取得したアクセストークンとリフレッシュトークンをユーザーのClovaアカウントに保存します。
+5. **(ステップ3で認可コードが渡された場合)**Clovaは、**[アクセストークンURI](#RegisterAccountLinkingInfo)**にアクセストークンとリフレッシュトークンをリクエストします。その際、認可コードを渡し、取得したアクセストークンとリフレッシュトークンをユーザーのClovaアカウントに保存します。
 
-6.ユーザーはアカウント認証の必要なサービスを使用できるようになります。
+6. ユーザーはアカウント認証の必要なサービスを使用できるようになります。
 
 <div class="note">
 <p><strong>メモ</strong></p>
@@ -42,24 +42,24 @@ Clovaは、[Custom Extension](/CEK/Guides/Build_Custom_Extension.md)、または
 ### アカウント連携後Extensionを呼び出す {#ExtensionInvokingAfterAccountLinking}
 アカウント連携が完了した状態で、CEKは次の順序でExtensionを呼び出します。
 
-1.ユーザーのリクエストを処理するために、通常通りにExtensionを呼び出します。
+1. ユーザーのリクエストを処理するために、通常通りにExtensionを呼び出します。
 
-2.**(もしアクセストークンが期限切れの場合)**リフレッシュトークンを使用して**[アクセストークンURI](#RegisterAccountLinkingInfo)**に新しいアクセストークンをリクエストします。
+2. **(もしアクセストークンが期限切れの場合)**リフレッシュトークンを使用して**[アクセストークンURI](#RegisterAccountLinkingInfo)**に新しいアクセストークンをリクエストします。
 
-3.Extensionに渡すメッセージにアクセストークンを含めてユーザーのリクエストを渡します。
+3. Extensionに渡すメッセージにアクセストークンを含めてユーザーのリクエストを渡します。
    * Custom Extensionの場合、`context.System.user.accessToken`と`session.user.accessToken`フィールドにアクセストークンが含まれます。
    * Clova Home Extensionの場合、`payload.accessToken`フィールドにアクセストークンが含まれます。
 
-4.Extensionは、状況に応じて次のように応答する必要があります。
+4. Extensionは、状況に応じて次のように応答する必要があります。
    * アクセストークンが有効の場合、ユーザーのリクエストを処理し、その結果を返す必要があります。
    * アクセストークンが無効の場合、[アカウント連携の設定](#SetupAccountLinking)に進むために結果を返す必要があります。
 
 ## アカウント連携を適用する {#ApplyAccountLinking}
 開発しているExtensionにアカウント連携を適用するには、以下の項目を行う必要があります。
 
-1.[認可サーバーを構築する](#BuildAuthServer)
-2.[アカウント権限の検証を実装する](#AddValidationLogic)
-3.[アカウント連携情報を登録する](#RegisterAccountLinkingInfo)
+1. [認可サーバーを構築する](#BuildAuthServer)
+2. [アカウント権限の検証を実装する](#AddValidationLogic)
+3. [アカウント連携情報を登録する](#RegisterAccountLinkingInfo)
 
 ### 認可サーバーを構築する {#BuildAuthServer}
 

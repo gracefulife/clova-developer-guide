@@ -12,10 +12,10 @@ CEKがExtensionにユーザーのリクエストを送る際、ユーザーの�
 
 Extensionを設計するための[対話モデル](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel)は、次の順で登録していきます。
 
-1.[ビルトインスロットタイプを追加する](#AddBuiltinSlotType)
-2.[カスタムスロットタイプを追加する](#AddCustomSlotType)
-3.[ビルトインインテントを追加する](#AddBuiltinIntent)
-4.[カスタムインテントを追加する](#AddCustomIntent)
+1. [ビルトインスロットタイプを追加する](#AddBuiltinSlotType)
+2. [カスタムスロットタイプを追加する](#AddCustomSlotType)
+3. [ビルトインインテントを追加する](#AddBuiltinIntent)
+4. [カスタムインテントを追加する](#AddCustomIntent)
 
 <div class="note">
   <p><strong>メモ</strong></p>
@@ -28,7 +28,7 @@ Extensionを設計するための[対話モデル](/Design/Design_Guideline_For_
 
 <ol>
   <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>パネルの右上、または左側のサイドメニューの<strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong>メニューの右上にある<img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" />ボタンをクリックします。ボタンをクリックすると、<strong>{{ book.DevConsole.cek_interaction_model }}：{{ book.DevConsole.cek_builder_header_title_slottype }}</strong>画面が表示されます。</li>
-  <li><strong>{{ book.DevConsole.UseBuiltInSlotType }}</strong>項目で必要なビルトインスロットタイプのチェックボックスをクリックします。</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_slottype_title }}</strong>項目で必要なビルトインスロットタイプのチェックボックスをクリックします。</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Built-in_Slot_Type.png" />
   <li>必要なビルトインスロットタイプにチェックを入れ、右上の<strong>{{ book.DevConsole.cek_save }}</strong>ボタンをクリックします。</li>
 </ol>
@@ -44,8 +44,8 @@ Extensionを設計するための[対話モデル](/Design/Design_Guideline_For_
 | 代表語           | 同義語                                        |
 |----------------|----------------------------------------------|
 | ペパロニ          | ペパロニピザ                                  |
-| バーベキュー           | バーベキューピザ、BBQピザ                           |
-| チーズ             | チーズピザ                                     |
+| バーベキュー       | バーベキューピザ、BBQピザ                           |
+| チーズ           | チーズピザ                                     |
 | 野菜             | 野菜ピザ、ベジピザ、ベジタリアンピザ               |
 | シュリンプゴールドクラスト | シュリンプゴールドクラストピザ、シュリンプゴルクラピザ、シュリンプゴルクラ |
 
@@ -69,10 +69,10 @@ Extensionを設計するための[対話モデル](/Design/Design_Guideline_For_
 定義するカスタムスロットタイプに大量の情報を入力する必要がある場合、TSV(タブ区切りの値、.tsv)形式のファイルをアップロードすることもできます。TSVファイルの各行の1番目の値が代表語となります。それに続くタブ区切りの値は、その代表語の同義語または類義語になります。次は、「PIZZA_TYPE」というカスタムスロットタイプの定義を、TSV形式で表現したものです。
 
 ```
-ペパロニ　　　　　　ペパロニピザ
-バーベキュー　　　バーベキューピザ　　　BBQピザ
-チーズ　　　　　　　　チーズピザ
-野菜　　　　　　野菜ピザ　　　　　　　　ベジピザ　　　　　　　　ベジタリアンピザ
+ペパロニ             ペパロニピザ
+バーベキュー          バーベキューピザ　　　   BBQピザ
+チーズ　　　　　　　　 チーズピザ
+野菜　　　　　　      野菜ピザ　　　　　　　　ベジピザ　　　　　　　　ベジタリアンピザ
 シュリンプゴールドクラスト　　シュリンプゴールドクラストピザ　　シュリンプゴルクラピザ　　シュリンプゴルクラ
 ```
 
@@ -138,7 +138,7 @@ Clova Developer Centerは、以下のように**アップロード**ボタンと
 
 <div class="danger">
   <p><strong>注意</strong></p>
-  <p>1つの対話モデルでは、インテントに関わらず、スロットタイプに同じ名前を宣言することをお勧めします。例えば、「OrderPizza」インテントで、ピザの種類(「PIZZA_TYPE」)に関するスロット名を「pizzaType」にしたとすると、他のインテントで同じスロットタイプを宣言する際、同じく「pizzaType」にする必要があります。ただし、「ソウルからプサンまで時間がどれぐらいかかるか教えて」のように、「ソウル」と「プサン」が同じスロットタイプであっても、目的によって区別される必要のある場合、スロット名を区別して作成します。</p>
+  <p>1つの対話モデルでは、インテントに関わらず、スロットタイプに同じ名前を宣言することをお勧めします。例えば、「OrderPizza」インテントで、ピザの種類(「PIZZA_TYPE」)に関するスロット名を「pizzaType」にしたとすると、他のインテントで同じスロットタイプを宣言する際、同じく「pizzaType」にする必要があります。ただし、「東京から大阪まで時間がどれぐらいかかるか教えて」のように、「東京」と「大阪」が同じスロットタイプであっても、目的によって区別される必要のある場合、スロット名を区別して作成します。</p>
 </div>
 
 これまで、1つのインテントを対話モデルに追加する方法を説明しました。この方法を繰り返し、Extensionに必要なインテントを追加していく事で対話モデルが完成されます。
