@@ -6,10 +6,10 @@
 
 Extensionの登録は、通常、次の順で行われます。
 
-1.[利用規約および個人情報の取得に同意する](#AgreeTermsOfUse)
-2.[Extensionの基本情報を入力する](#InputExtensionInfo)
-3.[サーバーとの連携を設定する](#SetServerConnection)
-  * [アカウントリンクを設定する](#SetAccountLinking)
+1. [利用規約および個人情報の取得に同意する](#AgreeTermsOfUse)
+2. [Extensionの基本情報を入力する](#InputExtensionInfo)
+3. [サーバーとの連携を設定する](#SetServerConnection)
+ * [アカウントリンクを設定する](#SetAccountLinking)
 
 ## 利用規約および個人情報の取得に同意する {#AgreeTermsOfUse}
 

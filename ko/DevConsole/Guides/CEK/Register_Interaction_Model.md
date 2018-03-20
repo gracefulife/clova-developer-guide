@@ -53,7 +53,7 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 
 <ol>
   <li><strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 패널의 우측 상단이나 왼쪽 사이드 메뉴 아래 <strong>{{ book.DevConsole.cek_builder_list_title_slottype }}</strong> 메뉴 영역 우측 상단에 있는 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭합니다. 버튼을 클릭하면 <strong>{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.SlotType }}</strong> 화면이 표시됩니다.</li>
-  <li><strong>{{ book.DevConsole.CreateSlotType }}</strong>의 입력 필드에 추가할 custom slot 타입의 이름을 입력하고 <strong>{{ book.DevConsole.cek_create }}</strong> 버튼을 클릭합니다. Custom slot 타입이 생성되면 해당 custom slot 타입에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
+  <li><strong>{{ book.DevConsole.cek_builder_new_intent }}</strong>의 입력 필드에 추가할 custom slot 타입의 이름을 입력하고 <strong>{{ book.DevConsole.cek_create }}</strong> 버튼을 클릭합니다. Custom slot 타입이 생성되면 해당 custom slot 타입에 대한 상세 정보를 볼 수 있는 화면이 나타납니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_1.png" />
   <li><strong>{{ book.DevConsole.cek_builder_slottype_dictionary_title }}</strong>에 <img class="inlineImage" src="/DevConsole/Resources/Images/DevConsole-Plus_Button.png" /> 버튼을 클릭하여 대표어를 추가합니다.</li>
   <img src="/DevConsole/Resources/Images/DevConsole-Add_Custom_Slot_Type_2.png" />
@@ -72,8 +72,8 @@ Extension을 설계하는 과정에서 [정의한 Interaction 모델](/Design/De
 페퍼로니    페퍼로니 피자
 바베큐      바베큐 피자      BBQ 피자
 치즈       치즈 피자
-야채       야채 피자        베지 피자       베지테리언 피자
-쉬림프 골드 크러스트         쉬림프 골드 크러스트 피자       쉬림프 골크 피자       쉬림프 골크
+야채       야채 피자        베지 피자        베지테리언 피자
+쉬림프 골드 크러스트   쉬림프 골드 크러스트 피자   쉬림프 골크 피자       쉬림프 골크
 ```
 
 Clova developer console은 다음과 같이 **업로드** 버튼과 **다운로드** 버튼을 제공합니다. **업로드** 버튼을 클릭하면 미리 TSV 파일에 정의한 custom slot 타입을 업로드할 수 있고 **다운로드** 버튼을 클릭하면 현재 Clova developer console에 작성 중인 custom slot 타입을 TSV 파일로 다운로드 할 수 있습니다.

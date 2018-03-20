@@ -23,15 +23,15 @@ Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキ�
 * **{{ book.DevConsole.cek_test_instructions }}**：[Extensionの審査](#RequestExtensionSubmission)プロセスで審査担当者がExtensionを確認する際、必要とされる参考情報です。エンドユーザーには表示されません。案内に従って作成します。
 * サービス国および地域：現在、日本にのみExtensionを配布できます。
 * **{{ book.DevConsole.cek_full_skill_desc }}**：**{{ book.DevConsole.ExtensionPage }}**でユーザーに提供するExtensionの説明です。案内に従って作成します。
-* **{{ book.DevConsole.cek_short_skill_desc }}**：**{{ book.DevConsole.ExtensionHome }}**でプロモーションなどの案内を表示する際に使用される説明です。
-* **{{ book.DevConsole.cek_example_phrases }}**：ユーザーがExtensionをどのように使用できるかを示す例です。**{{ book.DevConsole.ExtensionPage }}**に表示されます。特に、一番目の例は、**{{ book.DevConsole.ExtensionHome }}**でExtensionのリストを表示する際に使用されます。
+* **{{ book.DevConsole.cek_short_skill_desc }}**：**{{ book.DevConsole.StoreHome }}**でプロモーションなどの案内を表示する際に使用される説明です。
+* **{{ book.DevConsole.cek_example_phrases }}**：ユーザーがExtensionをどのように使用できるかを示す例です。**{{ book.DevConsole.ExtensionPage }}**に表示されます。特に、一番目の例は、**{{ book.DevConsole.StoreHome }}**でExtensionのリストを表示する際に使用されます。
 * **{{ book.DevConsole.cek_keywords }}**：ユーザーが特定のキーワードでExtensionを検索すると、Extensionがその検索結果に含まれます。
 * **{{ book.DevConsole.cek_small_icon }}**：小サイズ(108x108ピクセル)のExtensionのアイコンファイルです。**{{ book.DevConsole.ManageExtensions }}**と**{{ book.DevConsole.ExtensionPage }}**に表示されます。
 * **{{ book.DevConsole.cek_large_icon }}**：大サイズ(512x512ピクセル)のExtensionのアイコンファイルです。今後使用される予定です。
 
 このように入力された情報は、Clovaアプリの**{{ book.DevConsole.ManageExtensions }}**メニュー(スキルストア)で次のように表示されます。
 
-| {{ book.DevConsole.ExtensionHome }} | {{ book.DevConsole.ExtensionPage }}   |
+| {{ book.DevConsole.StoreHome }} | {{ book.DevConsole.ExtensionPage }}   |
 |-------------------|-------------------|
 | ![Extension List](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Store_Home.png) | ![Extension Details](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Page.png) |
 
