@@ -2,21 +2,20 @@
 The main item are as follows:
 
 * Extension information
-* **{{ book.DevConsole.cek_id }}**: The unique ID value of the extension. Generally, a combination of the package name and extension name is used. Enter the ID of the Sample Dice extension as “my.clova.extension.sampledice.”
-* **{{ book.DevConsole.cek_invocation_name }}**: The name used to call the extension. Select a word that can be easily recognized by the Clova app or speaker devices. The invocation name used for the Sample Dice extension is “Sample Dice.”
+	* **{{ book.DevConsole.cek_id }}**: The unique ID value of the extension. Generally, a combination of the package name and extension name is used. Enter the ID of the Sample Dice extension as “my.clova.extension.sampledice.”
+	* **{{ book.DevConsole.cek_invocation_name }}**: The name used to call the extension. Select a word that can be easily recognized by the Clova app or speaker devices. The invocation name used for the Sample Dice extension is “Sample Dice.”
 
 * Server connection settings
-* **{{ book.DevConsole.cek_service_endpoint_url }}**: The REST API server of the extension to communicate with Clova. It must be a publicly accessible URL.
-In Step 1, enter the URL of the server that executed the Sample Dice code.
+	* **{{ book.DevConsole.cek_service_endpoint_url }}**: The REST API server of the extension to communicate with Clova. It must be a publicly accessible URL.
+	In Step 1, enter the URL of the server that executed the Sample Dice code.
 
 		<div class="note">
 	    <p><strong>Note!</strong></p>
-<p>An HTTP connection can be used for testing, but an HTTPS connection is required for the official service. The extension server must use ports 80 and 443 for HTTP and HTTPS connection respectively.</p>
+			<p>An HTTP connection can be used for testing, but an HTTPS connection is required for the official service. The extension server must use ports 80 and 443 for HTTP and HTTPS connection respectively.</p>
 		</div>
 
-* **{{ book.DevConsole.cek_account_linking }}**: Account linking is used only when connecting with membership information of a 3rd party using an authorization server (using OAuth 2.0 as the base).
+	* **{{ book.DevConsole.cek_account_linking }}**: Account linking is used only when connecting with membership information of a 3rd party using an authorization server (using OAuth 2.0 as the base).
 Set the Sample Dice extension as **{{ book.DevConsole.cek_no }}**.
 * Deployment information and privacy and compliance information
 
 This information is required for extension review and deployment. You do not need to enter this information when following the tutorial.
-

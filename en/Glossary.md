@@ -1,4 +1,4 @@
-﻿# Glossary
+# Glossary
 
 <div class="note">
   <p><strong>Note!</strong></p>

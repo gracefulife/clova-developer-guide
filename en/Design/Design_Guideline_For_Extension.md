@@ -1,4 +1,4 @@
-﻿# Design guidelines for extensions
+# Design guidelines for extensions
 
 When creating an extension, you must first consider how your technology and services can bring convenience and the most benefit to users through Clova. The document provides guidelines for designing an extension to bring a healthy and beneficial service to users.
 
