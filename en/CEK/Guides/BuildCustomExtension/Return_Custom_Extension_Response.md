@@ -1,8 +1,7 @@
-## Returning custom extension response {#ReturnCustomExtensionResponse}
-[After processing a request message](#HandleCustomExtensionRequest), you must return a [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) back to CEK (HTTPS response). Although details of response can vary depending on the request type, all response messages have a similar structure. Below is a response message returned after a LaunchRequest was processed (user request: "Let's talk in English").
+﻿## Returning a custom extension response {#ReturnCustomExtensionResponse}
+After [handling the request message](#HandleCustomExtensionRequest), you must return the HTTPS [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) to the CEK again. The details of the response may vary depending on the type of request message, but the structure of the response message does not vary much. Below is a response message sent after handling a LaunchRequest type request, where a user says “Let’s talk in English.”
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
@@ -22,26 +21,23 @@
   }
 }
 ```
-
 {% endraw %}
 
-The meaning of each field is as follows.
+The fields represent the following information:
 
-* `version`: The message format version of the current custom extension is v0.1.0.
-* `response.outputSpeech`: It is set to speak in English, "Hi, nice to meet you".
-* `response.card`: There is no data to display on a client screen. Data format follows [content templates](/CIC/References/Content_Templates.md). You can use this field to return content to display on a client screen.
-* `response.shouldEndSession`: The current session does not end
- but continues to receive user input. If this field is set to true, your extension can end the session by itself before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest).
+* `version`: The current version of the custom extension message format is v0.1.0.
+* `response.outputSpeech`: The response "Hi, nice to meet you" is set to be said to the user in English.
+* `response.card`: There is no data to display on the client screen. The data is in the [content template](/CIC/References/Content_Templates.md) format and can be displayed on the client screen via this field.
+* `response.shouldEndSession`: The current session does not end and continuously receives user input. If the field value is set to true, the extension can end the session before receiving the [`SessionEndedRequest`](#HandleSessionEndedRequest) request.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>sessionAttributes</code> is a field reserved for future use. <code>response.directives</code> is a field used in a directive message returned to CEK. The directive message API for the <code>response.directives</code> field will be available in the future.</p>
+  The <p><code>sessionAttributes</code> field is reserved for future use and the <code>response.directives</code> field is a directive message returned by the extension to CEK. The directive message API for the <code>response.directives</code> field will be provided in the future.</p>
 </div>
 
-As shown below, you can write a response message for speaking several sentences of synthesized speech (text-to-speech) or playing an audio or music file from internet.
+The response message can be written to output multiple sentences based on the circumstances or to play audio or music files on the Internet as shown below.
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
@@ -52,8 +48,8 @@ As shown below, you can write a response message for speaking several sentences 
       "values": [
         {
           "type": "PlainText",
-          "lang": "en",
-          "value": "Listen to my song."
+          "lang": "ko",
+          "value": “I will sing a song."
         },
         {
           "type": "URL",
@@ -68,24 +64,22 @@ As shown below, you can write a response message for speaking several sentences 
   }
 }
 ```
-
 {% endraw %}
 
-Each `response.outputSpeech` field indicates the following.
+The `response.outputSpeech` fields represent the following information:
 
-* `response.outputSpeech.type`: The speech data is a complex sentence (SpeechList).
-* `response.outputSpeech.values[0]`: The speech data is plain text. It is set to speak in English, "Listen to my song.".
-* `response.outputSpeech.values[1]`: The speech data is a URL. It is set to play a file from the URL in the `value` field.
+* `response.outputSpeech.type`: A complex type (SpeechList) of audio data.
+* `response.outputSpeech.values[0]`: A regular text type of audio data. It has been set to say “I will sing a song" in Korean.
+* `response.outputSpeech.values[1]`: A URL type of audio data. It has been set to play a file from the URL entered in the `value` field.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>In addition to simple or complex sentence format, we also support a combined format (SpeechSet) for a client device which does not have a screen or does not provide GUI for displaying detailed information. See <a href="/CEK/References/CEK_API.md#CustomExtResponseMessage">Response message</a> in "Custom extension message" for more details.</p>
+  <p>In addition to simple or complex sentence type of audio data, we support a combined format (SpeechSet) for client devices with limitations for expressing detailed GUIs, such as screenless devices. For more information, see <a href="/CEK/References/CEK_API.md#CustomExtResponseMessage">Response message</a> in the custom extension message format.</p>
 </div>
 
-To display data on a screen of client device or client app in addition to generating audio output, fill in content in the `response.card` field as follows, using an appropriate [content template](/CIC/References/Content_Templates.md).
+To display data on the screen of a client device or client app in addition to outputting audio, fill in the content in the `response.card` field in accordance with the [content template](/CIC/References/Content_Templates.md).
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
@@ -95,8 +89,8 @@ To display data on a screen of client device or client app in addition to genera
       "type": "SimpleSpeech",
       "values": {
           "type": "PlainText",
-          "lang": "en",
-          "value": "How about horror movie?"
+          "lang": "ko",
+          "value": "I will recommend a horror movie."
       }
     },
     "card": {
@@ -107,11 +101,11 @@ To display data on a screen of client device or client app in addition to genera
           "description": [
             {
               "type": "string",
-              "value": "horror, thriller"
+              "value": "Horror, thriller"
             },
             {
               "type": "string",
-              "value": "Aaron Eckhart, Carice van Houten, Catalina Sandino Moreno"
+              "value": "Aaron Eckhart, David Mazouz, Carice van Houten, Catalina Sandino Moreno, Keir O'Donnell, Matt Nable, John Pirruccello, Emjay Anthony, Karolina Wydra, Mark Steger, Tomas Arana, Petra Sprecher, Mark Henry, Ashley Green Elizabeth"
             },
             {
               "type": "string",
@@ -120,11 +114,11 @@ To display data on a screen of client device or client app in addition to genera
           ],
           "imageUrl": {
             "type": "url",
-            "value": "http://movie.sample.com/movie_image_incaenate.jpg"
+            "value": "http://movie.phinf.naver.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2"
           },
           "linkUrl": {
             "type": "url",
-            "value": "http://movie.sample.com/link?title=Incarnate"
+            "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=118965"
           },
           "press": {
             "type": "string",
@@ -136,11 +130,11 @@ To display data on a screen of client device or client app in addition to genera
           },
           "referenceText": {
             "type": "string",
-            "value": "Sample Search Results"
+            "value": “NAVER search result”
           },
           "referenceUrl": {
             "type": "url",
-            "value": "https://search.sample.com/search?query=Incarnate"
+            "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
           },
           "title": {
             "type": "string",
@@ -155,11 +149,11 @@ To display data on a screen of client device or client app in addition to genera
           "description": [
             {
               "type": "string",
-              "value": "horror"
+              "value": "Horror"
             },
             {
               "type": "string",
-              "value": "Matilda Anna Ingrid Lutz, Alex Roe, Johnny Galecki"
+              "value": "Matilda Anna Ingrid Lutz, Alex Roe, Johnny Galecki, Vincent D'Onofrio, Aimee Teegarden, Bonnie Morgan, Laura Wiggins, Zach Roerig, Lizzie Brochere"
             },
             {
               "type": "string",
@@ -168,11 +162,11 @@ To display data on a screen of client device or client app in addition to genera
           ],
           "imageUrl": {
             "type": "url",
-            "value": "http://movie.sample.com/movie_image_rings.jpg"
+            "value": "http://movie.phinf.naver.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2"
           },
           "linkUrl": {
             "type": "url",
-            "value": "http://movie.sample.com/link?title=rings"
+            "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=137909"
           },
           "press": {
             "type": "string",
@@ -184,11 +178,11 @@ To display data on a screen of client device or client app in addition to genera
           },
           "referenceText": {
             "type": "string",
-            "value": "Sample Search Results"
+            "value": “NAVER search result”
           },
           "referenceUrl": {
             "type": "url",
-            "value": "https://search.sample.com/search?query=rings"
+            "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
           },
           "title": {
             "type": "string",
@@ -207,5 +201,5 @@ To display data on a screen of client device or client app in addition to genera
   }
 }
 ```
-
 {% endraw %}
+
