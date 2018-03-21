@@ -16,7 +16,7 @@ Follow the steps below to make a simple intent to roll one dice upon user reques
 
 	<div class="danger">
 	  <p><strong>Caution!</strong></p>
-<p>The intent name is case-sensitive. Make sure to input it correctly.</p>
+		<p>The intent name is case-sensitive. Make sure to input it correctly.</p>
 	</div>
 
 ### Adding a phrase to the sample utterance list
@@ -34,7 +34,7 @@ To check that the interaction model is operating as intended, build and test the
 
 	<div class="note">
 	  <p><strong>Note!</strong></p>
-<p>The build takes around 3-5 minutes to complete. Once the build starts, the button changes to a <strong>{{ book.DevConsole.IsBuilding }}</strong> button. It returns to a <strong>{{ book.DevConsole.BuildButton }}</strong> button again once the build is complete.</p>
+		<p>The build takes around 3-5 minutes to complete. Once the build starts, the button changes to a <strong>{{ book.DevConsole.IsBuilding }}</strong> button. It returns to a <strong>{{ book.DevConsole.BuildButton }}</strong> button again once the build is complete.</p>
 	</div>
 
 2. Once the build is complete, click the **{{ book.DevConsole.cek_test }}** menu below the **{{ book.DevConsole.BuildButton }}** button.
@@ -47,6 +47,5 @@ To check that the interaction model is operating as intended, build and test the
 
 	<div class="note">
 	<p><strong>Note!</strong></p>
-<p>If the extension server URL that can be accessed externally is not registered in Step 2, <strong>{{ book.DevConsole.cek_builder_test_service_response }}</strong> will display "Undefined response. "</p>
+	<p>If the extension server URL that can be accessed externally is not registered in Step 2, <strong>{{ book.DevConsole.cek_builder_test_service_response }}</strong> will display "Undefined response. "</p>
 	</div>
-

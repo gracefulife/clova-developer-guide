@@ -1,4 +1,4 @@
-﻿# Building a basic extension
+# Building a basic extension
 In this tutorial, we will create a basic extension that rolls one dice upon user request.
 
 The following factors are mandatory in order to service a custom extension:
@@ -25,4 +25,3 @@ Follow the steps below to find out how to create and register the above factors.
 
 ## Step 4. Testing the actual execution of the extension {#Step4}
 {% include "/CEK/Tutorials/BuildSimpleExtension/Test_On_The_Real_Device.md" %}
-

@@ -1,4 +1,4 @@
-﻿# Handling basic built-in intents
+# Handling basic built-in intents
 In this tutorial, we will find out how to handle basic intents, such as “yes” or “no,” using the Sample Dice extension created in [building a basic extension](/CEK/Tutorials/Build_Simple_Extension.md).
 
 Clova has predefined the basic intents that are frequently used in [built-in intents](/Design/Design_Guideline_For_Extension.md#BuiltinIntent) so they can be used by all extensions. The built-in intents provided by Clova are as follows:
@@ -24,4 +24,3 @@ The process of handling the built-in intent is as follows:
 
 This way, the Sample Dice extension can respond to help requests.
 If you implement the extension server to handle `Clova.CancelIntent`, `Clova.YesIntent`, and `Clova.NoIntent` using this method, the extension will be able to respond to undo actions and positive or negative requests.
-
