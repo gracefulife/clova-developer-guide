@@ -1,4 +1,4 @@
-﻿# このドキュメントについて
+# このドキュメントについて
 このドキュメントは、ClovaのCICとCEKプラットフォームの開発ガイドおよびAPIリファレンスを提供します。対象となる読者は、CICを使用してClovaのサービスと連携するデバイスまたはアプリを開発するクライアント開発者と、CEKを使用したオンラインコンテンツおよびサービスの提供を希望するExtension開発者です。
 
 <div class="note">
@@ -46,4 +46,3 @@
 | v0.3 | 2017-06-19 | <ul><li>[CEK] CEKドキュメント部分を作成</li><li>[CIC] <a href="/CIC/Guides/Interact_with_CIC.html#ManageConnection">接続を管理する</a>をアップデート(HTTP Pingフレームを使用できない場合)</li></ul> |
 | v0.2 | 2017-06-08 | [CIC] [CICと連携する](/CIC/Guides/Interact_with_CIC.html)に[接続を管理する](/CIC/Guides/Interact_with_CIC.md#ManageConnection)を追加(HTTP Ping) |
 | v0.1 | 2017-05-29 | [CIC] CICドキュメント部分を作成 |
-

@@ -4,13 +4,13 @@ Custom Extensionとは、Clovaがビルトインで提供している機能や�
 
 Custom Extensionの開発者は、次の内容を知っておく必要があります。
 
-1.[準備事項](#Preparation)
-2.[Custom Extensionリクエストを処理する](#HandleCustomExtensionRequest)
+1. [準備事項](#Preparation)
+2. [Custom Extensionリクエストを処理する](#HandleCustomExtensionRequest)
    * [`LaunchRequest`リクエストを処理する](#HandleLaunchRequest)
    * [`IntentRequest`リクエストを処理する](#HandleIntentRequest)
    * [`SessionEndedRequest`リクエストを処理する](#HandleSessionEndedRequest)
-3.[Custom Extensionレスポンスを返す](#ReturnCustomExtensionResponse)
-4.[複数回の対話でやり取りをする](#DoMultiturnDialog)
+3. [Custom Extensionレスポンスを返す](#ReturnCustomExtensionResponse)
+4. [複数回の対話でやり取りをする](#DoMultiturnDialog)
 
 {% include "/CEK/Guides/BuildCustomExtension/Preparation.md" %}
 

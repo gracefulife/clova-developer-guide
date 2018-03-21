@@ -11,9 +11,7 @@ Custom ExtensionはCEKから[Custom Extensionメッセージ](/CEK/References/CE
 | リクエストタイプ | ユーザーの発話パターン | サンプル発話 |
 |---------|--------------|---------|
 |[LaunchRequest](#HandleLaunchRequest) | _[Extensionの呼び出し名]_ + 「開いて/起動して/繋いで」 | 「ピザボットを起動して」 |
-{% if book.language !== "ja" %}
-| [IntentRequest](#HandleIntentRequest)| _[Extensionの呼び出し名]_ + 「に/から/まで/で」 + _[Extensionごとに登録した実行コマンド]_、あるいは<br/>(`LaunchRequest`タイプのリクエストを受け付けた状態で) _[Extensionごとに登録したコマンド]_ | 「ピザボットでピザを頼んで」<br/>(ピザボット起動状態で)「注文を確認して」 |
-{% endif %}
+| [IntentRequest](#HandleIntentRequest)| {% if book.language !== "ja" %} _[Extensionの呼び出し名]_ + 「に/から/まで/で」 + _[Extensionごとに登録した実行コマンド]_、あるいは<br/>{% endif %}(`LaunchRequest`タイプのリクエストを受け付けた状態で) _[Extensionごとに登録したコマンド]_ | {% if book.language !== "ja" %} 「ピザボットでピザを頼んで」<br/>{% endif %}(ピザボット起動状態で)「注文を確認して」 |
 | [SessionEndedRequest](#HandleSessionEndedRequest) | (`LaunchRequest`タイプのリクエストを受け付けた状態で)「終了して/終了/もういい」 | 「(ピザボットを)終了して」 |
 
 ### LaunchRequestの処理 {#HandleLaunchRequest}
@@ -137,10 +135,10 @@ IntentRequestタイプのリクエストは、`request.type`フィールドに`"
 
 上記のサンプルで、各フィールドの意味は次のとおりです。
 
-* `version`：使用しているCustom Extensionメッセージフォーマットのバージョンです。現在のバージョンはv0.1.0です。
-* `session`: **既存のセッションに続くユーザーのリクエストです**。既存セッションのIDとユーザーの情報(ID、アクセストークン)が含まれています。
-* `context`：クライアントデバイスの情報です。デバイスのIDとデフォルトユーザーの情報が含まれています。
-* `request`: `IntentRequest`タイプのリクエストです。`"OrderPizza"`という名前で登録された[インテント](/Design/Design_Guideline_For_Extension.md#Intent)を呼び出しています。該当するインテントが必要とする情報として`"pizzaType"`という[スロット](/Design/Design_Guideline_For_Extension.md#Slot)が一緒に渡されます。そのスロットは`"ペパロニ"`という値を持っています。
+* `version`： 使用しているCustom Extensionメッセージフォーマットのバージョンです。現在のバージョンはv0.1.0です。
+* `session`： **既存のセッションに続くユーザーのリクエストです**。既存セッションのIDとユーザーの情報(ID、アクセストークン)が含まれています。
+* `context`： クライアントデバイスの情報です。デバイスのIDとデフォルトユーザーの情報が含まれています。
+* `request`： `IntentRequest`タイプのリクエストです。`"OrderPizza"`という名前で登録された[インテント](/Design/Design_Guideline_For_Extension.md#Intent)を呼び出しています。該当するインテントが必要とする情報として`"pizzaType"`という[スロット](/Design/Design_Guideline_For_Extension.md#Slot)が一緒に渡されます。そのスロットは`"ペパロニ"`という値を持っています。
 
 <div class="note">
   <p><strong>メモ</strong></p>
@@ -201,7 +199,7 @@ IntentRequestタイプのリクエストは、`request.type`フィールドに`"
 
 上記のサンプルで、各フィールドの意味は次のとおりです。
 
-* `version`：使用しているCustom Extensionメッセージフォーマットのバージョンです。現在のバージョンはv0.1.0です。
-* `session`: **既存のセッションに続くユーザーのリクエストです**。既存セッションのIDとユーザーの情報(ID、アクセストークン)が含まれています。
-* `context`：クライアントデバイスの情報です。デバイスのIDとデフォルトユーザーの情報が含まれています。
-* `request`: `SessionEndedRequest`タイプのリクエストです。対象Extensionの使用を中断することを示します。ユーザーの発話の解析情報はありません。
+* `version`： 使用しているCustom Extensionメッセージフォーマットのバージョンです。現在のバージョンはv0.1.0です。
+* `session`： **既存のセッションに続くユーザーのリクエストです**。既存セッションのIDとユーザーの情報(ID、アクセストークン)が含まれています。
+* `context`： クライアントデバイスの情報です。デバイスのIDとデフォルトユーザーの情報が含まれています。
+* `request`： `SessionEndedRequest`タイプのリクエストです。対象Extensionの使用を中断することを示します。ユーザーの発話の解析情報はありません。

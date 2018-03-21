@@ -22,6 +22,6 @@ npm install
 node app.js
 ```
 
-こうやって実行したExtensionサーバーが正しく動作しているか確認するには、Postmanを使用してリクエストを送信します。詳細については、<a href="{{ GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice" target="_blank">サイコロ遊びExtensionのgithubページ</a>で確認できます。
+こうやって実行したExtensionサーバーが正しく動作しているか確認するには、Postmanを使用してリクエストを送信します。詳細については、<a href="{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice" target="_blank">サイコロ遊びExtensionのgithubページ</a>で確認できます。
 
 上記通りに正しく実行されることを確認したら、外部からアクセスできるサーバーに移して実行します。

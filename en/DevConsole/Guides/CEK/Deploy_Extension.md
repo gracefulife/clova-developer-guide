@@ -23,15 +23,15 @@ The information on the extension entered here is provided to users on the **{{ b
 * **{{ book.DevConsole.cek_test_instructions }}**: The information used by the review team as a reference for the [Extension approval](#RequestExtensionSubmission) process where your extension is validated. It is not shown to regular users. Follow the instructions to fill in the information.
 * Supported countries and regions: Currently, the extension can only be deployed in Korea.
 * **{{ book.DevConsole.cek_full_skill_desc }}**: The detailed description of the extension to be provided to users on the **{{ book.DevConsole.ExtensionPage }}**. Follow the instructions to fill in the information.
-* **{{ book.DevConsole.cek_short_skill_desc }}**: The short description of the extension to be provided to users on **{{ book.DevConsole.ExtensionHome }}**, such as promotional information.
-* **{{ book.DevConsole.cek_example_phrases }}**: The sample utterance shown to users to let them know how to use the extension. This is displayed on the **{{ book.DevConsole.ExtensionPage }}**. In particular, the first sample utterance is displayed when showing the extension list on **{{ book.DevConsole.ExtensionHome }}**.
+* **{{ book.DevConsole.cek_short_skill_desc }}**: The short description of the extension to be provided to users on **{{ book.DevConsole.StoreHome }}**, such as promotional information.
+* **{{ book.DevConsole.cek_example_phrases }}**: The sample utterance shown to users to let them know how to use the extension. This is displayed on the **{{ book.DevConsole.ExtensionPage }}**. In particular, the first sample utterance is displayed when showing the extension list on **{{ book.DevConsole.StoreHome }}**.
 * **{{ book.DevConsole.cek_keywords }}**: The keywords users can use to search for the extension.
 * **{{ book.DevConsole.cek_small_icon }}**: The small icon file of the extension (108 x 108 pixels). This is displayed in the **{{ book.DevConsole.ManageExtensions }}** menu or the **{{ book.DevConsole.ExtensionPage }}**.
 * **{{ book.DevConsole.cek_large_icon }}**: The large icon file of the extension (512 x 512 pixels). This is used as the main icon for the extension in the future.
 
 The information you filled out is displayed on the **{{ book.DevConsole.ManageExtensions }}** menu of the Clova app in the extension store, as shown below.
 
-| {{ book.DevConsole.ExtensionHome }} | {{ book.DevConsole.ExtensionPage }}   |
+| {{ book.DevConsole.StoreHome }} | {{ book.DevConsole.ExtensionPage }}   |
 |-------------------|-------------------|
 | ![Extension List](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Store_Home.png) | ![Extension Details](/DevConsole/Resources/Images/DevConsole-Store_UI_Example-Extension_Page.png) |
 
