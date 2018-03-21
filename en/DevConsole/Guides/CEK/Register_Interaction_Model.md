@@ -69,11 +69,11 @@ Go to **{{ book.DevConsole.cek_interaction_model }}: {{ book.DevConsole.cek_buil
 In case of having to enter large amounts of information to the custom slot type, you can use a tab-separated values (TSV) file format to batch upload. The first value on each line of the TSV file becomes the representative term and the values classified by the tab characters afterwards become synonyms or similar expressions of the representative term. The following is an example of expressing the definition of the "PIZZA_TYPE" custom slot type in the TSV format.
 
 ```
-Pepperoni    Pepperoni pizza
-Barbecue      Barbecue pizza      BBQ pizza
-Cheese       Cheese pizza
-Vegetable       Vegetable pizza        Veggie pizza       Vegetarian pizza
-Shrimp golden crust         Shrimp golden crust pizza       Shrimp gold-crust pizza       Shrimp gold-crust
+Pepperoni     Pepperoni pizza
+Barbecue      Barbecue pizza        BBQ pizza
+Cheese        Cheese pizza
+Vegetable     Vegetable pizza       Veggie pizza       Vegetarian pizza
+Shrimp golden crust    Shrimp golden crust pizza       Shrimp gold-crust pizza       Shrimp gold-crust
 ```
 
 On the Clova developer console, the **upload** and **download** buttons are provided as follows: Press the **upload** button to upload the custom slot type predefined in the TSV file and press the **download** button to download the custom slot type currently being written on the Clova developer console as a TSV file.

@@ -1,4 +1,4 @@
-﻿# Summary
+# Summary
 
 ## About This Document
 
@@ -59,7 +59,7 @@
   * [Sending events](/CIC/Guides/Interact_with_CIC.md#SendEvent)
   * [Handling directives](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
   * [Managing message queues](/CIC/Guides/Interact_with_CIC.md#ManageMessageQ)
-  * [Handling delegated user requests](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
+  * Handling delegated user requests
 * [CIC API reference](/CIC/References/CIC_API.md)
   * [API basic information](/CIC/References/CIC_API.md#BasicInfo)
     * [Base URL](/CIC/References/CIC_API.md#BaseURL)

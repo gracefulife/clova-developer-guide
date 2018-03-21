@@ -1,4 +1,4 @@
-﻿# Extension examples
+# Extension examples
 
 Here is an explanation of some extensions that are currently serviced by Clova. As these extensions perform simple actions, these examples will be helpful for when implementing your own extension.
 
@@ -56,4 +56,3 @@ Coin Helper is an extension that returns the market price information upon a use
 ### GitHub repository
 
 https://github.com/naver/clova-extension-sample-coinhelper
-

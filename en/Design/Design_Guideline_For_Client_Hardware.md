@@ -1,4 +1,4 @@
-﻿# Design guidelines for client devices
+# Design guidelines for client devices
 
 A consistent UI and UX must be provided to users of Clova client devices for a familiar, convenient experience when using the product. The design guidelines on the following items are provided for designing the client devices which access Clova.
 

@@ -269,11 +269,11 @@ Move to the **Interaction model: Dashboard** page through the <strong>Dashboard<
 If bulk amount of information has to be added to the custom slot type, you can upload it in TSV (Tab-separated values, .tsv) file format. Values of first columns of the TSV file will have the representative words and the following values distinguished as tab characters will have synonyms of the representative words. Below table is an example of the definition of the “PIZZA_TYPE” custom slot type in TSV format.
 
 ```
-pepperoni    Pepperoni pizza
-Barbeque      Barbeque pizza     BBQ pizza
-Cheese       Cheese pizza
-Vegetable       Vegetable pizza        Veggie pizza      Vegetarian pizza
-Shrimp Gold Crust         Shrimp Gold Crust pizza      Shrimp GC pizza       Shrimp GC
+pepperoni     Pepperoni pizza
+Barbeque      Barbeque pizza        BBQ pizza
+Cheese        Cheese pizza
+Vegetable     Vegetable pizza       Veggie pizza        Vegetarian pizza
+Shrimp Gold Crust         Shrimp Gold Crust pizza       Shrimp GC pizza       Shrimp GC
 ```
 
 Click **Upload** to upload a custom slot type predefined in TSV file and click **Download** to download a custom slot type currently being written at the Clova developer console in TSV file format.
@@ -338,4 +338,4 @@ Click **Upload** to upload a custom slot predefined in TSV file and click **Down
 
 Up to here, a guidance to add intents to an interaction model was explained. Repeat the same steps as explained above to add intents on your extension as many as necessary. If then, an interaction model as below will be created.
 
-a![](/DevConsole/Resources/Images/DevConsole-Added_Interaction_Model.png)
+![](/DevConsole/Resources/Images/DevConsole-Added_Interaction_Model.png)

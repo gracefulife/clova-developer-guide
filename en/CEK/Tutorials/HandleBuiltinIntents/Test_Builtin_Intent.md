@@ -21,6 +21,5 @@ Follow the steps below to check whether the help request of a Sample Dice extens
 
   <div class="note">
 	<p><strong>Note!</strong></p>
-<p>If the externally accessible extension server URL is not registered, an “Undefined response” message is displayed on <strong>{{ book.DevConsole.cek_builder_test_service_response }}</strong>. </p>
+  <p>If the externally accessible extension server URL is not registered, an “Undefined response” message is displayed on <strong>{{ book.DevConsole.cek_builder_test_service_response }}</strong>. </p>
 	</div>
-
