@@ -1,29 +1,31 @@
-## Handling custom extension request {#HandleCustomExtensionRequest}
-Custom extensions receive user requests by receiving [custom extension messages](/CEK/References/CEK_API.md#CustomExtMessage) from CEK (HTTPS request). Custom extensions handle requests and responses as follows.
+﻿## Handling a custom extension request {#HandleCustomExtensionRequest}
+The custom extension receives user requests with the format of [custom extension messages](/CEK/References/CEK_API.md#CustomExtMessage) from CEK (HTTPS request). The customer extension must typically handle and respond as shown below.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png)
 
-A user request can be a one-time request but it can also be a multi-turn request that has to maintain context.
+A user request, like in this example, may be a single-turn dialog, but it can also be a multi-turn dialog that needs to maintain the context of a conversation.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Multi-turn_Sequence_Diagram.png)
 
-A user request can be one of the following three types. Implement your custom extension to perform appropriate actions depending on the message type.
+User requests for multi-turn dialogs are classified into three types. A custom extension developer must design the code to handle jobs corresponding to the message.
+The three types of requests and the user utterance patterns for each request type are as follows:
 
-* [When receiving LaunchRequest](#HandleLaunchRequest)
-* [When receiving IntentRequest](#HandleIntentRequest)
-* [When receiving SessionEndedRequest](#HandleSessionEndedRequest)
+| Request type | User utterance pattern | Sample utterance |
+|---------|--------------|---------|
+|[LaunchRequest](#HandleLaunchRequest) | "Start/open/operate” + _[extension call name]_ | "Start Pizzabot" |
+| [IntentRequest](#HandleIntentRequest) | _[execution commands registered per extension]_ + "to/from/by/with” + _[extension call name]_, or <br/>(after receiving the `LaunchRequest` type request) _[execution commands registered per extension]_ | "Order a pizza from Pizzabot" <br/> (In the state of starting the Pizzabot) "Update me on the delivery status" |
+| [SessionEndedRequest](#HandleSessionEndedRequest) | (In the state of receiving the `LaunchRequest` type request) "Exit/close/stop" | "Exit (Pizzabot)" |
 
-### Handling LaunchRequest {#HandleLaunchRequest}
-[`LaunchRequest`](/CEK/References/CEK_API.md#CustomExtLaunchRequest) notifies that a user has requested to start a certain mode or custom extension. For example, when a user gives a command such as "Run the pizza bot", CEK sends `LaunchRequest` to the extension that provides pizza delivery service.
+### Handling a LaunchRequest {#HandleLaunchRequest}
+[`LaunchRequest` type](/CEK/References/CEK_API.md#CustomExtLaunchRequest) request is used to declare that the user has requested to use a specific extension. For example, when the user makes a command, such as “Start Pizzabot" or "Open Pizzabot," CEK sends a `LaunchRequest` type request to the extension providing the pizza delivery service. Once the request is received, the extension must prepare to receive the next request of the user.
 
-When the message type is LaunchRequest, the `request.type` field is set to `"LaunchRequest"` and `request` field does not contain analysis details of the user's speech. When your extension receives this message, make the necessary preparations or return a [response message](#ReturnCustomExtensionResponse) to the user to notify that the requested service is ready.
+In the LaunchRequest type message, the `request.type` field has a `"LaunchRequest"` value and the `request` field does not contain the analyzed information of the user utterance. The extension developer should develop the code so that the extension handles preparations for the service at the receipt of this message type or sends a [response message](#ReturnCustomExtensionResponse) to the user that the preparations for the services are complete.
 
-After receiving this message and before receiving a [`SessionEndedRequest`](#HandleSessionEndedRequest) message, you will be receiving [`IntentRequest`](#HandleIntentRequest) messages that have the same `session.sessionId` as the previous message.
+After receiving this message until receiving the [`SessionEndedRequest` type](#HandleSessionEndedRequest) request message, the extension will receive [`IntentRequest` type](#HandleIntentRequest) messages. The `session.sessionId` field will remain the same as the previous message.
 
-This is an example of a `LaunchReqeust` type message.
+Below is an example of a `LaunchRequest` type request message.
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
@@ -38,6 +40,9 @@ This is an example of a `LaunchReqeust` type message.
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -61,26 +66,24 @@ This is an example of a `LaunchReqeust` type message.
   }
 }
 ```
-
 {% endraw %}
 
-Each field in this example indicates the following.
+The fields used in the example above represent the following information:
 
-* `version`: The message format version of the current custom extension is v0.1.0.
-* `session`: **This is a new session**. It contains the session ID and user details (ID, accessToken) for the new session.
-* `context`: This provides details of the client device. It contains the device ID and details of the default device user.
-* `request`: The request type is `LaunchRequest`. It notifies that the current extension has started. It does not contain analysis details of the user's speech input.
+* `version`: The current version of the custom extension message format is v0.1.0.
+* `session`: As a **new session**, this contains the session ID to use for new sessions and user information (ID, accessToken).
+* `context`: Information on the client device containing device ID and basic user information.
+* `request`: As a `LaunchRequest` type request, it notifies of the start of using the extension. It does not contain the analysis of the user utterance.
 
-### Handling IntentRequest {#HandleIntentRequest}
+### Handling an IntentRequest {#HandleIntentRequest}
 
-[`IntentRequest`](/CEK/References/CEK_API.md#CustomExtIntentRequest) is used when CEK forwards user requests to your extension according to the predefined [interaction model](/DevConsole/Guides/CEK/Define_Interaction_Model.md). You can use `IntentRequest` for both one-time request and multi-turn request.
+[`IntentRequest` type](/CEK/References/CEK_API.md#CustomExtIntentRequest) of request is used by the CEK to send user requests to the extension based on the predefined [interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel). `IntentRequest` is sent to the extension when the user makes a command by specifying the extension call name or when the user makes a command without specifying the extension call name after the `LaunchRequest` is generated. For example, if the user says "Order a pizza from Pizzabot” or starts the service with another command and then says a command, like “Order pizza”, CEK sends a `IntentRequest` type request to the extension providing the pizza delivery service. `IntentRequest` type request is also used when handling multi-turn dialog requests as well as single-turn requests.
 
-When the message type is IntentRequest, `request.type` field is set to `"IntentRequest"`. You can check the name of the intent and analysis details of the user's speech input from the `request.intent` field. Analyze the field, process the user request, and return a [response message](#ReturnCustomExtensionResponse).
+In the IntentRequest type message, the `request.type` field has a `"IntentRequest"` value. You can find the name of the called intent and the analysis of utterance information in the `request.intent` field. After handling the user request by analyzing this field, you can send the [response message](#ReturnCustomExtensionResponse).
 
-This is an example of an `IntentRequest` type message.
+Below is an example of a `IntentRequest` type request message.
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
@@ -95,6 +98,9 @@ This is an example of an `IntentRequest` type message.
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -120,45 +126,43 @@ This is an example of an `IntentRequest` type message.
       "slots": {
         "pizzaType": {
           "name": "pizzaType",
-          "value": "pepperoni"
+          "value": "Pepperoni"
         }
       }
     }
   }
 }
 ```
-
 {% endraw %}
 
-Each field in this example indicates the following.
+The fields used in the example above represent the following information:
 
-* `version`: The message format version of the current custom extension is v0.1.0.
-* `session`: **The request is from a previous session**. It contains the previous session ID and user details (ID, accessToken).
-* `context`: This provides details of the client device. It contains the device ID and details of the default device user.
-* `request`: The request type is `IntentRequest`. It has called an intent named `"OrderPizza"`. The necessary intent information has been passed along with `"pizzaType"` slot and the slot has a value of `"pepperoni"`.
+* `version`: The current version of the custom extension message format is v0.1.0.
+* `session`: As a **user request continued on the existing session**, this contains the ID of the existing session and user information (ID, accessToken).
+* `context`: Information on the client device containing device ID and basic user information.
+* `request`: As an `IntentRequest` type request, the [intent](/Design/Design_Guideline_For_Extension.md#Intent) registered with the name `"OrderPizza"` has been called. The `"pizzaType"` [slot](/Design/Design_Guideline_For_Extension.md#Slot) is sent together with the intent, as the required information, and holds the value called `"페퍼로니"`.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The <code>IntentRequest</code> type can start a new session to process a request, regardless of <code>LaunchRequest</code>.</p>
+  <p><code>IntentRequest</code> type request can handle requests by starting a new session regardless of the <code>LaunchRequest</code> type request.</p>
 </div>
 
-### Handling SessionEndedRequest {#HandleSessionEndedRequest}
+### Handling a SessionEndedRequest {#HandleSessionEndedRequest}
 
-[`SessionEndedRequest`](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) notifies that a user has requested to end a certain mode or custom extension. The client will stop the extension if a user commands to "End the service", "Please end the service" or "Stop". CEK will pass a request of a `SessionEndedRequest` type to an extension providing dialog service.
+[`SessionEndedRequest` type request](/CEK/References/CEK_API.md#CustomExtSessionEndedRequest) is used to declare that the user has requested to stop using a specific mode or customer extension. When the user makes a command like "Exit" or "Stop," the client stops using the extension and CEK sends a `SessionEndedRequest` type request to the extension providing the dialog service.
 
-When the message type is `SessionEndedReqeust`, the `request.type` field is set to `"EndRequest"`. Same as the `LaunchRequest` type, the `request` field does not contain analysis details of the user's speech. When you receive this message, end the service and return a [response message](#ReturnCustomExtensionResponse) to notify that the service has ended.
+In the `SessionEndedRequest` type message, the `request.type` field has a `"SessionEndedRequest"` value and the `request` field does not contain the analyzed details of user utterance, like the `LaunchRequest` type. The extension developer can write the code used to exit the service.
 
-This is an example of a `SessionEndedRequest` type message.
+Below is an example of a `SessionEndedRequest` type request message.
 
 
 {% raw %}
-
 ```json
 {
   "version": "0.1.0",
   "session": {
     "new": false,
-    "sessionAttributes": {}
+    "sessionAttributes": {},
     "sessionId": "a29cfead-c5ba-474d-8745-6c1a6625f0c5",
     "user": {
       "userId": "V0qe",
@@ -167,6 +171,9 @@ This is an example of a `SessionEndedRequest` type message.
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -186,16 +193,16 @@ This is an example of a `SessionEndedRequest` type message.
     }
   },
   "request": {
-    "type": "EndRequest"
+    "type": "SessionEndedRequest"
   }
 }
 ```
-
 {% endraw %}
 
-Each field in this example indicates the following.
+The fields used in the example above represent the following information:
 
-* `version`: The message format version of the current custom extension is v0.1.0.
-* `session`: **The request is from a previous session**. It contains the previous session ID and user details (ID, accessToken).
-* `context`: This provides details of the client device. It contains the device ID and details of the default device user.
-* `request`: The request type is `SessionEndedRequest`. It notifies that the current extension has ended. It does not contain analysis details of the user's speech input.
+* `version`: The current version of the custom extension message format is v0.1.0.
+* `session`: As a **user request continued on the existing session**, this contains the ID of the existing session and user information (ID, accessToken).
+* `context`: Information on the client device containing device ID and basic user information.
+* `request`: As a `SessionEndedRequest` type request, it notifies of the end of using the extension. It does not contain the analysis of the user utterance.
+
