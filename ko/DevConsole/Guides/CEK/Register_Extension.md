@@ -5,10 +5,15 @@
 
 Extension을 등록할 때 일반적으로 다음 항목을 순차적으로 수행해야 합니다.
 
-1. [이용 약관 및 개인 정보 수집 동의](#AgreeTermsOfUse)
-2. [Extension 기본 정보 입력](#InputExtensionInfo)
-3. [서버 연동 설정](#SetServerConnection)
-  * [계정 연결 설정](#SetAccountLinking)
+<ol>
+  <li><a href="#AgreeTermsOfUse">이용 약관 및 개인 정보 수집 동의</a></li>
+  <li><a href="#InputExtensionInfo">Extension 기본 정보 입력</a></li>
+  <li><a href="#SetServerConnection">서버 연동 설정</a>
+    <ul>
+      <li><a href="#SetAccountLinking">계정 연결 설정</a></li>
+    </ul>
+  </li>
+</ol>
 
 ## 이용 약관 및 개인 정보 수집 동의 {#AgreeTermsOfUse}
 
@@ -43,7 +48,7 @@ Extension을 등록하는 과정에서 가장 먼저 할 일은 등록할 extens
 
 Extension 기본 정보 입력이 끝나면 생성된 Extension의 정보를 수정하는 화면으로 전환됩니다. 이때부터 페이지 하단에 있는 **{{ book.DevConsole.cek_save }}** 버튼을 클릭하여 중간 내용을 언제든지 저장할 수 있으며, 다음과 같이 CEK 메뉴에서 등록된 Extension 목록을 확인할 수 있습니다.
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
 
 ## 서버 연동 설정 {#SetServerConnection}
 

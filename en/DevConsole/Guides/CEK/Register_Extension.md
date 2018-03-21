@@ -5,10 +5,15 @@ If you are developing or have developed a [custom extension](/CEK/Guides/Build_C
 
 To register an extension, you must typically complete the following steps in order:
 
-1. [Agreeing to the terms and conditions and privacy policy](#AgreeTermsOfUse)
-2. [Entering basic extension information](#InputExtensionInfo)
-3. [Setting up a server connection](#SetServerConnection)
-  * [Setting up account linking](#SetAccountLinking)
+<ol>
+  <li><a href="#AgreeTermsOfUse">Agreeing to the terms and conditions and privacy policy</a></li>
+  <li><a href="#InputExtensionInfo">Entering basic extension information</a></li>
+  <li><a href="#SetServerConnection">Setting up a server connection</a>
+    <ul>
+      <li><a href="#SetAccountLinking">Setting up account linking</a></li>
+    </ul>
+  </li>
+</ol>
 
 ## Agreeing to the terms and conditions and privacy policy {#AgreeTermsOfUse}
 
@@ -43,7 +48,7 @@ Follow the steps below to register the extension:
 
 When you complete entering the basic extension information, you are directed to the screen to edit this information. From this point, you can press the **{{ book.DevConsole.cek_save }}** button at the bottom of the page at any time to save the changed details. You can also find the list of registered extensions in the CEK menu as shown below.
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
 
 ## Setting up a server connection {#SetServerConnection}
 

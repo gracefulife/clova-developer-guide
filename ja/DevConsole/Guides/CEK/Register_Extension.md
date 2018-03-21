@@ -6,10 +6,15 @@
 
 Extensionの登録は、通常、次の順で行われます。
 
-1. [利用規約および個人情報の取得に同意する](#AgreeTermsOfUse)
-2. [Extensionの基本情報を入力する](#InputExtensionInfo)
-3. [サーバーとの連携を設定する](#SetServerConnection)
- * [アカウントリンクを設定する](#SetAccountLinking)
+<ol>
+  <li><a href="#AgreeTermsOfUse">利用規約および個人情報の取得に同意する</a></li>
+  <li><a href="#InputExtensionInfo">Extensionの基本情報を入力する</a></li>
+  <li><a href="#SetServerConnection">サーバーとの連携を設定する</a>
+    <ul>
+      <li><a href="#SetAccountLinking">アカウントリンクを設定する</a></li>
+    </ul>
+  </li>
+</ol>
 
 ## 利用規約および個人情報の取得に同意する {#AgreeTermsOfUse}
 
@@ -45,7 +50,7 @@ Extensionの基本情報は、Clova Developer CenterでExtensionを作成する�
 
 Extensionの基本情報をすべて入力すると、作成されたExtensionの情報を修正する画面に切り替わります。ページの下にある**{{ book.DevConsole.cek_save }}**ボタンをクリックして、入力中の内容を自由に保存できます。また、CEKのメニューで、登録されたExtensionのリストを確認することもできます。
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_list_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
 
 ## サーバーとの連携を設定する {#SetServerConnection}
 

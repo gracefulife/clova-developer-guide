@@ -313,10 +313,6 @@ The UI screen covers the entire screen or a section on the lower part of the scr
 * The Clova logo must be placed on the top left section.
 * The Clova logo must not be transparent.
 
-Below is a screen example of Logo layout A.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Bottom_Overlay_Example.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Full_Screen_Overlay_Example.png)
-
 #### Logo layout B {#LogoLayoutB}
 
 Similar to [Logo layout A](#LogoLayoutA), the UI screen covers the entire screen or a section on the lower part of the screen. The Clova logo is placed on the top right section.
@@ -326,10 +322,6 @@ Similar to [Logo layout A](#LogoLayoutA), the UI screen covers the entire screen
 * The Clova logo must be placed on the top right section.
 * The Clova logo must not be transparent.
 
-Below is a screen example of Logo layout B.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Bottom_Overlay_Example.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Full_Screen_Overlay_Example.png)
-
 #### Logo layout C {#LogoLayoutC}
 
 The screen only displays simple text format. The Clova logo is placed on the top section.
@@ -338,10 +330,6 @@ The screen only displays simple text format. The Clova logo is placed on the top
 
 * The Clova logo must be placed on the top section.
 * The source of the content must be stated at the bottom of the content.
-
-Below is a screen example of Logo layout C.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_C_Example.png)
 
 ### Voice agent {#VoiceAgent}
 
