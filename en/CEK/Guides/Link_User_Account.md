@@ -1,94 +1,94 @@
-# Linking user account
-Through your [custom extension](/CEK/Guides/Build_Custom_Extension.md) or [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md), Clova can provide 3rd party services that require access to user accounts. You can make Clova interact with a paid content service (like music streaming) or 3rd party services for shopping, banking, messaging, and home IoT. To this end, Clova supports account linking on a basis of [OAuth 2.0](https://tools.ietf.org/html/rfc6749) technology, in short, linking user accounts of a 3rd party service with those of Clova.
+﻿# Linking user accounts
+Clova can provide 3rd party services that require permissions for user account access through a [custom extension](/CEK/Guides/Build_Custom_Extension.md) or [Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md). For example, a music streaming service that is a paid content service or other services like shopping, finance, messenger, and home IoT can be connected to Clova. Clova supports account linking that connects the user account of the 3rd party service and the Clova user account through [OAuth 2.0](https://tools.ietf.org/html/rfc6749).
 
-Implement account linking if your custom extension provides a 3rd party service that requires user account authentication. If the 3rd party service does not require account authentication, account linking is not necessary. If the service requires information just enough to identify users, you can use the combination of values for device identifier (`context.System.device.deviceId`) and user account identifier (`context.System.user.userId` or `session.user.userId`), both of which are included in [custom extension messages](/CEK/References/CEK_API.md#CustomExtMessage).
+Account linking is used when a custom extension provides a 3rd party service that requires users to authenticate their accounts. Account linking is not required for 3rd party services that do not require authentication. If the service only requires information to identify users, you can use the combination of values for the device identifier (`context.System.device.deviceId`) and user account identifier (`context.System.user.userId` or `session.user.userId`) provided in the [custom extension message](/CEK/References/CEK_API.md#CustomExtMessage).
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Clova Home extensions always require account linking.</p>
+<p>Clova Home extension must use account linking.</p>
 </div>
 
-The following explains:
-* [How account linking works](#UnderstandAccountLinking)
+This documentation includes the following topics:
+* [Understanding account linking](#UnderstandAccountLinking)
 * [Applying account linking](#ApplyAccountLinking)
 
-## How account linking works {#UnderstandAccountLinking}
-Before applying account linking to your extension, you have to understand how account linking works. Here, the following topics are covered.
-* [Setting up account linking](#SetupAccountLinking)
-* [Invoking extension after account is linked](#ExtensionInvokingAfterAccountLinking)
+## Understanding account linking {#UnderstandAccountLinking}
+Before applying account linking to the extension, you must first understand how account linking works. This section covers the following topics:
+* [Setting account linking](#SetupAccountLinking)
+* [Invoking an extension after account linking](#ExtensionInvokingAfterAccountLinking)
 
-### Setting up account linking {#SetupAccountLinking}
-When a user enables a custom extension or Clova Home extension that requires account authentication, the user tries to link his or her account in the following steps.
+### Setting account linking {#SetupAccountLinking}
+When a user enables a custom extension or Clova Home extension that requires authentication, the account linking setup is conducted as follows:
 
 ![](/CEK/Resources/Images/CEK_Account_Linking_Setup_Sequence_Diagram.png)
 
 1. The user enables a custom extension or Clova Home extension.
 
-2. The client app or app paired with the client device displays a login page of the 3rd party service, using the **[Authorization URL](#BuildAuthServer)** which you have previously registered for the authorization server.
+2. The login page of the 3rd party service is displayed on the client app or the app paired with the client device. This method uses the **[authorization URL](#BuildAuthServer)** of the authorization server registered by the extension developer.
 
-3. When the user completes account authentication, an authorization code or access token is returned.
+3. Once the user completes the authentication, an authorization code or an access token is returned.
 
-4. The authorization code or access token is forwarded to Clova through a specified redirect URL.
+4. The received authorization code or access token is delivered to Clova through a redirect URL.
 
-5. **(If received an authorization code in step 3)** Clova requests access token and refresh token to the **[Access Token URI](#RegisterAccountLinkingInfo)**. At which point, the authorization code is passed on and the access token and refresh token are stored in the user's Clova account information.
+5. **If the authorization code was returned in Step 3,** Clova requests an access and refresh token to **[Access token URI](#RegisterAccountLinkingInfo)**. Then, the authorization code is delivered and the acquired access and refresh tokens are stored in the user’s Clova account information.
 
-6. The user is now able to use the service that requires account authentication.
+6. The user can now use the service that requires account authentication.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>When a user disables a custom extension or Clova Home extension, the access token previously stored in the user's Clova account will be removed. In other words, the user will have to link the account again to re-enable the extension.</p>
+<p>When a user disables a custom extension or Clova Home extension, the access token stored in the user’s Clova account is removed. Therefore, account linking must be performed again if the user enables the extension again.</p>
 </div>
 
-### Invoking extension after account is linked {#ExtensionInvokingAfterAccountLinking}
-After account linking is completed, CEK invokes the extension in the following steps.
+### Invoking an extension after account linking {#ExtensionInvokingAfterAccountLinking}
+Once an account is linked, CEK invokes the extension as follows:
 
-1. Invokes the extension as usual to process a user request.
+1. CEK invokes the extension as usual to handle the user request.
 
-2. **(If the access token has expired)** Using the refresh token, requests a new access token to the **[Access Token URI](#RegisterAccountLinkingInfo)**.
+2. **If the access token is expired** a new access token is requested to **[Access token URI](#RegisterAccountLinkingInfo)** using the refresh token.
 
-3. Sends a user request to the extension with the access token.
-   * If it is a custom extension, the access token is passed to the `context.System.user.accessToken` and `session.user.accessToken` fields.
-   * If it is a Clova Home extension, the access token is passed to the `payload.accessToken` field.
+3. CEK sends user request by including the access token in the message to the extension.
+   * If it is a custom extension, the access token is delivered to the `context.System.user.accessToken`and `session.user.accessToken` fields.
+   * If it is a Clova Home extension, the access token is delivered to the `payload.accessToken` field.
 
-4. The extension responds as follows.
-   * If the access token is valid, processes the user request and returns the result.
-   * If the access token is invalid, returns the result to proceed to [setting up account linking](#SetupAccountLinking).
+4. The extension should respond as follows for the following conditions:
+   * If the access token is valid, the extension must handle the user request and return the result.
+   * If the access token is invalid, the extension must return the result to allow [setting account linking](#SetupAccountLinking).
 
 ## Applying account linking {#ApplyAccountLinking}
-To apply account linking to your extension, complete the following steps.
+To apply account linking to the extension under development, complete the following steps:
 
-1. [Building authorization server](#BuildAuthServer)
-2. [Validating account access permission](#AddValidationLogic)
+1. [Building an authorization server](#BuildAuthServer)
+2. [Implementing verification on account permissions](#AddValidationLogic)
 3. [Registering account linking information](#RegisterAccountLinkingInfo)
 
-### Building authorization server {#BuildAuthServer}
+### Building an authorization server {#BuildAuthServer}
 
-To apply account linking to your extension, prepare a login page where users can authenticate their accounts and build a server for generating access tokens when authentication is complete.
+To apply account linking to an extension, there must be a login page for the user to authenticate their account and also a server to issue an access token once authentication is complete.
 
-The login page for user authentication must meet the following requirements.
-* The page shall support the HTTPS protocol.
-* The page shall support pages for mobile.
-* The page shall not provide any pop-up window.
-* The page shall be redirected to a specified URL (`redirect_uri`) after authentication is complete. And, at which point, an authorization code or access token shall be passed on as a parameter.
-* The page shall keep sending the `state` parameter to the redirect URL (`redirect_uri`).
+The login page for user authentication must meet the following requirements:
+* The page must be provided using the HTTPS protocol.
+* The page must support mobile browsing.
+* The page must not contain pop-up windows.
+* The page must move to redirect URL(`redirect_uri`) once authentication is complete. And at this time, the authorization code or access token must be transferred as a parameter.
+* The page must continue sending the `state` parameter to the redirect URL(`redirect_uri`).
 
 
-**Authorization URL** is a page supporting login UI for users to authenticate their account. It should be entered when [registering an extension](/DevConsole/Guides/CEK/Register_Extension.md) in Clova Developer Console. **Authorization URL** will be called along with the following parameter if a user [sets account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) of the extenstion.
+The URL of the page providing the login UI for the user account authenticate is referred to as **Authorization URL** and it must be entered when [registering the extension](/DevConsole/Guides/CEK/Register_Extension.md) on the Clova developer console. When a user [sets to use account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) of the extension, **Authorization URL** is called along with the following parameters:
 
-| Parameter name     | Description                                         |
+| Parameter     | Description                                         |
 |---------------|---------------------------------------------|
-| `state`         | A value used to check the state of an authentication session whether the session has timed out or not. The value expires in 5 minutes. If the user fails to complete authentication in 5 minutes, the user must try authentication again. |
-| `client_id`     | An ID used when Clova requests a 3rd party service to generate an access token. You must register `cliend_id` in advance in the Clova Developer Console. |
-| `response_type` | A parameter that defines the OAuth 2.0 authorization type (`"code"` or `"token"`). Use the `"code"` type if high level security is required. Clova Home extensions always use `"code"`. You must register `reponse_type` in advance in the Clova Developer Console. |
-| `scope`         | OAuth `scope` field. It defines an access level. You must register `scope` in advance in the Clova Developer Console. |
-| `redirect_uri`  | A URL(redirect URL) to be accessed after an account authentication. The value of `redirect_uri` can be verified when [setting account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) to register an extension at the Clova Developer Console. At the moment, `{{ book.RedirectURLforAccountLinking }}` is being used. |
+| `state`         | State value used to check whether the authentication session has expired. This value expires after 5 minutes, so the user must re-authenticate once the session expires. |
+| `client_id`     | The ID used by Clova to get the access token for the 3rd party service. You must register `cliend_id` in advance on the Clova developer console. |
+| `response_type` | Parameter that has defined OAuth 2.0 authorization type (`"code"` or `"token"`). If high level of security if required, use the `"code"` type. Clova Home extensions always use the `"code"` type. You must register `reponse_type` in advance on the Clova developer console. |
+| `scope`         | `scope` field of OAuth. You can define the access level. You must register `scope` in advance on the Clova developer console. |
+| `redirect_uri`  | A URL to move to after authentication (redirect URL). The value of `redirect_uri` can be verified when [setting account linking](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) to register the extension on the Clova developer console. Currently, `{{ book.RedirectURLforAccountLinking }}` is being used. |
 
 <div class="note">
-<p><strong>Note!</strong></p>
-<p>Refer to <a href="https://tools.ietf.org/html/rfc6749#section-4">Obtaining Authorization</a> in OAuth 2.0 Authorization Framework for more details on the parameters.</p>
+  <p><strong>Note!</strong></p>
+  <p>For more information on parameters, see <a href="https://tools.ietf.org/html/rfc6749#section-4">Obtaining authorization</a> in the OAuth 2.0 authorization framework.</p>
 </div>
 
-This is an example URL when a client app or app paired with a client device requests a login page.
+Here is an example of a URL when a client app or app paired with a client device requests a login page.
 
 <pre><code>https://yourdomain.com/login?state=qwer123
                             &client_id=clova-extension
@@ -100,28 +100,28 @@ This is an example URL when a client app or app paired with a client device requ
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p><code>redirect_uri</code> can be viewed from the page where you <a href="/DevConsole/Guides/CEK/Register_Extension.html#RedirectURI">set the account linking</a> from the Clova Developer Console.</p>
+The <p><code>redirect_uri</code> can be found on the <a href="/DevConsole/Guides/CEK/Register_Extension.html#RedirectURI">Setting account linking</a> page of the Clova developer console.</p>
 </div>
 
 
-Pass the following parameters to the URL (`redirect_uri`) to be redirected to after account authentication is complete.
+The URL to move after authentication (`redirect_uri`) must deliver the following parameters:
 
-| Parameter name     | Description                                        |
+| Parameter     | Description                                        |
 |---------------|---------------------------------------------|
-| `vendorId`      | An ID given to the extension developer. This ID is registered in the Clova Developer Console to identify 3rd party service or company. It is pre-included in `redirect_uri`. |
-| `state`         | A value used to check the state of an authentication session whether the session has timed out or not. Enter the `state` parameter passed from the **Authorization URL**.    |
-| `code`          | An authorization code. If `response_type` is `"code"`, enter the authorization code to this parameter.  |
-| `access_token`  | An access token. If `response_type` is `"token"`, enter the access token to this parameter.               |
-| `token_type`    | The type of the access token. It is passed along with `access_token` and the value is always `"Bearer"`.                        |
+| `vendorId`      | The ID assigned to the extension developer. This is an ID registered in the Clova developer console to differentiate a company or a 3rd party service. It is included in `redirect_uri` in advance. |
+| `state`         | State value used to check whether the authentication session has expired. Enter the `state` parameter received from **Authorization URL**.    |
+| `code`          | Authorization code. If the `response_type` value is `"code"`, enter the authorization code in the parameter.  |
+| `access_token`  | Access token. If the `response_type` value is `"token"`, enter the access token in the parameter.               |
+| `token_type`    | Type of access token. It must be delivered with `access_token` and the value is always set as `"Bearer"`.                        |
 
-This is an example URL to be redirected to after user authentication is complete.
+Here is an example of a redirect URL to move to once user account authentication is complete.
 
-<pre><code>// Example 1: If using Authorization code grant method
+<pre><code>// Example 1: If authorization code grant method is used
 {{ book.RedirectURLforAccountLinking }}?vendorId=YourServiceOrCompanyID
                                 &state=qwer123
                                 &code=nl__eCSTdsdlkjfweyuxXvnl
 
-// Example 2: If using Implicit grant method
+// Example 2: If implicit grant method is used
 {{ book.RedirectURLforAccountLinking }}?vendorId=YourServiceOrCompanyID
                                 &state=qwer123
                                 &access_token=sdfljnFZFEjr1zCsicM
@@ -129,21 +129,20 @@ This is an example URL to be redirected to after user authentication is complete
 </code></pre>
 
 
-If Clova has obtained an authorization code (authorization code grant), it requests an access token once more to the **[Access Token URI](#RegisterAccountLinkingInfo)**, which you have previously registered in the Clova Developer Console. At which point, Clova passes the authorization code as a parameter. Then the authorization server generates an access token granting account access for the 3rd party service and a refresh token for refreshing the access token.
+If Clova acquires an authorization code for account linking (authorization code grant method), Clova requests an access token again to the **[access token URI](#RegisterAccountLinkingInfo)**, which is preregistered in the Clova developer console by the extension developer. Clova sends the acquired authorization code as a parameter, then the authorization server must issue an access token with permission to access the account of the 3rd party service and a refresh token to renew the access token.
 
-If Clova has obtained an access token (implicit grant), it does not receive a refresh token. This means that the user must retry account linking if the access token expires.
+If Clova immediately acquires an access token for account linking (implicit grant method), it does not receive a refresh token. Thus, you must perform account linking again once the access token is expired.
 
-### Validating account access permission {#AddValidationLogic}
-To apply account linking, write code for checking validity of access tokens. Extension messages that are sent to a custom extension or Clova Home extension has the following `accessToken` field.
-Verify that the access token is present in the field and that it is valid.
+### Implementing verification on account permissions {#AddValidationLogic}
+To apply account linking, the extension developer must write the code for verifying the validity of the access token. Each extension message delivered to the custom extension and Clova Home extension contains the `accessToken` fields as shown below.
+Once you obtain the access token from the fields below, you must check the existence and validity of this value.
 
 * Custom extension: `context.System.user.accessToken`, `session.user.accessToken`
 * Clova Home extension: `payload.accessToken`
 
 {% raw %}
-
 ```json
-// Example 1: Custom extension message
+// Example 1: Example of a custom extension message
 {
   "version": "0.1.0",
   "session": {
@@ -157,6 +156,9 @@ Verify that the access token is present in the field and that it is valid.
   },
   "context": {
     "System": {
+      "application": {
+        "applicationId": "com.yourdomain.extension.pizzabot"
+      },
       "user": {
         "userId": "V0qe",
         "accessToken": "XHapQasdfsdfFsdfasdflQQ7"
@@ -182,14 +184,14 @@ Verify that the access token is present in the field and that it is valid.
       "slots": {
         "pizzaType": {
           "name": "pizzaType",
-          "value": "pepperoni"
+          "value": "Pepperoni"
         }
       }
     }
   }
 }
 
-// Example 2: Clova Home extension message
+// Example 2: Example of a Clova Home extension message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
@@ -202,24 +204,24 @@ Verify that the access token is present in the field and that it is valid.
   }
 }
 ```
-
 {% endraw %}
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If the access token does not exist or is invalid, your extension must send a response to CEK and ask the client to try the account linking again.</p>
+  <p>If an access token does not exist or is invalid, the extension must send a response to CEK to ask the client to perform account linking again.</p>
 </div>
 
 
 ### Registering account linking information {#RegisterAccountLinkingInfo}
-Once you are done with building an authorization server and applying account linking to your extension, register the information described in [Building authorization server](#BuildAuthServer)[Clova Developer Console] at the [Clova Developer Console](/DevConsole/ClovaDevConsole_Overview.md). From an extension registered on the Clova Developer Console, [enter account linking information](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinkning) as follows.
+Once building an authorization server and applying account linking to the extension are complete, you should register the information mentioned in [building an authorization server](#BuildAuthServer) on the [Clova developer console](/DevConsole/ClovaDevConsole_Overview.md). In the extension registered on the Clova developer console, [enter the account linking information](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking) as follows:
 
-| Field name           | Description                                         |
+| Field           | Description                                         |
 |-------------------|---------------------------------------------|
-| Authorization URL | The URL to connect to for [account authentication](#SetupAccountLinking)                            |
-| Client ID         | A client ID for identifying services when requesting for an [account authentication](#SetupAccountLinking) page    |
-| Authorization Grant Type | OAuth 2.0 authorization method. <ul><li>Implicit grant (applicable for custom extensions)</li><li>Authorization code grant (applicable for both custom extensions and Clova Home extensions)</li></ul>    |
-| Access Token URI  | An address for obtaining an access token with an authorization code. Enter this field when the method is set to the authorization code grant. |
-| Client Secret     | A client secret which has to be passed on along with **Client ID** when obtaining an access token with an authorization code. Enter this field when the method is set to the authorization code grant. |
-| Client Authentication Scheme | A scheme for requesting access tokens via an access token URI              |
-| Privacy Policy URL | A page that provides privacy policy for the service. It is displayed on Clova App or paired app. |
+| Authorization URL | URL the user will access for [account authentication](#SetupAccountLinking)                            |
+| Client ID         | Client ID granted to differentiate services when requesting the user [account authentication](#SetupAccountLinking) page    |
+| Authorization grant type | Authorization method of OAuth 2.0. <ul><li>Implicit grant method (applicable to custom extensions)</li><li>Authorization code grant method (Applicable to custom extensions and Clova Home extensions)</li></ul>    |
+| Access token URI  | Address to acquire an access token with the authorization code. Enter this field if the authorization code grant method is set. |
+| Client secret     | Client secret that must be delivered with **Client ID** when acquiring an access token with the authorization code. Enter this field if the authorization code grant method is set. |
+| Client authentication scheme | Scheme used when requesting access token with the access token URI.              |
+| Privacy policy URL | Page where privacy policy details on the service are provided. It is displayed on the Clova app or paired app. |
+

@@ -1,13 +1,13 @@
-## Clova Home extension message {#ClovaHomeExtMessage}
-A Clova Home extension message is a message specification used by your extension when it exchanges information with CEK to control IoT appliances. The following explains [message formats](#ClovaHomeExtMessageFormat) and [interfaces](#ClovaHomeExtInterface) of a Clova Home extension message.
+﻿## Clova Home extension messages {#ClovaHomeExtMessage}
+Clova Home extension messages comprise the message specifications used exclusively when the extension controlling IoT devices exchange information with CEK. This section explains the [message format](#ClovaHomeExtMessageFormat) and [interface](#ClovaHomeExtInterface) of Clova Home extension messages.
 
 ### Message format {#ClovaHomeExtMessageFormat}
 
-A Clova Home extension message consists of `header` and `payload` fields. This is same for both request and response messages. The `payload` field can have different configuration depending on which [interface](#ClovaHomeExtInterface) is used. The following explains the common format of a Clova Home extension message.
+Clova Home extension messages are configured with the `header` field and `payload` field. This is the same for both request messages and response messages. However, the configuration of the `payload` field may vary depending on the [interface](#ClovaHomeExtInterface) used. The following explains the common format of the Clova Home extension messages.
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>A Clova Home extension message is divided into a request message and a response message. Request messages which are sent from CEK to an extension have a name format of `XxxxRequest`. Response messages which are sent from an extension to CEK have a name format of `XxxxConfirmation` or `XxxxResponse`. Also, even when an error occurs, you must return a 200 OK HTTPS response. Such response messages have a name format of `XxxxError`.</p>
+  <p>Clova Home extension messages are classified into request and response messages. Request messages sent from CEK to an extension are in the `XxxxRequest` format and response messages sent from extension to CEK are in the `XxxxConfirmation` or `XxxxResponse` format. In addition, a normal HTTPS response (200 OK) must be sent even when an error occurs, and this response message must have the same name as `XxxxError`.</p>
 </div>
 
 #### Message structure
@@ -26,15 +26,15 @@ A Clova Home extension message consists of `header` and `payload` fields. This i
 {% endraw %}
 
 
-#### Message field
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `header`                 | object | The header of the message                                                                                            | Yes     |
-| `header.messageId`       | string | The message ID. An identifier (UUID) created by Clova to distinguish individual messages.                                         | Yes     |
-| `header.name`            | string | The API name of the message                                                                                        | Yes     |
-| `header.namespace`       | string | The value is always `"ClovaHome"`.                                                                     | Yes     |
-| `header.payloadVersion`  | string | The version of the Clova Home extension message specified in `header.name`. Configuration of the `payload` field can vary depending on the version.  | Yes     |
-| `payload`                | object | Configuration of the payload object and its field values can vary depending on which [interface](#ClovaHomeExtInterface) is specified in `header.name`.       | Yes     |
+#### Message fields
+| Field       | Data Type    | Description                     | Required/Included |
+|---------------|---------|-----------------------------|:-------------:|
+| `header`                 | object | The header of the message.                                                                                            | Required/Always     |
+| `header.messageId`       | string | The message ID (UUID). This is an identifier created by Clova to distinguish individual messages.                                         | Required/Always     |
+| `header.name`            | string | The API name of the message,                                                                                        | Required/Always     |
+| `header.namespace`       | string | This field is always set to `"ClovaHome"`.                                                                     | Required/Always     |
+| `header.payloadVersion`  | string | The version of the Clova Home extension message specified in `header.name`. Configuration of the `payload` field may vary depending on this version.  | Required/Always     |
+| `payload`                | object | The configuration and field value of payload objects vary depending on the [interface](#ClovaHomeExtInterface) assigned to `header.name`.       | Required/Always     |
 
 #### Message example
 {% raw %}
@@ -65,10 +65,10 @@ Example 2: DiscoverAppliancesResponse - response message
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart light",
+        "modelName": "Smart lamp,"
         "version": "v1.0",
-        "friendlyName": "Light in living room",
-        "friendlyDescription": "Smartphone-controllable light",
+        "friendlyName": "Living room lamp,"
+        "friendlyDescription": “A lamp that can be controlled using a smartphone,"
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -85,10 +85,10 @@ Example 2: DiscoverAppliancesResponse - response message
       {
         "applianceId": "device-002",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart plug",
+        "modelName": "Smart plug,"
         "version": "v1.0",
-        "friendlyName": "Plug in kitchen",
-        "friendlyDescription": "Energy saving plug",
+        "friendlyName": "Kitchen plug,"
+        "friendlyDescription": "An energy-saving plug,"
         "isReachable": true,
         "actions": [
           "HealthCheck",
@@ -123,7 +123,7 @@ Example 3: IncrementTargetTemperatureConfirmation - response message
   }
 }
 
-Example 4: TargetOffLineError - Error response message
+Example 4: TargetOffLineError - error response message
 {
   "header": {
     "messageId": "fef949b7-eb94-4bda-a417-2cfb604194c3",
@@ -138,11 +138,11 @@ Example 4: TargetOffLineError - Error response message
 {% endraw %}
 
 #### See also
-* [Building Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)
+* [Creating a Clova Home extension](/CEK/Guides/Build_Clova_Home_Extension.md)
 * [Interface](#ClovaHomeExtInterface)
 
 ### Interface {#ClovaHomeExtInterface}
-Clova Home extension messages are categorized into the following interfaces.
+The interface of Clova Home extension messages are classified as follows:
 
 * Interface
   * [Discovery interface](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md)
@@ -151,3 +151,4 @@ Clova Home extension messages are categorized into the following interfaces.
 
 * Shared objects
   * [Shared objects](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
+
