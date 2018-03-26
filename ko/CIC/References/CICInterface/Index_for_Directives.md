@@ -7,6 +7,7 @@
 | Alerts             | [`StopAlert`](/CIC/References/CICInterface/Alerts.md#StopAlert)                 | 클라이언트에게 특정 알람을 중지하도록 지시합니다.  |
 | Alerts             | [`SynchronizeAlert`](/CIC/References/CICInterface/Alerts.md#SynchronizeAlert)   | 클라이언트에게 `payload` 필드에 있는 사용자의 알람 데이터를 동기화하도록 지시합니다.  |
 | AudioPlayer        | [`ClearQueue`](/CIC/References/CICInterface/AudioPlayer.md#ClearQueue)          | 클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다.                              |
+| AudioPlayer        | [`ExpectReportPlaybackState`](/CIC/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState) | 클라이언트에게 현재 재생 상태를 보고하도록 지시합니다. 클라이언트는 이 지시 메시지를 받으면 [`AudioPlayer.ReportPlaybackState`](/CIC/References/CICInterface/AudioPlayer.md#ReportPlaybackState) 이벤트 메시지를 CIC로 전송해야 합니다. |
 | AudioPlayer        | [`Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)                      | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                          |
 | AudioPlayer        | [`StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)    | [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
 | Clova              | [`ExpectLogin`](/CIC/References/CICInterface/Clova.md#ExpectLogin)              | 클라이언트에게 사용자로부터 {{ book.OrientedService }} 계정 인증(login)을 받도록 지시합니다.          |

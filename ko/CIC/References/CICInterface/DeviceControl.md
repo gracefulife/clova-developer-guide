@@ -41,7 +41,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 
 ![](/CIC/Resources/Images/CIC_DeviceControl_Work_Flow2.png)
 
-1. 클라이언트(주로 Clova 앱)가 [`DeviceControl.ReqeustStateSynchronization`](#ReqeustStateSynchronization) 이벤트 메시지를 CIC에게 전송합니다.
+1. 클라이언트(주로 Clova 앱)가 [`DeviceControl.RequestStateSynchronization`](#RequestStateSynchronization) 이벤트 메시지를 CIC에게 전송합니다.
 2. CIC는 사용자 계정에 등록된 모든 클라이언트(Clova 앱 제외)에게 [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)로 전송합니다.
 3. [`DeviceControl.ExpectReportState`](#ExpectReportState) 지시 메시지를 수신한 클라이언트는 [`DeviceControl.ReportState`](#ReportState) 이벤트 메시지를 CIC에게 전송하여 현재 자신의 상태를 보고 해야 합니다.
 4. CIC는 수집된 클라이언트 상태 정보를 [`DeviceControl.SynchronizeState`](#SynchronizeState) 지시 메시지를 [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection)을 이용하여 Clova 앱에게 보냅니다.
