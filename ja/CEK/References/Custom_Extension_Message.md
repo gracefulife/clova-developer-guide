@@ -531,5 +531,5 @@ SpeechInfoObjectオブジェクトはレスポンスメッセージの`response.
 {% endraw %}
 
 #### 次の項目も参照してください。
-* [Custom　Extensionレスポンスを返す](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
+* [Custom Extensionレスポンスを返す](/CEK/Guides/Build_Custom_Extension.md#ReturnCustomExtensionResponse)
 * [コンテンツテンプレート](/CIC/References/Content_Templates.md)
