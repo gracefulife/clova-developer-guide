@@ -1,4 +1,4 @@
-﻿## Clova Home Extensionメッセージ {#ClovaHomeExtMessage}
+## Clova Home Extensionメッセージ {#ClovaHomeExtMessage}
 Clova Home Extensionメッセージは、IoTデバイスを制御するExtensionがCEKと情報のやり取りをする際、専用で使用するメッセージ仕様です。ここでは、Clova Home Extensionメッセージの[メッセージフォーマット](#ClovaHomeExtMessageFormat)と[インターフェース](#ClovaHomeExtInterface)について説明します。
 
 ### メッセージフォーマット {#ClovaHomeExtMessageFormat}
@@ -151,4 +151,3 @@ Clova Home Extensionメッセージのインターフェースは、次のよう
 
 * 共有オブジェクト
   * [共有オブジェクト](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
-
