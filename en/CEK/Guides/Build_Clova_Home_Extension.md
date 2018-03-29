@@ -1,17 +1,17 @@
-# Building Clova Home extension
+# Building a Clova Home extension
 
-Clova Home extension lets you provide remote control capabilities for home IoT devices through a 3rd party service. Clova Home extensions must provide CEK with information on which IoT devices are controllable by a user. Also, when it receives IoT device control requests from CEK, it must perform appropriate actions and return results. This picture shows how a Clova Home extension works.
+The Clova Home extension provides remote control features for home IoT devices through 3rd party IoT services. The Clova Home extension must provide CEK with the information of IoT devices which can be controlled by the user. Also, when it receives a control request for an IoT device from CEK, it must perform an appropriate action and return results. The diagram below shows the operation of the Clova Home extension.
 
 ![](/CEK/Resources/Images/CEK_Clova_Home_Extension_Operation_Structure.png)
 
-The following explains what preparations are required before you start building your Clova Home extension, and which messages your extension exchanges with CEK and how it performs necessary actions during the process.
+This section explains the prerequisites for creating a Clova Home extension, the types of messages exchanged with CEK, and the method of operation.
 
-The following topics provide essential information for building a Clova Home extension.
+The information is provided for the Clova Home extension developers in the following order:
 
-1. [Preparation](#Preparation)
-2. [Providing device discovery](#ProvideDeviceDiscovery)
-3. [Handling Clova Home extension request](#HandleClovaHomeExtensionRequest)
-4. [Returning Clova Home extension response](#ReturnClovaHomeExtensionResponse)
+1. [Prerequisites](#Preparation)
+2. [Device discovery](#ProvideDeviceDiscovery)
+3. [Handling a Clova Home extension request](#HandleClovaHomeExtensionRequest)
+4. [Returning Clova Home extension responses](#ReturnClovaHomeExtensionResponse)
 
 {% include "/CEK/Guides/BuildClovaHomeExtension/Preparation.md" %}
 

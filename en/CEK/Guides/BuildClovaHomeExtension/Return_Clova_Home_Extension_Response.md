@@ -1,15 +1,14 @@
-## Returning Clova Home extension response {#ReturnClovaHomeExtensionResponse}
+## Returning Clova Home extension responses {#ReturnClovaHomeExtensionResponse}
 
-You must have your Clova Home extension return processing results back to CEK (HTTPS response). Responses from a Clova Home extension have the following characteristics.
+A Clova Home extension developer must design the code to return the processed result to CEK (HTTPS response). Responses from the Clova home extension have the following characteristics:
 
-* When the request is about obtaining information on appliance states, the information is obtained from the IoT service, which means the information may not reflect actual current states.
-* When the request is about controlling an appliance, your extension does not return its final state after necessary change has been made. Instead, the returned response just verifies that the user's request has been successfully forwarded to the IoT service.
-* When the request has been processed properly, you must respond to the [Clova Home extension request](#HandleClovaHomeExtensionRequest) using an appropriate [interface](/CEK/References/CEK_API.md#ClovaHomeExtInterface).
+* When the device state information is requested, the response may be different from the actual, up-to-date state of the device because the information is obtained from the IoT service.
+* When a device control is requested, the response does not return the final state of the device but only whether the user request was delivered successfully to the IoT service.
+* When the request is processed successfully, the response must use an appropriate [interface](/CEK/References/CEK_API.md#ClovaHomeExtInterface) for the [Clova Home extension request](#HandleClovaHomeExtensionRequest) as shown below.
 
-When [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) (request to control an appliance such as "Turn on the light") is forwarded to an IoT service and the IoT service responds that the request has been processed properly, you must return the result back to CEK with a [`TurnOnConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnConfirmation) message.
+When a control request, such as "Turn on the light” ([`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest)) is sent to the IoT service and the service responds that the request has been processed properly, the extension must send the result to CEK using the [`TurnOnConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnConfirmation) message as shown below.
 
 {% raw %}
-
 ```json
 {
   "header": {
@@ -21,15 +20,13 @@ When [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#
   "payload": {}
 }
 ```
-
 {% endraw %}
 
-If any error occurs while processing user requests, you must return an appropriate error message to CEK using the [Error API](/CEK/References/ClovaHomeInterface/Error_Interfaces.md). Clova processes errors accordingly based on the API it has received.
+If an error occurs while performing the user request, the extension must send the error to CEK using the [Error API](/CEK/References/ClovaHomeInterface/Error_Interfaces.md). Clova performs error handling according to the received API.
 
-This is an example of when a `TargetOfflineError` message is returned due to a connection problem with an appliance.
+Below is an example of sending a `TargetOfflineError` error message due to failing to connect to the device.
 
 {% raw %}
-
 ```json
 {
   "header": {
@@ -42,11 +39,10 @@ This is an example of when a `TargetOfflineError` message is returned due to a c
   }
 }
 ```
-
 {% endraw %}
 
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>Responses must use HTTP 200 OK even when they return an error message.</p>
+<p>You must use the HTTP 200 OK response even when sending an error message.</p>
 </div>
