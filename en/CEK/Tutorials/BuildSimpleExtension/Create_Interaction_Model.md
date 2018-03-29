@@ -30,14 +30,14 @@ Follow the steps below to configure the user utterances to be processed with the
 ### Building and testing
 To check that the interaction model is operating as intended, build and test the interaction model.
 
-1. Click the **{{ book.DevConsole.BuildButton }}** button on the upper-left corner of the **Custom extension** screen.
+1. Click the **{{ book.DevConsole.cek_builder_menu_build}}** button on the upper-left corner of the **Custom extension** screen.
 
 	<div class="note">
 	  <p><strong>Note!</strong></p>
-		<p>The build takes around 3-5 minutes to complete. Once the build starts, the button changes to <strong>{{ book.DevConsole.IsBuilding }}</strong>. It returns to a <strong>{{ book.DevConsole.BuildButton }}</strong> button again once the build is complete.</p>
+		<p>The build takes around 3-5 minutes to complete. Once the build starts, the button changes to <strong>{{ book.DevConsole.IsBuilding }}</strong>. It returns to a <strong>{{ book.DevConsole.cek_builder_menu_build}}</strong> button again once the build is complete.</p>
 	</div>
 
-2. Once the build is complete, click the **{{ book.DevConsole.cek_test }}** menu below the **{{ book.DevConsole.BuildButton }}** button.
+2. Once the build is complete, click the **{{ book.DevConsole.cek_test }}** menu below the **{{ book.DevConsole.cek_builder_menu_build}}** button.
 
 3. Enter the sentence to test in the **{{ book.DevConsole.cek_builder_test_expression_title }}** field. For example, enter "Roll the dice"
 4. Press enter or click the **{{ book.DevConsole.cek_builder_test_request_test }}** button.
