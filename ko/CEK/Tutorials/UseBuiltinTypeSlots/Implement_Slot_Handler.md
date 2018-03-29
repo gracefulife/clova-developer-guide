@@ -19,7 +19,7 @@ intentRequest(cekResponse) {
   const slots = this.request.intent.slots
 
   switch (intent) {
-    case 'ThrowDiceIntent':
+    case "ThrowDiceIntent":
       let diceCount = 1
       if (!!slots) {
         const diceCountSlot = slots.diceCount

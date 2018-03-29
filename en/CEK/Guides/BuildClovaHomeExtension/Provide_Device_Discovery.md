@@ -1,12 +1,11 @@
-## Providing device discovery {#ProvideDeviceDiscovery}
+## Device discovery {#ProvideDeviceDiscovery}
 
-When a user enables an IoT service, the client app or the app paired with the client device must provide a list of IoT appliances registered on the user's account. When your Clova Home extension receives a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message from CEK (HTTPS request), it obtains a list of appliances registered on the user's account from the IoT service using an access token for the account. Then, your Clova Home extension returns a [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) message (HTTPS response). See [Clova Home extension message](/CEK/References/CEK_API.md#ClovaHomeExtMessage) for more details on messages sent and received between CEK and a Clova Home extension.
+If the user sets to use the IoT service, a client app or an app paired with a client device must provide the IoT device list registered to the user account. Clova Home extension receives a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message from CEK (HTTPS request). Then the Clova Home extension must import the IoT device list registered to the user account from the IoT service using the access token of user account and respond using the [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) message (HTTPS response). For more information on the messages exchanged between CEK and Clova Home extension, see [Clova Home extension message](/CEK/References/CEK_API.md#ClovaHomeExtMessage).
 
 ![](/CEK/Resources/Images/CEK_Clova_Home_Extension_Sequence_Diagram.png)
 
-This is an example of a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message sent to a Clova Home extension.
+Below is an example of the [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message received by Clova Home extension.
 {% raw %}
-
 ```json
 {
     "header": {
@@ -20,15 +19,13 @@ This is an example of a [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeI
     }
 }
 ```
-
 {% endraw %}
 
-When the Clova Home extension receives this message, it finds the user account for the access token and returns the list of appliances registered on the user's account, using a [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) message. The message contains details of each appliance, such as appliance identifiers, appliance names, appliance availability (whether online or not), and supported actions (`actions`).
+After receiving the above message, the Clova Home extension must identify the user account using the previously obtained access token and return the device list registered in that account using the [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse) message. The device list includes information, such as device identifier, name, type, availability (online/offline), and supported actions (`actions`) for each device.
 
-This is an example of a `DiscoverAppliancesResponse` message which a Clova Home extension returns to CEK.
+Below is an example of the Clova Home extension responding to CEK using the `DiscoverAppliancesResponse` message.
 
 {% raw %}
-
 ```json
 {
   "header": {
@@ -42,10 +39,10 @@ This is an example of a `DiscoverAppliancesResponse` message which a Clova Home 
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart light",
+        "modelName": "Smart lamp",
         "version": "v1.0",
-        "friendlyName": "Light in living room",
-        "friendlyDescription": "Smartphone-controllable light",
+        "friendlyName": "Living room lamp",
+        "friendlyDescription": “A lamp that can be controlled using a smartphone",
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -62,10 +59,10 @@ This is an example of a `DiscoverAppliancesResponse` message which a Clova Home 
       {
         "applianceId": "device-002",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart Plug",
+        "modelName": "Smart plug",
         "version": "v1.0",
-        "friendlyName": "Plug in kitchen",
-        "friendlyDescription": "Energy saving plug",
+        "friendlyName": "Kitchen plug",
+        "friendlyDescription": "An energy-saving plug",
         "isReachable": true,
         "actions": [
           "HealthCheck",
@@ -80,5 +77,4 @@ This is an example of a `DiscoverAppliancesResponse` message which a Clova Home 
   }
 }
 ```
-
 {% endraw %}

@@ -1,5 +1,5 @@
 ﻿## Returning a custom extension response {#ReturnCustomExtensionResponse}
-After [handling the request message](#HandleCustomExtensionRequest), you must return the HTTPS [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) to the CEK again. The details of the response may vary depending on the type of request message, but the structure of the response message does not vary much. Below is a response message sent after handling a LaunchRequest type request, where a user says “Let’s talk in English.”
+After [handling the request message](#HandleCustomExtensionRequest), you must return the HTTPS [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) to the CEK again. The details of the response may vary depending on the type of request message, but the structure of the response message does not vary much. Below is a response message sent after handling a LaunchRequest type request, where a user says "Let’s talk in English."
 
 {% raw %}
 ```json
@@ -49,7 +49,7 @@ The response message can be written to output multiple sentences based on the ci
         {
           "type": "PlainText",
           "lang": "ko",
-          "value": “I will sing a song."
+          "value": "I will sing a song."
         },
         {
           "type": "URL",
@@ -69,7 +69,7 @@ The response message can be written to output multiple sentences based on the ci
 The `response.outputSpeech` fields represent the following information:
 
 * `response.outputSpeech.type`: A complex type (SpeechList) of audio data.
-* `response.outputSpeech.values[0]`: A regular text type of audio data. It has been set to say “I will sing a song" in Korean.
+* `response.outputSpeech.values[0]`: A regular text type of audio data. It has been set to say "I will sing a song" in Korean.
 * `response.outputSpeech.values[1]`: A URL type of audio data. It has been set to play a file from the URL entered in the `value` field.
 
 <div class="note">
@@ -130,7 +130,7 @@ To display data on the screen of a client device or client app in addition to ou
           },
           "referenceText": {
             "type": "string",
-            "value": “NAVER search result”
+            "value": "NAVER search result"
           },
           "referenceUrl": {
             "type": "url",
@@ -178,7 +178,7 @@ To display data on the screen of a client device or client app in addition to ou
           },
           "referenceText": {
             "type": "string",
-            "value": “NAVER search result”
+            "value": "NAVER search result"
           },
           "referenceUrl": {
             "type": "url",

@@ -1,10 +1,10 @@
-﻿You must change the code so that the Sample Dice extension can handle the built-in intent.
+﻿You must change the code so that the Sample Dice extension can handle built-in intents.
 
-To understand the basic handling method, set it to handle the built-in intent of the help request only.
-The built-in intent of the help request is sent when the user says words, such as "How do I use it?" or "Give me help." It uses the name, `Clova.GuideIntent`.
+To help you understand the basic handling method, this section of the tutorial will have you set your extension to handle the help request built-in intent only.
+The help request built-in intent is sent when user utterances contain phrases such as "How do I use this?" or "I need help." It uses the name, `Clova.GuideIntent`.
 
-In order to handle this built-in intent, we will reuse the repository of the [first tutorial](/CEK/Tutorials/Build_Simple_Extension.md).
-Go to the local repository and switch to the `tutorial2` branch as shown below:
+In order to handle this built-in intent, we will reuse the repository from the [first tutorial](/CEK/Tutorials/Build_Simple_Extension.md).
+Go to the local repository and check out the `tutorial2` branch as shown below:
 
 {% raw %}
 ```bash
@@ -25,12 +25,11 @@ intentRequest(cekResponse) {
     ...
     case 'Clova.GuideIntent':
     default:
-      cekResponse.setSimpleSpeechText (Try saying “Throw one dice.”)
+      cekResponse.setSimpleSpeechText (Try saying "Throw one die.")
   }
   ...
 }
 ```
 {% endraw %}
 
-As shown from the codes above, the intent is extracted from the request message sent from Clova. If the intent name is `Clova.GuideIntent`, it prompts the user to try saying “Throw one dice.”
-
+As shown from the codes above, the intent is extracted from the request message sent from Clova. If the intent name is `Clova.GuideIntent`, it prompts the user to try saying "Throw one die."

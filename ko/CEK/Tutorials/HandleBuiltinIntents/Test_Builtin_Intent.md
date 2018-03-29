@@ -16,7 +16,7 @@
 4. 빌드가 끝난 후, 왼쪽의 메뉴 목록에서 **{{ book.DevConsole.cek_test }}** 메뉴를 누릅니다.
 5. **{{ book.DevConsole.cek_builder_test_expression_title }}**에 도움말을 요청하는 문장을 입력합니다. 예를 들어, "사용법 알려줘"라고 입력합니다.
 6. 엔터키 또는 **{{ book.DevConsole.cek_builder_test_request_test }}** 버튼을 누릅니다.
-7. **{{ book.DevConsole.cek_builder_test_result_title }}**의 **{{ book.DevConsole.cek_builder_test_intent_result }}** 항목에 'Clova.GuideIntent'라고 나타나는지 확인합니다.
+7. **{{ book.DevConsole.cek_builder_test_result_title }}**의 **{{ book.DevConsole.cek_builder_test_intent_result }}** 항목에 "Clova.GuideIntent"라고 나타나는지 확인합니다.
 
 	<img src="/CEK/Resources/Images/CEK_Tutorial_Builtin_Intent_Test.png" style="max-width:800px;"/>
 

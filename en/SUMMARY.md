@@ -158,7 +158,7 @@
     * [Invoking extensions after account linking](/CEK/Guides/Link_User_Account.md#ExtensionInvokingAfterAccountLinking)
   * [Applying account linking](/CEK/Guides/Link_User_Account.md#ApplyAccountLinking)
     * [Building an authentication server](/CEK/Guides/Link_User_Account.md#BuildAuthServer)
-    * [Implementing verification on account permissions](/CEK/Guides/Link_User_Account.md#AddValidationLogic)
+    * [Implementing account permissions verification](/CEK/Guides/Link_User_Account.md#AddValidationLogic)
     * [Registering account linking information](/CEK/Guides/Link_User_Account.md#RegisterAccountLinkingInfo)
 * [Extension examples](/CEK/Examples/Extension_Examples.md)
   * [Magic ball](/CEK/Examples/Extension_Examples.md#MagicBall)
