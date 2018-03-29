@@ -1,5 +1,5 @@
-﻿# CEK API reference
-CEK API is the message specifications for exchanging information between CEK and an extension. The following covers topics related to CEK API.
+# CEK API reference
+The CEK API contains message specifications for exchanging information between CEK and extensions. The following covers topics related to the CEK API.
 * [HTTP messages](#HTTPMessage)
 * [Custom extension messages](#CustomExtMessage)
 * [Clova Home extension messages](#ClovaHomeExtMessage)
@@ -9,4 +9,3 @@ CEK API is the message specifications for exchanging information between CEK and
 {% include "/CEK/References/Custom_Extension_Message.md" %}
 
 {% include "/CEK/References/Clova_Home_Extension_Message.md" %}
-
