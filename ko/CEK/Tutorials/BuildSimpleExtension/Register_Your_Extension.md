@@ -2,8 +2,8 @@
 주요 항목은 아래와 같습니다.
 
 * Extension 정보
-	* **{{ book.DevConsole.cek_id }}**: extension의 고유한 ID 값으로, 일반적으로 패키지 이름과 extension 이름의 조합으로 작성합니다. 샘플 주사위 extension의 ID는 'my.clova.extension.sampledice'로 입력합니다.
-	* **{{ book.DevConsole.cek_invocation_name }}**: extension을 실행할 때 부르는 이름으로 Clova 앱이나 스피커 형태의 기기에서 음성 인식이 잘 되는 단어를 선택합니다. 샘플 주사위 extension의 호출 이름은 '샘플 주사위' 입니다.
+	* **{{ book.DevConsole.cek_id }}**: extension의 고유한 ID 값으로, 일반적으로 패키지 이름과 extension 이름의 조합으로 작성합니다. 샘플 주사위 extension의 ID는 "my.clova.extension.sampledice"로 입력합니다.
+	* **{{ book.DevConsole.cek_invocation_name }}**: extension을 실행할 때 부르는 이름으로 Clova 앱이나 스피커 형태의 기기에서 음성 인식이 잘 되는 단어를 선택합니다. 샘플 주사위 extension의 호출 이름은 "샘플 주사위" 입니다.
 
 * 서버 연동 설정
 	* **{{ book.DevConsole.cek_service_endpoint_url }}**: Clova와 통신할 extension의 REST API 서버로, 외부에서 접근할 수 있는 URL이어야 합니다.

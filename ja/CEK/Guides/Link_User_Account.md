@@ -78,7 +78,7 @@ Extensionにアカウント連携を適用するには、ユーザーがアカ�
 |---------------|---------------------------------------------|
 | `state`         | 認証セッションの期限切れを確認するステータス。この値は5分後に期限が切れるため、ユーザーが5分以内に認証を完了しなければ、再度認証を行う必要があります。 |
 | `client_id`     | Clovaが外部サービスのアクセストークンを取得するために使用するID。開発者はClova Developer Centerであらかじめ`cliend_id`を登録しておく必要があります。 |
-| `response_type` |OAuth 2.0認可グラントタイプ(`"code"`または`"token"`)を定義したパラメータ。高いセキュリティを必要とする場合、`"code"`タイプを使用します。また、Clova Home Extensionは常に`"code"`タイプを使用します。Clova Developer Centerであらかじめ`reponse_type`を登録しておく必要があります。 |
+| `response_type` |OAuth 2.0認可グラントタイプ(`"code"`または`"token"`)を定義したパラメータ。高いセキュリティを必要とする場合、`"code"`タイプを使用します。また、Clova Home Extensionは常に`"code"`タイプを使用します。Clova Developer Centerであらかじめ`response_type`を登録しておく必要があります。 |
 | `scope`         | OAuthの`scope`フィールドアクセスレベルを定義できます。Clova Developer Centerであらかじめ`scope`を登録しておく必要があります。 |
 | `redirect_uri`  |アカウント認証後にリダイレクトするURLです。`redirect_uri`の値は、Clova Developer CenterでExtensionを登録する際に、[アカウント連携の設定](/DevConsole/Guides/CEK/Register_Extension.md#SetAccountLinking)から確認できます。現在、`{{ book.RedirectURLforAccountLinking }}`が使用されています。 |
 
