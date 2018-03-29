@@ -41,8 +41,8 @@
 | PlaybackController | [`Replay`](/CIC/References/CICInterface/PlaybackController.md#Replay)           | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.                                     |
 | PlaybackController | [`Resume`](/CIC/References/CICInterface/PlaybackController.md#Resume)           | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                                            |
 | PlaybackController | [`Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)               | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                                            |
-| PlaybackController | [`TurnOffRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode) | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                                  |
-| PlaybackController | [`TurnOnRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOnRepeatMode) | 클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다.                                    |
+| PlaybackController | [`TurnOffRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode) | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 끄도록 지시합니다.                                  |
+| PlaybackController | [`TurnOnRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOnRepeatMode) | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 켜도록 지시합니다.                                    |
 | PlaybackController | [`Unmute`](/CIC/References/CICInterface/PlaybackController.md#Unmute)           | 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.                                           |
 | PlaybackController | [`VolumeDown`](/CIC/References/CICInterface/PlaybackController.md#VolumeDown)   | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                                                   |
 | PlaybackController | [`VolumeUp`](/CIC/References/CICInterface/PlaybackController.md#VolumeUp)       | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                                                   |

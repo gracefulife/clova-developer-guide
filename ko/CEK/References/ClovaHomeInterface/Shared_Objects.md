@@ -3,30 +3,32 @@
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
-| [AirQualityInfoObject](#AirQualityInfoObject)         | 공기질 정보가 담긴 객체            |
-| [ApplianceInfoObject](#ApplianceInfoObject)           | IoT 기기의 정보가 담긴 객체        |
-| [BatteryInfoObject](#BatteryInfoObject)               | 배터리 정보가 담긴 객체            |
-| [BillInfoObject](#BillInfoObject)                     | 요금 정보가 담긴 객체             |
-| [BrightnessInfoObject](#BrightnessInfoObject)         | 조명이나 화면의 밝기 정보가 담긴 객체 |
-| [ColorInfoObject](#ColorInfoObject)                   | 대상기기의 조명이나 화면, 전등의 색 정보가 담긴 객체  |
+| [AirQualityInfoObject](#AirQualityInfoObject)             | 공기질 정보가 담긴 객체            |
+| [ApplianceInfoObject](#ApplianceInfoObject)               | IoT 기기의 정보가 담긴 객체        |
+| [BatteryInfoObject](#BatteryInfoObject)                   | 배터리 정보가 담긴 객체            |
+| [BillInfoObject](#BillInfoObject)                         | 요금 정보가 담긴 객체             |
+| [BrightnessInfoObject](#BrightnessInfoObject)             | 조명이나 화면의 밝기 정보가 담긴 객체 |
+| [ColorInfoObject](#ColorInfoObject)                       | 대상기기의 조명이나 화면, 전등의 색 정보가 담긴 객체  |
 | [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | 대상기기의 조명이나 화면, 전등의 색온도 정보가 담긴 객체  |
-| [ConsumptionInfoObject](#ConsumptionInfoObject)       | 에너지 사용량 정보가 담긴 객체       |
-| [CustomInfoObject](#CustomInfoObject)                 | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |
-| [ExpendableInfoObject](#ExpendableInfoObject)         | 기기 소모품의 사용량이나 남은 수명 정보가 담긴 객체  |
-| [FineDustInfoObject](#FineDustInfoObject)             | 미세 먼지 정보가 담긴 객체          |
-| [IntensityLevelInfoObject](#IntensityLevelInfoObject) | 압력이나 수압 세기 정보가 담긴 객체   |
-| [ModeInfoObject](#ModeInfoObject)                     | 운전 모드 정보가 담긴 객체          |
-| [HumidityInfoObject](#HumidityInfoObject)             | 습도 정보가 담긴 객체              |
-| [PeriodInfoObject](#PeriodInfoObject)                 | 대상 기간에 대한 정보를 담고 있는 객체 |
-| [PhaseInfoObject](#PhaseInfoObject)                   | 기기 동작의 단계 정보가 담긴 객체     |
-| [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | 누진세 단계 정보  |
-| [SpeedInfoObject](#SpeedInfoObject)                   | 속도 정보가 담긴 객체              |
-| [TemperatureInfoObject](#TemperatureInfoObject)       | 온도 정보를 담고 있는 객체          |
-| [TimeAmountInfoObject](#TimeAmountInfoObject)         | 경과 시간이나 남은 시간 등 시간의 양에 대한 정보를 담고 있는 객체  |
-| [TVChannelNameInfoObject](#TVChannelNameInfoObject)   | TV 채널의 이름 정보가 담긴 객체      |
-| [TVChannelInfoObject](#TVChannelInfoObject)           | TV 채널 정보가 담긴 객체           |
-| [UltraFineDustInfoObject](#UltraFineDustInfoObject)   | 초미세 먼지 정보가 담긴 객체         |
-| [VolumeInfoObject](#VolumeInfoObject)                 | 볼륨 정보를 담고 있는 객체          |
+| [ConsumptionInfoObject](#ConsumptionInfoObject)           | 에너지 사용량 정보가 담긴 객체       |
+| [CustomInfoObject](#CustomInfoObject)                     | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |
+| [ExpendableInfoObject](#ExpendableInfoObject)             | 기기 소모품의 사용량이나 남은 수명 정보가 담긴 객체  |
+| [FineDustInfoObject](#FineDustInfoObject)                 | 미세 먼지 정보가 담긴 객체          |
+| [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | 압력이나 수압 세기 정보가 담긴 객체   |
+| [ModeInfoObject](#ModeInfoObject)                         | 운전 모드 정보가 담긴 객체          |
+| [HumidityInfoObject](#HumidityInfoObject)                 | 습도 정보가 담긴 객체              |
+| [PeriodInfoObject](#PeriodInfoObject)                     | 기간 정보를 담고 있는 객체     |
+| [PhaseInfoObject](#PhaseInfoObject)                       | 기기 동작의 단계 정보가 담긴 객체     |
+| [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | 누진세 단계 정보       |
+| [SittingStateInfoObject](#SittingStateInfoObject)         | 스마트 의자와 같은 기기에 대한 사용자의 착석 정보가 담긴 객체  |
+| [SleepScoreInfoObject](#SleepScoreInfoObject)             | 수면 점수 정보가 담긴 객체          |
+| [SpeedInfoObject](#SpeedInfoObject)                       | 속도 정보가 담긴 객체              |
+| [TemperatureInfoObject](#TemperatureInfoObject)           | 온도 정보를 담고 있는 객체          |
+| [TimeAmountInfoObject](#TimeAmountInfoObject)             | 경과 시간이나 남은 시간 등 시간의 양에 대한 정보를 담고 있는 객체  |
+| [TVChannelNameInfoObject](#TVChannelNameInfoObject)       | TV 채널의 이름 정보가 담긴 객체      |
+| [TVChannelInfoObject](#TVChannelInfoObject)               | TV 채널 정보가 담긴 객체           |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject)       | 초미세 먼지 정보가 담긴 객체         |
+| [VolumeInfoObject](#VolumeInfoObject)                     | 볼륨 정보를 담고 있는 객체          |
 
 ## AirQualityInfoObject {#AirQualityInfoObject}
 공기질 정보를 담고 있는 객체입니다. 기기가 측정한 공기질 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -944,13 +946,14 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 ## PeriodInfoObject {#PeriodInfoObject}
 
-사용량, 예상 요금 등을 측정할 때 측정 기간이 되는 정보를 담고 있는 객체입니다.
+사용량, 예상 요금 등을 측정 데이터를 조회할 때 조회 기간이 되는 정보를 담고 있는 객체입니다.
 
 ### Object fields
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `value`       | string  | 기간에 대한 정보 값.<ul><li><code>"today"</code>: 오늘 0시부터 현재 시각까지의 기간</li><li><code>"yesterday"</code>: 어제 하루동안의 기간</li><li><code>"thisWeek"</code>: 이번주 일요일 0시부터 현재 시각까지의 기간</li><li><code>"lastWeek"</code>: 지난 주 1주동안의 기간</li><li><code>"thisMonth"</code>: 이번 달 1일 0시부터 현재 시각까지의 기간</li><li><code>"lastMonth"</code>: 지난 달 1달 동안의 기간</li></ul>        | 필수/항상      |
+| `end`         | string  | 기간의 종료 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)    | 필수/항상      |
+| `start`       | string  | 기간의 시작 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)    | 필수/항상      |
 
 ### Object Example
 {% raw %}
@@ -970,7 +973,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
       "applianceId": "device-028"
     },
     "period": {
-      "value": "today"
+      "start": "2018-03-28T00:10:00+09:00",
+      "end": "2018-03-28T23:59:59+09:00"
     }
   }
 }
@@ -1069,6 +1073,80 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### See also
 * [`GetProgressiveTaxBracketRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketRequest)
 * [`GetProgressiveTaxBracketResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketResponse)
+
+## SittingStateInfoObject {#SittingStateInfoObject}
+스마트 의자와 같은 기기에 대한 사용자의 착성 정보가 담긴 객체입니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | boolean | 착석 여부<ul><li><code>true</code>: 착석 중인 상태</li><li><code>false</code>: 착석 중이지 않은 상태</li></ul>       | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: GetSittingStateResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetSittingStateResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "sittingState": {
+      "value": true
+    },
+    "recentlySittingPeriod": {
+      "start": "2018-03-28T00:10:00+09:00",
+      "end": "2018-03-28T23:59:59+09:00"
+    },
+    "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetSittingStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSittingStateRequest)
+* [`GetSittingStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSittingStateResponse)
+
+## SleepScoreInfoObject {#SleepScoreInfoObject}
+수면 점수에 대한 정보를 담고 있는 객체입니다. 기간에 대한 결과일 경우 평균 값입니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | number  | 수면 점수                     | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: GetSleepScoreResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetSleepScoreResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "sleepScore": {
+      "value": 80,
+    },
+    "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetSleepScoreRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepScoreRequest)
+* [`GetSleepScoreResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepScoreResponse)
 
 ## SpeedInfoObject {#SpeedInfoObject}
 속도 정보를 담고 있는 객체입니다. 변경할 속도의 크기나 변경 전후의 희망 속도를 나타낼 때 사용되며 정수로 표현됩니다.

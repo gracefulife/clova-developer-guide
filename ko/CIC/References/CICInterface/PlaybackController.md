@@ -4,21 +4,33 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`CustomCommandIssued`](#CustomCommandIssued)  | Event  | 사용자가 클라이언트 기기의 단축 버튼 중 하나를 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |
-| [`Mute`](#Mute)                           | Directive | 클라이언트에게 오디오 플레이어의 볼륨을 음소거하도록 지시합니다.            |
-| [`Next`](#Next)                           | Directive | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.   |
-| [`NextCommandIssued`](#NextCommandIssued) | Event     | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
-| [`Pause`](#Pause)                         | Directive | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.        |
-| [`Previous`](#Previous)                   | Directive | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다. |
+| [`CustomCommandIssued`](#CustomCommandIssued)  | Event     | 사용자가 클라이언트 기기의 단축 버튼 중 하나를 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |
+| [`ExpectNextCommand`](#ExpectNextCommand)      | Directive |   |
+| [`ExpectPauseCommand`](#ExpectPauseCommand)    | Directive |   |
+| [`ExpectPlayCommand`](#ExpectPlayCommand)      | Directive |   |
+| [`ExpectPreviousCommand`](#ExpectPreviousCommand)  | Directive |   |
+| [`ExpectResumeCommand`](#ExpectResumeCommand)  | Directive |   |
+| [`ExpectStopCommand`](#ExpectStopCommand)      | Directive |   |
+| [`Mute`](#Mute)                                | Directive | 클라이언트에게 오디오 플레이어의 볼륨을 음소거하도록 지시합니다.            |
+| [`Next`](#Next)                                | Directive | 클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다.   |
+| [`NextCommandIssued`](#NextCommandIssued)      | Event     | 사용자가 클라이언트의 기기에서 다음(Next)에 해당하는 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
+| [`Pause`](#Pause)                              | Directive | 클라이언트에게 재생 중인 오디오 스트림을 일시 정지하도록 지시합니다.        |
+| [`PauseCommandIssued`](#PauseCommandIssued)    | Event     |   |
+| [`PlayCommandIssued`](#PlayCommandIssued)      | Event     |   |
+| [`Previous`](#Previous)                        | Directive | 클라이언트에게 재생 대기열에 있는 이전 오디오 스트림을 재생하도록 지시합니다. |
 | [`PreviousCommandIssued`](#PreviousCommandIssued) | Event | 사용자가 클라이언트의 기기에서 이전(Previous)에 해당하는 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. |
-| [`Replay`](#Replay)                       | Directive | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.         |
-| [`Resume`](#Resume)                       | Directive | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                |
-| [`Stop`](#Stop)                           | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                |
-| [`TurnOffRepeatMode`](#TurnOffRepeatMode) | Directive | 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.                  |
-| [`TurnOnRepeatMode`](#TurnOnRepeatMode)   | Directive | 클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다.                  |
-| [`Unmute`](#Unmute)                       | Directive | 클라이언트에게 오디오 플레이어 볼륨의 음소거를 해제하도록 지시합니다.              |
-| [`VolumeDown`](#VolumeDown)               | Directive | 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다.                      |
-| [`VolumeUp`](#VolumeUp)                   | Directive | 클라이언트에게 오디오 플레이어 볼륨을 높이도록 지시합니다.                      |
+| [`Replay`](#Replay)                            | Directive | 클라이언트에게 오디오 스트림을 처음부터 다시 재생하도록 지시합니다.         |
+| [`Resume`](#Resume)                            | Directive | 클라이언트에게 오디오 스트림 재생을 재개하도록 지시합니다.                |
+| [`ResumeCommandIssued`](#ResumeCommandIssued)  | Directive |   |
+| [`SetRepeatMode`](#SetRepeatMode)              | Directive |   |
+| [`SetRepeatModeCommandIssued`](#SetRepeatModeCommandIssued) | Event |   |
+| [`Stop`](#Stop)                                | Directive | 클라이언트에게 오디오 스트림 재생을 중지하도록 지시합니다.                |
+| [`StopCommandIssued`](#StopCommandIssued)      | Event  |   |
+| [`TurnOffRepeatMode`](#TurnOffRepeatMode)      | Directive | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 끄도록 지시합니다.                  |
+| [`TurnOnRepeatMode`](#TurnOnRepeatMode)        | Directive | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 켜도록 지시합니다.                  |
+| [`Unmute`](#Unmute)                            | Directive | 클라이언트에게 오디오 플레이어 볼륨의 음소거를 해제하도록 지시합니다.              |
+| [`VolumeDown`](#VolumeDown)                    | Directive | 클라이언트에게 오디오 플레이어 볼륨을 낮추도록 지시합니다.                      |
+| [`VolumeUp`](#VolumeUp)                        | Directive | 클라이언트에게 오디오 플레이어 볼륨을 높이도록 지시합니다.                      |
 
 ## CustomCommandIssued event {#CustomCommandIssued}
 사용자가 클라이언트 기기의 단축 버튼 중 하나를 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. Clova는 사용자가 클라이언트에 설정한 임의의 동작을 수행해줍니다. 예를 들어, 사용자가 특정 단축 버튼에 임의의 플레이리스트를 등록해놓은 상태에서 해당 버튼을 누르면 Clova는 사용자가 지정한 플레이리스트를 재생할 수 있도록 처리해줍니다.
@@ -70,6 +82,32 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 * [`PlaybackController.NextCommandIssued`](#NextCommandIssued)
 * [`PlaybackController.PreviousCommandIssued`](#PreviousCommandIssued)
 
+## ExpectNextCommand directive {#Next}
+클라이언트에게 재생 대기열에 있는 다음 오디오 스트림 재생하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 다음 오디오 스트림을 재생해야 합니다.
+
+### Payload fields
+없음
+
+### Message example
+{% raw %}
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Next",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+
 ## Mute directive {#Mute}
 클라이언트에게 오디오 플레이어 볼륨을 음소거하도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 오디오 스트림 재생과 관련된 스피커 볼륨을 무음이 되도록 변경해야 합니다.
 
@@ -84,15 +122,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Mute",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Mute",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -110,15 +148,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Next",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Next",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -182,15 +220,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Pause",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Pause",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -209,15 +247,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Previous",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Previous",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -282,15 +320,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Replay",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Replay",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -310,15 +348,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Resume",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Resume",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -337,15 +375,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Stop",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Stop",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -355,7 +393,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOffRepeatMode directive {#TurnOffRepeatMode}
- 클라이언트에게 한곡 반복 재생 모드를 끄도록 지시합니다.
+**(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 끄도록 지시합니다.
 
 ### Payload fields
 없음
@@ -364,15 +402,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "TurnOffRepeatMode",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "TurnOffRepeatMode",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -381,7 +419,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
 
 ## TurnOnRepeatMode directive {#TurnOnRepeatMode}
-클라이언트에게 한곡 반복 재생 모드를 켜도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 현재 재생 중인 오디오 스트림을 계속 반복 재생해야 합니다.
+**(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 켜도록 지시합니다. 클라이언트는 이 지시 메시지를 받은 후 현재 재생 중인 오디오 스트림을 계속 반복 재생해야 합니다.
 
 ### Payload fields
 없음
@@ -390,15 +428,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "TurnOnRepeatMode",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "TurnOnRepeatMode",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -420,15 +458,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "Unmute",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "Unmute",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -451,15 +489,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "VolumeDown",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "VolumeDown",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}
@@ -483,15 +521,15 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 {% raw %}
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "PlaybackController",
-            "name": "VolumeUp",
-            "dialogRequestId": "dialog-id-here-1",
-            "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "PlaybackController",
+      "name": "VolumeUp",
+      "dialogRequestId": "dialog-id-here-1",
+      "messageId": "b1f88d7d-bbb8-44fa-a0a2-c5a7553e6f8a"
+    },
+    "payload": {}
+  }
 }
 ```
 {% endraw %}

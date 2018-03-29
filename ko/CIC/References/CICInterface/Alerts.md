@@ -453,31 +453,34 @@ Alerts가 제공하는 이벤트 메시지와 지시 메시지는 다음과 같�
 
 ```json
 {
- "directive": {
-   "header": {
-     "namespace": "Alerts",
-     "name": "SetAlert",
-     "messageId": "9a440fa9-983a-48a8-8ad5-faee1250abde",
-     "dialogRequestId": "688b051d-6832-4bfd-8cf8-5ff073cd2a82"
-   },
-   "payload": {
-     "type": "REMINDER",
-     "token": "77179dbd-b65f-4341-a579-c1b2b97fc5b7",
-     "scheduledTime": "2017-09-25T09:00:50+09:00",
-     "assets": [
-       {
-         "assetId": "5141f693-5b39-46b7-80e4-3d71ed5508da",
-         "url": "clova://alert/bell/reminder"
-       },
-       {
-         "assetId": "b403ebe5-f911-4c5c-98b3-9f5320510235",
-         "url": "http://abc.de.fe/tts2"
-       }
-     ],
-     "label": "입금하기",
-     "assetPlayOrder": ["5141f693-5b39-46b7-80e4-3d71ed5508da", "b403ebe5-f911-4c5c-98b3-9f5320510235"]
-   }
- }
+  "directive": {
+    "header": {
+      "namespace": "Alerts",
+      "name": "SetAlert",
+      "messageId": "9a440fa9-983a-48a8-8ad5-faee1250abde",
+      "dialogRequestId": "688b051d-6832-4bfd-8cf8-5ff073cd2a82"
+    },
+    "payload": {
+      "type": "REMINDER",
+      "token": "77179dbd-b65f-4341-a579-c1b2b97fc5b7",
+      "scheduledTime": "2017-09-25T09:00:50+09:00",
+      "assets": [
+        {
+          "assetId": "5141f693-5b39-46b7-80e4-3d71ed5508da",
+          "url": "clova://alert/bell/reminder"
+        },
+        {
+          "assetId": "b403ebe5-f911-4c5c-98b3-9f5320510235",
+          "url": "http://abc.de.fe/tts2"
+        }
+      ],
+      "label": "입금하기",
+      "assetPlayOrder": [
+        "5141f693-5b39-46b7-80e4-3d71ed5508da",
+        "b403ebe5-f911-4c5c-98b3-9f5320510235"
+      ]
+    }
+  }
 }
 ```
 

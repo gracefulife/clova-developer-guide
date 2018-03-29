@@ -4,7 +4,9 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`DriverInternalError`](#DriverInternalError)              | Error Response | 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.             |
+| [`ConditionsNotMetError`](#ConditionsNotMetError)          | Error Response | 대상 기기가 동작하기 위해 특정 조건(상태)이 충족되지 않은 경우 CEK에게 이 메시지를 응답으로 보냅니다. |
+| [`DeviceFailureError`](#DeviceFailureError)                | Error Response | 대상 기기에 결험이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.              |
+| [`DriverInternalError`](#DriverInternalError)              | Error Response | 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.                |
 | [`ExpiredAccessTokenError`](#ExpiredAccessTokenError)      | Error Response | [사용자 계정 연결](/CEK/Guides/Link_User_Account.md) 시 [인증 서버](/CEK/Guides/Link_User_Account.md#BuildAuthServer)로부터 발급 받은 access token이 만료된 경우 CEK에게 이 메시지를 응답으로 보냅니다.  |
 | [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error Response | 사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 전달합니다.         |
 | [`NoSuchTargetError`](#NoSuchTargetError)                  | Error Response | 대상 기기를 찾을 수 없는 경우 CEK에게 이 메시지를 응답으로 보냅니다.                            |
@@ -17,6 +19,67 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 <p><strong>Note!</strong></p>
 <p>오류 메시지 종류를 계속 추가할 예정입니다.</p>
 </div>
+
+## ConditionsNotMetError {#ConditionsNotMetError}
+대상 기기가 동작하기 위해 특정 조건(상태)이 충족되지 않은 경우 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
+
+### Payload fields
+
+없음
+
+### Remarks
+* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 본문(payload)이 필요하지 않습니다.
+
+### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ea1e527-7be3-4b54-b531-93d245b97303",
+    "namespace": "ClovaHome",
+    "name": "ConditionsNotMetError",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+### See also
+* [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError)
+
+## DeviceFailureError {#DeviceFailureError}
+대상 기기에 결험이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
+
+### Payload fields
+
+없음
+
+### Remarks
+* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 본문(payload)이 필요하지 않습니다.
+
+### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ea1e527-7be3-4b54-b531-93d245b97303",
+    "namespace": "ClovaHome",
+    "name": "DeviceFailureError",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+### See also
+* [`DriverInternalError`](#DriverInternalError)
+* [`TargetOfflineError`](#TargetOfflineError)
 
 ## DriverInternalError {#DriverInternalError}
 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
@@ -46,6 +109,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 {% endraw %}
 
 ### See also
+* [`DeviceFailureError`](#DeviceFailureError)
 * [`TargetOfflineError`](#TargetOfflineError)
 
 ## ExpiredAccessTokenError {#ExpiredAccessTokenError}
@@ -136,6 +200,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 {% endraw %}
 
 ### See also
+* [`ConditionsNotMetError`](#ConditionsNotMetError)
 * [`TargetOfflineError`](#TargetOfflineError)
 
 ## NotSupportedInCurrentModeError {#NotSupportedInCurrentModeError}
@@ -197,6 +262,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 {% endraw %}
 
 ### See also
+* [`DeviceFailureError`](#DeviceFailureError)
 * [`DriverInternalError`](#DriverInternalError)
 
 ## UnsupportedOperationError {#UnsupportedOperationError}

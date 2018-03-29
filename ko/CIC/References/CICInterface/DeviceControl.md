@@ -202,15 +202,15 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "DeviceControl",
-            "name": "BtConnect",
-            "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
-            "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "BtConnect",
+      "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
+      "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -245,15 +245,15 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "DeviceControl",
-            "name": "BtDisconnect",
-            "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
-            "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "BtDisconnect",
+      "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
+      "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -288,15 +288,15 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "DeviceControl",
-            "name": "BtStartPairing",
-            "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
-            "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "BtStartPairing",
+      "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
+      "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
+    },
+    "payload": {}
+  }
 }
 ```
 
@@ -331,15 +331,15 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ```json
 {
-    "directive": {
-        "header": {
-            "namespace": "DeviceControl",
-            "name": "BtStopPairing",
-            "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
-            "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "BtStopPairing",
+      "messageId": "0f9950d1-c908-4e02-8c38-8e64e840634c",
+      "dialogRequestId": "de0a1fd7-2ef1-4040-9469-3a5dd03ef46b"
+    },
+    "payload": {}
+  }
 }
 ```
 
