@@ -21,6 +21,16 @@
   </thead>
   <tbody>
     <tr>
+      <td>v3.6</td><td>2018-04-02</td>
+      <td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 scanlist 필드 추가</li>
+          <li>[CIC] PIN 코드를 사용하는 외부 블루투스 기기와 연결할 수 있도록 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a>, <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a> 이벤트 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a> 지시 메시지에 <code>payload</code> 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>
