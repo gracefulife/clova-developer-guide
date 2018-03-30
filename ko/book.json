@@ -5,7 +5,7 @@
   "author": "NAVER Corporation",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v3.5",
+    "DocVersion": "v3.6",
     "language": "ko",
     "TargetCountryCode": "KR",
     "TargetReaderType": "Internal",
@@ -33,7 +33,7 @@
       "cek_publishing": "Extension 스토어 노출 정보",
       "cek_configuration": "서버 연동 설정",
       "cek_category": "분류",
-      "cek_full_skill_desc": "Extension 설명",
+      "cek_full_skill_desc": "Extension 스토어용 설명",
       "cek_short_skill_desc": "Extension 요약 설명",
       "cek_example_phrases": "Extension 스토어용 발화 문장",
       "cek_keywords": "검색 키워드",
@@ -104,7 +104,11 @@
       "cek_privacy_policy_url": "개인 정보 정책 제공 URL",
       "cek_type": "타입",
       "cek_lang": "사용 언어",
+<<<<<<< HEAD
       "cek_name": "Extnesion 이름",
+=======
+      "cek_name": "Extension 이름",
+>>>>>>> 346cea971f32d30745f2a2faede484e8ee23da64
       "cek_provider": "제작사",
       "cek_audioplayer": "오디오 플레이어 사용",
       "cek_email": "서비스 담당자 정보",
