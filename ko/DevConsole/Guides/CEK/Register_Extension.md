@@ -48,7 +48,7 @@ Extension을 등록하는 과정에서 가장 먼저 할 일은 등록할 extens
 
 Extension 기본 정보 입력이 끝나면 생성된 Extension의 정보를 수정하는 화면으로 전환됩니다. 이때부터 페이지 하단에 있는 **{{ book.DevConsole.cek_save }}** 버튼을 클릭하여 중간 내용을 언제든지 저장할 수 있으며, 다음과 같이 CEK 메뉴에서 등록된 Extension 목록을 확인할 수 있습니다.
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_After_Creation.png)
 
 ## 서버 연동 설정 {#SetServerConnection}
 
