@@ -231,10 +231,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
+
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `token`         | string  | Play 지시 메시지의 `audioItemId`                                              | 필수 |
-| `audioStream`   | [AudioStreamInfoObject](#AudioStreamInfoObject) | Play 지시 메시지의 `audioItem.stream` | 필수 |
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -257,7 +258,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "PlayFinished",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 183000
+    }
   }
 }
 ```
@@ -279,7 +283,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -302,7 +310,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "PlayPaused",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 83100
+    }
   }
 }
 ```
@@ -327,7 +338,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -350,7 +365,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "PlayResumed",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 83100
+    }
   }
 }
 ```
@@ -371,7 +389,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ### Payload fields
 
-
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -394,7 +415,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "PlayStarted",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 0
+    }
   }
 }
 ```
@@ -417,7 +441,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -440,7 +468,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "PlayStopped",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 83100
+    }
   }
 }
 ```
@@ -460,7 +491,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -483,7 +518,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "ProgressReportDelayPassed",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 60000
+    }
   }
 }
 ```
@@ -503,7 +541,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -526,7 +568,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "ProgressReportIntervalPassed",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 120000
+    }
   }
 }
 ```
@@ -546,7 +591,11 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-없음
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `token`                | string | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값 | 필수 |
+| `offsetInMilliseconds` | number | 현재 재생하고 있는 음원의 재생 시점. 단위는 밀리 초입니다.                         | 필수  |
 
 ### Message example
 {% raw %}
@@ -569,7 +618,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
       "name": "ProgressReportPositionPassed",
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
-    "payload": {}
+    "payload": {
+      "token": "TR-NM-4435786",
+      "offsetInMilliseconds": 150000
+    }
   }
 }
 ```
@@ -596,7 +648,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `playerActivity`         | string  | 오디오 플레이어의 현재 상태.<ul><li><code>"IDLE"</code>: 미사용 상태</li><li><code>"PLAYING"</code>: 재생 중인 상태</li><li><code>"PAUSED"</code>: 일시 중지된 상태</li><li><code>"STOPPED"</code>: 정지된 상태</li></ul>  | 필수  |
 | `repeatMode`             | string  | 반복 재생 모드.<ul><li><code>"NONE"</code>: 반복 재생 안함</li><li><code>"REPEAT_ONE"</code>: 한 곡 반복 재생</li></ul>  | 필수  |
 | `stream`                 | [AudioStreamInfoObject](#AudioStreamInfoObject) | Play 지시 메시지의 `audioItem.stream`                                     | 선택 |
-| `token`                  | string  | `Play` 지시 메시지의 `audioItem.stream.token`                                                                     | 선택 |
+| `token`                  | string  | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.stream.token` 필드 값                                          | 선택 |
 | `totalInMilliseconds`    | number | 최근 재생 미디어의 전체 길이. [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) 지시 메시지를 통해 전달받은 오디오 정보([AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject))에 `durationInMilliseconds` 필드 값이 있는 경우 이 필드의 값으로 입력하면 됩니다. 단위는 밀리초이며, `playerActivity` 값이 `"IDLE"`이면 이 필드 값은 입력하지 않아도 됩니다. | 선택 |
 
 ### Message example
@@ -690,7 +742,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | 필드 이름 | 자료형 | 필드 설명 | 포함 여부 |
 |---------|------|--------|:---------:|
 | `audioItemId` | string | 오디오 스트림 정보를 구분하는 값. 클라이언트는 이 값을 기준으로 중복된 Play 지시 메시지를 제거할 수 있습니다. | 항상 |
-| `audioStream` | [AudioStreamInfoObject](#AudioStreamInfoObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체               | 항상 |
+| `audioStream` | [AudioStreamInfoObject](#AudioStreamInfoObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체       | 항상 |
 
 ### Remarks
 `StreamDeliver` 지시 메시지를 통해 전달받는 `AudioStreamInfoObject` 객체는 기존 [`AudioPlayer.Play`](#Play) 지시 메시지를 통해 전달받은 `AudioStreamInfoObject` 객체의 내용과 중복을 피하기 위해 일부 내용이 생략될 수 있습니다. 따라서, 음원을 재생할 때 `StreamDeliver` 지시 메시지와 이미 수신한 [`Play`](#Play) 지시 메시지의 `payload.audioStream` 정보를 조합해서 사용해야 합니다.
@@ -734,7 +786,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `audioItemId`   | string  | Play 지시 메시지의 `audioItemId`                                              | 필수 |
+| `audioItemId`   | string  | ['AudioPlayer.Play'](#Play) 지시 메시지의 `audioItem.audioItemId` 필드 값       | 필수 |
 | `audioStream`   | [AudioStreamInfoObject](#AudioStreamInfoObject) | Play 지시 메시지의 `audioItem.stream` | 필수 |
 
 ### Remarks
@@ -800,7 +852,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `playbackState.playerActivity`         | string  | 오디오 플레이어의 현재 상태.<ul><li><code>"IDLE"</code>: 미사용 상태</li><li><code>"PLAYING"</code>: 재생 중인 상태</li><li><code>"PAUSED"</code>: 일시 중지된 상태</li><li><code>"STOPPED"</code>: 정지된 상태</li></ul>  | 항상  |
 | `playbackState.repeatMode`             | string  | 설정된 반복 재생 모드.<ul><li><code>"NONE"</code>: 반복 재생 안함</li><li><code>"REPEAT_ONE"</code>: 한 곡 반복 재생</li></ul>  | 항상  |
 | `playbackState.stream`                 | [AudioStreamInfoObject](#AudioStreamInfoObject) | 오디오 스트림과 관련된 정보가 담긴 객체                                         | 항상 |
-| `playbackState.token`                  | string  | 음원 재생을 식별하는 토큰. 이 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                                    | 항상 |
+| `playbackState.token`                  | string  | 음원 재생을 식별하는 token. 이 필드는 빈 문자열(`""`)을 가질 수도 있습니다.                                                    | 항상 |
 | `playbackState.totalInMilliseconds`    | number | 최근 재생 미디어의 전체 길이. 단위는 밀리초이며, 이 필드는 null 값을 가질 수 있습니다.                  | 항상 |
 
 ### Message example
