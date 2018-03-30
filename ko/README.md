@@ -21,6 +21,14 @@
   </thead>
   <tbody>
     <tr>
+      <td>v3.6</td><td>2018-04-01</td>
+      <td>
+        <ul>
+          <li>[CEK] Clova Home API에 GetSleepStartTimeRequest 외 9건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 2종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>

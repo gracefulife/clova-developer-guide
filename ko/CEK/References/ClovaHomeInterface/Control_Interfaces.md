@@ -14,8 +14,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`DecrementChannelRequest`](#DecrementChannelRequest)                         | Request  | 대상 기기가 지정한 수준만큼 TV 채널을 낮추도록 Clova Home extension에게 요청합니다. |
 | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)             | Response | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
 | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)                       | Request  | 대상 기기가 지정한 값만큼 팬 속도를 낮추도록 Clova Home extension에게 요청합니다. |
-| [`DecrementIntensityLevelConfirmation`](DecrementIntensityLevelConfirmation#) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 설정한 결과를 CEK에게 전달합니다.  |
-| [`DecrementIntensityLevelRequest`](DecrementIntensityLevelRequest#)           | Request  | 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 압력이나 수압의 세기를 낮추도록 Clova Home extension에게 요청합니다.  |
+| [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest)           | Request  | 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 압력이나 수압의 세기를 낮추도록 Clova Home extension에게 요청합니다.  |
 | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
 | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)     | Request  | 대상 기기가 지정한 값만큼 온도를 낮추도록 Clova Home extension에게 요청합니다.      |
 | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                 | Response | [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
@@ -58,10 +58,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)         | Response | [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest) 메시지에 대한 응답으로 대상 기기가 판단한 누진세 단계 정보를 CEK에게 전달합니다. |
 | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)                         | Request  | 주로 밥솥이나 세탁기와 같은 기기에서 동작 종료까지 남은 시간을 확인할 때 사용되며, 대상 기기의 동작 종료까지 남은 시간에 대한 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetRemainingTimeResponse`](#GetRemainingTimeResponse)                       | Response | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest) 메시지에 대한 응답으로 대상 기기가 동작 종료하기까지 남은 시간을 CEK에게 전달합니다. |
-| [`GetRightPostureRequest`](#GetRightPostureRequest)                           | Request  | 사용자가 바른 자세로 대상 기기를 사용한 비율이 얼마인지 확인할 때 사용하며, 사용자가 대상 기기를 사용할 때 특정 기간이나 현재까지 바른 자세를 유지한 비율 정보를 Clova Home extension에게 요청합니다.  |
-| [`GetRightPostureResponse`](#GetRightPostureResponse)                         | Response | [`GetRightPostureRequest`](#GetRightPostureRequest) 메시지에 대한 응답으로 사용자가 대상 기기를 바른 자세로 사용한 비율 정보를 CEK에게 전달합니다.  |
-| [`GetSittingStateRequest`](#GetSittingStateRequest)                           | Request  | 스마트 의자와 같은 기기에서 사용자의 착석 여부를 확인할 때 사용되며, 대상 기기가 사용자 착석 여부를 감지한 정보를 Clova Home extension에게 요청합니다.  |
-| [`GetSittingStateResponse`](#GetSittingStateResponse)                         | Response | [`GetSittingStateRequest`](#GetSittingStateRequest) 메시지에 대한 응답으로 대상 기기가 사용자 착석 여부를 감지한 정보를 CEK에게 전달합니다.  |
+| [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)                 | Request  | 사용자가 바른 자세로 대상 기기를 사용한 비율이 얼마인지 확인할 때 사용하며, 사용자가 대상 기기를 사용할 때 특정 기간이나 현재까지 바른 자세를 유지한 비율 정보를 Clova Home extension에게 요청합니다.  |
+| [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)               | Response | [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest) 메시지에 대한 응답으로 사용자가 대상 기기를 바른 자세로 사용한 비율 정보를 CEK에게 전달합니다.  |
+| [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest)             | Request  | 스마트 의자와 같은 기기에서 사용자의 사용 상태를 확인할 때 사용되며, 대상 기기가 사용자 착석 여부를 감지한 정보와 최근 사용자가 사용한 시간 정보를 Clova Home extension에게 요청합니다.  |
+| [`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse)           | Response | [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest) 메시지에 대한 응답으로 대상 기기가 사용자 착석 여부를 감지한 정보와 최근 사용자가 사용한 시간 정보를 CEK에게 전달합니다.  |
 | [`GetSleepScoreRequest`](#GetSleepScoreRequest)                               | Request  | 수면 센서와 같은 기기에서 사용자 수면 점수 정보를 확인할 때 사용되며, 대상 기기가 평가한 사용자의 수면 점수를 Clova Home extension에게 요청합니다.  |
 | [`GetSleepScoreResponse`](#GetSleepScoreResponse)                             | Response | [`GetSleepScoreRequest`](#GetSleepScoreRequest) 메시지에 대한 응답으로 대상 기기가 평가한 사용자의 수면 점수를 CEK에게 전달합니다.  |
 | [`GetSleepStartTimeRequest`](#GetSleepStartTimeRequest)                       | Request  | 수면 센서와 같은 기기에서 사용자 수면 점수 정보를 확인할 때 사용되며, 대상 기기가 측정한 사용자의 수면 시작 시간을 Clova Home extension에게 요청합니다.  |
@@ -1800,7 +1800,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)        | 선택    |
-| `keepWarmTime`               | [TimeAmountInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TimeAmountInfoObject) | 보온 모드를 유지한 시간 정보를 가지는 객체 | 필수    |
+| `keepWarmTime`               | string | 보온 모드를 유지한 시간(Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)       | 필수    |
 
 ### Message example
 
@@ -1815,9 +1815,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "keepWarmTime": {
-      "hour": 12
-    },
+    "keepWarmTime": "PT5H00M",
     "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }
@@ -2139,7 +2137,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
-| `remainingTime`              | [TimeAmountInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TimeAmountInfoObject) | 동작 종료까지 남은 시간 정보를 가지는 객체  | 필수    |
+| `remainingTime`              | string | 동작 종료까지 남은 시간(Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)    | 필수    |
 
 ### Message example
 
@@ -2154,9 +2152,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "remainingTime": {
-      "minute": 24
-    },
+    "remainingTime": "PT8H40M",
     "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }
@@ -2167,8 +2163,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### See also
 * [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)
 
-## GetRightPostureRequest {#GetRightPostureRequest}
-사용자가 바른 자세로 대상 기기를 사용한 비율이 얼마인지 확인할 때 사용하며, 사용자가 대상 기기를 사용할 때 특정 기간이나 현재까지 바른 자세를 유지한 비율 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetRightPostureResponse`](#GetRightPostureResponse) 메시지를 사용해야 합니다.
+## GetRightPostureRatioRequest {#GetRightPostureRatioRequest}
+사용자가 바른 자세로 대상 기기를 사용한 비율이 얼마인지 확인할 때 사용하며, 사용자가 대상 기기를 사용할 때 특정 기간이나 현재까지 바른 자세를 유지한 비율 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
@@ -2184,7 +2180,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {
   "header": {
     "messageId": "59a3f5bc-4c38-4d4c-9b71-3a037bf9f9b0",
-    "name": "GetRightPostureRequest",
+    "name": "GetRightPostureRatioRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -2204,16 +2200,16 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [`GetRightPostureResponse`](#GetRightPostureResponse)
+* [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)
 
-## GetRightPostureResponse {#GetRightPostureResponse}
+## GetRightPostureRatioResponse {#GetRightPostureRatioResponse}
 
-[`GetRightPostureRequest`](#GetRightPostureRequest) 메시지에 대한 응답으로 사용자가 대상 기기를 바른 자세로 사용한 비율 정보를 CEK에게 전달합니다.
+[`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest) 메시지에 대한 응답으로 사용자가 대상 기기를 바른 자세로 사용한 비율 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
-| `rightPostureRatio`          | [RatioInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TimeAmountInfoObject) | 사용자가 대상 기기르 바른 자세로 사용한 비율 정보를 가지는 객체   | 필수    |
+| `rightPostureRatio`          | [RatioInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#RatioInfoObject) | 사용자가 대상 기기르 바른 자세로 사용한 비율 정보를 가지는 객체   | 필수    |
 
 ### Message example
 
@@ -2223,7 +2219,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {
   "header": {
     "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
-    "name": "GetRightPostureResponse",
+    "name": "GetRightPostureRatioResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -2239,10 +2235,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [`GetRightPostureRequest`](#GetRightPostureRequest)
+* [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)
 
-## GetSittingStateRequest {#GetSittingStateRequest}
-스마트 의자와 같은 기기에서 사용자의 착석 여부를 확인할 때 사용되며, 대상 기기가 사용자 착석 여부를 감지한 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetSittingStateResponse`](#GetSittingStateResponse) 메시지를 사용해야 합니다.
+## GetCurrentSittingStateRequest {#GetCurrentSittingStateRequest}
+스마트 의자와 같은 기기에서 사용자의 사용 상태를 확인할 때 사용되며, 대상 기기가 사용자 착석 여부를 감지한 정보와 최근 사용자가 사용한 시간 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
@@ -2257,7 +2253,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {
   "header": {
     "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
-    "name": "GetSittingStateRequest",
+    "name": "GetCurrentSittingStateRequest",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -2273,16 +2269,16 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [`GetSittingStateResponse`](#GetSittingStateResponse)
+* [`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse)
 
-## GetSittingStateResponse {#GetSittingStateResponse}
-[`GetSittingStateRequest`](#GetSittingStateRequest) 메시지에 대한 응답으로 대상 기기가 사용자 착석 여부를 감지한 정보를 CEK에게 전달합니다.
+## GetCurrentSittingStateResponse {#GetCurrentSittingStateResponse}
+[`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest) 메시지에 대한 응답으로 대상 기기가 사용자 착석 여부를 감지한 정보와 최근 사용자가 사용한 시간 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string  | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
 | `sittingState`               | [SittingStateInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SittingStateInfoObject) |  스마트 의자와 같은 기기에 대한 사용자의 착석 정보가 담긴 객체              | 필수    |
-| `recentlySittingPeriod`      | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject) | 기간 정보를 담고 있는 객              | 필수    |
+| `recentlySittingPeriod`      | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject) | 최근 사용 시간 정보를 담고 있는 객체              | 필수    |
 
 ### Message example
 
@@ -2292,7 +2288,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetSittingStateResponse",
+    "name": "GetCurrentSittingStateResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -2312,7 +2308,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 {% endraw %}
 
 ### See also
-* [`GetSittingStateRequest`](#GetSittingStateRequest)
+* [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest)
 
 ## GetSleepScoreRequest {#GetSleepScoreRequest}
 수면 센서와 같은 기기에서 사용자 수면 점수 정보를 확인할 때 사용되며, 대상 기기가 평가한 사용자의 수면 점수를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetSleepScoreResponse`](#GetSleepScoreResponse) 메시지를 사용해야 합니다.
@@ -2645,7 +2641,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
-| `usageTime`                  | [TimeAmountInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TimeAmountInfoObject) | 사용 시간 정보를 가지는 객체  | 필수    |
+| `usageTime`                  | string | 사용 시간(Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)               | 필수    |
 
 ### Message example
 
@@ -2660,9 +2656,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "usageTime": {
-      "minute": 24
-    },
+    "usageTime": "P12DT8H40M",
     "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }

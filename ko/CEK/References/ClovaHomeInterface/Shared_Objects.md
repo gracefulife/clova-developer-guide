@@ -24,7 +24,6 @@
 | [SleepScoreInfoObject](#SleepScoreInfoObject)             | 수면 점수 정보가 담긴 객체          |
 | [SpeedInfoObject](#SpeedInfoObject)                       | 속도 정보가 담긴 객체              |
 | [TemperatureInfoObject](#TemperatureInfoObject)           | 온도 정보를 담고 있는 객체          |
-| [TimeAmountInfoObject](#TimeAmountInfoObject)             | 경과 시간이나 남은 시간 등 시간의 양에 대한 정보를 담고 있는 객체  |
 | [TVChannelNameInfoObject](#TVChannelNameInfoObject)       | TV 채널의 이름 정보가 담긴 객체      |
 | [TVChannelInfoObject](#TVChannelInfoObject)               | TV 채널 정보가 담긴 객체           |
 | [UltraFineDustInfoObject](#UltraFineDustInfoObject)       | 초미세 먼지 정보가 담긴 객체         |
@@ -117,9 +116,9 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"RICECOOKER"`      | 전기 밥솥 타입        | GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
 | `"ROBOTVACUUM"`     | 로봇 청소기 타입       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
 | `"SETTOPBOX"`       | TV 셋톱 박스 타입     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetDeviceState, HealthCheck, TurnOff, TurnOn                                                                                            |
+| `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetAsleepDuration, GetAwakeDuration, GetDeviceState, GetSleepScore, GetSleepStartTime, HealthCheck, TurnOff, TurnOn              |
 | `"SMARTBED"`        | 스마트 침대 타입      | HealthCheck, Lower, Raise, Stop                                                                                                   |
-| `"SMARTCHAIR"`      | 스마트 의자 타입      | GetRightPostureRatio, GetUsageTime, HealthCheck                                                                                       |
+| `"SMARTCHAIR"`      | 스마트 의자 타입      | GetCurrentSittingState, GetRightPostureRatio, GetUsageTime, HealthCheck                                                                                       |
 | `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Open, Stop                                                                                                    |
 | `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
 | `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
@@ -150,10 +149,13 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | DecrementTargetTemperature | [`DecrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureConfirmation), [`DecrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureRequest) |
 | DecrementVolume            | [`DecrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeConfirmation), [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest) |
 | GetAirQuality              | [`GetAirQualityRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityRequest), [`GetAirQualityResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAirQualityResponse) |
+| GetAsleepDuration              | [`GetAsleepDurationRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAsleepDurationRequest), [`GetAsleepDurationResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAsleepDurationResponse) |
+| GetAwakeDuration              | [`GetAwakeDurationRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAwakeDurationRequest), [`GetAwakeDurationResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetAwakeDurationResponse) |
 | GetBatteryInfo              | [`GetBatteryInfoRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoRequest), [`GetBatteryInfoResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetBatteryInfoResponse) |
 | GetCloseTime                | [`GetCloseTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCloseTimeRequest), [`GetCloseTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCloseTimeResponse)  |
 | GetConsumption              | [`GetConsumptionRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetConsumptionRequest), [`GetConsumptionResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetConsumptionResponse)  |
 | GetCurrentBill              | [`GetCurrentBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillRequest), [`GetCurrentBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentBillResponse)  |
+| GetCurrtentSittingState     | [`GetCurrtentSittingStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrtentSittingStateRequest), [`GetCurrtentSittingStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrtentSittingStateResponse) |
 | GetCurrentTemperature       | [`GetCurrentTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureRequest), [`GetCurrentTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureResponse) |
 | GetDeviceState             | [`GetDeviceStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateRequest), [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse)  |
 | GetEstimateBill            | [`GetEstimateBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillRequest), [`GetEstimateBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillResponse)  |
@@ -167,6 +169,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | GetProgressiveTaxBracket   | [`GetProgressiveTaxBracketRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketRequest), [`GetProgressiveTaxBracketResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetProgressiveTaxBracketResponse) |
 | GetRemainingTime           | [`GetRemainingTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeRequest), [`GetRemainingTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeResponse)  |
 | GetRightPostureRatio       | [`GetRightPostureRatioRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRightPostureRatioRequest), [`GetRightPostureRatioResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRightPostureRatioResponse)  |
+| GetSleepScore              | [`GetSleepScoreRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepScoreRequest), [`GetSleepScoreResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepScoreResponse) |
+| GetSleepStartTime          | [`GetSleepStartTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepStartTimeRequest), [`GetSleepStartTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepStartTimeResponse) |
 | GetTargetTemperature       | [`GetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureRequest), [`GetTargetTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureResponse) |
 | GetUltraFineDust           | [`GetUltraFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustRequest), [`GetUltraFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustResponse) |
 | GetUsageTime               | [`GetUsageTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUsageTimeRequest), [`GetUsageTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUsageTimeResponse)  |
@@ -610,7 +614,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
 | `name`          | string  | 소모품의 이름                  | 필수/항상 |
-| `remainingTime` | [TimeAmountInfoObject](#TimeAmountInfoObject)  | 소모품의 남은 수명    | 선택/조건부 |
+| `remainingTime` | sting   | 소모품의 남은 수명(Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)    | 선택/조건부 |
 | `usage`         | [CustomInfoObject](#CustomInfoObject)          | 소모품의 사용량 (회수 또는 퍼센트로 표현 가능)      | 선택/조건부 |
 
 ### Object Example
@@ -629,10 +633,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
     "expendableInfo" : [
       {
         "name" : "패킹",
-        "remainingTime" : {
-          "month": 1,
-          "day": 3
-        }
+        "remainingTime" : "P0001-04-10"
       },
       {
         "name" : "1번 필터",
@@ -1086,11 +1087,11 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제: GetSittingStateResponse 메시지에서 사용된 예
+// 예제: GetCurrentSittingStateResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetSittingStateResponse",
+    "name": "GetCurrentSittingStateResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
@@ -1110,8 +1111,8 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% endraw %}
 
 ### See also
-* [`GetSittingStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSittingStateRequest)
-* [`GetSittingStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSittingStateResponse)
+* [`GetCurrentSittingStateRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentSittingStateRequest)
+* [`GetCurrentSittingStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentSittingStateResponse)
 
 ## SleepScoreInfoObject {#SleepScoreInfoObject}
 수면 점수에 대한 정보를 담고 있는 객체입니다. 기간에 대한 결과일 경우 평균 값입니다.
@@ -1210,50 +1211,6 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetFanSpeedConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedConfirmation)
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
-## TimeInfoObject {#TimeInfoObject}
-경과 시간이나 남은 시간 등 시간의 양에 대한 정보를 담고 있는 객체입니다. 다양한 방법으로 남은 시간이 표현될 수 있기 때문에 상황에 맞게 객체의 필드를 활용해야 합니다. 예를 들면, 같은 양의 시간이라도 1일 1시간이라고 이야기할 수도 있고 25시간이라고 표현할 수도 있습니다.
-
-### Object fields
-| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
-|---------------|---------|-----------------------------|:-------------:|
-| `year`        | number  | 1년 단위                      | 선택/조건부     |
-| `month`       | number  | 1개월 단위                    | 선택/조건부     |
-| `day`         | number  | 1일 단위                      | 선택/조건부     |
-| `hour`        | number  | 1시간 단위                     | 선택/조건부     |
-| `minute`      | number  | 1분 단위                      | 선택/조건부     |
-| `second`      | number  | 1초 단위                      | 선택/조건부     |
-
-### Object Example
-{% raw %}
-
-```json
-// 예제: GetKeepWarmTimeResponse 메시지에서 사용된 예
-{
-  "header": {
-    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
-    "name": "GetKeepWarmTimeResponse",
-    "namespace": "ClovaHome",
-    "payloadVersion": "1.0"
-  },
-  "payload": {
-    "keepWarmTime": {
-      "hour": 12
-    },
-    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
-  }
-}
-```
-
-{% endraw %}
-
-### See also
-* [`GetKeepWarmTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetKeepWarmTimeRequest)
-* [`GetKeepWarmTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetKeepWarmTimeResponse)
-* [`GetRemainingTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeRequest)
-* [`GetRemainingTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetRemainingTimeResponse)
-* [`GetUsageTimeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUsageTimeRequest)
-* [`GetUsageTimeResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUsageTimeResponse)
-
 ## TemperatureInfoObject {#TemperatureInfoObject}
 온도 정보를 담고 있는 객체입니다. 변경할 온도의 크기, 변경 전후의 희망 온도나 현재 설정된 희망 온도를 나타낼 때 사용되며 소수점 첫째 자리 숫자로 표현됩니다.
 
@@ -1311,12 +1268,12 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### See also
 * [`DecrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureConfirmation)
 * [`DecrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementTargetTemperatureRequest)
-* [`IncrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation)
-* [`IncrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureRequest)
-* [`GetCurrentTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTargetTemperatureRequest)
-* [`GetCurrentTargetTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTargetTemperatureResponse)
+* [`GetCurrentTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureRequest)
+* [`GetCurrentTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCurrentTemperatureResponse)
 * [`GetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureRequest)
 * [`GetTargetTemperatureResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetTargetTemperatureResponse)
+* [`IncrementTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureConfirmation)
+* [`IncrementTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementTargetTemperatureRequest)
 * [`SetFreezerTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFreezerTargetTemperatureConfirmation)
 * [`SetFreezerTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFreezerTargetTemperatureRequest)
 * [`SetFridgeTargetTemperatureConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFridgeTargetTemperatureConfirmation)
@@ -1434,6 +1391,42 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`SetChannelConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelConfirmation)
 * [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
+## UltraFineDustInfoObject {#UltraFineDustInfoObject}
+초미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 초미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `value`       | number  | 초미세 먼지 지수                | 선택/조건부    |
+| `index`       | number  | 초미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: GetUltraFineDustResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetUltraFineDustResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "ultraFineDust": {
+        "value": 44,
+        "index": "good"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetUltraFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustRequest)
+* [`GetUltraFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustResponse)
+
 ## VolumeInfoObject {#VolumeInfoObject}
 스피커의 볼륨 정보를 담고 있는 객체입니다. 변경할 볼륨의 크기나 변경 전후의 볼륨 정보를 나타낼 때 사용되며 정수로 표현됩니다.
 
@@ -1493,39 +1486,3 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 * [`DecrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DecrementVolumeRequest)
 * [`IncrementVolumeConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeConfirmation)
 * [`IncrementVolumeRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#IncrementVolumeRequest)
-
-## UltraFineDustInfoObject {#UltraFineDustInfoObject}
-초미세 먼지 정보를 담고 있는 객체입니다. 기기가 측정한 초미세 먼지 지수를 나타낼 때 사용되며 숫자로 표현됩니다.
-
-### Object fields
-| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
-|---------------|---------|-----------------------------|:-------------:|
-| `value`       | number  | 초미세 먼지 지수                | 선택/조건부    |
-| `index`       | number  | 초미세 먼지 수준. 다음과 같은 값으로 제한되어 있습니다.<ul><li><code>"good"</code>: 좋음</li><li><code>"normal"</code>: 보통</li><li><code>"bad"</code>: 나쁨</li><li><code>"verybad"</code>: 매우 나쁨</li></ul> | 필수/항상     |
-
-### Object Example
-{% raw %}
-
-```json
-// 예제: GetUltraFineDustResponse 메시지에서 사용된 예
-{
-  "header": {
-    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetUltraFineDustResponse",
-    "namespace": "ClovaHome",
-    "payloadVersion": "1.0"
-  },
-  "payload": {
-    "ultraFineDust": {
-        "value": 44,
-        "index": "good"
-    }
-  }
-}
-```
-
-{% endraw %}
-
-### See also
-* [`GetUltraFineDustRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustRequest)
-* [`GetUltraFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustResponse)
