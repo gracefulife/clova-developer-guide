@@ -660,15 +660,13 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `target`      | string  | 대상 앱에 대한 정보. 다음과 같은 타입의 앱 정보를 가질 수 있습니다.<ul><li>custom URL scheme: 대상 앱의 custom URL scheme (예, <code>"naversearchapp://..."</code>)</li><li>중계 페이지 URL: 설치된 대상 앱이 있을 경우 해당 앱을 실행하는 중계 페이지 URL(예, <code>"http://naverapp.naver.com/..."</code>)</li><li>앱 이름: 사용자의 발화를 인식한 앱의 이름 (예, <code>"네이버앱"</code>)</li></ul> | 항상     |
+| `target`      | string  | 대상 앱에 대한 정보. 다음과 같은 타입의 앱 정보를 가질 수 있습니다.<ul><li>custom URL scheme: 대상 앱의 custom URL scheme (예, <code>"{{ book.OrientedServiceWithLowerCase }}searchapp://..."</code>)</li><li>중계 페이지 URL: 설치된 대상 앱이 있을 경우 해당 앱을 실행하는 중계 페이지 URL(예, <code>"http://{{ book.OrientedServiceWithLowerCase }}app.{{ book.OrientedServiceWithLowerCase }}.com/..."</code>)</li><li>앱 이름: 사용자의 발화를 인식한 앱의 이름 (예, <code>"{{ book.OrientedService }}앱"</code>)</li></ul> | 항상     |
 
 ### Remarks
 
 * 앱을 실행할 수 없거나 앱 실행에 실패한 경우 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
 
 ### Message example
-
-{% raw %}
 
 ```json
 {
@@ -680,13 +678,11 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
       "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
     },
     "payload": {
-      "target": "naversearchapp://..."
+      "target": "{{ book.OrientedServiceWithLowerCase }}searchapp://..."
     }
   }
 }
 ```
-
-{% endraw %}
 
 ### See also
 * [`DeviceControl.ActionFailed`](#ActionFailed)

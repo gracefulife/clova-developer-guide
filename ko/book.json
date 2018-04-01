@@ -14,6 +14,7 @@
     "GitHubBaseURLforExtensionExample": "https://github.com/naver",
     "DocOwner": "NAVER",
     "OrientedService": "NAVER",
+    "OrientedServiceWithLowerCase": "naver",
     "TargetServiceForClientAuth": "NAVER",
     "LoginAPIofTargetService": "https://developers.naver.com/docs/login/overview/",
     "AuthServerBaseURL": "https://auth.clova.ai/",

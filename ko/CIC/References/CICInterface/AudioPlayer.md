@@ -96,7 +96,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% endraw %}
 
 ### See also
-* [`ReportPlaybackState`](#ReportPlaybackState)
+* [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
 * [음원 재생 상태 공유](#SharePlaybackState)
 
 ## Play directive {#Play}
@@ -111,7 +111,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | `audioItem.headerText`    | string | 주로 현재 재생 목록의 제목을 표현하는 텍스트 필드                                                | 조건부  |
 | `audioItem.stream`        | [AudioStreamInfoObject](#AudioStreamInfoObject) | 재생에 필요한 오디오 스트림 정보를 담고 있는 객체        | 항상 |
 | `audioItem.titleSubText1` | string | 주로 가수 이름을 표현하는 텍스트 필드                                                          | 항상 |
-| `audioItem.titleSubText2` | string | 주로 앨범 이름을 표현하는 텍스트 필드                                                          | 조건부 |
+| `audioItem.titleSubText2` | string | 주로 앨범 이름을 표현하는 보조 텍스트 필드                                                      | 조건부 |
 | `audioItem.titleText`     | string | 현재 음악의 제목을 표현하는 텍스트 필드                                                         | 항상  |
 | `audioItem.type`          | string | **(Deprecated)** 음악 서비스 구분자. 음악 스트리밍 서비스를 제공하는 사업자나 서비스 이름입니다. 이 필드 값은 각 서비스마다 달라지는 audioItem 객체의 필드를 파악하고 이를 분석하는 파서(parser)를 선택하는데 이용될 수 있습니다. | 항상 |
 | `playBehavior`            | string | 지시 메시지에 포함된 오디오 스트림을 클라이언트에서 언제 재생할지를 결정하는 구분자 <ul><li><code>"REPLACE_ALL"</code>: 재생 대기열을 모두 비우고, 전달받은 오디오 스트림을 즉시 재생합니다.</li><li><code>"ENQUEUE"</code>: 재생 대기열에 전달받은 오디오 스트림을 추가합니다.</li></ul> | 항상 |
@@ -157,8 +157,8 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
         "type": "podcast"
       },
       "source": {
-        "name": "팟빵",
-        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.podbbang/source_logo.png"
+        "name": "Potbbang",
+        "logoUrl": "https://img.musicproviderdomain.net/logo_180125.png"
       },
       "playBehavior": "REPLACE_ALL"
     }
@@ -180,10 +180,9 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
         "album": {
           "albumId": "2000240",
           "genres": [
-            "발라드",
-            "알앤비/어반"
+            "Classic"
           ],
-          "title": "Palette"
+          "title": "Wonderland - Edvard Grieg : Piano Concerto, Lyric Pieces"
         },
         ...
         "stream": {
@@ -198,12 +197,12 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
           "url": "clova:TR-NM-17716562",
           "urlPlayable": false
         },
-        "title": "이 지금",
-        "type": "navermusic"
+        "title": "Symphony No.4 In A Op.90 'Italian' - III. Con Moto Moderato",
+        "type": "SampleMusicProvider"
       },
       "source": {
-        "name": "네이버 뮤직",
-        "logoUrl": "https://ssl.pstatic.net/static/clova/service/extension/com.navercorp.music/source_logo.png"
+        "name": "Sample Music Provider",
+        "logoUrl": "https://img.musicproviderdomain.net/logo_180125.png"
       },
       "playBehavior": "REPLACE_ALL"
     }
@@ -881,7 +880,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 {% endraw %}
 
 ### See also
-* [`ReportPlaybackState`](#ReportPlaybackState)
+* [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
 * [음원 재생 상태 공유](#SharePlaybackState)
 
 ## Shared objects
