@@ -31,7 +31,7 @@ Content template은 일부 반복되는 데이터 타입을 표현하기 위해 
 ```json
 {
   "type": "action",
-  "value": "clova://naverSearch?query=이태원맛집"
+  "value": "clova://{{ book.OrientedServiceWithLowerCase }}Search?query=이태원맛집"
 }
 ```
 
@@ -284,13 +284,13 @@ URL 정보를 가지는 객체입니다.
 // 예제 1
 {
   "type": "url",
-  "value": "https://m.search.naver.com/search.naver?where=m_image&mode=default&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20%EC%9D%B4%EB%AF%B8%EC%A7%80#imgId=news4100000269062_1"
+  "value": "https://m.search.contentproviderdomain.com/search?where=m_image&mode=default&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20%EC%9D%B4%EB%AF%B8%EC%A7%80#imgId=news4100000269062_1"
 }
 
 // 예제 2
 {
   "type": "url",
-  "value": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.com%2Fimage%2F410%2F2015%2F08%2F31%2F20150831_1441012614_99_20150831181804.jpg&type=b360"
+  "value": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.contentproviderdomain.com%2Fimage%2F410%2F2015%2F08%2F31%2F20150831_1441012614_99_20150831181804.jpg&type=b360"
 }
 ```
 
