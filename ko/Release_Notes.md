@@ -2,22 +2,40 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-04-02
+
+* CIC
+  * [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md) 네임스페이스에 메시지 스펙 추가 및 일부 필드 업데이트
+    * [AudioPlayer.ExpectReportPlaybackState](/CIC/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState) 지시 메시지, [AudioPlayer.ReportPlaybackState 이벤트 메시지](/CIC/References/CICInterface/AudioPlayer.md#ReportPlaybackState){% if book.TargetReaderType == "Internal" %}, [AudioPlayer.RequestPlaybackState](/CIC/References/CICInterface/AudioPlayer.md#RequestPlaybackState) 이벤트 메시지, [SynchronizePlaybackState 지시 메시지](/CIC/References/CICInterface/AudioPlayer.md#SynchronizePlaybackState){% endif %} 추가
+    * [AudioPlayer.Play](/CIC/References/CICInterface/AudioPlayer.md#Play) 지시 메시지의 payload 필드 내용 업데이트
+    * ProgressReportXXX, PlayXXX 형식의 이름을 가진 이벤트 필드에 token 필드 값 필수로 추가
+  * [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState) 맥락 객체에 repeatMode 추가
+  * [PlaybackController](/CIC/References/CICInterface/PlaybackController.md) 네임스페이스에 총 12건의 메시지 스펙 추가
+    * [PlaybackController.PauseCommandIssued](/CIC/References/CICInterface/PlaybackController.md#PauseCommandIssued), [PlaybackController.PlayCommandIssued](/CIC/References/CICInterface/PlaybackController.md#PlayCommandIssued), [PlaybackController.ResumeCommandIssued](/CIC/References/CICInterface/PlaybackController.md#ResumeCommandIssued), [PlaybackController.SetRepeatModeCommandIssued](/CIC/References/CICInterface/PlaybackController.md#SetRepeatModeCommandIssued), [PlaybackController.StopCommandIssued](/CIC/References/CICInterface/PlaybackController.md#StopCommandIssued) 이벤트 메시지 추가
+    * [PlaybackController.ExpectNextCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectNextCommand), [PlaybackController.ExpectPauseCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectPauseCommand), [PlaybackController.ExpectPlayCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectPlayCommand), [PlaybackController.ExpectPreviousCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectPreviousCommand), [PlaybackController.ExpectResumeCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectResumeCommand), [PlaybackController.ExpectStopCommand](/CIC/References/CICInterface/PlaybackController.md#ExpectStopCommand), [PlaybackController.SetRepeatMode](/CIC/References/CICInterface/PlaybackController.md#SetRepeatMode) 지시 메시지 추가
+    * [PlaybackController.TurnOnRepeatMode](/CIC/References/CICInterface/PlaybackController.md#TurnOnRepeatMode) 지시 메시지와 [PlaybackController.TurnOffRepeatMode](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode)는 사라질 예정
+  * 미디어 스트림을 위한 정보와 재생 목록을 표시하기 위한 재생 메타 정보를 분리하기 위해 [TemplateRuntime](/CIC/References/CICInterface/TemplateRuntime.md) 네임스페이스 추가
+  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)의 [BluetoothInfoObject](/CIC/References/Context_Objects.md#BluetoothInfoObject)에 scanlist 필드 추가
+  * PIN 코드를 사용하는 외부 블루투스 기기와 연결할 수 있도록 [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임 스페이스에 [BtConnectByPINCode](/CIC/References/CICInterface/DeviceControl.md#BtConnectByPINCode) 지시 메시지와 [BtRequestForPINCode](/CIC/References/CICInterface/DeviceControl.md#BtRequestForPINCode), [BtRequestToCancelPinCodeInput](/CIC/References/CICInterface/DeviceControl.md#BtRequestToCancelPinCodeInput) 이벤트 메시지 추가
+  * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임 스페이스의 [BtConnect](/CIC/References/CICInterface/DeviceControl.md#BtConnect) 지시 메시지에 payload 추가
+* CEK
+  * Clova Home extension API에 GetSleepStartTimeRequest 외 9건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md)와 4건의 [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md) 추가
+  * Clova Home extension API의 [DiscoverAppliancesResponse](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesResponse)에 [CustomCommandInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomCommandInfoObject) 추가
+  * Clova Home extension API에서 TimeAmountInfoObject [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md) 제거 및 이에 따른 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md)의 일부 내용 변경
+  * Clova Home extension API의 [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)에 tags 필드 추가 및 location 필드 설명 변경
+* Clova developer console
+  * Clova developer console의 일부 UI 업데이트 적용
+
 ## 2018-03-19
 
 * CIC
-  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)
-에 [SoundOutputInfoObject](/CIC/References/Context_Objects.md#SoundOutputInfoObject)
- 추가
-  * 사용자가 설정한 임의의 명령을 실행할 수 있는 [CustomCommandIssued](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued)
- 이벤트 메시지를 [PlaybackController](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued)
- 네임스페이스에 추가
+  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState)에 [SoundOutputInfoObject](/CIC/References/Context_Objects.md#SoundOutputInfoObject) 추가
+  * 사용자가 설정한 임의의 명령을 실행할 수 있는 [CustomCommandIssued](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued) 이벤트 메시지를 [PlaybackController](/CIC/References/CICInterface/PlaybackController.md#CustomCommandIssued) 네임스페이스에 추가
 
 * CEK
-  * Clova Home API에 CloseConfirmation 외 47건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md)
-와 약 10종의 [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
+  * Clova Home extension API에 CloseConfirmation 외 47건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md)와 약 10종의 [공유 객체](/CEK/References/ClovaHomeInterface/Shared_Objects.md)
  추가
-  * Clova Home API [지원 기기](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)
- 30종 추가
+  * Clova Home extension API [지원 기기](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) 30종 추가
 
 ## 2018-03-05
 
@@ -247,8 +265,8 @@
   - [Popup 템플릿](/CIC/References/ContentTemplates/Popup.md) 추가
 
 * CEK
-  - Clova Home API에 ChargeConfirmation 외 33건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md) 추가
-  - Clova Home API [지원 기기](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) 6종 추가 및 `location` 필드 추가
+  - Clova Home extension API에 ChargeConfirmation 외 33건의 [Control API](/CEK/References/ClovaHomeInterface/Control_Interfaces.md) 추가
+  - Clova Home extension API [지원 기기](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) 6종 추가 및 `location` 필드 추가
 
 ## 2017-09-18
 
