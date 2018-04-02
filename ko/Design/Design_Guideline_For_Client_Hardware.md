@@ -323,10 +323,6 @@ UI 화면에 Clova 로고를 다음과 같은 레이아웃으로 배치할 수 �
 * Clova 로고는 좌측 상단에 배치되어야 합니다.
 * Clova 로고를 투명하게 만들지 않아야 합니다.
 
-다음은 로고 레이아웃 A의 화면 예시입니다.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Bottom_Overlay_Example.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_A-Full_Screen_Overlay_Example.png)
-
 #### 로고 레이아웃 B {#LogoLayoutB}
 
 [로고 레이아웃 A](#LogoLayoutA)와 비슷하게 화면 하단의 일부나 전체를 덮는 UI 화면으로 Clova 로고가 우측 상단에 배치되는 레이아웃입니다.
@@ -335,10 +331,6 @@ UI 화면에 Clova 로고를 다음과 같은 레이아웃으로 배치할 수 �
 
 * Clova 로고는 우측 상단에 배치되어야 합니다.
 * Clova 로고를 투명하게 만들지 않아야 합니다.
-
-다음은 로고 레이아웃 B의 화면 예시입니다.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Bottom_Overlay_Example.png) ![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_B-Full_Screen_Overlay_Example.png)
 
 #### 로고 레이아웃 C {#LogoLayoutC}
 
@@ -349,9 +341,6 @@ UI 화면에 Clova 로고를 다음과 같은 레이아웃으로 배치할 수 �
 * Clova 로고는 상단에 배치되어야 합니다.
 * 콘텐츠의 출처는 콘텐츠 하단에 표시해야 합니다.
 
-다음은 로고 레이아웃 C의 화면 예시입니다.
-
-![](/Design/Resources/Images/Clova-Client-Logo_Display-Layout_C_Example.png)
 
 ### Voice agent {#VoiceAgent}
 

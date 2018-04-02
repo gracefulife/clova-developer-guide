@@ -215,7 +215,7 @@
   },
   "referenceUrl" : {
     "type" : "url",
-    "value" : "http://weather.naver.com/"
+    "value" : "http://weather.contentproviderdomain.com/"
   },
   "type": "WeeklyWeather"
 }

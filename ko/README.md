@@ -16,10 +16,42 @@
 <table>
   <thead>
     <tr>
-      <th style="width:5%">버전</th><th style="width:15%">배포 일자</th><th style="width:80%">이력 사항</th>
+      <th style="width:10%">버전</th><th style="width:15%">배포 일자</th><th style="width:75%">이력 사항</th>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>v3.6</td><td>2018-04-02</td>
+      <td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a> 네임스페이스에 메시지 스펙 추가 및 일부 필드 업데이트
+            <ul>
+              <li><a href="/CIC/References/CICInterface/AudioPlayer.html#ExpectReportPlaybackState">AudioPlayer.ExpectReportPlaybackState</a> 지시 메시지, <a href="/CIC/References/CICInterface/AudioPlayer.html#ReportPlaybackState">AudioPlayer.ReportPlaybackState 이벤트 메시지</a>{% if book.TargetReaderType == "Internal" %}, <a href="/CIC/References/CICInterface/AudioPlayer.html#RequestPlaybackState">AudioPlayer.RequestPlaybackState</a> 이벤트 메시지, <a href="/CIC/References/CICInterface/AudioPlayer.html#SynchronizePlaybackState">SynchronizePlaybackState 지시 메시지</a>{% endif %} 추가</li>
+              <li><a href="/CIC/References/CICInterface/AudioPlayer.html#Play">AudioPlayer.Play</a> 지시 메시지의 payload 필드 내용 업데이트</li>
+              <li>ProgressReportXXX, PlayXXX 형식의 이름을 가진 이벤트 필드에 token 필드 값 필수로 추가</li>
+            </ul>
+          </li>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#PlaybackState">AudioPlayer.PlaybackState</a> 맥락 객체에 repeatMode 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a> 네임스페이스에 총 12건의 메시지 스펙 추가
+            <ul>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#StopCommandIssued">PlaybackController.StopCommandIssued</a> 이벤트 메시지 추가</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>,
+<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatMode">PlaybackController.SetRepeatMode</a> 지시 메시지 추가</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#TurnOnRepeatMode">PlaybackController.TurnOnRepeatMode</a> 지시 메시지와 <a href="/CIC/References/CICInterface/PlaybackController.html#TurnOffRepeatMode">PlaybackController.TurnOffRepeatMode</a>는 사라질 예정</li>
+            </ul>
+          </li>
+          <li>[CIC] 미디어 스트림을 위한 정보와 재생 목록을 표시하기 위한 재생 메타 정보를 분리하기 위해 <a href="/CIC/References/CICInterface/TemplateRuntime.html">TemplateRuntime</a> 네임스페이스 추가</li>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 scanlist 필드 추가</li>
+          <li>[CIC] PIN 코드를 사용하는 외부 블루투스 기기와 연결할 수 있도록 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a>, <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a> 이벤트 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a> 지시 메시지에 payload 추가</li>
+          <li>[CEK] Clova Home extension API에 GetSleepStartTimeRequest 외 9건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 4건의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
+          <li>[CEK] Clova Home extension API의 <a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse">DiscoverAppliancesResponse</a>에 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#CustomCommandInfoObject">CustomCommandInfoObject</a> 추가</li>
+          <li>[CEK] Clova Home extension API에서 TimeAmountInfoObject <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 제거 및 이에 따른 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>의 일부 내용 변경</li>
+          <li>[CEK] Clova Home extension API의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">ApplianceInfoObject</a>에 tags 필드 추가 및 location 필드 설명 변경</li>
+          <li>[Dev. Console] Clova developer console의 일부 UI 업데이트 적용</li>
+        </ul>
+      </td>
+    </tr>
     <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
@@ -31,7 +63,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v3.4</td><td>2018-03-05</td>
       <td>
@@ -43,7 +74,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v3.3</td><td>2018-02-26</td>
       <td>
@@ -54,7 +84,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v3.2</td><td>2018-02-19</td>
       <td>
@@ -65,7 +94,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v3.1</td><td>2018-02-05</td>
       <td>
@@ -80,7 +108,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v3.0</td><td>2018-01-29</td>
       <td>
@@ -95,7 +122,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.9</td><td>2018-01-22</td>
       <td>
@@ -107,7 +133,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.8</td><td>2018-01-15</td>
       <td>
@@ -116,7 +141,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.7</td><td>2018-01-08</td>
       <td>
@@ -132,7 +156,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.6</td><td>2018-01-02</td>
       <td>
@@ -143,7 +166,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.5</td><td>2017-12-18</td>
       <td>
@@ -158,7 +180,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.4</td><td>2017-12-11</td>
       <td>
@@ -168,7 +189,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.3</td><td>2017-12-04</td>
       <td>
@@ -182,20 +202,18 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.2</td><td>2017-11-20</td>
       <td>
-      <ul>
-        <li>[Design] <a href="/Design/Design_Guideline_For_Client_Hardware.html">클라이언트 기기 디자인 가이드라인</a> 추가</li>
-        <li>[CIC] 오디오 콘텐츠 및 이미지 썸네일 표시를 위해 <a href="/CIC/References/ContentTemplates/CardList.html">CardList 템플릿</a>의 subType 값에 Type5, Type6를 추가</li>
-        <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> HeatingModeInfoObject를 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ModeInfoObject">ModeInfoObject</a>로 이름을 변경하고 범용적인 기기의 운전 모드를 나타내는데 사용하는 객체로 설명을 수정</li>
-        <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureRequest">GetCurrentTemperatureRequest</a> 메시지와 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureResponse">GetCurrentTemperatureResponse</a> 메시지 추가</li>
-        <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html">Error</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#UnsupportedOperationError">UnsupportedOperationError</a> 메시지 추가</li>
-      </ul>
-    </td>
+        <ul>
+          <li>[Design] <a href="/Design/Design_Guideline_For_Client_Hardware.html">클라이언트 기기 디자인 가이드라인</a> 추가</li>
+          <li>[CIC] 오디오 콘텐츠 및 이미지 썸네일 표시를 위해 <a href="/CIC/References/ContentTemplates/CardList.html">CardList 템플릿</a>의 subType 값에 Type5, Type6를 추가</li>
+          <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> HeatingModeInfoObject를 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ModeInfoObject">ModeInfoObject</a>로 이름을 변경하고 범용적인 기기의 운전 모드를 나타내는데 사용하는 객체로 설명을 수정</li>
+          <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureRequest">GetCurrentTemperatureRequest</a> 메시지와 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCurrentTemperatureResponse">GetCurrentTemperatureResponse</a> 메시지 추가</li>
+          <li>[CEK] Clova Home extension 메시지의 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html">Error</a> 인터페이스에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#UnsupportedOperationError">UnsupportedOperationError</a> 메시지 추가</li>
+        </ul>
+      </td>
     </tr>
-
     <tr>
       <td>v2.1</td><td>2017-11-13</td>
       <td>
@@ -205,7 +223,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v2.0</td><td>2017-11-06</td>
       <td>
@@ -217,7 +234,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v1.9</td><td>2017-10-30</td>
       <td>
@@ -240,7 +256,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v1.7</td><td>2017-10-16</td>
       <td>
@@ -252,7 +267,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v1.6</td><td>2017-10-02</td>
       <td>
@@ -268,20 +282,18 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v1.5</td><td>2017-09-25</td>
       <td>
-      <ul>
-        <li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController API</a>에 음악 재생 제어용 <a href="/CIC/References/CICInterface/PlaybackController.html#NextCommandIssued">PlaybackController.NextCommandIssued</a> 이벤트 메시지와 <a href="/CIC/References/CICInterface/PlaybackController.html#PreviousCommandIssued">PlaybackController.PreviousCommandIssued</a> 이벤트 메시지 추가</li>
-        <li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#ExpectSpeech">SpeechRecognizer.ExpectSpeech</a> 지시 메시지에 expectSpeechId 필드를 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지에 speechId와 explicit 필드를 각각 추가</li>
-        <li>[CIC] <a href="/CIC/References/ContentTemplates/Popup.html">Popup 템플릿</a> 추가</li>
-        <li>[CEK] Clova Home API에 ChargeConfirmation 외 33건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a> 추가</li>
-        <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 6종 추가 및 location 필드 추가</li>
-      </ul>
-    </td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController API</a>에 음악 재생 제어용 <a href="/CIC/References/CICInterface/PlaybackController.html#NextCommandIssued">PlaybackController.NextCommandIssued</a> 이벤트 메시지와 <a href="/CIC/References/CICInterface/PlaybackController.html#PreviousCommandIssued">PlaybackController.PreviousCommandIssued</a> 이벤트 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#ExpectSpeech">SpeechRecognizer.ExpectSpeech</a> 지시 메시지에 expectSpeechId 필드를 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지에 speechId와 explicit 필드를 각각 추가</li>
+          <li>[CIC] <a href="/CIC/References/ContentTemplates/Popup.html">Popup 템플릿</a> 추가</li>
+          <li>[CEK] Clova Home API에 ChargeConfirmation 외 33건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a> 추가</li>
+          <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 6종 추가 및 location 필드 추가</li>
+        </ul>
+      </td>
     </tr>
-
     <tr>
       <td>v1.4</td><td>2017-09-18</td>
       <td>
@@ -305,40 +317,35 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v1.2</td><td>2017-09-04</td>
-    <td>
-      <ul>
-        <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#Help">Clova.Help</a> 지시 메시지 추가</li>
-        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">DeviceControl.LaunchApp</a> 지시 메시지 추가</li>
-        <li>[CIC] TextRecognizer 네임스페이스 및 <a href="/CIC/References/CICInterface/TextRecognizer.html">TextRecognizer.Recognize</a> 이벤트 메시지 추가</li>
-        <li>[CIC] <a href="/CIC/References/CIC_API.html">CIC API</a>, <a href="/CEK/References/CEK_API.html">CEK API</a>의 목차, 설명 재작성</li>
-        <li>[CIC] CIC API 내용 업데이트: 요청/응답 헤더의 Status code 추가, REST API reference 문서 포맷 적용</li>
-        <li>[기타] 일부 문서 오류 수정</li>
-      </ul>
-    </td>
+      <td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#Help">Clova.Help</a> 지시 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">DeviceControl.LaunchApp</a> 지시 메시지 추가</li>
+          <li>[CIC] TextRecognizer 네임스페이스 및 <a href="/CIC/References/CICInterface/TextRecognizer.html">TextRecognizer.Recognize</a> 이벤트 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CIC_API.html">CIC API</a>, <a href="/CEK/References/CEK_API.html">CEK API</a>의 목차, 설명 재작성</li>
+          <li>[CIC] CIC API 내용 업데이트: 요청/응답 헤더의 Status code 추가, REST API reference 문서 포맷 적용</li>
+          <li>[기타] 일부 문서 오류 수정</li>
+        </ul>
+      </td>
     </tr>
-
     <tr>
-      <td>v1.1</td>
-    <td>2017-08-28</td>
-    <td>
-      <ul>
-        <li>[CIC] 셋톱박스용 TV 채널 정보 스펙과 전원 상태 정보 스펙을 <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>와 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에 추가</li>
-        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에서 target으로 사용되는 값 일부 추가 및 변경: power, energysave, screenbrightness</li>
-        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>의 SetPoint를 <a href="/CIC/References/CICInterface/DeviceControl.html#SetValue">SetValue</a>로 이름 변경</li>
-        <li>[CIC] <a href="/CIC/References/Clova_Auth_API.html">Clova 인증 API</a> 내용 업데이트 - 요청/응답 헤더와 Status code 추가, REST API reference 문서 포맷 적용</li>
-        <li>[CEK] <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueOutOfRangeError">ValueOutOfRangeError</a>를 Clova Home의 Error 인터페이스에 추가</li>
-      </ul>
-    </td>
+      <td>v1.1</td><td>2017-08-28</td>
+      <td>
+        <ul>
+          <li>[CIC] 셋톱박스용 TV 채널 정보 스펙과 전원 상태 정보 스펙을 <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>와 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>에서 target으로 사용되는 값 일부 추가 및 변경: power, energysave, screenbrightness</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>의 SetPoint를 <a href="/CIC/References/CICInterface/DeviceControl.html#SetValue">SetValue</a>로 이름 변경</li>
+          <li>[CIC] <a href="/CIC/References/Clova_Auth_API.html">Clova 인증 API</a> 내용 업데이트 - 요청/응답 헤더와 Status code 추가, REST API reference 문서 포맷 적용</li>
+          <li>[CEK] <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueOutOfRangeError">ValueOutOfRangeError</a>를 Clova Home의 Error 인터페이스에 추가</li>
+        </ul>
+      </td>
     </tr>
-
     <tr>
       <td>v1.0</td><td>2017-08-21</td>
       <td>[CIC] <a href="/CIC/Guides/Interact_with_CIC.html#ManageConnection">Access token 갱신</a>절 추가 및 /token API 내용 업데이트</td>
     </tr>
-
     <tr>
       <td>v0.9</td><td>2017-08-14</td>
       <td>
@@ -350,7 +357,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v0.8</td><td>2017-08-04</td>
       <td>
@@ -365,7 +371,6 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v0.7</td><td>2017-07-28</td>
       <td>
@@ -377,18 +382,16 @@
         </ul>
       </td>
     </tr>
-
     <tr>
       <td>v0.6</td><td>2017-07-14</td>
       <td>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a> 객체 beginAtInMilliseconds 필드 내용 추가</td>
     </tr>
-
     <tr>
       <td>v0.5</td><td>2017-07-07</td>
       <td>
         <ul>
           <li>[CEK] <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">Custom extension 응답 메시지</a>의 <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">outputSpeech</a> 객체 구성 업데이트 반영</li>
-          <li>[공통] <a href="/Terms.html">용어집 추가</a></li>
+          <li>[공통] <a href="/Glossary.html">용어집 추가</a></li>
           <li>CEK 메시지 포맷 파트의 목차 업데이트</li>
         </ul>
       </td>
