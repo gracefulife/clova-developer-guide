@@ -44,7 +44,8 @@
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
+| `customCommands[]`        | [CustomCommandInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomCommandInfoObject) array  | 사용자 계정에 등록된 사용자 정의 명령 목록이 담긴 객체 배열   | 필수     |
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array          | 사용자 계정에 등록된 기기 목록을 표현하는 객체 배열          | 필수    |
 
 ### Remarks
 IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록을 제공해야 합니다.
@@ -53,6 +54,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
 
 {% raw %}
 ```json
+// 예제: DiscoverAppliancesResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
@@ -61,6 +63,42 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
     "payloadVersion": "1.0"
   },
   "payload": {
+    "customCommands": [
+      {
+        "text": "좋은아침",
+        "actions": [
+          {
+            "applianceId": "device-001",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      },
+      {
+        "text": "좋은저녁",
+        "actions": [
+          {
+            "applianceId": "device-0011",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      }
+    ],
     "discoveredAppliances": [
       {
         "applianceId": "device-001",
@@ -95,7 +133,9 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
           "TurnOff"
         ],
         "applianceTypes": ["SMARTPLUG"],
-        "additionalApplianceDetails": {}
+        "additionalApplianceDetails": {},
+        "location": "LIVING_ROOM",
+        "tags": ["공부", "철수방", "외출시전원해제기"]
       }
     ]
   }

@@ -1,25 +1,25 @@
-﻿# Extension examples
+# Extension examples
 
-Here is an explanation of some extensions that are currently serviced by Clova. As these extensions perform simple actions, these examples will be helpful for when implementing your own extension.
+Here is an explanation of some extensions that are currently provided by Clova. As these extensions perform simple actions, these examples will be helpful when implementing your own extension.
 
-* [Magic ball](#MagicBall)
-* [Rain sound](#RainSound)
-* [Dice drawer](#DiceDrawer)
-* [Coin helper](#CoinHelper)
+* [Magic Ball](#MagicBall)
+* [Rain Sound](#RainSound)
+* [Dice Drawer](#DiceDrawer)
+* [Coin Helper](#CoinHelper)
 
-## Magic ball {#MagicBall}
+## Magic Ball {#MagicBall}
 
 Magic Ball is an extension that returns a random response to a user’s question from 20 positive or negative predefined expressions.
 
 ### Features
 * It has a simple interaction model, since a random response is given regardless of the user utterance.
-* It can be seen as the simplest “echo” level example in terms of server-client programming.
-* It is implemented by the Go programming language.
+* It can be seen as the simplest "echo" level example in terms of server-client programming.
+* It is implemented in the Go programming language.
 
 ### GitHub repository
-https://github.com/naver/clova-extension-sample-magicball
+{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-magicball
 
-## Rain sound {#RainSound}
+## Rain Sound {#RainSound}
 
 Rain Sound is an extension that responds by making the client play the pre-recorded audio file (.mp3) upon user request.
 
@@ -29,11 +29,11 @@ Rain Sound is an extension that responds by making the client play the pre-recor
 * It is implemented in Node.js.
 
 ### GitHub repository
-https://github.com/naver/clova-extension-sample-rainsound
+{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-rainsound
 
-## Dice drawer {#DiceDrawer}
+## Dice Drawer {#DiceDrawer}
 
-Dice Drawer is an extension that rolls a dice upon a user’s request and tells the results. It tells the sum of results if more than one dice is rolled.
+Dice Drawer is an extension that rolls a selected number of dice upon user request and tells the results. It tells the sum of results if more than one die is rolled.
 
 ### Features
 * The user can select the number of dice to roll. The interaction model of the extension defines the value of the number of dice as a slot.
@@ -41,19 +41,18 @@ Dice Drawer is an extension that rolls a dice upon a user’s request and tells 
 * It is implemented in Node.js.
 
 ### GitHub repository
-https://github.com/naver/clova-extension-sample-dice
+{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-dice
 
-## Coin helper {#CoinHelper}
+## Coin Helper {#CoinHelper}
 
-Coin Helper is an extension that returns the market price information upon a user’s request by calling the REST API provided by an external virtual currency exchange.
+Coin Helper is an extension that returns the market price of cryptocurrencies. Upon a user’s request, the extension calls the REST API provided by an external cryptocurrency exchange and retrieves the market price information.
 
 ### Features
-* The user can decide which virtual currency exchange information to use and which virtual currency market price to check. The interaction model of the extension defines the value from the virtual currency exchange and virtual currency type as a slot.
-* It uses REST API of an external service to check data from another service.
+* The user can decide which cryptocurrency exchange information to use and which cryptocurrency market price to check. The interaction model of the extension defines the value from the cryptocurrency exchange and cryptocurrency type as a slot.
+* It uses REST API of external services to retrieve data from those services.
 * It has a slightly more complicated interaction model than other examples.
 * It is implemented by the Go programming language.
 
 ### GitHub repository
 
-https://github.com/naver/clova-extension-sample-coinhelper
-
+{{ book.GitHubBaseURLforExtensionExample }}/clova-extension-sample-coinhelper

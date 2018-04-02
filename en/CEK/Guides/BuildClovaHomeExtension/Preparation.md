@@ -1,2 +1,11 @@
-## Preparation {#Preparation}
-To provide a 3rd party IoT service with your Clova Home extension, link the service users' accounts with Clova and set up an authorization server. See [Linking user account](/CEK/Guides/Link_User_Account.md) for more details.
+## Prerequisites {#Preparation}
+A custom Home extension developer must prepare the following in advance:
+
+{% include "/CEK/Guides/RequiredComponents/Extension_Server.md" %}
+
+{% include "/CEK/Guides/RequiredComponents/Authorization_Server.md" %}
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>In order to provide a 3rd party IoT service via the Clova Home extension, an authorization server must be established to link to the user account of the 3rd party IoT service.</p>
+</div>

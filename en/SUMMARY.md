@@ -1,4 +1,4 @@
-﻿# Summary
+# Summary
 
 ## About This Document
 
@@ -59,7 +59,7 @@
   * [Sending events](/CIC/Guides/Interact_with_CIC.md#SendEvent)
   * [Handling directives](/CIC/Guides/Interact_with_CIC.md#HandleDirective)
   * [Managing message queues](/CIC/Guides/Interact_with_CIC.md#ManageMessageQ)
-  * [Handling delegated user requests](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
+  * Handling delegated user requests
 * [CIC API reference](/CIC/References/CIC_API.md)
   * [API basic information](/CIC/References/CIC_API.md#BasicInfo)
     * [Base URL](/CIC/References/CIC_API.md#BaseURL)
@@ -158,7 +158,7 @@
     * [Invoking extensions after account linking](/CEK/Guides/Link_User_Account.md#ExtensionInvokingAfterAccountLinking)
   * [Applying account linking](/CEK/Guides/Link_User_Account.md#ApplyAccountLinking)
     * [Building an authentication server](/CEK/Guides/Link_User_Account.md#BuildAuthServer)
-    * [Implementing verification on account permissions](/CEK/Guides/Link_User_Account.md#AddValidationLogic)
+    * [Implementing account permissions verification](/CEK/Guides/Link_User_Account.md#AddValidationLogic)
     * [Registering account linking information](/CEK/Guides/Link_User_Account.md#RegisterAccountLinkingInfo)
 * [Extension examples](/CEK/Examples/Extension_Examples.md)
   * [Magic ball](/CEK/Examples/Extension_Examples.md#MagicBall)

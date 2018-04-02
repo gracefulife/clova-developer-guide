@@ -362,5 +362,4 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 {% endraw %}
 
 ### See also
-
 * [`Clova.FinishExtension`](#FinishExtension)
