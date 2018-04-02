@@ -8,7 +8,7 @@
     "DocVersion": "v3.6",
     "language": "ko",
     "TargetCountryCode": "KR",
-    "TargetReaderType": "Internal",
+    "TargetReaderType": "Uplus",
     "ExtensionAdminEmail": "dl_extension_admin@navercorp.com",
     "DeveloperConsoleURL": "https://developers.naver.com/console/clova",
     "GitHubBaseURLforExtensionExample": "https://github.com/naver",
