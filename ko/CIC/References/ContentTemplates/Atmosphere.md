@@ -57,7 +57,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -71,7 +71,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -85,7 +85,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -99,7 +99,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -131,7 +131,7 @@
   },
   "referenceUrl" : {
     "type" : "url",
-    "value" : "http://weather.naver.com/"
+    "value" : "http://weather.contentproviderdomain.com/"
   },
   "temperatureCode": {
     "type": "string",
@@ -166,7 +166,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -180,7 +180,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -194,7 +194,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",
@@ -208,7 +208,7 @@
     {
       "atmosphereImageUrl": {
         "type": "url",
-        "value": "http://static.naver.net/clova/service/weather/air_icon_02.png"
+        "value": "http://static.contentproviderdomain.net/clova/service/weather/air_icon_02.png"
       },
       "concentrationOfAtmosphere": {
         "type": "string",

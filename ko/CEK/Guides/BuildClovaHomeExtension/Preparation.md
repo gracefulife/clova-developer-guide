@@ -1,5 +1,5 @@
 ## 사전 준비사항 {#Preparation}
-Custom Home extension 개발자는 다음을 미리 준비해야 합니다.
+Clova Home extension 개발자는 다음을 미리 준비해야 합니다.
 
 {% include "/CEK/Guides/RequiredComponents/Extension_Server.md" %}
 
