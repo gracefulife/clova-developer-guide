@@ -5,7 +5,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
 | [`ConditionsNotMetError`](#ConditionsNotMetError)          | Error Response | 대상 기기가 동작하기 위해 특정 조건(상태)이 충족되지 않은 경우 CEK에게 이 메시지를 응답으로 보냅니다. |
-| [`DeviceFailureError`](#DeviceFailureError)                | Error Response | 대상 기기에 결험이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.              |
+| [`DeviceFailureError`](#DeviceFailureError)                | Error Response | 대상 기기에 결함이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.              |
 | [`DriverInternalError`](#DriverInternalError)              | Error Response | 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.                |
 | [`ExpiredAccessTokenError`](#ExpiredAccessTokenError)      | Error Response | [사용자 계정 연결](/CEK/Guides/Link_User_Account.md) 시 [인증 서버](/CEK/Guides/Link_User_Account.md#BuildAuthServer)로부터 발급 받은 access token이 만료된 경우 CEK에게 이 메시지를 응답으로 보냅니다.  |
 | [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error Response | 사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 전달합니다.         |
@@ -51,7 +51,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 * [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError)
 
 ## DeviceFailureError {#DeviceFailureError}
-대상 기기에 결험이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
+대상 기기에 결함이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
 
 ### Payload fields
 

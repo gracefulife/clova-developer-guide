@@ -16,10 +16,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 | [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | 오디오 스트림 재생이 시작된 후 지정된 간격마다 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 간격은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.|
 | [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | 오디오 스트림 재생이 시작된 후 지정된 보고 시점에 현재 재생 상태([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState))를 CIC로 보고하기 위해 사용됩니다. 각 오디오 스트림의 보고 시점은 [`AudioPlayer.Play`](#Play) 지시 메시지가 클라이언트로 전달될 때 확인할 수 있습니다.|
 | [`ReportPlaybackState`](#ReportPlaybackState)           | Event  | 클라이언트의 현재 음원 재생 상태를 CIC로 보고합니다. 클라이언트가 CIC로부터 [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) 지시 메시지를 받은 경우 `AudioPlayer.ReportPlaybackState` 이벤트 메시지를 CIC로 전송해야 합니다.  |
-| [`RequestPlaybackState`](#RequestPlaybackState)         | Event  | 클라이언트의 음원 재생 상태를 CIC에게 요청합니다. CIC는 `AudioPlayer.ReqeustPlaybackState` 이벤트 메시지를 전달받으면 사용자 계정에 등록된 모든 또는 특정 클라이언트에게 [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) 지시 메시지를 전송합니다.  |
-| [`StreamDeliver`](#StreamDeliver)     | Directive | [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |
+{% if book.TargetReaderType == "Internal" %}| [`RequestPlaybackState`](#RequestPlaybackState)         | Event  | 클라이언트의 음원 재생 상태를 CIC에게 요청합니다. CIC는 `AudioPlayer.ReqeustPlaybackState` 이벤트 메시지를 전달받으면 사용자 계정에 등록된 모든 또는 특정 클라이언트에게 [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) 지시 메시지를 전송합니다.  |
+| [`StreamDeliver`](#StreamDeliver)     | Directive | [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |{% else %}| [`StreamDeliver`](#StreamDeliver)     | Directive | [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. |{% endif %}
 | [`StreamRequested`](#StreamRequested) | Event     | 오디오 스트림 재생을 위해 CIC로 스트리밍 URL과 같은 추가 정보를 요청하는 이벤트 메시지입니다.               |
-| [`SynchronizePlaybackState`](#SynchronizePlaybackState) | Directive | 클라이언트의 음원 재생 상태를 동기화하도록 지시합니다. `AudioPlayer.RequestPlaybackState` 이벤트 메시지를 전송했던 클라이언트는 `AudioPlayer.SynchronizePlaybackState` 지시 메시지를 수신하게 됩니다. |
+{% if book.TargetReaderType == "Internal" %}| [`SynchronizePlaybackState`](#SynchronizePlaybackState) | Directive | 클라이언트의 음원 재생 상태를 동기화하도록 지시합니다. `AudioPlayer.RequestPlaybackState` 이벤트 메시지를 전송했던 클라이언트는 `AudioPlayer.SynchronizePlaybackState` 지시 메시지를 수신하게 됩니다. |{% endif %}
 
 ## 음원 재생 상태 공유 {#SharePlaybackState}
 
@@ -27,10 +27,10 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 
 ![](/CIC/Resources/Images/CIC_Playback_State_Sync_Work_Flow.png)
 
-1. 클라이언트는 [`AudioPlayer.RequestPlaybackState`](#RequestPlaybackState) 이벤트 메시지를 사용하여 CIC에게 사용자 계정에 등록된 모든 클라이언트 또는 특정 클라이언트의 음원 재생 상태 정보를 요청합니다.
+1. Clova 앱은 {{ "[`AudioPlayer.RequestPlaybackState`](#RequestPlaybackState) 이벤트 메시지를 사용하여 " if book.TargetReaderType == "Internal" }}CIC에게 사용자 계정에 등록된 모든 클라이언트 또는 특정 클라이언트의 음원 재생 상태 정보를 요청합니다.
 2. CIC는 [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)사용자 계정에 등록된 모든 클라이언트 또는 특정 클라이언트에게 현재 음원 재생 상태를 보고하도록 지시합니다.
 3. 음원 재생 상태 보고 요청을 받은 클라이언트는 [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState) 이벤트 메시지를 사용하여 CIC에게 현재 음원 재생 상태를 보고합니다.
-4. CIC는 [`AudioPlayer.SynchronizePlaybackState`](#SynchronizePlaybackState)를 사용하여 다른 클라이언트의 음원 재생 상태를 요청했던 클라이언트에게 상태 정보를 전달하여 정보를 동기화하도록 지시합니다.
+4. CIC는 {{ "[`AudioPlayer.SynchronizePlaybackState`](#SynchronizePlaybackState)를 사용하여 " if book.TargetReaderType == "Internal" }}다른 클라이언트의 음원 재생 상태를 요청했던 클라이언트에게 상태 정보를 전달하여 정보를 동기화하도록 지시합니다.
 
 
 ## ClearQueue directive {#ClearQueue}
@@ -686,6 +686,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.Play`](#Play)
 * [음원 재생 상태 공유](#SharePlaybackState)
 
+{% if book.TargetReaderType == "Internal" %}
 ## RequestPlaybackState event {#RequestPlaybackState}
 
 클라이언트의 음원 재생 상태를 CIC에게 요청합니다. CIC는 `AudioPlayer.ReqeustPlaybackState` 이벤트 메시지를 전달받으면 사용자 계정에 등록된 모든 또는 특정 클라이언트에게 [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) 지시 메시지를 전송합니다.
@@ -733,6 +734,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState)
 * [`AudioPlayer.Play`](#Play)
 * [음원 재생 상태 공유](#SharePlaybackState)
+{% endif %}
 
 ## StreamDeliver directive {#StreamDeliver}
 [`AudioPlayer.StreamRequested`](#StreamRequested) 이벤트 메시지의 응답이며, 실제 음악 재생이 가능한 오디오 스트림 정보를 수신해야 할 때 사용합니다. 클라이언트가 음악을 재생할 수 있도록 오디오 스트림 정보에 스트리밍할 수 있는 URL 정보가 필수로 포함되어 있습니다.
@@ -836,6 +838,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 * [`AudioPlayer.Play`](#Play)
 * [`AudioPlayer.StreamDeliver`](#StreamDeliver)
 
+{% if book.TargetReaderType == "Internal" %}
 ## SynchronizePlaybackState directive {#SynchronizePlaybackState}
 
 클라이언트의 음원 재생 상태를 동기화하도록 지시합니다. `AudioPlayer.RequestPlaybackState` 이벤트 메시지를 전송했던 클라이언트는 `AudioPlayer.SynchronizePlaybackState` 지시 메시지를 수신하게 됩니다.
@@ -882,6 +885,7 @@ AudioPlayer 인터페이스는 클라이언트에서 오디오 스트림 재생�
 ### See also
 * [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState)
 * [음원 재생 상태 공유](#SharePlaybackState)
+{% endif %}
 
 ## Shared objects
 AudioPlayer API를 이용하여 이벤트 메시지나 지시 메시지를 보낼 때 메시지 본문(`payload`)에 다음과 같은 객체(shared objects)를 공유하여 사용합니다.
