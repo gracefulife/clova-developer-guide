@@ -22,6 +22,8 @@
 | Clova              | [`ProcessDelegatedEvent`](/CIC/References/CICInterface/Clova.md#ProcessDelegatedEvent)                          | 클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다.  |
 | DeviceControl     | [`ActionExecuted`](/CIC/References/CICInterface/DeviceControl.md#ActionExecuted) | 클라이언트가 기기 제어를 정상적으로 수행했음을 보고하기 위해 사용됩니다.                               |
 | DeviceControl     | [`ActionFailed`](/CIC/References/CICInterface/DeviceControl.md#ActionFailed) | 클라이언트는 기기 제어를 수행할 수 없거나 수행에 실패했음을 CIC에 보고하기 위해 사용됩니다.                   |
+| DeviceControl     | [`BtRequestForPINCode`](/CIC/References/CICInterface/DeviceControl.md#BtRequestForPINCode) | 클라이언트는 블루투스 기기가 PIN 코드 입력 요청을 할 때 이 메시지를 사용하여 CIC에 요청을 전달해야 합니다.       |
+| DeviceControl     | [`BtRequestToCancelPinCodeInput`](/CIC/References/CICInterface/DeviceControl.md#BtRequestToCancelPinCodeInput) | 클라이언트는 CIC에 PIN 코드 입력 요청을 취소하고자 할 때 이 메시지를 사용해야 합니다. |
 | DeviceControl     | [`ReportState`](/CIC/References/CICInterface/DeviceControl.md#ReportState)   | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                              |
 | DeviceControl     | [`RequestStateSynchronization`](/CIC/References/CICInterface/DeviceControl.md#RequestStateSynchronization) | 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다.  |
 | PlaybackController | [`CustomCommandIssued`](#CustomCommandIssued) | 사용자가 클라이언트의 기기에서 임의의 기능을 설정한 버튼을 누르거나 터치한 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다.  |

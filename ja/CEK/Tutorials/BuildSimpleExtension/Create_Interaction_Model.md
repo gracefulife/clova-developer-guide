@@ -30,14 +30,14 @@
 ### ビルドおよびテストする
 対話モデルが入力された通りに動作するか確認するために、対話モデルをビルドしてテストします。
 
-1. **Custom Extension**画面の左上にある**{{ book.DevConsole.BuildButton }}**ボタンをクリックします。
+1. **Custom Extension**画面の左上にある**{{ book.DevConsole.cek_builder_menu_build}}**ボタンをクリックします。
 
 	<div class="note">
 		<p><strong>メモ</strong></p>
-		<p>ビルドは3~5分ほどかかります。ビルドが開始されると<strong>{{ book.DevConsole.IsBuilding }}</strong>に変わり、ビルドが完了すると<strong>{{ book.DevConsole.BuildButton }}</strong>に戻ります。</p>
+		<p>ビルドは3~5分ほどかかります。ビルドが開始されると<strong>{{ book.DevConsole.IsBuilding }}</strong>に変わり、ビルドが完了すると<strong>{{ book.DevConsole.cek_builder_menu_build}}</strong>に戻ります。</p>
 	</div>
 
-2. ビルドが完了すると、**{{ book.DevConsole.BuildButton }}**ボタンの下にある**{{ book.DevConsole.cek_test }}**メニューをクリックします。
+2. ビルドが完了すると、**{{ book.DevConsole.cek_builder_menu_build}}**ボタンの下にある**{{ book.DevConsole.cek_test }}**メニューをクリックします。
 
 3. **{{ book.DevConsole.cek_builder_test_expression_title }}**にテストする文章を入力します。例えば、「サイコロを振って」と入力します。
 4. Enterキーを押すか、または**{{ book.DevConsole.cek_builder_test_request_test }}**ボタンをクリックします。

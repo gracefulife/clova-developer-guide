@@ -21,6 +21,16 @@
   </thead>
   <tbody>
     <tr>
+      <td>v3.6</td><td>2018-04-02</td>
+      <td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 scanlist 필드 추가</li>
+          <li>[CIC] PIN 코드를 사용하는 외부 블루투스 기기와 연결할 수 있도록 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a>, <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a> 이벤트 메시지 추가</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a> 지시 메시지에 <code>payload</code> 추가</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>
@@ -28,6 +38,7 @@
           <li>[CIC] 사용자가 설정한 임의의 명령을 실행할 수 있는 <a href="/CIC/References/CICInterface/PlaybackController.html#CustomCommandIssued">CustomCommandIssued</a> 이벤트 메시지를 <a href="/CIC/References/CICInterface/PlaybackController.html#CustomCommandIssued">PlaybackController</a> 네임스페이스에 추가</li>
           <li>[CEK] Clova Home API에 CloseConfirmation 외 47건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 약 10종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
           <li>[CEK] Clova Home API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">지원 기기</a> 30종 추가</li>
+          <li>[Dev. Console] Clova developer console의 일부 UI 업데이트 적용</li>
         </ul>
       </td>
     </tr>
