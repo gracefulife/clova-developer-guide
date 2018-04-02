@@ -3,6 +3,7 @@
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
+| [ActionInforObject](#ActionInforObject)                   | 기기 제어 동작 정보가 담긴 객체  |
 | [AirQualityInfoObject](#AirQualityInfoObject)             | 공기질 정보가 담긴 객체            |
 | [ApplianceInfoObject](#ApplianceInfoObject)               | IoT 기기의 정보가 담긴 객체        |
 | [BatteryInfoObject](#BatteryInfoObject)                   | 배터리 정보가 담긴 객체            |
@@ -11,14 +12,15 @@
 | [ColorInfoObject](#ColorInfoObject)                       | 대상기기의 조명이나 화면, 전등의 색 정보가 담긴 객체  |
 | [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | 대상기기의 조명이나 화면, 전등의 색온도 정보가 담긴 객체  |
 | [ConsumptionInfoObject](#ConsumptionInfoObject)           | 에너지 사용량 정보가 담긴 객체       |
-| [CustomInfoObject](#CustomInfoObject)                     | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |
+| [CustomCommandInfoObject](#CustomCommandInfoObject)       | 사용자 정의 명령어 정보가 담긴 객체   |
+| [CustomInfoObject](#CustomInfoObject)                     | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |   |   |
 | [ExpendableInfoObject](#ExpendableInfoObject)             | 기기 소모품의 사용량이나 남은 수명 정보가 담긴 객체  |
 | [FineDustInfoObject](#FineDustInfoObject)                 | 미세 먼지 정보가 담긴 객체          |
 | [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | 압력이나 수압 세기 정보가 담긴 객체   |
 | [ModeInfoObject](#ModeInfoObject)                         | 운전 모드 정보가 담긴 객체          |
 | [HumidityInfoObject](#HumidityInfoObject)                 | 습도 정보가 담긴 객체              |
-| [PeriodInfoObject](#PeriodInfoObject)                     | 기간 정보를 담고 있는 객체     |
-| [PhaseInfoObject](#PhaseInfoObject)                       | 기기 동작의 단계 정보가 담긴 객체     |
+| [PeriodInfoObject](#PeriodInfoObject)                     | 기간 정보를 담고 있는 객체          |
+| [PhaseInfoObject](#PhaseInfoObject)                       | 기기 동작의 단계 정보가 담긴 객체
 | [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | 누진세 단계 정보       |
 | [SittingStateInfoObject](#SittingStateInfoObject)         | 스마트 의자와 같은 기기에 대한 사용자의 착석 정보가 담긴 객체  |
 | [SleepScoreInfoObject](#SleepScoreInfoObject)             | 수면 점수 정보가 담긴 객체          |
@@ -28,6 +30,113 @@
 | [TVChannelInfoObject](#TVChannelInfoObject)               | TV 채널 정보가 담긴 객체           |
 | [UltraFineDustInfoObject](#UltraFineDustInfoObject)       | 초미세 먼지 정보가 담긴 객체         |
 | [VolumeInfoObject](#VolumeInfoObject)                     | 볼륨 정보를 담고 있는 객체          |
+
+## ActionInforObject {#ActionInforObject}
+기기 제어 동작 정보가 담긴 객체로써 하나의 기기에 하나의 동작을 수행하는 명령을 표현합니다.
+
+### Object fields
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `applianceId` | string  | 기기 ID                      | 필수/항상     |
+| `action`      | string  | 기기 제어 동작. 동작 목록은 [ApplianceInfoObject](#ApplianceInfoObject)의 [Actions](#Actions) 항목을 참조합니다.     | 필수/항상     |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: DiscoverAppliancesResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
+    "name": "DiscoverAppliancesResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "customCommands": [
+      {
+        "text": "좋은아침",
+        "actions": [
+          {
+            "applianceId": "device-001",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      },
+      {
+        "text": "좋은저녁",
+        "actions": [
+          {
+            "applianceId": "device-0011",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      }
+    ],
+    "discoveredAppliances": [
+      {
+        "applianceId": "device-001",
+        "manufacturerName": "device-manufacturer-name",
+        "modelName": "스마트 전등",
+        "version": "v1.0",
+        "friendlyName": "거실 전등",
+        "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "isReachable": true,
+          "actions": [
+            "DecrementBrightness",
+            "HealthCheck",
+            "IncrementBrightness",
+            "SetBrightness",
+            "TurnOn",
+            "TurnOff"
+        ],
+        "applianceTypes": ["LIGHT"],
+        "additionalApplianceDetails": {}
+      },
+      {
+        "applianceId": "device-002",
+        "manufacturerName": "device-manufacturer-name",
+        "modelName": "스마트 플러그",
+        "version": "v1.0",
+        "friendlyName": "부엌 플러그",
+        "friendlyDescription": "에너지를 절약하는 플러그",
+        "isReachable": true,
+        "actions": [
+          "HealthCheck",
+          "TurnOn",
+          "TurnOff"
+        ],
+        "applianceTypes": ["SMARTPLUG"],
+        "additionalApplianceDetails": {},
+        "location": "LIVING_ROOM",
+        "tags": ["공부", "철수방", "외출시전원해제기"]
+      }
+    ]
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [CustomCommandInfoObject](#CustomCommandInfoObject)
+* [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse)
 
 ## AirQualityInfoObject {#AirQualityInfoObject}
 공기질 정보를 담고 있는 객체입니다. 기기가 측정한 공기질 상태를 나타낼 때 사용되며 문자열로 표현됩니다.
@@ -79,9 +188,10 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `manufacturerName`           | string        | 기기 제조사 이름                                                                  | 선택/항상    |
 | `modelName`                  | string        | 기기 모델 이름                                                                   | 선택/항상    |
 | `version`                    | string        | 제조사의 소프트웨어 버전                                                            | 선택/항상    |
-| `location`                   | string        | 기기가 설치된 장소                                                                | 선택/항상    |
+| `location`                   | string        | 기기가 설치된 장소. [Locations](#Locations) 항목에 있는 코드 값을 입력합니다. 해당 코드 값에 대응되는 한글 표현의 텍스트가 `tags` 필드에 추가됩니다.            | 선택/항상    |
+| `tags`                       | string array  | 사용자가 기기에 추가한 태그 목록. 사용자는 Clova app이나 IoT 서비스에서 기기의 설치 장소, 사용 목적, 제품 브랜드 등 다양한 속성을 태그로 기기에 추가할 수 있습니다. 같은 속성(태그)을 가지는 기기는 같은 그룹이 되며, 같은 그룹에 속한 기기에서 허용 동작이 같을 경우 동시 제어가 가능해 집니다.  | 선택/항상  |
 
-## Remarks
+### Remarks
 [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) 메시지를 통해 사용자 기기 목록을 요청하면 Clova Home extension은 `additionalApplianceDetails` 필드를 제외한 모든 필드의 정보를 채워서 전달해야 합니다. 이때, `actions` 필드의 값은 보통 `applianceTypes` 필드에 의해 결정되며, `applianceTypes` 필드 값에 따라 다음과 같은 값을 가질 수 있습니다.
 
 | applianceTypes | 설명         | 허용되는 actions                                  |
@@ -136,6 +246,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 <p>실제 기기의 기능 제약에 따라 기기의 applianceTypes가 허용하는 actions보다 적은 actions을 사용하도록 제한할 수 있다. 예를 들면, 사용자가 등록한 공기청정기(<code>AIRPURIFIER</code> 타입)에 팬 속도를 조절할 수 있는 기능이 없을 경우 해당 기기에 허용되는 actions에서 IncrementFanSpeed와 DecrementFanSpeed를 제외하고 DiscoverAppliancesResponse 메시지를 보내야 합니다. 참고로 사용자가 대상 기기가 지원하지 않는 동작(action)을 요청한 경우 CEK가 바로 사용자에게 허용되지 않는 범위의 요청임을 알려줍니다.</p>
 </div>
 
+### Actions {#Actions}
 다음 표는 각 actions 항목과 관련이 있는 [인터페이스](/CEK/References/CEK_API.md#ClovaHomeExtInterface)를 나열하고 있습니다.
 
 | actions                    | 관련된 인터페이스                            |
@@ -203,8 +314,10 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p><a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoveryAppAppliancesResponse</code></a> 메시지를 통해 사용자가 등록한 IoT 기기 목록을 전달할 때 각 기기의 위치를 `location` 필드를 이용하여 CEK로 전달하면 사용자 IoT 기기의 위치가 자동으로 설정됩니다.</p>
+<p><a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoveryAppliancesResponse</code></a> 메시지를 통해 사용자가 등록한 IoT 기기 목록을 전달할 때 각 기기의 위치를 `location` 필드를 이용하여 CEK로 전달하면 사용자 IoT 기기의 위치가 자동으로 설정됩니다.</p>
 </div>
+
+### Locations {#Locations}
 
 다음 표는 `location` 필드에서 지원하는 위치 정보입니다. 이 정보는 사용자의 발화를 분석하거나 사용자에게 기기를 보여줄 때 사용됩니다.
 
@@ -555,6 +668,115 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`GetEstimateBillRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillRequest)
 * [`GetEstimateBillResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetEstimateBillResponse)
 
+## CustomCommandInfoObject {#CustomCommandInfoObject}
+
+사용자 정의 명령의 정보를 담고 있는 객체입니다. 사용자가 Clova app을 통해 등록한 명령에 대한 정보를 담고 있으며, [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse) 메시지의 기기 조회 결과에 사용자 계정에 등록된 명령이 함께 반환됩니다. 이 객체에는 사용자 정의 명령 호출 시 수행하게 되는 기기 제어 동작이 포함되어 있습니다.
+
+### Object fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
+|---------------|---------|-----------------------------|:-------------:|
+| `name`        | string  | 사용자 정의 명령의 이름.             | 필수/항상      |
+| `actions[]`   | [ActionInforObject](#ActionInforObject) array | 사용자 정의 명령을 통해 수행할 기기 제어 동작 목록  | 필수/항상  |
+
+### Object Example
+{% raw %}
+
+```json
+// 예제: DiscoverAppliancesResponse 메시지에서 사용된 예
+{
+  "header": {
+    "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
+    "name": "DiscoverAppliancesResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "customCommands": [
+      {
+        "text": "좋은아침",
+        "actions": [
+          {
+            "applianceId": "device-001",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      },
+      {
+        "text": "좋은저녁",
+        "actions": [
+          {
+            "applianceId": "device-0011",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      }
+    ],
+    "discoveredAppliances": [
+      {
+        "applianceId": "device-001",
+        "manufacturerName": "device-manufacturer-name",
+        "modelName": "스마트 전등",
+        "version": "v1.0",
+        "friendlyName": "거실 전등",
+        "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "isReachable": true,
+          "actions": [
+            "DecrementBrightness",
+            "HealthCheck",
+            "IncrementBrightness",
+            "SetBrightness",
+            "TurnOn",
+            "TurnOff"
+        ],
+        "applianceTypes": ["LIGHT"],
+        "additionalApplianceDetails": {}
+      },
+      {
+        "applianceId": "device-002",
+        "manufacturerName": "device-manufacturer-name",
+        "modelName": "스마트 플러그",
+        "version": "v1.0",
+        "friendlyName": "부엌 플러그",
+        "friendlyDescription": "에너지를 절약하는 플러그",
+        "isReachable": true,
+        "actions": [
+          "HealthCheck",
+          "TurnOn",
+          "TurnOff"
+        ],
+        "applianceTypes": ["SMARTPLUG"],
+        "additionalApplianceDetails": {},
+        "location": "LIVING_ROOM",
+        "tags": ["공부", "철수방", "외출시전원해제기"]
+      }
+    ]
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [ActionInforObject](#ActionInforObject)
+* [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse)
+
 ## CustomInfoObject {#CustomInfoObject}
 
 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체입니다. [공유 객체](#SharedObjects)가 기본으로 제공하는 객체로 정보를 표현할 수 없을 경우 이 객체를 사용하거나 [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse) 메시지를 통해 대상 기기가 가진 전체 정보를 제공할 때 사용됩니다.
@@ -579,21 +801,21 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "states" : [
+    "states": [
       {
-        "name" : "냉동실온도",
-        "value" : -11,
-        "unit" : "celsius"
+        "name": "냉동실온도",
+        "value": -11,
+        "unit": "celsius"
       },
       {
-        "name" : "냉장실온도",
-        "value" : 2,
-        "unit" : "celsius"
+        "name": "냉장실온도",
+        "value": 2,
+        "unit": "celsius"
       },
       {
-        "name" : "냉장실습도",
-        "value" : 10,
-        "unit" : "percentage"
+        "name": "냉장실습도",
+        "value": 10,
+        "unit": "percentage"
       },
     ],
     "applianceResponseTimestamp": "2017-11-23T20:31:18+09:00"
@@ -630,16 +852,16 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "expendableInfo" : [
+    "expendableInfo": [
       {
-        "name" : "패킹",
-        "remainingTime" : "P0001-04-10"
+        "name": "패킹",
+        "remainingTime": "P0001-04-10"
       },
       {
-        "name" : "1번 필터",
+        "name": "1번 필터",
         "usage": {
-          "value" : 80,
-          "unit" : "percentage"
+          "value": 80,
+          "unit": "percentage"
         }
       }
     ],
