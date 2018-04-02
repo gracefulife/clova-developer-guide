@@ -65,7 +65,7 @@
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=1%eb%8b%ac%eb%9f%ac+%ed%99%98%ec%9c%a8"
+    "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=1%eb%8b%ac%eb%9f%ac+%ed%99%98%ec%9c%a8"
   },
   "sentenceText": {
     "type": "string",
@@ -133,7 +133,7 @@
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ed%86%a0%ed%8a%b8%eb%84%98+%ea%b0%90%eb%8f%85%ec%9d%b4+%eb%88%84%ea%b5%ac%ec%95%bc?"
+    "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=%ed%86%a0%ed%8a%b8%eb%84%98+%ea%b0%90%eb%8f%85%ec%9d%b4+%eb%88%84%ea%b5%ac%ec%95%bc?"
   },
   "sentenceText": {
     "type": "string",
@@ -201,7 +201,7 @@
   },
   "referenceUrl": {
     "type": "url",
-    "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ea%bd%83%ec%a7%91"
+    "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=%ea%bd%83%ec%a7%91"
   },
   "sentenceText": {
     "type": "string",

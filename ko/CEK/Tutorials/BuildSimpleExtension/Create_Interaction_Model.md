@@ -5,10 +5,10 @@
 ### 새로운 custom intent 만들기
 여기서는 주사위를 던져달라는 요청에 주사위 1개를 던지도록 간단한 intent를 생성합니다.
 
-1. 샘플 주사위의 **Interaction 모델** 항목 내 **수정** 버튼을 누릅니다.
-2. **등록된 intent** 오른쪽에 있는 <img class="inlineImage" src="/CEK/Resources/Images/DevConsole_Plus_Button.png" /> 버튼을 누릅니다.
-3. **새로운 custom intent 만들기** 아래 입력창에 'ThrowDiceIntent'라는 이름을 입력합니다.
-4. 엔터키 또는 입력창 오른쪽의 **만들기** 버튼을 누릅니다.
+1. 샘플 주사위의 **{{ book.DevConsole.cek_interaction_model }}** 항목 내 **{{ book.DevConsole.cek_edit }}** 버튼을 누릅니다.
+2. **{{ book.DevConsole.cek_builder_list_title_intent }}** 오른쪽에 있는 <img class="inlineImage" src="/CEK/Resources/Images/DevConsole_Plus_Button.png" /> 버튼을 누릅니다.
+3. **{{ book.DevConsole.cek_builder_new_intent }}** 아래 입력창에 "ThrowDiceIntent"라는 이름을 입력합니다.
+4. 엔터키 또는 입력창 오른쪽의 **{{ book.DevConsole.cek_builder_new_intent_create }}** 버튼을 누릅니다.
 
 	<img src="/CEK/Resources/Images/CEK_Tutorial_NewIntent.png" style=" max-width:800px;" />
 
@@ -37,9 +37,9 @@ Interaction 모델이 입력한대로 동작하는지 확인하기 위해 intera
 
 2. 빌드가 완료되면 **{{ book.DevConsole.cek_builder_menu_build }}** 버튼 아래의 **{{ book.DevConsole.cek_test }}** 메뉴를 누릅니다.
 
-3. **사용자 발화 예시 입력**에 테스트하고자 하는 문장을 입력합니다. 예를 들어, "주사위 던져줄래"라고 입력합니다.
-4. 엔터키 또는 **테스트 요청** 버튼을 누릅니다.
-5. **테스트 결과**의 **분석된 intent** 항목에 'ThrowDiceIntent'라고 나타나는지 확인합니다.
+3. **{{ book.DevConsole.cek_builder_test_expression_title }}**에 테스트하고자 하는 문장을 입력합니다. 예를 들어, "주사위 던져줄래"라고 입력합니다.
+4. 엔터키 또는 **{{ book.DevConsole.cek_builder_test_request_test }}** 버튼을 누릅니다.
+5. **{{ book.DevConsole.cek_builder_test_result_title }}**의 **{{ book.DevConsole.cek_builder_test_intent_result }}** 항목에 "ThrowDiceIntent"라고 나타나는지 확인합니다.
 
 	<img src="/CEK/Resources/Images/CEK_Tutorial_Test.png" style="max-width:800px;"/>
 

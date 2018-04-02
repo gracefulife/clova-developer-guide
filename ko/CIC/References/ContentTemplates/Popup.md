@@ -5,8 +5,8 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
 |---------------|-----------------------------|-----------------------------|
 | Toast         | 문장과 관련 링크로 구성된 toast입니다.    | `toastLinkText`, `toastLinkUrl`, `toastText`                  |
 | Alert         | 문장과 확인 버튼으로 구성된 alert입니다.   | `alertText`                                                   |
-| Popup(버튼 1개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `positiveButtonText`, `positiveButtonUrl`, `titleText`   |
-| Popup(버튼 2개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `negativeButtonText`, `negativeButtonUrl`, `mainText`, `positiveButtonText`, `positiveButtonUrl`, `titleText` |
+| Popup(버튼 1개) | 제목, 문장, 버튼(link)으로 구성된 popup입니다. | `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title`   |
+| Popup(버튼 2개) | 제목, 문장, 두 개의 버튼으로 구성된 popup입니다. | `negativeButtonText`, `negativeButtonUrl`, `mainText`, `positiveButtonText`, `positiveButtonUrl`, `title` |
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -54,7 +54,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type": "string",
     "value": ""
   },
-  "titleText": {
+  "title": {
     "type": "string",
     "value": ""
   },
@@ -100,7 +100,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type": "string",
     "value": "다른 기기에서 재생을 시작하여 음악이 중지되었습니다."
   },
-  "titleText": {
+  "title": {
     "type": "string",
     "value": ""
   },
@@ -146,7 +146,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type": "string",
     "value": ""
   },
-  "titleText": {
+  "title": {
     "type": "string",
     "value": "취향파악 완료!"
   },
@@ -192,7 +192,7 @@ Toast, alert, popup으로 표시해야 할 텍스트나 버튼에 대한 정보�
     "type": "string",
     "value": ""
   },
-  "titleText": {
+  "title": {
     "type": "string",
     "value": "취향파악 완료!"
   },
