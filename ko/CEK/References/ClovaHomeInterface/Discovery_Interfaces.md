@@ -71,7 +71,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
         "isReachable": true,
           "actions": [
-            "HealthCheckt",
+            "HealthCheck",
             "TurnOn",
             "TurnOff"
         ],
@@ -88,7 +88,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
         "friendlyDescription": "에너지를 절약하는 플러그",
         "isReachable": true,
         "actions": [
-          "HealthCheckt",
+          "HealthCheck",
           "TurnOn",
           "TurnOff"
         ],

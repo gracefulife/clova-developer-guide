@@ -233,7 +233,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
         "isReachable": true,
           "actions": [
-            "HealthCheckt",
+            "HealthCheck",
             "TurnOn",
             "TurnOff"
         ],
@@ -250,7 +250,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
         "friendlyDescription": "에너지를 절약하는 플러그",
         "isReachable": true,
         "actions": [
-          "HealthCheckt",
+          "HealthCheck",
           "TurnOn",
           "TurnOff"
         ],
