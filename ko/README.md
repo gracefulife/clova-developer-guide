@@ -45,8 +45,10 @@
           <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 scanlist 필드 추가</li>
           <li>[CIC] PIN 코드를 사용하는 외부 블루투스 기기와 연결할 수 있도록 <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a>, <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a> 이벤트 메시지 추가</li>
           <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임 스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a> 지시 메시지에 <code>payload</code> 추가</li>
-          <li>[CEK] Clova Home API에 GetSleepStartTimeRequest 외 9건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 2종의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
-          <li>[CEK] Clova Home API의 TimeAmountInfoObject <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 제거 및 이에 따른 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>의 일부 내용 변경</li>
+          <li>[CEK] Clova Home API에 GetSleepStartTimeRequest 외 9건의 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>와 4건의 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 추가</li>
+          <li><a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse">DiscoverAppliancesResponse</a>에 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#CustomCommandInfoObject">CustomCommandInfoObject</a> 추가</li>
+          <li>TimeAmountInfoObject <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">공유 객체</a> 제거 및 이에 따른 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>의 일부 내용 변경</li>
+          <li><a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">ApplianceInfoObject</a>에 `tags` 필드 추가 및 `location` 필드 설명 변경</li>
           <li>[Dev. Console] Clova developer console의 일부 UI 업데이트 적용</li>
         </ul>
       </td>
