@@ -28,7 +28,7 @@ Clova는 [custom extension](/CEK/Guides/Build_Custom_Extension.md)이나 [Clova 
 
 3. 사용자가 계정 인증을 완료하면 authorization code 혹은 access token이 반환됩니다.
 
-4. 전달받은 authorization code 혹은 access token은 redirect URL을 통해 Clova로 전달됩니다.
+4. 클라이언트는 전달받은 authorization code 혹은 access token을 Clova로 전달합니다.
 
 5. **(3번 단계에서 authorization code를 받은 경우)** Clova는 **[Access Token URI](#RegisterAccountLinkingInfo)**로 access token과 refresh token을 요청합니다. 이때 authorization code를 전달하며, 사용자의 Clova 계정 정보에 획득한 access token과 refresh token을 저장합니다.
 
