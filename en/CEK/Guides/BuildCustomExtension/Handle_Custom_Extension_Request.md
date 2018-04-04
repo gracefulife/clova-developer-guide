@@ -12,8 +12,8 @@ The three types of requests and the user utterance patterns for each request typ
 
 | Request type | User utterance pattern | Sample utterance |
 |---------|--------------|---------|
-|[LaunchRequest](#HandleLaunchRequest) | "Start/open/operate” + _[extension call name]_ | "Start Pizzabot" |
-| [IntentRequest](#HandleIntentRequest) | _[execution commands registered per extension]_ + "to/from/by/with” + _[extension call name]_, or <br/>(after receiving the `LaunchRequest` type request) _[execution commands registered per extension]_ | "Order a pizza from Pizzabot" <br/> (In the state of starting the Pizzabot) "Update me on the delivery status" |
+|[LaunchRequest](#HandleLaunchRequest) | "Start/open/operate" + _[extension call name]_ | "Start Pizzabot" |
+| [IntentRequest](#HandleIntentRequest) | _[execution commands registered per extension]_ + "to/from/by/with" + _[extension call name]_, or <br/>(after receiving the `LaunchRequest` type request) _[execution commands registered per extension]_ | "Order a pizza from Pizzabot" <br/> (In the state of starting the Pizzabot) "Update me on the delivery status" |
 | [SessionEndedRequest](#HandleSessionEndedRequest) | (In the state of receiving the `LaunchRequest` type request) "Exit/close/stop" | "Exit (Pizzabot)" |
 
 ### Handling a LaunchRequest {#HandleLaunchRequest}
@@ -77,7 +77,7 @@ The fields used in the example above represent the following information:
 
 ### Handling an IntentRequest {#HandleIntentRequest}
 
-[`IntentRequest` type](/CEK/References/CEK_API.md#CustomExtIntentRequest) of request is used by the CEK to send user requests to the extension based on the predefined [interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel). `IntentRequest` is sent to the extension when the user makes a command by specifying the extension call name or when the user makes a command without specifying the extension call name after the `LaunchRequest` is generated. For example, if the user says "Order a pizza from Pizzabot” or starts the service with another command and then says a command, like "Order pizza", CEK sends a `IntentRequest` type request to the extension providing the pizza delivery service. `IntentRequest` type request is also used when handling multi-turn dialog requests as well as single-turn requests.
+[`IntentRequest` type](/CEK/References/CEK_API.md#CustomExtIntentRequest) of request is used by the CEK to send user requests to the extension based on the predefined [interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel). `IntentRequest` is sent to the extension when the user makes a command by specifying the extension call name or when the user makes a command without specifying the extension call name after the `LaunchRequest` is generated. For example, if the user says "Order a pizza from Pizzabot" or starts the service with another command and then says a command, like "Order pizza", CEK sends a `IntentRequest` type request to the extension providing the pizza delivery service. `IntentRequest` type request is also used when handling multi-turn dialog requests as well as single-turn requests.
 
 In the IntentRequest type message, the `request.type` field has a `"IntentRequest"` value. You can find the name of the called intent and the analysis of utterance information in the `request.intent` field. After handling the user request by analyzing this field, you can send the [response message](#ReturnCustomExtensionResponse).
 
