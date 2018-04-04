@@ -55,7 +55,7 @@
   "payload": {
     "customCommands": [
       {
-        "text": "좋은아침",
+        "name": "좋은아침",
         "actions": [
           {
             "applianceId": "device-001",
@@ -72,7 +72,7 @@
         ]
       },
       {
-        "text": "좋은저녁",
+        "name": "좋은저녁",
         "actions": [
           {
             "applianceId": "device-0011",
@@ -694,7 +694,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
   "payload": {
     "customCommands": [
       {
-        "text": "좋은아침",
+        "name": "좋은아침",
         "actions": [
           {
             "applianceId": "device-001",
@@ -711,7 +711,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
         ]
       },
       {
-        "text": "좋은저녁",
+        "name": "좋은저녁",
         "actions": [
           {
             "applianceId": "device-0011",

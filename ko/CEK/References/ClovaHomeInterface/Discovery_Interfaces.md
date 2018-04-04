@@ -65,7 +65,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
   "payload": {
     "customCommands": [
       {
-        "text": "좋은아침",
+        "name": "좋은아침",
         "actions": [
           {
             "applianceId": "device-001",
@@ -82,7 +82,7 @@ IoT 서비스를 제공할 때 각 사용자 계정에 등록된 기기 목록�
         ]
       },
       {
-        "text": "좋은저녁",
+        "name": "좋은저녁",
         "actions": [
           {
             "applianceId": "device-0011",
