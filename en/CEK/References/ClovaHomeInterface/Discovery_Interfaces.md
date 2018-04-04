@@ -65,10 +65,10 @@ You must provide the list of appliances registered in each user account when you
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart lamp,"
+        "modelName": "Smart lamp",
         "version": "v1.0",
-        "friendlyName": "Living room lamp,"
-        "friendlyDescription": "A lamp that can be controlled using a smartphone,"
+        "friendlyName": "Living room lamp",
+        "friendlyDescription": "A lamp that can be controlled using a smartphone",
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -84,10 +84,10 @@ You must provide the list of appliances registered in each user account when you
       {
         "applianceId": "device-002",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart plug,"
+        "modelName": "Smart plug",
         "version": "v1.0",
-        "friendlyName": "Kitchen plug,"
-        "friendlyDescription": "An energy-saving plug,"
+        "friendlyName": "Kitchen plug",
+        "friendlyDescription": "An energy-saving plug",
         "isReachable": true,
         "actions": [
           "HealthCheck",

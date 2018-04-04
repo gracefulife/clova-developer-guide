@@ -6,7 +6,7 @@ The error interfaces are used when the Clova Home extension returns errors to CE
 |------------------|-----------|---------------------------------------------|
 | [`DriverInternalError`](#DriverInternalError)              | Error response | Sent to CEK as a response if an internal error occurs.             |
 | [`ExpiredAccessTokenError`](#ExpiredAccessTokenError)      | Error response | Sent to CEK as a response if the access token received from the [authorization server](/CEK/Guides/Link_User_Account.md#BuildAuthServer) at [account linking](/CEK/Guides/Link_User_Account.md) is expired.  |
-| [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error response | Sent to CEK as a response if the user has disabled the permission on the access token being used.         |
+| [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error response | Sent to CEK as a response if the user has disabled permission on the access token being used.         |
 | [`NoSuchTargetError`](#NoSuchTargetError)                  | Error response | Sent to CEK as a response if the target device is not found.                            |
 | [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError) | Error response | Sent to CEK as a response if the directed action cannot be performed under the current mode of the target device.  |
 | [`TargetOfflineError`](#TargetOfflineError)                | Error response | Sent to CEK as a response if the target device is offline and cannot be connected. |
@@ -79,7 +79,7 @@ None
 * [`InvalidAccessTokenError`](#InvalidAccessTokenError)
 
 ## InvalidAccessTokenError {#InvalidAccessTokenError}
-Sent to CEK as a response if the user has disabled the permission on the access token being used. When CEK receives this message, a predefined error message is sent to the client.
+Sent to CEK as a response if the user has disabled permission on the access token being used. When CEK receives this message, a predefined error message is sent to the client.
 
 ### Payload fields
 
