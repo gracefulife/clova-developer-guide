@@ -139,7 +139,7 @@
   * [基本的な意思表現を処理する](/CEK/Tutorials/Handle_Builtin_Intents.md)
     * [ステップ1Built-in intentの処理を実装する](/CEK/Tutorials/Handle_Builtin_Intents.md#Step1)
     * [ステップ2Built-in intentの動作をテストする](/CEK/Tutorials/Handle_Builtin_Intents.md#Step2)
-* [Custom　Extensionを作成する](/CEK/Guides/Build_Custom_Extension.md)
+* [Custom Extensionを作成する](/CEK/Guides/Build_Custom_Extension.md)
   * [準備事項](/CEK/Guides/Build_Custom_Extension.md#Preparation)
   * [Custom Extensionでリクエストを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleCustomExtensionRequest)
     * [LaunchRequestを処理する](/CEK/Guides/Build_Custom_Extension.md#HandleLaunchRequest)

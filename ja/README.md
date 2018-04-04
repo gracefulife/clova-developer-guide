@@ -65,14 +65,14 @@
     <tr>
       <td>v3.1</td><td>2018/02/05</td>
       <td>
-        <ul>
-          <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a>のdurationInMillisecondsフィールドの説明を修正</li>
-          <li>[CIC] <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>、<a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>、<a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>、<a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>、<a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>、<a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>、<a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a>テンプレートにコンテンツの提供元に関連するフィールドなどの内容を追加</li>
-          <li>[CEK] Extensionを開始する呼び出し(<a href="CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">LaunchRequest</a>)の説明を修正および<a href="/Design/Design_Guideline_For_Extension.html">Extensionのデザインガイドラインドキュメントに反映</a></li>
-          <li>[CEK] CEKとExtension間の通信に使用される<a href="/CEK/CEK_Overview.html#WhatisCEK">HTTPプロトコルのバージョンを</a>明記</li>
-          <li>[CEK] <a href="/CEK/Tutorials/Introduction.html">チュートリアル</a>ページに<a href="/CEK/Tutorials/Handle_Builtin_Intents.html">基本的な意思表現を処理する</a>ページを追加</li>
-          <li>[Dev.Console] Extensionサーバーで使用すべき<a href="/DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">ポート</a>を明記</li>
-          <li>[Common] 一部のドキュメントの誤りを訂正</li>
+       <ul>
+         <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a>のdurationInMillisecondsフィールドの説明を修正</li>
+         <li>[CIC] <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>、<a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>、<a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>、<a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>、<a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>、<a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>、<a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a>テンプレートにソース関連のフィールドなどの内容を追加</li>
+         <li>[CEK] Extension起動の呼び出し(<a href="CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">LaunchRequest</a>)の説明を修正および<a href="/Design/Design_Guideline_For_Extension.html">Extensionのデザインガイドラインドキュメントの内容を反映</a></li>
+         <li>[CEK] CEKとExtensionの通信に使用される<a href="/CEK/CEK_Overview.html#WhatisCEK">HTTPプロトコルのバージョン</a>を明示</li>
+         <li>[CEK] <a href="/CEK/Tutorials/Introduction.html">チュートリアル</a>ページに<a href="/CEK/Tutorials/Handle_Builtin_Intents.html">基本的な意思表現を処理する</a>ページを追加</li>
+         <li>[Dev.Console] Extensionサーバーで使用する<a href="/DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">ポート</a>を明示</li>
+         <li>[Common] 一部のドキュメントの誤りを訂正</li>
         </ul>
       </td>
     </tr>
