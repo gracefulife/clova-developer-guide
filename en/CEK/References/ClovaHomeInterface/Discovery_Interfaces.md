@@ -1,20 +1,20 @@
-# Discovery API
+# Discovery
 
-Obtains a list of IoT appliances registered on a user account.
+The discovery interfaces are used to check a list of IoT devices registered to a user account.
 
-| Message name         | Message type  | Message description                                   |
+| Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)   | Request  | Requests your Clova Home extension to provide a list of IoT appliances registered on a user.             |
-| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) | Response | Responds to a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message by returning CEK a list of IoT appliances registered on a user. |
+| [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)   | Request  | Requests the list of IoT devices registered by the user to the Clova Home extension.             |
+| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) | Response | Sends the list of IoT devices registered by the user to CEK as response to the [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message. |
 
 ## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
-Requests your Clova Home extension to provide a list of appliances registered on a user. To respond to the request, use a [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) message.
+Request the list of IoT devices registered by the user to the Clova Home extension. The extension must use the [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) message as response to this request.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `accessToken`   | string  | The access token for the Clova Home extension  | Yes     |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`   | string  | Access token of the Clova Home extension  | Always     |
 
 ### Message example
 
@@ -38,16 +38,16 @@ Requests your Clova Home extension to provide a list of appliances registered on
 * [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse)
 
 ## DiscoverAppliancesResponse {#DiscoverAppliancesResponse}
-Returns CEK a list of appliances registered on a user. Use this message to respond to a [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message.
+Sends the list of IoT devices registered by the user to CEK. This message is used as a response to the [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message.
 
-### Payload field
+### Payload fields
 
-| Field name       | Type    | Field description                     | Required |
-|---------------|---------|-----------------------------|---------|
-| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | An object array displaying a list of appliances registered on a user account          | Yes    |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | An object array that expresses the appliance list registered to the user account.          | Required    |
 
 ### Remarks
-When providing an IoT service, you must provide a list of appliances registered on each user account.
+You must provide the list of appliances registered in each user account when you provide the IoT service.
 
 ### Message example
 
@@ -65,10 +65,10 @@ When providing an IoT service, you must provide a list of appliances registered 
       {
         "applianceId": "device-001",
         "manufacturerName": "device-manufacturer-name",
-        "modelName": "Smart light",
+        "modelName": "Smart lamp",
         "version": "v1.0",
-        "friendlyName": "Light in living room",
-        "friendlyDescription": "Smartphone-controllable light",
+        "friendlyName": "Living room lamp",
+        "friendlyDescription": "A lamp that can be controlled using a smartphone",
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -86,8 +86,8 @@ When providing an IoT service, you must provide a list of appliances registered 
         "manufacturerName": "device-manufacturer-name",
         "modelName": "Smart plug",
         "version": "v1.0",
-        "friendlyName": "Plug in kitchen",
-        "friendlyDescription": "Energy saving plug",
+        "friendlyName": "Kitchen plug",
+        "friendlyDescription": "An energy-saving plug",
         "isReachable": true,
         "actions": [
           "HealthCheck",

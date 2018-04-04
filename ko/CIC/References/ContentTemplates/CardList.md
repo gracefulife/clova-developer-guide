@@ -67,11 +67,11 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://movie.phinf.naver.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2"
+        "value": "http://movie.phinf.contentproviderdomain.net/20170410_12/1491786049305s4W0n_JPEG/movie_image.jpg?type=w640_2"
       },
       "linkUrl": {
         "type": "url",
-        "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=118965"
+        "value": "http://movie.contentproviderdomain.com/movie/bi/mi/basic.nhn?code=118965"
       },
       "press": {
         "type": "string",
@@ -87,7 +87,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
       },
       "title": {
         "type": "string",
@@ -119,11 +119,11 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://movie.phinf.naver.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2"
+        "value": "http://movie.phinf.contentproviderdomain.net/20170317_53/1489741954272MquSW_JPEG/movie_image.jpg?type=w640_2"
       },
       "linkUrl": {
         "type": "url",
-        "value": "http://movie.naver.com/movie/bi/mi/basic.nhn?code=137909"
+        "value": "http://movie.contentproviderdomain.com/movie/bi/mi/basic.nhn?code=137909"
       },
       "press": {
         "type": "string",
@@ -139,7 +139,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=+%ec%98%81%ed%99%94"
       },
       "title": {
         "type": "string",
@@ -181,7 +181,7 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://hol.phinf.naver.net/00/587/820/58782072_0.jpg"
+        "value": "http://hol.phinf.contentproviderdomain.net/00/587/820/58782072_0.jpg"
       },
       "linkUrl": {
         "type": "url",
@@ -201,7 +201,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
       },
       "title": {
         "type": "string",
@@ -209,7 +209,7 @@
       },
       "videoUrl": {
         "type": "url",
-        "value": "http://m.tv.naver.com/v/1720910"
+        "value": "http://m.tv.contentproviderdomain.com/v/1720910"
       }
     },
     {
@@ -233,7 +233,7 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://hol.phinf.naver.net/00/587/815/58781581_0.jpg"
+        "value": "http://hol.phinf.contentproviderdomain.net/00/587/815/58781581_0.jpg"
       },
       "linkUrl": {
         "type": "url",
@@ -253,7 +253,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=%ec%b6%95%ea%b5%ac+%eb%8f%99%ec%98%81%ec%83%81+%eb%b3%b4%ec%97%ac%ec%a4%98"
       },
       "title": {
         "type": "string",
@@ -261,7 +261,7 @@
       },
       "videoUrl": {
         "type": "url",
-        "value": "http://m.sports.naver.com/video.nhn?id=310230"
+        "value": "http://m.sports.contentproviderdomain.com/video.nhn?id=310230"
       }
     },
     ...
@@ -300,7 +300,7 @@
       },
       "linkUrl": {
         "type": "url",
-        "value": "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=025&aid=0002720454"
+        "value": "http://news.contentproviderdomain.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=025&aid=0002720454"
       },
       "press": {
         "type": "string",
@@ -352,7 +352,7 @@
       },
       "linkUrl": {
         "type": "url",
-        "value": "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=001&aid=0009297247"
+        "value": "http://news.contentproviderdomain.com/main/read.nhn?mode=LSD&mid=sec&sid1=001&oid=001&aid=0009297247"
       },
       "press": {
         "type": "string",
@@ -408,7 +408,7 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://tvcast1.phinf.naver.net/20180105_40/rYaFz_1515134168871cxwhn_JPEG/1515134043644.jpg"
+        "value": "http://tvcast1.phinf.contentproviderdomain.net/20180105_40/rYaFz_1515134168871cxwhn_JPEG/1515134043644.jpg"
       },
       "linkUrl": {
         "type": "url",
@@ -428,7 +428,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
       },
       "title": {
         "type": "string",
@@ -436,7 +436,7 @@
       },
       "videoUrl": {
         "type": "url",
-        "value": "http://m.tv.naver.com/v/2509121"
+        "value": "http://m.tv.contentproviderdomain.com/v/2509121"
       }
     },
     {
@@ -460,7 +460,7 @@
       ],
       "imageUrl": {
         "type": "url",
-        "value": "http://tvcast2.phinf.naver.net/20180104_140/7QzKq_15150467287668gEkL_JPEG/1515046724731.jpg"
+        "value": "http://tvcast2.phinf.contentproviderdomain.net/20180104_140/7QzKq_15150467287668gEkL_JPEG/1515046724731.jpg"
       },
       "linkUrl": {
         "type": "url",
@@ -480,7 +480,7 @@
       },
       "referenceUrl": {
         "type": "url",
-        "value": "https://m.search.naver.com/search.naver?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
+        "value": "https://m.search.contentproviderdomain.com/search?where=m&sm=mob_lic&query=asmr+%ec%b0%be%ea%b8%b0"
       },
       "title": {
         "type": "string",
@@ -488,7 +488,7 @@
       },
       "videoUrl": {
         "type": "url",
-        "value": "http://m.tv.naver.com/v/2503662"
+        "value": "http://m.tv.contentproviderdomain.com/v/2503662"
       }
     },
     ...

@@ -1,8 +1,8 @@
-﻿## Engaging in multi-turn dialogs {#DoMultiturnDialog}
+## Engaging in multi-turn dialogs {#DoMultiturnDialog}
 
 The user request information received from CEK ([`IntentRequest`](/CEK/Guides/Build_Custom_Extension.md#HandleIntentRequest)) may be insufficient for the custom extension to provide services or perform operations. Or the conversation may be a single-turn dialog type, which has difficulties in receiving many user requests at once. In this case, the custom extension can perform a multi-turn dialog to receive missing information from the user.
 
-The example below assumes that the user said "Order pepperoni pizza" so CEK sent the request message as follows:
+The example below assumes that the user said "Order pepperoni pizza," so CEK sends a request message as follows:
 
 {% raw %}
 ```json
@@ -36,9 +36,9 @@ The example below assumes that the user said "Order pepperoni pizza" so CEK sent
 ```
 {% endraw %}
 
-The custom extension may require not only the pizza type but also the quantity of order. If you set the `response.shouldEndSession` field of [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) to `false`, a multi-turn dialog can be attempted in order to confirmation missing information. Also, you can store the information sent by the user earlier in the `sessionAttributes` field as a key-value format.
+The custom extension may require not only the pizza type but also the quantity of order. If you set the `response.shouldEndSession` field of [response message](/CEK/References/CEK_API.md#CustomExtResponseMessage) to `false`, a multi-turn dialog can be attempted in order to confirm missing information. Also, you can store the information sent by the user earlier in the `sessionAttributes` field as a key-value format.
 
-If the response is made as below, the extension can request Clova to store the `intent` field and `pizzaType` information that the user has previously requested and request the quantity information and any other additional information from the user.
+If a response is made as below, the extension can request Clova to store the `intent` field and `pizzaType` information that the user has previously requested and request the quantity information and any other additional information from the user.
 
 {% raw %}
 ```json
@@ -101,4 +101,3 @@ When the user supplies the quantity value, the Clova platform sends the stored `
 }
 ```
 {% endraw %}
-

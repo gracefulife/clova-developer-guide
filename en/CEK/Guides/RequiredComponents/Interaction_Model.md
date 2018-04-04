@@ -1,6 +1,5 @@
-﻿* **Interaction Model**
+﻿* **Interaction model**
 
-This is an interaction model of the custom extension that will be registered in the Clova developer console. The interaction model can be seen as a dialog scenario between a user and Clova. It defines the sentences that users may ask and sets the intent and information of each sentence.
+  An interaction model for your custom extension. You must register the interaction model on the Clova developer console. The interaction model can be seen as a dialog scenario between users and Clova that contains the definitions for sentences that users may ask Clova, and the intent and information behind each sentence.
 
-For more information on defining the interaction mode, see [Defining an interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel).
-
+  For more information on defining the interaction model, see [Defining an interaction model](/Design/Design_Guideline_For_Extension.md#DefineInteractionModel).

@@ -50,7 +50,7 @@ Extensionの基本情報は、Clova Developer CenterでExtensionを作成する�
 
 Extensionの基本情報をすべて入力すると、作成されたExtensionの情報を修正する画面に切り替わります。ページの下にある**{{ book.DevConsole.cek_save }}**ボタンをクリックして、入力中の内容を自由に保存できます。また、CEKのメニューで、登録されたExtensionのリストを確認することもできます。
 
-![](/DevConsole/Resources/Images/DevConsole-Extension_List_after_Creation.png)
+![](/DevConsole/Resources/Images/DevConsole-Extension_List_After_Creation.png)
 
 ## サーバーとの連携を設定する {#SetServerConnection}
 

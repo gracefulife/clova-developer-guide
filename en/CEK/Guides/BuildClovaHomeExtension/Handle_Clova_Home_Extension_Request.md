@@ -1,11 +1,10 @@
-## Handling Clova Home extension request {#HandleClovaHomeExtensionRequest}
+## Handling a Clova Home extension request {#HandleClovaHomeExtensionRequest}
 
-Users can make a verbal request to Clova to control their IoT appliances, such as "Turn on the light" (HTTPS request). When users make such requests to their IoT appliance, the client checks the list of available appliances and their allowed actions obtained through [device discovery](#ProvideDeviceDiscovery) and verifies whether it can carry out the request. The verified request is then sent to your Clova Home extension through CEK, using [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHomeExtMessage).
+Users can make requests (HTTPS request) to Clova in order to control an IoT device, with commands such as "Turn on the light." The client uses the [device discovery](#ProvideDeviceDiscovery) function to check the list of available devices and the permitted actions per device, and verify whether the control request can be carried out. Once verified, the user request is delivered to the Clova Home extension via CEK using the [Clova Home extension message](/CEK/References/CEK_API.md#ClovaHomeExtMessage).
 
-Requests such as "Turn on the light" is sent with a [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) message as follows.
+Requests, such as "Turn on the light" is sent using the [`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest) message as shown below.
 
 {% raw %}
-
 ```json
 {
   "header": {
@@ -22,9 +21,6 @@ Requests such as "Turn on the light" is sent with a [`TurnOnRequest`](/CEK/Refer
   }
 }
 ```
-
 {% endraw %}
 
-Analyze the received message and dispatch the user requests controlling the IoT appliance via URI supported by the IoT service.
-
-Make sure to send the [response message](#ReturnClovaHomeExtensionResponse) together with the previously obtained access token.
+The extension can then analyze the received message to send the control request for the IoT device using the URI provided by the IoT service. Make sure to send the control request with the previously obtained access token.

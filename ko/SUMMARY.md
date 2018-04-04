@@ -80,6 +80,7 @@
     * [SpeechRecognizer](/CIC/References/CICInterface/SpeechRecognizer.md)
     * [SpeechSynthesizer](/CIC/References/CICInterface/SpeechSynthesizer.md)
     * [System](/CIC/References/CICInterface/System.md)
+    * [TemplateRuntime](/CIC/References/CICInterface/TemplateRuntime.md)
     * [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
     * [이벤트 메시지 색인](/CIC/References/CICInterface/Index_for_Events.md)
     * [지시 메시지 색인](/CIC/References/CICInterface/Index_for_Directives.md)

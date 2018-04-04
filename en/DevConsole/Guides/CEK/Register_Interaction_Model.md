@@ -138,7 +138,7 @@ On the Clova developer console, the **upload** and **download** buttons are prov
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>Within an interaction model, declaring the same name for the slot type is recommended regardless of intent. For example, if the slot name related to pizza type ("PIZZA_TYPE") in the "OrderPizza" intent was "pizzaType,” the same name called "pizzaType" must be used by declaring the same slot type even for a different intent. However, in a situation where the purpose of use for the same slot type must be distinguished, such as for "Seoul" and "Busan” in the utterance "Tell me how long it takes from Seoul to Busan,” the name of the slot should be different.</p>
+  <p>Within an interaction model, declaring the same name for the slot type is recommended regardless of intent. For example, if the slot name related to pizza type ("PIZZA_TYPE") in the "OrderPizza" intent was "pizzaType," the same name called "pizzaType" must be used by declaring the same slot type even for a different intent. However, in a situation where the purpose of use for the same slot type must be distinguished, such as for "Seoul" and "Busan" in the utterance "Tell me how long it takes from Seoul to Busan," the name of the slot should be different.</p>
 </div>
 
 So far we have described how to add an intent to the interaction model. You can repeat the steps above as much as needed to add intents to the extension to complete an interaction model as shown below.
