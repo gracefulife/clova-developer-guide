@@ -5,7 +5,7 @@
   "author": "NAVER Corporation",
   "variables": {
     "ClassifiedInfo": "대외비",
-    "DocVersion": "v3.6",
+    "DocVersion": "v3.7",
     "language": "ko",
     "TargetCountryCode": "KR",
     "TargetReaderType": "Internal",
