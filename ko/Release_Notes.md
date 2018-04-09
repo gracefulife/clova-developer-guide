@@ -2,6 +2,14 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-04-09
+
+* CIC
+  * 클라이언트 기기 디자인 가이드라인에서 [부팅 화면](/Design/Design_Guideline_For_Client_Hardware.md#BootingScreen) 관련 설명 및 예제 이미지를 업데이트
+
+* CEK
+  * Clova Home extension API [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject)의 brightness 필드의 설명 및 필수/포함 여부 변경
+
 ## 2018-04-02
 
 * CIC

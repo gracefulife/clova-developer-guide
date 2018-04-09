@@ -293,7 +293,7 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
 
 ### 부팅 화면 {#BootingScreen}
 
-기기를 켠 후 부팅이 완료될 때까지 표시되는 화면입니다. 부팅 화면은 주로 로고가 표시되며 Clova의 로고를 다른 로고와 조합하지 않고 단독으로 화면에 표시합니다.
+기기를 켠 후 부팅이 완료될 때까지 표시되는 화면입니다. 부팅 화면은 주로 로고가 표시되며 Clova의 로고를 다른 로고와 조합하지 않고 단독으로 화면에 표시합니다. 또한, 같은 크기와 비율로 로고를 표시해야 합니다.
 
 <ul>
   <li>
@@ -302,7 +302,8 @@ Clova가 탑재된 클라이언트 기기를 사용하는 사용자에게 일관
   </li>
   <li>
     <p><strong>나쁜 예</strong></p>
-    <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example1.png" /> <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example2.png" />
+    <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example1.png" /> <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example2.png" /><br/>
+    <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example3.png" /> <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example4.png" />
   </li>
 </ul>
 
