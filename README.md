@@ -63,14 +63,15 @@ Due to the various purposes, this repository has the following branches:
   </li>
   <li>Branches for Japan business
     <ul>
-      <li><strong>doc-JP</strong> (EN, document -> doc-JP)<br />Branch for Japanese business, this branch holds EN version documentation. JA version will be added future.</li>
-      <li><strong>doc-JP-ClovaHomeExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-ClovaHomeExt-Partner)<br />Branch for Japanese partners who provides IoT services via Clova.</li>
-      <li><strong>doc-JP-CustomExt-Partner</strong> (EN, PDF doc, doc-JP -> doc-JP-CustomExt-Partner)<br />Branch for Japanese partners who provides extensions via Clova.</li>
+      <li><strong>doc-JP</strong> (EN and JA / document -> doc-JP)<br />Branch for Japan business, this branch holds JA and EN version documentation.</li>
+      <li><strong>doc-JP-ClovaHomeExt-Partner</strong> (EN and JA / PDF doc, doc-JP -> doc-JP-ClovaHomeExt-Partner)<br />Branch for Japanese partners who provides IoT services via Clova.</li>
+      <li><strong>doc-JP-CustomExt-Partner</strong> (EN and JA / PDF doc, doc-JP -> doc-JP-CustomExt-Partner)<br />Branch for Japanese partners who provides extensions via Clova.</li>
+      <li><strong>doc-JP-Public</strong> (EN and JA, doc-JP -> doc-JP-Public)<br />Branch for public documentation which is deployed on Clova devloper center (JP) that interacts with LINE developer site.</li>
     </ul>
   </li>
   <li>Branches for Korean business
     <ul>
-      <li><strong>doc-KR</strong> (KO and EN, documnt -> doc-KR)<br />Branch for Korean business, this branch holds KO and EN version documentation.</li>
+      <li><strong>doc-KR</strong> (KO and EN, document -> doc-KR)<br />Branch for Korean business, this branch holds KO and EN version documentation.</li>
       <li><strong>doc-KR-En_Partner</strong> (EN, PDF doc, doc-KR -> doc-KR-En_Partner)<br />Branch for Korean partners who prefer English such as Xaomi.</li>
       <li><strong>doc-KR-Partner-LGUplus</strong> (KO, TV STB exclusive spec., PDF doc, doc-KR -> doc-KR-Partner-LGUplus)<br />Branch for LG Uplus (Korean partner) contains LG Uplus exclusive specification.</li>
       <li><strong>doc-KR-Partner</strong> (KO, PDF doc, doc-KR-Partner-LGUplus -> doc-KR-Partner)<br />Branch for Korean partners contains partner exclusive specification.</li>

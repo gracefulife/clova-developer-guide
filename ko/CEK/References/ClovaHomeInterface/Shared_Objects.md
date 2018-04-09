@@ -555,7 +555,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `brightness`  | number  | 밝기(0~100)                  | 필수/항상 |
+| `brightness`  | number  | 밝기(0~100). 특정 기기의 밝기 설정에 [BrightnessInfoObject](#BrightnessInfoObject)가 사용되면 이 필드는 생략될 수 있습니다.  | 선택/조건부 |
 | `hue`         | number  | 색상(0~360)                  | 필수/항상 |
 | `saturation`  | number  | 채도(0~100)                  | 필수/항상 |
 
