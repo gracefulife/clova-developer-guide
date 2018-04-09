@@ -292,7 +292,7 @@ This is a screen displayed when device is turned on until booting is complete. A
   </li>
   <li>
     <p><strong>Bad examples</strong></p>
-    <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example1.png" /> <img src="/Design/Resources/Images/Clova-Client-_Logo_on_Loading_Screen_Bad_Example2.png" />
+    <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example1.png" /> <img src="/Design/Resources/Images/Clova-Client-Logo_on_Loading_Screen_Bad_Example2.png" />
   </li>
 </ul>
 
