@@ -9,7 +9,7 @@
 사용자는 {{ book.TargetServiceForClientAuth }} 계정을 클라이언트의 기기나 앱에 인증해야 Clova를 사용할 수 있습니다. {{ book.TargetServiceForClientAuth }} 계정 인증 정보까지 처리된 Clova access token을 Clova 인증 서버로부터 획득해야 클라이언트가 CIC로 연결 및 요청을 시도할 수 있습니다. 이를 위해 [Clova 인증 API](/CIC/References/Clova_Auth_API.md)를 이용해야 합니다.
 
 아래 그림은 클라이언트가 Clova access token은 획득하는 흐름을 나타내고 있습니다. 참고로 클라이언트는 두 가지 유형으로 구분되며, 각 유형에 따라 Clova access token을 획득하는 과정이 조금 달라집니다.
-* **GUI 미제공 클라이언트**: 스피커나 화면이 없는 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위한 연동 앱(companion app)을 제공하거나 Clova 앱과 연동되어야 합니다.
+* **GUI 미제공 클라이언트**: 화면이 없는 스피커나 가전 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트입니다. 이런 타입의 클라이언트는 사용자가 계정을 인증할 때 기기를 통해 인증 정보를 입력할 방법이 없거나 불편하기 때문에 이를 보조하기 위한 연동 앱(companion app)을 제공하거나 Clova 앱과 연동되어야 합니다.
 * **GUI 제공 클라이언트**: 화면이 있는 제품에 임베드된 형태로 Clova 서비스를 제공하는 클라이언트이거나 Clova 앱과 같이 소프트웨어 형태로 Clova 서비스를 제공하는 클라이언트입니다.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
@@ -18,7 +18,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
 
 <ol>
   <li>
-    <p>클라이언트는 사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기</a>). <strong>GUI 미제공 클라이언트</strong>의 클라이언트는 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 Clova 앱이나 연동 앱(companion app)을 사용해야 합니다.</p>
+    <p>클라이언트는 사용자가 {{ book.TargetServiceForClientAuth }} 계정을 인증할 수 있는 인터페이스를 제공합니다(<a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} 아이디로 로그인하기</a>). <strong>GUI 미제공 클라이언트</strong>는 사용자 음성 입력만으로 계정 인증을 할 수 없기 때문에 반드시 Clova 앱이나 연동 앱(companion app)을 사용해야 합니다.</p>
   </li>
   <li>
     <p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정의 {{ "authorization code" if book.TargetCountryCode == "JP" else "access token" }}을 획득합니다.</p>
