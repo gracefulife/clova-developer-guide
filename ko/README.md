@@ -20,6 +20,15 @@
     </tr>
   </thead>
   <tbody>
+  <tr>
+    <td>v3.7</td><td>2018-04-09</td>
+    <td>
+      <ul>
+        <li>[CIC] 클라이언트 기기 디자인 가이드라인에서 <a href="Design/Design_Guideline_For_Client_Hardware.html#BootingScreen">부팅 화면</a> 관련 설명 및 예제 이미지를 업데이트</li>
+        <li>[CEK] Clova Home extension API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ColorInfoObject">ColorInfoObject</a>의 brightness 필드의 설명 및 필수/포함 여부 변경</li>
+      </ul>
+    </td>
+  </tr>
     <tr>
       <td>v3.6</td><td>2018-04-02</td>
       <td>
