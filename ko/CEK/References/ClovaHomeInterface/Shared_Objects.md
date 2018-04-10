@@ -125,7 +125,7 @@
         "applianceTypes": ["SMARTPLUG"],
         "additionalApplianceDetails": {},
         "location": "LIVING_ROOM",
-        "tags": ["공부", "철수방", "외출시전원해제기"]
+        "tags": ["공부", "철수방", "외출시전원해제기기"]
       }
     ]
   }
