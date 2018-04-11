@@ -1,5 +1,5 @@
 # Shared objects {#SharedObjects}
-[Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 본문(payload)에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
+[Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 `payload`에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|

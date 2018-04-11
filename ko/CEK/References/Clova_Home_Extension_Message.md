@@ -3,7 +3,7 @@ Clova Home extension 메시지는 IoT 기기를 제어하는 extension이 CEK와
 
 ### 메시지 포맷 {#ClovaHomeExtMessageFormat}
 
-Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성되어 있으며, 이는 요청 메시지와 응답 메시지 모두 동일합니다. 이 중에서 `payload` 필드는 사용된 [인터페이스](#ClovaHomeExtInterface)에 따라 그 구성이 달라질 수 있습니다. 여기에서는 Clova Home extension 메시지의 공통된 포맷에 대해 설명합니다.
+Clova Home extension 메시지는 `header` 필드와 `payload`로 구성되어 있으며, 이는 요청 메시지와 응답 메시지 모두 동일합니다. 이 중에서 `payload`는 사용된 [인터페이스](#ClovaHomeExtInterface)에 따라 그 구성이 달라질 수 있습니다. 여기에서는 Clova Home extension 메시지의 공통된 포맷에 대해 설명합니다.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -33,7 +33,7 @@ Clova Home extension 메시지는 `header` 필드와 `payload` 필드로 구성�
 | `header.messageId`       | string | 메시지 ID(UUID). 개별 메시지를 구분하기 위해 Clova에서 생성한 식별자입니다.                                         | 필수/항상     |
 | `header.name`            | string | 메시지의 API 이름                                                                                        | 필수/항상     |
 | `header.namespace`       | string | 이 필드는 `"ClovaHome"`으로 고정됩니다.                                                                     | 필수/항상     |
-| `header.payloadVersion`  | string | `header.name`에 명시된 Clova Home extension 메시지의 버전. 이 버전에 따라 `payload` 필드의 구성이 달라질 수 있습니다.  | 필수/항상     |
+| `header.payloadVersion`  | string | `header.name`에 명시된 Clova Home extension 메시지의 버전. 이 버전에 따라 `payload`의 구성이 달라질 수 있습니다.  | 필수/항상     |
 | `payload`                | object | `header.name`에 지정된 [인터페이스](#ClovaHomeExtInterface)에 따라 payload 객체의 구성과 필드 값이 달라집니다.       | 필수/항상     |
 
 #### Message example
