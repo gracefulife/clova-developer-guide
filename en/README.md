@@ -21,6 +21,38 @@ The current version of this document is {{ book.DocVersion }} and the revision h
   </thead>
   <tbody>
     <tr>
+      <td>v3.6</td><td>2018-04-02</td>
+      <td>
+        <ul>
+          <li>[CIC] Added message specifications to the <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a> namespace and updated some fields
+            <ul>
+              <li>Added the <a href="/CIC/References/CICInterface/AudioPlayer.html#ExpectReportPlaybackState">AudioPlayer.ExpectReportPlaybackState</a> directive message, <a href="/CIC/References/CICInterface/AudioPlayer.html#ReportPlaybackState">AudioPlayer.ReportPlaybackState event message</a> {% if book.TargetReaderType == "Internal" %}, <a href="/CIC/References/CICInterface/AudioPlayer.html#RequestPlaybackState">AudioPlayer.RequestPlaybackState</a> event message, and <a href="/CIC/References/CICInterface/AudioPlayer.html#SynchronizePlaybackState">SynchronizePlaybackState directive message</a> {% endif %}</li>
+              <li>Updated the payload field of the <a href="/CIC/References/CICInterface/AudioPlayer.html#Play">AudioPlayer.Play</a> directive message</li>
+              <li>Added a mandatory token field value to the event field in the name formats of ProgressReportXXX and PlayXXX</li>
+            </ul>
+          </li>
+          <li>[CIC] Added a repeatMode to the <a href="/CIC/References/Context_Objects.html#PlaybackState">AudioPlayer.PlaybackState</a> context object</li>
+          <li>[CIC] Added a total of 12 message specifications to the <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a> namespace
+            <ul>
+              <li>Added <a href="/CIC/References/CICInterface/PlaybackController.html#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>, and <a href="/CIC/References/CICInterface/PlaybackController.html#StopCommandIssued">PlaybackController.StopCommandIssued</a> event messages</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>,
+<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>, and <a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatMode">PlaybackController.SetRepeatMode</a> directive messages</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#TurnOnRepeatMode">PlaybackController.TurnOnRepeatMode</a> directive message and <a href="/CIC/References/CICInterface/PlaybackController.html#TurnOffRepeatMode">PlaybackController.TurnOffRepeatMode</a> are scheduled to be removed</li>
+            </ul>
+          </li>
+          <li>[CIC] Added the <a href="/CIC/References/CICInterface/TemplateRuntime.html">TemplateRuntime</a> namespace to separate the information for streaming media and metadata for displaying the play list</li>
+          <li>[CIC] Added a scanlist field to the <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a> of <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a></li>
+          <li>[CIC] Added the <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a> directive message and <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a> and <a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a> event messages to the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> namespace to connect with 3rd party Bluetooth devices which use PIN codes</li>
+          <li>[CIC] Added a payload to the <a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a> directive message of the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> namespace</li>
+          <li>[CEK] Added 10 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control APIs</a>, including GetSleepStartTimeRequest and 4 <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">shared objects</a> in the Clova Home extension API</li>
+          <li>[CEK] Added the <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#CustomCommandInfoObject">CustomCommandInfoObject</a> to the <a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse">DiscoverAppliancesResponse</a> of the Clova Home extension API</li>
+          <li>[CEK] Removed TimeAmountInfoObject <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">shared object</a> from the Clova Home extension API and revised some contents of the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a></li>
+          <li>[CEK] Added a tags field and changed the description of the location field in the <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">ApplianceInfoObject</a> of the Clova Home extension API</li>
+          <li>[Dev. console] Updated some UIs on the Clova developer console</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>
@@ -67,7 +99,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
       <td>
         <ul>
           <li>[CIC] Modified the description of the durationInMilliseconds field of <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a></li>
-          <li>[CIC] Added information, such as a field to state the source of the following templates: <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>, <a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>, <a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>, <a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>, <a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>, <a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>, and <a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a></li>
+          <li>[CIC] Added information such as a field to state the source of the following templates: <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>, <a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>, <a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>, <a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>, <a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>, <a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>, and <a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a></li>
           <li>[CEK] Modified the description of the request (<a href="CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">LaunchRequest</a>) to invoke extension and applied the content of <a href="/Design/Design_Guideline_For_Extension.html">Design guidelines for extensions</a></li>
           <li>[CEK] Added a list of <a href="/CEK/CEK_Overview.html#WhatisCEK">HTTP versions</a> used for communicating between CEK and extensions</li>
           <li>[CEK] Added the <a href="/CEK/Tutorials/Handle_Builtin_Intents.html">Handling built-in intents</a> page to the <a href="/CEK/Tutorials/Introduction.html">tutorial</a></li>
@@ -305,7 +337,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
           <li>[CIC] Added the set-top box specification on TV channels and specifications for the power state to <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a> and <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a></li>
           <li>[CIC] Added and changed some target values in the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a>: power, energysave, screenbrightness</li>
           <li>[CIC] Changed the name SetPoint of the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl API</a> to <a href="/CIC/References/CICInterface/DeviceControl.html#SetValue">SetValue</a></li>
-          <li>[CIC] Updated <a href="/CIC/References/Clova_Auth_API.html">the Clova auth API </a>: Added request and response headers, and status codes. Applied the format of the REST API reference to the document</li>
+          <li>[CIC] Updated <a href="/CIC/References/Clova_Auth_API.html">the Clova auth API</a>: Added request and response headers, and status codes. Applied the format of the REST API reference to the document</li>
           <li>[CEK] Added <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueOutOfRangeError">the ValueOutOfRangeError </a> to the error interface of the Clova Home</li>
         </ul>
       </td>
@@ -359,7 +391,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
       <td>
         <ul>
           <li>[CEK] Updated the <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">outputSpeech</a> object configuration in the <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">response message of custom extensions</a></li>
-          <li>[Common] Added the <a href="/Terms.html">Glossary</a></li>
+          <li>[Common] Added the <a href="/Glossary.html">Glossary</a></li>
           <li>Updated the table of contents for the section on CEK message formats</li>
         </ul>
       </td>
