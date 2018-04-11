@@ -3,10 +3,10 @@
 A Clova Home extension developer must design the code to return the processed result to CEK (HTTPS response). Responses from the Clova home extension have the following characteristics:
 
 * When the device state information is requested, the response may be different from the actual, up-to-date state of the device because the information is obtained from the IoT service.
-* When a device control is requested, the response does not return the final state of the device but only whether the user request was delivered successfully to the IoT service.
+* When device control is requested, the response does not return the final state of the device but only whether the user request was delivered successfully to the IoT service.
 * When the request is processed successfully, the response must use an appropriate [interface](/CEK/References/CEK_API.md#ClovaHomeExtInterface) for the [Clova Home extension request](#HandleClovaHomeExtensionRequest) as shown below.
 
-When a control request, such as "Turn on the light” ([`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest)) is sent to the IoT service and the service responds that the request has been processed properly, the extension must send the result to CEK using the [`TurnOnConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnConfirmation) message as shown below.
+When a control request such as "Turn on the light" ([`TurnOnRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnRequest)) is sent to the IoT service and the service responds that the request has been processed properly, the extension must send the result to CEK using the [`TurnOnConfirmation`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#TurnOnConfirmation) message as shown below.
 
 {% raw %}
 ```json

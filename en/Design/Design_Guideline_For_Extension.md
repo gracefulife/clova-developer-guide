@@ -114,7 +114,7 @@ Based on this example we can see that defining the interaction model of a pizza 
 
 ![](/Design/Resources/Images/Extension_Design-Design_Interaction_Model.png)
 
-**Once we have divided the type of user requests, we must name each type.** This will later on become the name of the intent. The "order intent" of a pizza delivery service is an abstract concept and it must be declared as a specific name that can be known by the extension– an identifiable string. For example, "order intent" can be declared a name like "OrderPizza.”
+**Once we have divided the type of user requests, we must name each type.** This will later on become the name of the intent. The "order intent" of a pizza delivery service is an abstract concept and it must be declared as a specific name that can be known by the extension– an identifiable string. For example, "order intent" can be declared a name like "OrderPizza."
 
 Then, you must **define what information ([Slot](#Slot)) is to be recognized** from the utterance of the "OrderPizza" intent and **list various [sample utterances](#UtteranceExample)** on the types of user utterances that can be processed.
 
@@ -144,16 +144,16 @@ The built-in slot type is an information type pre-defined by Clova which defines
 
 | Built-in slot type | Description                                            |
 | ----------------------|------------------------------------------------|
-| CLOVA.DATETIME      | Information indicating date and time. (e.g.: "10 mins 30 secs,” "9 am,” "1 hour ago,” "12 pm,” "Noon,” "August 4, 2017,” "Last day of previous month") |
-| CLOVA.DURATION      | Information indicating a period of time. (e.g.: "One day,” "Overnight,” "One month,” "Next week,” "Weekend") |
-| CLOVA.NUMBER        | Information indicating numbers. It includes quantity nouns. (e.g.: "Once,” "7 people,” "One,” "30 years old,” "Around 8,” "16 columns") |
-| CLOVA.RELATIVETIME  | Information indicating relative time expressions. (e.g.: "From now on,” "Later,” "In a bit,” "Just now,” "Earlier") |
+| CLOVA.DATETIME      | Information indicating date and time. (e.g.: "10 mins 30 secs," "9 am," "1 hour ago," "12 pm," "Noon," "August 4, 2017," "Last day of previous month") |
+| CLOVA.DURATION      | Information indicating a period of time. (e.g.: "One day," "Overnight," "One month," "Next week," "Weekend") |
+| CLOVA.NUMBER        | Information indicating numbers. It includes quantity nouns. (e.g.: "Once," "7 people," "One," "30 years old," "Around 8," "16 columns") |
+| CLOVA.RELATIVETIME  | Information indicating relative time expressions. (e.g.: "From now on," "Later," "In a bit," "Just now," "Earlier") |
 | CLOVA.UNIT          | Information indicating unit expressions. (e.g.: "374 square meters," "100 MB," "25 miles") |
 | CLOVA.ORDER         | Information indicating sequencing expressions. (e.g.: "Next," "Front," "Before," "Last," "This," "Previous") |
 | CLOVA.KO_ADDRESS_[Unit for administrative district] | This information indicates the place names that are called according to the domestic unit of administrative districts. You can find the unit of administrative districts provided by Clova in the Clova developer console. |
-| CLOVA.WORLD_COUNTRY | Information indicating worldwide country names. (e.g.: "Ghana,” "Japan,” "Korea,” "France") |
-| CLOVA.WORLD_CITY    | Information indicating worldwide city names. (e.g.: "New York,” "Paris,” "London") |
-| CLOVA.CURRENCY      | Information indicating currency. (e.g.: "Yuan,” "Yen,” "Dollar,” "Russian money,” "British currency") |
+| CLOVA.WORLD_COUNTRY | Information indicating worldwide country names. (e.g.: "Ghana," "Japan," "Korea," "France") |
+| CLOVA.WORLD_CITY    | Information indicating worldwide city names. (e.g.: "New York," "Paris," "London") |
+| CLOVA.CURRENCY      | Information indicating currency. (e.g.: "Yuan," "Yen," "Dollar," "Russian money," "British currency") |
 | CLOVA.OFFICIALDATE  | Information indicating holidays, national holidays, and memorial days. (e.g.: "Onset of Spring," "New Year's Day," "Buddha's Birthday," "Independence Day") |
 
 #### Custom slot type {#CustomSlotType}
@@ -162,7 +162,7 @@ The custom slot type is an information type specialized to the domain of the pro
 
 In a sentence however, these items can be expressed in various ways with a same or similar meaning. "Barbecue pizza" has the same meaning as "BBQ pizza" and long names, such as "shrimp golden crust pizza," may be shortened to "shrimp gold-crust pizza." Therefore, there is a need to not only declare the items classified by the concept, but also the representative term in each item and its synonyms when declaring custom slot types. This allows for converting the various synonyms used in the user utterance to the representative term during the recognition process and helps to receive a unified value of information under a similar concept for when the extension is handling the intent.
 
-Once the slot type is defined in this way, you must define the name of the slot to be used in each intent and declare its slot type. For example, you can declare a "pizzaType" slot for the pizza type information and "pizzaAmount" for the number of pizza for the "OrderPizza" intent and designate the "PIZZA_TYPE” you defined as a custom slot type and CLOVA.NUMBER predefined built-in slot type to the slots respectively.
+Once the slot type is defined in this way, you must define the name of the slot to be used in each intent and declare its slot type. For example, you can declare a "pizzaType" slot for the pizza type information and "pizzaAmount" for the number of pizza for the "OrderPizza" intent and designate the "PIZZA_TYPE" you defined as a custom slot type and CLOVA.NUMBER predefined built-in slot type to the slots respectively.
 
 ###  Sample utterances {#UtteranceExample}
 You can list various sample of user utterances when defining the intent. These sample become the base data necessary for Clova to recognize diverse user expressions with similar intentions and can be used for identifying the location of the aforementioned slot within user utterance. Well written sample utterances help to build a strong interaction model for user intention recognition. When writing sample utterances, it is highly recommended that you follow the recommendations below:

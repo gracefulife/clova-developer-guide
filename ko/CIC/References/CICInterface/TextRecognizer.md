@@ -12,8 +12,8 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 ### Payload fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
-| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `explicit`         | boolean  | [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `explicit` 필드의 값을 그대로 입력합니다.  | 선택  |
+| `speechId`   | string   | [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) 지시 메시지로 인해 사용자 입력을 추가로 받는 경우 `SpeechRecognizer.ExpectSpeech` 지시 메시지에 포함된 `expectSpeechId` 필드의 값을 그대로 입력합니다.  | 선택  |
 | `text`        | string  | 사용자가 입력한 텍스트를 설정합니다. | 필수     |
 
 ### Message example
@@ -62,5 +62,5 @@ TextRecognizer 인터페이스는 사용자가 입력한 텍스트를 인식할 
 {% endraw %}
 
 ### See also
-* [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)
+* [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
