@@ -232,7 +232,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Open, Stop                                                                                                    |
 | `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
 | `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
-| `"SMARTPLUG"`       | 스마트 플러그 타입     | GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                                                     |
+| `"SMARTPLUG"`       | 스마트 플러그 타입     | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                                                     |
 | `"SMARTTV"`         | 스마트 TV 타입       | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SMARTVALVE"`      | 스마트 밸브 타입      | GetLockState, SetLockState                                                                                                        |
 | `"SMOKESENSOR"`     | 연기 센서 타입       | GetDeviceState, HealthCheck                                                                                                             |
@@ -642,11 +642,11 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 {% raw %}
 
 ```json
-// 예제: GetCurrentBillResponse 메시지에서 사용된 예
+// 예제: GetConsumptionResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetCurrentBillResponse",
+    "name": "GetConsumptionResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },

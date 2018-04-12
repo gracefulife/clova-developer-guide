@@ -1230,9 +1230,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "currentBill": {
-        "value": 77.5,
-        "currency": "kW"
+    "consumption": {
+        "value": 79.7,
+        "unit": "kW"
     },
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
