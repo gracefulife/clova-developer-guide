@@ -106,5 +106,5 @@ MCN/SampleClient/1.7.0 (SampleIoTOS 2.1;SmartHub)
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>클라이언트 용 CIC - Clova developer console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
+  <p>클라이언트용 CIC - Clova developer console을 개발하는 중입니다. 따라서, 클라이언트 인증 정보는 제휴 담당자를 통해 확보하면 됩니다.</p>
 </div>
