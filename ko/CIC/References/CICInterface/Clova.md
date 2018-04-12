@@ -187,7 +187,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 ## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
 
-클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다. 이 이벤트 메시지를 CIC로 보낼 때 [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 값을 이 메시지의 `payload` 필드에 포함시켜야 합니다. 클라이언트는 이 지시 메시지에 대한 응답으로 사용자가 Clova 앱으로 요청했던 것에 대한 결과를 받게 됩니다.
+클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다. 이 이벤트 메시지를 CIC로 보낼 때 [`HandleDelegatedEvent`](#HandleDelegatedEvent) 지시 메시지를 통해 전달받은 `delegationId` 값을 이 메시지의 `payload`에 포함시켜야 합니다. 클라이언트는 이 지시 메시지에 대한 응답으로 사용자가 Clova 앱으로 요청했던 것에 대한 결과를 받게 됩니다.
 
 ### Context fields
 
@@ -237,7 +237,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 클라이언트에게 데이터를 content template에 따라 표시하도록 지시합니다. 사용자 음성 인식으로 파악된 결과 콘텐츠가 함께 전달됩니다.
 
 ### Payload fields
-`payload` 필드는 [content template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 content template을 제공하고 있습니다.
+`payload`는 [content template](/CIC/References/Content_Templates.md) 종류에 따라 포맷이 달라집니다. 현재 다음과 같은 content template을 제공하고 있습니다.
 
 * 콘텐츠 UI 유형별 템플릿
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
