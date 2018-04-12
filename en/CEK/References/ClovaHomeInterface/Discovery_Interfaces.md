@@ -5,10 +5,10 @@ The discovery interfaces are used to check a list of IoT devices registered to a
 | Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
 | [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest)   | Request  | Requests the list of IoT devices registered by the user to the Clova Home extension.             |
-| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) | Response | Sends the list of IoT devices registered by the user to CEK as response to the [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message. |
+| [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) | Response | Sends the list of IoT devices registered by the user to CEK as a response to the [`DiscoverAppliancesRequest`](#DiscoverAppliancesRequest) message. |
 
 ## DiscoverAppliancesRequest {#DiscoverAppliancesRequest}
-Request the list of IoT devices registered by the user to the Clova Home extension. The extension must use the [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) message as response to this request.
+Requests the list of IoT devices registered by the user to the Clova Home extension. The extension must use the [`DiscoverAppliancesResponse`](#DiscoverAppliancesResponse) message as a response to this request.
 
 ### Payload fields
 
@@ -44,7 +44,8 @@ Sends the list of IoT devices registered by the user to CEK. This message is use
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | An object array that expresses the appliance list registered to the user account.          | Required    |
+| `customCommands[]`        | [CustomCommandInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomCommandInfoObject) array  | An object array that contains the custom command list registered to the user account.   | Required     |
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array          | An object array that expresses the appliance list registered to the user account.          | Required    |
 
 ### Remarks
 You must provide the list of appliances registered in each user account when you provide the IoT service.
@@ -53,6 +54,7 @@ You must provide the list of appliances registered in each user account when you
 
 {% raw %}
 ```json
+// Example: An example used in DiscoverAppliancesResponse message
 {
   "header": {
     "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
@@ -61,6 +63,42 @@ You must provide the list of appliances registered in each user account when you
     "payloadVersion": "1.0"
   },
   "payload": {
+    "customCommands": [
+      {
+        "name": "Good morning",
+        "actions": [
+          {
+            "applianceId": "device-001",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      },
+      {
+        "name": "Good evening",
+        "actions": [
+          {
+            "applianceId": "device-0011",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      }
+    ],
     "discoveredAppliances": [
       {
         "applianceId": "device-001",
@@ -95,7 +133,9 @@ You must provide the list of appliances registered in each user account when you
           "TurnOff"
         ],
         "applianceTypes": ["SMARTPLUG"],
-        "additionalApplianceDetails": {}
+        "additionalApplianceDetails": {},
+        "location": "LIVING_ROOM",
+        "tags": ["Study", "Johnroom", "Poweroffdeviceforawaymode"]
       }
     ]
   }
