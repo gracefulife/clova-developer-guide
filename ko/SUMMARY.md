@@ -85,7 +85,7 @@
     * [이벤트 메시지 색인](/CIC/References/CICInterface/Index_for_Events.md)
     * [지시 메시지 색인](/CIC/References/CICInterface/Index_for_Directives.md)
   * [맥락 정보(Context)](/CIC/References/Context_Objects.md)
-    * [Alert.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
+    * [Alerts.AlertsState](/CIC/References/Context_Objects.md#AlertsState)
     * [AudioPlayer.PlaybackState](/CIC/References/Context_Objects.md#PlaybackState)
     * [Clova.Location](/CIC/References/Context_Objects.md#Location)
     * [Clova.SavedPlace](/CIC/References/Context_Objects.md#SavedPlace)
