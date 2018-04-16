@@ -5,7 +5,7 @@
   "author": "NAVER Corporation",
   "variables": {
     "ClassifiedInfo": "Confidential",
-    "DocVersion": "v3.7",
+    "DocVersion": "v3.8",
     "language": "ko",
     "TargetCountryCode": "KR",
     "TargetReaderType": "Internal",
