@@ -28,7 +28,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`GetAwakeDurationResponse`](#GetAwakeDurationResponse)                       | Response | [`GetAwakeDurationRequest`](#GetAwakeDurationRequest) 메시지에 대한 응답으로 대상 기기가 측정한 사용자의 취침 후 비수면 시간, 즉 사용자가 취침을 시작한 순간부터 수면에 진입한 순간까지의 시간을 CEK에게 전달합니다.  |
 | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request  | 대상 기기의 배터리 정보를 Clova Home extension에게 요청합니다. |
 | [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest) 메시지에 대한 응답으로 대상 기기의 배터리 정보를 CEK에게 전달합니다. |
-| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request | 주로 열림 감지 센서가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 Clova Home extension에게 요청합니다. |
+| [`GetCleaningCycleRequest`]                                                   | Request  | 기기의 세척 주기를 확인할 때 사용되며, 대상 기기의 다음 세척 주기까지 남은 시간에 대한 정보를 Clova Home extension에게 요청합니다.  |
+| [`GetCleaningCycleResponse`]                                                  | Response | [`GetCleaningCycleRequest`](#GetCleaningCycleRequest) 메시지에 대한 응답으로 대상 기기의 다음 세척 주기까지 남은 시간을 CEK에게 전달합니다.  |
+| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request  | 주로 열림 감지 센서가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 Clova Home extension에게 요청합니다. |
 | [`GetCloseTimeResponse`](#GetCloseTimeResponse)                               | Response | [`GetCloseTimeRequest`](#GetCloseTimeRequest) 메시지에 대한 응답으로 대상 기기가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 CEK에게 전달합니다.  |
 | [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 사용량을 확인할 때 사용되며, 대상 기기가 측정한 에너지 사용량 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 사용량 정보를 CEK에게 전달합니다.  |
@@ -1108,6 +1110,73 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 ### See also
 * [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)
 
+## GetCleaningCycleRequest {#GetCleaningCycleRequest}
+기기의 세척 주기를 확인할 때 사용되며, 대상 기기의 다음 세척 주기까지 남은 시간에 대한 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetCleaningCycleResponse`](#GetCleaningCycleResponse) 메시지를 사용해야 합니다.
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/Link_User_Account.md)를 참조합니다.                          | 항상    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다.     | 항상    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "9a1a7237-f1c0-44f8-b4db-2a2abb1f0e1c",
+    "name": "GetCleaningCycleRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-045"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetCleaningCycleResponse`](#GetCleaningCycleResponse)
+
+## GetCleaningCycleResponse {#GetCleaningCycleResponse}
+
+[`GetCleaningCycleRequest`](#GetCleaningCycleRequest) 메시지에 대한 응답으로 대상 기기의 다음 세척 주기까지 남은 시간을 CEK에게 전달합니다.
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
+| `remainingTime`              | string | 세척 필요 시점까지 남은 시간(Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)    | 필수    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetCleaningCycleResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "remainingTime": "PT8H40M",
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetCleaningCycleRequest`](#GetGetCleaningCycleRequest)
+
 ## GetCloseTimeRequest {#GetCloseTimeRequest}
 주로 열림 감지 센서가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetCloseTimeResponse`](#GetCloseTimeResponse) 메시지를 사용해야 합니다.
 
@@ -1459,7 +1528,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
         "name" : "냉장실습도",
         "value" : 10,
         "unit" : "percentage"
-      },
+      }
     ],
     "applianceResponseTimestamp": "2017-11-23T20:31:18+09:00"
   }
@@ -1599,10 +1668,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "expendableInfo" : [
       {
         "name" : "패킹",
-        "remainingTime" : {
-          "month": 1,
-          "day": 3
-        }
+        "remainingTime": "P0001-04-10"
       },
       {
         "name" : "1번 필터",
@@ -1866,7 +1932,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
-| `lockState`   | string | 기기의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 필수    |
+| `lockState`                  | string | 기기 잠금 장치의 잠금 상태. 다음과 같은 값을 가집니다. <ul><li><code>"LOCKED"</code>: 잠금 장치가 잠긴 상태</li><li><code>"UNLOCKED"</code>: 잠금 장치가 잠기지 않은 상태</li></ul> | 필수    |
+| `openState`                  | string | 기기 커버나 문 따위의 열림 상태.<ul><li><code>"CLOSED"</code>: 커버나 문 따위가 닫힌 상태</li><li><code>"OPENED"</code>: 커버나 문 따위가 열린 상태</li></ul> | 필수    |
+
 
 ### Message example
 
@@ -1881,9 +1949,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "lockState": "LOCKED"
-  },
-  "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+    "lockState": "LOCKED",
+    "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+  }
 }
 ```
 

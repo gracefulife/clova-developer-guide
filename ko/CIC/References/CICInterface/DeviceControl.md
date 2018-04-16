@@ -15,15 +15,16 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | [`BtConnect`](#BtConnect)                 | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 설정하도록 지시합니다.                               |
 | [`BtConnectByPINCode`](#BtConnectByPINCode) | Directive | 클라이언트에게 PIN 코드를 요청한 블루투스 기기와 연결하도록 지시합니다.                        |
 | [`BtDisconnect`](#BtDisconnect)           | Directive | 클라이언트에게 특정 블루투스 기기와 연결을 해제하도록 지시합니다.                               |
-| [`BtRequestForPINCode`](#BtRequestForPINCode) | Event | 클라이언트는 블루투스 기기가 PIN 코드 입력 요청을 할 때 이 메시지를 사용하여 CIC에 요청을 전달해야 합니다.               |
+| [`BtRequestForPINCode`](#BtRequestForPINCode) | Event | 클라이언트는 블루투스 기기가 PIN 코드 입력 요청을 할 때 이 메시지를 사용하여 CIC에 요청을 전달해야 합니다.     |
 | [`BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput) | Event | 클라이언트는 CIC에 PIN 코드 입력 요청을 취소하고자 할 때 이 메시지를 사용해야 합니다. |
-| [`BtStartPairing`](#BtStartPairing)       | Directive | 클라이언트에게 블루투스 페어링을 시작하도록 지시합니다.                                   |
-| [`BtStopPairing`](#BtStopPairing)         | Directive | 클라이언트에게 블루투스 페어링을 중지하도록 지시합니다.                                   |
+| [`BtStartPairing`](#BtStartPairing)       | Directive | 클라이언트에게 블루투스 페어링을 시작하도록 지시합니다.                                       |
+| [`BtStopPairing`](#BtStopPairing)         | Directive | 클라이언트에게 블루투스 페어링을 중지하도록 지시합니다.                                       |
 | [`Decrease`](#Decrease)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                     |
 | [`ExpectReportState`](#ExpectReportState) | Directive | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                 |
 | [`Increase`](#Increase)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                     |
 | [`LaunchApp`](#LaunchApp)                 | Directive | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                             |
-| [`OpenScreen`](#OpenScreen)               | Directive | 클라이언트에게 설정 화면을 열도록 지시합니다.                                              |
+| [`Open`](#Open)                           | Directive | 클라이언트에게 특정 화면을 표시하도 지시합니다.                                               |
+| [`OpenScreen`](#OpenScreen)               | Directive | **(Deprecated)** 클라이언트에게 설정 화면을 열도록 지시합니다.                              |
 | [`ReportState`](#ReportState)             | Event     | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                     |
 | [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | 사용자의 계정에 등록된 다른 클라이언트 기기의 현재 상태를 파악하고자 할 때 이 이벤트 메시지를 CIC로 전송합니다.  |
 | [`SetValue`](#SetValue)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                    |
@@ -70,7 +71,7 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수     |
-| `command`     | string  | 정상 수행한 동작.<ul><li> <code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"OpenScreen"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | 필수   |
+| `command`     | string  | 정상 수행한 동작.<ul><li> <code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"Open"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | 필수   |
 
 ### Remarks
 
@@ -115,9 +116,10 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
+
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
-* [`DeviceControl.OpenScreen`](#OpenScreen)
+* [`DeviceControl.Open`](#Open)
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
@@ -135,7 +137,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | 제어 대상.<ul><li><code>"airplane"</code>: 비행기 모드</li><li><code>"app"</code>: 앱</li><li><code>"bluetooth"</code>: 블루투스</li><li><code>"cellular"</code>: 모바일 통신</li><li><code>"channel"</code>: TV 채널</li><li><code>"flashlight"</code>: 플래시 조명</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: 절전 모드</li><li><code>"screenbrightness"</code>: 화면 밝기</li><li><code>"soundmode"</code>: 사운드 모드</li><li><code>"volume"</code>: 스피커 볼륨</li><li><code>"wifi"</code>: 무선랜</li></ul> | 필수     |
-| `command`     | string  | 실패한 동작. <ul><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"OpenScreen"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | 필수   |
+| `command`     | string  | 실패한 동작. <ul><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"Open"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | 필수   |
 
 ### Remarks
 
@@ -181,10 +183,11 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
+
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
 * [`DeviceControl.LaunchApp`](#LaunchApp)
-* [`DeviceControl.OpenScreen`](#OpenScreen)
+* [`DeviceControl.Open`](#Open)
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
@@ -687,9 +690,50 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ### See also
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 
+## Open directive {#Open}
+
+클라이언트에게 특정 화면을 표시하도록 지시합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `target`      | string  | 표시할 화면. 현재 다음과 같은 값을 입력할 수 있습니다.<ul><li><code>"home"</code>: 홈 화면</li><li><code>"settings"</code>: 설정 화면</li></ul> | 항상   |
+
+### Remarks
+
+* 클라이언트는 이 지시 메시지에 해당하는 내용을 처리한 후 [`DeviceControl.ActionExecuted`](#ActionExecuted) 또는 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "Open",
+      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
+      "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
+    },
+    "payload": {
+      "target": "settings"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`DeviceControl.ActionExecuted`](#ActionExecuted)
+* [`DeviceControl.ActionFailed`](#ActionFailed)
+
+
 ## OpenScreen directive {#OpenScreen}
 
-클라이언트에게 설정 화면을 열도록 지시합니다.
+**(Deprecated)** 클라이언트에게 설정 화면을 열도록 지시합니다.
 
 ### Payload fields
 
