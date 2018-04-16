@@ -21,6 +21,17 @@
   </thead>
   <tbody>
   <tr>
+    <td>v3.8</td><td>2018-04-16</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> 이벤트 메시지의 wakeWord 필드 설명 및 Audio data 설명 업데이트</li>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#Open">Open</a> 지시 메시지 추가</li>
+        <li>[CEK] Clova Home extension API <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetLockStateResponse">GetLockStateResponse</a>에 openState 필드 추가</li>
+        <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleRequest">GetCleaningCycleRequest</a>, <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleResponse">GetCleaningCycleResponse</a> 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v3.7</td><td>2018-04-09</td>
     <td>
       <ul>

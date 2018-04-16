@@ -155,7 +155,7 @@ PlaybackController 인터페이스는 클라이언트의 오디오 재생 및 �
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
-| `handover`            | object  | 원격으로 미디어 재생을 넘겨 받을 때 필요한 정보가 담긴 객체. 미디어 재생을 넘겨 받아야 하는 경우 `handover` 객체가 메시지에 포함됩니다. `handover` 객체가 포함되어 있으면 클라이언트는 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지 `payload` 필드의 `handover` 객체를 이 객체의 내용으로 채워야 합니다.     | 조건부 |
+| `handover`            | object  | 원격으로 미디어 재생을 넘겨 받을 때 필요한 정보가 담긴 객체. 미디어 재생을 넘겨 받아야 하는 경우 `handover` 객체가 메시지에 포함됩니다. `handover` 객체가 포함되어 있으면 클라이언트는 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지 `payload`의 `handover` 객체를 이 객체의 내용으로 채워야 합니다.     | 조건부 |
 | `handover.deviceId`   | string  | 미디어 재생을 넘겨주는 클라이언트 기기의 ID  | 항상 |
 | `handover.customData` | string  | 미디어 재생에 필요한 정보.               | 항상 |
 | `token`               | string  | 재생해야 하는 미디어 콘텐츠의 token. 미디어 재생을 넘겨 받아야 하는 경우 `token` 필드가 메시지에 포함됩니다. `token` 필드가 포함되어 있으면 클라이언트는 [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) 이벤트 메시지를 전송할 때 `token`에 이 필드의 값을 입력해야 합니다.  | 조건부  |
@@ -472,7 +472,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 * [`PlaybackController.StopCommandIssued`](#StopCommandIssued)
 
 ## PlayCommandIssued event {#PlayCommandIssued}
-사용자가 클라이언트 기기에서 재생 버튼(Play)을 누르거나 CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받은 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다. 만약, CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지의 `payload` 필드에 `handover` 필드가 포함되어 있다면 이를 그대로 사용하여 미디어 재생을 이양 받아야 합니다.
+사용자가 클라이언트 기기에서 재생 버튼(Play)을 누르거나 CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받은 경우 클라이언트는 이 이벤트 메시지를 CIC에게 전송해야 합니다. 이 이벤트 메시지를 받은 CIC는 상황에 맞는 지시 메시지를 클라이언트에게 전송합니다. 만약, CIC로부터 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지의 `payload`에 `handover` 필드가 포함되어 있다면 이를 그대로 사용하여 미디어 재생을 이양 받아야 합니다.
 
 
 ### Context fields
@@ -484,7 +484,7 @@ Clova는 스피커 출력과 관계된 제어이면 [`SpeechSynthesizer.Speak`](
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`            | string  | 클라이언트 기기 ID. 원격으로 미디어 재생을 다른 기기로 넘기는 상황이 아니라면 `deviceId` 필드를 생략합니다. | 선택 |
-| `handover`            | object  | 원격으로 미디어 재생을 넘겨 받을 때 필요한 정보를 담는 객체. 미디어 재생을 넘겨 받아야 하는 경우 `handover` 객체의 내용을 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지 `payload` 필드의 `handover` 객체로 채워야 합니다.     | 선택 |
+| `handover`            | object  | 원격으로 미디어 재생을 넘겨 받을 때 필요한 정보를 담는 객체. 미디어 재생을 넘겨 받아야 하는 경우 `handover` 객체의 내용을 [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지 `payload`의 `handover` 객체로 채워야 합니다.     | 선택 |
 | `handover.deviceId`   | string  | 미디어 재생을 넘겨주는 클라이언트 기기의 ID  | 필수 |
 | `handover.customData` | string  | 미디어 재생에 필요한 정보.               | 필수 |
 | `token`               | string  | 재생해야 하는 미디어 콘텐츠의 token. 사용자가 목록에서 곡을 골라 재생 버튼을 누른 경우 [`TemplateRuntime.RenderPlayerInfo`](/CIC/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo) 지시 메시지의 `playableItems[].token` 필드 값이 적용되어야 합니다. [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) 지시 메시지를 받은 경우 해당 메시지의 `token` 필드 값을 입력해야 할 수도 있습니다.  | 선택  |
