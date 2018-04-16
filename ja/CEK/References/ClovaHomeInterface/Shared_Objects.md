@@ -125,7 +125,7 @@
         "applianceTypes": ["SMARTPLUG"],
         "additionalApplianceDetails": {},
         "location": "LIVING_ROOM",
-        "tags": ["勉強", "チョルスの部屋", "おでかけの際に電源をオフにするデバイス"]
+        "tags": ["勉強", "ブラウンの部屋", "おでかけの際に電源をオフにするデバイス"]
       }
     ]
   }
@@ -764,7 +764,7 @@ actions項目と関連する[インターフェース](/CEK/References/CEK_API.m
         "applianceTypes": ["SMARTPLUG"],
         "additionalApplianceDetails": {},
         "location": "LIVING_ROOM",
-        "tags": ["勉強", "チョルスの部屋", "おでかけの際に電源をオフにするデバイス"]
+        "tags": ["勉強", "ブラウンの部屋", "おでかけの際に電源をオフにするデバイス"]
       }
     ]
   }
