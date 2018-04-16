@@ -1,5 +1,5 @@
 # Shared objects {#SharedObjects}
-[Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 본문(payload)에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
+[Clova Home extension 메시지](/CEK/References/CEK_API.md#ClovaHomeExtMessage)를 보낼 때 메시지 `payload`에 다음과 같은 공유 객체(shared objects)가 사용됩니다.
 
 | 객체 이름            | 객체 설명                                            |
 |--------------------|---------------------------------------------------|
@@ -125,7 +125,7 @@
         "applianceTypes": ["SMARTPLUG"],
         "additionalApplianceDetails": {},
         "location": "LIVING_ROOM",
-        "tags": ["공부", "철수방", "외출시전원해제기"]
+        "tags": ["공부", "철수방", "외출시전원해제기기"]
       }
     ]
   }
@@ -223,7 +223,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"RANGE"`           | 레인지 타입          | GetDeviceState, HealthCheck                                                                                                             |
 | `"RANGEHOOD"`       | 레인지 후드 타입      | HealthCheck, TurnOff, TurnOn                                                                                                      |
 | `"REFRIGERATOR"`    | 냉장고 타입          | GetDeviceState, HealthCheck, SetFreezerTargetTemperature, SetFridgeTargetTemperature, SetMode                                           |
-| `"RICECOOKER"`      | 전기 밥솥 타입        | GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
+| `"RICECOOKER"`      | 전기 밥솥 타입        | GetCleaningCycle, GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
 | `"ROBOTVACUUM"`     | 로봇 청소기 타입       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
 | `"SETTOPBOX"`       | TV 셋톱 박스 타입     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetAsleepDuration, GetAwakeDuration, GetDeviceState, GetSleepScore, GetSleepStartTime, HealthCheck, TurnOff, TurnOn              |
@@ -232,7 +232,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"SMARTCURTAIN"`    | 스마트 커튼 타입      | Close, HealthCheck, Open, Stop                                                                                                    |
 | `"SMARTHUB"`        | 스마트 허브 타입      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
 | `"SMARTMETER"`      | 전기 계량기 타입      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
-| `"SMARTPLUG"`       | 스마트 플러그 타입     | GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                                                     |
+| `"SMARTPLUG"`       | 스마트 플러그 타입     | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                                                     |
 | `"SMARTTV"`         | 스마트 TV 타입       | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SMARTVALVE"`      | 스마트 밸브 타입      | GetLockState, SetLockState                                                                                                        |
 | `"SMOKESENSOR"`     | 연기 센서 타입       | GetDeviceState, HealthCheck                                                                                                             |
@@ -630,31 +630,35 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetColorTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetColorTemperatureRequest)
 
 ## ConsumptionInfoObject {#ConsumptionInfoObject}
-기기가 측정한 에너지 사용량 정보를 담고 있는 객체입니다. 에너지 사용 수치와 단위를 나누어 표시합니다.
+기기가 측정한 에너지 또는 자원 사용량 정보를 담고 있는 객체입니다. 에너지 사용 수치와 단위를 나누어 표시합니다.
 
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `unit`        | string  | 에너지 단위(예, 전기: kW)            | 필수/항상  |
-| `value`       | number  | 에너지 사용 수치                    | 필수/항상   |
+| `name`        | string  | 에너지 또는 자원 사용 항목명                   | 필수/항상  |
+| `unit`        | string  | 에너지 또는 자원 사용 단위(예, 전기: kW)        | 필수/항상  |
+| `value`       | number  | 에너지 또는 자원 사용 수치                    | 필수/항상   |
 
 ### Object Example
 {% raw %}
 
 ```json
-// 예제: GetCurrentBillResponse 메시지에서 사용된 예
+// 예제: GetConsumptionResponse 메시지에서 사용된 예
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetCurrentBillResponse",
+    "name": "GetConsumptionResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
-    "consumption": {
+    "consumption": [
+      {
+        "name": "전기사용량",
         "value": 79.7,
         "unit": "kW"
-    },
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }

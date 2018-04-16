@@ -5,7 +5,7 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                 |
 |------------------|-----------|-------------------------------------------|
 | [`RequestSynchronizeState`](#RequestSynchronizeState)  | Event     | 클라이언트가 시스템 관련 정보를 동기화해야 할 때 이 이벤트 메시지를 CIC로 전송합니다. |
-| [`SynchronizeState`](#SynchronizeState)                | Directive | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다.            |
+| [`SynchronizeState`](#SynchronizeState)                | Directive | 클라이언트에게 `payload`에 있는 데이터를 동기화하도록 지시합니다.            |
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -53,7 +53,7 @@ System 인터페이스는 Clova와 클라이언트 사이에서 클라이언트 
 * [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState)
 
 ## SynchronizeState directive {#SynchronizeState}
-클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다. 클라이언트는 CIC로부터 전달된 데이터에 맞게 클라이언트에 설정된 값을 변경해야 합니다.
+클라이언트에게 `payload`에 있는 데이터를 동기화하도록 지시합니다. 클라이언트는 CIC로부터 전달된 데이터에 맞게 클라이언트에 설정된 값을 변경해야 합니다.
 
 ### Payload fields
 

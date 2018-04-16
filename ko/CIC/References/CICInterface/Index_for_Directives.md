@@ -5,7 +5,7 @@
 | Alerts             | [`DeleteAlert`](/CIC/References/CICInterface/Alerts.md#DeleteAlert)             | 클라이언트에게 특정 알람을 삭제하도록 지시합니다. |
 | Alerts             | [`SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert)                   | 클라이언트에게 알람을 새로 추가하거나 특정 알람을 수정하도록 지시합니다. |
 | Alerts             | [`StopAlert`](/CIC/References/CICInterface/Alerts.md#StopAlert)                 | 클라이언트에게 특정 알람을 중지하도록 지시합니다.  |
-| Alerts             | [`SynchronizeAlert`](/CIC/References/CICInterface/Alerts.md#SynchronizeAlert)   | 클라이언트에게 `payload` 필드에 있는 사용자의 알람 데이터를 동기화하도록 지시합니다.  |
+| Alerts             | [`SynchronizeAlert`](/CIC/References/CICInterface/Alerts.md#SynchronizeAlert)   | 클라이언트에게 `payload`에 있는 사용자의 알람 데이터를 동기화하도록 지시합니다.  |
 | AudioPlayer        | [`ClearQueue`](/CIC/References/CICInterface/AudioPlayer.md#ClearQueue)          | 클라이언트에게 오디오 스트림 재생 대기열(queue)을 초기화하도록 지시합니다.                              |
 | AudioPlayer        | [`ExpectReportPlaybackState`](/CIC/References/CICInterface/AudioPlayer.md#ExpectReportPlaybackState) | 클라이언트에게 현재 재생 상태를 보고하도록 지시합니다. 클라이언트는 이 지시 메시지를 받으면 [`AudioPlayer.ReportPlaybackState`](/CIC/References/CICInterface/AudioPlayer.md#ReportPlaybackState) 이벤트 메시지를 CIC로 전송해야 합니다. |
 | AudioPlayer        | [`Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)                      | 클라이언트에게 특정 오디오 스트림을 재생하거나 재생 대기열에 추가하도록 지시합니다.                          |
@@ -28,7 +28,8 @@
 | DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                  |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                            |
 | DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                    |
-| DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | 클라이언트에게 설정 화면을 열도록 지시합니다.                                                     |
+| DeviceControl      | [`Open`](/CIC/References/CICInterface/DeviceControl.md#Open)                     | 클라이언트에게 특정 화면을 표시하도록 지시합니다.  |
+| DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | **(Deprecated)** 클라이언트에게 설정 화면을 열도록 지시합니다.                                                     |
 | DeviceControl      | [`SetValue`](/CIC/References/CICInterface/DeviceControl.md#SetValue)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                           |
 | DeviceControl      | [`SynchronizeState`](/CIC/References/CICInterface/DeviceControl.md#SynchronizeState) | 클라이언트에게 사용자 계정에 등록된 또 다른 클라이언트 기기의 상태를 업데이트하도록 지시합니다.           |
 | DeviceControl      | [`TurnOff`](/CIC/References/CICInterface/DeviceControl.md#TurnOff)               | 클라이언트에게 지정한 기능이나 모드를 끄거나 비활성화하도록 지시합니다.                                  |
@@ -60,6 +61,6 @@
 {% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}| SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
 | SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |{% else %}| SpeechRecognizer   | [`StopCapture`](/CIC/References/CICInterface/SpeechRecognizer.md#StopCapture)   | 클라이언트에게 사용자의 음성 인식을 중지하도록 지시합니다.                                            |{% endif %}
 | SpeechSynthesizer  | [`Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)                 | 클라이언트에게 합성된 TTS를 스피커로 출력하도록 지시합니다.                                |
-| System             | [`SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload` 필드에 있는 데이터를 동기화하도록 지시합니다.                                   |
+| System             | [`SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState) | 클라이언트에게 `payload`에 있는 데이터를 동기화하도록 지시합니다.                                   |
 | TemplateRuntime    | [`ExpectRequestPlayerInfo`](/CIC/References/CICInterface/TemplateRuntime.md#ExpectRequestPlayerInfo)  | 클라이언트에게 재생 메타 정보를 요청하도록 지시합니다. 클라이언트는 이 지시 메시지를 받으면 [`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo) 이벤트 메시지를 CIC로 전송해야 합니다. |
 | TemplateRuntime    | [`RenderPlayerInfo`](/CIC/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo)                | CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 앨범 이미지, 가사와 같은 재생 메타 정보를 전달하고 이를 표시하도록 지시합니다. |

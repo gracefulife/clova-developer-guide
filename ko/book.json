@@ -4,8 +4,8 @@
   "direction": "ltr",
   "author": "NAVER Corporation",
   "variables": {
-    "ClassifiedInfo": "대외비",
-    "DocVersion": "v3.7",
+    "ClassifiedInfo": "Confidential",
+    "DocVersion": "v3.8",
     "language": "ko",
     "TargetCountryCode": "KR",
     "TargetReaderType": "Partner",

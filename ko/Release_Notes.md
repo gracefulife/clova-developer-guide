@@ -2,6 +2,16 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-04-16
+
+* CIC
+  * [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) 이벤트 메시지의 wakeWord 필드 설명 및 Audio data 설명 업데이트
+  * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임스페이스에 [Open](/CIC/References/CICInterface/DeviceControl.md#Open) 지시 메시지 추가
+
+* CEK
+  * Clova Home extension API [GetLockStateResponse](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetLockStateResponse)에 openState 필드 추가
+  * Clova Home extension API에 [GetCleaningCycleRequest](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCleaningCycleRequest), [GetCleaningCycleResponse](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetCleaningCycleResponse) 추가
+
 ## 2018-04-09
 
 * CIC
