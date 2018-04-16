@@ -32,8 +32,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`GetCleaningCycleResponse`]                                                  | Response | [`GetCleaningCycleRequest`](#GetCleaningCycleRequest) 메시지에 대한 응답으로 대상 기기의 다음 세척 주기까지 남은 시간을 CEK에게 전달합니다.  |
 | [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request  | 주로 열림 감지 센서가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 Clova Home extension에게 요청합니다. |
 | [`GetCloseTimeResponse`](#GetCloseTimeResponse)                               | Response | [`GetCloseTimeRequest`](#GetCloseTimeRequest) 메시지에 대한 응답으로 대상 기기가 감지한 내용 중 감지 대상이 마지막으로 닫혔던 시점의 시간 정보를 CEK에게 전달합니다.  |
-| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 사용량을 확인할 때 사용되며, 대상 기기가 측정한 에너지 사용량 정보를 Clova Home extension에게 요청합니다.  |
-| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 사용량 정보를 CEK에게 전달합니다.  |
+| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 또는 자원을 확인할 때 사용되며, 대상 기기가 측정한 에너지 또는 자원 정보를 Clova Home extension에게 요청합니다.  |
+| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 또는 자원 정보를 CEK에게 전달합니다.  |
 | [`GetCurrentBillRequest`](#GetCurrentBillRequest)                             | Request  | 주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 측정된 현재까지의 사용량의 기반으로 요금을 확인할 때 사용되며, 대상 기기가 측정한 요금 정보를 Clova Home extension에게 요청합니다.  |
 | [`GetCurrentBillResponse`](#GetCurrentBillResponse)                           | Response | [`GetCurrentBillRequest`](#GetCurrentBillRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 요금 정보를 CEK에게 전달합니다.   |
 | [`GetCurrentTemperatureRequest`](#GetCurrentTemperatureRequest)               | Request  | 대상 기기가 측정한 현재 온도 정보를 Clova Home extension에게 요청합니다. |
@@ -1245,7 +1245,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`GetCloseTimeRequest`](#GetCloseTimeRequest)
 
 ## GetConsumptionRequest {#GetConsumptionRequest}
-주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 사용량을 확인할 때 사용되며, 대상 기기가 측정한 에너지 사용량 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetConsumptionResponse`](#GetConsumptionResponse) 메시지를 사용해야 합니다.
+주로 스마트 플러그나 스마트 멀티탭과 같은 기기에서 현재까지 측정된 에너지 또는 자원을 확인할 때 사용되며, 대상 기기가 측정한 에너지 또는 자원 정보를 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`GetConsumptionResponse`](#GetConsumptionResponse) 메시지를 사용해야 합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
 |---------------|---------|-----------------------------|:---------:|
@@ -1279,12 +1279,12 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`GetConsumptionResponse`](#GetConsumptionResponse)
 
 ## GetConsumptionResponse {#GetConsumptionResponse}
-[`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 사용량 정보를 CEK에게 전달합니다.
+[`GetConsumptionRequest`](#GetConsumptionRequest) 메시지에 대한 응답으로 대상 기기가 현재까지 측정한 에너지 또는 자원 정보를 CEK에게 전달합니다.
 
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | 기기에서 요청한 정보를 확인한 시간(Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 선택    |
-| `consumption`                | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) | 기기가 현재까지 측정한 에너지 사용량 정보를 담고 있는 객체   | 필수    |
+| `consumption[]`              | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) array | 기기가 현재까지 측정한 에너지 또는 자원 정보를 담고 있는 객체   | 필수    |
 
 ### Message example
 
@@ -1299,10 +1299,13 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "consumption": {
+    "consumption": [
+      {
+        "name": "전기사용량",
         "value": 79.7,
         "unit": "kW"
-    },
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
