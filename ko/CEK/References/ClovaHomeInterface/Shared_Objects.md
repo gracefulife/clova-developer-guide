@@ -630,13 +630,14 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 * [`SetColorTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetColorTemperatureRequest)
 
 ## ConsumptionInfoObject {#ConsumptionInfoObject}
-기기가 측정한 에너지 사용량 정보를 담고 있는 객체입니다. 에너지 사용 수치와 단위를 나누어 표시합니다.
+기기가 측정한 에너지 또는 자원 사용량 정보를 담고 있는 객체입니다. 에너지 사용 수치와 단위를 나누어 표시합니다.
 
 ### Object fields
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
-| `unit`        | string  | 에너지 단위(예, 전기: kW)            | 필수/항상  |
-| `value`       | number  | 에너지 사용 수치                    | 필수/항상   |
+| `name`        | string  | 에너지 또는 자원 사용 항목명                   | 필수/항상  |
+| `unit`        | string  | 에너지 또는 자원 사용 단위(예, 전기: kW)        | 필수/항상  |
+| `value`       | number  | 에너지 또는 자원 사용 수치                    | 필수/항상   |
 
 ### Object Example
 {% raw %}
@@ -651,10 +652,13 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "consumption": {
+    "consumption": [
+      {
+        "name": "전기사용량",
         "value": 79.7,
         "unit": "kW"
-    },
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
