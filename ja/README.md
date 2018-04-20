@@ -21,6 +21,38 @@
   </thead>
   <tbody>
     <tr>
+      <td>v3.6</td><td>2018-04-02</td>
+      <td>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html">AudioPlayer</a>名前欄にメッセージ仕様を追加および一部のフィールドを更新
+            <ul>
+              <li><a href="/CIC/References/CICInterface/AudioPlayer.html#ExpectReportPlaybackState">AudioPlayer.ExpectReportPlaybackState</a>ディレクティブ、<a href="/CIC/References/CICInterface/AudioPlayer.html#ReportPlaybackState">AudioPlayer.ReportPlaybackStateイベント</a>{% if book.TargetReaderType == "Internal" %}、<a href="/CIC/References/CICInterface/AudioPlayer.html#RequestPlaybackState">AudioPlayer.RequestPlaybackState</a>イベント、<a href="/CIC/References/CICInterface/AudioPlayer.html#SynchronizePlaybackState">SynchronizePlaybackStateディレクティブ</a>{% endif %}を追加</li>
+              <li><a href="/CIC/References/CICInterface/AudioPlayer.html#Play">AudioPlayer.Play</a>ディレクティブのpayloadフィールドの内容を更新</li>
+              <li>ProgressReportXXX、PlayXXXの形式の名前を持っているイベントフィールドにtokenフィールド値を必須として追加</li>
+            </ul>
+          </li>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#PlaybackState">AudioPlayer.PlaybackState</a>コンテキストオブジェクトにrepeatModeを追加</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a>名前欄に、全部で12件のメッセージ仕様を追加
+            <ul>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#StopCommandIssued">PlaybackController.StopCommandIssued</a>イベントを追加</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>,
+<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatMode">PlaybackController.SetRepeatMode</a>ディレクティブを追加</li>
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#TurnOnRepeatMode">PlaybackController.TurnOnRepeatMode</a>ディレクティブと<a href="/CIC/References/CICInterface/PlaybackController.html#TurnOffRepeatMode">PlaybackController.TurnOffRepeatMode</a>は削除予定</li>
+            </ul>
+          </li>
+          <li>[CIC] メディアストリームのための情報と、プレイリストを表示するための再生メタ情報を分離するため、<a href="/CIC/References/CICInterface/TemplateRuntime.html">TemplateRuntime</a>名前欄を追加</li>
+          <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a>の<a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>にscanlistフィールドを追加</li>
+          <li>[CIC] PINコードを使用する外部のBluetoothデバイスと接続できるように、<a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a>名前欄に<a href="/CIC/References/CICInterface/DeviceControl.html#BtConnectByPINCode">BtConnectByPINCode</a>ディレクティブと<a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestForPINCode">BtRequestForPINCode</a>、<a href="/CIC/References/CICInterface/DeviceControl.html#BtRequestToCancelPinCodeInput">BtRequestToCancelPinCodeInput</a>イベントを追加</li>
+          <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a>名前欄の<a href="/CIC/References/CICInterface/DeviceControl.html#BtConnect">BtConnect</a>ディレクティブにpayloadを追加</li>
+          <li>[CEK] Clova Home Extension APIにGetSleepStartTimeRequestの他9件の<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>と4件の<a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">共有オブジェクト</a>を追加</li>
+          <li>[CEK] Clova Home Extension APIの<a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse">DiscoverAppliancesResponse</a>に<a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#CustomCommandInfoObject">CustomCommandInfoObject</a>を追加</li>
+          <li>[CEK] Clova Home Extension APIからTimeAmountInfoObject<a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html">共有オブジェクト</a>を削除およびそれに伴って<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html">Control API</a>の一部の内容を変更</li>
+          <li>[CEK] Clova Home Extension APIの<a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">ApplianceInfoObject</a>にtagsフィールドを追加およびlocationフィールドの説明を変更</li>
+          <li>[Dev.Console] Clova Developer Centerの一部のUIを更新</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>v3.5</td><td>2018-03-19</td>
       <td>
         <ul>
@@ -65,14 +97,14 @@
     <tr>
       <td>v3.1</td><td>2018/02/05</td>
       <td>
-       <ul>
-         <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a>のdurationInMillisecondsフィールドの説明を修正</li>
-         <li>[CIC] <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>、<a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>、<a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>、<a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>、<a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>、<a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>、<a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a>テンプレートにソース関連のフィールドなどの内容を追加</li>
-         <li>[CEK] Extension起動の呼び出し(<a href="CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">LaunchRequest</a>)の説明を修正および<a href="/Design/Design_Guideline_For_Extension.html">Extensionのデザインガイドラインドキュメントの内容を反映</a></li>
-         <li>[CEK] CEKとExtensionの通信に使用される<a href="/CEK/CEK_Overview.html#WhatisCEK">HTTPプロトコルのバージョン</a>を明示</li>
-         <li>[CEK] <a href="/CEK/Tutorials/Introduction.html">チュートリアル</a>ページに<a href="/CEK/Tutorials/Handle_Builtin_Intents.html">基本的な意思表現を処理する</a>ページを追加</li>
-         <li>[Dev.Console] Extensionサーバーで使用する<a href="/DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">ポート</a>を明示</li>
-         <li>[Common] 一部のドキュメントの誤りを訂正</li>
+        <ul>
+          <li>[CIC] <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a>のdurationInMillisecondsフィールドの説明を修正</li>
+          <li>[CIC] <a href="/CIC/References/ContentTemplates/Atmosphere.html">Atmosphere</a>、<a href="/CIC/References/ContentTemplates/CardList.html">CardList</a>、<a href="/CIC/References/ContentTemplates/Humidity.html">Humidity</a>、<a href="/CIC/References/ContentTemplates/TodayWeather.html">TodayWeather</a>、<a href="CIC/References/ContentTemplates/TomorrowWeather.html">TomorrowWeather</a>、<a href="/CIC/References/ContentTemplates/WeeklyWeather.html">WeeklyWeather</a>、<a href="CIC/References/ContentTemplates/WindSpeed.html">WindSpeed</a>テンプレートにコンテンツの提供元に関連するフィールドなどの内容を追加</li>
+          <li>[CEK] Extensionを開始する呼び出し(<a href="CEK/Guides/Build_Custom_Extension.html#HandleLaunchRequest">LaunchRequest</a>)の説明を修正および<a href="/Design/Design_Guideline_For_Extension.html">Extensionのデザインガイドラインドキュメントに反映</a></li>
+          <li>[CEK] CEKとExtension間の通信に使用される<a href="/CEK/CEK_Overview.html#WhatisCEK">HTTPプロトコルのバージョンを</a>明記</li>
+          <li>[CEK] <a href="/CEK/Tutorials/Introduction.html">チュートリアル</a>ページに<a href="/CEK/Tutorials/Handle_Builtin_Intents.html">基本的な意思表現を処理する</a>ページを追加</li>
+          <li>[Dev.Console] Extensionサーバーで使用すべき<a href="/DevConsole/Guides/CEK/Register_Extension.html#SetServerConnection">ポート</a>を明記</li>
+          <li>[Common] 一部のドキュメントの誤りを訂正</li>
         </ul>
       </td>
     </tr>
@@ -359,7 +391,7 @@
       <td>
         <ul>
           <li>[CEK] <a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">Custom Extensionレスポンスメッセージ</a>の<a href="/CEK/References/CEK_API.html#CustomExtResponseMessage">outputSpeech</a>オブジェクト構成の更新を反映</li>
-          <li>[共通] <a href="/Terms.html">用語集を追加</a></li>
+          <li>[共通] <a href="/Glossary.html">用語集を追加</a></li>
           <li>CEKのメッセージフォーマット部分の目次を更新</li>
         </ul>
       </td>
