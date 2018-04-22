@@ -212,7 +212,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"HEATER"`          | 히터 타입            | DecrementTargetTemperature, GetCurrentTemperature, HealthCheck, IncrementTargetTemperature, TurnOff, TurnOn                      |
 | `"HUMIDIFIER"`      | 가습기 타입           | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                    |
 | `"KIMCHIREFRIGERATOR"` | 김치 냉장고 타입    | GetDeviceState, HealthCheck                                                                                                            |
-| `"LIGHT"`           | 스마트 조명 기기 타입   | DecrementBrightness, DecrementVolume HealthCheck, IncrementBrightness, IncrementVolume SetBrightness, TurnOff, TurnOn            |
+| `"LIGHT"`           | 스마트 조명 기기 타입   | DecrementBrightness, DecrementVolume HealthCheck, IncrementBrightness, IncrementVolume SetBrightness, SetColor, SetColorTemperature, SetMode, TurnOff, TurnOn            |
 | `"MASSAGECHAIR"`    | 안마 의자 타입        | DecrementIntensityLevel, HealthCheck, IncrementIntensityLevel, TurnOff, TurnOn                                                     |
 | `"MICROWAVE"`       | 전자 레인지 타입      | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                      |
 | `"MOTIONSENSOR"`    | 동작 감지 센서 타입    | GetDeviceState, HealthCheck                                                                                                             |
