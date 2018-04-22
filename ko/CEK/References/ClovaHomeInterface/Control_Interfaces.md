@@ -96,6 +96,8 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`OpenRequest`](#OpenRequest)                                                 | Request  | 스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 Clova Home extension에게 요청합니다.  |
 | [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | [`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 설정한 결과를 CEK에게 전달합니다.  |
 | [`RaiseRequest`](#RaiseRequest)                                               | Request  | 주로 커튼이나 블라인드, 침대 같은 기기를 제어할 때 사용되며, 대상 기기의 높낮이를 높이도록 Clova Home extension에게 요청합니다.  |
+| [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)                         | Response | [`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`ReleaseModeRequest`](#ReleaseModeRequest)                                   | Request  | 현재 기기에 설정된 운전 모드(operation mode)를 해제할 때 사용되며, 기기의 운전 모드를 해제하여 이전 운전 모드나 기본 운전 모드로 돌아가도록 Clova Home extension에게 요청합니다.  |
 | [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
 | [`SetBrightnessRequest`](#SetBrightnessRequest)                               | Request  | 대상 기기가 조명 밝기를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. |
 | [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)               | Response | [`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
@@ -2442,7 +2444,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   },
   "payload": {
     "sleepScore": {
-      "value": 80,
+      "value": 80
     },
     "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
   }
@@ -3577,6 +3579,86 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 * [`LowerRequest`](#LowerRequest)
 * [`RaiseConfirmation`](#RaiseConfirmation)
+
+## ReleaseModeConfirmation {#ReleaseModeConfirmation}
+[`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 설정한 결과를 CEK에게 전달합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `mode`          | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | 운전 모드 해제 요청에 의해 대상 기기에 설정되었거나 extension이 대상 기기에게 되돌아가도록 요청한 운전 모드 정보를 담고 있는 객체      | 선택    |
+| `previousState` | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | 운전 모드 해제 요청 전에 대상 기기에 설정되어 있던 운전 모드 정보를 담고 있는 객체      | 선택    |
+
+### Remarks
+
+대상 기기에서 payload에 입력할 정보를 얻어올 수 없으면 값을 입력하지 않아도 됩니다. 이 경우 사용자에게 구체적인 정보 없이 기기 제어 요청이 정상 처리되었음을 알려줍니다.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "ReleaseModeConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "previousState": {
+      "mode": {
+        "value": "sleep"
+      }
+    },
+    "mode": {
+      "value": "wakeup"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`ReleaseModeRequest`](#ReleaseModeRequest)
+
+## ReleaseModeRequest {#ReleaseModeRequest}
+현재 기기에 설정된 운전 모드(operation mode)를 해제할 때 사용되며, 기기의 운전 모드를 해제하여 이전 운전 모드나 기본 운전 모드로 돌아가도록 Clova Home extension에게 요청합니다. 이 요청에 대한 응답으로 [`ReleaseModeConfirmation`](#ReleaseModeConfirmation) 메시지를 사용해야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken` | string  | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/Link_User_Account.md)를 참조합니다. | 항상    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "ReleaseModeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-006"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)
 
 ## SetBrightnessConfirmation {#SetBrightnessConfirmation}
 [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다.
