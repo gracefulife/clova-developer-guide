@@ -2,6 +2,11 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-04-23
+
+* CEK
+  * Clova Home extension API에 [ReleaseModeConfirmation](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#ReleaseModeConfirmation), [ReleaseModeRequest](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#ReleaseModeRequest) 추가
+
 ## 2018-04-16
 
 * CIC
