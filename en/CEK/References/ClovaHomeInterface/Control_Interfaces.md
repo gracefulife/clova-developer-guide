@@ -1,13 +1,13 @@
 # Control
 
-The control interfaces are used to check IoT device information and carry out requests and responses for device control.
+These control interfaces are used to check IoT device information and carry out requests and responses for device control.
 
 | Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
 | [`ChargeConfirmation`](#ChargeConfirmation)                                   | Response | Sends the result of setting the target appliance to self-charge to CEK as a response to the [`ChargeRequest`](#ChargeRequest) message. |
 | [`ChargeRequest`](#ChargeRequest)                                             | Request  | Requests the Clova Home extension to set the target appliance to self-charge. |
-| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | Sends the result of setting to block lights on the smart curtain or closing the bidet lid to CEK as a response to the [`CloseRequest`](#CloseRequest) message. |
-| [`CloseRequest`](#CloseRequest)                                               | Request  | Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension for the block lights settings on the smart curtain or close the bidet lid.  |
+| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | Sends the result of setting to close on the smart curtain or closing the bidet lid to CEK as a response to the [`CloseRequest`](#CloseRequest) message. |
+| [`CloseRequest`](#CloseRequest)                                               | Request  | Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or bidet lid.  |
 | [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)         | Response | Sends the result of setting the target appliance to dim the lights to CEK as a response to the [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) message. |
 | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest)                   | Request  | Requests the Clova Home extension to set the target appliance to dim the lights by the designated amount. |
 | [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)               | Response | Sends the result of setting the target appliance to channel down the TV to CEK as a response to the [`DecrementChannelRequest`](#DecrementChannelRequest) message. |
@@ -190,7 +190,7 @@ Mainly used to control robot vacuums. Requests the Clova Home extension to set t
 * [`ChargeConfirmation`](#ChargeConfirmation)
 
 ## CloseConfirmation {#CloseConfirmation}
-Sends the result of setting to block lights on the smart curtain or closing the bidet lid to CEK as a response to the [`CloseRequest`](#CloseRequest) message.
+Sends the result of setting to close on the smart curtain or closing the bidet lid to CEK as a response to the [`CloseRequest`](#CloseRequest) message.
 
 ### Payload fields
 
@@ -218,7 +218,7 @@ None
 * [`CloseRequest`](#CloseRequest)
 
 ## CloseRequest {#CloseRequest}
-Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension for the block lights settings on the smart curtain or close the bidet lid. The extension must use the [`CloseConfirmation`](#CloseConfirmation) message as a response to this request.
+Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or bidet lid. The extension must use the [`CloseConfirmation`](#CloseConfirmation) message as a response to this request.
 
 ### Payload fields
 
