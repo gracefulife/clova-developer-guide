@@ -213,7 +213,7 @@ Content-Type: application/octet-stream
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p><code>initiator.type</code>의 값이 <code>"WAKEWORD"</code>인 경우 음성 데이터를 전송할 때 반드시 호출어 부분에 해당하는 음성도 포함시켜야 합니다. 이때, 음성 데이터는 호출어 구간의 시작점보다 300 밀리 초(4.8 kHz sample) 앞선 지점부터 시작되어야 합니다.</p>
+  <p><code>initiator.type</code>의 값이 <code>"WAKEWORD"</code>인 경우 음성 데이터를 전송할 때 반드시 호출어 부분에 해당하는 음성도 포함시켜야 합니다. 이때, 음성 데이터는 호출어 구간의 시작점보다 300 밀리 초(4,800 sample) 앞선 지점부터 시작되어야 합니다.</p>
 </div>
 
 ### See also

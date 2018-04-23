@@ -21,6 +21,14 @@
   </thead>
   <tbody>
   <tr>
+    <td>v3.9</td><td>2018-04-23</td>
+    <td>
+      <ul>
+        <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeConfirmation">ReleaseModeConfirmation</a>, <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeRequest">ReleaseModeRequest</a> 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v3.8</td><td>2018-04-16</td>
     <td>
       <ul>
