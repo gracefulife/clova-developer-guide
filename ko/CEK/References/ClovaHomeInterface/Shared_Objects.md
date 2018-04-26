@@ -216,14 +216,14 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `"MASSAGECHAIR"`    | 안마 의자 타입        | DecrementIntensityLevel, HealthCheck, IncrementIntensityLevel, TurnOff, TurnOn                                                     |
 | `"MICROWAVE"`       | 전자 레인지 타입      | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                      |
 | `"MOTIONSENSOR"`    | 동작 감지 센서 타입    | GetDeviceState, HealthCheck                                                                                                             |
-| `"OPENCLOSESENSOR"` | 열림 감지 센서 타입    | GetCloseTime, GetLockState, GetOpenTime, HealthCheck                                                                                   |
+| `"OPENCLOSESENSOR"` | 열림 감지 센서 타입    | GetCloseTime, GetDeviceState HealthCheck, GetLockState, GetOpenTime                                                                                   |
 | `"OVEN"`            | 오븐 타입            | GetDeviceState, HealthCheck                                                                                                             |
 | `"POWERSTRIP"`      | 멀티 탭 타입         | GetConsumption, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                     |
 | `"PURIFIER"`        | 정수기 타입          | GetDeviceState, GetExpendableState, HealthCheck, SetMode, SetTargetTemperature                                                     |
 | `"RANGE"`           | 레인지 타입          | GetDeviceState, HealthCheck                                                                                                             |
 | `"RANGEHOOD"`       | 레인지 후드 타입      | HealthCheck, TurnOff, TurnOn                                                                                                      |
 | `"REFRIGERATOR"`    | 냉장고 타입          | GetDeviceState, HealthCheck, SetFreezerTargetTemperature, SetFridgeTargetTemperature, SetMode                                           |
-| `"RICECOOKER"`      | 전기 밥솥 타입        | GetCleaningCycle, GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
+| `"RICECOOKER"`      | 전기 밥솥 타입        | GetCleaningCycle, GetDeviceState, GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
 | `"ROBOTVACUUM"`     | 로봇 청소기 타입       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
 | `"SETTOPBOX"`       | TV 셋톱 박스 타입     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SLEEPINGMONITOR"` | 수면 센서 타입        | GetAsleepDuration, GetAwakeDuration, GetDeviceState, GetSleepScore, GetSleepStartTime, HealthCheck, TurnOff, TurnOn              |
