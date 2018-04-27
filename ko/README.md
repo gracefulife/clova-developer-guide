@@ -21,6 +21,14 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.0</td><td>2018-04-30</td>
+    <td>
+      <ul>
+        <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateRequest">GetOpenStateRequest</a>, <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateResponse">GetOpenStateResponse</a> 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v3.9</td><td>2018-04-23</td>
     <td>
       <ul>
