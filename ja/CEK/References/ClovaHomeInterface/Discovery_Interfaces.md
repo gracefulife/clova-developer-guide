@@ -44,7 +44,8 @@
 
 | フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
 |---------------|---------|-----------------------------|:---------:|
-| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array  | ユーザーアカウントに登録されているデバイスを説明するオブジェクト配列          | 必須    |
+| `customCommands[]`        | [CustomCommandInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomCommandInfoObject) array  | ユーザーアカウントに登録されているカスタムコマンドのリストを持つオブジェクト配列   | 必須     |
+| `discoveredAppliances[]`  | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) array          | ユーザーアカウントに登録されているデバイスを説明するオブジェクト配列          | 必須    |
 
 ### 備考
 IoTサービスを提供する際、ユーザーアカウントに登録されているデバイスのリストを提供する必要があります。
@@ -53,6 +54,7 @@ IoTサービスを提供する際、ユーザーアカウントに登録され�
 
 {% raw %}
 ```json
+// サンプル：DiscoverAppliancesResponseメッセージで使用されたサンプル
 {
   "header": {
     "messageId": "99f9d8ff-9366-4cab-a90c-b4c7eca0abbe",
@@ -61,6 +63,42 @@ IoTサービスを提供する際、ユーザーアカウントに登録され�
     "payloadVersion": "1.0"
   },
   "payload": {
+    "customCommands": [
+      {
+        "name": "おはよう",
+        "actions": [
+          {
+            "applianceId": "device-001",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      },
+      {
+        "name": "おやすみ",
+        "actions": [
+          {
+            "applianceId": "device-0011",
+            "action": "TurnOn"
+          },
+          {
+            "applianceId": "device-0012",
+            "action": "TurnOff"
+          },
+          {
+            "applianceId": "device-0013",
+            "action": "TurnOn"
+          }
+        ]
+      }
+    ],
     "discoveredAppliances": [
       {
         "applianceId": "device-001",
@@ -95,7 +133,9 @@ IoTサービスを提供する際、ユーザーアカウントに登録され�
           "TurnOff"
         ],
         "applianceTypes": ["SMARTPLUG"],
-        "additionalApplianceDetails": {}
+        "additionalApplianceDetails": {},
+        "location": "LIVING_ROOM",
+        "tags": ["勉強", "ブラウンの部屋", "おでかけの際に電源をオフにするデバイス"]
       }
     ]
   }

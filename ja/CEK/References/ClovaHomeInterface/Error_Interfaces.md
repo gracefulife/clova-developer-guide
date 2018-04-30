@@ -4,7 +4,9 @@ Clova Home ExtensionがCEKにエラーを返す際に使用されるインター
 
 | メッセージ         | タイプ  | 説明                                   |
 |------------------|-----------|---------------------------------------------|
-| [`DriverInternalError`](#DriverInternalError)              | Error Response | 内部エラーが発生した場合、CEKにこのメッセージをレスポンスとして返します。             |
+| [`ConditionsNotMetError`](#ConditionsNotMetError)          | Error Response | エンドポイントが動作するための特定の条件(ステータス)が満たされていない場合、CEKにこのメッセージをレスポンスとして返します。 |
+| [`DeviceFailureError`](#DeviceFailureError)                | Error Response | エンドポイントに障害が発生した場合、CEKにこのメッセージをレスポンスとして返します。              |
+| [`DriverInternalError`](#DriverInternalError)              | Error Response | 内部エラーが発生した場合、CEKにこのメッセージをレスポンスとして返します。                |
 | [`ExpiredAccessTokenError`](#ExpiredAccessTokenError)      | Error Response | [アカウントリンク](/CEK/Guides/Link_User_Account.md)の際、[認可サーバー](/CEK/Guides/Link_User_Account.md#BuildAuthServer)から発行されたアクセストークンが期限切れである場合、CEKにこのメッセージをレスポンスとして返します。  |
 | [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error Response | ユーザーが使用中のアクセストークンに対する権限を解除した場合、CEKにこのメッセージをレスポンスとして返します。         |
 | [`NoSuchTargetError`](#NoSuchTargetError)                  | Error Response | エンドポイントが存在しない場合、このメッセージをレスポンスとして返します。                            |
@@ -17,6 +19,67 @@ Clova Home ExtensionがCEKにエラーを返す際に使用されるインター
 <p><strong>メモ</strong></p>
 <p>エラーメッセージの種類は追加される予定です。</p>
 </div>
+
+## ConditionsNotMetError {#ConditionsNotMetError}
+エンドポイントが動作するための特定の条件(ステータス)が満たされていない場合、CEKにこのメッセージをレスポンスとして返します。CEKはこのメッセージを受け取ると、あらかじめ用意されたエラーメッセージをクライアントに送信します。
+
+### Payload fields
+
+なし
+
+### 備考
+* エラーが発生した場合にも、エラーメッセージはリクエスト成功のレスポンス(200 OK)でCEKに返す必要があります。
+* エラーメッセージの名前で状況を判断するため、ペイロードは必要ありません。
+
+### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ea1e527-7be3-4b54-b531-93d245b97303",
+    "namespace": "ClovaHome",
+    "name": "ConditionsNotMetError",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError)
+
+## DeviceFailureError {#DeviceFailureError}
+エンドポイントに障害が発生した場合、CEKにこのメッセージをレスポンスとして返します。CEKはこのメッセージを受け取ると、あらかじめ用意されたエラーメッセージをクライアントに送信します。
+
+### Payload fields
+
+なし
+
+### 備考
+* エラーが発生した場合にも、エラーメッセージはリクエスト成功のレスポンス(200 OK)でCEKに返す必要があります。
+* エラーメッセージの名前で状況を判断するため、ペイロードは必要ありません。
+
+### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "4ea1e527-7be3-4b54-b531-93d245b97303",
+    "namespace": "ClovaHome",
+    "name": "DeviceFailureError",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`DriverInternalError`](#DriverInternalError)
+* [`TargetOfflineError`](#TargetOfflineError)
 
 ## DriverInternalError {#DriverInternalError}
 内部エラーが発生した場合、CEKにこのメッセージをレスポンスとして返します。CEKはこのメッセージを受け取ると、あらかじめ用意されたエラーメッセージをクライアントに送信します。
@@ -46,6 +109,7 @@ Clova Home ExtensionがCEKにエラーを返す際に使用されるインター
 {% endraw %}
 
 ### 次の項目も参照してください。
+* [`DeviceFailureError`](#DeviceFailureError)
 * [`TargetOfflineError`](#TargetOfflineError)
 
 ## ExpiredAccessTokenError {#ExpiredAccessTokenError}
@@ -136,6 +200,7 @@ Clova Home ExtensionがCEKにエラーを返す際に使用されるインター
 {% endraw %}
 
 ### 次の項目も参照してください。
+* [`ConditionsNotMetError`](#ConditionsNotMetError)
 * [`TargetOfflineError`](#TargetOfflineError)
 
 ## NotSupportedInCurrentModeError {#NotSupportedInCurrentModeError}
@@ -197,6 +262,7 @@ Clova Home ExtensionがCEKにエラーを返す際に使用されるインター
 {% endraw %}
 
 ### 次の項目も参照してください。
+* [`DeviceFailureError`](#DeviceFailureError)
 * [`DriverInternalError`](#DriverInternalError)
 
 ## UnsupportedOperationError {#UnsupportedOperationError}

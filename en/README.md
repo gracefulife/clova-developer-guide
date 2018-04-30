@@ -126,7 +126,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
       <td>v2.9</td><td>2018-01-22</td>
       <td>
         <ul>
-          <li>[Design] Added the chapter on supported audio compression formats in the <a href="/Design/Design_Guideline_For_Client_Hardware.html#SupportedAudioCompressionFormat">design guidelines for client devices</a> and <a href="/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">design guidelines for extensions</a></li>
+          <li>[Design] Added a section on supported audio compression formats in the <a href="/Design/Design_Guideline_For_Client_Hardware.html#SupportedAudioCompressionFormat">design guidelines for client devices</a> and <a href="/Design/Design_Guideline_For_Extension.html#SupportedAudioCompressionFormat">design guidelines for extensions</a></li>
           <li>[CEK] Added a <a href="/CEK/Tutorials/Introduction.html">Tutorial</a> page and a page on<a href="/CEK/Tutorials/Build_Simple_Extension.html">Building a basic extension</a></li>
           <li>[Dev. console] Displayed the <a href="/DevConsole/Guides/CEK/Register_Interaction_Model.html#AddCustomSlotType">list of built-in intents</a> and added UI for writing messages for a <a href="/DevConsole/Guides/CEK/Deploy_Extension.html#InputComplianceInfo">review request</a></li>
           <li>[Common] Changed the image format of the UML diagram</li>
@@ -137,7 +137,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
       <td>v2.8</td><td>2018-01-15</td>
       <td>
         <ul>
-          <li>[Design] Added the guideline descriptions on light and sound effects for alarms, reminders, and timers to the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
+          <li>[Design] Added guideline descriptions on light and sound effects for alarms, reminders, and timers to the <a href="/Design/Design_Guideline_For_Client_Hardware.html">Design guidelines for client devices</a></li>
         </ul>
       </td>
     </tr>
@@ -384,7 +384,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
     </tr>
     <tr>
       <td>v0.6</td><td>2017-07-14</td>
-      <td>[CIC] Added  beginAtInMilliseconds field contents to <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a></td>
+      <td>[CIC] Added beginAtInMilliseconds field contents to <a href="/CIC/References/CICInterface/AudioPlayer.html#AudioStreamInfoObject">AudioStreamInfoObject</a></td>
     </tr>
     <tr>
       <td>v0.5</td><td>2017-07-07</td>

@@ -1,35 +1,35 @@
 # Shared objects {#SharedObjects}
-The following shared objects are used in the message payload when sending the [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHomeExtMessage):
+The following shared objects are used in the message payload when sending [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHomeExtMessage):
 
 | Object name            | Description                                            |
 |--------------------|---------------------------------------------------|
-| [ActionInforObject](#ActionInforObject)                   | The object containing information on the appliance control actions.  |
-| [AirQualityInfoObject](#AirQualityInfoObject)             | The object containing information on air quality.            |
-| [ApplianceInfoObject](#ApplianceInfoObject)               | The object containing information on an IoT appliance.        |
-| [BatteryInfoObject](#BatteryInfoObject)                   | The object containing information on battery.            |
-| [BillInfoObject](#BillInfoObject)                         | The object containing information on billing.             |
-| [BrightnessInfoObject](#BrightnessInfoObject)             | The object containing information on light or screen brightness. |
-| [ColorInfoObject](#ColorInfoObject)                       | The object containing information on the color of lights, screes, or lamps of the target appliance.  |
-| [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | The object containing information on the color temperature of lights, screen, or lamps of the target appliance.  |
-| [ConsumptionInfoObject](#ConsumptionInfoObject)           | The object containing information on energy consumption.       |
-| [CustomCommandInfoObject](#CustomCommandInfoObject)       | The object containing information on custom commands.   |
-| [CustomInfoObject](#CustomInfoObject)                     | The object containing information directly entered by the user such as an arbitrary name, a required unit, or figures. |   |   |
-| [ExpendableInfoObject](#ExpendableInfoObject)             | The object containing information on usage or remaining lifespan of appliance parts.  |
-| [FineDustInfoObject](#FineDustInfoObject)                 | The object containing information on fine dust.          |
-| [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | The object containing information on pressure or water pressure intensity.   |
-| [ModeInfoObject](#ModeInfoObject)                         | The object containing information on the operation mode.          |
-| [HumidityInfoObject](#HumidityInfoObject)                 | The object containing information on humidity.              |
-| [PeriodInfoObject](#PeriodInfoObject)                     | The object containing information on the period.          |
-| [PhaseInfoObject](#PhaseInfoObject)                       | The object containing information on the phase of appliance actions.
-| [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | The object containing information on progressive tax brackets.       |
-| [SittingStateInfoObject](#SittingStateInfoObject)         | The object containing the sit-down information of the user on appliances such as a smart chair.  |
-| [SleepScoreInfoObject](#SleepScoreInfoObject)             | The object containing information on sleep score.          |
-| [SpeedInfoObject](#SpeedInfoObject)                       | The object containing information on speed.              |
-| [TemperatureInfoObject](#TemperatureInfoObject)           | The object containing information on temperature.          |
-| [TVChannelNameInfoObject](#TVChannelNameInfoObject)       | The object containing information on a TV channel name.      |
-| [TVChannelInfoObject](#TVChannelInfoObject)               | The object containing information on a TV channel.           |
-| [UltraFineDustInfoObject](#UltraFineDustInfoObject)       | The object containing information on ultrafine dust.         |
-| [VolumeInfoObject](#VolumeInfoObject)                     | The object containing information on volume.          |
+| [ActionInforObject](#ActionInforObject)                   | Object containing information on an appliance's control actions.  |
+| [AirQualityInfoObject](#AirQualityInfoObject)             | Object containing information on air quality.            |
+| [ApplianceInfoObject](#ApplianceInfoObject)               | Object containing information on an IoT appliance.        |
+| [BatteryInfoObject](#BatteryInfoObject)                   | Object containing information on battery.            |
+| [BillInfoObject](#BillInfoObject)                         | Object containing information on billing.             |
+| [BrightnessInfoObject](#BrightnessInfoObject)             | Object containing information on light or screen brightness. |
+| [ColorInfoObject](#ColorInfoObject)                       | Object containing information on the color of lights, screens, or lamps of the target appliance.  |
+| [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | Object containing information on the color temperature of lights, screens, or lamps of the target appliance.  |
+| [ConsumptionInfoObject](#ConsumptionInfoObject)           | Object containing information on energy consumption.       |
+| [CustomCommandInfoObject](#CustomCommandInfoObject)       | Object containing information on custom commands.   |
+| [CustomInfoObject](#CustomInfoObject)                     | Object containing information directly entered by the user such as a customized name, required units or figures. |
+| [ExpendableInfoObject](#ExpendableInfoObject)             | Object containing information on usage or remaining lifespan of appliance parts.  |
+| [FineDustInfoObject](#FineDustInfoObject)                 | Object containing information on fine dust.          |
+| [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | Object containing information on pressure or water pressure intensity.   |
+| [ModeInfoObject](#ModeInfoObject)                         | Object containing information on the operation mode.          |
+| [HumidityInfoObject](#HumidityInfoObject)                 | Object containing information on humidity.              |
+| [PeriodInfoObject](#PeriodInfoObject)                     | Object containing information on the period.          |
+| [PhaseInfoObject](#PhaseInfoObject)                       | Object containing information on the phase of appliance actions.
+| [ProgressiveTaxBracketInfoObject](#ProgressiveTaxBracketInfoObject)  | Object containing information on progressive tax brackets.       |
+| [SittingStateInfoObject](#SittingStateInfoObject)         | Object containing the sit-down information of the user on appliances such as a smart chair.  |
+| [SleepScoreInfoObject](#SleepScoreInfoObject)             | Object containing information on sleep score.          |
+| [SpeedInfoObject](#SpeedInfoObject)                       | Object containing information on speed.              |
+| [TemperatureInfoObject](#TemperatureInfoObject)           | Object containing information on temperature.          |
+| [TVChannelNameInfoObject](#TVChannelNameInfoObject)       | Object containing information on a TV channel name.      |
+| [TVChannelInfoObject](#TVChannelInfoObject)               | Object containing information on a TV channel.           |
+| [UltraFineDustInfoObject](#UltraFineDustInfoObject)       | Object containing information on ultrafine dust.         |
+| [VolumeInfoObject](#VolumeInfoObject)                     | Object containing information on volume.          |
 
 ## ActionInforObject {#ActionInforObject}
 ActionInforObject contains information on the appliance control actions and expresses a command for an action to be conducted on an appliance.
@@ -779,14 +779,14 @@ CustomCommandInfoObject contains information on custom commands. The object cont
 
 ## CustomInfoObject {#CustomInfoObject}
 
-CustomInfoObject contains custom information such as as arbitrary name, required unit, or figures. This object is used when the [shared objects](#SharedObjects) provided by default cannot express the object information or when providing all information of the appliance using the [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse) message.
+CustomInfoObject contains custom information such as a customized name, required unit, or figures. This object is used when the [shared objects](#SharedObjects) provided by default cannot express the object information or when providing all information of the appliance using the [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse) message.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
 |---------------|---------|-----------------------------|:-------------:|
-| `name`        | string            | The arbitrary name to indicate an appliance state or measurement target. When responding to the user, the state name entered in this field is output as speech. | Required/Always |
+| `name`        | string            | The customized name to indicate an appliance state or measurement target. When responding to the user, the state name entered in this field is output as speech. | Required/Always |
 | `value`       | number or string | The state value or measurement value.                                                                             | Required/Always |
-| `unit`        | string            | The value of the appliance state or the unit information of the measurement. This is omitted if the data type of the `value` field is a string and may have the following units if it is a numeric value.<ul><li><code>"celcius"</code>: Celsius</li><li><code>"percentage"</code>: Percentage</li></ul> | Optional/Conditional |
+| `unit`        | string            | The value of the appliance state or the unit information of the measurement. This is omitted if the data type of the `value` field is a string and may have the following units if it is a numeric value.<ul><li><code>"celsius"</code>: Celsius</li><li><code>"percentage"</code>: Percentage</li></ul> | Optional/Conditional |
 
 ### Object Example
 {% raw %}
@@ -975,7 +975,7 @@ ModeInfoObject contains information on the operation mode. This is used to indic
       <td><code>"AIRCONDITIONER"</code></td>
       <td>
         <ul>
-          <li><code>"cool"</code>: Cool mode. A mode mainly used in air conditioners.</li>
+          <li><code>"cool"</code>: Cooling mode. A mode mainly used in air conditioners.</li>
           <li><code>"dehumidify"</code>: Dehumidifier mode. A mode mainly used in appliances such as air conditioners or dehumidifiers.</li>
           <li><code>"sleep"</code>: Sleep mode. A mode mainly used in appliances such as smart hubs.</li>
         </ul>
