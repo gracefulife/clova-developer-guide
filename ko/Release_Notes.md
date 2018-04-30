@@ -2,6 +2,11 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-04-30
+
+* CEK
+  * Clova Home extension API에 [GetOpenStateRequest](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetOpenStateRequest), [GetOpenStateResponse](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetOpenStateResponse)
+
 ## 2018-04-23
 
 * CEK
