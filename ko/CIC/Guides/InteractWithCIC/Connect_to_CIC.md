@@ -24,7 +24,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>사용자가 입력한 {{ book.TargetServiceForClientAuth }} 계정 정보를 이용하여 {{ book.TargetServiceForClientAuth }} 계정의 {{ "authorization code" if book.TargetCountryCode == "JP" else "access token" }}을 획득합니다.</p>
   </li>
   <li>
-    <p>획득한 {{ book.TargetServiceForClientAuth }} 계정의 {{ "authorization code" if book.TargetCountryCode == "JP" else "access token" }}과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.html#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
+    <p>획득한 {{ book.TargetServiceForClientAuth }} 계정의 {{ "authorization code" if book.TargetCountryCode == "JP" else "access token" }}과 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 이용하여 <a href="/CIC/References/Clova_Auth_API.md#RequestAuthorizationCode">authorization code를 요청</a>합니다. 이때, <code>device_id</code> 필드의 값으로 클라이언트의 MAC 주소를 사용하거나 UUID 해쉬 값을 생성해서 사용합니다. 다음은 authorization code를 요청한 예입니다.</p>
     <pre><code>$ curl -H "Authorization: Bearer QHSDAKLFJASlk12jlkf+asldkjasdf=sldkjf123dsalsdflkvpasdFMrjvi23scjaf123klv"
     {{ book.AuthServerBaseURL }}authorize \
     --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
@@ -57,7 +57,7 @@ Clova access token을 획득하는 절차는 다음과 같습니다.
     <p>(GUI 미제공 클라이언트의 경우) authorization code를 실제 클라이언트 기기로 전송합니다.</p>
   </li>
   <li>
-    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여 <a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
+    <p>획득한 authorization code와 <a href="#ClientAuthInfo">클라이언트 인증 정보</a> 등의 정보를 파라미터로 입력하여 <a href="/CIC/References/Clova_Auth_API.md#RequestClovaAccessToken">Clova access token을 요청</a>합니다. 다음은 Clova access token을 요청한 예입니다.</p>
     <pre><code>$ curl {{ book.AuthServerBaseURL }}token?grant_type=authorization_code \
     --data-urlencode "client_id=c2Rmc2Rmc2FkZ2Fasdkjh234zZnNhZGZ" \
     --data-urlencode "client_secret=66qo65asdfasdfaA7JasdfasfOqwnOq1rOyfgeydtCDrvYasfasf%3D" \
