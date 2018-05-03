@@ -22,7 +22,8 @@ DeviceControl이 제공하는 이벤트 메시지와 지시 메시지는 다음�
 | [`Decrease`](#Decrease)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                     |
 | [`ExpectReportState`](#ExpectReportState) | Directive | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                 |
 | [`Increase`](#Increase)                   | Directive | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                     |
-| [`LaunchApp`](#LaunchApp)                 | Directive | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                             |
+| [`LaunchApp`](#LaunchApp)                 | Directive | **(Deprecated)** 클라이언트에게 특정 앱을 실행하도록 지시합니다.                           |
+| [`LaunchURI`](#LaunchURI)                 | Directive | 클라이언트에게 URI로 표현되는 사이트나 앱을 열거나 실행하도록 지시합니다.                         |
 | [`Open`](#Open)                           | Directive | 클라이언트에게 특정 화면을 표시하도 지시합니다.                                               |
 | [`OpenScreen`](#OpenScreen)               | Directive | **(Deprecated)** 클라이언트에게 설정 화면을 열도록 지시합니다.                              |
 | [`ReportState`](#ReportState)             | Event     | 클라이언트는 기기의 현재 상태를 CIC로 보고할 때 이 메시지를 사용해야 합니다.                     |
@@ -183,10 +184,9 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
-
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
-* [`DeviceControl.LaunchApp`](#LaunchApp)
+* [`DeviceControl.LaunchURI`](#LaunchURI)
 * [`DeviceControl.Open`](#Open)
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
@@ -688,6 +688,89 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 ```
 
 ### See also
+* [`DeviceControl.LaunchURI`](#LaunchURI)
+* [`DeviceControl.ActionFailed`](#ActionFailed)
+
+## LaunchURI directive {#LaunchURI}
+
+클라이언트에게 URI로 표현되는 사이트나 앱을 열거나 실행하도록 지시합니다. 이 지시 메시지를 수신한 클라이언트는 `targets[].uri` 필드를 이용하여 사이트 또는 앱을 실행해야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `targets[]`              | object array | URI 정보를 가지는 객체 배열                       | 항상     |
+| `targets[].description`  | string       | URI로 표현되는 대상(앱 또는 사이트)의 설명           | 선택     |
+| `targets[].iconImageUrl` | string       | URI로 표현되는 대상의 아이콘 이미지                 | 선택     |
+| `targets[].marketUrl`    | string       | **URI로 표현되는 대상이 앱일 경우**, 앱 스토어의 주소  | 선택     |
+| `targets[].packageName`  | string       | **URI로 표현되는 대상이 앱일 경우**, 앱의 패키지 이름  | 선택     |
+| `targets[].title`        | string       | URI로 표현되는 대상의 제목                        | 필수     |
+| `targets[].uri`          | string       | 대상 URI 정보                                  | 필수     |
+
+### Remarks
+
+* 클라이언트는 `targets[].uri`의 URI로부터 <a href="http://ogp.me/" target="_blank">Open Graph Protocol</a> 데이터를 이용하여 미리 보기를 표현할 수 있지만 일부 데이터를 즉시 표기하기 위해 `targets[].iconImageUrl`, `targets[].title`, `targets[].description` 등과 같은 필드를 이용할 수 있습니다.
+* **URI로 표현되는 대상이 앱일 경우**, `targets[].marketUrl`, `targets[].packageName` 필드를 이용할 수 있습니다. `targets[].marketUrl`은 앱 미설치로 인해 대상 앱을 실행할 수 없을 때 사용되며, `targets[].packageName`는 `targets[].uri`로 앱을 실행할 수 없을 때 참고할 수 있는 부가 정보입니다.
+* 클라이언트는 `target[]` 필드의 배열에 있는 모든 대상을 열거나 실행해야 하는 것이 아닙니다. 배열 요소 중 첫 번째 요소의 URI 정보로 대상을 열거나 실행하도록 시도해야 하며, 실패 시 다음 배열 요소의 정보로 같은 동작을 시도해야 합니다. 즉, 배열 구조는 실행 불가 대상을 대비한 후보군을 함께 보내기 위해 사용됩니다.
+* 앱을 실행할 수 없거나 앱 실행에 실패한 경우 [`DeviceControl.ActionFailed`](#ActionFailed) 이벤트 메시지를 이용하여 결과를 CIC에 전달해야 합니다.
+
+### Message example
+
+```json
+// App type example
+{
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "LaunchURI",
+      "messageId": "086ccadf-cd88-4cff-9706-cc4f0801c929",
+      "dialogRequestId": "de20ea1a-ea39-4c2a-a033-73fa014b2fd5"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "sampleapp2://main",
+          "title": "Sample app2",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app2"
+        },
+        {
+          "uri": "sampleapp://main",
+          "title": "Sample app",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app"
+        }
+      ]
+    }
+  }
+}
+
+// Site type example
+{
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "LaunchURI",
+      "messageId": "fcb0919e-9847-46ec-90bc-ab0fe8216771",
+      "dialogRequestId": "9ab7256a-6add-4b4a-a0b8-481f41d36a9d"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "http://example.org",
+          "title": "Example Domain"
+        }
+      ]
+    }
+  }
+}
+```
+
+### See also
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 
 ## Open directive {#Open}
@@ -715,7 +798,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
       "namespace": "DeviceControl",
       "name": "Open",
       "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
-      "dialogRequestId": "3c6eef8b-8427-4b46-a367-0a7a46432519"
+      "dialogRequestId": "15ecb9a6-e727-4d58-8ba1-42cc8b63d5c0"
     },
     "payload": {
       "target": "settings"
