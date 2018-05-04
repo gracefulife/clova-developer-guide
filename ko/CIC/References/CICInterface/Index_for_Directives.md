@@ -27,7 +27,8 @@
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 줄이도록 지시합니다.                            |
 | DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | 클라이언트에게 기기의 현재 상태를 CIC로 보고하도록 지시합니다.                                  |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 기본 단위만큼 높이도록 지시합니다.                            |
-| DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                    |
+| DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | **(Deprecated)** 클라이언트에게 특정 앱을 실행하도록 지시합니다.                                                    |
+| DeviceControl      | [`LaunchURI`](/CIC/References/CICInterface/DeviceControl.md#LaunchURI)           | 클라이언트에게 URI로 표현되는 사이트 혹은 앱을 열거나 실행하도록 지시합니다.       |
 | DeviceControl      | [`Open`](/CIC/References/CICInterface/DeviceControl.md#Open)                     | 클라이언트에게 특정 화면을 표시하도록 지시합니다.  |
 | DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | **(Deprecated)** 클라이언트에게 설정 화면을 열도록 지시합니다.                                                     |
 | DeviceControl      | [`SetValue`](/CIC/References/CICInterface/DeviceControl.md#SetValue)            | 클라이언트에게 스피커 볼륨 또는 화면 밝기를 지정한 값으로 설정하도록 지시합니다.                           |
