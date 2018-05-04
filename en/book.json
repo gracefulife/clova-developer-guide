@@ -1,12 +1,11 @@
 {
   "title": "Clova Developer Guide",
   "description": "This documentation provides developer guides as well as API references for CIC and CEK platforms provided by Clova.",
-  "language": "en",
   "direction": "ltr",
   "author": "LINE Corporation",
   "variables": {
     "ClassifiedInfo": "Confidential",
-    "DocVersion": "v2.0",
+    "DocVersion": "v3.6",
     "language": "en",
     "TargetCountryCode": "JP",
     "TargetReaderType": "Internal",
@@ -15,6 +14,7 @@
     "GitHubBaseURLforExtensionExample": "https://github.com/naver",
     "DocOwner": "LINE",
     "OrientedService": "LINE",
+    "OrientedServiceWithLowerCase": "line",
     "TargetServiceForClientAuth": "LINE",
     "LoginAPIofTargetService": "https://developers.line.me/en/docs/line-login/web/integrate-line-login-v2/",
     "AuthServerBaseURL": "https://clova-authgw.line-apps.com/",
