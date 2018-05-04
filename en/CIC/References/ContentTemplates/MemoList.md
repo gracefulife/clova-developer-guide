@@ -1,11 +1,9 @@
 # MemoList Template
-
-The MemoList template is used in providing a list of memos for the client to display on the client's screen.
-When the user requests for a list of memos, CIC sends the list of memos registered by the user to the client, in the form of the MemoList template.
+The MemoList template is used in providing a list of memos for the client to display on the client screen. When the user requests a list of memos, CIC sends the list of memos registered by the user to the client in the form of the MemoList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using memo:</p>
+<p>The following restrictions apply when using the MemoList template:</p>
 <ul>
   <li>Voice requests can be used only to add a memo or to check a list of memos.</li>
   <li>To modify or delete a memo, the user must use the Clova app.</li>
@@ -14,11 +12,11 @@ When the user requests for a list of memos, CIC sends the list of memos register
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `memoList[]`              | object array  | Contains a list of memos registered by the user.                                       |
-| `memoList[].content`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the memo.  |
-| `memoList[].lastModified` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The time this memo was last modified. |
+| `memoList[]`              | object array  | The object array that has the list of memos registered by the user.                                        |
+| `memoList[].content`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The content of the memo.  |
+| `memoList[].lastModified` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The last modification time of the memo. |
 | `memoList[].token`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this memo.  |
 | `type`                    | string                                                                              | The type of this template. The value is always `"MemoList"`.             |
 
@@ -37,7 +35,7 @@ When the user requests for a list of memos, CIC sends the list of memos register
       },
       "content": {
         "type": "string",
-        "value": "My WiFi password: 12345678"
+        "value": "My Wi-Fi password: 12345678"
       },
       "lastModified": {
         "type": "datetime",
@@ -51,7 +49,7 @@ When the user requests for a list of memos, CIC sends the list of memos register
       },
       "content": {
         "type": "string",
-        "value": "To do: Play LINE Rangers, Play Pokopang, Play LINE Rangers"
+        "value": "To do list: Do homework, Make a girlfriend"
       },
       "lastModified": {
         "type": "datetime",
@@ -80,11 +78,9 @@ When the user requests for a list of memos, CIC sends the list of memos register
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the MemoList template is in preparation.</p>
-</div>
+The following example shows how the MemoList template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+![](/CIC/Resources/Images/Content_Template-MemoList.png)
 
 ## See also
-
 * [Memo](/CIC/References/ContentTemplates/Memo.md)

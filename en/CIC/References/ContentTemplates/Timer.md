@@ -1,11 +1,9 @@
 # Timer Template
-
-The Timer template is used in providing timer information for the client to display on the client's screen.
-When the user creates a timer, CIC sends the timer information to the client, in the form of the Timer template.
+The Timer template is used in providing timer information for the client to display on the client screen. When the user creates a timer, CIC sends the timer information to the client in the form of the Timer template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using the Timer template:</p>
+<p>The following restrictions apply when using the Timer template:</p>
 <ul>
   <li>Voice requests can be used only to add a timer or to check a list of timers.</li>
   <li>To modify or delete a timer, the user must use the Clova app.</li>
@@ -14,10 +12,10 @@ When the user creates a timer, CIC sends the timer information to the client, in
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this timer is to ring.           |
-| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this timer.                     |
+| `scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which the added timer is to ring.             |
+| `token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the timer.                     |
 | `type`          | string                                                                              | The type of this template. The value is always `"Timer"`.        |
 
 ## Template example
@@ -42,12 +40,10 @@ When the user creates a timer, CIC sends the timer information to the client, in
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the Timer template is in preparation.</p>
-</div>
+The following example shows how the Timer template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+![](/CIC/Resources/Images/Content_Template-Timer.png)
 
 ## See also
-
-* [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
+* [Alerts](/CIC/References/CICInterface/Alerts.md) interface
 * [TimerList](/CIC/References/ContentTemplates/TimerList.md)

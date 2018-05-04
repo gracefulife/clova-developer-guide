@@ -1,11 +1,9 @@
 # AlarmList Template
-
-The AlarmList template is used in providing information of multiple alarms for the client to display on the client's screen.
-When the user requests for a list of alarms, CIC sends the list of alarms registered by the user to the client, in the form of the AlarmList template.
+The AlarmList template is used in providing information of multiple alarms for the client to display on the client screen. When the user requests a list of alarms, CIC sends the list of alarms registered by the user to the client in the form of the AlarmList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using alarm:</p>
+<p>The following restrictions apply when using the AlarmList template:</p>
 <ul>
   <li>Voice requests can be used only to add an alarm or to check a list of alarms.</li>
   <li>To modify or delete an alarm, the user must use the Clova app.</li>
@@ -14,12 +12,12 @@ When the user requests for a list of alarms, CIC sends the list of alarms regist
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `alarmList[]`               | object array  | Contains a list of alarms registered by the user.                                                                                          |
-| `alarmList[].repeatDay`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ alarm.  |
-| `alarmList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available cycles are: <ul><li><code>""</code>(Empty string): One-time alarm</li><li><code>"daily"</code>: Daily  alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
-| `alarmList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                      |
+| `alarmList[]`               | object array  | The object array that has the list of alarms registered by the user.                                                                                           |
+| `alarmList[].repeatDay[]`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly action timer.  |
+| `alarmList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string(<code>""</code>): One-time alarm</li><li><code>"daily"</code>: Daily alarm</li><li><code>"weekly"</code>: Weekly alarm</li></ul> |
+| `alarmList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this alarm is to ring.                       |
 | `alarmList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this alarm.                               |
 | `type`                      | string                                                                              | The type of this template. The value is always `"AlarmList"`.             |
 
@@ -93,11 +91,10 @@ When the user requests for a list of alarms, CIC sends the list of alarms regist
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the AlarmList template is in preparation.</p>
-</div>
+The following example shows how the AlarmList template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+![](/CIC/Resources/Images/Content_Template-AlarmList.png)
 
 ## See also
 * [Alarm](/CIC/References/ContentTemplates/Alarm.md)
-* [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
+* [Alerts](/CIC/References/CICInterface/Alerts.md) interface

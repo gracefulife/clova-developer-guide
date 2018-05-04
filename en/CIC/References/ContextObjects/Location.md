@@ -1,9 +1,7 @@
 ## Clova.Location {#Location}
-
-`Clova.Location` is a format for reporting client's current location information to CIC. Use GPS or network module of the client device to obtain location information.
+`Clova.Location` is a format for reporting to CIC about the current location of the client. Use GPS or the network module of the client device to obtain location information.
 
 ### Object structure
-
 {% raw %}
 ```json
 {
@@ -22,14 +20,13 @@
 
 ### Payload fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `latitude`      | string  | The latitude of the current location.                                                                                   | Required |
-| `longitude`     | string  | The longitude of the current location.                                                                                     | Required |
-| `refreshedAt`   | string  | The time when the location was last checked, in UTC. Format: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | Required |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `latitude`      | string  | The latitude of the location.                                                                                     | Required |
+| `longitude`     | string  | The longitude of the location.                                                                                     | Required |
+| `refreshedAt`   | string  | The time when the location was last checked in UTC (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>) | Required |
 
-### Example
-
+### Object example
 {% raw %}
 ```json
 {
@@ -47,5 +44,4 @@
 {% endraw %}
 
 ### See also
-
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

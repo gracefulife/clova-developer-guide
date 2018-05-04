@@ -1,9 +1,7 @@
 ## AudioPlayer.PlaybackState {#PlaybackState}
-
 `AudioPlayer.PlaybackState` is a format for reporting to CIC the details of media currently playing or the last media played.
 
-### Object  structure
-
+### Object structure
 {% raw %}
 ```json
 {
@@ -13,9 +11,10 @@
   },
   "payload": {
     "offsetInMilliseconds": {{number}},
-    "totalInMilliseconds": {{number}},
     "playerActivity": {{string}},
-    "stream": {{AudioStreamInfoObject}}
+    "repeatMode": {{string}},
+    "stream": {{AudioStreamInfoObject}},
+    "totalInMilliseconds": {{number}}
   }
 }
 ```
@@ -24,14 +23,15 @@
 
 ### Payload fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `offsetInMilliseconds` | number | The last playback point (offset) of the recently played media. Unit is millisecond. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                  | Optional |
-| `playerActivity`       | string | Indicates the state of the player. Available states are:<ul><li><code>"IDLE"</code>: Player is inactive.</li><li><code>"PLAYING"</code>: Player is playing.</li><li><code>"PAUSED"</code>: Player has paused.</li><li><code>"STOPPED"</code>: Player is stopped.</li></ul> | Required |
-| `stream`               | [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | Contains the details of the media currently playing. This field is omissible if the `playerActivity` field is set as `"IDLE"`. Enter the details with the information defined in the `stream` object, provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive or [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver) directive. | Optional |
-| `totalInMilliseconds`  | number | The total duration of the recently played media, in milliseconds. Enter the value of the `durationInMilliseconds` field of the [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive, if the value is available. This field is omissible if the `playerActivity` field is set to `"IDLE"`.      | Optional |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `offsetInMilliseconds` | number | The most recent playback position (offset) of the recently played media. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                  | Optional |
+| `playerActivity`       | string | Indicates the state of the player. Available values are:<ul><li><code>"IDLE"</code>: Deactivated</li><li><code>"PLAYING"</code>: Playing</li><li><code>"PAUSED"</code>: Paused</li><li><code>"STOPPED"</code>: Stopped</li></ul> | Required |
+| `repeatMode`           | string  | The repeat mode.<ul><li><code>"NONE"</code>: None</li><li><code>"REPEAT_ONE"</code>: Repeat one song</li></ul>                                                   | Required  |
+| `stream`               | [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) | The details of the currently playing media. This field is omissible if the `playerActivity` field is set as `"IDLE"`. Enter the details with the information defined in the `stream` object provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive or [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver) directive. | Optional |
+| `totalInMilliseconds`  | number | The total duration of the recently played media. Enter the value of the `durationInMilliseconds` field of the [AudioStreamInfoObject](/CIC/References/CICInterface/AudioPlayer.md#AudioStreamInfoObject) provided by the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive, if the value is available. The unit is in milliseconds. This field is omissible if the `playerActivity` field is set to `"IDLE"`.                                                               | Optional |
 
-### Example
+### Object example
 
 {% raw %}
 
@@ -46,6 +46,7 @@
     "offsetInMilliseconds": 1,
     "totalInMilliseconds": 100,
     "playerActivity": "STOPPED",
+    "repeatMode": "NONE",
     "stream": {
       "beginAtInMilliseconds": 0,
       "progressReport": {
@@ -60,14 +61,15 @@
   }
 }
 
-// Example 2: Player is inactive
+// Example 2: The player is deactivated
 {
   "header": {
     "namespace": "AudioPlayer",
     "name": "PlaybackState"
   },
   "payload": {
-    "playerActivity": "IDLE"
+    "playerActivity": "IDLE",
+    "repeatMode": "NONE"
   }
 }
 ```
@@ -75,7 +77,6 @@
 {% endraw %}
 
 ### See also
-
 * [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play)
 * [`AudioPlayer.StreamDeliver`](/CIC/References/CICInterface/AudioPlayer.md#StreamDeliver)
 * [`AudioPlayer.StreamRequested`](/CIC/References/CICInterface/AudioPlayer.md#StreamRequested)

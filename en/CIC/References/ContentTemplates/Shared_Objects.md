@@ -1,60 +1,52 @@
-# Common objects
-
+# Shared Objects
 The content templates use the following JSON objects to represent commonly used data structures.
-Each object has the `value` field for the actual data the object contains.
-The `type` field defines the data type of the value.
 
-| Object name            | Object description                                            |
+| Object name            | Description                                            |
 |--------------------|---------------------------------------------------|
-| [ActionObject](#ActionObject)             | Contains an action for the client to perform.          |
-| [CurrencyObject](#CurrencyObject)         | Contains an amount of money with currency.               |
-| [DateObject](#DateObject)                 | Contains a date                         |
-| [DateTimeObject](#DateTimeObject)         | Contains a date and a time                    |
-| [NumberObject](#NumberObject)             | Contains a number, separated by thousands or a measured value with unit character like wind speed. |
-| [PercentageObject](#PercentageObject)     | Contains a percentage.                        |
-| [PhoneNumberObject](#PhoneNumberObject)   | Contains a phone number.                     |
-| [StringObject](#StringObject)             | Contains text.                        |
-| [TemperatureCObject](#TemperatureCObject) | Contains a temperature (Celsius).                    |
-| [TemperatureFObject](#TemperatureFObject) | Contains a temperature (Fahrenheit).                    |
-| [URLObject](#URLObject)                   | Contains a URL.                         |
+| [ActionObject](#ActionObject)             | The actions that can be performed by the client.   |
+| [CurrencyObject](#CurrencyObject)         | The currency and amount of money.               |
+| [DateObject](#DateObject)                 | The date information.                         |
+| [DateTimeObject](#DateTimeObject)         | The date and time information.                    |
+| [NumberObject](#NumberObject)             | The number with thousands separators, or a measurement with the number and unit like wind speed. |
+| [PercentageObject](#PercentageObject)     | The percentage information.                        |
+| [PhoneNumberObject](#PhoneNumberObject)   | The phone number.                     |
+| [StringObject](#StringObject)             | The text information.                        |
+| [TemperatureCObject](#TemperatureCObject) | The temperature information (Celsius).                    |
+| [TemperatureFObject](#TemperatureFObject) | The temperature information (Fahrenheit).                    |
+| [URLObject](#URLObject)                   | The URL information.                         |
+
 
 # ActionObject {#ActionObject}
-
-Contains an action for the client to perform.
+This object contains the actions that the client must perform.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"action"`.  |
-| `value`         | string  | An action for the client to perform, in the form of [Action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme) |
+| `value`         | string  | The value in the form of [action URL scheme](/CIC/References/ContentTemplates/Common_Fields.md#ActionURLScheme). |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
 {
   "type": "action",
-  "value": "clova://naverSearch?query=Brown%27sbirthday"
+  "value": "clova://{{ book.OrientedServiceWithLowerCase }}Search?query=Best restaurants in Itaewon"
 }
 ```
 
 {% endraw %}
 
 # CurrencyObject {#CurrencyObject}
-
-Contains an amount of money with currency.
+This object contains the amount and currency of money.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"currency"`.  |
-| `value`         | string  | An amount of money with currency               |
+| `value`         | string  | The information on the amount and currency of money.               |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -67,18 +59,15 @@ Contains an amount of money with currency.
 {% endraw %}
 
 ## DateObject {#DateObject}
-
-Contains a date.
+This object contains the date information.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"date"`.  |
-| `value`         | string  | A date in YYYY-MM-DD or YYYYMMDD. The format is determined by the template used.   |
+| `value`         | string  | The information on date. The value is displayed as YYYY-MM-DD or YYYYMMDD format depending on the content template type.    |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -98,28 +87,25 @@ Contains a date.
 {% endraw %}
 
 ## DateTimeObject {#DateTimeObject}
-
-Contains a date and a time.
+This object contains the date and time information.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"datetime"`.   |
-| `value`         | string  | A date and a time in YYYY-MM-DDThh:mm:ssZ or YYYYMMDD hh:mm. The format is determined by the template used. |
+| `value`         | string  | The information on date and time. The value is displayed as YYYY-MM-DDThh:mm:ssZ or YYYYMMDD hh:mm format depending on the content template type. |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
-// Example 1
+// Example 1: YYYY-MM-DDThh:mm:ssZ format
 {
   "type": "datetime",
   "value": "2017-07-26T18:00:00Z"
 }
 
-// Exmaple 2
+// Example 2: YYYYMMDD hh:mm format
 {
   "type": "datetime",
   "value": "20170726 18:00"
@@ -129,18 +115,15 @@ Contains a date and a time.
 {% endraw %}
 
 ## NumberObject {#NumberObject}
-
-Contains a number separated by thousands or a measured value information with unit character like wind speed.
+This object contains the number with thousands separators, or a measurement with the number and unit like wind speed.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------
 | `type`          | string  | The value is always `"number"`.    |
-| `value`         | string  | A number separated by thousands or a measured value with unit character |
+| `value`         | string  | The number with thousands separators, or a measurement with the number and unit. |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -160,18 +143,15 @@ Contains a number separated by thousands or a measured value information with un
 {% endraw %}
 
 ## PercentageObject {#PercentageObject}
-
-Contains a percentage.
+This object contains the percentage information.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"percentage"`. |
-| `value`         | number or string  | A percentage. Depending on which template used, this field can be a number type value or a string type value contained unit character.    |
+| `value`         | number or string  | The percentage information. This may contain only a number or may also contain a percentage sign depending on the content template type.  |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -191,18 +171,15 @@ Contains a percentage.
 {% endraw %}
 
 ## PhoneNumberObject {#PhoneNumberObject}
-
-Contains a phone number.
+This object contains the phone number.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"phoneNum"`. |
-| `value`         | string  | A phone number                    |
+| `value`         | string  | The phone number.                    |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -215,25 +192,22 @@ Contains a phone number.
 {% endraw %}
 
 ## StringObject {#StringObject}
-
-Contains text.
+This object contains text.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"string"`.  |
-| `value`         | string  | Text                      |
+| `value`         | string  | The text information.                      |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
 // Example 1
 {
   "type": "string",
-  "value": "Happy new year"
+  "value": "Son Heung-min joins Tottenham. "It’s a dream-come-true to play in the EPL"
 }
 
 // Example 2
@@ -246,18 +220,15 @@ Contains text.
 {% endraw %}
 
 ## TemperatureCObject {#TemperatureCObject}
-
-Contains a temperature in Celsius.
+This object contains temperature information in Celsius.
 
 ### Object fields
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
+| `type`          | string  | Available values are `"temperature-c"` or `"temperature"`. |
+| `value`         | number or string | The temperature in Celsius.                         |
 
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
-| `type`          | string  | The value cab be `"temperature-c"` or `"temperature"`.   |
-| `value`         | number or string | A temperature in Celsius                        |
-
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -277,18 +248,15 @@ Contains a temperature in Celsius.
 {% endraw %}
 
 ## TemperatureFObject {#TemperatureFObject}
-
-Contains a temperature in Fahrenheit.
+This object contains temperature in Fahrenheit.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"temperature-f"`.   |
-| `value`         | number  | A temperature in Fahrenheit                      |
+| `value`         | number  | The temperature in Fahrenheit.                      |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
@@ -301,31 +269,28 @@ Contains a temperature in Fahrenheit.
 {% endraw %}
 
 ## URLObject {#URLObject}
-
-Contains a URL.
+This object contains the URL information.
 
 ### Object fields
-
-| Field name       | Type    | Description                     |
-|---------------|:---------:|-----------------------------|
+| Field name       | Data type    | Description                     |
+|---------------|---------|-----------------------------|
 | `type`          | string  | The value is always `"url"`.   |
 | `value`         | string  | A URL                        |
 
-### Object example
-
+### Object Example
 {% raw %}
 
 ```json
 // Example 1
 {
   "type": "url",
-  "value": "https://linecorp.com/ja/"
+  "value": "https://m.search.contentproviderdomain.com/search?where=m_image&mode=default&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20%EC%9D%B4%EB%AF%B8%EC%A7%80#imgId=news4100000269062_1"
 }
 
 // Example 2
 {
   "type": "url",
-  "value": "https://www.linefriends.jp/search?query=cony%20pencil%20case"
+  "value": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.contentproviderdomain.com%2Fimage%2F410%2F2015%2F08%2F31%2F20150831_1441012614_99_20150831181804.jpg&type=b360"
 }
 ```
 

@@ -1,6 +1,5 @@
-# WindSpeed template
-
-The WindSpeed template is used in providing wind speed information for the client to display on the client's screen.
+# WindSpeed Template
+The WindSpeed template is used in providing wind speed information for the client to display on the client screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -9,13 +8,19 @@ The WindSpeed template is used in providing wind speed information for the clien
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
-| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to open when the wind speed information is tapped. An empty string (`""`) indicates that this information is unavailable.    |
-| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this wind speed information is for. An empty string (`""`) indicates that this information is unavailable.   |
-| `type`          | string | The type of this template. The value is always ``"WindSpeed"``. |
-| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | The wind speed. |
+| `bgClipUrl`     | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background. <div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `contentProviderText`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information of the content provider. An empty string (`""`) indicates that no content is to be displayed.  |
+| `lastUpdate`                | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The last update time of the weather information. An empty string (`""`) indicates that no content is to be displayed. |
+| `linkUrl`       | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the content. An empty string (`""`) indicates that no content is to be displayed.   |
+| `location`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information on the region. An empty string (`""`) indicates that no content is to be displayed.   |
+| `referenceText`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information of the referred service. An empty string (`""`) indicates that no content is to be displayed.  |
+| `referenceUrl`              | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The information on the usage result URL of the referred service. An empty string (`""`) indicates that no content is to be displayed.   |
+| `temperatureCode`      | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information on the [weather code](#WeatherCode). An empty string (`""`) indicates that no content is to be displayed.  |
+| `type`          | string | The type of this template. The value is always "WindSpeed". |
+| `windDirection` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information on wind direction. |
+| `windSpeed`     | [NumberObject](/CIC/References/ContentTemplates/Shared_Objects.md#NumberObject) | The information on wind speed. |
 
 ## Template example
 
@@ -28,9 +33,33 @@ The WindSpeed template is used in providing wind speed information for the clien
   },
   "location": {
     "type": "string",
-    "value": "Macquarie"
+    "value": "Jeongja1-dong"
+  },
+  "contentProviderText" : {
+    "type" : "string",
+    "value": "National weather service"
+  },
+  "temperatureCode": {
+    "type": "string",
+    "value": "5"
+  },
+  "lastUpdate" : {
+    "type" : "datetime",
+    "value" : "2018-02-05T06:29:09Z"
+  },
+  "referenceText" : {
+    "type" : "string",
+    "value": "NAVER weather"
+  },
+  "referenceUrl" : {
+    "type" : "url",
+    "value" : "http://weather.contentproviderdomain.com/"
   },
   "type": "WindSpeed",
+  "windDirection": {
+    "type": "string",
+    "value": "W"
+  },
   "windSpeed": {
     "type": "number",
     "value": "1m/s"
@@ -40,13 +69,11 @@ The WindSpeed template is used in providing wind speed information for the clien
 {% endraw %}
 
 ## UI example {#UIExample}
-
 The following example shows how the WindSpeed template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![WindSpeed](/CIC/Resources/Images/Content-Template-WindSpeed.png)
 
 ## See also
-
 * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)

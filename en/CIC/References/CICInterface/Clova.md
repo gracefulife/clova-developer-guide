@@ -1,28 +1,29 @@
 # Clova
 
-The Clova namespace provides interfaces that return the result for user's voice request. When user requests are sent to Clova through the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) events, Clova analyzes the request, identifies what the user wants and uses the following directives to return the result for the request. The client is to process these directives and provide the Clova service user wants.
+The Clova namespace provides interfaces that return the result for a user voice request. When the user request is sent to CIC as a [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event, CIC analyzes the request. The directives below are returned to the client according to the analyzed result. The client needs to handle these directives and provide Clova services to users.
 
-| Message name         | Message type  | Message description                                   |
+| Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ExpectLogin`](#ExpectLogin)               | Directive | Instructs a client to prompt a user to authenticate their {{ book.OrientedService }} account (i.e. login). |
-| [`FinishExtension`](#FinishExtension)       | Directive | Instructs a client to end the specified extension.             |
-| [`Hello`](#Hello)                           | Directive | Notifies a client that a downchannel connection has been established.       |
-| [`Help`](#Help)                             | Directive | Instructs a client to provide pre-made help to the user.       |
-| [`RenderTemplate`](#RenderTemplate)         | Directive | Instructs a client to render the given template.                     |
-| [`RenderText`](#RenderText)                 | Directive | Instructs a client to display the given text.                     |
-| [`StartExtension`](#StartExtension)         | Directive | Instructs a client to start running the given extension.            |
+| [`ExpectLogin`](#ExpectLogin)                    | Directive | Instructs the client to prompt its user to authenticate their {{ book.OrientedService }} account. |
+| [`FinishExtension`](#FinishExtension)            | Directive | Instructs the client to end the specified extension.             |
+| [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app.   |
+| [`Hello`](#Hello)                                | Directive | Notifies the client that a downchannel has been established between the client and CIC.       |
+| [`Help`](#Help)                                  | Directive | Instructs the client to provide the existing Help guide to the user.       |
+| [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation).  |
+| [`RenderTemplate`](#RenderTemplate)              | Directive | Instructs the client to display the given template.                     |
+| [`RenderText`](#RenderText)                      | Directive | Instructs the client to display the given text.                     |
+| [`StartExtension`](#StartExtension)              | Directive | Instructs the client to start the specified extension.            |
 
 ## ExpectLogin directive {#ExpectLogin}
 
-Instructs a client to prompt its user to authenticate their {{ book.OrientedService }} account. CIC sends this directive to a client to provide a service that requires the {{ book.OrientedService }} account authentication while running in the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
+Instructs the client to prompt its user to authenticate their {{ book.OrientedService }} account. CIC sends this directive to a client to provide a service that requires the {{ book.OrientedService }} account authentication while running in the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
 
 ### Payload fields
 
 None
 
 ### Remarks
-
-After the user gets authenticated successfully, CIC does not pick up the user's previously made request. If needed, the user has to make the request again.
+Once the user gets authenticated successfully, CIC stops handling old requests of the user. If needed, the user has to make the request again.
 
 ### Message example
 
@@ -30,34 +31,32 @@ After the user gets authenticated successfully, CIC does not pick up the user's 
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "RequestLogin"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "RequestLogin"
+    },
+    "payload": {}
+  }
 }
 ```
 
 {% endraw %}
 
 ### See also
-
-* [Creating Clova access token](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
+* [Creating Clova access tokens](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
 * [Guest mode](/CIC/References/Clova_Auth_API.md#GuestMode)
 
 ## FinishExtension directive {#FinishExtension}
 
-Instructs a client to end the specified extension. End the given extension when you receive this directive.
+Instructs the client to end the specified extension. The client must end the specified extension upon receipt of this directive.
 
 ### Payload fields
 
-| Field name       | Type    | Description                     | Provided |
-|---------------|:---------:|-----------------------------|:---------:|
-| `extension`     | string  | The name of the extension to finish.          | Always |
-
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `extension`   | string  | The name of the extension to end.          | Always     |
 
 ### Message example
 
@@ -73,7 +72,7 @@ Instructs a client to end the specified extension. End the given extension when 
       "dialogRequestId": "3db18cee-caac-4101-891f-b5f5c2e7fa9c"
     },
     "payload": {
-      "extension": "Sample Extension"
+      "extension": "SampleExtension"
     }
   }
 }
@@ -82,20 +81,57 @@ Instructs a client to end the specified extension. End the given extension when 
 {% endraw %}
 
 ### See also
-
 * [`Clova.StartExtension`](#StartExtension)
+
+## HandleDelegatedEvent directive {#HandleDelegatedEvent}
+
+Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app. A user can delegate another client device of the user—that is not the Clova app—to receive the handling results of requests made while using the Clova app. This directive is sent to the client device that has been delegated to handle the result. That client device must then send the [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) event to CIC to receive the handled result.
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `delegationId` | string  | The ID of the delegated request. Make sure to include this value in `payload` when sending [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) events after delegation.         | Always     |
+
+### Remarks
+
+This directive is sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection), not as a response to an event.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "messageId": "b17df741-2b5b-4db4-a608-85ecb1307b33",
+      "namespace": "Clova",
+      "name": "HandleDelegatedEvent"
+    },
+    "payload": {
+      "delegationId": "99e86204-710a-4e94-b949-a763e78348a7"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [Clova.ProcessDelegatedEvent](#ProcessDelegatedEvent)
+* [Handling delegated user requests](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
 
 ## Hello directive {#Hello}
 
-Notifies a client that a downchannel has been established between the client and CIC. This directive is a confirmation for the [connection attempt](/CIC/Guides/Interact_with_CIC.md#CreateConnection) required to use Clova.
+Notifies the client that a downchannel has been established between the client and CIC. This directive is a confirmation for the [connection attempt](/CIC/Guides/Interact_with_CIC.md#CreateConnection) required to use Clova.
 
 ### Payload fields
 
 None
 
 ### Remarks
-
-This directive does not have a dialog ID (`dialogRequestId`).
+This directive does not have a dialogue ID (`dialogRequestId`).
 
 ### Message example
 
@@ -103,26 +139,25 @@ This directive does not have a dialog ID (`dialogRequestId`).
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "Hello"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "Hello"
+    },
+    "payload": {}
+  }
 }
 ```
 
 {% endraw %}
 
 ### See also
-
 * [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#ConnectToCIC)
 
 ## Help directive {#Help}
 
-Instructs a client to give help for users. This directive is returned when a user requests help for using Clova. Provide a guide by audio or UI through the client screen when you receive this directive.
+Instructs the client to provide the Help guide to the user. This directive is returned when a user requests help for using Clova. Upon receipt, the client must provide a guide by audio or visual display.
 
 ### Payload fields
 
@@ -134,39 +169,84 @@ None
 
 ```json
 {
-    "directive": {
-        "header": {
-            "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
-            "namespace": "Clova",
-            "name": "Help"
-        },
-        "payload": {}
-    }
+  "directive": {
+    "header": {
+      "messageId": "2ca2ec70-c39d-4741-8a34-8aedd3b24760",
+      "namespace": "Clova",
+      "name": "Help"
+    },
+    "payload": {}
+  }
 }
 ```
 
 {% endraw %}
 
 ### See also
-
 None
 
-## RenderTemplate directive {#RenderTemplate}
+## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
 
-Instructs a client to display data, the result of recognizing user's voice request, filled in the given content template.
+Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation). When sending this event to CIC, make sure to include the `delegationId` value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive in the `payload` of this message. The client will receive the result on the request which the user had made through Clova app as a response to this directive.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
-The format of the `payload` field differs depending on the type of [content template](/CIC/References/Content_Templates.md) used. Available content templates are as follows.
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `delegationId` | string  | The ID of the delegated request. The `delegationId` field value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive must be entered without any alteration.         | Required     |
 
-* Templates for different UI layouts
+### Message example
+{% raw %}
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "Clova",
+      "name": "ProcessDelegatedEvent",
+      "messageId": "b120c3e0-e6b9-4a3d-96de-71539e5f6214"
+    },
+    "payload": {
+      "delegationId": "99e86204-710a-4e94-b949-a763e78348a7"
+    }
+  }
+}
+```
+{% endraw %}
+
+### See also
+* [`Clova.HandleDelegatedEvent`](#HandleDelegatedEvent)
+* [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
+* [Handling delegated user requests](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)
+
+## RenderTemplate directive {#RenderTemplate}
+
+Instructs the client to display data according to the content template. The result of contents from speech recognition is also sent to the client.
+
+### Payload fields
+The format of the `payload` varies depending on the type of [content template](/CIC/References/Content_Templates.md) used. Available content templates are as follows.
+
+* Templates per UI type
   * [CardList](/CIC/References/ContentTemplates/CardList.md)
   * [ImageList](/CIC/References/ContentTemplates/ImageList.md)
   * [ImageText](/CIC/References/ContentTemplates/ImageText.md)
   * [Popup](/CIC/References/ContentTemplates/Popup.md)
   * [Text](/CIC/References/ContentTemplates/Text.md)
 
-* PIMS template
+* PIMS templates
   * [ActionTimer](/CIC/References/ContentTemplates/ActionTimer.md)
   * [ActionTimerList](/CIC/References/ContentTemplates/ActionTimerList.md)
   * [Alarm](/CIC/References/ContentTemplates/Alarm.md)
@@ -180,7 +260,7 @@ The format of the `payload` field differs depending on the type of [content temp
   * [Timer](/CIC/References/ContentTemplates/Timer.md)
   * [TimerList](/CIC/References/ContentTemplates/TimerList.md)
 
-* Templates for weather forecast
+* Weather templates
   * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
   * [Humidity](/CIC/References/ContentTemplates/Humidity.md)
   * [TodayWeather](/CIC/References/ContentTemplates/TodayWeather.md)
@@ -211,19 +291,18 @@ The format of the `payload` field differs depending on the type of [content temp
 {% endraw %}
 
 ### See also
-
 * [`Clova.RenderText`](#RenderText)
 * [Content template](/CIC/References/Content_Templates.md)
 
 ## RenderText directive {#RenderText}
 
-Instructs a client to display the given text message.
+Instructs the client to display the given text message. The text message to display to the user is also sent.
 
 ### Payload fields
 
-| Field name       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `text`          | string  | The text message to display to a user.          | Required |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `text`          | string  | The text to show to the user.        | Always     |
 
 ### Message example
 
@@ -239,7 +318,7 @@ Instructs a client to display the given text message.
       "dialogRequestId": "5690395e-8c0d-4123-9d3f-937eaa9285dd"
     },
     "payload": {
-      "text": "I will play an exciting song for you."
+      "text": "I will play some upbeat music for you."
     }
   }
 }
@@ -248,18 +327,17 @@ Instructs a client to display the given text message.
 {% endraw %}
 
 ### See also
-
 * [`Clova.RenderTemplate`](#RenderTemplate)
 
 ## StartExtension directive {#StartExtension}
 
-Instructs a client to start the specified extension. Start the given extension when you receive this directive.
+Instructs the client to start the specified extension. Upon receiving the directive, the client must start the specified extension.
 
 ### Payload fields
 
-| Field name       | Type    | Description                     | Provided |
-|---------------|:---------:|-----------------------------|:---------:|
-| `extension`     | string  | The name of the extension to start          | Always |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `extension`   | string  | The name of the extension to start.          | Always     |
 
 ### Message example
 
@@ -275,7 +353,7 @@ Instructs a client to start the specified extension. Start the given extension w
       "dialogRequestId": "8b509a36-9081-4783-b1cd-58d406205956"
     },
     "payload": {
-      "extension": "Sample Extension"
+      "extension": "SampleExtension"
     }
   }
 }
@@ -284,5 +362,4 @@ Instructs a client to start the specified extension. Start the given extension w
 {% endraw %}
 
 ### See also
-
 * [`Clova.FinishExtension`](#FinishExtension)

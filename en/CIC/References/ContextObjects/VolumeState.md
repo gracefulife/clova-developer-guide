@@ -1,6 +1,5 @@
 ## Speaker.VolumeState {#VolumeState}
-
-`Speaker.VolumeState` is a format for reporting the client's speaker state to CIC at the time when the user spoken, including mute status and volume level.
+`Speaker.VolumeState` is a format for reporting to CIC about the client speaker state at the time when the user speaks, including mute status and volume level.
 
 ### Object structure
 {% raw %}
@@ -20,13 +19,12 @@
 
 ### Payload fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `muted`         | boolean | Indicates whether the speaker muted or not.    | Required |
-| `volume`        | number  | The current speaker volume level. Range: [0–10]     | Required |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `muted`         | boolean | Indicates whether the speaker is muted or not.                    | Required     |
+| `volume`        | number  | The current speaker volume level (0-10).     | Required     |
 
-### Example
-
+### Object example
 {% raw %}
 ```json
 {
@@ -43,5 +41,4 @@
 {% endraw %}
 
 ### See also
-
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
