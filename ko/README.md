@@ -21,6 +21,15 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.1</td><td>2018-05-07</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchURI">LaunchURI</a> 지시 메시지 추가</li>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">LaunchApp</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#OpenScreen">OpenScreen</a> 지시 메시지의 지원을 중지(Deprecated)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v4.0</td><td>2018-04-30</td>
     <td>
       <ul>
