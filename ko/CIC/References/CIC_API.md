@@ -631,7 +631,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
     "messageId": {{string}}
   },
   "payload": {
-    "code": {{string}},
+    "code": {{number}},
     "description": {{string}}
   }
 }
@@ -648,7 +648,7 @@ CIC API에서 사용되는 메시지는 다음과 같이 구분되며, 각각 �
 | `header.name`            | string | 오류 메시지의 이름. `"Exception"`으로 고정됩니다.                | 항상 |
 | `header.namespace`       | string | 오류 메시지의 네임스페이스. `"System"`으로 고정됩니다.             | 항상 |
 | `payload`                | object | 오류와 관련된 정보를 담고 있는 객체                                | 항상 |
-| `payload.code`           | string | 오류 코드. 해당 메시지의 HTTP 응답 코드와 같은 값을 가집니다.           | 항상 |
+| `payload.code`           | number | 오류 코드. 해당 메시지의 HTTP 응답 코드와 같은 값을 가집니다.           | 항상 |
 | `payload.description`    | string | 오류 메시지                                                  | 항상 |
 
 #### Error code reference
