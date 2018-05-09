@@ -20,6 +20,8 @@
     "AuthServerBaseURL": "https://auth.clova.ai/",
     "CICBaseURL": "https://prod-ni-cic.clova.ai/",
     "RedirectURLforAccountLinking": "https://prod-ni-cic.clova.ai/v1/al/token/",
+    "SignatureSubPath": "https://cek-requests.clova.ai/cek/",
+    "SignatureSANDomain": "cek-requests.clova.ai",
     "ReleaseYear": "2018",
     "DevConsole": {
       "ManageExtensions": "확장 서비스 관리",
