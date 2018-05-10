@@ -208,5 +208,5 @@ IntentRequest 타입 메시지는 `request.type` 필드에 `"IntentRequest"`라�
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>CEK가 <code>SessionEndedRequest</code> 타입 요청을 extension으로 전송한 순간부터 CEK는 해당 extension의 응답을 모두 무십합니다.</p>
+  <p>CEK가 <code>SessionEndedRequest</code> 타입 요청을 extension으로 전송한 순간부터 CEK는 해당 extension의 응답을 모두 무시합니다.</p>
 </div>
