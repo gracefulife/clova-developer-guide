@@ -104,5 +104,5 @@ Custom extension에서 피자 종류뿐만 아니라 주문 수량 정보가 추
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>Extension이 <a href="#HandleSessionEndedRequest"><code>SessionEndedRequest</code> 요청</a>을 받으면 언제든지 multi-turn 대화가 종료될 수 있습니다. <code>SessionEndedRequest</code> 요청을 받은 후에는 extension이 어떠한 응답(사용 종료 인사말 등)을 보내더라도 CEK가 이를 무시하게 됩니다.</p>
+  <p>Extension이 <a href="#HandleSessionEndedRequest"><code>SessionEndedRequest</code> 타입 요청</a>을 받으면 언제든지 multi-turn 대화가 종료될 수 있습니다. <code>SessionEndedRequest</code> 타입 요청을 받은 후에는 extension이 어떠한 응답(사용 종료 인사말 등)을 보내더라도 CEK가 이를 무시하게 됩니다.</p>
 </div>
