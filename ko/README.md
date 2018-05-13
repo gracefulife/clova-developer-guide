@@ -24,6 +24,7 @@
     <td>v4.2</td><td>2018-05-14</td>
     <td>
       <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#LaunchURI">LaunchURI</a> 지시 메시지를 DeviceControl 네임스페이스에서 <a href="/CIC/References/CICInterface/Clova.html">Clova</a> 네임스페이스 이전</li>
         <li>[CEK] HTTP 요청 메시지에 헤더(SignatureCEK, SignatureCEKCertChainUrl) 추가 및 <a href="/CEK/References/CEK_API.html#RequestMessageValidation">요청 메시지 검증</a> 절 추가</li>
       </ul>
     </td>
