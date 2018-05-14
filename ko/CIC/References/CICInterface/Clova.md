@@ -9,6 +9,7 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 | [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | 클라이언트에게 Clova 앱으로부터 [위임된 사용자의 요청을 처리](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)하도록 지시합니다.   |
 | [`Hello`](#Hello)                                | Directive | 클라이언트에게 downchannel 연결 설정이 완료되었음을 알립니다.       |
 | [`Help`](#Help)                                  | Directive | 클라이언트에게 미리 준비해둔 도움말 정보를 제공하도록 지시합니다.       |
+| [`LaunchURI`](#LaunchURI)                        | Directive | 클라이언트에게 URI로 표현되는 사이트 혹은 앱을 열거나 실행하도록 지시합니다.                         |
 | [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | 클라이언트가 [위임된 사용자 요청](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)에 대한 결과를 CIC로부터 받기 위해 사용됩니다.  |
 | [`RenderTemplate`](#RenderTemplate)              | Directive | 클라이언트에게 템플릿을 표시하도록 지시합니다.                     |
 | [`RenderText`](#RenderText)                      | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
@@ -181,6 +182,87 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 ```
 
 {% endraw %}
+
+### See also
+없음
+
+## LaunchURI directive {#LaunchURI}
+
+클라이언트에게 URI로 표현되는 사이트 혹은 앱을 열거나 실행하도록 지시합니다. 이 지시 메시지를 수신한 클라이언트는 `targets[].uri` 필드를 이용하여 사이트 또는 앱을 실행해야 합니다.
+
+### Payload fields
+
+| 필드 이름       | 자료형    | 필드 설명                     | 포함 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `targets[]`              | object array | URI 정보를 가지는 객체 배열                       | 항상     |
+| `targets[].description`  | string       | URI로 표현되는 대상(앱 또는 사이트)의 설명           | 선택     |
+| `targets[].iconImageUrl` | string       | URI로 표현되는 대상의 아이콘 이미지                 | 선택     |
+| `targets[].marketUrl`    | string       | **URI로 표현되는 대상이 앱일 경우**, 앱 스토어의 주소  | 선택     |
+| `targets[].packageName`  | string       | **URI로 표현되는 대상이 앱일 경우**, 앱의 패키지 이름  | 선택     |
+| `targets[].title`        | string       | URI로 표현되는 대상의 제목                        | 필수     |
+| `targets[].uri`          | string       | 대상 URI 정보                                  | 필수     |
+
+### Remarks
+
+* 클라이언트는 `targets[].uri`의 URI로부터 <a href="http://ogp.me/" target="_blank">Open Graph Protocol</a> 데이터를 이용하여 미리 보기를 표현할 수 있지만 일부 데이터를 즉시 표기하기 위해 `targets[].iconImageUrl`, `targets[].title`, `targets[].description` 등과 같은 필드를 이용할 수 있습니다.
+* **URI로 표현되는 대상이 앱일 경우**, `targets[].marketUrl`, `targets[].packageName` 필드를 이용할 수 있습니다. `targets[].marketUrl`은 앱 미설치로 인해 대상 앱을 실행할 수 없을 때 사용되며, `targets[].packageName`는 `targets[].uri`로 앱을 실행할 수 없을 때 참고할 수 있는 부가 정보입니다.
+* 클라이언트는 `targets[]` 필드의 배열에 있는 모든 대상을 열거나 실행해야 하는 것이 아닙니다. 배열 요소 중 첫 번째 요소의 URI 정보로 대상을 열거나 실행하도록 시도해야 하며, 실패 시 다음 배열 요소의 정보로 같은 동작을 시도해야 합니다. 즉, 배열 구조는 실행 불가 대상을 대비한 후보군을 함께 보내기 위해 사용됩니다.
+
+### Message example
+
+```json
+// App type example
+{
+  "directive": {
+    "header": {
+      "namespace": "Clova",
+      "name": "LaunchURI",
+      "messageId": "086ccadf-cd88-4cff-9706-cc4f0801c929",
+      "dialogRequestId": "de20ea1a-ea39-4c2a-a033-73fa014b2fd5"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "sampleapp2://main",
+          "title": "Sample app2",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app2"
+        },
+        {
+          "uri": "sampleapp://main",
+          "title": "Sample app",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app"
+        }
+      ]
+    }
+  }
+}
+
+// Site type example
+{
+  "directive": {
+    "header": {
+      "namespace": "Clova",
+      "name": "LaunchURI",
+      "messageId": "fcb0919e-9847-46ec-90bc-ab0fe8216771",
+      "dialogRequestId": "9ab7256a-6add-4b4a-a0b8-481f41d36a9d"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "http://example.org",
+          "title": "Example Domain"
+        }
+      ]
+    }
+  }
+}
+```
 
 ### See also
 없음
