@@ -2,10 +2,18 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-05-14
+
+* CIC
+  * [LaunchURI](/CIC/References/CICInterface/Clova.md#LaunchURI) 지시 메시지를 DeviceControl 네임스페이스에서 [Clova](/CIC/References/CICInterface/Clova.md) 네임스페이스로 이전
+
+* CEK
+  * HTTP 요청 메시지에 헤더(SignatureCEK, SignatureCEKCertChainUrl) 추가 및 [요청 메시지 검증](/CEK/References/CEK_API.md#RequestMessageValidation)절 추가
+
 ## 2018-05-07
 * CIC
-  - [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임스페이스에 [LaunchURI](/CIC/References/CICInterface/DeviceControl.md#LaunchURI) 지시 메시지 추가
-  - [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임스페이스의 [LaunchApp](/CIC/References/CICInterface/DeviceControl.md#LaunchApp) 지시 메시지와 [OpenScreen](/CIC/References/CICInterface/DeviceControl.md#OpenScreen) 지시 메시지의 지원을 중지(Deprecated)
+  * DeviceControl 네임스페이스에 LaunchURI 지시 메시지 추가
+  * [DeviceControl](/CIC/References/CICInterface/DeviceControl.md) 네임스페이스의 [LaunchApp](/CIC/References/CICInterface/DeviceControl.md#LaunchApp) 지시 메시지와 [OpenScreen](/CIC/References/CICInterface/DeviceControl.md#OpenScreen) 지시 메시지의 지원을 중지(Deprecated)
 
 ## 2018-04-30
 
