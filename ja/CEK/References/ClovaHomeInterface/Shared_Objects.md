@@ -975,7 +975,9 @@ PM10の情報を持っているオブジェクトです。エンドポイント�
       <td><code>"AIRCONDITIONER"</code></td>
       <td>
         <ul>
+          <li><code>"auto"</code>：自動モード。主にエアコンで使用されるモードです。</li>
           <li><code>"cool"</code>：冷房モード。主にエアコンで使用されるモードです。</li>
+          <li><code>"heat"</code>：暖房モード。主にエアコンで使用されるモードです。</li>
           <li><code>"dehumidify"</code>：除湿モード。主にエアコンや除湿器のようなエンドポイントで使用されるモードです。</li>
           <li><code>"sleep"</code>：スリープモード。主にスマートハブのようなエンドポイントで使用されるモードです。</li>
         </ul>
