@@ -21,6 +21,13 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.3</td><td>2018-05-21</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a> 맥락 객체의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 빠진 필드(btlist[].role) 추가</li>
+        <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueNotFoundError">ValueNotFoundError</a> 추가</li>
+      </ul>
+    </td>
     <td>v4.2</td><td>2018-05-14</td>
     <td>
       <ul>
