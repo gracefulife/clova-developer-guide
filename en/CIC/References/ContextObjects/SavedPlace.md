@@ -1,9 +1,7 @@
 ## Clova.SavedPlace {#SavedPlace}
-
-`Clova.SavedPlace` is a format for reporting to CIC the locations saved on the client device.
+`Clova.SavedPlace` is a format for reporting to CIC about the locations saved on the client device.
 
 ### Object structure
-
 {% raw %}
 ```json
 {
@@ -27,17 +25,16 @@
 
 ### Payload fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `places[]`             | object array | Contains location information saved on the client.                                         | Required |
-| `places[].latitude`    | string       | The latitude of this location.                                                                        | Required |
-| `places[].longitude`   | string       | The longitude of this location.                                                                        | Required |
-| `places[].name`        | string       | The name of this location. Available values are: <ul><li><code>"Work"</code></li><li><code>"Home"</code></li></ul>       | Required |
-| `places[].refreshedAt` | string       | The time when this location was last saved, in UTC. (Format: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601))  | Required |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `places[]`             | object array | The object array of the location information saved on the client.                                          | Required |
+| `places[].latitude`    | string       | The latitude of the location.                                                                          | Required |
+| `places[].longitude`   | string       | The longitude of the location.                                                                          | Required |
+| `places[].name`        | string       | The name of the location. Available values are: <ul><li><code>"Work"</code></li><li><code>"Home"</code></li></ul>       | Required |
+| `places[].refreshedAt` | string       | The time of saving the location in UTC. (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)  | Required |
 
 
-### Example
-
+### Object example
 {% raw %}
 ```json
 {
@@ -66,5 +63,4 @@
 {% endraw %}
 
 ### See also
-
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)

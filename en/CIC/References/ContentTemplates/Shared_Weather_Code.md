@@ -1,14 +1,14 @@
 ### Weather codes {#WeatherCode}
 
 | Code | Value         | Code | Value        | Code | Value           |
-|:-----:|-----------|:-----:|-----------|:-----:|-------------|
-| 1 | Sunny (Day)             | 11 | Light snow   | 21 | Rain/snow           |
-| 2	| Sunny (Night)           | 12 | Snow         | 22 | A little rain       |
-| 3 | Partly cloudy (Day)     | 13 | Heavy snow   | 23 | A little snow       |
-| 4 | Partly cloudy (Night)   | 14 | Sleet        | 24 | A little rain/snow |
-| 5 | Mostly cloudy (Day)     | 15 | Showers      | 25 | Cloudy to clear      |
-| 6 | Mostly cloudy (Night)   | 16 | Snow showers | 26 | Thunderstorm to clear    |
-| 7 | Cloudy                  | 17 | Foggy        | 27 | Rain to clear        |
-| 8	| Light rain              | 18 | Lightening, thunderstorm   | 28  | Snow to clear      |
-| 9	| Rain                    | 19 | Hail         | 29 | Cloudy to rain       |
-| 10 | Heavy rain             | 20 | Yellow dust  | 30 | Cloudy to snow       |
+|-----|-----------|-----|-----------|-----|-------------|
+| 1   | Clear (day)    | 11  | Light snow     | 21  | Rain or snow     |
+| 2	  | Clear (night)    | 12  | Snow        | 22  | Occasional rain       |
+| 3   | Partly cloudy (day) | 13  | Heavy snow     | 23  | Occasional snow        |
+| 4   | Partly cloudy (night) | 14  | Sleet    | 24  | Occasional rain or snow |
+| 5   | Very cloudy (day) | 15  | Shower      | 25  | Clear after cloudy    |
+| 6   | Very cloudy (night) | 16  | Snow shower     | 26  | Clear after thunderstorm    |
+| 7   | Cloudy       | 17  | Foggy       | 27   | Clear after rain     |
+| 8	  | Light rain      | 18  | Thunder, thunderstorm   | 28  | Clear after snow      |
+| 9	  | Rain         | 19  | Hail       | 29  | Getting cloudy with rain     |
+| 10  |	Heavy rain      | 20  | Yellow dust       | 30  | Getting cloudy with snow     |

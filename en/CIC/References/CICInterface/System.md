@@ -1,47 +1,42 @@
 # System
 
-The System namespace provides directives and events that are required when synchronizing information related to user accounts such as alarm and schedule between Clova and the client. Such synchronization is needed in the following cases:
+The System namespace provides directives and events that are required to synchronize system information such as firmware information of the client device between Clova and the client as follows:
 
-* When a user has added another client to their account.
-* When the client is reconnected to CIC due to network error or other issues.
-* When the user account registered on the client has changed to a new user's.
-* When the client is reset after getting disconnected from the pair app.
-
-<div class="note">
-  <p><strong>Note!</strong></p>
-  <p>If the client experiences network disconnection or a user logs out from the client, you MUST delete all the information related to the user account.</p>
-</div>
-
-To synchronize information, a client sends the [`System.RequestSynchronizeState`](RequestSynchronizeState) event to CIC and CIC shares the server information with the client using the [`System.SynchronizeState`](#SynchronizeState) directive.
-
-| Message name         | Message type  | Description                                 |
+| Message name         | Type  | Description                                 |
 |------------------|-----------|-------------------------------------------|
-| [`RequestSynchronizeState`](#RequestSynchronizeState)  | Event     | A message to notify CIC that the client needs to synchronize its data with Clova. |
-| [`SynchronizeState`](#SynchronizeState)                | Directive | Instructs a client to synchronize its data with the data provided by Clova.                                |
+| [`RequestSynchronizeState`](#RequestSynchronizeState)  | Event     | Reports to CIC that the client needs to synchronize information related to the system. |
+| [`SynchronizeState`](#SynchronizeState)                | Directive | Instructs the client to synchronize the data in the `payload`.            |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Until further notice, the System namespace only provides an interface for synchronizing alarm details. More features are expected to be provided in the future.</p>
+  <p>The system namespace is currently being reorganized and scheduled to be updated soon.</p>
 </div>
 
 ## RequestSynchronizeState event {#RequestSynchronizeState}
-
-A message for reporting to CIC that the client needs to synchronize shared information stored in Clova's cloud. CIC will send the [`System.SynchronizeState`](#SynchronizeState) directive in return.
+Reports to CIC that the client needs to synchronize information related to the system. CIC will send the [`System.SynchronizeState`](#SynchronizeState) directive in return.
 
 ### Context fields
 
-None
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
 
 None
 
 ### Message example
-
 {% raw %}
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "System",
@@ -55,28 +50,31 @@ None
 {% endraw %}
 
 ### See also
-
 * [`System.SynchronizeState`](/CIC/References/CICInterface/System.md#SynchronizeState)
 
 ## SynchronizeState directive {#SynchronizeState}
-
-Instructs a client to synchronize the data in the `payload` field. The client should modify the set value according to the data delivered from Clova.
+Instructs the client to synchronize the data in the `payload`. Upon receiving the directive, the client should modify the set value according to the data from CIC.
 
 ### Payload fields
 
-| Field name       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `allAlerts[]`   | object array | Contains a list of alarms to synchronize. Alarm information is specified in the format used in the [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) of the [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) directive.  | Required    |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `allAlerts[]`   | object array | **(Deprecated)** The object array that has a list of alarms to synchronize. The alarm information is specified in the format used in the [`payload`](/CIC/References/CICInterface/Alerts.md#SetAlertPayload) of the [`Alerts.SetAlert`](/CIC/References/CICInterface/Alerts.md#SetAlert) directive. | Always    |
+
+<div class="note">
+  <p><strong>Note!</strong></p>
+  <p>Synchronization of alarm information through the <code>System.SynchronizeState</code> directive will no longer be supported. This feature will be supported through the <a href="/CIC/References/CICInterface/Alerts.html#RequestSynchronizeAlert"><code>Alerts.RequestSynchronizeAlert</code></a> event and the <a href="/CIC/References/CICInterface/Alerts.html#SynchronizeAlert"><code>Alerts.SynchronizeAlert</code></a> directive. A field to synchronize the system information is scheduled to be added to the <code>System.SynchronizeState</code> directive.</p>
+</div>
 
 ### Remarks
-
-Until further notice, the System namespace only provides an interface for synchronizing alarm details. More features are expected to be provided in the future.
+More features are expected to be provided in the future.
 
 ### Message example
 
 {% raw %}
 
 ```json
+// Deprecated example
 {
   "directive": {
     "header": {
@@ -117,5 +115,4 @@ Until further notice, the System namespace only provides an interface for synchr
 {% endraw %}
 
 ### See also
-
 * [`System.RequestSynchronizeState`](#RequestSynchronizeState)

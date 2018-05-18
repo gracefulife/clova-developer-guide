@@ -1,6 +1,5 @@
-# TodayWeather template
-
-The TodayWeather template is used in providing today's weather information for the client to display on the client's screen.
+# TodayWeather Template
+The TodayWeather template is used in providing today's weather for the client to display on the client screen.
 
 <div class="note">
 <p><strong>Note!</strong></p>
@@ -9,20 +8,24 @@ The TodayWeather template is used in providing today's weather information for t
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background.<div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
+| `bgClipUrl`                 | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the video file to play in the background. <div class="danger"><p><strong>Caution!</strong></p><p>Due to a license issue, you are not permitted to use this URL.</p></div> |
 | `concentrationOfFineDust`   | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The level of fine dust. |
-| `houlyWeatherList[]` | object array | Contains hourly forecasts. |
-| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The temperature. |
-| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The hour for which this weather forecast is provided for.  |
-| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | The chance of rain. A `null` indicates that this information is unavailable. |
-| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)  | The [weather code](#WeatherCode) for this forecast. |
-| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the icon to represent this forecast. |
-| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The link to open when the weather information is tapped. An empty string (`""`) indicates that this information is unavailable.  |
-| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The location this forecast is for. |
+| `contentProviderText`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information of the content provider. An empty string (`""`) indicates that no content is to be displayed.  |
+| `houlyWeatherList[]` | object array | The object array of hourly weather information. |
+| `houlyWeatherList[].hourlyTemperature` | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The hourly temperature. |
+| `houlyWeatherList[].hourlyTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The time of the weather forecast. |
+| `houlyWeatherList[].rainfallProbability` | [PercentageObject](/CIC/References/ContentTemplates/Shared_Objects.md#PercentageObject) | The chance of rain. The `value` field of this object array element may have a (`null`) value. |
+| `houlyWeatherList[].temperatureImageCode` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The [weather code](#WeatherCode) for the forecast. |
+| `houlyWeatherList[].temperatureImageUrl` | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the icon to represent the forecast. |
+| `linkUrl`                   | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject) | The URL of the content. An empty string (`""`) indicates that no content is to be displayed.   |
+| `lastUpdate`                | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The last update time of the weather information. An empty string (`""`) indicates that no content is to be displayed. |
+| `location`                  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information on the region. |
 | `nowTemperature`            | [TemperatureCObject](/CIC/References/ContentTemplates/Shared_Objects.md#TemperatureCObject) | The current temperature. |
 | `nowWeather`                | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The current weather.  |
+| `referenceText`             | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | The information of the referred service. An empty string (`""`) indicates that no content is to be displayed.  |
+| `referenceUrl`              | [URLObject](/CIC/References/ContentTemplates/Shared_Objects.md#URLObject)       | The information on the usage result URL of the referred service. An empty string (`""`) indicates that no content is to be displayed.   |
 | `type`                      | string | The type of this template. The value is always `"TodayWeather"`. |
 
 {% include "/CIC/References/ContentTemplates/Shared_Weather_Code.md" %}
@@ -38,7 +41,7 @@ The TodayWeather template is used in providing today's weather information for t
   },
   "concentrationOfFineDust": {
     "type": "string",
-    "value": "Moderate 29㎍/㎥"
+    "Moderate 29 ㎍/㎥"
   },
   "hourlyWeatherList": [
     {
@@ -264,7 +267,7 @@ The TodayWeather template is used in providing today's weather information for t
   ],
   "location": {
     "type": "string",
-    "value": "Shinjuku"
+    "value": "Jeongja1-dong"
   },
   "nowTemperature": {
     "type": "temperature-c",
@@ -274,19 +277,33 @@ The TodayWeather template is used in providing today's weather information for t
     "type": "string",
     "value": "Sunny"
   },
+  "contentProviderText" : {
+    "type" : "string",
+    "value": "National weather service"
+  },
+  "lastUpdate" : {
+    "type" : "datetime",
+    "value" : "2018-02-05T06:29:09Z"
+  },
+  "referenceText" : {
+    "type" : "string",
+    "value": "NAVER weather"
+  },
+  "referenceUrl" : {
+    "type" : "url",
+    "value" : "http://weather.contentproviderdomain.com/"
+  },
   "type": "TodayWeather"
 }
 ```
 {% endraw %}
 
 ## UI example {#UIExample}
-
 The following example shows how the TodayWeather template is used on the Clova app distributed by {{ book.OrientedService }}.
 
 ![TodayWeather](/CIC/Resources/Images/Content-Template-TodayWeather.png)
 
 ## See also
-
 * [Atmosphere](/CIC/References/ContentTemplates/Atmosphere.md)
 * [TomorrowWeather](/CIC/References/ContentTemplates/TomorrowWeather.md)
 * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)

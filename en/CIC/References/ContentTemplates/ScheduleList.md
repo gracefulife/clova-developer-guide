@@ -1,13 +1,11 @@
 # ScheduleList Template
-
-The ScheduleList template is used in providing information of multiple schedules for the client to display on the client's screen.
-When the user requests for a list of schedules, CIC sends the schedule list registered by the user to the client, in the form of the ScheduleList template.
+The ScheduleList template is used in providing information about multiple schedules for the client to display on the client screen. When the user requests a list of schedules, CIC sends the schedule list registered by the user to the client in the form of the ScheduleList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using schedule:</p>
+<p>The following restrictions apply when using the ScheduleList template:</p>
 <ul>
-  <li>To register, modify or delete the account for calendar, the user must use the Clova app.</li>
+  <li>To register, modify, or delete the account for calendar, the user must use the Clova app.</li>
   <li>Voice requests can be used only to add a schedule or to check a list of schedules.</li>
   <li>To modify or delete a schedule, the user must use the Clova app.</li>
 </ul>
@@ -15,15 +13,15 @@ When the user requests for a list of schedules, CIC sends the schedule list regi
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `scheduleList[]`        | object array | Contains a list of schedules registered by the user.   |
-| `scheduleList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the schedule message. |
-| `scheduleList[].end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The end date and time of this schedule. If `DateObject` is used, this schedule is an _all-day_ schedule. |
-| `scheduleList[].start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The start date and time of this schedule. If `DateObject` is used, this schedule is an _all-day_ schedule. |
-| `scheduleList[].repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ schedule. |
-| `scheduleList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Specifies the repeat cycle. Available cycles are: <ul><li><code>""</code> (empty string): One-time schedule </li><li><code>"daily"</code>: Daily schedule</li><li><code>"weekly"</code>: Weekly schedule</li></ul> |
-| `scheduleList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the schedule. |
+| `scheduleList[]`        | object array | The object array that has the schedules registered by the user.   |
+| `scheduleList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The content of schedule entered by the user. |
+| `scheduleList[].end`           | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The end date and time of this schedule. For an all-day schedule, the object type is DateObject containing the date of the schedule only. |
+| `scheduleList[].start`         | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) or [DateObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateObject)  | The start date and time of this schedule. For an all-day schedule, the object type is DateObject containing the date of the schedule only. |
+| `scheduleList[].repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly schedule. |
+| `scheduleList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty String (<code>""</code>): One-time schedule </li><li><code>"daily"</code>: Daily schedule</li><li><code>"weekly"</code>: Weekly schedule</li></ul> |
+| `scheduleList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the schedule.  |
 | `type`        | string                                                                              | The type of this template. The value is always `"ScheduleList"`.             |
 
 ## Template example
@@ -50,7 +48,7 @@ When the user requests for a list of schedules, CIC sends the schedule list regi
       },
       "content": {
         "type": "string",
-        "value": "Moon's wedding"
+        "value": "Kim’s wedding"
       },
       "repeatPeriod": {
         "type": "string",
@@ -127,7 +125,7 @@ When the user requests for a list of schedules, CIC sends the schedule list regi
       },
       "content": {
         "type": "string",
-        "value": "LINE DEVELOPER DAY"
+        "value": "Play shop"
       },
       "repeatPeriod": {
         "type": "string",
@@ -143,13 +141,10 @@ When the user requests for a list of schedules, CIC sends the schedule list regi
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the ScheduleList template is in preparation.</p>
-</div>
+The following example shows how the ScheduleList template is used on the Clova app distributed by {{ book.OrientedService }}.
 
+![](/CIC/Resources/Images/Content_Template-ScheduleList.png)
 
 ## See also
-
-* [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
+* [Alerts](/CIC/References/CICInterface/Alerts.md) interface
 * [ScheduleList](/CIC/References/ContentTemplates/ScheduleList.md)
