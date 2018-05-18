@@ -13,7 +13,7 @@
 | [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | 대상기기의 조명이나 화면, 전등의 색온도 정보가 담긴 객체  |
 | [ConsumptionInfoObject](#ConsumptionInfoObject)           | 에너지 사용량 정보가 담긴 객체       |
 | [CustomCommandInfoObject](#CustomCommandInfoObject)       | 사용자 정의 명령어 정보가 담긴 객체   |
-| [CustomInfoObject](#CustomInfoObject)                     | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |   |   |
+| [CustomInfoObject](#CustomInfoObject)                     | 정보를 임의의 이름, 필요한 단위나 수치로 직접 입력할 때 사용되는 객체 |
 | [ExpendableInfoObject](#ExpendableInfoObject)             | 기기 소모품의 사용량이나 남은 수명 정보가 담긴 객체  |
 | [FineDustInfoObject](#FineDustInfoObject)                 | 미세 먼지 정보가 담긴 객체          |
 | [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | 압력이나 수압 세기 정보가 담긴 객체   |
@@ -979,8 +979,12 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
       <td><code>"AIRCONDITIONER"</code></td>
       <td>
         <ul>
+          <li><code>"auto"</code>: 자동 모드. 주로 에어컨 기기에서 사용되는 모드입니다.</li>
           <li><code>"cool"</code>: 냉방 모드. 주로 에어컨 기기에서 사용되는 모드입니다.</li>
           <li><code>"dehumidify"</code>: 제습 모드. 주로 에어컨이나 제습기와 같은 기기에서 사용되는 모드입니다.</li>
+          {% if book.TargetCountryCode == "JP" %}
+          <li><code>"heat"</code>: 난방 모드. 주로 에어컨 기기에서 사용되는 모드입니다.</li>
+          {% endif %}
           <li><code>"sleep"</code>: 취침 모드. 주로 스마트 허브와 같은 기기에서 사용되는 모드입니다.</li>
         </ul>
       </td>
