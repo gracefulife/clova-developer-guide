@@ -200,7 +200,7 @@
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `actions[]`          | string array | 블루투스 연결과 관련하여 수행할 수 있는 [`DeviceControl`](/CIC/References/CICInterface/DeviceControl.md) API 목록. 다음 동작 목록 중 클라이언트 기기가 실제로 수행할 수 있는 동작을 입력합니다. <ul><li><code>"TurnOff"</code></li><li><code>"TurnOn"</code></li><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li></ul> | 필수 |
-| `btlist[]`           | object array | 페어링되고 있거나 한 번 이상 페이렁된 적이 있는 블루투스 기기 정보를 가지는 객체 배열         | 필수 |
+| `btlist[]`           | object array | 페이링된 적이 있는 블루투스 기기 정보를 가지는 객체 배열         | 필수 |
 | `btlist[].name`      | string       | 블루투스 기기의 이름                      | 필수 |
 | `btlist[].address`   | string       | 블루투스 기기의 MAC 주소                  | 필수 |
 | `btlist[].connected` | boolean      | 블루투스 기기와의 연결 여부. <ul><li><code>true</code>: 연결된 상태</li><li><code>false</code>: 연결되어 있지 않은 상태</li></ul> | 필수 |

@@ -123,7 +123,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>Downchannel을 구성할 때 만든 연결로 CIC <a href="#SendEvent">이벤트 메시지를 전송</a>해야 합니다. 따라서 downchannel을 구성하지 않으면 이벤트 메시지를 전송할 수 없습니다.</p>
+  <p>이벤트 메시지를 보낼 때 반드시 <a href="#CreateConnection">Downchannel을 구성할 때 만든 연결</a>로 CIC 이벤트 메시지를 전송해야 합니다.</p>
 </div>
 
 ### 인증하기 {#Authorization}
