@@ -21,10 +21,19 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.3</td><td>2018-05-21</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/Context_Objects.html#DeviceState">Device.DeviceState</a> 맥락 객체의 <a href="/CIC/References/Context_Objects.html#BluetoothInfoObject">BluetoothInfoObject</a>에 빠진 필드(btlist[].role) 추가</li>
+        <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueNotFoundError">ValueNotFoundError</a> 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v4.2</td><td>2018-05-14</td>
     <td>
       <ul>
-        <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#LaunchURI">LaunchURI</a> 지시 메시지를 DeviceControl 네임스페이스에서 <a href="/CIC/References/CICInterface/Clova.html">Clova</a> 네임스페이스 이전</li>
+        <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#LaunchURI">LaunchURI</a> 지시 메시지를 DeviceControl 네임스페이스에서 <a href="/CIC/References/CICInterface/Clova.html">Clova</a> 네임스페이스로 이전</li>
         <li>[CEK] HTTP 요청 메시지에 헤더(SignatureCEK, SignatureCEKCertChainUrl) 추가 및 <a href="/CEK/References/CEK_API.html#RequestMessageValidation">요청 메시지 검증</a> 절 추가</li>
       </ul>
     </td>
@@ -33,7 +42,7 @@
     <td>v4.1</td><td>2018-05-07</td>
     <td>
       <ul>
-        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임스페이스에 <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchURI">LaunchURI</a> 지시 메시지 추가</li>
+        <li>[CIC] DeviceControl 네임스페이스에 LaunchURI 지시 메시지 추가</li>
         <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> 네임스페이스의 <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">LaunchApp</a> 지시 메시지와 <a href="/CIC/References/CICInterface/DeviceControl.html#OpenScreen">OpenScreen</a> 지시 메시지의 지원을 중지(Deprecated)</li>
       </ul>
     </td>

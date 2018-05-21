@@ -1,11 +1,9 @@
 # ReminderList Template
-
-The ReminderList template is used in providing information of multiple reminders for the client to display on the client's screen.
-When the user requests for a list of reminders, CIC sends the list of reminders registered by the user to the client, in the form of the ReminderList template.
+The ReminderList template is used in providing information about multiple reminders for the client to display on the client screen. When the user requests for a list of reminders, CIC sends the list of reminders registered by the user to the client in the form of the ReminderList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using reminder:</p>
+<p>The following restrictions apply when using the ReminderList template:</p>
 <ul>
   <li>Voice requests can be used only to add a reminder or to check a list of reminders.</li>
   <li>To modify or delete a reminder, the user must use the Clova app.</li>
@@ -14,15 +12,16 @@ When the user requests for a list of reminders, CIC sends the list of reminders 
 
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `reminderList[]`               | object array  | Contains a list of reminders registered by the user.                                                                                          |
-| `reminderList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Contains the reminder message. |
-| `reminderList[].repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The repeat day(s) for a _weekly_ reminder |
-| `reminderList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available cycles are: <ul><li><code>""</code>(empty string): One-time reminder</li><li><code>"daily"</code>: Daily reminder</li><li><code>"weekly"</code>: Weekly reminder</li></ul> |
-| `reminderList[].status`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Specifies whether the task of the reminder is completed or not. Available statuses are: <ul><li><code>"TODO"</code>: Remaining reminder</li><li><code>"DONE"</code>: Completed reminder</li></ul> |
-| `reminderList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this reminder is to go off.  |
-| `reminderList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this reminder.  |
+| `reminderList[]`               | object array  | The object array of reminders added by the user.                                                                                          |
+| `reminderList[].content`       | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | **(Deprecated)** The content of the reminder added by the user. This object is scheduled to be replaced with the `label` field. |
+| `reminderList[].label`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The message of the reminder added by the user. |
+| `reminderList[].repeatDay[]`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) array | The object array that has the repeat day(s) for a weekly reminder. |
+| `reminderList[].repeatPeriod`  | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The repeat cycle. Available values are: <ul><li>Empty string (<code>""</code>): One-time reminder</li><li><code>"daily"</code>: Daily reminder</li><li><code>"weekly"</code>: Weekly reminder</li></ul> |
+| `reminderList[].status`        | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | Indicates whether the task of the reminder is completed or not. Available values are: <ul><li><code>"TODO"</code>: Reminder is not yet completed</li><li><code>"DONE"</code>: Reminder is completed</li></ul> |
+| `reminderList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this reminder is to go off.      |
+| `reminderList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the reminder.  |
 | `type`                         | string                                                                              | The type of this template. The value is always `"ReminderList"`.             |
 
 ## Template example
@@ -40,11 +39,24 @@ When the user requests for a list of reminders, CIC sends the list of reminders 
       },
       "scheduledTime": {
         "type": "datetime",
-        "value": "2017-10-01T14:00:00Z"
+        "value": "2017-10-09T09:00:00Z"
       },
+      "repeatPeriod": {
+        "type": "string",
+        "value": ""
+      },
+      "repeatDay": [],
       "content": {
         "type": "string",
-        "value": "Charge my LINE points"
+        "value": "Transfer money"
+      },
+      "label": {
+        "type": "string",
+        "value": "Transfer money"
+      },
+      "status": {
+        "type": "string",
+        "value": "DONE"
       }
     },
     {
@@ -54,11 +66,56 @@ When the user requests for a list of reminders, CIC sends the list of reminders 
       },
       "scheduledTime": {
         "type": "datetime",
-        "value": "2017-10-01T11:30:00Z"
+        "value": "2017-10-09T09:00:00Z"
       },
+      "repeatPeriod": {
+        "type": "string",
+        "value": "daily"
+      },
+      "repeatDay": [],
       "content": {
         "type": "string",
-        "value": "Watch LINE LIVE"
+        "value": "Take vitamins"
+      },
+      "label": {
+        "type": "string",
+        "value": "Take vitamins"
+      },
+      "status": {
+        "type": "string",
+        "value": "TODO"
+      }
+    },
+    {
+      "token": {
+        "type": "string",
+        "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
+      },
+      "scheduledTime": {
+        "type": "datetime",
+        "value": "2017-10-09T09:00:00Z"
+      },
+      "repeatPeriod": {
+        "type": "string",
+        "value": "weekly"
+      },
+      "repeatDay": [
+        {
+          "type": "string",
+          "value": "monday"
+        }
+      ],
+      "content": {
+        "type": "string",
+        "value": "Clean the house"
+      },
+      "label": {
+        "type": "string",
+        "value": "Clean the house"
+      },
+      "status": {
+        "type": "string",
+        "value": "TODO"
       }
     }
   ]
@@ -69,11 +126,10 @@ When the user requests for a list of reminders, CIC sends the list of reminders 
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the ReminderList template is in preparation.</p>
-</div>
+The following example shows how the ReminderList template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+![](/CIC/Resources/Images/Content_Template-ReminderList.png)
 
 ## See also
-* [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
+* [Alerts](/CIC/References/CICInterface/Alerts.md) interface
 * [Reminder](/CIC/References/ContentTemplates/Reminder.md)

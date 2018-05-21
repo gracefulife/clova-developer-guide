@@ -1,25 +1,22 @@
 # TimerList Template
-
-The TimerList template is used in providing information of multiple timers for the client to display on the client's screen.
-When the user requests for a list of timers, CIC sends the list of timers registered by the user to the client, in the form of the TimerList template.
+The TimerList template is used in providing information of multiple timers for the client to display on the client screen. When the user requests for a list of timers, CIC sends the list of timers registered by the user to the client in the form of the TimerList template.
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>The following is the restrictions in using the TimerList template:</p>
+<p>The following restrictions apply when using the TimerList template:</p>
 <ul>
   <li>Voice requests can be used only to add a timer or to check a list of timers.</li>
   <li>To modify or delete a timer, the user must use the Clova app.</li>
 </ul>
 </div>
 
-
 ## Template fields
 
-| Field name       | Type    | Description                     |
+| Field name       | Data type    | Description                     |
 |---------------|---------|-----------------------------|
-| `timerList[]`               | object array  | Contains a list of timers registered by the user.                                                                                        |
-| `timerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which this timer is to ring.                    |
-| `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of this timer.                             |
+| `timerList[]`               | object array  | The object array of a list of timers registered by the user.                                                                                         |
+| `timerList[].scheduledTime` | [DateTimeObject](/CIC/References/ContentTemplates/Shared_Objects.md#DateTimeObject) | The date and time at which the timer is to ring.                    |
+| `timerList[].token`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject)     | The ID of the timer.                             |
 | `type`                      | string                                                                              | The type of this template. The value is always `"TimerList"`.      |
 
 ## Template example
@@ -43,16 +40,6 @@ When the user requests for a list of timers, CIC sends the list of timers regist
     {
       "token": {
         "type": "string",
-        "value": "b5403bd0-1598-495b-a466-9385c2b1103a"
-      },
-      "scheduledTime": {
-        "type": "datetime",
-        "value": "2017-12-24T00:00:20Z"
-      }
-    },
-    {
-      "token": {
-        "type": "string",
         "value": "da740e2a-01cd-4f2e-aedf-6c4285bae785"
       },
       "scheduledTime": {
@@ -68,12 +55,10 @@ When the user requests for a list of timers, CIC sends the list of timers regist
 
 ## UI example {#UIExample}
 
-<div class="note">
-<p><strong>Note!</strong></p>
-<p>An example for the TimerList template is in preparation.</p>
-</div>
+The following example shows how the TimerList template is used on the Clova app distributed by {{ book.OrientedService }}.
+
+![](/CIC/Resources/Images/Content_Template-TimerList.png)
 
 ## See also
-
-* [Alerts](/CIC/References/CICInterface/Alerts.md) Interface
+* [Alerts](/CIC/References/CICInterface/Alerts.md) interface
 * [Timer](/CIC/References/ContentTemplates/Timer.md)

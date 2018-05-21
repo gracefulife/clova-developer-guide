@@ -1,16 +1,15 @@
-## Preparation {#Preparation}
+## Prerequisites {#Preparation}
 Integrating your client and CIC requires you to connect the two over the HTTP/2 protocol. To make the connection, prepare the following:
 
 * [Libraries](#RequiredLibrary) for HTTP/2 protocol connection
-* [User-Agent string](#UserAgentString) for client
+* [User-agent string](#UserAgentString) for client
 * [Client credentials](#ClientAuthInfo) for creating Clova access tokens
 
 
-### Required library {#RequiredLibrary}
-
+### Required libraries {#RequiredLibrary}
 To support communication over the HTTP/2 protocol, you need to import the libraries that support the HTTP/2 protocol. We recommend you to use the following libraries.
 
-| Programming language | Library               |
+| Programming language | Library                            |
 |---------|------------------------------------|
 | C/C++   | [nghttp2](https://nghttp2.org/), [libcurl](https://curl.haxx.se/libcurl/) |
 | Java    | [OkHttp](http://square.github.io/okhttp/), [Netty](http://netty.io/), [Jetty](http://www.eclipse.org/jetty/) |
@@ -18,20 +17,19 @@ To support communication over the HTTP/2 protocol, you need to import the librar
 
 ### User-Agent string {#UserAgentString}
 
-Add a user-agent string in the HTTP header when using Clova or Clova related Web services. Clients make HTTP connections for the following tasks, and the User-Agent string is required in all the tasks.
+Add a user-agent string in the HTTP header when using Clova or Clova-related Web services. Clients make HTTP connections for the following tasks and the user-agent string is required in all the tasks.
 
 * [Communicating with the CIC server](#ConnectToCIC)
-* Opening a page in a Webview on an app
+* Opening a page in a WebView on an app
 * Downloading images required for a UI
 * Requesting audio stream for a media player
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>If you miss out a user-agent string in an HTTP header, or if your user-agent string is not written according to the notation, your request or connection attempt may be rejected.
-.</p>
+  <p>If you miss a user-agent string in an HTTP header or if your user-agent string is not written according to the notation, your request or connection attempt may be rejected.</p>
 </div>
 
-Define your user-agent string based on the following [Backus-Naur form(BNF)](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form).
+Define your user-agent string based on the following [Backus-Naur form (BNF)](https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form)).
 
 ```
 letter     = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M"
@@ -82,7 +80,7 @@ User_Agent = Manufacturer_Identifier , slash_delimiter ,
              [ semicolon_delimiter , extra_informations ] , ")" ;
 ```
 
-The following is an example of a user-agent string written according to BNF. **For your information, you MUST follow [Semantic Versioning](https://semver.org/) for specifying the `Firmware_Version`**
+An example of a user-agent string written according to BNF is shown below. **Note that you must follow the [Semantic Versioning specification](https://semver.org/) for specifying the `Firmware_Version`.**
 
 ```
 MyCompanyName/MyProductName/1.0.1 (KindOfOS 0.9;CustomHardwareInfo;sampleKey1=sampleValue1;sampleKey2=sampleValue2)
@@ -97,17 +95,16 @@ MCN/SampleClient/1.7.0 (SampleIoTOS 2.1;SmartHub)
 </div>
 
 ### Client credentials {#ClientAuthInfo}
+To use the Clova service, a user needs to authenticate the {{ book.TargetServiceForClientAuth }} account from the client. The client can use the account information entered for the {{ book.TargetServiceForClientAuth }} to obtain the account access token for the {{ book.TargetServiceForClientAuth }}. The client must then pass the access token back to the Clova authorization server again to [obtain the Clova access token](#CreateClovaAccessToken).
 
-To use a Clova service, users must authenticate their {{ book.TargetServiceForClientAuth }} account on the client and also [obtain a Clova access token](#CreateClovaAccessToken) for their account.
-To obtain a Clova access token, you need to send the user's {{ book.TargetServiceForClientAuth }} access token obtained from user authentication, _and_  client credentials over to the Clova authorization server.
-Client credentials can be obtained from the Clova Developer Console (using [Clova Auth API](/CIC/References/Clova_Auth_API.md)). Have the client credentials from the Clova Developer Console ready in advance. Client credentials provide following information.
+In this process, client credentials obtained via the Clova developer console must also be sent together with the {{ book.TargetServiceForClientAuth }} account access token to the authorization server (using [Clova auth API](/CIC/References/Clova_Auth_API.md)). Therefore, you should have the client credentials from the Clova developer console ready in advance. Client credentials provide following information.
 
 | Credentials                   | Description                                              |
 |---------------------------|--------------------------------------------------|
-| `CLOVA_OAUTH_CLIENT_ID`     | The client ID registered on the Clova Developer Console         |
-| `CLOVA_OAUTH_CLIENT_SECRET` | The client secret obtained from the Clova Developer Console |
+| `CLOVA_OAUTH_CLIENT_ID`     | The client ID registered on the Clova developer console         |
+| `CLOVA_OAUTH_CLIENT_SECRET` | The client secret obtained from the Clova developer console |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The Clova Developer Console for CIC is currently under development. Contact your Clova representative personnel to ask for help with obtaining client credentials.</p>
+  <p>The Clova developer console for CIC is currently under development. Contact your Clova representative personnel to ask for help with obtaining client credentials.</p>
 </div>

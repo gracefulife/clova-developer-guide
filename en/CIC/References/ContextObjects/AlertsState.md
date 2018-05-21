@@ -1,5 +1,5 @@
-{{string}}## Alerts.AlertsState {#AlertsState}
-`Alerts.AlertsState` is a format for reporting the alarm information of the client to CIC.
+## Alerts.AlertsState {#AlertsState}
+`Alerts.AlertsState` is a format for reporting to CIC about the alarm information of the client.
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
@@ -7,7 +7,6 @@
 </div>
 
 ### Object structure
-
 {% raw %}
 
 ```json
@@ -40,12 +39,12 @@
 
 ### Payload fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `allAlerts[]`    | [AlertInfoObject](#AlertInfoObject) array | Contains a list of all alarms set on the client. Add information of all the alarms set on the client in this array.    | Required |
-| `activeAlerts[]` | [AlertInfoObject](#AlertInfoObject) array | Contains a list of alarms currently ringing on the client. Add an empty array if there is no alarm ringing.  | Required |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `allAlerts[]`    | [AlertInfoObject](#AlertInfoObject) array | The object array of the list of all alarms set on the client. Add information of all the alarms set on the client in this array.    | Required |
+| `activeAlerts[]` | [AlertInfoObject](#AlertInfoObject) array | The object array of the list of alarms currently ringing on the client. Add an empty array if there is no alarm ringing.  | Required |
 
-### Example
+### Object example
 
 {% raw %}
 
@@ -104,18 +103,17 @@
 {% endraw %}
 
 ### AlertInfoObject {#AlertInfoObject}
-
-Contains a single alarm. Fill in the individual alarm details according to the format provided below.
+This object contains a single alarm. Fill in the individual alarm details according to the format provided below.
 
 #### Object fields
 
-| Field       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `scheduledTime` | string | The date and time for the alarm to ring (Format: YYYY-MM-DDThh:mm:ssZ)   | Required |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `scheduledTime` | string | The set date and time for the alarm (YYYY-MM-DDThh:mm:ssZ).   | Required |
 | `token`         | string | The ID of the alarm.                   | Required |
-| `type`          | string | The alarm type. Available types are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
+| `type`          | string | The alarm type. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
-#### Example
+#### Object example
 
 {% raw %}
 
@@ -146,5 +144,4 @@ Example 3: REMINDER type
 {% endraw %}
 
 ### See also
-
 * [`Alerts`](/CIC/References/CICInterface/Alerts.md)

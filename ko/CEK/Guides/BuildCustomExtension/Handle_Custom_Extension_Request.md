@@ -1,5 +1,5 @@
 ## Custom extension 요청 처리하기 {#HandleCustomExtensionRequest}
-Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 형태의 사용자 요청을 수신합니다(HTTPS Request). Custom extension은 일반적으로 다음과 같이 요청을 처리하고 응답해야 합니다.
+Custom extension은 CEK로부터 [custom extension 메시지](/CEK/References/CEK_API.md#CustomExtMessage) 형태의 사용자 요청을 수신합니다(HTTP Request). Custom extension은 일반적으로 다음과 같이 요청을 처리하고 응답해야 합니다.
 
 ![](/CEK/Resources/Images/CEK_Custom_Extension_Sequence_Diagram.png)
 

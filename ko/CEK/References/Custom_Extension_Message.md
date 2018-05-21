@@ -2,7 +2,7 @@
 Custom extension 메시지는 CEK와 custom extension 사이에서 정보를 주고 받을 때 사용하는 메시지입니다. Custom extension 메시지는 [요청 메시지](#CustomExtRequestMessage)와 [응답 메시지](#CustomExtResponseMessage)로 나뉩니다. 요청 메시지는 다시 [요청 타입](#CustomExtRequestType)에 따라 `LaunchRequest`, `IntentRequest`, `SessionEndedRequest`과 같이 3가지 타입으로 구분됩니다.
 
 ### 요청 메시지 {#CustomExtRequestMessage}
-CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTPS Request). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 `request` 필드에 대해 설명합니다.
+CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 전달할 때 요청 메시지를 전달합니다(HTTP Reqeuset). 여기에서는 요청 메시지의 구조, 각 필드의 설명, 그리고 요청 타입과 각 타입에 따라 달라지는 `request` 필드에 대해 설명합니다.
 
 #### Message structure
 
@@ -302,7 +302,7 @@ CEK는 Clova가 분석한 사용자의 요구 사항을 custom extension으로 �
 | `type`          | string  | 요청 메시지의 타입. `"SessionEndedRequest"` 값으로 고정됩니다. | 항상 |
 
 ### 응답 메시지 {#CustomExtResponseMessage}
-Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 합니다(HTTPS Response). 여기에서는 응답 메시지의 구조와 각 필드에 대해 설명합니다.
+Extension은 요청 메시지를 처리한 후 응답 메시지를 전달해야 합니다(HTTP Response). 여기에서는 응답 메시지의 구조와 각 필드에 대해 설명합니다.
 
 #### Message structure
 {% raw %}

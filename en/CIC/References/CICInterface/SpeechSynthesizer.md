@@ -1,34 +1,44 @@
 # SpeechSynthesizer
 
-The SpeechSynthesizer namespace provides interfaces to request CIC to synthesize text into a TTS (text-to-speech) audio file or to give a synthesized audio file to the client. SpeechSynthesizer provides the following events and directives.
+The SpeechSynthesizer namespace provides interfaces for requesting CIC to synthesize text into text-to-speech (TTS) or to provide TTS to the client. SpeechSynthesizer provides the following events and directives.
 
-| Message name         | Message type  | Description                                   |
+| Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Request`](#Request) | Event     | A message to request to CIC to synthesize a specified text into a TTS audio file. |
-| [`Speak`](#Speak)     | Directive | Instructs a client to play the synthesized TTS audio file through the speaker. |
+| [`Request`](#Request)                 | Event     | Requests to CIC to generate a specified text into TTS.                                               |
+| [`Speak`](#Speak)                     | Directive | Instructs the client to play the synthesized TTS through the client speaker.                                        |
+| [`SpeechFinished`](#SpeechFinished)   | Event     | Reports to CIC that the client has finished playing the TTS.                                 |
+| [`SpeechStarted`](#SpeechStarted)     | Event     | Reports to CIC that the client has started playing the TTS.                                 |
+| [`SpeechStopped`](#SpeechStopped)     | Event     | Reports to CIC that the client has stopped playing the TTS.                                 |
 
 
 ## Request event {#Request}
 
-A message for requesting CIC to synthesize the given text into a TTS audio file.
+Requests to CIC to generate a specified text into TTS.
 
 ### Context fields
 
-None
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-
-| Field name       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `text`  | string | The text to synthesize into a speech.           | Required    |
-| `lang`  | string | The language used for speech synthesis: <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"zh"</code>: Chinese</li></ul> | Required    |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `text`  | string | The text to request for TTS generation.           | Required    |
+| `lang`  | string | The language used for speech synthesis. <ul><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"ko"</code>: Korean</li><li><code>"zh"</code>: Chinese</li></ul> | Required    |
 
 ### Message example
-
 {% raw %}
 ```json
 {
-  "context": [],
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
   "event": {
     "header": {
       "namespace": "SpeechSynthesizer",
@@ -45,38 +55,35 @@ None
 {% endraw %}
 
 ### See also
-
-* [`SpeechSynthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak)
+* [`SpeechSynthesizer.Speak`](#Speak)
 
 ## Speak directive {#Speak}
-
-Instructs a client to play the synthesized TTS audio file through the client's speaker. CIC can return multiple Speak directives in response to a single request. As such, your client must play audio files in the same order it has received messages. Audio files can be returned either in a [multipart message](/CIC/References/CIC_API.md#MultipartMessage) or an audio streaming address.
+Instructs the client to play the synthesized TTS through the client speaker. CIC can return multiple `SpeechSynthesizer.Speak` directives as a response to a single request. As such, your client must play TTS in the same order it has received messages. TTS can be returned either in a [multipart message](/CIC/References/CIC_API.md#MultipartMessage) or an audio streaming address.
 
 ### Payload fields
-
-| Field name       | Type    | Description                     | Provided |
-|---------------|:---------:|-----------------------------|:---------:|
-| `format`               | string  | The file format of the TTS audio file. The value is always `"AUDIO_MPEG"`. | Always |
-| `url`                  | string  | The URL of the TTS audio file to play.                        | Always |
-| `token`                | string  | The ID of the given TTS audio file.                    | Always |
-| `ttsLang`              | string  | The language used for speech synthesis. <ul><li><code>"ko"</code>: Korean</li><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"zh"</code>: Chinese</li></ul> | Conditional |
-| `x-clova-pause-before` | number  | The idle time before playing the TTS audio. The value is an Integer and the unit is millisecond.        | Conditional |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `format`               | string  | The format of the TTS audio file. The value is always `"AUDIO_MPEG"`. | Always    |
+| `url`                  | string  | The URL of the TTS audio file to play.                        | Always    |
+| `token`                | string  | The token of the TTS audio file.                    | Always    |
+| `ttsLang`              | string  | The language used for TTS synthesis. <ul><li><code>"en"</code>: English</li><li><code>"ja"</code>: Japanese</li><li><code>"ko"</code>: Korean</li><li><code>"zh"</code>: Chinese</li></ul> | Conditional    |
+| `x-clova-pause-before` | number  | The idle time before playing the TTS audio. The value is an integer and the unit is in milliseconds.        | Conditional    |
 
 ### Remarks
 
-The `url` field can be in either one of the following two formats. Process the audio according to the specified format.
+The `url` can be in either one of the formats below. Process the audio according to the specified format.
 
 | Format | Description |
 |---------|-------------------------------|
-| `cid:{Content-ID}` | The synthesized audio is returned as a multipart message. Play the audio data (binary type) that has the same `Content-ID` message header. Since messages containing audio data are not received sequentially, play audio data based on the `Content-ID` of the directives received. |
-| URL | Play the audio stream specified by the `url` provided.  |
+| `cid:{Content-ID}` Format | If the `url` value of the client is in a `cid:{Content-ID}` format, the synthesized voice is sent as multipart message. Play the audio data (binary type) that has the same `Content-ID` message header. Since the order of messages containing audio data are not guaranteed, output audio data based on the `Content-ID` of the directives received.|
+| URL format | Play the audio stream in the provided `url`.  |
 
 ### Message example
 
 {% raw %}
 ```
-// cid:{Content-Id} format
-// Play the audio data with the Content-Id 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
+// cid:{Content-ID} format
+// Play the audio data with the Content-ID: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 
 --Boundary-Text
 Content-Disposition: form-data; name="speakDirective1"
@@ -102,7 +109,7 @@ Content-Type: application/json; charset=utf-8
 
 --Boundary-Text
 Content-Disposition: form-data; name="attachment"
-Content-Id: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
+Content-ID: 22f2ca4e-3b08-4d33-b32a-7eb62a8c0369
 Content-Type: application/octet-stream
 
 { Audio Attachment }
@@ -132,5 +139,151 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 ### See also
+* [`SpeechSynthesizer.Request`](#Request)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
 
-* [`SpeechSynthesizer.Request`](/CIC/References/CICInterface/SpeechSynthesizer.md#Request)
+## SpeechFinished event {#SpeechFinished}
+Reports to CIC that the client has finished playing the TTS.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | The token value for TTS identification received from the [`SpeechSynthesizer.Speak`](#Speak) directive. | Always    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechFinished",
+      "messageId": "15472673-49a0-4aa1-8cf0-6355669ea473"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+## SpeechStarted event {#SpeechStarted}
+Reports to CIC that the client has started playing the TTS.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | The token value for TTS identification received from the [`SpeechSynthesizer.Speak`](#Speak) directive. | Always    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechStarted",
+      "messageId": "380c805c-0f19-4ed2-84e2-056f2f4016de"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStopped`](#SpeechStopped)
+
+## SpeechStopped event {#SpeechStopped}
+Reports to CIC that the client has stopped playing the TTS.
+
+### Context fields
+
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `token`       | string  | The token value for TTS identification received from the [`SpeechSynthesizer.Speak`](#Speak) directive. | Always    |
+
+### Message example
+{% raw %}
+
+```json
+{
+  "context": [
+    {{Alerts.AlertsState}},
+    {{AudioPlayer.PlayerState}},
+    {{Device.DeviceState}},
+    {{Device.Display}},
+    {{Clova.Location}},
+    {{Clova.SavedPlace}},
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
+  ],
+  "event": {
+    "header": {
+      "namespace": "SpeechSynthesizer",
+      "name": "SpeechStopped",
+      "messageId": "9a511e5c-4f20-413a-94cc-48172fc8710e"
+    },
+    "payload": {
+      "token": "cd14ad7a-9611-4b55-8ff5-c9097265950a"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`SpeechSynthesizer.Speak`](#Speak)
+* [`SpeechSynthesizer.SpeechFinished`](#SpeechFinished)
+* [`SpeechSynthesizer.SpeechStarted`](#SpeechStarted)

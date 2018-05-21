@@ -1,17 +1,13 @@
 # CIC API reference
-
 The CIC API is a set of REST APIs provided for clients. The following covers topics related to CIC API.
-
-* [API basics](#BasicInfo)
-* [Establishing downchannel](#EstablishDownchannel)
+* [API basic information](#BasicInfo)
+* [Establishing a downchannel](#EstablishDownchannel)
 * [Sending events](#SendEvent)
 * [Message format](#CICMessageFormat)
 * [Interface](#CICInterface)
 
-## API basics {#BasicInfo}
-
+## API basic information {#BasicInfo}
 Before using CIC, we recommend you take a look at the basics of the CIC API.
-
 * [Base URL](#BaseURL)
 * [Multipart messages](#MultipartMessage)
 
@@ -22,31 +18,24 @@ The base URL of the CIC API is as follows.
 </code></pre>
 
 ### Multipart messages {#MultipartMessage}
-
-Send [events](#Event) to CIC as multipart messages over the HTTP/2 protocol.
+The client sends [events](#Event) to CIC as multipart messages over the HTTP/2 protocol.
 
 ![](/CIC/Resources/Images/HTTP2_Structure.png)
 
-Suppose you are sending a user's voice request to CIC. You need to send the [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event to CIC along with the voice record, as a multipart message.
+Suppose you are sending a user voice request to CIC. You need to send the [SpeechRecognizer.Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event to CIC, along with the audio recording, as a multipart message. To compose a multipart message for your event: Set the `Content-Type` to `multipart/form-data`. Fill in the first message part with the event information in JSON. Fill in the second message part with binary data containing the voice recording of the user.
 
-To compose a multipart message for your event:
+Specify a delimiter in the `boundary` field to distinguish message blocks. If a delimiter is used between message blocks, insert a double hyphen (--) on the left of delimiter. After the last message block, insert a double hyphen (--) on both sides of the delimiter. Make sure the delimiters are not contained inside a message part.
 
-* Set the `Content-Type` to `multipart/form-data`.
-* Fill in the first message part with the event information, in JSON.
-* Fill in the second message part with binary data containing user's voice recording.
-* Specify a delimiter in the `boundary` field to distinguish message blocks.
-
-When specifying the delimiter, add two consecutive hyphens as a prefix to the delimiter. To indicate a message part as the last, add an extra delimiter after the last message part, with a prefix _and_ a suffix, both consisting of two consecutive hyphens (--). Make sure the delimiters are not contained inside a message part.
-
-The following is a general example of a user's request (event) to CIC as a multipart message.
+The following is a general example of a user request (event) to CIC as a multipart message.
 
 {% raw %}
 ```
 :method = POST
 :scheme = https
 :path = /v1/events
-authorization = Bearer {{clova-access-token}}
-Content-Type = multipart/form-data; boundary=this-is-boundary-text
+User-Agent: {{User-Agent_string}}
+Authorization: Bearer {{clova-access-token}}
+Content-Type: multipart/form-data; boundary=this-is-boundary-text
 
 --this-is-boundary-text
 [ Message Header ]
@@ -56,31 +45,6 @@ Content-Type: application/json; charset=UTF-8
 [ Message Body ]
 {
   "context": [
-      {
-        "header": {
-          "namespace": "Alerts",
-          "name": "AlertsState"
-        },
-        "payload": {
-          "allAlerts": [
-            ...
-          ],
-          "activeAlerts": [
-            ...
-          ]
-        }
-      },
-      ...
-      {
-        "header": {
-          "namespace": "Speaker",
-          "name": "VolumeState"
-        },
-        "payload": {
-          "volume": 25,
-          "muted": false
-        }
-      }
   ],
   "event": {
     "header": {
@@ -106,17 +70,16 @@ Content-Type: application/octet-stream
 {% endraw %}
 
 In general, an HTTP response would contain [directive(s)](#Directive) and an [HTTP status code](https://tools.ietf.org/html/rfc7231#section-6) (200), which indicates success. In our example, the following directives would be received.
+* [`Synthesizer.Speak`](/CIC/References/CICInterface/SpeechSynthesizer.md#Speak) is a directive to output speech and delivers additional speech data.
+* Another directive to send additional information may be sent along with the `Synthesizer.Speak` directive. For example, if the user request had been to play some music, the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive with streaming information would be returned.
 
-* [`Synthesizer.Speak`](/CIC/References/APIs/SpeechSynthesizer.md#Speak): A directive instructing a client to play the given synthesized speech.
-* Additional directives: For example, if the user's request had been to play some music, the [`AudioPlayer.Play`](/CIC/References/CICInterface/AudioPlayer.md#Play) directive with streaming information would be returned.
-
-As explained previously, CIC's response to the client is also in the form of a multipart message, consisting of directives and speech data, as follows.
+As previously explained, responses sent from CIC to the client are also in the form of a multipart message consisting of directives and speech data. This multipart message has the following structure:
 
 {% raw %}
 ```
 HTTP/2 {{HTTP STATUS CODE}}
 Content-Type: multipart/related; boundary=this-is-boundary-text;
-date: {{DATETIME}}
+Date: {{DATETIME}}
 
 --this-is-boundary-text
 [ Message Header ]
@@ -159,53 +122,56 @@ Content-Type: application/octet-stream
 GET /v1/directives
 ```
 
-A client's foremost task is establishing a downchannel with CIC. A downchannel is used by CIC to send directives to clients on its own (cloud-initiated) when certain conditions are met or should needs arise. See [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#CreateConnection) for more details on how to establish a downchannel.
+The foremost task of a client is establishing a downchannel with CIC. A downchannel is used to send cloud-initiated directives to the client when conditions are met or when needs arise. For more information on establishing a downchannel, see [Connecting with CIC](/CIC/Guides/Interact_with_CIC.md#CreateConnection).
 
 <div class="danger">
   <p><strong>Caution!</strong></p>
-  <p>To <a href="#SendEvent">send events</a> to CIC you MUST create a downchannel. Otheriwse, you cannot send events to CIC.</p>
+  <p>The client must create a downchannel in order to <a href="#SendEvent">send events</a> to CIC.</p>
 </div>
 
 ### Request header
 
 | Request header | Description                                                                |
 |----------------|--------------------------------------------------------------------|
-| Authorization  | <p>The Clova access token acquired.</p><pre><code>Bearer [Clova access token]</code></pre> |
-| User-Agent  | <p>The <a href="/CIC/Guides/Interact_with_CIC.html#UserAgentString">user-agent string</a>.</p><pre><code>User-Agent: [User-Agent string]</code></pre> |
+| Authorization  | <p>Enter the obtained Clova access token.</p><pre><code>Bearer [Clova access token]</code></pre> |
+| User-agent     | <p>Enter the <a href="/CIC/Guides/Interact_with_CIC.html#UserAgentString">user agent string</a>.</p><pre><code>User-Agent: [User-Agent string]</code></pre>  |
 
 ### Request example
 
 <pre><code>GET /v1/directives HTTP/2
-Host: https://prod-ni-cic.clova.ai/
+Host: {{ book.CICBaseURL }}
 User-Agent: MyOrganizationName/MyAppName/2.1.2-release (Android 7.0;SettopBox;target=KR;other=sample)
 Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 </code></pre>
 
 ### Response header
 
-| Response header | Description                                                       |
-|-------------------------|--------------------------------------------------------------------|
-| Content-Type    | <p>The content type of the HTTP response message. Set the content type as a <a href="#MultipartMessage">multipart message</a> type plus a delimiter as follows:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
+| Response header | Description                                                                |
+|-----------------|--------------------------------------------------------------------|
+| Content-type    | <p>Declare the <a href="#MultipartMessage">multipart message</a> type and delimiter:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
-| Response message header | Description                                                       |
+| Response message header | Description                                                                |
 |-------------------------|--------------------------------------------------------------------|
-| Content-Disposition     | <p>The content metadata for internal use.</p><pre><code>form-data; name="[data]"</code></pre>                   |
-| Content-Type            | <p>The content type of the response message.</p><pre><code>application/json; charset=UTF-8</code></pre>            |
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-Type            | <pre><code>application/json; charset=UTF-8</code></pre>            |
 
 ### Response message
-
-As a response to the client's request, CIC returns an HTTP response containing the [Clova.Hello](/CIC/References/CICInterface/Clova.md#Hello) directive. This directive indicates that a downchannel has been established between CIC and the client.
+As a response to the client request, CIC returns an HTTP response containing the [Clova.Hello](/CIC/References/CICInterface/Clova.md#Hello) directive. This directive indicates that a downchannel has been established between CIC and the client.
 
 ### Status codes
 
 | Status code       | Description                     |
-|-------------------------|-------------------------|
-| 200 OK                    | A status code that is returned when a downchannel has been created successfully and connection is established between a client and CIC. Now, the client can receive cloud-initiated messages, i.e. CIC can initiate sending directives to the client without having to receive a request from client first. |
-| 400 Bad Request           | The user request sent to CIC was in a wrong format.                       |
-| 401 Unauthorized          | Failed to authenticate the user. Check if the Clova access token is valid. |
-| 500 Internal Server Error | An internal server error occurred.                                                      |
+|---------------|-------------------------|
+| 200 OK                    | Successful connection setup of a downchannel. This will be followed by a cloud-initiated directive.        |
+| 400 Bad Request           | User request is in the wrong format.                                                                       |
+| 401 Unauthorized          | Failed to authenticate the user. Try [user authentication](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) again.                       |
+| 429 Too Many Requests      | Client has requested more than two connections to <code>/v1/directives</code> simultaneously or in a very short period of time. The client should make one request for downchannel configuration.  |
+| 500 Internal Server Error | An internal server error.                                                                                                      |
+
+### Remarks
+The client must maintain one open downchannel with CIC at all times. When there is an open downchannel and an additional request to create a downchannel is made to <code>/v1/directives</code>, the existing downchannel will be closed. Also, if the client requests more than two connections to <code>/v1/directives</code>simultaneously or in a very short period of time, CIC will return the "429 Too Many Requests" error message to the client.
 
 ### Response example
 
@@ -230,11 +196,11 @@ Content-Type: application/json; charset=utf-8
         "payload": {}
     }
 }
---b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba--
+--b4bc211bbd32e5cb5989bc7ab2d3088fdd72dcc6696253151c98176f88ba
 
 // If the request has failed
 HTTP/2 400
-Content-Type: multipart/related; boundary=883fd3b825c9b883f99b9ffb4d2a2cbd7a24c9c61bfa69d70c51140f34ca;
+content-type: multipart/related; boundary=883fd3b825c9b883f99b9ffb4d2a2cbd7a24c9c61bfa69d70c51140f34ca;
 date: Fri, 04 Aug 2017 09:42:46 GMT
 
 --883fd3b825c9b883f99b9ffb4d2a2cbd7a24c9c61bfa69d70c51140f34ca
@@ -256,37 +222,38 @@ Content-Type: application/json; charset=utf-8
 ```
 {% endraw %}
 
-## Sending events to CIC {#SendEvent}
+## Sending events {#SendEvent}
 
 ```
 POST /v1/events
 ```
 
-Clients use events to send CIC the user's voice request or the client's current state. Events are sent as HTTP requests and in return, an HTTP response comes containing directives. See [Sending events](/CIC/Guides/Interact_with_CIC.md#SendEvent) and [Handling directives](/CIC/Guides/Interact_with_CIC.md#HandleDirective) for more information.
+Clients use events to send user voice requests or the current client state to CIC. Events are sent as HTTP requests and an HTTP response is returned containing directives. For more information, see [Sending events](/CIC/Guides/Interact_with_CIC.md#SendEvent) and [Handling directives](/CIC/Guides/Interact_with_CIC.md#HandleDirective).
 
 ### Request header
 
 | Request header  | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Authorization   | <p>The Clova access token acquired.</p><pre><code>Bearer [Clova access token]</code></pre>  |
-| Content-Type    | <p>The content type of the HTTP request message. Set the content type as a <a href="#MultipartMessage">multipart message</a> type plus a delimiter as follows:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
+| Authorization   | <p>Enter the obtained Clova access token.</p><pre><code>Bearer [Clova access token]</code></pre> |
+| Content-type    | <p>Declare the <a href="#MultipartMessage">multipart message</a> type and delimiter:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>  |
+| User-agent      | <p>Enter the <a href="/CIC/Guides/Interact_with_CIC.html#UserAgentString">user agent string</a>.</p><pre><code>User-Agent: [User-Agent string]</code></pre>  |
 
 ### Request message header
 
 | Request message header  | Description                                                                |
 |-------------------------|--------------------------------------------------------------------|
-| Content-Disposition     | <p>The content metadata for internal use.</p><pre><code>form-data; name="[data]"</code></pre>                   |
-| Content-Type            | <p>The content type of the request message.</p><ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul> |
+| Content-Disposition     | <pre><code>form-data; name="[data]"</code></pre>                   |
+| Content-type            | <ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul> |
 
 ### Request message
-
-To send CIC a user request or the client state, send an [event](#Event) and additional data (e.g. voice data) in the form of a [multipart message](#MultipartMessage). The content and structure of an event are determined by the type of information the event is delivering. This information type is categorized by [interfaces](#CICInterface).
+To send a user request or the client state to CIC, you need to send an [event](#Event) and additional speech data in the form of a [multipart message](#MultipartMessage). The content and structure of an event are determined by the type of information the event is delivering. This information type is categorized as [interfaces](#CICInterface).
 
 ### Request example
 
 <pre><code>POST /v1/events HTTP/2
 Host: {{ book.CICBaseURL }}
 Accept: */*
+User-Agent: MyOrganizationName/MyAppName/2.1.2-release (Android 7.0;SettopBox;target=KR;other=sample)
 Authorization: Bearer XHapQasdfsdfFsdfasdflQQ7w
 > Content-Length: 456
 > Content-Type: multipart/form-data; boundary=920d6335ba920d6337a319f
@@ -296,33 +263,33 @@ Content-Disposition: form-data; name="metadata"
 Content-Type: application/json; charset=UTF-8
 
 {
-  "context": [
-    {
-      "header": {
-        "namespace": "Alerts",
-        "name": "AlertsState"
-      },
-      "payload": {
-        "allAlerts": [
-          ...
-        ],
-        "activeAlerts": [
-          ...
-        ]
-      }
+"context": [
+  {
+    "header": {
+      "namespace": "Alerts",
+      "name": "AlertsState"
     },
-    ...
-    {
-      "header": {
-        "namespace": "Speaker",
-        "name": "VolumeState"
-      },
-      "payload": {
-        "volume": 25,
-        "muted": false
-      }
+    "payload": {
+      "allAlerts": [
+        ...
+      ],
+      "activeAlerts": [
+        ...
+      ]
     }
-  ],
+  },
+  ...
+  {
+    "header": {
+      "namespace": "Speaker",
+      "name": "VolumeState"
+    },
+    "payload": {
+      "volume": 25,
+      "muted": false
+    }
+  }
+],
   "event": {
     "header": {
       "namespace": "SpeechRecognizer",
@@ -331,7 +298,24 @@ Content-Type: application/json; charset=UTF-8
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "profile": "CLOSE_TALK"
+      "lang": "ko",
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "deviceUUID": "f003af9d-14c5-424b-b1f9-f0134bd0ed86",
+          "wakeWord": {
+            "name": "clova",
+            "confidence": 0.812312,
+            "indices": {
+              "startIndexInSamples": 0,
+              "endIndexInSamples": 16000
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -348,29 +332,29 @@ Content-Type: application/octet-stream
 
 | Response header | Description                                                                |
 |-----------------|--------------------------------------------------------------------|
-| Content-Type    | <p>The content type of the HTTP response message. The content type is specified as <a href="#MultipartMessage">multipart message</a> type plus a delimiter as follows:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
+| Content-type    | <p>Declare the <a href="#MultipartMessage">multipart message</a> type and delimiter:</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre> |
 
 ### Response message header
 
 | Response message header | Description                                                                |
 |-------------------------|--------------------------------------------------------------------|
-| Content-Disposition     | <p>The content metadata for internal use.</p><pre><code>multipart/form-data; boundary=[boundary_term]</code></pre>                                                    |
-| Content-ID              | The message ID:<ul><li>UUID format</li><li>A client can identify the messages to be processed by the <code>cid:[UUID]</code> which can be found from the <code>payload</code> field of a directive. </li></ul> |
-| Content-Type            | <p>The content type of the response message.</p><ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul>  |
+| Content-disposition     | The content metadata for internal use.                                         |
+| Content-ID              | The message ID:<ul><li>UUID format</li><li>A client can identify the messages to process by the <code>cid:[UUID]</code> in the <code>payload</code> field of a directive.</li></ul> |
+| Content-type            | <ul><li>JSON data: <code>application/json; charset=UTF-8</code></li><li>Binary audio data: <code>application/octet-stream</code></li></ul>                     |
 
 ### Response message
-
-CIC returns [directives](#Directive) and additional speech data in a [multipart message](#MultipartMessage). The content and configuration of a directive are determined by which directive CIC is sending, which are categorized into [interfaces](#CICInterface).
+CIC returns an HTTP response containing the [directive](#Directive) telling a client to perform a specific action and additional audio data in a form of [multipart message](#MultipartMessage). The content and structure of a directive is determined by the information in the directive sent from CIC. This information type is categorized as [interfaces](#CICInterface).
 
 ### Status codes
 
 | Status code       | Description                     |
 |---------------|-------------------------|
 | 200 OK                    | CIC has successfully received an event from a client and the response contains at least one directive for the client. |
-| 204 No Content            | CIC has successfully received an event from a client and there is no directive for the client.                    |
-| 400 Bad Request           | The user request was sent in a wrong format.                   |
-| 401 Unauthorized          | Failed to authenticate the user. Check if the Clova access token is valid. |
-| 500 Internal Server Error | An internal server error occurred.                                  |
+| 204 No Content            | CIC has successfully received an event from a client and contains no directive for the client.                    |
+| 400 Bad Request           | User request is in the wrong format.                                                                        |
+| 401 Unauthorized          | Failed to authenticate the user. Try [user authentication](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) again.                        |
+| 412 Precondition Failed   | The pre-condition required to send user request is not satisfied. This usually occurs when the client has not [established a downchannel](#EstablishDownchannel).  |
+| 500 Internal Server Error | An internal server error occurred.                                                                                       |
 
 ### Response example
 
@@ -454,8 +438,7 @@ Content-Type: application/json; charset=utf-8
 ```
 {% endraw %}
 
-## Message types {#CICMessageFormat}
-
+## Message format {#CICMessageFormat}
 The CIC API uses following types of messages, each with a different structure.
 
 * [Events](#Event)
@@ -463,11 +446,9 @@ The CIC API uses following types of messages, each with a different structure.
 * [Error messages](#Error)
 
 ### Events {#Event}
+Events are used by clients to send user voice request or the client state to CIC. One of the main events used is the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event, which requests CIC to receive and recognize user voice requests.
 
-Events are used by clients to send user's voice request or the client's state to CIC. One of the main events used is the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event, which requests CIC to take _and_ recognize user's voice request.
-
-#### Event structure
-
+#### Message structure
 {% raw %}
 ```json
 {
@@ -493,51 +474,49 @@ Events are used by clients to send user's voice request or the client's state to
 ```
 {% endraw %}
 
-#### Event fields
+#### Message fields
 
-| Field name       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `context[]`                      | object array | Contains the client state information to send to CIC. Available states, i.e. [context](/CIC/References/Context_Objects.md) objects are as follows: <ul><li><a href="/CIC/References/Context_Objects.md#AlertsState"><code>Alerts.AlertsState</code></a>: Alarm/timer state</li><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Recent playback state</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: Client device's state information</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: Client device's display information</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: Client's location information</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Details of locations saved on a client</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: Client speaker's volume level and mute state</li></ul> | Required     |
-| `event`                        | object       | Contains the header and the body data (payload) of the event.                                                                 | Required     |
-| `event.header`                 | object       | The header of this event.                                                                                                 | Required     |
-| `event.header.dialogRequestId` | string       | The dialog ID. When clients send the [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event and the [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) event, the clients must create and specify a [dialog ID](/CIC/CIC_Overview.md#DialogIDandClientOP).| Optional |
-| `event.header.messageId`       | string       | The message ID. Identifies individual messages.                                                                 | Required     |
-| `event.header.name`            | string       | The name of the event.                                                                                             | Required     |
-| `event.header.namespace`       | string       | The namespace of the event.                                                                                       | Required     |
-| `event.payload`                | object       | Contains event details. The structure and field values of the this object depend on the nature ([CIC interface](#CICInterface)) of this event. | Required     |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `context[]`                      | object array | The object array that has the client state information to send to CIC. The [context](/CIC/References/Context_Objects.md) shown below can be used as object components. You can choose to include the required context for each event.<ul><li><a href="/CIC/References/Context_Objects.html#AlertsState"><code>Alerts.AlertsState</code></a>: Alarm or timer state</li><li><a href="/CIC/References/Context_Objects.html#PlaybackState"><code>AudioPlayer.PlaybackState</code></a>: Latest playback information</li><li><a href="/CIC/References/Context_Objects.html#DeviceState"><code>Device.DeviceState</code></a>: Client device information</li><li><a href="/CIC/References/Context_Objects.html#Display"><code>Device.Display</code></a>: Client display information</li><li><a href="/CIC/References/Context_Objects.html#Location"><code>Clova.Location</code></a>: Client location</li><li><a href="/CIC/References/Context_Objects.html#SavedPlace"><code>Clova.SavedPlace</code></a>: Predefined location</li><li><a href="/CIC/References/Context_Objects.html#VolumeState"><code>Speaker.VolumeState</code></a>: Speaker</li></ul> | Required |
+| `event`                        | object       | The header and payload of the event.                                                                 | Required |
+| `event.header`                 | object       | The header of the event.                                                                                                 | Required |
+| `event.header.dialogRequestId` | string       | The dialogue ID. The client must create and specify a [dialogue ID](/CIC/CIC_Overview.md#DialogIDandClientOP) when sending [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event and the [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) event.| Optional |
+| `event.header.messageId`       | string       | The message ID The message ID used to distinguish individual messages.                                                                 | Required |
+| `event.header.name`            | string       | The API name of an event.                                                                                             | Required |
+| `event.header.namespace`       | string       | The API namespace of an event.                                                                                       | Required |
+| `event.payload`                | object       | The information related to the event. The configuration and field values of the object depend on the ([CIC interface](#CICInterface)) of the event. | Required |
 
-
-#### Event example
-
+#### Message example
 {% raw %}
 ```json
 {
   "context": [
-      {
-        "header": {
-          "namespace": "Alerts",
-          "name": "AlertsState"
-        },
-        "payload": {
-          "allAlerts": [
-            ...
-          ],
-          "activeAlerts": [
-            ...
-          ]
-        }
+    {
+      "header": {
+        "namespace": "Alerts",
+        "name": "AlertsState"
       },
-      ...
-      {
-        "header": {
-          "namespace": "Speaker",
-          "name": "VolumeState"
-        },
-        "payload": {
-          "volume": 25,
-          "muted": false
-        }
+      "payload": {
+        "allAlerts": [
+          ...
+        ],
+        "activeAlerts": [
+          ...
+        ]
       }
+    },
+    ...
+    {
+      "header": {
+        "namespace": "Speaker",
+        "name": "VolumeState"
+      },
+      "payload": {
+        "volume": 25,
+        "muted": false
+      }
+    }
   ],
   "event": {
     "header": {
@@ -547,7 +526,24 @@ Events are used by clients to send user's voice request or the client's state to
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "profile": "CLOSE_TALK"
+      "lang": "ko",
+      "profile": "CLOSE_TALK",
+      "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
+      "initiator": {
+        "type": "WAKEWORD",
+        "inputSource": "SELF",
+        "payload": {
+          "deviceUUID": "f003af9d-14c5-424b-b1f9-f0134bd0ed86",
+          "wakeWord": {
+            "name": "clova",
+            "confidence": 0.812312,
+            "indices": {
+              "startIndexInSamples": 0,
+              "endIndexInSamples": 16000
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -555,16 +551,18 @@ Events are used by clients to send user's voice request or the client's state to
 {% endraw %}
 
 #### See also
-
-* [Context information](/CIC/References/Context_Objects.md)
-* [Interfaces](#CICInterface)
+* [Context](/CIC/References/Context_Objects.md)
+* [Interface](#CICInterface)
 
 ### Directives {#Directive}
+Directives are used when CIC returns responses to events from clients or when CIC sends information to clients under certain conditions. Directives are usually sent containing instructions for client to perform as a result of a user request. The client must handle the job or provide the results according to the intention contained in the directive.
 
-Directives are used for CIC to deliver instructions to clients either as responses to events (client requests) or as cloud-initiated messages. Directives are usually contain instructions for client to perform, as a result of user's request.
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>The client must ignore any unsupported or unknown directives received. It is important to note that a client can receive many directives from CIC at once as a multipart message. Then a client must only ignore unsupported or unknown directives from this message.</p>
+</div>
 
-#### Directive structure
-
+#### Message structure
 {% raw %}
 ```json
 {
@@ -582,20 +580,19 @@ Directives are used for CIC to deliver instructions to clients either as respons
 {% endraw %}
 
 
-#### Directive fields
+#### Message fields
 
-| Field name       | Type    | Description                     | Provided |
-|---------------|:---------:|-----------------------------|:---------:|
-| `directive`                        | object | Contains the header and the body (`payload`) of the directive.                                                                 | Always |
-| `directive.header`                 | object | The header of this directive.                                                                                                 | Always     |
-| `directive.header.dialogRequestId` | string | The dialog ID. Use this to identify the dialog associated with this directive. This field may not be provided if this directive is not a response to the [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event.  | Conditional  |
-| `directive.header.messageId`       | string | The message ID. Identifies individual messages.                                                        | Always |
-| `directive.header.name`            | string | The name of this directive.                                                                                             | Always |
-| `directive.header.namespace`       | string | The namespace of this directive.                                                                                        | Always |
-| `directive.payload`                | object | Contains directive details. The structure and field values of this object depend on the nature ([interface](#CICInterface)) of this directive. | Always |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `directive`                        | object | The header and `payload` of the directive.                                                                 | Always     |
+| `directive.header`                 | object | The header of the directive.                                                                                                 | Always     |
+| `directive.header.dialogRequestId` | string | The dialogue ID. Use this to identify the dialogue associated with this directive. This field may not be provided if this directive is not a response to the [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event.  | Conditional  |
+| `directive.header.messageId`       | string | The message ID The message ID used to distinguish individual messages.                                                                | Always     |
+| `directive.header.name`            | string | The API name of the directive.                                                                                             | Always     |
+| `directive.header.namespace`       | string | The API namespace of the directive.                                                                                       | Always     |
+| `directive.payload`                | object | The object that contains information related to the directive. The configuration and field values of the `payload` object depend on the ([interface](#CICInterface)) of the directive. | Always     |
 
-#### Directive example
-
+#### Message example
 {% raw %}
 ```json
 {
@@ -619,15 +616,12 @@ Directives are used for CIC to deliver instructions to clients either as respons
 {% endraw %}
 
 #### See also
-
-* [Interfaces](#CICInterface)
+* [Interface](#CICInterface)
 
 ### Error messages {#Error}
+Clova may not be able to provide its service properly if you send events in the wrong format or in invalid ways or if an internal server error occurs. In such cases, CIC returns error messages to clients. To handle errors, implement your client to provide corresponding UX or UI for the given error.
 
-Clova may not be able to provide its service properly if you send events in a wrong format or in invalid ways, or if an internal server error occurs. In such cases, CIC returns error messages to clients. To handle errors, implement your client to provide corresponding UX or UI for the given error.
-
-#### Error message structure
-
+#### Message structure
 {% raw %}
 ```json
 {
@@ -645,34 +639,32 @@ Clova may not be able to provide its service properly if you send events in a wr
 {% endraw %}
 
 
-#### Error fields
+#### Message fields
 
-| Field name       | Type    | Description                     | Provided |
-|---------------|:---------:|-----------------------------|:---------:|
-| `header`                 | object | The header of the error message                                             | Always |
-| `header.messageId`       | string | The message ID. This is an identifier for distinguishing error messages.            | Always |
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `header`                 | object | The header of the error message.                                             | Always |
+| `header.messageId`       | string | The message ID The message ID used to distinguish individual messages.            | Always |
 | `header.name`            | string | The name of the error message. The value is always `"Exception"`.                | Always |
 | `header.namespace`       | string | The namespace of the error message. The value is always `"System"`.             | Always |
-| `payload`                | object | The details of the error.                                | Always |
+| `payload`                | object | The information related to the error.                                | Always |
 | `payload.code`           | string | The error code. This has the same value as the HTTP response code of the message.           | Always |
 | `payload.description`    | string | The error message.                                                  | Always |
-
 
 #### Error code reference
 
 | Error code | Description                             |
 |---------|---------------------------------|
-| 400     | The user request sent was in a wrong format.                       |
-| 401     | Failed to authenticate the user. Check if the Clova access token is valid. |
-| 500     | An internal server error occurred.                                                      |
+| 400     | User request is in the wrong format.                                                 |
+| 401     | Failed to authenticate the user. Try [user authentication](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken) again. |
+| 500     | An internal server error.                                                                                |
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p>More error codes are to be added.</p>
 </div>
 
-### Error message example
-
+### Message example
 {% raw %}
 ```json
 {
@@ -689,11 +681,11 @@ Clova may not be able to provide its service properly if you send events in a wr
 ```
 {% endraw %}
 
-## Interfaces {#CICInterface}
+## Interface {#CICInterface}
 
-CIC messages are defined and categorized into namespaces by their purpose and usage. Use these interfaces to create events to send to CIC or to interpret directives returned from CIC.
+CIC messages are defined and categorized into interfaces by their purpose and usage and each interface is defined in a namespace. Use these interfaces to create events to send to CIC or to interpret directives returned from CIC.
 
-Available namespaces are as follows. Click each link to find out more about a namespace.
+The available namespaces are shown below. Click each link to find out more about a namespace.
 
 * [Alerts](/CIC/References/CICInterface/Alerts.md)
 * [AudioPlayer](/CIC/References/CICInterface/AudioPlayer.md)
@@ -707,6 +699,5 @@ Available namespaces are as follows. Click each link to find out more about a na
 * [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
 
 See the following indexes for a full list of interfaces grouped into events and directives.
-
-* [Event messages index](/CIC/References/CICInterface/Index_for_Events.md)
-* [Directive messages index](/CIC/References/CICInterface/Index_for_Directives.md)
+* [Index for events](/CIC/References/CICInterface/Index_for_Events.md)
+* [Index for directives](/CIC/References/CICInterface/Index_for_Directives.md)

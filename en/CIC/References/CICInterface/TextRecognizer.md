@@ -1,38 +1,22 @@
 # TextRecognizer
 
-The TextRecognizer namespace provides an interface to request to CIC to recognize the user's text entry.
+The TextRecognizer namespace provides an interface to request to CIC to recognize the user text entry.
 
 ## Recognize event {#Recognize}
-
-A message for sending user's text entry to CIC and requesting to recognize what the user wants. Clova's natural language analysis system and dialog understanding system interpret the given text and process user requests accordingly.
-
-Use this event instead of the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) in the following cases:
-
-* The client cannot receive voice requests from a user.
-* The client's microphone is not functioning properly.
+The `TextRecognizer.Recognize` event sends the user text entry to CIC and requests to recognize what the user wants. The natural language analysis system and dialogue understanding system of Clova interpret the text input and processes user requests accordingly. Use this event instead of the [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) when the client cannot receive voice requests from a user or the client microphone is not functioning properly.
 
 ### Context fields
 
-Send the following [context information](/CIC/References/Context_Objects.md) with this event.
-
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
+{% include "/CIC/References/CICInterface/Context_Objects_List.md" %}
 
 ### Payload fields
-
-| Field name       | Type    | Description                     | Required |
-|---------------|:---------:|-----------------------------|:---------:|
-| `explicit`         | boolean  | If receiving additional input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of `explicit` field specified in `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
-| `speechId`   | string   | If receiving additional input due to the [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional |
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `explicit`         | boolean  | If there is a need to acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `explicit` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
+| `speechId`   | string   | If there is a need to acquire additional user input due to the [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) directive, use the value of the `expectSpeechId` field specified in the `SpeechRecognizer.ExpectSpeech` directive.  | Optional  |
 | `text`        | string  | The text entered by a user. | Required     |
 
 ### Message example
-
 {% raw %}
 ```json
 // General user text input
@@ -44,7 +28,8 @@ Send the following [context information](/CIC/References/Context_Objects.md) wit
     {{Device.Display}},
     {{Clova.Location}},
     {{Clova.SavedPlace}},
-    {{Speaker.VolumeState}}
+    {{Speaker.VolumeState}},
+    {{SpeechSynthesizer.SpeechState}}
   ],
   "event": {
     "header": {
@@ -77,12 +62,5 @@ Send the following [context information](/CIC/References/Context_Objects.md) wit
 {% endraw %}
 
 ### See also
-
+* [`SpeechRecognizer.ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech)
 * [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize)
-* [`Alerts.AlertsState`](/CIC/References/Context_Objects.md#AlertsState)
-* [`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)
-* [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState)
-* [`Device.Display`](/CIC/References/Context_Objects.md#Display)
-* [`Clova.Location`](/CIC/References/Context_Objects.md#Location)
-* [`Clova.SavedPlace`](/CIC/References/Context_Objects.md#SavedPlace)
-* [`Speaker.VolumeState`](/CIC/References/Context_Objects.md#VolumeState)
