@@ -28,6 +28,8 @@
         <li>[CEK] Clova Home extension API에 <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ValueNotFoundError">ValueNotFoundError</a> 추가</li>
       </ul>
     </td>
+  </tr>
+  <tr>
     <td>v4.2</td><td>2018-05-14</td>
     <td>
       <ul>
