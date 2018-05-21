@@ -7,7 +7,7 @@ Clova Home extension 메시지는 `header` 필드와 `payload`로 구성되어 �
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova Home extension 메시지는 요청 메시지와 응답 메시지로 구분됩니다. CEK가 extension으로 보내는 요청 메시지는 `XxxxRequest`와 같은 이름을 가지며, extension이 CEK로 보내는 응답 메시지는 `XxxxConfirmation`이나 `XxxxResponse` 형태의 이름을 가집니다. 또한, 오류 상황에도 정상적인 HTTPS 응답(200 OK)을 보내야 하며, 이때 `XxxxError`와 같은 이름의 응답 메시지를 보내야 합니다.</p>
+  <p>Clova Home extension 메시지는 요청 메시지와 응답 메시지로 구분됩니다. CEK가 extension으로 보내는 요청 메시지는 `XxxxRequest`와 같은 이름을 가지며, extension이 CEK로 보내는 응답 메시지는 `XxxxConfirmation`이나 `XxxxResponse` 형태의 이름을 가집니다. 또한, 오류 상황에도 정상적인 HTTP 응답(200 OK)을 보내야 하며, 이때 `XxxxError`와 같은 이름의 응답 메시지를 보내야 합니다.</p>
 </div>
 
 #### Message structure
