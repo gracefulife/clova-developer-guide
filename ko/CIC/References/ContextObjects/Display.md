@@ -51,7 +51,7 @@
     "size": "custom",
     "contentLayer": {
       "width": 640,
-      "height": 280,
+      "height": 280
     }
   }
 }

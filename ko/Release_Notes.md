@@ -2,6 +2,13 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-05-21
+
+* CIC
+  * [Device.DeviceState](/CIC/References/Context_Objects.md#DeviceState) 맥락 객체의 [BluetoothInfoObject]/CIC/References/Context_Objects.md#BluetoothInfoObject에 빠진 필드(btlist[].role) 추가
+* CEK
+  * Clova Home extension API에 [ValueNotFoundError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#ValueNotFoundError) 추가
+
 ## 2018-05-14
 
 * CIC
