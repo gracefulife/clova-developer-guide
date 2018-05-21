@@ -49,9 +49,9 @@
     "orientation": "portrait",
     "dpi": 320,
     "size": "custom",
-    "customLayer": {
+    "contentLayer": {
       "width": 640,
-      "heigjt": 280,
+      "height": 280
     }
   }
 }
