@@ -97,3 +97,8 @@ Content-Type: application/octet-stream<br/>
   <p><strong>Note!</strong></p>
   <p><a href="/CIC/References/CICInterface/TextRecognizer.html#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
 </div>
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>이벤트 메시지를 보낼 때 반드시 <a href="#CreateConnection">Downchannel을 구성할 때 만든 연결</a>로 CIC 이벤트 메시지를 전송해야 합니다.</p>
+</div>
