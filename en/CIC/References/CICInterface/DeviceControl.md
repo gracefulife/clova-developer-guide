@@ -15,15 +15,16 @@ The DeviceControl namespace provides the following events and directives.
 | [`BtConnect`](#BtConnect)                 | Directive | Instructs the client to connect to a Bluetooth speaker.                               |
 | [`BtConnectByPINCode`](#BtConnectByPINCode) | Directive | Instructs the client to connect to the Bluetooth speaker that has requested a PIN code.                        |
 | [`BtDisconnect`](#BtDisconnect)           | Directive | Instructs the client to disconnect from the Bluetooth speaker.                               |
-| [`BtRequestForPINCode`](#BtRequestForPINCode) | Event | Sends the PIN code input request of the Bluetooth speaker to CIC.               |
+| [`BtRequestForPINCode`](#BtRequestForPINCode) | Event | Sends the PIN code input request of the Bluetooth speaker to CIC.     |
 | [`BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput) | Event | Sends the cancellation request for the PIN code input from the Bluetooth speaker to CIC. |
-| [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs the client to start the Bluetooth pairing mode.                                   |
-| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs the client to turn off the Bluetooth pairing mode.                                   |
+| [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs the client to start the Bluetooth pairing mode.                                       |
+| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs the client to turn off the Bluetooth pairing mode.                                       |
 | [`Decrease`](#Decrease)                   | Directive | Instructs the client to turn down the speaker volume or lower screen brightness by a default unit.                     |
 | [`ExpectReportState`](#ExpectReportState) | Directive | Instructs the client to report the current state of the client to CIC.                                 |
 | [`Increase`](#Increase)                   | Directive | Instructs the client to turn up the speaker volume or increase screen brightness by a default unit.                     |
-| [`LaunchApp`](#LaunchApp)                 | Directive | Instructs the client to launch a specified app.                                             |
-| [`OpenScreen`](#OpenScreen)               | Directive | Instructs the client to open the settings screen.                                              |
+| [`LaunchApp`](#LaunchApp)                 | Directive | **(Deprecated)** Instructs the client to execute a specified app.                           |
+| [`Open`](#Open)                           | Directive | Instructs the client to display a specific screen.                                               |
+| [`OpenScreen`](#OpenScreen)               | Directive | **(Deprecated)** Instructs the client to launch the settings screen.                              |
 | [`ReportState`](#ReportState)             | Event     | Reports to CIC of the current device state.                     |
 | [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | Requests for the current state of other client devices registered to the current user account.  |
 | [`SetValue`](#SetValue)                   | Directive | Instructs the client to set the speaker volume or screen brightness to a specified value.                    |
@@ -70,7 +71,7 @@ Reports to CIC that the client has taken an action on the specified feature or m
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | The control target.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wi-Fi</li></ul> | Required     |
-| `command`     | string  | Completed action.<ul><li> <code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"OpenScreen"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | Required   |
+| `command`     | string  | Completed action.<ul><li> <code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"Open"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | Required   |
 
 ### Remarks
 
@@ -115,9 +116,10 @@ Upon receiving this event, CIC sends the [`SynchronizeState`](#SynchronizeState)
 * [`DeviceControl.BtDisconnect`](#BtDisconnect)
 * [`DeviceControl.BtStartPairing`](#BtStartPairing)
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
+
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
-* [`DeviceControl.OpenScreen`](#OpenScreen)
+* [`DeviceControl.Open`](#Open)
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
@@ -135,12 +137,12 @@ Reports to CIC that the client cannot or has failed to take an action on the spe
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `target`      | string  | The control target.<ul><li><code>"airplane"</code>: Airplane mode</li><li><code>"app"</code>: App</li><li><code>"bluetooth"</code>: Bluetooth</li><li><code>"cellular"</code>: Cellular network</li><li><code>"channel"</code>: TV channel</li><li><code>"flashlight"</code>: Flashlight</li><li><code>"gps"</code>: GPS</li><li><code>"powersave"</code>: Power saving mode</li><li><code>"screenbrightness"</code>: Screen brightness</li><li><code>"soundmode"</code>: Sound mode</li><li><code>"volume"</code>: Speaker volume</li><li><code>"wifi"</code>: Wi-Fi</li></ul> | Required     |
-| `command`     | string  | Failed action. <ul><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"OpenScreen"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | Required   |
+| `command`     | string  | Failed action. <ul><li><code>"BtConnect"</code></li><li><code>"BtConnectByPINCode"</code></li><li><code>"BtDisconnect"</code></li><li><code>"BtStartPairing"</code></li><li><code>"BtStopPairing"</code></li><li><code>"Decrease"</code></li><li><code>"Increase"</code></li><li><code>"Open"</code></li><li><code>"SetValue"</code></li><li><code>"TurnOn"</code></li><li><code>"TurnOff"</code></li></ul> | Required   |
 
 ### Remarks
 
 * Upon receiving this event, CIC sends the [`SynchronizeState`](#SynchronizeState) directive to all the clients registered to the user account to notify the state change of the client device.
-* If the client has failed to launch an app after receiving the [`LaunchApp`](#LaunchApp) directive, set the `target` field to `"app"`.
+* If the client has failed to execute an app after receiving the [`LaunchApp`](#LaunchApp) directive, set the `target` field to `"app"`.
 
 ### Message example
 
@@ -183,8 +185,7 @@ Reports to CIC that the client cannot or has failed to take an action on the spe
 * [`DeviceControl.BtStopPairing`](#BtStopPairing)
 * [`DeviceControl.Decrease`](#Decrease)
 * [`DeviceControl.Increase`](#Increase)
-* [`DeviceControl.LaunchApp`](#LaunchApp)
-* [`DeviceControl.OpenScreen`](#OpenScreen)
+* [`DeviceControl.Open`](#Open)
 * [`DeviceControl.SetValue`](#SetValue)
 * [`DeviceControl.TurnOff`](#TurnOff)
 * [`DeviceControl.TurnOn`](#TurnOn)
@@ -654,17 +655,17 @@ Instructs the client to turn up the speaker volume or increase the screen bright
 
 ## LaunchApp directive {#LaunchApp}
 
-Instructs the client to launch a specified app. The app is specified by a custom URL scheme, a relay page URL, or the app name.
+Instructs the client to execute a specified app. The app is specified by a custom URL scheme, a relay page URL, or the app name.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `target`      | string  | The target app to launch. The app can be specified in one of the following ways: <ul><li>Custom URL scheme: A custom URL scheme of the target app. E.g. <code>"{{ book.OrientedServiceWithLowerCase }}searchapp://..."</code></li><li>Relay page URL: A relay page URL that launches the app if the app is already installed. E.g. <code>"http://{{ book.OrientedServiceWithLowerCase }}app.{{ book.OrientedServiceWithLowerCase }}.com/..."</code></li><li>App name: The name of the app recognized from user speech. E.g. <code>"{{ book.OrientedService }}App"</code></li></ul> | Always     |
+| `target`      | string  | The target app to launch. The app can be specified in one of the following ways: <ul><li>Custom URL scheme: A custom URL scheme of the target app. E.g. <code>"{{ book.OrientedServiceWithLowerCase }}searchapp://..."</code></li><li>Relay page URL: A relay page URL that executes the app if the app is already installed. E.g. <code>"http://{{ book.OrientedServiceWithLowerCase }}app.{{ book.OrientedServiceWithLowerCase }}.com/..."</code></li><li>App name: The name of the app recognized from user speech. E.g. <code>"{{ book.OrientedService }}App"</code></li></ul> | Always     |
 
 ### Remarks
 
-* If the client cannot or has failed to launch the specified app, send the result to CIC using the [`DeviceControl.ActionFailed`](#ActionFailed) event.
+* If the client cannot or has failed to execute the specified app, send the result to CIC using the [`DeviceControl.ActionFailed`](#ActionFailed) event.
 
 ### Message example
 
@@ -687,15 +688,56 @@ Instructs the client to launch a specified app. The app is specified by a custom
 ### See also
 * [`DeviceControl.ActionFailed`](#ActionFailed)
 
-## OpenScreen directive {#OpenScreen}
+## Open directive {#Open}
 
-Instructs the client to open the settings screen.
+Instructs the client to display a specific screen.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `target`      | string  | The screen to display. Available values are: `"settings"` | Always     |
+| `target`      | string  | The screen to display. Available values are:<ul><li><code>"home"</code>: Home screen</li><li><code>"settings"</code>: Settings screen</li></ul> | Always   |
+
+### Remarks
+
+* After handling the directive, the client must send the result to CIC, using the [`DeviceControl.ActionExecuted`](#ActionExecuted) or [`DeviceControl.ActionFailed`](#ActionFailed) event.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "directive": {
+    "header": {
+      "namespace": "DeviceControl",
+      "name": "Open",
+      "messageId": "23bdfff7-b655-46d4-8655-8bb473bf2bf5",
+      "dialogRequestId": "15ecb9a6-e727-4d58-8ba1-42cc8b63d5c0"
+    },
+    "payload": {
+      "target": "settings"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`DeviceControl.ActionExecuted`](#ActionExecuted)
+* [`DeviceControl.ActionFailed`](#ActionFailed)
+
+
+## OpenScreen directive {#OpenScreen}
+
+**(Deprecated)** Instructs the client to launch the settings screen.
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `target`      | string  | The screen to display. Currently the value is always `"settings"`. | Always     |
 
 ### Remarks
 

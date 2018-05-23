@@ -346,7 +346,7 @@ Requests to CIC to stop the ringing alarm. The client must send this event to CI
 | `type`    | string | The alarm type. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Remarks
-Stopping a ringing alarm requires informing CIC of the stoppage and getting confirmation from CIC to stop. So, a user pressing a button to stop the alarm is not the end of the task. You will send this event to inform CIC and CIC will return the [`Alerts.StopAlert`](#StopAlert) directive. This process guarantees consistency in stopping an alarm and is helpful for synchronizing alarm information between clients and CIC. But, to provide a seamless UX to users, you have the option to remove the alarm display or mute the alarm while waiting for the [`Alerts.StopAlert`](#StopAlert) directive from CIC.
+Stopping a ringing alarm requires informing CIC of the stoppage and getting confirmation from CIC to stop. So, a user pressing a button to stop the alarm is not the end of the task. You need to send this event to CIC and receive the [`Alerts.StopAlert`](#StopAlert) directive. This process guarantees consistency in stopping an alarm and is helpful for synchronizing alarm information between clients and CIC. But, to provide a seamless UX to users, you have the option to remove the alarm display or mute the alarm while waiting for the [`Alerts.StopAlert`](#StopAlert) directive from CIC.
 
 ### Message example
 {% raw %}

@@ -101,10 +101,10 @@ In this process, client credentials obtained via the Clova developer console mus
 
 | Credentials                   | Description                                              |
 |---------------------------|--------------------------------------------------|
-| `CLOVA_OAUTH_CLIENT_ID`     | The client ID registered on the Clova developer console         |
-| `CLOVA_OAUTH_CLIENT_SECRET` | The client secret obtained from the Clova developer console |
+| `CLOVA_OAUTH_CLIENT_ID`     | Client ID registered on the Clova developer console         |
+| `CLOVA_OAUTH_CLIENT_SECRET` | Client secret obtained from the Clova developer console |
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The Clova developer console for CIC is currently under development. Contact your Clova representative personnel to ask for help with obtaining client credentials.</p>
+  <p>CIC for client - Clova developer console is currently under development. Contact your Clova representative personnel to ask for help with obtaining client credentials.</p>
 </div>
