@@ -239,7 +239,7 @@ If a user attempts voice input while the client is playing audio content, follow
 * If there is audio content being played, process it as background audio from the attending state to the processing and reporting state.
 * If the waiting time for voice input has been exceeded or the user request processing has failed, the audio content processed as the background audio must be played in the original mode.
 * In case of having to play other audio content, depending on the processed result of the request, audio contents must be played in accordance with the [Rules for basic audio playback](#AudioInterruptionRule).
-* The same rules apply for the listening and processing and reporting states gained from attempting multi-turn conversations.
+* The same rules apply for the listening and processing and reporting states gained from attempting multi-turn dialogues.
 
 If there is a request to play a new audio content during the attending and listening state, process the request as follows:
 

@@ -482,7 +482,7 @@ Events are used by clients to send user voice request or the client state to CIC
 | `event`                        | object       | The header and payload of the event.                                                                 | Required |
 | `event.header`                 | object       | The header of the event.                                                                                                 | Required |
 | `event.header.dialogRequestId` | string       | The dialogue ID. The client must create and specify a [dialogue ID](/CIC/CIC_Overview.md#DialogIDandClientOP) when sending [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event and the [`TextRecognizer.Recognize`](/CIC/References/CICInterface/TextRecognizer.md#Recognize) event.| Optional |
-| `event.header.messageId`       | string       | The message ID The message ID used to distinguish individual messages.                                                                 | Required |
+| `event.header.messageId`       | string       | The message ID. The message ID used to distinguish individual messages.                                                                 | Required |
 | `event.header.name`            | string       | The API name of an event.                                                                                             | Required |
 | `event.header.namespace`       | string       | The API namespace of an event.                                                                                       | Required |
 | `event.payload`                | object       | The information related to the event. The configuration and field values of the object depend on the ([CIC interface](#CICInterface)) of the event. | Required |
@@ -587,7 +587,7 @@ Directives are used when CIC returns responses to events from clients or when CI
 | `directive`                        | object | The header and `payload` of the directive.                                                                 | Always     |
 | `directive.header`                 | object | The header of the directive.                                                                                                 | Always     |
 | `directive.header.dialogRequestId` | string | The dialogue ID. Use this to identify the dialogue associated with this directive. This field may not be provided if this directive is not a response to the [`SpeechRecognizer.Regcognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event.  | Conditional  |
-| `directive.header.messageId`       | string | The message ID The message ID used to distinguish individual messages.                                                                | Always     |
+| `directive.header.messageId`       | string | The message ID. The message ID used to distinguish individual messages.                                                                | Always     |
 | `directive.header.name`            | string | The API name of the directive.                                                                                             | Always     |
 | `directive.header.namespace`       | string | The API namespace of the directive.                                                                                       | Always     |
 | `directive.payload`                | object | The object that contains information related to the directive. The configuration and field values of the `payload` object depend on the ([interface](#CICInterface)) of the directive. | Always     |
@@ -631,7 +631,7 @@ Clova may not be able to provide its service properly if you send events in the 
     "messageId": {{string}}
   },
   "payload": {
-    "code": {{string}},
+    "code": {{number}},
     "description": {{string}}
   }
 }
@@ -644,11 +644,11 @@ Clova may not be able to provide its service properly if you send events in the 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `header`                 | object | The header of the error message.                                             | Always |
-| `header.messageId`       | string | The message ID The message ID used to distinguish individual messages.            | Always |
+| `header.messageId`       | string | The message ID. The message ID used to distinguish individual messages.            | Always |
 | `header.name`            | string | The name of the error message. The value is always `"Exception"`.                | Always |
 | `header.namespace`       | string | The namespace of the error message. The value is always `"System"`.             | Always |
 | `payload`                | object | The information related to the error.                                | Always |
-| `payload.code`           | string | The error code. This has the same value as the HTTP response code of the message.           | Always |
+| `payload.code`           | number | The error code. This has the same value as the HTTP response code of the message.           | Always |
 | `payload.description`    | string | The error message.                                                  | Always |
 
 #### Error code reference
@@ -699,5 +699,5 @@ The available namespaces are shown below. Click each link to find out more about
 * [TextRecognizer](/CIC/References/CICInterface/TextRecognizer.md)
 
 See the following indexes for a full list of interfaces grouped into events and directives.
-* [Index for events](/CIC/References/CICInterface/Index_for_Events.md)
-* [Index for directives](/CIC/References/CICInterface/Index_for_Directives.md)
+* [Index for event messages](/CIC/References/CICInterface/Index_for_Events.md)
+* [Index for directive messages](/CIC/References/CICInterface/Index_for_Directives.md)

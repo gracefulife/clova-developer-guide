@@ -18,7 +18,7 @@ The SpeechRecognizer namespace provides the following events and directives.
 
 ## ExpectSpeech directive {#ExpectSpeech}
 
-Instructs the client to enable its microphone and receive user voice input. CIC sends this directive to engage a multi-turn conversation to request additional information, because the information provided in the original user request was inadequate. To send the user voice request to CIC, use the [`SpeechRecognizer.Recognize`](#Recognize) event.
+Instructs the client to enable its microphone and receive user voice input. CIC sends this directive to engage a multi-turn dialogue to request additional information, because the information provided in the original user request was inadequate. To send the user voice request to CIC, use the [`SpeechRecognizer.Recognize`](#Recognize) event.
 
 ### Payload fields
 
@@ -115,8 +115,8 @@ CIC can process the following audio formats:
 | `initiator.inputSource`                                  | string   | The source of the voice input from the user. You must enter the following values:<ul><li><code>SELF</code>: Specify this value if the client device that has sent the <code>SpeechRecognizer.Recognize</code> event receives the voice input from the user directly.</li><li><code>CUSTOM_{Model_ID}</code>: Specify the model ID of the device if another device, such as a remote control that is not the client device, that has sent the <code>SpeechRecognizer.Recognize</code> event, receives the voice input.</li></ul><div class="note"><p><strong>Note!</strong></p><p>You must use the value arranged with the partnership team in advance for the device model ID.</p></div>  | Required |
 | `initiator.payload`                                      | object   | The detailed information of the `initiator` field.                                                        | Optional |
 | `initiator.payload.deviceUUID`                           | string   | The UUID randomly created from the device. Once the UUID is created, this must be used continuously and must be a value that cannot used to identify a user from Clova.  In other words, you must not use the {{ book.TargetServiceForClientAuth }} access token value, Clova access token value, client ID or a combination of these values.   | Required |
-| `initiator.payload.wakeWord`                             | object   | The data information for verifying the wake word to send to the server.<div class="note"><p><strong>Note!</strong></p><p>This field is not available at this time and will be used in the future for improving the wake word recognition.</p></div>               | Optional |
-| `initiator.payload.wakeWord.confidence`                   | number   | The value indicating the confidence level of wake word recognition from the device. Enter a float value between 0 and 1. This field is invalid at this time and reserved for later.                 | Optional |
+| `initiator.payload.wakeWord`                             | object   | Object containing the wake word information recognized from the client. This object is used to improve the wake word recognition.       | Optional |
+| `initiator.payload.wakeWord.confidence`                  | number   | The value indicating the confidence level of wake word recognition from the device. Enter a float value between 0 and 1. This field is invalid at this time and reserved for later.                 | Optional |
 | `initiator.payload.wakeWord.indices`                      | object   | The section containing the wake word from the audio stream of a user voice input.                                           | Required |
 | `initiator.payload.wakeWord.indices.endIndexInSmaples`    | number   | The index information of the point where the wake word ends in the audio stream. As the voice input has 16 kHz sample rate, 1 unit of index stands for 1/16,000 second. If the section containing the wake word is located between 0 and 1 second of the audio stream duration, you must enter 16,000 as the index value of the point where the wake word ends.  | Required  |
 | `initiator.payload.wakeWord.indices.startIndexInSamples`  | number   | The index information of the point where the wake word starts in the audio stream. As the voice input has 16 kHz sample rate, 1 unit of index stands for 1/16,000 second. As the wake word is usually located at the first part of user utterance, the index value is entered as 0.   | Required |
@@ -213,7 +213,7 @@ Content-Type: application/octet-stream
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>If the value of <code>initiator.type</code> is <code>"WAKEWORD"</code>, make sure to include the section including the wake word when sending audio data.</p>
+  <p>If the value of <code>initiator.type</code> is <code>"WAKEWORD"</code>, make sure to include the section containing the wake word when sending audio data. For this process, the audio data must be started from 300 milliseconds (4,800 sample) before the starting point of the wake word section.</p>
 </div>
 
 ### See also
