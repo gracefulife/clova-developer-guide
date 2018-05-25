@@ -39,7 +39,7 @@ letter     = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "
 digit      = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 whitespace = " " ;
 number     = digit , { digit } ;
-character  = letter | digit | "_" | "-" | "." ;
+character  = letter | digit | "_" | "-" | ".";
 word       = character , { character } ;
 string     = word
            | word , { whitespace | word } , word ;
@@ -55,13 +55,13 @@ semicolon           = ";" ;
 semicolon_delimiter = [ whitespace ] , semicolon , [ whitespace ] ;
 
 build      = safe_word
-           | safe_word , "." , build ;
+           | safe_word , ".", build ;
 release    = safe_word
-           | safe_word , "." , release ;
+           | safe_word , ".", release ;
 version    = number , "." , number , "." , "number"
-           | number , "." , number , "." , "number" , "-" , release
-           | number , "." , number , "." , "number" , "+" , build
-           | number , "." , number , "." , "number" , "-" , release , "+" , build ;
+           | number , ".", number , ".", "number" , "-" , release
+           | number , ".", number , ".", "number" , "+" , build
+           | number , ".", number , ".", "number" , "-" , release , "+" , build ;
 
 Manufacturer_Identifier = string ;
 Product_Identifier      = string ;

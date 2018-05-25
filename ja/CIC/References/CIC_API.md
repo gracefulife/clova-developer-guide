@@ -3,7 +3,7 @@ CIC APIは、CICがクライアントに提供するREST APIです。このド�
 * [APIの基本情報](#BasicInfo)
 * [ダウンチャネルを確立する](#EstablishDownchannel)
 * [イベントを送信する](#SendEvent)
-* [メッセージのフォーマット](#CICMessageFormat)
+* [メッセージフォーマット](#CICMessageFormat)
 * [インターフェース](#CICInterface)
 
 ## APIの基本情報 {#BasicInfo}
@@ -298,7 +298,7 @@ Content-Type: application/json; charset=UTF-8
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "lang": "ko",
+      "lang": "ja",
       "profile": "CLOSE_TALK",
       "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
       "initiator": {
@@ -438,7 +438,7 @@ Content-Type: application/json; charset=utf-8
 ```
 {% endraw %}
 
-## メッセージのフォーマット {#CICMessageFormat}
+## メッセージフォーマット {#CICMessageFormat}
 CIC APIで使用されるメッセージは、次のようなものがあり、それぞれフォーマットが異なります。
 
 * [イベント](#Event)
@@ -526,7 +526,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
       "dialogRequestId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "lang": "ko",
+      "lang": "ja",
       "profile": "CLOSE_TALK",
       "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
       "initiator": {
@@ -582,7 +582,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 
 #### Message fields
 
-| フィールド名       | データ型    | 説明                     | 包含 |
+| フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
 | `directive`                        | object | ディレクティブのヘッダーと必要なデータ(`payload`)を持つオブジェクト                                                                 | 常時     |
 | `directive.header`                 | object | ディレクティブのヘッダー                                                                                                 | 常時     |
@@ -631,7 +631,7 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
     "messageId": {{string}}
   },
   "payload": {
-    "code": {{string}},
+    "code": {{number}},
     "description": {{string}}
   }
 }
@@ -641,14 +641,14 @@ CIC APIで使用されるメッセージは、次のようなものがあり、�
 
 #### Message fields
 
-| フィールド名       | データ型    | 説明                     | 包含 |
+| フィールド名       | データ型    | 説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
 | `header`                 | object | エラーメッセージのヘッダー                                             | 常時 |
 | `header.messageId`       | string | メッセージID。メッセージを区別するための識別子です。            | 常時 |
 | `header.name`            | string | エラーメッセージの名前。`"Exception"`に固定されています。                | 常時 |
 | `header.namespace`       | string | エラーメッセージの名前欄。`"System"`に固定されています。             | 常時 |
 | `payload`                | object | エラーに関連する情報を持つオブジェクト                                | 常時 |
-| `payload.code`           | string | エラーコード。メッセージが含まれたHTTPレスポンスのステータスコードと同じです。           | 常時 |
+| `payload.code`           | number | エラーコード。メッセージが含まれたHTTPレスポンスのステータスコードと同じです。           | 常時 |
 | `payload.description`    | string | エラーメッセージ                                                  | 常時 |
 
 #### Error code reference

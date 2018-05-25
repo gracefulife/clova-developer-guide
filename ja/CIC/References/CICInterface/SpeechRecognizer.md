@@ -109,22 +109,22 @@ SpeechRecognizerは、次のイベントとディレクティブを提供しま�
 ### Payload fields
 | フィールド名       | データ型    | 説明                     | 必須/任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `explicit`                                               | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)ディレクティブによって、ユーザーの音声を追加で取得する場合、`SpeechRecognizer.ExpectSpeech`ディレクティブに含まれた`explicit`フィールドの値をそのまま入力します。  | 任意  |
-| `format`                                                 | string   | 音声データのフォーマット。`AUDIO_L16_RATE_16000_CHANNELS_1`に固定します。                             | 任意    |
-| `initiator`                                              | object   | Clovaの呼び出し方、音声の取得経路、ウェイクワードに関する情報を持つオブジェクト<div class="note"><p><strong>メモ</strong></p><p>このフィールドを使用することで、音声認識の精度を上げることができます。従って、このフィールドを使用することを推奨します。</p></div>                      | 任意    |
+| `explicit`                                               | boolean  | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)ディレクティブによって、ユーザーの音声を追加で取得する場合、`SpeechRecognizer.ExpectSpeech`ディレクティブに含まれた`explicit`フィールドの値をそのまま入力します。  | 選択  |
+| `format`                                                 | string   | 音声データのフォーマット。`AUDIO_L16_RATE_16000_CHANNELS_1`に固定します。                             | 選択    |
+| `initiator`                                              | object   | Clovaの呼び出し方、音声の取得経路、ウェイクワードに関する情報を持つオブジェクト<div class="note"><p><strong>メモ</strong></p><p>このフィールドを使用することで、音声認識の精度を上げることができます。従って、このフィールドを使用することを推奨します。</p></div>                      | 選択    |
 | `initiator.inputSource`                                  | string   | ユーザーの音声を取得した経路(source)。次のいずれかを指定します。<ul><li><code>SELF</code>：<code>SpeechRecognizer.Recognize</code>イベントを送信したクライアントで直接ユーザーの音声を取得した場合、この値を指定します。</li><li><code>CUSTOM_{Model_ID}</code>：<code>SpeechRecognizer.Recognize</code>イベントを送信したクライアントではなく、リモコンなどの別のデバイスでユーザーの音声を取得した場合、そのデバイスモデルIDを指定します。</li></ul><div class="note"><p><strong>メモ</strong></p><p>デバイスのモデルIDは、あらかじめ提携担当者と協議済みの値を使用してください。</p></div>  | 必須 |
-| `initiator.payload`                                      | object   | `initiator`フィールドで、詳細情報を持つオブジェクト                                                        | 任意 |
+| `initiator.payload`                                      | object   | `initiator`フィールドで、詳細情報を持つオブジェクト                                                        | 選択 |
 | `initiator.payload.deviceUUID`                           | string   | デバイスで任意に作成したUUID。一度作成したUUIDを一貫して使用します。また、Clovaで特定のユーザーを識別できない値である必要があります。このフィールドの値として、{{ book.TargetServiceForClientAuth }}アクセストークン、ClovaアクセストークンやクライアントID、またはこれらを組み合わせた値を使用すべきではありません。   | 必須 |
-| `initiator.payload.wakeWord`                             | object   | サーバーに送信するウェイクワード検証のためのデータを持つオブジェクト<div class="note"><p><strong>メモ</strong></p><p>現在、このフィールドは使用できません。今後ウェイクワード認識の精度を上げるために確保されているフィールドです。</p></div>               | 任意 |
-| `initiator.payload.wakeWord.confidence`                   | number   | デバイスで、ウェイクワードの認識を確信する程度(confidence)を示します。0から1までの実数(float)型の値を入力します。現在、このフィールドは有効ではありません。今後のために確保されているフィールドです。                 | 任意 |
+| `initiator.payload.wakeWord`                             | object   | クライアントで認識されたウェイクワードを持つオブジェクト。ウェイクワード認識の精度を高めるために使用されます。       | 選択 |
+| `initiator.payload.wakeWord.confidence`                  | number   | デバイスで、ウェイクワードの認識を確信する程度(confidence)を示します。0から1までの実数(float)型の値を入力します。現在、このフィールドは有効ではありません。今後のために確保されているフィールドです。                 | 選択 |
 | `initiator.payload.wakeWord.indices`                      | object   | ユーザーの音声が含まれたオーディオストリームで、ウェイクワードに該当する区間の情報を持つオブジェクト                                           | 必須 |
 | `initiator.payload.wakeWord.indices.endIndexInSmaples`    | number   | オーディオストリームで、ウェイクワードが終了する位置のインデックス情報。音声入力が16kHzのサンプリングレートを持つため、インデックスの1単位は1/16,000秒になります。ウェイクワードに該当する区間が、オーディオストリーム全体の再生時間のうち0秒から1秒の間にある場合、ウェイクワードの終了のインデックスに16000を入力します。  | 必須  |
 | `initiator.payload.wakeWord.indices.startIndexInSamples`  | number   | オーディオストリームで、ウェイクワードが開始する位置のインデックス情報。音声入力が16kHzのサンプリングレートを持つため、インデックスの1単位は1/16,000秒になります。通常、ユーザーの発話はウェイクワードで開始することが多いため、その場合にはインデックスの値を0に入力します。   | 必須 |
-| `initiator.payload.wakeWord.name`                         | string   | クライアントデバイスに設定されているウェイクワード。次の値を入力できます。<ul><li><code>"clova"</code></li><li><code>"jesika"</code></li><li><code>"jjangguya"</code></li><li><code>"seliya"</code></li><li><code>"pinokio"</code></li></ul>                        | 任意  |
+| `initiator.payload.wakeWord.name`                         | string   | クライアントデバイスに設定されているウェイクワード。次の値を入力できます。<ul><li><code>"clova"</code></li><li><code>"jesika"</code></li><li><code>"jjangguya"</code></li><li><code>"seliya"</code></li><li><code>"pinokio"</code></li></ul>                        | 選択  |
 | `initiator.type`                                         | string   | ユーザーがClovaを呼び出すために行ったアクション。次の値を入力できます。<ul><li><code>"PRESS_AND_HOLD"</code>：音声入力取得ボタン(wake up)を押したまま音声を入力した場合</li><li><code>"TAP"</code>：音声入力受信ボタン(wake up)を押したまま音声を入力した場合</li><li><code>"WAKEWORD"</code>：ウェイクワードにより音声を入力した場合</li></ul>  | 必須 |
 | `lang`                                                   | string   | ユーザーの発話を認識する言語を指定します。<ul><li><code>"en"</code>：英語</li><li><code>"ja"</code>：日本語</li><li><code>"ko"</code>：韓国語</li></ul> | 必須    |
-| `profile`                                                | string   | 今後のために確保されているフィールド。`CLOSE_TALK`に固定します。                                     | 任意    |
-| `speechId`                                               | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)ディレクティブによって、ユーザーの音声を追加で取得する場合、`SpeechRecognizer.ExpectSpeech`ディレクティブに含まれた`expectSpeechId`フィールドの値をそのまま入力します。  | 任意  |
+| `profile`                                                | string   | 今後のために確保されているフィールド。`CLOSE_TALK`に固定します。                                     | 選択    |
+| `speechId`                                               | string   | [`SpeechRecognizer.ExpectSpeech`](#ExpectSpeech)ディレクティブによって、ユーザーの音声を追加で取得する場合、`SpeechRecognizer.ExpectSpeech`ディレクティブに含まれた`expectSpeechId`フィールドの値をそのまま入力します。  | 選択  |
 
 ### Message example
 {% raw %}
@@ -149,7 +149,7 @@ SpeechRecognizerは、次のイベントとディレクティブを提供しま�
       "messageId": "4e4080d6-c440-498a-bb73-ae86c6312806"
     },
     "payload": {
-      "lang": "ko",
+      "lang": "ja",
       "profile": "CLOSE_TALK",
       "format": "AUDIO_L16_RATE_16000_CHANNELS_1",
       "initiator": {
@@ -204,7 +204,7 @@ SpeechRecognizerは、次のイベントとディレクティブを提供しま�
 `SpeechRecognizer.Recognize`イベントを送信してから、ユーザーが音声の入力を終了するか、または[StopCapture](#StopCapture)ディレクティブを受信するまで、次の音声データを送り続けます。その際、音声データは同じHTTPリクエスト内で、マルチパートのメッセージで送信される必要があります。
 
 ```
-[ メッセージヘッダー ]
+[ Message Header ]
 Content-Disposition: form-data; name="audio"
 Content-Type: application/octet-stream
 
@@ -213,7 +213,7 @@ Content-Type: application/octet-stream
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><code>initiator.type</code>の値が<code>"WAKEWORD"</code>の場合、ウェイクワードに該当する音声も必ず含める必要があります。</p>
+  <p><code>initiator.type</code>の値が<code>"WAKEWORD"</code>の場合、送信する音声データに、ウェイクワードに該当する音声が必ず含まれている必要があります。その際、音声データは、ウェイクワード区間の開始点より300ミリ秒(4,800サンプル)前から開始する必要があります。</p>
 </div>
 
 ### 次の項目も参照してください。
