@@ -3953,7 +3953,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-006"
     },
     "channel": {
-      "value": 15
+      "value": 15,
+      "subChannel": {
+        "value": 1
+      }
     }
   }
 }
