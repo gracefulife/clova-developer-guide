@@ -1237,7 +1237,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "closeTime": "2018-03-13T23:17:50+09:00",
+    "closeTimestamp": "2018-03-13T23:17:50+09:00",
     "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }
@@ -2089,7 +2089,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "payloadVersion": "1.0"
   },
   "payload": {
-    "closeTime": "2018-03-13T23:20:15+09:00",
+    "openTimestamp": "2018-03-13T23:20:15+09:00",
     "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
   }
 }
@@ -3953,7 +3953,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-006"
     },
     "channel": {
-      "value": 15
+      "value": 15,
+      "subChannel": {
+        "value": 1
+      }
     }
   }
 }
