@@ -21,6 +21,15 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.4</td><td>2018-05-28</td>
+    <td>
+      <ul>
+        <li>[CEK] Clova Home extension API <a href="/CEK/References/ClovaHomeInterface/Error_Interfaces.html#ConditionsNotMetError">ConditionsNotMetError</a>에 state 필드 추가</li>
+        <li>[CEK] Clova Home extension API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#TVChannelInfoObject">TVChannelInfoObject</a>에 서브 채널 정보 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v4.3</td><td>2018-05-21</td>
     <td>
       <ul>
