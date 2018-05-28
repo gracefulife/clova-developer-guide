@@ -2,6 +2,12 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-05-28
+
+* CEK
+  * Clova Home extension API [ConditionsNotMetError](/CEK/References/ClovaHomeInterface/Error_Interfaces.md#ConditionsNotMetError)에 state 필드 추가
+  * Clova Home extension API [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)에 서브 채널 정보 추가
+
 ## 2018-05-21
 
 * CIC
