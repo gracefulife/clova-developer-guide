@@ -7,15 +7,15 @@ These control interfaces are used to check IoT device information and carry out 
 | [`ChargeConfirmation`](#ChargeConfirmation)                                   | Response | Sends the result of setting the target appliance to self-charge to CEK as a response to the [`ChargeRequest`](#ChargeRequest) message. |
 | [`ChargeRequest`](#ChargeRequest)                                             | Request  | Requests the Clova Home extension to set the target appliance to self-charge. |
 | [`CloseConfirmation`](#CloseConfirmation)                                     | Response | Sends the result of closing the smart curtain or the bidet lid to CEK as a response to the [`CloseRequest`](#CloseRequest) message. |
-| [`CloseRequest`](#CloseRequest)                                               | Request  | Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or bidet lid.  |
+| [`CloseRequest`](#CloseRequest)                                               | Request  | Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or the bidet lid.  |
 | [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)         | Response | Sends the result of setting the target appliance to dim the lights to CEK as a response to the [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) message. |
 | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest)                   | Request  | Requests the Clova Home extension to set the target appliance to dim the lights by the designated amount. |
 | [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)               | Response | Sends the result of setting the target appliance to channel down the TV to CEK as a response to the [`DecrementChannelRequest`](#DecrementChannelRequest) message. |
 | [`DecrementChannelRequest`](#DecrementChannelRequest)                         | Request  | Requests the Clova Home extension to set the target appliance to channel down the TV by the designated amount. |
 | [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)             | Response | Sends the result of setting the target appliance to lower the fan speed to CEK as a response to the [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) message. |
 | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)                       | Request  | Requests the Clova Home extension to set the target appliance to lower the fan speed by the designated amount. |
-| [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) | Response | Sends the result of setting the target appliance to lower the pressure level such as air or water pressure to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.  |
-| [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest)           | Request  | Mainly used to control appliances such as air conditioners or thermostats. Requests the Clova Home extension to set the target appliance to lower the pressure level such as air or water pressure by the designated amount.  |
+| [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) | Response | Sends the result of setting the target appliance to lower the pressure level, such as air or water pressure, to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.  |
+| [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest)           | Request  | Mainly used to control appliances such as air conditioners or thermostats. Requests the Clova Home extension to set the target appliance to lower the pressure level, such as air or water pressure, by the designated amount.  |
 | [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | Sends the result of setting the target appliance to lower the temperature to CEK as a response to the [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) message. |
 | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)     | Request  | Requests the Clova Home extension to set the target appliance to lower the temperature by the designated amount.      |
 | [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                 | Response | Sends the result of setting the target appliance to lower the speaker volume to CEK as a response to the [`DecrementVolumeRequest`](#DecrementVolumeRequest) message. |
@@ -28,10 +28,12 @@ These control interfaces are used to check IoT device information and carry out 
 | [`GetAwakeDurationResponse`](#GetAwakeDurationResponse)                       | Response | Sends the awake time of the user after going to bed measured by the target appliance – in other words, the amount of time from going to bed until falling asleep, to CEK as a response to the [`GetAwakeDurationRequest`](#GetAwakeDurationRequest) message.  |
 | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request  | Requests the Clova Home extension for the battery information of the target appliance. |
 | [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | Sends the battery information of the target appliance to CEK as a response to the [`GetBatteryInfoRequest`](#GetBatteryInfoRequest) message. |
-| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request | Requests the Clova Home extension for the recent close time of the target, mainly from the detection details of the open-close sensor. |
+| [`GetCleaningCycleRequest`](#GetCleaningCycleRequest)                                                   | Request  | Used to check the cleaning cycle of an appliance. Requests the Clova Home extension for the information on the remaining time until the next cleaning cycle of the target appliance.  |
+| [`GetCleaningCycleResponse`](#GetCleaningCycleResponse)                                                  | Response | Sends the information on the time remaining until the next cleaning cycle of the target appliance to CEK as a response to the [`GetCleaningCycleRequest`](#GetCleaningCycleRequest) message.  |
+| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request  | Requests the Clova Home extension for the recent close time of the target, mainly from the detection details of the open-close sensor. |
 | [`GetCloseTimeResponse`](#GetCloseTimeResponse)                               | Response | Sends the recent close time of the target from the detection details of the open-close sensor to CEK as a response to the [`GetCloseTimeRequest`](#GetCloseTimeRequest) message.  |
-| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | Mainly used to check for energy consumption to date measured on appliances such as smart plugs or smart power strips. Requests the Clova Home extension for the energy consumption information measured by the target appliance.  |
-| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | Sends the information on the energy consumption measured by the target appliance to date to CEK as a response to the [`GetConsumptionRequest`](#GetConsumptionRequest) message.  |
+| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | Mainly used to check for energy consumption or resource information to date measured on appliances such as smart plugs or smart power strips. Requests the Clova Home extension for the energy consumption or resource information measured by the target appliance.  |
+| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | Sends the information on energy consumption or resource information measured by the target appliance to date to CEK as a response to the [`GetConsumptionRequest`](#GetConsumptionRequest) message.  |
 | [`GetCurrentBillRequest`](#GetCurrentBillRequest)                             | Request  | Mainly used to check for billing information based on energy consumption to date measured from appliances such as smart plugs or smart power strips. Requests the Clova Home extension for the billing information measured by the target appliance.  |
 | [`GetCurrentBillResponse`](#GetCurrentBillResponse)                           | Response | Sends the information on billing measured by the target appliance to date to CEK as a response to the [`GetCurrentBillRequest`](#GetCurrentBillRequest) message.   |
 | [`GetCurrentTemperatureRequest`](#GetCurrentTemperatureRequest)               | Request  | Requests the Clova Home extension for the current temperature measured by the target appliance. |
@@ -48,8 +50,10 @@ These control interfaces are used to check IoT device information and carry out 
 | [`GetHumidityResponse`](#GetHumidityResponse)                                 | Response | Sends the information on humidity measured by the target appliance to CEK as a response to the [`GetHumidityRequest`](#GetHumidityRequest) message. |
 | [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest)                           | Request  | Used to check the time spent on the food warming mode of appliances such as rice cookers. Requests the Clova Home extension for the time spent on the warming mode on the target appliance.  |
 | [`GetKeepWarmTimeResponse`](#GetKeepWarmTimeResponse)                         | Response | Sends the information on the time spent on the warming mode of the target appliance to CEK as a response to the [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest) message.  |
-| [`GetLockStateRequest`](#GetLockStateRequest)                                 | Request  | Requests the Clova Home extension for the current lock state of the target appliance.   |
-| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | Sends the information on the current lock state of the target appliance to CEK as a response to the [`GetLockStateRequest`](#GetLockStateRequest) message. |
+| [`GetLockStateRequest`](#GetLockStateRequest)                                 | Request  | Mainly used to check the appliance state such as a smart valve. Requests the Clova Home extension for the current lock state of the lock device on the target appliance.  |
+| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | Sends the information on the current lock state of the lock device on the target appliance to CEK as a response to the [`GetLockStateRequest`](#GetLockStateRequest) message.  |
+| [`GetOpenStateRequest`](#GetOpenStateRequest)                                 | Request  | Requests the Clova Home extension for the current state information of the detection target (open or close), mainly from the detection details of the open-close sensor.  |
+| [`GetOpenStateResponse`](#GetOpenStateResponse)                               | Response | Mainly sends the current state information of the detection target (open or close) to CEK as a response to the [`GetOpenStateRequest`](#GetOpenStateRequest) message.  |
 | [`GetOpenTimeRequest`](#GetOpenTimeRequest)                                   | Request  | Requests the Clova Home extension for the recent open time of the target, mainly from the detection details of the open-close sensor.   |
 | [`GetOpenTimeResponse`](#GetOpenTimeResponse)                                 | Response | Sends the recent open time of the target from the detection details of the open-close sensor to CEK as a response to the [`GetOpenTimeRequest`](#GetOpenTimeRequest) message.  |
 | [`GetPhaseRequest`](#GetPhaseRequest)                                         | Request  | Mainly used to check the action phase of appliances that operate in phases such as rice cookers or washers. Requests the Clova Home extension for the current action phase of the target appliance.  |
@@ -58,7 +62,7 @@ These control interfaces are used to check IoT device information and carry out 
 | [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)         | Response | Sends the information on the progressive tax bracket determined by the target appliance to CEK as a response to the [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest) message. |
 | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)                         | Request  | Mainly used to check the remaining time until the end of an action on appliances such as rice cookers or washers. Requests the Clova Home extension for the remaining time until the end of the action of the target appliance.  |
 | [`GetRemainingTimeResponse`](#GetRemainingTimeResponse)                       | Response | Sends the information on the time remaining until the end of the action of the target appliance to CEK as a response to the [`GetRemainingTimeRequest`](#GetRemainingTimeRequest) message. |
-| [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)                 | Request  | Used to check the ratio of a user using the target appliance in good posture. Requests the Clova Home extension for the ratio of the user using the target target appliance in good posture during a specific or whole period of use.  |
+| [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)                 | Request  | Used to check the ratio of a user using the target appliance in good posture. Requests the Clova Home extension for the ratio of the user using the target appliance in good posture during a specific or whole period of use.  |
 | [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)               | Response | Sends the information on the ratio of the user using the target appliance in good posture to CEK as a response to the [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest) message.  |
 | [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest)             | Request  | Used to check the use states of the user in appliances such as a smart chair. Requests the Clova Home extension for the sit-down information of the user detected by the target appliance and the latest time of use.  |
 | [`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse)           | Response | Sends the sit-down information of the user detected by the target appliance and the latest time of use to CEK as a response to the [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest) message.  |
@@ -80,8 +84,8 @@ These control interfaces are used to check IoT device information and carry out 
 | [`IncrementChannelRequest`](#IncrementChannelRequest)                         | Request  | Requests the Clova Home extension to set the target appliance to channel up the TV by the designated amount. |
 | [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)             | Response | Sends the result of setting the target appliance to increase the fan speed to CEK as a response to the [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) message. |
 | [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)                       | Request | Requests the Clova Home extension to set the target appliance to increase the fan speed by the designated amount. |
-| [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) | Response | Sends the result of setting the target appliance to increase the pressure level such as air or water pressure to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.  |
-| [`IncrementIntensityLevelRequest`](#IncrementIntensityLevelRequest)           | Request  | Requests the Clova Home extension to set the target appliance to increase the pressure level such as air or water pressure by the designated amount. |
+| [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) | Response | Sends the result of setting the target appliance to increase the pressure level, such as air or water pressure, to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.  |
+| [`IncrementIntensityLevelRequest`](#IncrementIntensityLevelRequest)           | Request  | Requests the Clova Home extension to set the target appliance to increase the pressure level, such as air or water pressure, by the designated amount. |
 | [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) | Response | Sends the result of setting the target appliance to increase the temperature to CEK as a response to the [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) message. |
 | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)     | Request  | Requests the Clova Home extension to set the target appliance to increase the temperature by the designated amount.     |
 | [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)                 | Response | Sends the result of setting the target appliance to increase the speaker volume to CEK as a response to the [`IncrementVolumeRequest`](#IncrementVolumeRequest) message. |
@@ -94,6 +98,8 @@ These control interfaces are used to check IoT device information and carry out 
 | [`OpenRequest`](#OpenRequest)                                                 | Request  | Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to open the smart curtain or the bidet lid.  |
 | [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | Sends the result of raising the height of the target appliance to CEK as a response to the [`RaiseRequest`](#RaiseRequest) message.  |
 | [`RaiseRequest`](#RaiseRequest)                                               | Request  | Mainly used to control appliances such as curtains, blinds, or beds. Requests the Clova Home extension to raise the height of the target appliance.  |
+| [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)                         | Response | Sends the result of setting to disable the operation mode of the current appliance to CEK as a response to the [`ReleaseModeRequest`](#ReleaseModeRequest) message.  |
+| [`ReleaseModeRequest`](#ReleaseModeRequest)                                   | Request  | Used to disable the operation mode set on the current appliance. Requests the Clova Home extension to return to the previous operation mode or the default operation mode by disabling the operation mode of the appliance.  |
 | [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | Sends the result of setting the target appliance to change the brightness of lights to CEK as a response to the [`SetBrightnessRequest`](#SetBrightnessRequest) message. |
 | [`SetBrightnessRequest`](#SetBrightnessRequest)                               | Request  | Requests the Clova Home extension to set the target appliance to change the brightness of lights to the designated value. |
 | [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)               | Response | Sends the result of setting the target appliance to change the TV channel using the name of channel to CEK as a response to the [`SetChannelByNameRequest`](#SetChannelByNameRequest) message. |
@@ -158,10 +164,10 @@ Mainly used to control robot vacuums. Requests the Clova Home extension to set t
 
 ### Payload fields
 
-| Field       | Data type    | Description                     | Included |
+| Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -218,14 +224,14 @@ None
 * [`CloseRequest`](#CloseRequest)
 
 ## CloseRequest {#CloseRequest}
-Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or bidet lid. The extension must use the [`CloseConfirmation`](#CloseConfirmation) message as a response to this request.
+Used to control appliances such as smart curtains or bidets. Requests the Clova Home extension to close the smart curtain or the bidet lid. The extension must use the [`CloseConfirmation`](#CloseConfirmation) message as a response to this request.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -260,9 +266,9 @@ Sends the result of setting the target appliance to dim the lights to CEK as a r
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the information on current brightness.                                | Optional    |
-| `previousState`            | object | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the information on previous brightness.                                | Optional    |
+| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the information on current brightness.                                | Optional    |
+| `previousState`            | object | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the information on previous brightness.                                | Optional    |
 
 ### Remarks
 
@@ -306,8 +312,8 @@ Mainly used to control lighting. Requests the Clova Home extension to set the ta
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | The object containing the information on the amount of change in brightness.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | Object containing the information on the amount of change in brightness.                              | Always    |
 
 ### Message example
 
@@ -345,9 +351,9 @@ Sends the result of setting the target appliance to channel down the TV to CEK a
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | The object containing the information on the current TV channel.                                | Optional    |
-| `previousState`            | object | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | The object containing the information on the previous TV channel.                                | Optional    |
+| `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | Object containing the information on the current TV channel.                                | Optional    |
+| `previousState`            | object | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | Object containing the information on the previous TV channel.                                | Optional    |
 
 ### Remarks
 
@@ -390,8 +396,8 @@ Mainly used to control TVs or set-top boxes. Requests the Clova Home extension t
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | The object containing information on the amount of TV channels to change.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | Object containing information on the amount of TV channels to change.                              | Always    |
 
 ### Message example
 
@@ -429,9 +435,9 @@ Sends the result of setting the target appliance to lower the fan speed to CEK a
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | The object containing the information on the current fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
-| `previousState`     | object                                  | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.fanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)     | The object containing information on the previous fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
+| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | Object containing the information on the current fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
+| `previousState`     | object                                  | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.fanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)     | Object containing information on the previous fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
 
 ### Remarks
 
@@ -475,8 +481,8 @@ Mainly used to control appliances such as an air purifier. Requests the Clova Ho
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | The object containing information on the amount of fan speed to change. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | Object containing information on the amount of fan speed to change. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Always    |
 
 ### Message example
 
@@ -508,15 +514,15 @@ Mainly used to control appliances such as an air purifier. Requests the Clova Ho
 * [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)
 
 ## DecrementIntensityLevelConfirmation {#DecrementIntensityLevelConfirmation}
-Sends the result of setting the target appliance to lower the pressure level such as air or water pressure to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.
+Sends the result of setting the target appliance to lower the pressure level, such as air or water pressure, to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | The object containing current information on pressure or water pressure intensity.                  | Optional    |
-| `previousState`  | object                                  | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | The object containing previous information on pressure or water pressure intensity.    | Optional    |
+| `intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | Object containing current information on pressure or water pressure intensity.                  | Optional    |
+| `previousState`  | object                                  | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | Object containing previous information on pressure or water pressure intensity.    | Optional    |
 
 ### Remarks
 
@@ -553,15 +559,15 @@ You do not have to enter the value if the information to enter for the payload c
 * [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest)
 
 ## DecrementIntensityLevelRequest {#DecrementIntensityLevelRequest}
-Mainly used to control appliances such as air conditioners or thermostats. Requests the Clova Home extension to set the target appliance to lower the pressure level such as air or water pressure by the designated amount. The extension must use the [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) message as a response to this request.
+Mainly used to control appliances such as air conditioners or thermostats. Requests the Clova Home extension to set the target appliance to lower the pressure level, such as air or water pressure, by the designated amount. The extension must use the [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) message as a response to this request.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing intensity information to change.                            | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing information on the amount of intensity to change.                            | Always    |
 
 ### Message example
 
@@ -599,9 +605,9 @@ Sends the result of setting the target appliance to lower the temperature to CEK
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `previousState`     | object                                  | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing previous information on the desired temperature.              | Optional    |
-| `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                            | Optional    |
+| `previousState`     | object                                  | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing previous information on the desired temperature.              | Optional    |
+| `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                            | Optional    |
 
 ### Remarks
 
@@ -645,8 +651,8 @@ Mainly used to control appliances such as air conditioners or thermostats. Reque
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the information on the amount of temperature to change.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the information on the amount of temperature to change.                              | Always    |
 
 ### Message example
 
@@ -684,9 +690,9 @@ Sends the result of setting the target appliance to lower the speaker volume to 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `previousState`     | object                                  | The object containing the information on the previous state of the appliance.                        | Optional    |
-| `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)    | The object containing information on the previous volume.                             | Optional    |
-| `targetVolume`      | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)            | The object containing the information on the volume set on the target appliance or that the extension has requested to be set on the target appliance.                             | Optional    |
+| `previousState`     | object                                  | Object containing the information on the previous state of the appliance.                        | Optional    |
+| `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)    | Object containing information on the previous volume.                             | Optional    |
+| `targetVolume`      | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)            | Object containing the information on the volume set on the target appliance or that the extension has requested to be set on the target appliance.                             | Optional    |
 
 ### Remarks
 
@@ -730,8 +736,8 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | The object containing the information on the amount of volume to change.                           | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | Object containing the information on the amount of volume to change.                           | Always    |
 
 ### Message example
 
@@ -768,7 +774,7 @@ Mainly used to check air quality measured by an appliance such as an air purifie
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -801,7 +807,7 @@ Sends the air quality information measured by the target appliance to CEK as a r
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `airQuality`                 | [AirQualityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#AirQualityInfoObject) | The object containing information on the air quality measured by the current appliance.   | Required    |
+| `airQuality`                 | [AirQualityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#AirQualityInfoObject) | Object containing information on the air quality measured by the current appliance.   | Required    |
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
 
 ### Message example
@@ -836,8 +842,8 @@ Mainly used to check information measured from a sleep sensor. Requests the Clov
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                      | Conditional  |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                      | Conditional  |
 
 ### Message example
 
@@ -907,8 +913,8 @@ Mainly used to check information measured from a sleep sensor. Requests the Clov
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                      | Conditional  |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                      | Conditional  |
 
 ### Message example
 
@@ -978,7 +984,7 @@ Mainly used to check built-in battery information of a wireless appliance such a
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1012,7 +1018,7 @@ Sends the battery information of the target appliance to CEK as a response to th
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | The object containing battery information of the current appliance.   | Required    |
+| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | Object containing battery information of the current appliance.   | Required    |
 
 ### Message example
 
@@ -1046,7 +1052,7 @@ Mainly used to check built-in battery information of a wireless appliance such a
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1080,7 +1086,7 @@ Sends the battery information of the target appliance to CEK as a response to th
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | The object containing battery information of the current appliance.   | Required    |
+| `batteryInfo`                 | [BatteryInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BatteryInfoObject) | Object containing battery information of the current appliance.   | Required    |
 
 ### Message example
 
@@ -1108,13 +1114,80 @@ Sends the battery information of the target appliance to CEK as a response to th
 ### See also
 * [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)
 
+## GetCleaningCycleRequest {#GetCleaningCycleRequest}
+Used to check the cleaning cycle of an appliance. Requests the Clova Home extension for the information on the remaining time until the next cleaning cycle of the target appliance. The extension must use the [`GetCleaningCycleResponse`](#GetCleaningCycleResponse) message as a response to this request.
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "9a1a7237-f1c0-44f8-b4db-2a2abb1f0e1c",
+    "name": "GetCleaningCycleRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-045"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetCleaningCycleResponse`](#GetCleaningCycleResponse)
+
+## GetCleaningCycleResponse {#GetCleaningCycleResponse}
+
+Sends the information on the time remaining until the next cleaning cycle of the target appliance to CEK as a response to the [`GetCleaningCycleRequest`](#GetCleaningCycleRequest) message.
+
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
+| `remainingTime`              | string | The time remaining until cleaning is required. (Duration, <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)    | Required    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetCleaningCycleResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "remainingTime": "PT8H40M",
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetCleaningCycleRequest`](#GetGetCleaningCycleRequest)
+
 ## GetCloseTimeRequest {#GetCloseTimeRequest}
 Requests the Clova Home extension for the recent close time of the target, mainly from the detection details of the open-close sensor. The extension must use the [`GetCloseTimeResponse`](#GetCloseTimeResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1176,12 +1249,12 @@ Sends the recent close time of the target from the detection details of the open
 * [`GetCloseTimeRequest`](#GetCloseTimeRequest)
 
 ## GetConsumptionRequest {#GetConsumptionRequest}
-Mainly used to check for energy consumption to date measured on appliances such as smart plugs or smart power strips. Requests the Clova Home extension for the energy consumption information measured by the target appliance. The extension must use the [`GetConsumptionResponse`](#GetConsumptionResponse) message as a response to this request.
+Mainly used to check for energy consumption or resource information to date measured on appliances such as smart plugs or smart power strips. Requests the Clova Home extension for the energy consumption or resource information measured by the target appliance. The extension must use the [`GetConsumptionResponse`](#GetConsumptionResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1210,12 +1283,12 @@ Mainly used to check for energy consumption to date measured on appliances such 
 * [`GetConsumptionResponse`](#GetConsumptionResponse)
 
 ## GetConsumptionResponse {#GetConsumptionResponse}
-Sends the information on the energy consumption measured by the target appliance to date to CEK as a response to the [`GetConsumptionRequest`](#GetConsumptionRequest) message.
+Sends the information on energy consumption or resource information measured by the target appliance to date to CEK as a response to the [`GetConsumptionRequest`](#GetConsumptionRequest) message.
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `consumption`                | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) | The object containing the information on energy consumption to date measured by the appliance.   | Required    |
+| `consumption[]`              | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) array | Object containing the information on energy consumption or resource information to date measured by the appliance.   | Required    |
 
 ### Message example
 
@@ -1230,10 +1303,13 @@ Sends the information on the energy consumption measured by the target appliance
     "payloadVersion": "1.0"
   },
   "payload": {
-    "currentBill": {
-        "value": 77.5,
-        "currency": "kW"
-    },
+    "consumption": [
+      {
+        "name": "Electricity consumption",
+        "value": 79.7,
+        "unit": "kW"
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
@@ -1250,7 +1326,7 @@ Mainly used to check for billing information based on energy consumption to date
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1284,7 +1360,7 @@ Sends the information on billing measured by the target appliance to date to CEK
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `currentBill`                 | [BillInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BillInfoObject) | The object containing the billing information measured by the appliance to date.   | Required    |
+| `currentBill`                 | [BillInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BillInfoObject) | Object containing the billing information measured by the appliance to date.   | Required    |
 
 ### Message example
 
@@ -1319,7 +1395,7 @@ Mainly used to check for the current temperature measured from appliances such a
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1354,7 +1430,7 @@ Sends the information on current temperature measured by the target appliance to
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `currentTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the information on the current temperature measured by the target appliance.  | Required    |
+| `currentTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the information on the current temperature measured by the target appliance.  | Required    |
 
 ### Message example
 
@@ -1385,13 +1461,13 @@ Sends the information on current temperature measured by the target appliance to
 
 ## GetDeviceStateRequest {#GetDeviceStateRequest}
 
-Requests to all state and measurement information provided by the target appliance. For example, you can use individual [`GetAirQualityRequest`](#GetAirQualityRequest), [`GetHumidityRequest`](#GetHumidityRequest), [`GetFineDustRequest`](#GetFineDustRequest), and [`GetUltraFineDustRequest`](#GetUltraFineDustRequest) messages to check air quality, humidity, fine dust, and ultrafine dust information respectively. However, you can simply use the `GetDeviceStateRequest` message to check all information at once. Some measurements require information on a specific period, and this is sent via the `period` field, The extension must use the [`GetDeviceStateResponse`](#GetDeviceStateResponse) message as a response to this request.
+Requests to all state and measurement information provided by the target appliance. For example, you can use individual [`GetAirQualityRequest`](#GetAirQualityRequest), [`GetHumidityRequest`](#GetHumidityRequest), [`GetFineDustRequest`](#GetFineDustRequest), and [`GetUltraFineDustRequest`](#GetUltraFineDustRequest) messages to check air quality, humidity, fine dust, and ultrafine dust information respectively. However, you can simply use the `GetDeviceStateRequest` message to check all information at once. Some measurements require information on a specific period which is delivered via the `period` field. The extension must use the [`GetDeviceStateResponse`](#GetDeviceStateResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                         | Conditional   |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                         | Conditional   |
 
 ### Message example
 
@@ -1429,7 +1505,7 @@ Sends the information on all states provided by the target appliance to CEK as a
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `states[]`                   | [CustomInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomInfoObject) array  | The object containing information on all states provided by the appliance.                    | Required  |
+| `states[]`                   | [CustomInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#CustomInfoObject) array  | Object containing information on all states provided by the appliance.                    | Required  |
 
 ### Message example
 
@@ -1459,7 +1535,7 @@ Sends the information on all states provided by the target appliance to CEK as a
         "name": "Humidity of fridge",
         "value" : 10,
         "unit" : "percentage"
-      },
+      }
     ],
     "applianceResponseTimestamp": "2017-11-23T20:31:18+09:00"
   }
@@ -1477,7 +1553,7 @@ Mainly used to check estimated billing based on energy consumption to date measu
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1511,7 +1587,7 @@ Sends the billing information estimated by the target appliance to CEK as a resp
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `estimateBill`                 | [BillInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BillInfoObject) | The object containing billing information estimated by the appliance.   | Required    |
+| `estimateBill`                 | [BillInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BillInfoObject) | Object containing billing information estimated by the appliance.   | Required    |
 
 ### Message example
 
@@ -1547,7 +1623,7 @@ Used to check the amount of usage or remaining lifespan on appliances such as fi
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1581,7 +1657,7 @@ Sends the information on usage or remaining lifespan of all parts of the target 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `expendableInfo[]`           | [ExpendableInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ExpendableInfoObject) array  | The object containing information on usage or remaining lifespan of appliance parts.                    | Required  |
+| `expendableInfo[]`           | [ExpendableInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ExpendableInfoObject) array  | Object containing information on usage or remaining lifespan of appliance parts.                    | Required  |
 
 ### Message example
 
@@ -1599,10 +1675,7 @@ Sends the information on usage or remaining lifespan of all parts of the target 
     "expendableInfo" : [
       {
         "name": "Packing",
-        "remainingTime" : {
-          "month": 1,
-          "day": 3
-        }
+        "remainingTime": "P0001-04-10"
       },
       {
         "name": "Filter 1",
@@ -1628,7 +1701,7 @@ Mainly used to check information on fine dust (PM10) measured from an appliance 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1662,7 +1735,7 @@ Sends the information on fine dust (PM10) measured by the target appliance to CE
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `fineDust`                 | [FineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#FineDustInfoObject) | The object containing information on fine dust measured by the current appliance.   | Required    |
+| `fineDust`                 | [FineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#FineDustInfoObject) | Object containing information on fine dust measured by the current appliance.   | Required    |
 
 ### Message example
 
@@ -1697,7 +1770,7 @@ Mainly used to check information on humidity measured from an appliance such as 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1731,7 +1804,7 @@ Sends the information on humidity measured by the target appliance to CEK as a r
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `humidity`                 | [HumidityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#HumidityInfoObject) | The object containing information on humidity measured by the current appliance.   | Required    |
+| `humidity`                 | [HumidityInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#HumidityInfoObject) | Object containing information on humidity measured by the current appliance.   | Required    |
 
 ### Message example
 
@@ -1765,7 +1838,7 @@ Used to check the time spent on the food warming mode of appliances such as rice
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1827,12 +1900,12 @@ Sends the information on the time spent on the warming mode of the target applia
 * [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest)
 
 ## GetLockStateRequest {#GetLockStateRequest}
-Mainly used to check the appliance state such as a smart value. Requests the Clova Home extension for the current lock state of the target appliance. The extension must use the [`GetLockStateResponse`](#GetLockStateResponse) message as a response to this request.
+Mainly used to check the appliance state such as a smart valve. Requests the Clova Home extension for the current lock state of the lock device on the target appliance. The extension must use the [`GetLockStateResponse`](#GetLockStateResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -1861,12 +1934,13 @@ Mainly used to check the appliance state such as a smart value. Requests the Clo
 * [`GetLockStateResponse`](#GetLockStateResponse)
 
 ## GetLockStateResponse {#GetLockStateResponse}
-Sends the information on the current lock state of the target appliance to CEK as a response to the [`GetLockStateRequest`](#GetLockStateRequest) message.
+Sends the information on the current lock state of the lock device on the target appliance to CEK as a response to the [`GetLockStateRequest`](#GetLockStateRequest) message.
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `lockState`   | string | The lock state of an appliance. Available values are: <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | Required    |
+| `lockState`                  | string | The lock state of an appliance lock device. Available values are: <ul><li><code>"LOCKED"</code>: The device is locked</li><li><code>"UNLOCKED"</code>: The device is unlocked</li></ul> | Required    |
+
 
 ### Message example
 
@@ -1881,9 +1955,9 @@ Sends the information on the current lock state of the target appliance to CEK a
     "payloadVersion": "1.0"
   },
   "payload": {
-    "lockState": "LOCKED"
-  },
-  "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+    "lockState": "LOCKED",
+    "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+  }
 }
 ```
 
@@ -1892,13 +1966,80 @@ Sends the information on the current lock state of the target appliance to CEK a
 ### See also
 * [`GetLockStateRequest`](#GetLockStateRequest)
 
+## GetOpenStateRequest {#GetOpenStateRequest}
+Requests the Clova Home extension for the current state information of the detection target (open or close), mainly from the detection details of the open-close sensor. The extension must use the [`GetOpenStateResponse`](#GetOpenStateResponse) message as a response to this request.
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "GetOpenStateRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-012"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetOpenStateResponse`](#GetOpenStateResponse)
+
+## GetOpenStateResponse {#GetOpenStateResponse}
+Mainly sends the current state information of the detection target (open or close) to CEK as a response to the [`GetOpenStateRequest`](#GetOpenStateRequest) message.
+
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
+| `openState`                  | string | The detected state of a target such as a cover, door, or window.<ul><li><code>"CLOSED"</code>: The target is closed</li><li><code>"OPENED"</code>: The target is open</li></ul> | Required    |
+
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetOpenStateResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "OpenState": "LOCKED",
+    "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`GetOpenStateRequest`](#GetOpenStateRequest)
+
 ## GetOpenTimeRequest {#GetOpenTimeRequest}
 Requests the Clova Home extension for the recent open time of the target, mainly from the detection details of the open-close sensor. The extension must use the [`GetOpenTimeResponse`](#GetOpenTimeResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1965,7 +2106,7 @@ Mainly used to check the action phase of appliances that operate in phases such 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -1999,7 +2140,7 @@ Sends the current action phase of the target appliance to CEK as a response to t
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `phase`                 | [PhaseInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PhaseInfoObject) | The object containing information on the current action phase of the appliance.   | Required    |
+| `phase`                 | [PhaseInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PhaseInfoObject) | Object containing information on the current action phase of the appliance.   | Required    |
 
 ### Message example
 
@@ -2033,7 +2174,7 @@ Mainly used to check the progressive tax bracket in appliances such as smart met
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -2068,7 +2209,7 @@ Sends the information on the progressive tax bracket determined by the target ap
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `progressiveTaxBracket`      | [ProgressiveTaxBracketInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ProgressiveTaxBracketInfoObject) | The object containing information on progressive tax bracket.  | Required    |
+| `progressiveTaxBracket`      | [ProgressiveTaxBracketInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ProgressiveTaxBracketInfoObject) | Object containing information on progressive tax bracket.  | Required    |
 
 ### Message example
 
@@ -2102,7 +2243,7 @@ Mainly used to check the remaining time until the end of an action on appliances
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -2164,13 +2305,13 @@ Sends the information on the time remaining until the end of the action of the t
 * [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)
 
 ## GetRightPostureRatioRequest {#GetRightPostureRatioRequest}
-Used to check the ratio of a user using the target appliance in good posture. Requests the Clova Home extension for the ratio of the user using the target target appliance in good posture during a specific or whole period of use. The extension must use the [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse) message as a response to this request.
+Used to check the ratio of a user using the target appliance in good posture. Requests the Clova Home extension for the ratio of the user using the target appliance in good posture during a specific or whole period of use. The extension must use the [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse) message as a response to this request.
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                     | Always   |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                     | Always   |
 
 ### Message example
 
@@ -2209,7 +2350,7 @@ Sends the information on the ratio of the user using the target appliance in goo
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `rightPostureRatio`          | [RatioInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#RatioInfoObject) | The object containing information on the ratio of the user using the target appliance in good posture.   | Required    |
+| `rightPostureRatio`          | [RatioInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#RatioInfoObject) | Object containing information on the ratio of the user using the target appliance in good posture.   | Required    |
 
 ### Message example
 
@@ -2243,7 +2384,7 @@ Used to check the use states of the user in appliances such as a smart chair. Re
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -2277,8 +2418,8 @@ Sends the sit-down information of the user detected by the target appliance and 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string  | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `sittingState`               | [SittingStateInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SittingStateInfoObject) |  The object containing the sit-down information of the user on appliances such as a smart chair.              | Required    |
-| `recentlySittingPeriod`      | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject) | The object containing information on the latest time of use.              | Optional    |
+| `sittingState`               | [SittingStateInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SittingStateInfoObject) |  Object containing the sit-down information of the user on appliances such as a smart chair.              | Required    |
+| `recentlySittingPeriod`      | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject) | Object containing information on the latest time of use.              | Optional    |
 
 ### Message example
 
@@ -2316,8 +2457,8 @@ Mainly used to check the sleep score of the user in appliances such as a sleep s
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                          | Conditional  |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                          | Conditional  |
 
 ### Message example
 
@@ -2355,7 +2496,7 @@ Sends the sleep score of the user assessed by the target appliance to CEK as a r
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string  | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `sleepScore`                 | [SleepScoreInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SleepScoreInfoObject)  | The object containing information on sleep score.                                                       | Required    |
+| `sleepScore`                 | [SleepScoreInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SleepScoreInfoObject)  | Object containing information on sleep score.                                                       | Required    |
 
 ### Message example
 
@@ -2371,7 +2512,7 @@ Sends the sleep score of the user assessed by the target appliance to CEK as a r
   },
   "payload": {
     "sleepScore": {
-      "value": 80,
+      "value": 80
     },
     "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
   }
@@ -2389,8 +2530,8 @@ Mainly used to check the sleep score of the user in appliances such as a sleep s
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                          | Conditional  |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                          | Conditional  |
 
 ### Message example
 
@@ -2464,7 +2605,7 @@ Mainly used to check for the desired temperature set in appliances such as air c
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -2498,7 +2639,7 @@ Sends the information on the desired temperature set by the target appliance to 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `targetTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.  | Required    |
+| `targetTemperature`          | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.  | Required    |
 
 ### Message example
 
@@ -2532,7 +2673,7 @@ Mainly used to check information on ultrafine dust (PM2.5) measured from an appl
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -2566,7 +2707,7 @@ Sends the information on ultrafine dust (PM2.5) measured by the target appliance
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | The time of checking the requested information from the appliance. (Timestamp, <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | Optional    |
-| `ultraFineDust`                 | [UltraFineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#UltraFineDustInfoObject) | The object containing information on the ultrafine index dust measured by the current appliance.   | Required    |
+| `ultraFineDust`                 | [UltraFineDustInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#UltraFineDustInfoObject) | Object containing information on the ultrafine index dust measured by the current appliance.   | Required    |
 
 ### Message example
 
@@ -2601,8 +2742,8 @@ Used to check the usage of the target appliance by a user. Requests the Clova Ho
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | The object containing information on the period.                                     | Always   |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | Object containing information on the period.                                     | Always   |
 
 ### Message example
 
@@ -2675,7 +2816,7 @@ Used to check the state of a designated appliance. Requests the Clova Home exten
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string  | Access token of the Clova Home extension | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
 
 ### Message example
 
@@ -2744,9 +2885,9 @@ Sends the result of setting the target appliance to increase brightness of light
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the information on current brightness.                                | Optional    |
-| `previousState`            | object | The object containing the information on the previous state of the appliance.                           | Required    |
-| `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the information on previous brightness.                                | Optional    |
+| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the information on current brightness.                                | Optional    |
+| `previousState`            | object | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the information on previous brightness.                                | Optional    |
 
 ### Remarks
 
@@ -2790,8 +2931,8 @@ Mainly used to control lighting. Requests the Clova Home extension to set the ta
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is always included.     | Always    |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | The object containing the information on the amount of change in brightness.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is always included.     | Always    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | Object containing the information on the amount of change in brightness.                              | Always    |
 
 ### Message example
 
@@ -2829,9 +2970,9 @@ Sends the result of setting the target appliance to channel up the TV to CEK as 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | The object containing the information on the current TV channel.                                | Optional    |
-| `previousState`            | object | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | The object containing the information on the previous TV channel.                                | Optional    |
+| `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | Object containing the information on the current TV channel.                                | Optional    |
+| `previousState`            | object | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | Object containing the information on the previous TV channel.                                | Optional    |
 
 ### Remarks
 
@@ -2875,8 +3016,8 @@ Mainly used to control TVs or set-top boxes. Requests the Clova Home extension t
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | The object containing information on the amount of TV channels to change.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | Object containing information on the amount of TV channels to change.                              | Always    |
 
 ### Message example
 
@@ -2914,9 +3055,9 @@ Sends the result of setting the target appliance to increase the fan speed to CE
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `fanSpeed`            | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | The object containing the information on the current fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
-| `previousState`          | object                      | The object containing the information on the previous state of the appliance.                 | Optional    |
-| `previousState.FanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | The object containing information on the previous fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
+| `fanSpeed`            | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | Object containing the information on the current fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
+| `previousState`          | object                      | Object containing the information on the previous state of the appliance.                 | Optional    |
+| `previousState.FanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | Object containing information on the previous fan speed. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul> | Optional    |
 
 ### Remarks
 
@@ -2960,8 +3101,8 @@ Mainly used to control an appliance such as an air purifier. Requests the Clova 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | The object containing information on the amount of speed to change. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>  | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | Object containing information on the amount of speed to change. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>  | Always    |
 
 ### Message example
 
@@ -2993,15 +3134,15 @@ Mainly used to control an appliance such as an air purifier. Requests the Clova 
 * [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)
 
 ## IncrementIntensityLevelConfirmation {#IncrementIntensityLevelConfirmation}
-Sends the result of setting the target appliance to increase the pressure level such as air or water pressure to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.
+Sends the result of setting the target appliance to increase the pressure level, such as air or water pressure, to CEK as a response to the [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) message.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | The object containing current information on pressure or water pressure intensity.                  | Optional    |
-| `previousState`  | object                                  | The object containing the information on the previous state of the appliance.                           | Optional    |
-| `previousState.intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | The object containing previous information on pressure or water pressure intensity.    | Optional    |
+| `intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | Object containing current information on pressure or water pressure intensity.                  | Optional    |
+| `previousState`  | object                                  | Object containing the information on the previous state of the appliance.                           | Optional    |
+| `previousState.intensityLevel` | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | Object containing previous information on pressure or water pressure intensity.    | Optional    |
 
 ### Remarks
 
@@ -3038,15 +3179,15 @@ You do not have to enter the value if the information to enter for the payload c
 * [`IncrementIntensityLevelRequest`](#IncrementIntensityLevelRequest)
 
 ## IncrementIntensityLevelRequest {#IncrementIntensityLevelRequest}
-Requests the Clova Home extension to set the target appliance to increase the pressure level such as air or water pressure by the designated amount. The extension must use the [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) message as a response to this request.
+Requests the Clova Home extension to set the target appliance to increase the pressure level, such as air or water pressure, by the designated amount. The extension must use the [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) message as a response to this request.
 
 ### Payload fields
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | The object containing information on the amount of pressure or water pressure intensity to change.           | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | Object containing information on the amount of pressure or water pressure intensity to change.           | Always    |
 
 ### Message example
 
@@ -3084,9 +3225,9 @@ Sends the result of setting the target appliance to increase the temperature to 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `previousState`     | object                                  | The object containing the information on the previous state of the appliance.                              | Optional    |
-| `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing previous information on the desired temperature.                 | Optional    |
-| `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                               | Optional    |
+| `previousState`     | object                                  | Object containing the information on the previous state of the appliance.                              | Optional    |
+| `previousState.targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing previous information on the desired temperature.                 | Optional    |
+| `targetTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                               | Optional    |
 
 ### Remarks
 
@@ -3130,8 +3271,8 @@ Mainly used to control appliances such as air conditioners or thermostats. Reque
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md). | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the information on the amount of temperature to change.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the information on the amount of temperature to change.                              | Always    |
 
 ### Message example
 
@@ -3169,9 +3310,9 @@ Sends the result of setting the target appliance to increase the speaker volume 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `previousState`     | object                                 | The object containing the information on the previous state of the appliance.                              | Optional    |
-| `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject) | The object containing information on the previous volume.                 | Optional    |
-| `targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)               | The object containing the information on the volume set on the target appliance or that the extension has requested to be set on the target appliance.                 | Optional    |
+| `previousState`     | object                                 | Object containing the information on the previous state of the appliance.                              | Optional    |
+| `previousState.targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject) | Object containing information on the previous volume.                 | Optional    |
+| `targetVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)               | Object containing the information on the volume set on the target appliance or that the extension has requested to be set on the target appliance.                 | Optional    |
 
 ### Message example
 
@@ -3211,8 +3352,8 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | The object containing the information on the amount of volume to change.                              | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | Object containing the information on the amount of volume to change.                              | Always    |
 
 ### Message example
 
@@ -3279,7 +3420,7 @@ Mainly used to control an appliance such as a smart bed. Requests the Clova Home
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Remarks
 The appliance will move to its maximum position when adjusting the appliance height. To stop while adjusting, the Clova Home extension must receive the [StopRequest](#StopRequest) message.
@@ -3346,7 +3487,7 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
 
 ### Message example
 
@@ -3410,7 +3551,7 @@ Used to control appliances such as smart curtains or bidets. Requests the Clova 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -3474,7 +3615,7 @@ Mainly used to control an appliance such as a smart bed. Requests the Clova Home
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Remarks
 The appliance will move to its maximum position when adjusting the appliance height. To stop while adjusting, the Clova Home extension must receive the [StopRequest](#StopRequest) message.
@@ -3507,6 +3648,88 @@ The appliance will move to its maximum position when adjusting the appliance hei
 * [`LowerRequest`](#LowerRequest)
 * [`RaiseConfirmation`](#RaiseConfirmation)
 
+## ReleaseModeConfirmation {#ReleaseModeConfirmation}
+Sends the result of setting to disable the operation mode of the current appliance to CEK as a response to the [`ReleaseModeRequest`](#ReleaseModeRequest) message.
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Required |
+|---------------|---------|-----------------------------|:---------:|
+| `mode`          | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | Object containing the operation mode set on the target appliance by the request to disable the operation mode or that has the information to return the extension to the target appliance.      | Optional    |
+| `previousState` | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | Object containing information on the operation mode set on the target appliance before the request to disable the operation mode was made.      | Optional    |
+
+### Remarks
+
+You do not have to enter the value if the information to enter for the payload cannot be retrieved from the target appliance. In this case, you must notify the user that the appliance control request is successfully processed without stating any specific information.
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "ReleaseModeConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "previousState": {
+      "mode": {
+        "value": "sleep"
+      }
+    },
+    "mode": {
+      "value": "wakeup"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`ReleaseModeRequest`](#ReleaseModeRequest)
+
+## ReleaseModeRequest {#ReleaseModeRequest}
+Used to disable the operation mode set on the current appliance. Requests the Clova Home extension to return to the previous operation mode or the default operation mode by disabling the operation mode of the appliance. The extension must use the [`ReleaseModeConfirmation`](#ReleaseModeConfirmation) message as a response to this request.
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken` | string  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md). | Always    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | Object containing information on the operation mode to disable in the target appliance.                         | Always    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "ReleaseModeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-006"
+    },
+    "mode": "sleep"
+  }
+}
+```
+
+{% endraw %}
+
+### See also
+* [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)
+
 ## SetBrightnessConfirmation {#SetBrightnessConfirmation}
 Sends the result of setting the target appliance to change the brightness of lights to CEK as a response to the [`SetBrightnessRequest`](#SetBrightnessRequest) message.
 
@@ -3514,7 +3737,7 @@ Sends the result of setting the target appliance to change the brightness of lig
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the brightness information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the brightness information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -3553,8 +3776,8 @@ Mainly used to control lighting. Requests the Clova Home extension to change the
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | The object containing the information on brightness to set on the target appliance.                | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | Object containing the information on brightness to set on the target appliance.                | Always    |
 
 ### Message example
 
@@ -3592,7 +3815,7 @@ Sends the result of setting the target appliance to change the TV channel using 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `channelName`               | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | The object containing the name of the TV channel set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `channelName`               | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | Object containing the name of the TV channel set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -3631,8 +3854,8 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | The object containing the information on the name of a TV channel to set on the target appliance.                | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | Object containing the information on the name of a TV channel to set on the target appliance.                | Always    |
 
 ### Message example
 
@@ -3670,7 +3893,7 @@ Sends the result of setting the target appliance to change the TV channel using 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `channel`     | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)  | The object containing the TV channel information set on the target appliance or that the extension has requested to be set on the target appliance.      | Optional    |
+| `channel`     | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)  | Object containing the TV channel information set on the target appliance or that the extension has requested to be set on the target appliance.      | Optional    |
 
 ### Remarks
 
@@ -3709,8 +3932,8 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | The object containing the information on the TV channel to set on the target appliance.                | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | Object containing the information on the TV channel to set on the target appliance.                | Always    |
 
 ### Message example
 
@@ -3748,7 +3971,7 @@ Sends the result of changing the color of lights, screens, or lamps of the targe
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `color`   | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | The object containing the color information on lights, screens, or lamps set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `color`   | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | Object containing the color information on lights, screens, or lamps set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -3789,8 +4012,8 @@ Mainly used to control appliances such as smart lamps. Requests the Clova Home e
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `color`         | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | The object containing color information to set on lights, screens, or lamps of the target appliance.            | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `color`         | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | Object containing color information to set on lights, screens, or lamps of the target appliance.            | Always    |
 
 ### Message example
 
@@ -3830,7 +4053,7 @@ Sends the result of changing the color temperature of lights, screens, or lamps 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `colorTemperature`   | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | The object containing the color temperature information on lights, screens, or lamps set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `colorTemperature`   | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | Object containing the color temperature information on lights, screens, or lamps set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -3869,8 +4092,8 @@ Mainly used to control appliances such as smart lamps. Requests the Clova Home e
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `colorTemperature` | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | The object containing the color temperature information to set on lights, screens, or lamps of the target appliance.                | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `colorTemperature` | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | Object containing the color temperature information to set on lights, screens, or lamps of the target appliance.                | Always    |
 
 ### Message example
 
@@ -3908,7 +4131,7 @@ Sends the result of setting the target appliance to change the fan speed to CEK 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `fanSpeed`               | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | The object containing the fan speed information set on the target appliance or that the extension has requested to be set on the target appliance. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>   | Optional    |
+| `fanSpeed`               | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | Object containing the fan speed information set on the target appliance or that the extension has requested to be set on the target appliance. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>   | Optional    |
 
 ### Remarks
 
@@ -3947,8 +4170,8 @@ Mainly used to control an appliance such as an air purifier. Requests the Clova 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | The object containing information on the fan speed to set on the target appliance. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>     | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | Object containing information on the fan speed to set on the target appliance. The fan speed represents wind speed and is limited to the following values.<ul><li><code>1</code>: Low wind (phase 1)</li><li><code>2</code>: Medium wind (phase 2)</li><li><code>3</code>: High wind (phase 3)</li></ul>     | Always    |
 
 ### Message example
 
@@ -3986,7 +4209,7 @@ Sends the result of changing the desired temperature of the freezer to CEK as a 
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -4025,8 +4248,8 @@ Used to control appliances such as refrigerators. Requests the Clova Home extens
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field.        | Always    |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance.     | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field.        | Always    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance.     | Always    |
 
 ### Message example
 
@@ -4064,7 +4287,7 @@ Sends the result of changing the desired temperature of the fridge compartment t
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -4103,8 +4326,8 @@ Used to control appliances such as refrigerators. Requests the Clova Home extens
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field.        | Always    |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance.     | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field.        | Always    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance.     | Always    |
 
 ### Message example
 
@@ -4176,7 +4399,7 @@ Mainly used to control an appliance such as a smart valve. Requests the Clova Ho
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
 | `lockState`       | string | The lock state of an appliance to set. Available values are: <ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | Always    |
 
 ### Message example
@@ -4213,7 +4436,7 @@ Sends the result of changing the operation mode of the target appliance to CEK a
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | The object containing the operation mode set on the target appliance or that the extension has requested to be set on the target appliance.      | Optional    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | Object containing the operation mode set on the target appliance or that the extension has requested to be set on the target appliance.      | Optional    |
 
 ### Remarks
 
@@ -4252,8 +4475,8 @@ Used to control the operation mode of an appliance. Requests the Clova Home exte
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken` | string  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md). | Always    |
-| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | The object containing information on the operation mode to set on the target appliance.                         | Always    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | Object containing information on the operation mode to set on the target appliance.                         | Always    |
 
 ### Message example
 
@@ -4291,7 +4514,7 @@ Sends the result of setting the target appliance to change the desired temperatu
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
+| `targetTemperature`               | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance or that the extension has requested to be set on the target appliance.                                | Optional    |
 
 ### Remarks
 
@@ -4330,8 +4553,8 @@ Mainly used to control appliances such as air conditioners or thermostats. Reque
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`   | string | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | The object containing the desired temperature information to set on the target appliance.                | Always    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | Object containing the desired temperature information to set on the target appliance.                | Always    |
 
 ### Message example
 
@@ -4369,7 +4592,7 @@ Sends the result of stopping the current action of the target appliance to CEK a
 
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
-| `phase`       | [PhaseInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PhaseInfoObject) | The object containing information on the last phase of action performed by the appliance before stopping.   | Optional  |
+| `phase`       | [PhaseInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PhaseInfoObject) | Object containing information on the last phase of action performed by the appliance before stopping.   | Optional  |
 
 ### Message example
 
@@ -4404,7 +4627,7 @@ Requests the Clova Home extension to stop the current action of the appliance. T
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field.     | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field.     | Always    |
 
 ### Message example
 
@@ -4467,7 +4690,7 @@ Requests the Clova Home extension to turn off the target appliance. The extensio
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
 
 ### Message example
 
@@ -4530,7 +4753,7 @@ Requests the Clova Home extension to turn on the target appliance. The extension
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
 
 ### Message example
 
@@ -4593,7 +4816,7 @@ Mainly used to control appliances such as TVs or set-top boxes. Requests the Clo
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
 | `accessToken`      | string                                  | Access token of the user account for an IoT service. CEK sends the access token of a user account acquired from the authorization server of a third party service. For more information, see [Linking user account](/CEK/Guides/Link_User_Account.md).                          | Always    |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | The object containing target appliance information. The `applianceId` field is a required field. | Always    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | Object containing target appliance information. The `applianceId` field is a required field. | Always    |
 
 ### Message example
 

@@ -3,7 +3,7 @@ Clova Home extension messages are exclusively used when an extension controlling
 
 ### Message format {#ClovaHomeExtMessageFormat}
 
-Clova Home extension messages are configured with the `header` field and `payload` field. This is the same for both request messages and response messages. However, the configuration of the `payload` field may vary depending on the [interface](#ClovaHomeExtInterface) used. The following explains the common format of the Clova Home extension messages.
+Clova Home extension messages are configured with the `header` field and `payload`. This is the same for both request messages and response messages. However, the configuration of the `payload` may vary depending on the [interface](#ClovaHomeExtInterface) used. The following explains the common format of the Clova Home extension messages.
 
 <div class="note">
   <p><strong>Note!</strong></p>
@@ -27,14 +27,14 @@ Clova Home extension messages are configured with the `header` field and `payloa
 
 
 #### Message fields
-| Field       | Data Type    | Description                     | Required/Included |
+| Field name       | Data type    | Description                     | Required/Included |
 |---------------|---------|-----------------------------|:-------------:|
 | `header`                 | object | The header of the message.                                                                                            | Required/Always     |
-| `header.messageId`       | string | The message ID (UUID). This is an identifier created by Clova to distinguish individual messages.                                         | Required/Always     |
+| `header.messageId`       | string | The message ID (UUID). An identifier created by Clova to distinguish individual messages.                                         | Required/Always     |
 | `header.name`            | string | The API name of the message.                                                                                        | Required/Always     |
 | `header.namespace`       | string | This field is always set to `"ClovaHome"`.                                                                     | Required/Always     |
 | `header.payloadVersion`  | string | The version of the Clova Home extension message specified in `header.name`. Configuration of the `payload` field may vary depending on this version.  | Required/Always     |
-| `payload`                | object | The configuration and field value of payload objects vary depending on the [interface](#ClovaHomeExtInterface) assigned to `header.name`.       | Required/Always     |
+| `payload`                | object | Configuration of the payload object and its field values can vary depending on which [interface](#ClovaHomeExtInterface) is specified in `header.name`.       | Required/Always     |
 
 #### Message example
 {% raw %}
@@ -142,7 +142,7 @@ Example 4: TargetOffLineError - error response message
 * [Interface](#ClovaHomeExtInterface)
 
 ### Interface {#ClovaHomeExtInterface}
-The interfaces of Clova Home extension messages are classified as follows:
+Clova Home extension messages are categorized into the following interfaces:
 
 * Interface
   * [Discovery interface](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md)
