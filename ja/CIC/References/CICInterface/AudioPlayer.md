@@ -151,7 +151,7 @@ AudioPlayerインターフェースは、クライアントからオーディオ
             "progressReportIntervalInMilliseconds": 60000,
             "progressReportPositionInMilliseconds": null
           },
-          "url": "https://steaming.example.com/1212334548/2231122",
+          "url": "https://streaming.example.com/1212334548/2231122",
           "urlPlayable": true
         },
         "type": "podcast"

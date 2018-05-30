@@ -3,7 +3,7 @@ You can test the registered extension or interaction model prior to deployment. 
 
 * (Custom extension only) [Building an interaction model](#BuildInteractionModel)
 * (Custom extension only) [Testing an interaction model](#TestInteractionModel)
-* [Testing an extension using Clova app](#TestOnClovaApp)
+* [Testing an extension using the Clova app](#TestOnClovaApp)
 
 ## Building an interaction model {#BuildInteractionModel}
 

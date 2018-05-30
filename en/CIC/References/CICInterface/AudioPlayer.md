@@ -12,11 +12,11 @@ The AudioPlayer namespace provides interfaces for playing an audio stream or rep
 | [`PlayResumed`](#PlayResumed)         | Event     | Reports to CIC that the client has resumed playback with the information on the audio stream.         |
 | [`PlayStarted`](#PlayStarted)         | Event     | Reports to CIC that the client has started playback with the information on the audio stream.    |
 | [`PlayStopped`](#PlayStopped)         | Event     | Reports to CIC that the client has stopped playback with the information on the audio stream.    |
-| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) after the delay—specified period of time—has passed. The delay is specified in the [`AudioPlayer.Play`](#Play) directive. |
-| [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive.|
-| [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive.|
-| [`ReportPlaybackState`](#ReportPlaybackState)           | Event  | Reports to CIC the current playback state of the client. If the [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive is received from CIC, the client must send the `AudioPlayer.ReportPlaybackState` event to CIC.  |
-{% if book.TargetReaderType == "Internal" %}| [`RequestPlaybackState`](#RequestPlaybackState)         | Event  | Requests CIC the current playback state of the client. Upon receiving the `AudioPlayer.ReqeustPlaybackState` event, CIC will send the [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive to all or specific clients registered to the user account.  |
+| [`ProgressReportDelayPassed`](#ProgressReportPositionPassed) | Event | Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) after a specified length of time has passed. The length of time is specified in the [`AudioPlayer.Play`](#Play) directive. |
+| [`ProgressReportIntervalPassed`](#ProgressReportPositionPassed)| Event | Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive.|
+| [`ProgressReportPositionPassed`](#ProgressReportPositionPassed) | Event | Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive.|
+| [`ReportPlaybackState`](#ReportPlaybackState)           | Event  | Reports the current playback state of the client to CIC. If the [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive is received from CIC, the client must send the `AudioPlayer.ReportPlaybackState` event to CIC.  |
+{% if book.TargetReaderType == "Internal" %}| [`RequestPlaybackState`](#RequestPlaybackState)         | Event  | Requests CIC for the current playback state of the client. Upon receiving the `AudioPlayer.ReqeustPlaybackState` event, CIC will send the [`ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive to all or specific clients registered to the user account.  |
 | [`StreamDeliver`](#StreamDeliver)     | Directive | Response to the [`AudioPlayer.StreamRequested`](#StreamRequested) event used when receiving audio stream information that can be played. |{% else %}| [`StreamDeliver`](#StreamDeliver)     | Directive | Response to the [`AudioPlayer.StreamRequested`](#StreamRequested) event used when receiving audio stream information that can be played. |{% endif %}
 | [`StreamRequested`](#StreamRequested) | Event     | Requests CIC for additional information needed for audio stream playback such as a streaming URL.               |
 {% if book.TargetReaderType == "Internal" %}| [`SynchronizePlaybackState`](#SynchronizePlaybackState) | Directive | Instructs the client to synchronize the audio playback state. The client that had sent the `AudioPlayer.RequestPlaybackState` event will receive the `AudioPlayer.SynchronizePlaybackState` directive. |{% endif %}
@@ -27,7 +27,7 @@ The client can receive a shared sound source playback state from all other or sp
 
 ![](/CIC/Resources/Images/CIC_Playback_State_Sync_Work_Flow.png)
 
-1. Clova app requests the audio playback state of all or specific clients registered in the user account to CIC using the {{ "[`AudioPlayer.RequestPlaybackState`](#RequestPlaybackState) event " if book.TargetReaderType == "Internal" }}.
+1. The Clova app requests the audio playback state of all or specific clients registered in the user account to CIC using the {{ "[`AudioPlayer.RequestPlaybackState`](#RequestPlaybackState) event " if book.TargetReaderType == "Internal" }}.
 2. CIC instructs all or specific clients registered in the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) user account to report the current audio playback state.
 3. After receiving the report request, the client reports the current audio playback state using [`AudioPlayer.ReportPlaybackState`](#ReportPlaybackState) event.
 4. CIC instructs the client that made the request to synchronize information by sending the states of the information using the {{ "[`AudioPlayer.SynchronizePlaybackState`](#SynchronizePlaybackState) event " if book.TargetReaderType == "Internal" }}.
@@ -151,7 +151,7 @@ Based on the policy of music service providers, certain information required for
             "progressReportIntervalInMilliseconds": 60000,
             "progressReportPositionInMilliseconds": null
           },
-          "url": "https://steaming.example.com/1212334548/2231122",
+          "url": "https://streaming.example.com/1212334548/2231122",
           "urlPlayable": true
         },
         "type": "podcast"
@@ -483,7 +483,7 @@ Reports to CIC that the client has stopped playback with the information on the 
 * [`PlaybackController.Stop`](/CIC/References/CICInterface/PlaybackController.md#Stop)
 
 ## ProgressReportDelayPassed event {#ProgressReportDelayPassed}
-Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) after the delay—specified period of time—has passed. The delay is specified in the [`AudioPlayer.Play`](#Play) directive.
+Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) after a specified length of time has passed. The length of time is specified in the [`AudioPlayer.Play`](#Play) directive.
 
 ### Context fields
 
@@ -533,7 +533,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/Re
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 
 ## ProgressReportIntervalPassed event {#ProgressReportIntervalPassed}
-Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive.
+Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)), by the specified interval, after playback has started. The interval is specified in the [`AudioPlayer.Play`](#Play) directive.
 
 ### Context fields
 
@@ -583,7 +583,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/Re
 * [`AudioPlayer.ProgressReportPositionPassed`](#ProgressReportPositionPassed)
 
 ## ProgressReportPositionPassed event {#ProgressReportPositionPassed}
-Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive.
+Reports the current playback state to CIC ([`AudioPlayer.PlaybackState`](/CIC/References/Context_Objects.md#PlaybackState)) at the specified time, which is measured from the start of the audio stream. The reporting time is specified in the [`AudioPlayer.Play`](#Play) directive.
 
 ### Context fields
 
@@ -634,7 +634,7 @@ Reports to CIC the current playback state ([`AudioPlayer.PlaybackState`](/CIC/Re
 
 ## ReportPlaybackState event {#ReportPlaybackState}
 
-Reports to CIC the current playback state of the client. If the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive is received from CIC, the client must send the `AudioPlayer.ReportPlaybackState` event to CIC.
+Reports the current playback state of the client to CIC. If the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive is received from CIC, the client must send the `AudioPlayer.ReportPlaybackState` event to CIC.
 
 ### Context fields
 
@@ -689,7 +689,7 @@ Reports to CIC the current playback state of the client. If the [`AudioPlayer.Ex
 {% if book.TargetReaderType == "Internal" %}
 ## RequestPlaybackState event {#RequestPlaybackState}
 
-Requests CIC the current playback state of the client. Upon receiving the `AudioPlayer.ReqeustPlaybackState` event, CIC will send the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive to all or specific clients registered to the user account.
+Requests CIC for the current playback state of the client. Upon receiving the `AudioPlayer.ReqeustPlaybackState` event, CIC will send the [`AudioPlayer.ExpectReportPlaybackState`](#ExpectReportPlaybackState) directive to all or specific clients registered to the user account.
 
 ### Context fields
 

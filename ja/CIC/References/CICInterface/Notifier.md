@@ -78,7 +78,7 @@ Notifierインターフェースは、CICがクライアントデバイスに通
         },
         {
           "assetId": "9d3df3c1-d0b4-4375-84a6-67c7ae000292",
-          "url": "https://steaming.example.com/3325-b5c75045b4ae426885343f9b6abd0bfc-1508160634257"
+          "url": "https://streaming.example.com/3325-b5c75045b4ae426885343f9b6abd0bfc-1508160634257"
         }
       ],
       "assetPlayOrder": [

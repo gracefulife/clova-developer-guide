@@ -4,7 +4,7 @@ The SpeechSynthesizer namespace provides interfaces for requesting CIC to synthe
 
 | Message name         | Type  | Description                                   |
 |------------------|-----------|---------------------------------------------|
-| [`Request`](#Request)                 | Event     | Requests to CIC to generate a specified text into TTS.                                               |
+| [`Request`](#Request)                 | Event     | Requests CIC to generate a specified text into TTS.                                               |
 | [`Speak`](#Speak)                     | Directive | Instructs the client to play the synthesized TTS through the client speaker.                                        |
 | [`SpeechFinished`](#SpeechFinished)   | Event     | Reports to CIC that the client has finished playing the TTS.                                 |
 | [`SpeechStarted`](#SpeechStarted)     | Event     | Reports to CIC that the client has started playing the TTS.                                 |
@@ -13,7 +13,7 @@ The SpeechSynthesizer namespace provides interfaces for requesting CIC to synthe
 
 ## Request event {#Request}
 
-Requests to CIC to generate a specified text into TTS.
+Requests CIC to generate a specified text into TTS.
 
 ### Context fields
 

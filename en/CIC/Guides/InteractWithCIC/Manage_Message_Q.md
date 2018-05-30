@@ -8,7 +8,7 @@ Clients constantly send and receive messages to and from CIC. Directives, the me
 
 Due to these characteristics, we recommend you use a queue to manage directives received either through a downchannel or an HTTP response and push and pop directives in the order they were received. We call this queue a "message queue."
 
-You must develop the code so that the directives piled into each message queue are handled one at a time. Here, the message responding to the latest request of the client user must be handled. The user request can be identified with [dialogue ID](/CIC/CIC_Overview.md#DialogModel) and the client must keep the dialogue ID on the latest request. If your message queue is keeping any directive with a dialogue ID of a canceled dialogue, remove the directive from the queue.
+You must develop the code so that the directives queued into each message queue are handled one at a time. Here, the message responding to the latest request of the client user must be handled. The user request can be identified with [dialogue ID](/CIC/CIC_Overview.md#DialogModel) and the client must keep the dialogue ID on the latest request. If your message queue is keeping any directive with a dialogue ID of a canceled dialogue, remove the directive from the queue.
 
 Determine the following as you wish or depending on the UX design.
 * The number of message queues and each queue size
