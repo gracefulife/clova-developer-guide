@@ -1571,8 +1571,6 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
 | 필드 이름       | 자료형    | 필드 설명                     | 필수/포함 여부 |
 |---------------|---------|-----------------------------|:-------------:|
 | `value`             | number  | TV 채널 번호                      | 필수/항상     |
-| `subChannel`        | object  | TV 채널의 서브 채널 정보를 가지는 객체  | 선택/조건부    |
-| `subChannel.value`  | number  | TV 채널의 서브 채널 번호             | 필수/항상     |
 
 ### Object Example
 {% raw %}
@@ -1592,10 +1590,10 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
         "applianceId": "device-007"
     },
     "channel": {
-      "value": 15,
-      "subChannel": {
-        "value": 1
-      }
+      "value": 15
+    },
+    "subChannel": {
+      "value": 1
     }
   }
 }
@@ -1610,10 +1608,10 @@ TV 채널의 번호 정보를 담고 있는 객체입니다. 변경할 TV 채널
   },
   "payload": {
     "channel": {
-      "value": 15,
-      "subChannel": {
-        "value": 1
-      }
+      "value": 15
+    },
+    "subChannel": {
+      "value": 1
     }
   }
 }
