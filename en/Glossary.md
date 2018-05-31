@@ -75,8 +75,8 @@ Messages used by [Clova Extensions Kit](#CEK) and [custom extension](#CustomExte
 ### Device discovery {#Discovery}
 A feature that provides client devices with a list of IoT appliances registered to a user account. See [Providing device discovery](/CEK/Guides/Build_Clova_Home_Extension.md#ProvideDeviceDiscovery) for more details.
 
-### Dialog ID {#DialogID}
-A dialog ID is created every time a user initiates new speech input. It is included when clients send [Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) [event messages](#Event) to [Clova Interface Connect](#CIC). Dialog IDs are also included in [directive messages](#Directive) when responses are returned from a server side to map those responses to corresponding event messages. Clients check a dialog ID included in a directive message and determine which directive message is responding to which event message. If the dialog ID at the client side is different from that of the directive message, the directive message must be disregarded. See [Dialog model](/CIC/CIC_Overview.md#DialogModel) for more details.
+### Dialogue ID {#DialogID}
+A dialogue ID is created every time a user initiates new speech input. It is included when clients send [Recognize](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) [event messages](#Event) to [Clova Interface Connect](#CIC). Dialogue IDs are also included in [directive messages](#Directive) when responses are returned from a server side to map those responses to corresponding event messages. Clients check a dialogue ID included in a directive message and determine which directive message is responding to which event message. If the dialogue ID at the client side is different from that of the directive message, the directive message must be disregarded. See [Dialogue model](/CIC/CIC_Overview.md#DialogModel) for more details.
 
 ### Directive message {#Directive}
 Messages that are sent from [Clova Interface Connect](#CIC) to control the behavior of clients. Directive messages are used when CIC returns responses to event messages from clients, or when CIC sends information to clients under certain conditions.

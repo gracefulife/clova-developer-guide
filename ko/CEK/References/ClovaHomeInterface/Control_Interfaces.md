@@ -352,8 +352,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `subChannel`            | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널의 서브 채널 정보를 가지는 객체                         | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
-| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `previousState.channel`    | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `previousState.subChannel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널의 서브 채널 정보를 가지는 객체                         | 선택    |
 
 ### Remarks
 
@@ -375,9 +377,15 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "channel": {
       "value": 12
     },
+    "subChannel": {
+      "value": 1
+    },
     "previousState": {
       "channel": {
         "value": 13
+      },
+      "subChannel": {
+        "value": 1
       }
     }
   }
@@ -2971,8 +2979,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `channel`               | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `subChannel`            | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 현재 TV 채널의 서브 채널 정보를 가지는 객체                         | 선택    |
 | `previousState`            | object | 기기의 이전 상황 정보를 담고 있는 객체                           | 선택    |
-| `previousState.channel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `previousState.channel`    | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널 정보를 담고 있는 객체                                | 선택    |
+| `previousState.subChannel` | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 이전 TV 채널의 서브 채널 정보를 가지는 객체                         | 선택    |
 
 ### Remarks
 
@@ -2994,9 +3004,15 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
     "channel": {
       "value": 14
     },
+    "subChannel": {
+      "value": 1
+    }
     "previousState": {
       "channel": {
         "value": 15
+      },
+      "subChannel": {
+        "value": 1
       }
     }
   }
@@ -3894,6 +3910,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
 |---------------|---------|-----------------------------|:---------:|
 | `channel`     | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)  | 대상 기기에 설정되었거나 extension이 대상 기기에게 설정하도록 요청한 TV 채널 정보를 담고 있는 객체      | 선택    |
+| `subChannel`  | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)  | 대상 기기에 설정되었거나 extension이 대상 기기에게 설정하도록 요청한 TV 채널의 서브 채널 정보를 가지는 객체 | 선택    |
 
 ### Remarks
 
@@ -3914,6 +3931,9 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
   "payload": {
     "channel": {
       "value":15
+    },
+    "subChannel": {
+      "value": 1
     }
   }
 }
@@ -3934,6 +3954,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | `accessToken`   | string | IoT 서비스의 사용자 계정의 access token. CEK는 외부 서비스의 인증 서버로부터 획득한 사용자 계정의 access token을 전달합니다. 자세한 설명은 [사용자 계정 연결하기](/CEK/Guides/Link_User_Account.md)를 참조합니다.                          | 항상    |
 | `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | 대상 기기 정보를 담고 있는 객체. `applianceId` 필드는 필수입니다. | 항상    |
 | `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 대상 기기에 설정할 TV 채널 정보를 담고 있는 객체                | 항상    |
+| `subChannel`    | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 대상 기기에 설정할 TV 채널의 서브 채널 정보를 가지는 객체         | 조건부   |
 
 ### Message example
 
@@ -3953,10 +3974,10 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
       "applianceId": "device-006"
     },
     "channel": {
-      "value": 15,
-      "subChannel": {
-        "value": 1
-      }
+      "value": 15
+    },
+    "subChannel": {
+      "value": 1
     }
   }
 }
