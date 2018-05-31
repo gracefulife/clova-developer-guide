@@ -74,7 +74,7 @@ The general process of adding an alarm to stopping an alarm is as follows:
 
 Alarms can be changed or removed before step 5 of the above process, but only through the Clova app. Note that a directive for this request will be sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection). The reason for this is that the directives that are not responses to a voice request are designed to be forwarded to the client through a downchannel.
 
-The process changing or removing an alarm is as follows:
+The process for changing or removing an alarm is as follows:
 
 1. The user attempts to change or remove an alarm on the Clova app.
 2. To respond to the user request, Clova sends the [`Alerts.SetAlert`](#SetAlert) directive or the [`Alerts.DeleteAlert`](#DeleteAlert) directive to the client.
@@ -332,7 +332,7 @@ Reports to CIC that the client has successfully deleted the specified alarm. The
 
 ## RequestAlertStop event {#RequestAlertStop}
 
-Requests to CIC to stop the ringing alarm. The client must send this event to CIC when the user stops the alarm—not with a voice command, but by pressing a button on the client device or the client app. CIC will send the [`Alerts.StopAlert`](#StopAlert) directive as a response to this event.
+Requests CIC to stop the ringing alarm. The client must send this event to CIC when the user stops the alarm—not with a voice command, but by pressing a button on the client device or the client app. CIC will send the [`Alerts.StopAlert`](#StopAlert) directive as a response to this event.
 
 ### Context fields
 

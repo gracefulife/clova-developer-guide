@@ -35,7 +35,7 @@ The Text template is used in providing text for the client to display on the cli
 
 ```json
 // Example 1.
-// User request: How much does one dollar worth now? (The text is to be displayed as emphasized)
+// User request: How much is one dollar worth now? (The text is to be displayed as emphasized)
 {
   "actionList": [
     {

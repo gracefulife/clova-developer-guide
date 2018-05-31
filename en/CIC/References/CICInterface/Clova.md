@@ -86,7 +86,7 @@ Instructs the client to end the specified extension. The client must end the spe
 
 ## HandleDelegatedEvent directive {#HandleDelegatedEvent}
 
-Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app. A user can delegate another client device of the user—that is not the Clova app—to receive the handling results of requests made while using the Clova app. This directive is sent to the client device that has been delegated to handle the result. That client device must then send the [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) event to CIC to receive the handled result.
+Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app. A user can delegate another client device, that is not the Clova app, to receive the handling results of requests made while using the Clova app. This directive is sent to the client device that has been delegated to handle the result. That client device must then send the [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) event to CIC to receive the handled result.
 
 ### Payload fields
 
@@ -269,7 +269,7 @@ None
 
 ## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
 
-Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation). When sending this event to CIC, make sure to include the `delegationId` value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive in the `payload` of this message. The client will receive the result on the request which the user had made through Clova app as a response to this directive.
+Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation). When sending this event to CIC, make sure to include the `delegationId` value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive in the `payload` of this message. The client will receive the result on the request which the user had made through the Clova app as a response to this directive.
 
 ### Context fields
 

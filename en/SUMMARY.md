@@ -204,7 +204,7 @@
   * [Testing an extension](/DevConsole/Guides/CEK/Test_Extension.md)
     * [Building an interaction model](/DevConsole/Guides/CEK/Test_Extension.md#BuildInteractionModel)
     * [Testing an interaction model](/DevConsole/Guides/CEK/Test_Extension.md#TestInteractionModel)
-    * [Testing an extension using Clova app](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
+    * [Testing an extension using the Clova app](/DevConsole/Guides/CEK/Test_Extension.md#TestOnClovaApp)
   * [Deploying an extension](/DevConsole/Guides/CEK/Deploy_Extension.md)
     * [Entering deployment information](/DevConsole/Guides/CEK/Deploy_Extension.md#InputDeploymentInfo)
     * [Entering privacy and compliance information](/DevConsole/Guides/CEK/Deploy_Extension.md#InputComplianceInfo)

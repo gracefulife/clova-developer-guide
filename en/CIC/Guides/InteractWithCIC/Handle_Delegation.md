@@ -1,6 +1,6 @@
 ## Handling delegated user requests {#HandleDelegation}
 
-A user can delegate another client device of the user—that is not the Clova app—to receive the handling results of requests made while using the Clova app. For example, when the user asks the Clova app to play a song of a specific artist, the user can also designate the song to be played on the Clova Friends speaker and not on the smartphone. We refer to this as the Clova app having delegated the user request to another client device.
+A user can delegate another client device, that is not the Clova app, to receive the handling results of requests made while using the Clova app. For example, when the user asks the Clova app to play a song of a specific artist, the user can also designate the song to be played on the Clova Friends speaker and not on the smartphone. We refer to this as the Clova app having delegated the user request to another client device.
 
 Once the Clova app delegates handling of user request, the delegated client can receive directives through the downchannel at any time. Below is an explanation of the interaction structure for delegating a user request. **You must implement the action of the delegated client in the explanation for your client.**
 
