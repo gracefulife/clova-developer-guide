@@ -90,7 +90,7 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
   </li>
-  <li>사용자가 음성 입력을 마치거나 CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
+  <li>CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
 </ol>
 
 <div class="note">

@@ -134,8 +134,8 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
 {
   "directive": {
     "header": {
-      "namespace": "AudioPlayer",
-      "name": "Play",
+      "namespace": "TemplateRuntime",
+      "name": "RenderPlayerInfo",
       "dialogRequestId": "34abac3-cb46-611c-5111-47eab87b7",
       "messageId": "ad13f0d6-bb11-ca23-99aa-312a0b213805"
     },
