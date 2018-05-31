@@ -2,7 +2,7 @@
 
 The DeviceControl namespace provides interfaces for controlling client devices or reporting to CIC the result of changing client device settings.
 
-Users may request to manipulate their client devices. If the user request is for controlling the client device, the client will receive a directive of this namespace, `DeviceControl`. The client has to perform the task instructed by the directive and then send the result to CIC. For more information, see the [Client device control workflow](#DeviceContorlWorkFlow).
+Users may request to control their client devices. If the user request is for controlling the client device, the client will receive a directive of this namespace, `DeviceControl`. The client has to perform the task instructed by the directive and then send the result to CIC. For more information, see the [Client device control workflow](#DeviceContorlWorkFlow).
 
 The client device can be connected to a third party Bluetooth speaker using the `DeviceControl` message. CIC controls the connection to a third party Bluetooth device by sending a directive for Bluetooth pairing and connection to the client. Then the client will frequently report the information related to the paired Bluetooth speaker using the [`BluetoothInfoObject`](/CIC/References/Context_Objects.md#BluetoothInfoObject) of the [`Device.DeviceState`](/CIC/References/Context_Objects.md#DeviceState) context. For more information on creating a connection, refer to each directive and event.
 
@@ -18,14 +18,14 @@ The DeviceControl namespace provides the following events and directives.
 | [`BtRequestForPINCode`](#BtRequestForPINCode) | Event | Sends the PIN code input request of the Bluetooth speaker to CIC.     |
 | [`BtRequestToCancelPinCodeInput`](#BtRequestToCancelPinCodeInput) | Event | Sends the cancellation request for the PIN code input from the Bluetooth speaker to CIC. |
 | [`BtStartPairing`](#BtStartPairing)       | Directive | Instructs the client to start the Bluetooth pairing mode.                                       |
-| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs the client to turn off the Bluetooth pairing mode.                                       |
+| [`BtStopPairing`](#BtStopPairing)         | Directive | Instructs the client to turn off Bluetooth pairing mode.                                       |
 | [`Decrease`](#Decrease)                   | Directive | Instructs the client to turn down the speaker volume or lower screen brightness by a default unit.                     |
 | [`ExpectReportState`](#ExpectReportState) | Directive | Instructs the client to report the current state of the client to CIC.                                 |
 | [`Increase`](#Increase)                   | Directive | Instructs the client to turn up the speaker volume or increase screen brightness by a default unit.                     |
 | [`LaunchApp`](#LaunchApp)                 | Directive | **(Deprecated)** Instructs the client to execute a specified app.                           |
 | [`Open`](#Open)                           | Directive | Instructs the client to display a specific screen.                                               |
 | [`OpenScreen`](#OpenScreen)               | Directive | **(Deprecated)** Instructs the client to launch the settings screen.                              |
-| [`ReportState`](#ReportState)             | Event     | Reports to CIC of the current device state.                     |
+| [`ReportState`](#ReportState)             | Event     | Reports the current device state to CIC.                     |
 | [`RequestStateSynchronization`](#RequestStateSynchronization) | Event   | Requests for the current state of other client devices registered to the current user account.  |
 | [`SetValue`](#SetValue)                   | Directive | Instructs the client to set the speaker volume or screen brightness to a specified value.                    |
 | [`SynchronizeState`](#SynchronizeState)   | Directive | Instructs the client to update states of other client devices registered on the user account.         |
@@ -55,7 +55,7 @@ There are times when the Clova app needs to check the states of client devices r
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>The client will receives the <a href="#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a> directive when it is newly added to the user account or is reconnected to CIC. The client can perform the same actions for the directive just like for the process of sharing the state information with the Clova app.</p>
+  <p>The client receives the <a href="#ExpectReportState"><code>DeviceControl.ExpectReportState</code></a> directive when it is newly added to the user account or is reconnected to CIC. The client can perform the same actions for the directive just like for the process of sharing the state information with the Clova app.</p>
 </div>
 
 ## ActionExecuted event {#ActionExecuted}
@@ -479,7 +479,7 @@ None
 
 ## BtStopPairing directive {#BtStopPairing}
 
-Instructs the client to turn off the Bluetooth pairing mode.
+Instructs the client to turn off Bluetooth pairing mode.
 
 ### Payload fields
 
@@ -771,7 +771,7 @@ The client must send the result of handling this directive to CIC using the [`De
 
 ## ReportState event {#ReportState}
 
-Reports to CIC of the current device state.
+Reports the current device state to CIC.
 
 ### Context fields
 
@@ -967,7 +967,7 @@ The `DeviceControl.SynchronizeState` directive is broadcasted to all the clients
 
 ## TurnOff directive {#TurnOff}
 
-Instructs the client to turn off or disable a specified feature or mode. For example, you can use this directive to turn off the Bluetooth of the client device.
+Instructs the client to turn off or disable a specified feature or mode. For example, you can use this directive to turn off Bluetooth pairing mode on the client device.
 
 ### Payload fields
 
@@ -1015,7 +1015,7 @@ Instructs the client to turn off or disable a specified feature or mode. For exa
 
 ## TurnOn directive {#TurnOn}
 
-Instructs the client to turn on or enable a specified feature or mode. For example, you can use this directive to turn on the Bluetooth of the client device.
+Instructs the client to turn on or enable a specified feature or mode. For example, you can use this directive to turn on Bluetooth pairing mode on the client device.
 
 ### Payload fields
 

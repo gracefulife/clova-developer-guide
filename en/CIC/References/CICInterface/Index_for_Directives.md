@@ -24,7 +24,7 @@
 | DeviceControl      | [`BtConnectByPINCode`](/CIC/References/CICInterface/DeviceControl.md#BtConnectByPINCode) | Instructs the client to connect to the Bluetooth speaker that has requested a PIN code.                      |
 | DeviceControl      | [`BtDisconnect`](/CIC/References/CICInterface/DeviceControl.md#BtDisconnect)    | Instructs the client to disconnect from the Bluetooth speaker.                                       |
 | DeviceControl      | [`BtStartPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStartPairing) | Instructs the client to start the Bluetooth pairing mode.                                              |
-| DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | Instructs the client to turn off the Bluetooth pairing mode.                                              |
+| DeviceControl      | [`BtStopPairing`](/CIC/References/CICInterface/DeviceControl.md#BtStopPairing)   | Instructs the client to turn off Bluetooth pairing mode.                                              |
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | Instructs the client to turn down the speaker volume or lower screen brightness by a default unit.                            |
 | DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | Instructs the client to report the current state of the client to CIC.                                  |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | Instructs the client to turn up the speaker volume or increase screen brightness by a default unit.                            |

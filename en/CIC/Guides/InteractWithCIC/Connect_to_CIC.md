@@ -9,7 +9,7 @@ To connect a client with CIC, complete the following steps.
 To use Clova, users must authenticate their {{ book.TargetServiceForClientAuth }} account on a client, whether it is a device or an app. Clova access tokens with {{ book.TargetServiceForClientAuth }} credentials must be obtained from the Clova authorization server for the client to connect and make a request to CIC. For this process, you must use the [Clova auth API](/CIC/References/Clova_Auth_API.md).
 
 The following diagram illustrates the process of a client obtaining a Clova access token. Note that the process differs for each client type. Clova defines the following two types of clients for providing Clova services:
-* **Client without GUI**: Clients without a display embedded in devices like speakers or home appliances. Since users cannot enter their credentials on this type of device for account authentication and it can be frustrating, the client should provide a companion app or be linked to the Clova app.
+* **Client without a GUI**: Clients without a display embedded in devices like speakers or home appliances. Since users cannot enter their credentials on this type of device for account authentication and it can be frustrating, the client should provide a companion app or be linked to the Clova app.
 * **Client with GUI**: Clients with a display embedded in devices like speakers or home appliances, or clients with an app, just like the Clova app.
 
 ![](/CIC/Resources/Images/CIC_Authorization.png)
@@ -18,7 +18,7 @@ Obtain a Clova access token by following the instructions provided below:
 
 <ol>
   <li>
-    <p>The client provides an interface for a user to authenticate the {{ book.TargetServiceForClientAuth }} account. (Log in using the <a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} ID</a>). As voice biometric cannot be the sole method of account authentication, make sure to use the Clova app or the companion app for <strong>clients without GUI</strong>.</p>
+    <p>The client provides an interface for a user to authenticate their {{ book.TargetServiceForClientAuth }} account. (Log in using the <a href="{{ book.LoginAPIofTargetService }}" target="_blank">{{ book.TargetServiceForClientAuth }} ID</a>). As voice biometrics cannot be the sole method of account authentication, make sure to use the Clova app or the companion app for <strong>clients without a GUI</strong>.</p>
   </li>
   <li>
     <p>Obtain the {{ "authorization code" if book.TargetCountryCode == "JP" else "access token" }} for the {{ book.TargetServiceForClientAuth }} account using the {{ book.TargetServiceForClientAuth }} account information entered by the user.</p>
@@ -54,7 +54,7 @@ Obtain a Clova access token by following the instructions provided below:
     </ul>
   </li>
   <li>
-    <p>For clients without GUI, send the authorization code to the actual client device.</p>
+    <p>For clients without a GUI, send the authorization code to the actual client device.</p>
   </li>
   <li>
     <p><a href="/CIC/References/Clova_Auth_API.html#RequestClovaAccessToken">Request for the Clova access token</a> using the obtained authorization code and <a href="#ClientAuthInfo">client credentials</a> as parameters. The following is an example of requesting a Clova access token.</p>
@@ -93,7 +93,7 @@ Authorization: Bearer {{ClovaAccessToken}}
 
 {% endraw %}
 
-When the above connect request is successfully completed, CIC responds with the [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) directive. This indicates that CIC is ready to send more directives through the downchannel.
+When the above connection request is successfully completed, CIC responds with the [`Clova.Hello`](/CIC/References/CICInterface/Clova.md#Hello) directive. This indicates that CIC is ready to send more directives through the downchannel.
 
 {% raw %}
 
