@@ -74,7 +74,7 @@ The general process of adding an alarm to stopping an alarm is as follows:
 
 Alarms can be changed or removed before step 5 of the above process, but only through the Clova app. Note that a directive for this request will be sent through a [downchannel](/CIC/Guides/Interact_with_CIC.md#CreateConnection). The reason for this is that the directives that are not responses to a voice request are designed to be forwarded to the client through a downchannel.
 
-The process changing or removing an alarm is as follows:
+The process for changing or removing an alarm is as follows:
 
 1. The user attempts to change or remove an alarm on the Clova app.
 2. To respond to the user request, Clova sends the [`Alerts.SetAlert`](#SetAlert) directive or the [`Alerts.DeleteAlert`](#DeleteAlert) directive to the client.
@@ -332,7 +332,7 @@ Reports to CIC that the client has successfully deleted the specified alarm. The
 
 ## RequestAlertStop event {#RequestAlertStop}
 
-Requests to CIC to stop the ringing alarm. The client must send this event to CIC when the user stops the alarm—not with a voice command, but by pressing a button on the client device or the client app. CIC will send the [`Alerts.StopAlert`](#StopAlert) directive as a response to this event.
+Requests CIC to stop the ringing alarm. The client must send this event to CIC when the user stops the alarm—not with a voice command, but by pressing a button on the client device or the client app. CIC will send the [`Alerts.StopAlert`](#StopAlert) directive as a response to this event.
 
 ### Context fields
 
@@ -346,7 +346,7 @@ Requests to CIC to stop the ringing alarm. The client must send this event to CI
 | `type`    | string | The alarm type. Available values are: <ul><li><code>"ACTIONTIMER"</code></li><li><code>"ALARM"</code></li><li><code>"REMINDER"</code></li><li><code>"TIMER"</code></li></ul>  | Required |
 
 ### Remarks
-Stopping a ringing alarm requires informing CIC of the stoppage and getting confirmation from CIC to stop. So, a user pressing a button to stop the alarm is not the end of the task. You will send this event to inform CIC and CIC will return the [`Alerts.StopAlert`](#StopAlert) directive. This process guarantees consistency in stopping an alarm and is helpful for synchronizing alarm information between clients and CIC. But, to provide a seamless UX to users, you have the option to remove the alarm display or mute the alarm while waiting for the [`Alerts.StopAlert`](#StopAlert) directive from CIC.
+Stopping a ringing alarm requires informing CIC of the stoppage and getting confirmation from CIC to stop. So, a user pressing a button to stop the alarm is not the end of the task. You need to send this event to CIC and receive the [`Alerts.StopAlert`](#StopAlert) directive. This process guarantees consistency in stopping an alarm and is helpful for synchronizing alarm information between clients and CIC. But, to provide a seamless UX to users, you have the option to remove the alarm display or mute the alarm while waiting for the [`Alerts.StopAlert`](#StopAlert) directive from CIC.
 
 ### Message example
 {% raw %}

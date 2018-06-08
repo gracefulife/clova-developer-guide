@@ -3,7 +3,7 @@ This document is a developer guide and API reference for the CIC and CEK platfor
 
 <div class="note">
   <p><strong>Note!</strong></p>
-  <p>Clova is under continuous development.  Thus, the information in this document is subject to change at any time.</p>
+  <p>Clova is under continuous development. Thus, the information in this document is subject to change at any time.</p>
 </div>
 
 ## Contacts
@@ -16,10 +16,64 @@ The current version of this document is {{ book.DocVersion }} and the revision h
 <table>
   <thead>
     <tr>
-      <th style="width:10%">Version</th><th style="width:15%">Release Date</th><th style="width:75%">History</th>
+      <th style="width:10%">Version</th><th style="width:15%">Release date</th><th style="width:75%">History</th>
     </tr>
   </thead>
   <tbody>
+  <tr>
+    <td>v4.2</td><td>2018-05-14</td>
+    <td>
+      <ul>
+        <li>[CIC] Moved the <a href="/CIC/References/CICInterface/Clova.html#LaunchURI">LaunchURI</a> directive from the DeviceControl namespace to the <a href="/CIC/References/CICInterface/Clova.html">Clova</a> namespace</li>
+        <li>[CEK] Added the headers (SignatureCEK, SignatureCEKCertChainUrl) and the section on <a href="/CEK/References/CEK_API.html#RequestMessageValidation">Validating request messages</a> to the HTTP request message</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v4.1</td><td>2018-05-07</td>
+    <td>
+      <ul>
+        <li>[CIC] Added <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchURI">LaunchURI</a> directive to the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> namespace</li>
+        <li>[CIC] Deprecated the <a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">LaunchApp</a> directive and the <a href="/CIC/References/CICInterface/DeviceControl.html#OpenScreen">OpenScreen</a> directive of the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> namespace</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v4.0</td><td>2018-04-30</td>
+    <td>
+      <ul>
+        <li>[CEK] Added the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateRequest">GetOpenStateRequest</a> and the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateResponse">GetOpenStateResponse</a> to the Clova Home extension API</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.9</td><td>2018-04-23</td>
+    <td>
+      <ul>
+        <li>[CEK] Added the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeConfirmation">ReleaseModeConfirmation</a> and the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeRequest">ReleaseModeRequest</a> to the Clova Home extension API</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.8</td><td>2018-04-16</td>
+    <td>
+      <ul>
+        <li>[CIC] Updated the description of the wakeWord field and Audio data of the <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a> event</li>
+        <li>[CIC] Added the <a href="/CIC/References/CICInterface/DeviceControl.html#Open">Open</a> directive to the <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> namespace</li>
+        <li>[CEK] Added the openState field description to the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetLockStateResponse">GetLockStateResponse</a> of the Clova Home extension API</li>
+        <li>[CEK] Added the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleRequest">GetCleaningCycleRequest</a> and the <a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleResponse">GetCleaningCycleResponse</a> to the Clova Home extension API</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.7</td><td>2018-04-09</td>
+    <td>
+      <ul>
+        <li>[CIC] Updated the description and example image for the <a href="Design/Design_Guideline_For_Client_Hardware.html#BootingScreen">bootscreen</a> in the design guidelines for client devices</li>
+        <li>[CEK] Changed the description of the brightness field and required/included states in the brightness field of the <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ColorInfoObject">ColorInfoObject</a> in the Clova Home extension API</li>
+      </ul>
+    </td>
+  </tr>
     <tr>
       <td>v3.6</td><td>2018-04-02</td>
       <td>
@@ -350,7 +404,7 @@ The current version of this document is {{ book.DocVersion }} and the revision h
       <td>v0.9</td><td>2017-08-14</td>
       <td>
         <ul>
-          <li>[CIC] Added description on <a href="/CIC/CIC_Overview.html#DialogModel">dialog model</a> </li>
+          <li>[CIC] Added description on the <a href="/CIC/CIC_Overview.html#DialogModel">dialogue model</a> </li>
           <li>[CIC] Added <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a> API</li>
           <li>[CIC] Added payload fields in <a href="/CIC/References/Context_Objects.html">Device.DeviceState</a>: airplane, battery, bluetooth, brightness, flashLight, gps, powerSavingMode, soundMode, volume, and wifi</li>
           <li>[CEK] Added the section on <a href="/CEK/Guides/Build_Custom_Extension.html#DoMultiturnDialog">Engaging in multi-turn dialogs</a> and updated the description on the sessionAttributes field</li>

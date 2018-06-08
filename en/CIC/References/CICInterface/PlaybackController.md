@@ -155,7 +155,7 @@ Instructs the client to send the [`PlaybackController.PlayCommandIssued`](#PlayC
 
 | Field name       | Data type    | Description                     | Included |
 |---------------|---------|-----------------------------|:---------:|
-| `handover`            | object  | The information required for remote takeover of media playback. The `handover` object is included in the directive when taking over the media playback. If the `handover` object is included, the client must provide the details of this object in the `handover` object of the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event `payload`.     | Conditional |
+| `handover`            | object  | Object containing information required for remote takeover of media playback. The `handover` object is included in the directive when taking over the media playback. If the `handover` object is included, the client must provide the details of this object in the `handover` object of the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event `payload`.     | Conditional |
 | `handover.deviceId`   | string  | The ID of the client device handing over media playback.  | Always |
 | `handover.customData` | string  | The information required to play the media.               | Always |
 | `token`               | string  | The token of the media to play. When taking over a media playback, the `token` field is included in the message. If a value exists in the `token` field, the client must include this value in the `token` field when sending the [`PlaybackController.PlayCommandIssued`](#PlayCommandIssued) event.  | Conditional  |
@@ -484,7 +484,7 @@ Reports to CIC that the user pressed the Play button on the client device or res
 | Field name       | Data type    | Description                     | Required |
 |---------------|---------|-----------------------------|:---------:|
 | `deviceId`            | string  | The client device ID. Skip the `deviceId` field if you are not remotely handing over the media playback to another device. | Optional |
-| `handover`            | object  | The information required for remote takeover of media playback. When taking over media playback, use the `handover` object as the `handover` object in the `payload` of the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive.     | Optional |
+| `handover`            | object  | Object containing information required for remote takeover of media playback. When taking over media playback, use the `handover` object as the `handover` object in the `payload` of the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive.     | Optional |
 | `handover.deviceId`   | string  | The ID of the client device handing over media playback.  | Required |
 | `handover.customData` | string  | The information required to play the media.               | Required |
 | `token`               | string  | The token of the media to play. When the user presses the play button on the playlist, the `playableItems[].token` field value of the [`TemplateRuntime.RenderPlayerInfo`](/CIC/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo) directive must be applied. The value of the `token` field value may need to be entered if the [`PlaybackController.ExpectPlayCommand`](#ExpectPlayCommand) directive is received.  | Optional  |

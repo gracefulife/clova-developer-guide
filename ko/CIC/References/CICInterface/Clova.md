@@ -353,6 +353,10 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
   * [WeeklyWeather](/CIC/References/ContentTemplates/WeeklyWeather.md)
   * [WindSpeed](/CIC/References/ContentTemplates/WindSpeed.md)
 
+* 공통 필드 및 공유 객체
+  * [공통 필드](/CIC/References/ContentTemplates/Common_Fields.md)
+  * [공유 객체](/CIC/References/ContentTemplates/Shared_Objects.md)
+
 ### Message example
 
 {% raw %}

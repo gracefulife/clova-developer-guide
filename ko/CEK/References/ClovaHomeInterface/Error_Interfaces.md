@@ -1,5 +1,5 @@
 # Error
-Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페이스입니다.
+Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페이스입니다. 다음과 같은 오류 메시지를 사용할 수 있습니다.
 
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
@@ -8,11 +8,12 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 | [`DeviceFailureError`](#DeviceFailureError)                | Error Response | 대상 기기에 결함이 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.              |
 | [`DriverInternalError`](#DriverInternalError)              | Error Response | 내부적인 오류가 발생하면 CEK에게 이 메시지를 응답으로 보냅니다.                |
 | [`ExpiredAccessTokenError`](#ExpiredAccessTokenError)      | Error Response | [사용자 계정 연결](/CEK/Guides/Link_User_Account.md) 시 [인증 서버](/CEK/Guides/Link_User_Account.md#BuildAuthServer)로부터 발급 받은 access token이 만료된 경우 CEK에게 이 메시지를 응답으로 보냅니다.  |
-| [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error Response | 사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 전달합니다.         |
+| [`InvalidAccessTokenError`](#InvalidAccessTokenError)      | Error Response | 사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 응답으로 보냅니다.         |
 | [`NoSuchTargetError`](#NoSuchTargetError)                  | Error Response | 대상 기기를 찾을 수 없는 경우 CEK에게 이 메시지를 응답으로 보냅니다.                            |
-| [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError) | Error Response | 대상 기기의 현재 모드에서 수행할 수 없는 동작을 지시한 경우 CEK에게 이 메시지를 전달합니다.  |
+| [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError) | Error Response | 대상 기기의 현재 모드에서 수행할 수 없는 동작을 지시한 경우 CEK에게 이 메시지를 응답으로 보냅니다.  |
 | [`TargetOfflineError`](#TargetOfflineError)                | Error Response | 대상 기기에 접속할 수 없으면(offline) CEK에게 이 메시지를 응답으로 보냅니다. |
 | [`UnsupportedOperationError`](#UnsupportedOperationError)  | Error Response | 대상 기기가 지원하지 않는 동작을 요청한 경우 CEK에게 이 메시지를 응답으로 보냅니다.   |
+| [`ValueNotFoundError`](#ValueNotFoundError)                | Error Response | 대상 기기가 측정 값이나 상태 값을 측정하거나 저장하지 못해 요청된 값을 제공할 수 없을 경우 CEK에게 이 메시지를 응답으로 보냅니다.  |
 | [`ValueOutOfRangeError`](#ValueOutOfRangeError)            | Error Resposne | 사용자가 대상 기기가 처리할 수 없는 범위 값으로 동작을 요청한 경우 CEK에게 이 메시지를 응답으로 보냅니다. |
 
 <div class="note">
@@ -25,11 +26,13 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 
 ### Payload fields
 
-없음
+| 필드 이름       | 자료형    | 필드 설명                     | 필수 여부 |
+|---------------|---------|-----------------------------|:---------:|
+| `state`       | string  | 충족되지 않은 조건이나 상태를 설명한 값. 이 필드는 사용자에게 TTS로 전달되므로 사용자가 이해할 수 있는 말로 작성되어야 합니다. 다음과 같은 형태로 사용자에게 현재 상황을 전달합니다.<pre><code>{대상 기기}의 {state} 상태에서는 지원하지 않는 기능입니다. 확인 후 다시 시도해 주세요.</code></pre>  | 필수    |
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -42,7 +45,9 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
     "name": "ConditionsNotMetError",
     "payloadVersion": "1.0"
   },
-  "payload": {}
+  "payload": {
+    "state": "절전 모드"
+  }
 }
 ```
 {% endraw %}
@@ -58,8 +63,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -89,8 +94,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -120,8 +125,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -143,15 +148,15 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 * [`InvalidAccessTokenError`](#InvalidAccessTokenError)
 
 ## InvalidAccessTokenError {#InvalidAccessTokenError}
-사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 전달합니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
+사용자가 사용 중인 access token에 대한 권한을 해제한 경우 CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
 
 ### Payload fields
 
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -180,8 +185,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -204,15 +209,15 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 * [`TargetOfflineError`](#TargetOfflineError)
 
 ## NotSupportedInCurrentModeError {#NotSupportedInCurrentModeError}
-대상 기기의 현재 모드에서 수행할 수 없는 동작을 지시한 경우 CEK에게 이 메시지를 전달합니다. 예를 들면, 에어컨 중에서도 특정 제품은 제습 모드로 동작하고 있을 때 온도 조절 관련 동작이 제한될 수 있습니다. 이런 제품을 사용하는 사용자가 제습 모드에서 온도를 조절하는 요청을 할 경우 이 메시지를 보내야 합니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
+대상 기기의 현재 모드에서 수행할 수 없는 동작을 지시한 경우 CEK에게 이 메시지를 응답으로 보냅니다. 예를 들면, 에어컨 중에서도 특정 제품은 제습 모드로 동작하고 있을 때 온도 조절 관련 동작이 제한될 수 있습니다. 이런 제품을 사용하는 사용자가 제습 모드에서 온도를 조절하는 요청을 할 경우 이 메시지를 보내야 합니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
 
 ### Payload fields
 
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -232,7 +237,6 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 
 ### See also
 * [`UnsupportedOperationError`](#UnsupportedOperationError)
-* [`ValueOutOfRangeError`](#ValueOutOfRangeError)
 
 ## TargetOfflineError {#TargetOfflineError}
 대상 기기에 접속할 수 없으면(offline) CEK에게 이 메시지를 응답으로 보냅니다. CEK가 이 메시지를 전달받으면 미리 준비된 오류 메시지를 클라이언트에 전달합니다.
@@ -242,8 +246,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -276,8 +280,8 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 없음
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
 
 ### Message example
 
@@ -297,6 +301,34 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 
 ### See also
 * [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError)
+
+## ValueNotFoundError {#ValueNotFoundError}
+대상 기기가 측정 값이나 상태 값을 측정하거나 저장하지 못해 요청된 값을 제공할 수 없을 경우 CEK에게 이 메시지를 응답으로 보냅니다. 예를 들면, 에어컨은 현재 온도와 같은 값을 기본적으로 제공해야 하지만 결함이나 일시적인 고장으로 온도를 측정하지 못해 값을 제공하지 못할 수도 있습니다. 이런 상황에 이 메시지가 사용될 수 있습니다.
+
+### Payload fields
+없음
+
+### Remarks
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
+* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`가 필요하지 않습니다.
+
+### Message example
+
+{% raw %}
+```json
+{
+  "header": {
+    "messageId": "57109b11-ee04-45df-9dd2-c979bc8608ea",
+    "namespace": "ClovaHome",
+    "name": "ValueNotFoundError",
+    "payloadVersion": "1.0"
+  },
+  "payload": {}
+}
+```
+{% endraw %}
+
+### See also
 * [`ValueOutOfRangeError`](#ValueOutOfRangeError)
 
 ## ValueOutOfRangeError {#ValueOutOfRangeError}
@@ -310,8 +342,7 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 | `minimumValue` | number | 대상 기기가 허용하는 설정 값의 최소치 | 필수    |
 
 ### Remarks
-* 오류 메시지도 정상적인 HTTPS 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
-* 오류 메시지의 이름으로 상황을 판단하기 때문에 별도의 `payload`이 필요하지 않습니다.
+* 오류 메시지도 정상적인 HTTP 응답(200 OK)으로 CEK에게 메시지를 전달해야 합니다.
 * `payload`에 입력한 값은 사용자 안내에 사용될 수 있습니다.
 
 ### Message example
@@ -334,5 +365,4 @@ Clova Home extension이 CEK에게 오류를 반환할 때 사용되는 인터페
 {% endraw %}
 
 ### See also
-* [`UnsupportedOperationError`](#UnsupportedOperationError)
-* [`NotSupportedInCurrentModeError`](#NotSupportedInCurrentModeError)
+* [`ValueNotFoundError`](#ValueNotFoundError)

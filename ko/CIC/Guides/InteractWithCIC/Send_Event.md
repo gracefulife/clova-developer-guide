@@ -90,10 +90,15 @@ Content-Type: application/octet-stream<br/>
 --Boundary-Text--
 </code></pre>
   </li>
-  <li>사용자가 음성 입력을 마치거나 CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
+  <li>CIC로부터 <a href="/CIC/References/CICInterface/SpeechRecognizer.html#StopCapture"><code>SpeechRecognizer.StopCapture</code></a> 지시 메시지가 전달될 때까지 음성 데이터를 계속 전송합니다. 전송이 완료되면 CIC로부터 HTTP 응답 메시지가 수신됩니다.</li>
 </ol>
 
 <div class="note">
   <p><strong>Note!</strong></p>
   <p><a href="/CIC/References/CICInterface/TextRecognizer.html#Recognize"><code>TextRecognizer.Recognize</code></a>를 사용하면 사용자의 텍스트 입력을 처리할 수도 있습니다.</p>
+</div>
+
+<div class="danger">
+  <p><strong>Caution!</strong></p>
+  <p>이벤트 메시지를 보낼 때 반드시 <a href="#CreateConnection">Downchannel을 구성할 때 만든 연결</a>로 CIC 이벤트 메시지를 전송해야 합니다.</p>
 </div>

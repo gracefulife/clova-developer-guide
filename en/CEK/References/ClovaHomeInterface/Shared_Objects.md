@@ -1,5 +1,5 @@
 # Shared objects {#SharedObjects}
-The following shared objects are used in the message payload when sending [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHomeExtMessage):
+These shared objects are used in the message `payload` when sending [Clova Home extension messages](/CEK/References/CEK_API.md#ClovaHomeExtMessage):
 
 | Object name            | Description                                            |
 |--------------------|---------------------------------------------------|
@@ -13,7 +13,7 @@ The following shared objects are used in the message payload when sending [Clova
 | [ColorTemperatureInfoObject](#ColorTemperatureInfoObject) | Object containing information on the color temperature of lights, screens, or lamps of the target appliance.  |
 | [ConsumptionInfoObject](#ConsumptionInfoObject)           | Object containing information on energy consumption.       |
 | [CustomCommandInfoObject](#CustomCommandInfoObject)       | Object containing information on custom commands.   |
-| [CustomInfoObject](#CustomInfoObject)                     | Object containing information directly entered by the user such as a customized name, required units or figures. |
+| [CustomInfoObject](#CustomInfoObject)                     | Object containing information directly entered by the user, such as an customized name, required units, or figures. |   |   |
 | [ExpendableInfoObject](#ExpendableInfoObject)             | Object containing information on usage or remaining lifespan of appliance parts.  |
 | [FineDustInfoObject](#FineDustInfoObject)                 | Object containing information on fine dust.          |
 | [IntensityLevelInfoObject](#IntensityLevelInfoObject)     | Object containing information on pressure or water pressure intensity.   |
@@ -32,7 +32,7 @@ The following shared objects are used in the message payload when sending [Clova
 | [VolumeInfoObject](#VolumeInfoObject)                     | Object containing information on volume.          |
 
 ## ActionInforObject {#ActionInforObject}
-ActionInforObject contains information on the appliance control actions and expresses a command for an action to be conducted on an appliance.
+ActionInforObject contains information on an appliance's control actions and expresses a command for an action to be conducted on an appliance.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -139,7 +139,7 @@ ActionInforObject contains information on the appliance control actions and expr
 * [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse)
 
 ## AirQualityInfoObject {#AirQualityInfoObject}
-AirQualityInfoObject contains information on air quality. The object is used to indicate the air quality measured by the appliance. It is expressed as a string.
+AirQualityInfoObject contains information on air quality. This is used to indicate the air quality measured by the appliance. It is expressed as a string.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -194,7 +194,7 @@ ApplianceInfoObject contains the information on IoT appliances. This is used to 
 ### Remarks
 If the user requests the appliance list using the [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest) message, the Clova Home extension must fill out all the fields except the `additionalApplianceDetails` field, and deliver the information. Here, the value of the `actions` field is normally determined by the `applianceTypes` field and may have the following values depending on the value of the `applianceTypes` field:
 
-| applianceTypes | Description         | Permitted Actions                                  |
+| applianceTypes | Description         | Permitted actions                                  |
 |----------------|-------------|-------------------------------------------------|
 | `"AIRCONDITIONER"`  | Type of an air conditioner         | DecrementFanSpeed, DecrementTargetTemperature, GetCurrentTemperature, GetTargetTemperature, HealthCheck, IncrementFanSpeed, IncrementTargetTemperature, SetFanSpeed, SetMode, SetTargetTemperature, TurnOff, TurnOn               |
 | `"AIRPURIFIER"`     | Type of an air purifier        | DecrementFanSpeed, GetAirQuality, GetFineDust, GetUltraFineDust, HealthCheck, IncrementFanSpeed, SetFanSpeed, TurnOff, TurnOn    |
@@ -212,27 +212,27 @@ If the user requests the appliance list using the [`DiscoverAppliancesRequest`](
 | `"HEATER"`          | Type of a heater            | DecrementTargetTemperature, GetCurrentTemperature, HealthCheck, IncrementTargetTemperature, TurnOff, TurnOn                      |
 | `"HUMIDIFIER"`      | Type of a humidifier           | GetCurrentTemperature, GetHumidity, HealthCheck, SetFanSpeed, TurnOff, TurnOn                                                    |
 | `"KIMCHIREFRIGERATOR"` | Type of a kimchi refrigerator    | GetDeviceState, HealthCheck                                                                                                            |
-| `"LIGHT"`           | Type of a smart lighting   | DecrementBrightness, DecrementVolume HealthCheck, IncrementBrightness, IncrementVolume SetBrightness, TurnOff, TurnOn            |
+| `"LIGHT"`           | Type of a smart lighting   | DecrementBrightness, DecrementVolume HealthCheck, IncrementBrightness, IncrementVolume SetBrightness, SetColor, SetColorTemperature, SetMode, TurnOff, TurnOn            |
 | `"MASSAGECHAIR"`    | Type of a massage chair        | DecrementIntensityLevel, HealthCheck, IncrementIntensityLevel, TurnOff, TurnOn                                                     |
 | `"MICROWAVE"`       | Type of a microwave      | GetRemainingTime, HealthCheck, TurnOff, TurnOn                                                                                      |
 | `"MOTIONSENSOR"`    | Type of a motion detector    | GetDeviceState, HealthCheck                                                                                                             |
-| `"OPENCLOSESENSOR"` | Type of an open/close detector    | GetCloseTime, GetLockState, GetOpenTime, HealthCheck                                                                                   |
+| `"OPENCLOSESENSOR"` | Type of an open-close sensor    | GetCloseTime, GetDeviceState, GetOpenState, GetOpenTime, HealthCheck                                                                                   |
 | `"OVEN"`            | Type of an oven            | GetDeviceState, HealthCheck                                                                                                             |
 | `"POWERSTRIP"`      | Type of a power strip         | GetConsumption, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                     |
-| `"PURIFIER"`        | Type of a purifier          | GetDeviceState, GetExpendableState, HealthCheck, SetMode, SetTargetTemperature                                                     |
+| `"PURIFIER"`        | Type of a water purifier          | GetDeviceState, GetExpendableState, HealthCheck, ReleaseMode, SetMode, SetTargetTemperature                                                     |
 | `"RANGE"`           | Type of an electric range          | GetDeviceState, HealthCheck                                                                                                             |
 | `"RANGEHOOD"`       | Type of a range hood      | HealthCheck, TurnOff, TurnOn                                                                                                      |
 | `"REFRIGERATOR"`    | Type of a refrigerator          | GetDeviceState, HealthCheck, SetFreezerTargetTemperature, SetFridgeTargetTemperature, SetMode                                           |
-| `"RICECOOKER"`      | Type of a rice cooker        | GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, SetMode, Stop, TurnOff, TurnOn                |
+| `"RICECOOKER"`      | Type of a rice cooker        | GetCleaningCycle, GetDeviceState, GetExpendableState, GetKeepWarmTime, GetPhase, GetRemainingTime, HealthCheck, ReleaseMode, SetMode, Stop, TurnOff, TurnOn          |
 | `"ROBOTVACUUM"`     | Type of a robot vacuum       | Charge, GetBatteryInfo, HealthCheck, TurnOff, TurnOn                                                                             |
 | `"SETTOPBOX"`       | Type of a set-top box     | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
-| `"SLEEPINGMONITOR"` | Type of a sleep tracker        | GetAsleepDuration, GetAwakeDuration, GetDeviceState, GetSleepScore, GetSleepStartTime, HealthCheck, TurnOff, TurnOn              |
+| `"SLEEPINGMONITOR"` | Type of a sleep sensor        | GetAsleepDuration, GetAwakeDuration, GetDeviceState, GetSleepScore, GetSleepStartTime, HealthCheck, TurnOff, TurnOn              |
 | `"SMARTBED"`        | Type of a smart bed      | HealthCheck, Lower, Raise, Stop                                                                                                   |
 | `"SMARTCHAIR"`      | Type of a smart chair      | GetCurrentSittingState, GetRightPostureRatio, GetUsageTime, HealthCheck                                                                                       |
 | `"SMARTCURTAIN"`    | Type of a smart curtain      | Close, HealthCheck, Open, Stop                                                                                                    |
 | `"SMARTHUB"`        | Type of a smart hub      | GetCurrentTemperature, GetHumidity, GetTargetTemperature, HealthCheck, SetMode                                                    |
 | `"SMARTMETER"`      | Type of a smart meter      | GetConsumption, GetCurrentBill, GetEstimateBill, GetProgressiveTaxBracket, HealthCheck                                            |
-| `"SMARTPLUG"`       | Type of a smart plug     | GetProgressiveTaxBracket, HealthCheck, TurnOff, TurnOn                                                                                                     |
+| `"SMARTPLUG"`       | Type of a smart plug     | GetConsumption, GetEstimateBill, HealthCheck, TurnOff, TurnOn                                                                                                     |
 | `"SMARTTV"`         | Type of a smart TV       | DecrementChannel, DecrementVolume, HealthCheck, IncrementChannel, IncrementVolume, Mute, SetChannel, SetChannelByName, TurnOff, TurnOn, Unmute |
 | `"SMARTVALVE"`      | Type of a smart valve      | GetLockState, SetLockState                                                                                                        |
 | `"SMOKESENSOR"`     | Type of a smoke sensor       | GetDeviceState, HealthCheck                                                                                                             |
@@ -314,7 +314,7 @@ The table below lists the [interfaces](/CEK/References/CEK_API.md#ClovaHomeExtIn
 
 <div class="note">
 <p><strong>Note!</strong></p>
-<p>You can automatically set the location of the user’s IoT appliances by using the `location` field for each appliance in the <a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a> message when sending the list of user registered appliance to CEK.</p>
+<p>You can automatically set the location of the IoT appliances of the user by using the `location` field for each appliance in the <a href="/CEK/References/ClovaHomeInterface/Discovery_Interfaces.html#DiscoverAppliancesResponse"><code>DiscoverAppliancesResponse</code></a> message when sending the list of user registered appliance to CEK.</p>
 </div>
 
 ### Locations {#Locations}
@@ -399,7 +399,7 @@ The table below shows the location information supported by `location` field. Th
 * [`DiscoverAppliancesRequest`](/CEK/References/ClovaHomeInterface/Discovery_Interfaces.md#DiscoverAppliancesRequest)
 
 ## BatteryInfoObject {#BatteryInfoObject}
-BatteryInfoObject contains information on the appliance battery. This object is used to indicate battery information and is expressed as an integer (0-100) that represents a percentage.
+BatteryInfoObject contains information on the appliance battery. This is used to indicate battery information and expressed as an integer (0-100) that represents a percentage.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -555,7 +555,7 @@ ColorInfoObject contains information on the color of lights, the screen, or lamp
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
 |---------------|---------|-----------------------------|:-------------:|
-| `brightness`  | number  | Value (0-100).                  | This field is omissible if [BrightnessInfoObject](#BrightnessInfoObject) is used in the brightness setting of a specific appliance.  | Optional/Conditional |
+| `brightness`  | number  | Value (0-100). This field is omissible if [BrightnessInfoObject](#BrightnessInfoObject) is used on the brightness settings of a specific appliance.  | Optional/Conditional |
 | `hue`         | number  | Hue (0-360)                  | Required/Always |
 | `saturation`  | number  | Saturation (0-100)                  | Required/Always |
 
@@ -630,31 +630,35 @@ ColorTemperatureInfoObject contains information on the color temperature of ligh
 * [`SetColorTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetColorTemperatureRequest)
 
 ## ConsumptionInfoObject {#ConsumptionInfoObject}
-ConsumptionInfoObject contains information on energy consumption measured by the appliance. The consumption information is displayed in two components: energy consumption amount and unit.
+ConsumptionInfoObject contains information on energy or resource measured by the appliance. The consumption information is displayed in two components: energy consumption amount and unit.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
 |---------------|---------|-----------------------------|:-------------:|
-| `unit`        | string  | Energy unit (E.g. electricity: kW)            | Required/Always  |
-| `value`       | number  | Energy consumption amount                    | Required/Always   |
+| `name`        | string  | The name of item consuming energy or resource.                   | Required/Always  |
+| `unit`        | string  | Energy or resource consumption unit. (E.g. electricity: kW)        | Required/Always  |
+| `value`       | number  | Energy or resource consumption amount.                    | Required/Always   |
 
 ### Object Example
 {% raw %}
 
 ```json
-// Example: An example used in the GetCurrentBillResponse message
+// Example: An example used in GetConsumptionResponse message
 {
   "header": {
     "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
-    "name": "GetCurrentBillResponse",
+    "name": "GetConsumptionResponse",
     "namespace": "ClovaHome",
     "payloadVersion": "1.0"
   },
   "payload": {
-    "consumption": {
+    "consumption": [
+      {
+        "name": "Electricity consumption",
         "value": 79.7,
         "unit": "kW"
-    },
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
@@ -670,7 +674,7 @@ ConsumptionInfoObject contains information on energy consumption measured by the
 
 ## CustomCommandInfoObject {#CustomCommandInfoObject}
 
-CustomCommandInfoObject contains information on custom commands. The object contains information on the command that the user registered via the Clova app. The commands registered to the user account are returned for the appliance information retrieval results of the [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse) message. This object includes the appliance control actions performed when custom command is invoked.
+CustomCommandInfoObject contains information on custom commands. The object contains information on the command that the user registered via the Clova app. The commands registered to the user account are returned with the appliance information retrieval results of the [`DiscoverAppliancesResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#DiscoverAppliancesResponse) message. This object includes an appliance's control actions performed when custom command is invoked.
 
 ### Object fields
 
@@ -779,14 +783,14 @@ CustomCommandInfoObject contains information on custom commands. The object cont
 
 ## CustomInfoObject {#CustomInfoObject}
 
-CustomInfoObject contains custom information such as a customized name, required unit, or figures. This object is used when the [shared objects](#SharedObjects) provided by default cannot express the object information or when providing all information of the appliance using the [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse) message.
+CustomInfoObject contains information directly entered by the user, such as customized name, required units, or figures. This object is used when the [shared objects](#SharedObjects) provided by default cannot express the object information or when providing all information of the appliance using the [`GetDeviceStateResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetDeviceStateResponse) message.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
 |---------------|---------|-----------------------------|:-------------:|
 | `name`        | string            | The customized name to indicate an appliance state or measurement target. When responding to the user, the state name entered in this field is output as speech. | Required/Always |
 | `value`       | number or string | The state value or measurement value.                                                                             | Required/Always |
-| `unit`        | string            | The value of the appliance state or the unit information of the measurement. This is omitted if the data type of the `value` field is a string and may have the following units if it is a numeric value.<ul><li><code>"celsius"</code>: Celsius</li><li><code>"percentage"</code>: Percentage</li></ul> | Optional/Conditional |
+| `unit`        | string            | The value of the appliance state or the unit information of the measurement. This is omitted if the data type of the `value` field is a string and may have the following units if it is a numeric value.<ul><li><code>"celcius"</code>: Celsius</li><li><code>"percentage"</code>: Percentage</li></ul> | Optional/Conditional |
 
 ### Object Example
 {% raw %}
@@ -1358,7 +1362,7 @@ SleepScoreInfoObject contains information on sleep score. This object contains t
   },
   "payload": {
     "sleepScore": {
-      "value": 80,
+      "value": 80
     },
     "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
   }
@@ -1372,7 +1376,7 @@ SleepScoreInfoObject contains information on sleep score. This object contains t
 * [`GetSleepScoreResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetSleepScoreResponse)
 
 ## SpeedInfoObject {#SpeedInfoObject}
-SpeedInfoObject contains information on speed. This object is used to indicate the amount of speed to change or the desired speed before and after the change. It is expressed as an integer.
+SpeedInfoObject contains information on speed. This is used to indicate the speed to change or the desired speed before and after the change. It is expressed as an integer.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -1434,7 +1438,7 @@ SpeedInfoObject contains information on speed. This object is used to indicate t
 * [`SetFanSpeedRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetFanSpeedRequest)
 
 ## TemperatureInfoObject {#TemperatureInfoObject}
-TemperatureInfoObject contains information on temperature. This object is used to indicate the amount of temperature to change, the desired temperature before and after the change, or the currently set temperature. It is expressed up to one decimal place.
+TemperatureInfoObject contains information on temperature. This is used to indicate the amount of temperature to change, the temperature before and after the change, or the currently set desired temperature. It is expressed up to one decimal place.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -1504,7 +1508,7 @@ TemperatureInfoObject contains information on temperature. This object is used t
 * [`SetTargetTemperatureRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetTargetTemperatureRequest)
 
 ## TVChannelNameInfoObject {#TVChannelNameInfoObject}
-TVChannelNameInfoObject contains information on a TV channel name. This object is used to indicate the name of the TV channel to change or the TV channel before and after the change. It is expressed as a string.
+TVChannelNameInfoObject contains information on a TV channel name. This is used to indicate the name of TV channel to change or the TV channel before and after the change. It is expressed as a string.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -1557,7 +1561,7 @@ TVChannelNameInfoObject contains information on a TV channel name. This object i
 * [`SetChannelByNameRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelByNameRequest)
 
 ## TVChannelInfoObject {#TVChannelInfoObject}
-TVChannelInfoObject contains information on a TV channel number. This object is used to indicate the number of the new TV channel to change or the TV channel before and after the change. It is expressed as a number.
+TVChannelInfoObject contains information on a TV channel number. This is used to indicate the channel number of TV channel to change or the TV channel before and after the change. It is expressed as a number.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -1614,7 +1618,7 @@ TVChannelInfoObject contains information on a TV channel number. This object is 
 * [`SetChannelRequest`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#SetChannelRequest)
 
 ## UltraFineDustInfoObject {#UltraFineDustInfoObject}
-UltraFineDustInfoObject contains information on ultrafine dust. This object is used to indicate the ultrafine dust index measured by the appliance. It is expressed as a number.
+UltraFineDustInfoObject contains information on ultrafine dust. This is used to indicate the ultrafine dust index or the level measured by the appliance. It is expressed as a number.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |
@@ -1650,7 +1654,7 @@ UltraFineDustInfoObject contains information on ultrafine dust. This object is u
 * [`GetUltraFineDustResponse`](/CEK/References/ClovaHomeInterface/Control_Interfaces.md#GetUltraFineDustResponse)
 
 ## VolumeInfoObject {#VolumeInfoObject}
-VolumeInfoObject contains information on the speaker volume. This object is used to indicate the new volume to change or the volume before and after the change. It is expressed as an integer.
+VolumeInfoObject contains information on the speaker volume. This is used to indicate the new volume to change or the volume before and after the change. It is expressed as an integer.
 
 ### Object fields
 | Field name       | Data type    | Description                     | Required/Included |

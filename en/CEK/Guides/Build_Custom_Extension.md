@@ -10,7 +10,7 @@ The information is provided to the custom extension developers in the following 
    * [Handling a `IntentRequest`](#HandleIntentRequest)
    * [Handling a `SessionEndedRequest`](#HandleSessionEndedRequest)
 3. [Returning a custom extension response](#ReturnCustomExtensionResponse)
-4. [Engaging in a multi-turn dialog](#DoMultiturnDialog)
+4. [Engaging in a multi-turn dialogue](#DoMultiturnDialog)
 
 {% include "/CEK/Guides/BuildCustomExtension/Preparation.md" %}
 

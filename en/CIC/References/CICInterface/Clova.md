@@ -3,18 +3,18 @@
 The Clova namespace provides interfaces that return the result for a user voice request. When the user request is sent to CIC as a [`SpeechRecognizer.Recognize`](/CIC/References/CICInterface/SpeechRecognizer.md#Recognize) event, CIC analyzes the request. The directives below are returned to the client according to the analyzed result. The client needs to handle these directives and provide Clova services to users.
 
 | Message name         | Type  | Description                                   |
-{% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}|------------------|-----------|---------------------------------------------|
-| [`ExpectLogin`](#ExpectLogin)                    | Directive | Instructs the client to prompt its user to authenticate their {{ book.OrientedService }} account. |{% else %}|------------------|-----------|---------------------------------------------|{% endif %}
+|------------------|-----------|---------------------------------------------|
+| [`ExpectLogin`](#ExpectLogin)                    | Directive | Instructs the client to prompt its user to authenticate their {{ book.OrientedService }} account. |
 | [`FinishExtension`](#FinishExtension)            | Directive | Instructs the client to end the specified extension.             |
 | [`HandleDelegatedEvent`](#HandleDelegatedEvent)  | Directive | Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app.   |
 | [`Hello`](#Hello)                                | Directive | Notifies the client that a downchannel has been established between the client and CIC.       |
 | [`Help`](#Help)                                  | Directive | Instructs the client to provide the existing Help guide to the user.       |
+| [`LaunchURI`](#LaunchURI)                        | Directive | Instructs the client to either launch or execute the site or the app expressed as a URI.                         |
 | [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) | Event    | Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation).  |
 | [`RenderTemplate`](#RenderTemplate)              | Directive | Instructs the client to display the given template.                     |
 | [`RenderText`](#RenderText)                      | Directive | Instructs the client to display the given text.                     |
 | [`StartExtension`](#StartExtension)              | Directive | Instructs the client to start the specified extension.            |
 
-{% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}
 ## ExpectLogin directive {#ExpectLogin}
 
 Instructs the client to prompt its user to authenticate their {{ book.OrientedService }} account. CIC sends this directive to a client to provide a service that requires the {{ book.OrientedService }} account authentication while running in the [guest mode](/CIC/References/Clova_Auth_API.md#GuestMode).
@@ -48,8 +48,6 @@ Once the user gets authenticated successfully, CIC stops handling old requests o
 ### See also
 * [Creating Clova access tokens](/CIC/Guides/Interact_with_CIC.md#CreateClovaAccessToken)
 * [Guest mode](/CIC/References/Clova_Auth_API.md#GuestMode)
-
-{% endif %}
 
 ## FinishExtension directive {#FinishExtension}
 
@@ -88,7 +86,7 @@ Instructs the client to end the specified extension. The client must end the spe
 
 ## HandleDelegatedEvent directive {#HandleDelegatedEvent}
 
-Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app. A user can delegate another client device of the user—that is not the Clova app—to receive the handling results of requests made while using the Clova app. This directive is sent to the client device that has been delegated to handle the result. That client device must then send the [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) event to CIC to receive the handled result.
+Instructs the client to [handle the user request delegated](/CIC/Guides/Interact_with_CIC.md#HandleDelegation) from the Clova app. A user can delegate another client device, that is not the Clova app, to receive the handling results of requests made while using the Clova app. This directive is sent to the client device that has been delegated to handle the result. That client device must then send the [`ProcessDelegatedEvent`](#ProcessDelegatedEvent) event to CIC to receive the handled result.
 
 ### Payload fields
 
@@ -188,9 +186,90 @@ None
 ### See also
 None
 
+## LaunchURI directive {#LaunchURI}
+
+Instructs the client to either launch or execute the site or the app expressed as a URI. Upon receiving this directive, the client must execute the site or the app using the `targets[].uri` field.
+
+### Payload fields
+
+| Field name       | Data type    | Description                     | Included |
+|---------------|---------|-----------------------------|:---------:|
+| `targets[]`              | object array | The object array that has URI information.                       | Always     |
+| `targets[].description`  | string       | The description of the target expressed as a URI (app or site).           | Optional     |
+| `targets[].iconImageUrl` | string       | The icon image of the target expressed as a URI.                 | Optional     |
+| `targets[].marketUrl`    | string       | **If the target expressed as a URI is an app**, the address of app store.  | Optional     |
+| `targets[].packageName`  | string       | **If the target expressed as a URI is an app**, the package name of app.  | Optional     |
+| `targets[].title`        | string       | The title of the target expressed as a URI.                        | Required     |
+| `targets[].uri`          | string       | The information of the target URI.                                  | Required     |
+
+### Remarks
+
+* The client can display the preview using the <a href="http://ogp.me/" target="_blank">Open Graph protocol</a> data from the `targets[].uri` URI, and can also use the `targets[].iconImageUrl`, `targets[].title`, and `targets[].description` fields to instantly display partial data.
+* **If the target expressed as a URI is an app**, `targets[].marketUrl` and `targets[].packageName` fields may be used. `targets[].marketUrl` is used when the target app cannot be executed due to not being installed and `targets[].packageName` is the additional information for reference when the app cannot be executed with `targets[].uri`.
+* The client does not have to launch or execute all targets in the array of the `targets[]` field. The client must try to launch or execute the target using the first element of the URI in the array. If the attempt fails, the client must attempt the same action using the next element in the array. Basically, an array is used to include alternatives in case an element cannot be executed.
+
+### Message example
+
+```json
+// App type example
+{
+  "directive": {
+    "header": {
+      "namespace": "Clova",
+      "name": "LaunchURI",
+      "messageId": "086ccadf-cd88-4cff-9706-cc4f0801c929",
+      "dialogRequestId": "de20ea1a-ea39-4c2a-a033-73fa014b2fd5"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "sampleapp2://main",
+          "title": "Sample app2",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app2"
+        },
+        {
+          "uri": "sampleapp://main",
+          "title": "Sample app",
+          "iconImageUrl": "https://yourdomain.com/sampleappicon.png",
+          "marketUrl": "https://play.google.com/store/apps/details?id=com.yourdomain.sampleapp",
+          "packageName": "com.yourdomain.sampleapp",
+          "description": "Sample app"
+        }
+      ]
+    }
+  }
+}
+
+// Site type example
+{
+  "directive": {
+    "header": {
+      "namespace": "Clova",
+      "name": "LaunchURI",
+      "messageId": "fcb0919e-9847-46ec-90bc-ab0fe8216771",
+      "dialogRequestId": "9ab7256a-6add-4b4a-a0b8-481f41d36a9d"
+    },
+    "payload": {
+      "targets": [
+        {
+          "uri": "http://example.org",
+          "title": "Example Domain"
+        }
+      ]
+    }
+  }
+}
+```
+
+### See also
+None
+
 ## ProcessDelegatedEvent event {#ProcessDelegatedEvent}
 
-Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation). When sending this event to CIC, make sure to include the `delegationId` value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive in the `payload` of this message. The client will receive the result on the request which the user had made through Clova app as a response to this directive.
+Requests CIC for the result of handling the [delegated user request](/CIC/Guides/Interact_with_CIC.md#HandleDelegation). When sending this event to CIC, make sure to include the `delegationId` value received through the [`HandleDelegatedEvent`](#HandleDelegatedEvent) directive in the `payload` of this message. The client will receive the result on the request which the user had made through the Clova app as a response to this directive.
 
 ### Context fields
 

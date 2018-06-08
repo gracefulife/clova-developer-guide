@@ -1,4 +1,4 @@
-# CIC overview
+overview
 Learn what Clova Interface Connect (hereinafter referred to as "CIC") is and how it works. This document will help you understand how CIC operates and includes CIC guides and references.
 
 ## What is CIC? {#WhatisCIC}
@@ -11,10 +11,10 @@ Clients use the CIC API to send user requests to CIC and also to receive respons
 
 Through the CIC API, various communications are made between clients and CIC in the form of messages. The message type depends on who the message sender is as follows.
 
-* [Event](/CIC/References/CIC_API.md#Event): Messages that clients send to CIC. Send events to CIC to pass users voice requests (speech input) to CIC and to notify CIC when your client states have changed.
+* [Event](/CIC/References/CIC_API.md#Event): Messages that clients send to CIC. Send events to CIC to pass user voice requests (speech input) to CIC and to notify CIC when your client states have changed.
 
 * [Directive](/CIC/References/CIC_API.md#Directive): Messages that CIC sends to clients to control client behavior. For example, a directive can instruct an app to display certain information or play synthesized speech. Directives are sent to clients when:
-    * Responding to user requests. After recognizing user voice request (user intent), CIC returns directives to instruct clients to perform certain actions relevant to the user intent.
+    * Responding to user requests. After recognizing a user voice request (user intent), CIC returns directives to instruct clients to perform certain actions relevant to the user intent.
     * Certain conditions require CIC to send directives to clients without any preceding user requests.
 
 The following sequence diagram shows how messages are sent back and forth between CIC and a client.
@@ -34,18 +34,18 @@ Dialogues between users and Clova usually proceed as followings:
 
 1. A user starts to speak to Clova.
 2. The client records the user speech and sends the recording to CIC.
-3. CIC returns result to the client. The client delivers the result to the user through synthesized speech or display.
+3. CIC returns the result to the client. The client delivers the result to the user through synthesized speech or text.
 
-Having CIC and a client in between, dialogueues between users and Clova are rather indirect and have the following limitations:
+Having CIC and a client in between, dialogues between users and Clova are rather indirect and have the following limitations:
 
-* Delivering requests and receiving responses take more time compared to direct dialogueues.
-* Response is not immediate when new requests are made or new dialogueues are initiated by users.
+* Delivering requests and receiving responses take more time compared to direct dialogues.
+* Response is not immediate when new requests are made or new dialogues are initiated by users.
 
-Suppose a user asks Clova, "How's the weather today?" Before Clova responds or while Clova is responding, the user makes another request: "Play some upbeat music." The user will probably no longer want the weather information. Had the dialogue been direct, you would simply ignore the weather information returned. However, since dialogueues are relayed by a client to Clova, the client must recognize the dialogue status and take appropriate actions to provide what user wants.
+Suppose a user asks Clova, "How's the weather today?" Before Clova responds or while Clova is responding, the user makes another request: "Play some upbeat music." The user will probably no longer want the weather information. Had the dialogue been direct, you would simply ignore the weather information returned. However, since dialogues are relayed by a client to Clova, the client must recognize the dialogue status and take appropriate actions to provide what user wants.
 
 ### Dialogue ID and client action {#DialogIDandClientOP}
 
-To overcome the restrictions of indirect dialogueues, we use a **dialogue ID**. To identify individual user request, a **dialogue ID** is created every time a user starts speaking to Clova. Keep a copy of the dialogue ID of the latest user request sent to CIC. Update the latest dialogue ID every time you send a user request to CIC.
+To overcome the restrictions of indirect dialogues, we use a **dialogue ID**. To identify individual user request, a **dialogue ID** is created every time a user starts speaking to Clova. Keep a copy of the dialogue ID of the latest user request sent to CIC. Update the latest dialogue ID every time you send a user request to CIC.
 
 A directive, returned from CIC as a response to the user request, contains a dialogue ID. This dialogue ID is identical to the one that had been embedded in the user request. In short, dialogue IDs help you identify whether the Clova response corresponds to the latest user request or not. To use dialogue IDs:
 
@@ -54,5 +54,5 @@ A directive, returned from CIC as a response to the user request, contains a dia
   * Replace the **latest dialogue ID** with the newly created dialogue ID.
   * When the latest dialogue ID is replaced, discard all directives associated to dialogue IDs other than the latest, regardless of whether the directives are being processed or are waiting to be processed.
 3. When CIC returns a directive with the request result, compare the dialogue ID of the directive with the latest dialogue ID kept on the client.
-  * **If the IDs match**, return the result contained in the directive to the user.
-  * **If the IDs do not match**, discard the received directive.
+  * **If the dialogue IDs match**, return the result contained in the directive to the user.
+  * **If the dialogue IDs do not match**, discard the received directive.
