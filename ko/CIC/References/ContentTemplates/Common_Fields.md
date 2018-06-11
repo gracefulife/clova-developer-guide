@@ -24,6 +24,10 @@
     "type": "string",
     "value": "경기도 성남시 분당구 정자1동 오늘 미세먼지 지수는 좋음 입니다"
   },
+  "subtitle": {
+  "type": "string",
+  "value": "정자1동 오늘 미세먼지 지수는 좋음 입니다"
+  },​
   "meta": {
     "version": {
       "type": "string",
