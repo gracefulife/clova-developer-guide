@@ -7,6 +7,7 @@
 | `failureMessage` | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | UI에 content template를 표시하지 못할 경우 보여줄 메시지 정보를 포함합니다. 예를 들면, 클라이언트가 `meta.version`에 명시된 content template의 버전을 지원하지 않거나 템플릿 정보를 표시하는데 문제가 생길 경우 보여줄 메시지 입니다. | 항상 |
 | `meta`             | object | Content template과 관련된 메타 정보를 포함합니다. | 항상 |
 | `meta.version`     | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | Content template의 버전 정보를 포함합니다. | 항상 |
+| `subtitle`         | [StringObject](/CIC/References/ContentTemplates/Shared_Objects.md#StringObject) | 부제나 보조 정보를 표시하기 위한 텍스트를 포함합니다. | 조건부 |
 
 ## 공통 필드 Example
 
@@ -23,6 +24,10 @@
     "type": "string",
     "value": "경기도 성남시 분당구 정자1동 오늘 미세먼지 지수는 좋음 입니다"
   },
+  "subtitle": {
+  "type": "string",
+  "value": "정자1동 오늘 미세먼지 지수는 좋음 입니다"
+  },​
   "meta": {
     "version": {
       "type": "string",

@@ -230,7 +230,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
 * [`TemplateRuntime.RequestPlayerInfo`](#RequestPlayerInfo)
 * [`TemplateRuntime.UnlikeCommandIssued`](#UnlikeCommandIssued)
 
-## RequestPlayerInfoIssued event {#RequestPlayerInfoIssued}
+## RequestPlayerInfo event {#RequestPlayerInfo}
 클라이언트가 미디어 플레이어에 표시할 재생 목록, 앨범 이미지, 가사와 같은 재생 메타 정보를 CIC에게 요청합니다. 이 이벤트 메시지를 CIC에게 전송하면 CIC는 [`TemplateRuntime.RenderPlayerInfo`](#RenderPlayerInfo) 지시 메시지를 클라이언트에게 전송합니다.
 
 
@@ -269,7 +269,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
   "event": {
     "header": {
       "namespace": "TemplateRuntime",
-      "name": "RequestPlayerInfoIssued",
+      "name": "RequestPlayerInfo",
       "messageId": "2fcb6a62-393d-46ad-a5c4-b3db9b640045"
     },
     "payload": {

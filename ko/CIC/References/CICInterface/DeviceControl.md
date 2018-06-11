@@ -655,7 +655,7 @@ CIC는 이 이벤트 메시지를 수신하면 사용자 계정에 등록된 모
 
 ## LaunchApp directive {#LaunchApp}
 
-클라이언트에게 특정 앱을 실행하도록 지시합니다. 앱을 지정하는 값으로 앱의 custom URL scheme나 중계 페이지 URL 또는 앱 이름이 전달됩니다.
+**(Deprecated)** 클라이언트에게 특정 앱을 실행하도록 지시합니다. 앱을 지정하는 값으로 앱의 custom URL scheme나 중계 페이지 URL 또는 앱 이름이 전달됩니다.
 
 ### Payload fields
 
