@@ -55,8 +55,8 @@
 | PlaybackController | [`TurnOffRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOffRepeatMode) | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 끄도록 지시합니다.                |
 | PlaybackController | [`TurnOnRepeatMode`](/CIC/References/CICInterface/PlaybackController.md#TurnOnRepeatMode) | **(Deprecated)** 클라이언트에게 한 곡 반복 재생 모드를 켜도록 지시합니다.                  |
 | PlaybackController | [`Unmute`](/CIC/References/CICInterface/PlaybackController.md#Unmute)           | 클라이언트에게 스피커 볼륨의 음소거를 해제하도록 지시합니다.                                           |
-| PlaybackController | [`VolumeDown`](/CIC/References/CICInterface/PlaybackController.md#VolumeDown)   | 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                                                   |
-| PlaybackController | [`VolumeUp`](/CIC/References/CICInterface/PlaybackController.md#VolumeUp)       | 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                                                   |
+| PlaybackController | [`VolumeDown`](/CIC/References/CICInterface/PlaybackController.md#VolumeDown)   | **(Deprecated)** 클라이언트에게 스피커 볼륨을 낮추도록 지시합니다.                                                   |
+| PlaybackController | [`VolumeUp`](/CIC/References/CICInterface/PlaybackController.md#VolumeUp)       | **(Deprecated)** 클라이언트에게 스피커 볼륨을 높이도록 지시합니다.                                                   |
 | SpeechRecognizer   | [`ExpectSpeech`](/CIC/References/CICInterface/SpeechRecognizer.md#ExpectSpeech) | 클라이언트에게 사용자의 음성 입력을 대기하도록 지시합니다.                                            |
 | SpeechRecognizer   | [`KeepRecording`](/CIC/References/CICInterface/SpeechRecognizer.md#KeepRecording) | 클라이언트에게 음성 입력을 계속 받도록 지시합니다.                                                |
 {% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}| SpeechRecognizer   | [`ShowRecognizedText`](/CIC/References/CICInterface/SpeechRecognizer.md#ShowRecognizedText) | 클라이언트에게 인식된 사용자 음성을 실시간으로 전달합니다.                                |
