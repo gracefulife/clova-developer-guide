@@ -64,7 +64,7 @@ Extensionの配布に必要な情報を入力する最後の段階です。プ�
 
 Extensionの[配布情報](#InputDeploymentInfo)と[プライバシーポリシーおよびコンプライアンス情報](#InputComplianceInfo)まで入力すると、登録したExtensionの審査をリクエストできます。Clovaの運営者は、登録されたExtensionの情報、実際の動作確認と適合性などを審査します。
 
-* Extensionが正常に動作し、検討した結果特に異常がない場合、Extensionは審査を通過します。審査を通過すると、直ちに、または好きな時にExtensionを配布できます。
+* Extensionが正常に動作し、検討した結果特に異常がない場合、Extensionは審査を通過します。審査を通過すると、直ちにExtensionの配布が開始されます。
 * もし審査中に実行エラーが発生したり、ユーザーシナリオに深刻な問題が見つかったりした場合、運営者によって配布のリクエストがリジェクトされ、審査をリクエストする前に戻ります。
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)

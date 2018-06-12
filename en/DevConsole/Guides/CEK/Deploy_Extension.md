@@ -64,7 +64,7 @@ The URLs entered in **{{ book.DevConsole.cek_privacy_policy_url }}** and **{{ bo
 
 Once you have filled out the [deployment information](#InputDeploymentInfo) and the [privacy and compliance information](#InputComplianceInfo), you can request a review of your extension as the final step. Then a Clova administrator reviews the extension, such as its registered information, actual execution, and suitability.
 
-* If the extension is functioning properly and no issues are found during the review, it will pass the review and you will be able to deploy the extension instantly or at a desired time.
+* If the extension is functioning properly and no issues are found during the review, it will pass the review and you will be able to deploy the extension instantly.
 * If an execution error is found during the review or a critical issue is found during user scenario tests, the  deployment request is rejected by the administrator. Then the extension will go back to the previous status before the review.
 
 ![](/DevConsole/Resources/Images/DevConsole-Extension_Submission_Process.png)
