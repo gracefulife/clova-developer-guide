@@ -186,7 +186,7 @@ IoT 기기의 정보를 담고 있는 객체입니다. 사용자 계정에 등�
 | `applianceTypes[]`           | string array  | 기기 타입. `applicationType`에 따라 해당 기기가 수행할 수 있는 동작인 `actions` 필드의 값이 달라집니다. IoT 서비스에서 사용자 계정에 등록된 기기의 타입을 다음 값 중 하나로 지정해야 합니다. Remarks 항목을 참고하여 기기 타입을 입력합니다.                                                                              | 필수/항상    |
 | `friendlyName`               | string        | 사용자가 붙여준 기기의 이름                                                           | 선택/항상    |
 | `friendlyDescription`        | string        | 기기에 대한 설명                                                                  | 선택/항상    |
-| `isIr`                       | boolean       | 기기를 적외선 통신 방식으로 제어하는지 나타내는 필드<ul><li>true: 적외선 통신 방식 사용</li><li>false: 적외선 통신 방식 사용 안함</li></ul> <div class="note"><p><strong>Note!</strong></p><p>적외선 통신 방식으로 제어되는 기기는 제어 요청에 대한 응답을 받을 수 없기 때문에 <a href="/CEK/Guides/Build_Clova_Home_Extension.html#ReturnClovaHomeExtensionResponse">Clova Home extension 응답</a>을 CEK로 반환하지 않아도 되며, Clova도 사용자에게 기기 제어에 대한 처리 결과를 전달하지 않습니다.</p></div>  | 선택/조건부  |
+| `isIr`                       | boolean       | 기기를 적외선 통신 방식으로 제어하는지 나타내는 필드<ul><li>true: 적외선 통신 방식 사용</li><li>false: 적외선 통신 방식 사용 안함</li></ul> <div class="note"><p><strong>Note!</strong></p><p>기기를 적외선 통신 방식으로 제어할 경우 Clova는 사용자에게 기기 제어 결과를 전달하지 않습니다.</p></div>  | 선택/조건부  |
 | `isReachable`                | boolean       | 원격 제어 가능 여부<ul><li>true: 원격 제어 가능</li><li>false: 원격 제어 불가</li></ul>  | 선택/항상    |
 | `manufacturerName`           | string        | 기기 제조사 이름                                                                  | 선택/항상    |
 | `modelName`                  | string        | 기기 모델 이름                                                                   | 선택/항상    |

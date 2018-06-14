@@ -21,6 +21,15 @@
   </thead>
   <tbody>
   <tr>
+    <td>v4.5</td><td>2018-06-17</td>
+    <td>
+      <ul>
+        <li>[CEK] <a href="/CIC/References/Content_Templates.html">Content template</a>의 <a href="/CIC/References/ContentTemplates/Common_Fields.html">공통 필드</a>에 subtitle 필드 추가</li>
+        <li>[CEK] 적외선 방식으로 제어되는 기기를 위해 Clova Home extension API <a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ApplianceInfoObject">ApplianceInfoObject</a>에 isIr 필드 추가</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td>v4.4</td><td>2018-05-28</td>
     <td>
       <ul>
