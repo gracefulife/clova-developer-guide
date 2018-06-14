@@ -41,7 +41,7 @@ IoTデバイス制御サービスを提供するためのExtensionです。詳�
 ### Clova Home Extensionのメッセージ {#ClovaHomeExtMessage}
 IoTデバイスを制御する[Clova Home Extension](#ClovaHomeExtension)が[Clova Extensions Kit](#CEK)と情報のやり取りをする際、専用で使用するメッセージです。詳細については、[Clova Home Extensionのメッセージ](/CEK/References/CEK_API.md#ClovaHomeExtMessage)ドキュメントを参照してください。
 
-### Clova Interface Connection(CIC) {#CIC}
+### Clova Interface Connect(CIC) {#CIC}
 AIアシスタントサービスを提供するパソコン/モバイルアプリ、モバイルデバイスまたは家電製品などのクライアントに、Clovaとの連携ができるインターフェースを提供するプラットフォームです。詳細については、[CICの概要](/CIC/CIC_Overview.md)ドキュメントを参照してください。
 
 ### Clovaアプリ {#ClovaApp}
