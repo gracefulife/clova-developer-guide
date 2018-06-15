@@ -358,8 +358,8 @@ Voice agentは、ユーザーの音声入力の聞き取り、Clovaの音声出�
 
 | 色の名称      | RGB値             | 色の名称      | RGB値             |
 |--------------|-------------------|--------------|-------------------|
-| Green1       | <span style="color:#12D5B2; font-size:150%; vertical-align:middle;">&#9724;</span> 18、213、178(#12D5B2)   | Green2       | <span style="color:#05D484; font-size:150%; vertical-align:middle;">&#9724;</span> 5、212、132 (#05D484)   |
-| Red          | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255、0、0(#FF0000)      | Warm White    | <span style="color:#EEFFFC; font-size:150%; vertical-align:middle;">&#9724;</span> 238、255、252(#EEFFFC)  |
+| Green1       | <span style="color:#12D5B2; font-size:150%; vertical-align:middle;">&#9724;</span> 18,213,178(#12D5B2)   | Green2       | <span style="color:#05D484; font-size:150%; vertical-align:middle;">&#9724;</span> 5,212,132 (#05D484)   |
+| Red          | <span style="color:#FF0000; font-size:150%; vertical-align:middle;">&#9724;</span> 255,0,0(#FF0000)      | Warm White    | <span style="color:#EEFFFC; font-size:150%; vertical-align:middle;">&#9724;</span> 238,255,252(#EEFFFC)  |
 
 #### バータイプ {#BarType}
 

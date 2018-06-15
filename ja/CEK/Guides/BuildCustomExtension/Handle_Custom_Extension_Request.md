@@ -12,7 +12,7 @@ Custom ExtensionはCEKから[Custom Extensionメッセージ](/CEK/References/CE
 
 | リクエストタイプ | ユーザーの発話パターン | サンプル発話 |
 |---------|--------------|---------|
-|[LaunchRequest](#HandleLaunchRequest) | _[Extensionの呼び出し名]_ + 「スタートして/開いて/実行して」 | 「ピザボットを起動して」 |
+|[LaunchRequest](#HandleLaunchRequest) | _[Extensionの呼び出し名]_ + 「起動して/開いて/実行して」 | 「ピザボットを起動して」 |
 | [IntentRequest](#HandleIntentRequest)| _[Extensionの呼び出し名]_ + 「へ/から/に/で」 + _[Extensionごとに登録した実行コマンド]_、あるいは<br/>(`LaunchRequest`タイプのリクエストを受け取った状態で) _[Extensionごとに登録したコマンド]_ | 「ピザボットでピザを頼んで」<br/>(ピザボット起動状態で)「注文を確認して」 |
 | [SessionEndedRequest](#HandleSessionEndedRequest) | (`LaunchRequest`タイプのリクエストを受け付けた状態で)「終了して/終了/もういい」 | 「(ピザボットを)終了して」 |
 
@@ -144,7 +144,7 @@ IntentRequestタイプのリクエストは、`request.type`フィールドに`"
 
 <div class="note">
   <p><strong>メモ</strong></p>
-  <p><code>IntentRequest</code>タイプのリクエストは、<code>LaunchRequest</code>タイプのリクエスと関係なく、新しいセッションを開始してリクエストを処理することができます。</p>
+  <p><code>IntentRequest</code>タイプのリクエストは、<code>LaunchRequest</code>タイプのリクエストと関係なく、新しいセッションを開始してリクエストを処理することができます。</p>
 </div>
 
 ### SessionEndedRequestの処理 {#HandleSessionEndedRequest}
