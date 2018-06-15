@@ -20,6 +20,60 @@
     </tr>
   </thead>
   <tbody>
+  <tr>
+    <td>v4.2</td><td>2018-05-14</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/Clova.html#LaunchURI">LaunchURI</a>ディレクティブをDeviceControl名前空間から<a href="/CIC/References/CICInterface/Clova.html">Clova</a>名前欄に移動</li>
+        <li>[CEK] HTTPリクエストメッセージにヘッダー(SignatureCEK、SignatureCEKCertChainUrl)を追加および<a href="/CEK/References/CEK_API.html#RequestMessageValidation">リクエストメッセージを検証する</a>セクションを追加</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v4.1</td><td>2018-05-07</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a>名前欄に<a href="/CIC/References/CICInterface/DeviceControl.html#LaunchURI">LaunchURI</a>ディレクティブを追加</li>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a>名前欄の<a href="/CIC/References/CICInterface/DeviceControl.html#LaunchApp">LaunchApp</a>ディレクティブと<a href="/CIC/References/CICInterface/DeviceControl.html#OpenScreen">OpenScreen</a>ディレクティブのサポートを中断(Deprecated)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v4.0</td><td>2018-04-30</td>
+    <td>
+      <ul>
+        <li>[CEK] Clova Home extension APIに<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateRequest">GetOpenStateRequest</a>、<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetOpenStateResponse">GetOpenStateResponse</a>を追加</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.9</td><td>2018-04-23</td>
+    <td>
+      <ul>
+        <li>[CEK] Clova Home extension APIに<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeConfirmation">ReleaseModeConfirmation</a>、<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#ReleaseModeRequest">ReleaseModeRequest</a>を追加</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.8</td><td>2018-04-16</td>
+    <td>
+      <ul>
+        <li>[CIC] <a href="/CIC/References/CICInterface/SpeechRecognizer.html#Recognize">SpeechRecognizer.Recognize</a>イベントのwakeWordフィールドの説明およびAudio dataの説明を更新</li>
+        <li>[CIC] <a href="/CIC/References/CICInterface/DeviceControl.html">DeviceControl</a>名前欄に<a href="/CIC/References/CICInterface/DeviceControl.html#Open">Open</a>ディレクティブを追加</li>
+        <li>[CEK] Clova Home extension APIの<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetLockStateResponse">GetLockStateResponse</a>にopenStateフィールドを追加</li>
+        <li>[CEK] Clova Home extension APIに<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleRequest">GetCleaningCycleRequest</a>、<a href="/CEK/References/ClovaHomeInterface/Control_Interfaces.html#GetCleaningCycleResponse">GetCleaningCycleResponse</a>を追加</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>v3.7</td><td>2018-04-09</td>
+    <td>
+      <ul>
+        <li>[CIC] クライアントデバイスのデザインガイドラインで、<a href="Design/Design_Guideline_For_Client_Hardware.html#BootingScreen">起動画面</a>に関する説明およびサンプル画像を更新</li>
+        <li>[CEK] Clova Home extension APIの<a href="/CEK/References/ClovaHomeInterface/Shared_Objects.html#ColorInfoObject">ColorInfoObject</a>のbrightnessフィールドの説明および必須有無を変更</li>
+      </ul>
+    </td>
+  </tr>
     <tr>
       <td>v3.6</td><td>2018-04-02</td>
       <td>
@@ -35,7 +89,7 @@
           <li>[CIC] <a href="/CIC/References/CICInterface/PlaybackController.html">PlaybackController</a>名前欄に、全部で12件のメッセージ仕様を追加
             <ul>
               <li><a href="/CIC/References/CICInterface/PlaybackController.html#PauseCommandIssued">PlaybackController.PauseCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#PlayCommandIssued">PlaybackController.PlayCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ResumeCommandIssued">PlaybackController.ResumeCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatModeCommandIssued">PlaybackController.SetRepeatModeCommandIssued</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#StopCommandIssued">PlaybackController.StopCommandIssued</a>イベントを追加</li>
-              <li><a href="/CIC/References/CICInterface/PlaybackController.html#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>, <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>,
+              <li><a href="/CIC/References/CICInterface/PlaybackController.html#ExpectNextCommand">PlaybackController.ExpectNextCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPauseCommand">PlaybackController.ExpectPauseCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPlayCommand">PlaybackController.ExpectPlayCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectPreviousCommand">PlaybackController.ExpectPreviousCommand</a>、
 <a href="/CIC/References/CICInterface/PlaybackController.html#ExpectResumeCommand">PlaybackController.ExpectResumeCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#ExpectStopCommand">PlaybackController.ExpectStopCommand</a>、<a href="/CIC/References/CICInterface/PlaybackController.html#SetRepeatMode">PlaybackController.SetRepeatMode</a>ディレクティブを追加</li>
               <li><a href="/CIC/References/CICInterface/PlaybackController.html#TurnOnRepeatMode">PlaybackController.TurnOnRepeatMode</a>ディレクティブと<a href="/CIC/References/CICInterface/PlaybackController.html#TurnOffRepeatMode">PlaybackController.TurnOffRepeatMode</a>は削除予定</li>
             </ul>
