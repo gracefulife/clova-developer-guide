@@ -69,6 +69,7 @@ Clova Home extension 메시지는 `header` 필드와 `payload`로 구성되어 �
         "version": "v1.0",
         "friendlyName": "거실 전등",
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "isIr": false,
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -89,6 +90,7 @@ Clova Home extension 메시지는 `header` 필드와 `payload`로 구성되어 �
         "version": "v1.0",
         "friendlyName": "부엌 플러그",
         "friendlyDescription": "에너지를 절약하는 플러그",
+        "isIr": false,
         "isReachable": true,
         "actions": [
           "HealthCheck",
