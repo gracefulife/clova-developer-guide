@@ -28,10 +28,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 | [`GetAwakeDurationResponse`](#GetAwakeDurationResponse)                       | Response | [`GetAwakeDurationRequest`](#GetAwakeDurationRequest)メッセージに対するレスポンスです。デバイスで測定されたユーザーの入眠潜時、つまりユーザーが就寝してから睡眠状態に入るまでの時間をCEKに返します。  |
 | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)                             | Request  | デバイスの電池の情報をClova Home Extensionにリクエストします。 |
 | [`GetBatteryInfoResponse`](#GetBatteryInfoResponse)                           | Response | [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)メッセージに対するレスポンスです。デバイスの電池の情報をCEKに返します。 |
-| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request | 開閉センサーで検知された開閉状況のうち、検知対象が最後に閉まったときの日時情報をClova Home Extensionにリクエストします。 |
+| [`GetCleaningCycleRequest`](#GetCleaningCycleRequest)                                                   | Request  | デバイスをクリーニングする周期を確認する際に使用します。デバイスの次のクリーニング周期までの残り時間をClova Home extensionにリクエストします。  |
+| [`GetCleaningCycleResponse`](#GetCleaningCycleResponse)                                                  | Response | [`GetCleaningCycleRequest`](#GetCleaningCycleRequest)メッセージに対するレスポンスです。デバイスの次のクリーニング周期までの残り時間をCEKに返します。  |
+| [`GetCloseTimeRequest`](#GetCloseTimeRequest)                                 | Request  | 開閉センサーで検知された開閉状況のうち、検知対象が最後に閉まったときの日時情報をClova Home Extensionにリクエストします。 |
 | [`GetCloseTimeResponse`](#GetCloseTimeResponse)                               | Response | [`GetCloseTimeRequest`](#GetCloseTimeRequest)メッセージに対するレスポンスです。開閉センサーの検知対象が最後に閉まったときの日時情報をCEKに返します。  |
-| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギー使用量を確認する際に使用します。エネルギー使用量の情報をClova Home Extensionにリクエストします。  |
-| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest)メッセージに対するレスポンスです。現在まで測定されたエネルギー使用量の情報をCEKに返します。  |
+| [`GetConsumptionRequest`](#GetConsumptionRequest)                             | Request  | 主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギーまたはリソースを確認する際に使用します。測定されたエネルギーまたはリソースの情報をClova Home Extensionにリクエストします。  |
+| [`GetConsumptionResponse`](#GetConsumptionResponse)                           | Response | [`GetConsumptionRequest`](#GetConsumptionRequest)メッセージに対するレスポンスです。現在まで測定されたエネルギーまたはリソースの情報をCEKに返します。  |
 | [`GetCurrentBillRequest`](#GetCurrentBillRequest)                             | Request  | 主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギー使用量に基づいた利用料金を確認する際に使用します。測定された料金情報をClova Home Extensionにリクエストします。  |
 | [`GetCurrentBillResponse`](#GetCurrentBillResponse)                           | Response | [`GetCurrentBillRequest`](#GetCurrentBillRequest)メッセージに対するレスポンスです。現在まで測定された料金情報をCEKに返します。   |
 | [`GetCurrentTemperatureRequest`](#GetCurrentTemperatureRequest)               | Request  | 現在の温度をClova Home Extensionにリクエストします。 |
@@ -48,17 +50,19 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 | [`GetHumidityResponse`](#GetHumidityResponse)                                 | Response | [`GetHumidityRequest`](#GetHumidityRequest)メッセージに対するレスポンスです。デバイスで測定された湿度をCEKに返します。 |
 | [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest)                           | Request  | 炊飯器のようなデバイスで、食べ物が保温された時間を確認する際に使用します。デバイスで保温モードが維持された時間の情報をClova Home Extensionにリクエストします。  |
 | [`GetKeepWarmTimeResponse`](#GetKeepWarmTimeResponse)                         | Response | [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest)メッセージに対するレスポンスです。保温モードが維持された時間の情報をCEKに返します。  |
-| [`GetLockStateRequest`](#GetLockStateRequest)                                 | Request  | デバイスの現在のロック状態をClova Home Extensionにリクエストします。   |
-| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | [`GetLockStateRequest`](#GetLockStateRequest)メッセージに対するレスポンスです。デバイスの現在のロック状態をCEKに返します。 |
+| [`GetLockStateRequest`](#GetLockStateRequest)                                 | Request  | 主にスマートバルブなどのデバイスの状態を確認する際に使用します。デバイスが持っているロック装置の現在のロック状態をClova Home Extensionにリクエストします。  |
+| [`GetLockStateResponse`](#GetLockStateResponse)                               | Response | [`GetLockStateRequest`](#GetLockStateRequest)メッセージに対するレスポンスです。デバイスが持っているロック装置の現在のロック状態をCEKに返します。  |
+| [`GetOpenStateRequest`](#GetOpenStateRequest)                                 | Request  | 主に開閉センサーで検知された開閉状況のうち、検知対象の現在の状態(開いている/閉まっている)をClova Home Extensionにリクエストします。  |
+| [`GetOpenStateResponse`](#GetOpenStateResponse)                               | Response | [`GetOpenStateRequest`](#GetOpenStateRequest)メッセージに対するレスポンスです。主に検知対象の現在の状態(開いている/閉まっている)をCEKに返します。  |
 | [`GetOpenTimeRequest`](#GetOpenTimeRequest)                                   | Request  | 主に開閉センサーで検知された開閉状況のうち、検知対象が最後に開いたときの日時情報をClova Home Extensionにリクエストします。   |
 | [`GetOpenTimeResponse`](#GetOpenTimeResponse)                                 | Response | [`GetOpenTimeRequest`](#GetOpenTimeRequest)メッセージに対するレスポンスです。開閉センサーの検知対象が最後に開いたときの日時情報をCEKに返します。  |
 | [`GetPhaseRequest`](#GetPhaseRequest)                                         | Request  | 主に炊飯器や洗濯機など、動作に段階があるデバイスで、現在の動作段階を確認する際に使用します。デバイスの現在の動作段階をClova Home Extensionにリクエストします。  |
 | [`GetPhaseResponse`](#GetPhaseResponse)                                       | Response | [`GetPhaseRequest`](#GetPhaseRequest)メッセージに対するレスポンスです。デバイスの現在の動作段階をCEKに返します。  |
-| [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest)         | Request  | 主に電力量計やスマートプラグなどのデバイスで累進税の段階を確認する際に使用します。判断された累進税の段階をClova Home Extensionにリクエストします。  |
+| [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest)         | Request  | 主に電力量計やスマートプラグなどのデバイスで、累進税の段階を確認する際に使用します。判断された累進税の段階をClova Home Extensionにリクエストします。  |
 | [`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)         | Response | [`GetProgressiveTaxBracketRequest`](#GetProgressiveTaxBracketRequest)メッセージに対するレスポンスです。デバイスで判断された累進税の段階情報をCEKに返します。 |
 | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)                         | Request  | 主に炊飯器や洗濯機のようなデバイスで、動作終了までの残り時間を確認する際に使用します。デバイスの動作終了までの残り時間をClova Home Extensionにリクエストします。  |
 | [`GetRemainingTimeResponse`](#GetRemainingTimeResponse)                       | Response | [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)メッセージに対するレスポンスです。デバイスの動作終了までの残り時間をCEKに返します。 |
-| [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)                 | Request  | ユーザーが正しい姿勢でデバイスを使用した割合を確認する際に使用します。ユーザーがデバイスを使用する際、特定の期間または現在まで正しい姿勢を保った割合をClova Home Extensionにリクエストします。  |
+| [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)                 | Request  | ユーザーが正しい姿勢でデバイスを使用した割合を確認する際に使用します。ユーザーがデバイスを使用する際、特定の期間または現在まで正しい姿勢を保った割合の情報をClova Home Extensionにリクエストします。  |
 | [`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)               | Response | [`GetRightPostureRatioRequest`](#GetRightPostureRatioRequest)メッセージに対するレスポンスです。ユーザーが正しい姿勢でデバイスを使用した割合をCEKに返します。  |
 | [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest)             | Request  | スマートチェアなどのデバイスで、ユーザーの使用状況を確認する際に使用します。デバイスで検知されたユーザーの着席情報と、直近でユーザーがデバイスを使用した時間の情報をClova Home Extensionにリクエストします。  |
 | [`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse)           | Response | [`GetCurrentSittingStateRequest`](#GetCurrentSittingStateRequest)メッセージに対するレスポンスです。デバイスで検知されたユーザーの着席情報と、直近でユーザーがデバイスを使用した時間の情報をCEKに返します。  |
@@ -94,6 +98,8 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 | [`OpenRequest`](#OpenRequest)                                                 | Request  | スマートカーテンや温水洗浄便座などのデバイスを制御する際に使用します。スマートカーテンや温水洗浄便座の蓋を開けるようClova Home Extensionにリクエストします。  |
 | [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | [`RaiseRequest`](#RaiseRequest)メッセージに対するレスポンスです。デバイスの高さを上げるように設定した結果をCEKに返します。  |
 | [`RaiseRequest`](#RaiseRequest)                                               | Request  | 主にカーテンやブラインド、ベッドなどのデバイスを制御する際に使用します。デバイスの高さを上げるようClova Home Extensionにリクエストします。  |
+| [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)                         | Response | [`ReleaseModeRequest`](#ReleaseModeRequest)メッセージに対するレスポンスです。デバイスの現在の運転モード(operation mode)を解除するように設定した結果をCEKに返します。  |
+| [`ReleaseModeRequest`](#ReleaseModeRequest)                                   | Request  | 現在、デバイスに設定されている運転モード(operation mode)を解除する際に使用します。デバイスの運転モードを解除し、前の運転モードまたはデフォルトの運転モードに戻るようにClova Home Extensionにリクエストします。  |
 | [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest)メッセージに対するレスポンスです。照明の輝度を変更するように設定した結果をCEKに返します。 |
 | [`SetBrightnessRequest`](#SetBrightnessRequest)                               | Request  | 照明の輝度を指定された値に変更するようClova Home Extensionにリクエストします。 |
 | [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)               | Response | [`SetChannelByNameRequest`](#SetChannelByNameRequest)メッセージに対するレスポンスです。指定されたチャンネル名にテレビのチャンネルを変更するように設定した結果をCEKに返します。 |
@@ -158,10 +164,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -222,10 +228,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -303,11 +309,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 変更する輝度情報を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 変更する輝度情報を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -387,11 +393,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 変更するテレビチャンネルの値を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 変更するテレビチャンネルの値を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -472,11 +478,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | 変更するファンの速度情報を持つオブジェクト。ファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul> | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaFanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject)             | 変更するファンの速度情報を持つオブジェクト。ファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul> | 常時    |
 
 ### Message example
 
@@ -557,11 +563,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する強度情報を持つオブジェクト                            | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する強度情報を持つオブジェクト                            | 常時    |
 
 ### Message example
 
@@ -642,11 +648,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する温度情報を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する温度情報を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -727,11 +733,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | 変更する音量情報を持つオブジェクト                           | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaVolume`       | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)             | 変更する音量情報を持つオブジェクト                           | 常時    |
 
 ### Message example
 
@@ -765,10 +771,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetAirQualityRequest {#GetAirQualityRequest}
 主に空気清浄機などのデバイスで測定された空気質情報を確認する際に使用します。空気質情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetAirQualityResponse`](#GetAirQualityResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -833,11 +839,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetAsleepDurationRequest {#GetAsleepDurationRequest}
 主に睡眠センサーで測定された情報を確認する際に使用します。デバイスで測定されたユーザーの睡眠時間をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetAsleepDurationResponse`](#GetAsleepDurationResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                      | Optional  |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                      | 条件付き  |
 
 ### Message example
 
@@ -857,7 +863,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-032"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -904,11 +910,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetAwakeDurationRequest {#GetAwakeDurationRequest}
 主に睡眠センサーで測定された情報を確認する際に使用します。デバイスで測定されたユーザーの入眠潜時、つまりユーザーが就寝してから睡眠状態に入るまでの時間をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetAwakeDurationResponse`](#GetAwakeDurationResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                      | Optional  |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                      | 条件付き  |
 
 ### Message example
 
@@ -928,7 +934,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-032"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -975,10 +981,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetBatteryInfoRequest {#GetBatteryInfoRequest}
 主にロボット掃除機などのワイヤレスデバイスの内蔵電池の情報を確認する際に使用します。現在の電池の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetBatteryInfoResponse`](#GetBatteryInfoResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1043,10 +1049,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetBatteryInfoRequest {#GetBatteryInfoRequest}
 主にロボット掃除機などのワイヤレスデバイスの内蔵電池の情報を確認する際に使用します。現在の電池の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetBatteryInfoResponse`](#GetBatteryInfoResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1108,13 +1114,80 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ### 次の項目も参照してください。
 * [`GetBatteryInfoRequest`](#GetBatteryInfoRequest)
 
+## GetCleaningCycleRequest {#GetCleaningCycleRequest}
+デバイスをクリーニングする周期を確認する際に使用します。デバイスの次のクリーニング周期までの残り時間をClova Home extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetCleaningCycleResponse`](#GetCleaningCycleResponse)メッセージを使用する必要があります。
+
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "9a1a7237-f1c0-44f8-b4db-2a2abb1f0e1c",
+    "name": "GetCleaningCycleRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-045"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`GetCleaningCycleResponse`](#GetCleaningCycleResponse)
+
+## GetCleaningCycleResponse {#GetCleaningCycleResponse}
+
+[`GetCleaningCycleRequest`](#GetCleaningCycleRequest)メッセージに対するレスポンスです。デバイスの次のクリーニング周期までの残り時間をCEKに返します。
+
+| フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | リクエストがエンドポイントで確認された日時(タイムスタンプ、<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 選択    |
+| `remainingTime`              | string | クリーニングする時点までの残り時間(Duration、<a href="https://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank">ISO 8601</a>)    | 必須    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "b502dd42-b698-4d3b-9ddb-bbdda70f254f",
+    "name": "GetCleaningCycleResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "remainingTime": "PT8H40M",
+    "applianceResponseTimestamp": "2017-11-23T20:30:19+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`GetCleaningCycleRequest`](#GetGetCleaningCycleRequest)
+
 ## GetCloseTimeRequest {#GetCloseTimeRequest}
 開閉センサーで検知された開閉状況のうち、検知対象が最後に閉まったときの日時情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetCloseTimeResponse`](#GetCloseTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1176,12 +1249,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetCloseTimeRequest`](#GetCloseTimeRequest)
 
 ## GetConsumptionRequest {#GetConsumptionRequest}
-主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギー使用量を確認する際に使用します。エネルギー使用量の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetConsumptionResponse`](#GetConsumptionResponse)メッセージを使用する必要があります。
+主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギーまたはリソースを確認する際に使用します。測定されたエネルギーまたはリソースの情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetConsumptionResponse`](#GetConsumptionResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1210,12 +1283,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetConsumptionResponse`](#GetConsumptionResponse)
 
 ## GetConsumptionResponse {#GetConsumptionResponse}
-[`GetConsumptionRequest`](#GetConsumptionRequest)メッセージに対するレスポンスです。現在まで測定されたエネルギー使用量の情報をCEKに返します。
+[`GetConsumptionRequest`](#GetConsumptionRequest)メッセージに対するレスポンスです。現在まで測定されたエネルギーまたはリソースの情報をCEKに返します。
 
 | フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | リクエストがエンドポイントで確認された日時(タイムスタンプ、<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 選択    |
-| `consumption`                | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) | 現在まで測定されたエネルギー使用量を持つオブジェクト   | 必須    |
+| `consumption[]`              | [ConsumptionInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ConsumptionInfoObject) array | デバイスで現在まで測定されたエネルギーまたはリソースの情報を持つオブジェクト   | 必須    |
 
 ### Message example
 
@@ -1230,10 +1303,13 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "currentBill": {
-        "value": 77.5,
-        "currency": "kW"
-    },
+    "consumption": [
+      {
+        "name": "電気使用量",
+        "value": 79.7,
+        "unit": "kW"
+      }
+    ],
     "applianceResponseTimestamp": "2017-11-23T20:30:54+09:00"
   }
 }
@@ -1247,10 +1323,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetCurrentBillRequest {#GetCurrentBillRequest}
 主にスマートプラグやスマートテーブルタップのようなデバイスで測定された、現在までのエネルギー使用量に基づいた利用料金を確認する際に使用します。測定された料金情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetCurrentBillResponse`](#GetCurrentBillResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1316,10 +1392,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetCurrentTemperatureRequest {#GetCurrentTemperatureRequest}
 主にエアコンやサーモスタットのようなデバイスで測定された現在の温度を確認する際に使用します。現在の温度をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetCurrentTemperatureResponse`](#GetCurrentTemperatureResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1387,10 +1463,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 デバイスが提供するすべてのステータス情報と測定情報を確認する際に使用します。例えば、空気清浄機から空気質、湿度、微細粉塵(PM10)、超微細粉塵(PM2.5)の情報を、それぞれ[`GetAirQualityRequest`](#GetAirQualityRequest)、[`GetHumidityRequest`](#GetHumidityRequest)、[`GetFineDustRequest`](#GetFineDustRequest)、[`GetUltraFineDustRequest`](#GetUltraFineDustRequest)メッセージで確認できます。あるいは`GetDeviceStateRequest`メッセージで一度に確認することもできます。一部の測定情報を確認するには、期間を設定する必要があります。その場合、`period`に期間を設定します。このリクエストに対するレスポンスとして、[`GetDeviceStateResponse`](#GetDeviceStateResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 | `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                         | 条件付き   |
 
 ### Message example
@@ -1411,7 +1487,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-012"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -1459,7 +1535,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
         "name" : "冷蔵室の湿度",
         "value" : 10,
         "unit" : "percentage"
-      },
+      }
     ],
     "applianceResponseTimestamp": "2017-11-23T20:31:18+09:00"
   }
@@ -1474,10 +1550,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetEstimateBillRequest {#GetEstimateBillRequest}
 主にスマートプラグやスマートテーブルタップのようなデバイスで測定されたエネルギー使用量に基づいて、利用料金を推定する際に使用します。推定された料金情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetEstimateBillResponse`](#GetEstimateBillResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1544,10 +1620,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 フィルターなど、デバイスの消耗品の使用量や残り寿命を確認する際に使用します。デバイスが持つ消耗品の使用量や寿命情報をリクエストします。このリクエストに対するレスポンスとして、[`GetExpendableStateResponse`](#GetExpendableStateResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1599,10 +1675,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
     "expendableInfo" : [
       {
         "name" : "パッキン",
-        "remainingTime" : {
-          "month": 1,
-          "day": 3
-        }
+        "remainingTime": "P0001-04-10"
       },
       {
         "name" : "フィルター1",
@@ -1625,10 +1698,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetFineDustRequest {#GetFineDustRequest}
 主に空気清浄機などのデバイスで測定された微細粉塵(PM10)の情報を確認する際に使用します。微細粉塵(PM10)の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetFineDustResponse`](#GetFineDustResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1694,10 +1767,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetHumidityRequest {#GetHumidityRequest}
 主に加湿器などのデバイスで測定された湿度を確認する際に使用します。湿度をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetHumidityResponse`](#GetHumidityResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1762,10 +1835,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetKeepWarmTimeRequest {#GetKeepWarmTimeRequest}
 炊飯器のようなデバイスで、食べ物が保温された時間を確認する際に使用します。デバイスで保温モードが維持された時間の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetKeepWarmTimeResponse`](#GetKeepWarmTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1827,12 +1900,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetKeepWarmTimeRequest`](#GetKeepWarmTimeRequest)
 
 ## GetLockStateRequest {#GetLockStateRequest}
-主にスマートバルブなどのデバイスのステータスを確認する際に使用します。デバイスの現在のロック状態をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetLockStateResponse`](#GetLockStateResponse)メッセージを使用する必要があります。
+主にスマートバルブなどのデバイスの状態を確認する際に使用します。デバイスが持っているロック装置の現在のロック状態をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetLockStateResponse`](#GetLockStateResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1861,12 +1934,13 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetLockStateResponse`](#GetLockStateResponse)
 
 ## GetLockStateResponse {#GetLockStateResponse}
-[`GetLockStateRequest`](#GetLockStateRequest)メッセージに対するレスポンスです。デバイスの現在のロック状態をCEKに返します。
+[`GetLockStateRequest`](#GetLockStateRequest)メッセージに対するレスポンスです。デバイスが持っているロック装置の現在のロック状態をCEKに返します。
 
 | フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
 |---------------|---------|-----------------------------|:---------:|
 | `applianceResponseTimestamp` | string | リクエストがエンドポイントで確認された日時(タイムスタンプ、<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 選択    |
-| `lockState`   | string | デバイスのロック状態。次のいずれかになります。<ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 必須    |
+| `lockState`                  | string | デバイスのロック装置のロック状態。以下の値を持ちます。<ul><li><code>"LOCKED"</code>：ロック装置がロックされている</li><li><code>"UNLOCKED"</code>：ロック装置がロックされていない</li></ul> | 必須    |
+
 
 ### Message example
 
@@ -1881,9 +1955,9 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
     "payloadVersion": "1.0"
   },
   "payload": {
-    "lockState": "LOCKED"
-  },
-  "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+    "lockState": "LOCKED",
+    "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+  }
 }
 ```
 
@@ -1892,13 +1966,80 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ### 次の項目も参照してください。
 * [`GetLockStateRequest`](#GetLockStateRequest)
 
+## GetOpenStateRequest {#GetOpenStateRequest}
+主に開閉センサーで検知された開閉状況のうち、検知対象の現在の状態(開いている/閉まっている)をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetOpenStateResponse`](#GetOpenStateResponse)メッセージを使用する必要があります。
+
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "6c04fc2d-64dd-41a0-9162-7cb0d4cf7c08",
+    "name": "GetOpenStateRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+      "applianceId": "device-012"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`GetOpenStateResponse`](#GetOpenStateResponse)
+
+## GetOpenStateResponse {#GetOpenStateResponse}
+[`GetOpenStateRequest`](#GetOpenStateRequest)メッセージに対するレスポンスです。主に検知対象の現在の状態(開いている/閉まっている)をCEKに返します。
+
+| フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
+|---------------|---------|-----------------------------|:---------:|
+| `applianceResponseTimestamp` | string | リクエストがエンドポイントで確認された日時(タイムスタンプ、<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>)     | 選択    |
+| `openState`                  | string | カバーやドア、窓などから検知された状態。<ul><li><code>"CLOSED"</code>：カバーやドア、窓などが閉まっている</li><li><code>"OPENED"</code>：カバーやドア、窓などが開いている</li></ul> | 必須    |
+
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "GetOpenStateResponse",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "OpenState": "LOCKED",
+    "applianceResponseTimestamp": "2017-11-23T20:31:08+09:00"
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`GetOpenStateRequest`](#GetOpenStateRequest)
+
 ## GetOpenTimeRequest {#GetOpenTimeRequest}
 主に開閉センサーで検知された開閉状況のうち、検知対象が最後に開いたときの日時情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetOpenTimeResponse`](#GetOpenTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -1962,10 +2103,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetPhaseRequest {#GetPhaseRequest}
 主に炊飯器や洗濯機など、動作に段階があるデバイスで、現在の動作段階を確認する際に使用します。デバイスの現在の動作段階をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetPhaseResponse`](#GetPhaseResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2028,12 +2169,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetPhaseRequest`](#GetPhaseRequest)
 
 ## GetProgressiveTaxBracketRequest {#GetProgressiveTaxBracketRequest}
-主に電力量計やスマートプラグなどのデバイスで累進税の段階を確認する際に使用します。判断された累進税の段階をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)メッセージを使用する必要があります。
+主に電力量計やスマートプラグなどのデバイスで、累進税の段階を確認する際に使用します。判断された累進税の段階をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetProgressiveTaxBracketResponse`](#GetProgressiveTaxBracketResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2099,10 +2240,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetRemainingTimeRequest {#GetRemainingTimeRequest}
 主に炊飯器や洗濯機のようなデバイスで、動作終了までの残り時間を確認する際に使用します。デバイスの動作終了までの残り時間をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetRemainingTimeResponse`](#GetRemainingTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2164,12 +2305,12 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 * [`GetRemainingTimeRequest`](#GetRemainingTimeRequest)
 
 ## GetRightPostureRatioRequest {#GetRightPostureRatioRequest}
-ユーザーが正しい姿勢でデバイスを使用した割合を確認する際に使用します。ユーザーがデバイスを使用する際、特定の期間または現在まで正しい姿勢を保った割合をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)メッセージを使用する必要があります。
+ユーザーが正しい姿勢でデバイスを使用した割合を確認する際に使用します。ユーザーがデバイスを使用する際、特定の期間または現在まで正しい姿勢を保った割合の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetRightPostureRatioResponse`](#GetRightPostureRatioResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 | `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                     | 常時   |
 
 ### Message example
@@ -2190,7 +2331,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-028"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -2240,10 +2381,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetCurrentSittingStateRequest {#GetCurrentSittingStateRequest}
 スマートチェアなどのデバイスで、ユーザーの使用状況を確認する際に使用します。デバイスで検知されたユーザーの着席情報と、直近でユーザーがデバイスを使用した時間の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetCurrentSittingStateResponse`](#GetCurrentSittingStateResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2313,11 +2454,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetSleepScoreRequest {#GetSleepScoreRequest}
 睡眠センサーのようなデバイスで、ユーザーの睡眠スコアの情報を確認する際に使用します。デバイスで評価されたユーザーの睡眠スコアをClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetSleepScoreResponse`](#GetSleepScoreResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                          | Optional  |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                          | 条件付き  |
 
 ### Message example
 
@@ -2337,7 +2478,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-032"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -2371,7 +2512,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
   },
   "payload": {
     "sleepScore": {
-      "value": 80,
+      "value": 80
     },
     "applianceResponseTimestamp": "2018-03-29T14:32:13+09:00"
   }
@@ -2386,11 +2527,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetSleepStartTimeRequest {#GetSleepStartTimeRequest}
 睡眠センサーのようなデバイスで、ユーザーの睡眠スコアの情報を確認する際に使用します。デバイスで測定されたユーザーの睡眠開始時間をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetSleepStartTimeResponse`](#GetSleepStartTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                          | Optional  |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                          | 条件付き  |
 
 ### Message example
 
@@ -2410,7 +2551,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-032"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -2461,10 +2602,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetTargetTemperatureRequest {#GetTargetTemperatureRequest}
 主にエアコンやサーモスタットのようなデバイスで、設定温度を確認する際に使用します。デバイスの設定温度をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetTargetTemperatureResponse`](#GetTargetTemperatureResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2529,10 +2670,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetUltraFineDustRequest {#GetUltraFineDustRequest}
 主に空気清浄機などのデバイスで測定された超微細粉塵(PM2.5)の情報を確認する際に使用します。超微細粉塵(PM2.5)の情報をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetUltraFineDustResponse`](#GetUltraFineDustResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2598,10 +2739,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 ## GetUsageTimeRequest {#GetUsageTimeRequest}
 デバイスの使用時間を確認する際に使用します。特定の期間または現在までの累積使用時間をClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`GetUsageTimeResponse`](#GetUsageTimeResponse)メッセージを使用する必要があります。
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 | `period`           | [PeriodInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#PeriodInfoObject)           | 期間情報を持つオブジェクト                                     | 常時   |
 
 ### Message example
@@ -2622,7 +2763,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
       "applianceId": "device-028"
     },
     "period": {
-      "start": "2018-03-28T00:00:00+09:00",
+      "start": "2018-03-28T00:0:00+09:00",
       "end": "2018-03-28T23:59:59+09:00"
     }
   }
@@ -2672,10 +2813,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string  | Clova Home Extensionのアクセストークン | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`   | string  | Clova Home Extensionのアクセストークン | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -2745,7 +2886,7 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 | フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
 |---------------|---------|-----------------------------|:---------:|
 | `brightness`               | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 現在の輝度情報を持つオブジェクト                                | 選択    |
-| `previousState`            | object | エンドポイントの前の状況情報を持つオブジェクト                           | 必須    |
+| `previousState`            | object | エンドポイントの前の状況情報を持つオブジェクト                           | 選択    |
 | `previousState.brightness` | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 前の輝度情報を持つオブジェクト                                | 選択    |
 
 ### 備考
@@ -2787,11 +2928,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 変更する輝度情報を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaBrightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject)             | 変更する輝度情報を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -2872,11 +3013,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
-| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 変更するテレビチャンネルの値を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
+| `deltaChannel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject)             | 変更するテレビチャンネルの値を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -2957,11 +3098,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 変更する速度情報を持っているオブジェクト。ファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul>  | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaFanSpeed` | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 変更する速度情報を持っているオブジェクト。ファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul>  | 常時    |
 
 ### Message example
 
@@ -3042,11 +3183,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | 変更する圧力や水圧の強度情報を持っているオブジェクト           | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaIntensity`   | [IntensityLevelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#IntensityLevelInfoObject) | 変更する圧力や水圧の強度情報を持っているオブジェクト           | 常時    |
 
 ### Message example
 
@@ -3127,11 +3268,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。 | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する温度情報を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。 | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaTemperature` | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 変更する温度情報を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -3208,11 +3349,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | 変更する音量情報を持つオブジェクト                              | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `deltaVolume` | [VolumeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#VolumeInfoObject)                | 変更する音量情報を持つオブジェクト                              | 常時    |
 
 ### Message example
 
@@ -3276,10 +3417,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### 備考
 デバイスの高さは、調整できる範囲内の最大値まで調整されます。高さの調整を途中で止めるには、[StopRequest](#StopRequest)メッセージを受け取る必要があります。
@@ -3343,10 +3484,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
 
 ### Message example
 
@@ -3407,10 +3548,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -3471,10 +3612,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### 備考
 デバイスの高さは、調整できる範囲内の最大値まで調整されます。高さの調整を途中で止めるには、[StopRequest](#StopRequest)メッセージを受け取る必要があります。
@@ -3506,6 +3647,88 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 * [`LowerRequest`](#LowerRequest)
 * [`RaiseConfirmation`](#RaiseConfirmation)
+
+## ReleaseModeConfirmation {#ReleaseModeConfirmation}
+[`ReleaseModeRequest`](#ReleaseModeRequest)メッセージに対するレスポンスです。デバイスの現在の運転モード(operation mode)を解除するように設定した結果をCEKに返します。
+
+### Payload fields
+
+| フィールド名       | データ型    | フィールドの説明                     | 必須/選択 |
+|---------------|---------|-----------------------------|:---------:|
+| `mode`          | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | 運転モード解除のリクエストによってデバイスに設定されたか、またはExtensionから戻るようにリクエストされた運転モードの情報を持つオブジェクト      | 選択    |
+| `previousState` | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject)  | 運転モード解除のリクエストを受信する前に、デバイスに設定されていた運転モードの情報を持つオブジェクト      | 選択    |
+
+### 備考
+
+エンドポイントからペイロードに入力する情報を取得できない場合、値を省略できます。その場合、ユーザーには具体的な情報なしに、リクエストが正常に処理されたことを通知します。
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "4ec35000-88ce-4724-b7e4-7f52050558fd",
+    "name": "ReleaseModeConfirmation",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "previousState": {
+      "mode": {
+        "value": "sleep"
+      }
+    },
+    "mode": {
+      "value": "wakeup"
+    }
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`ReleaseModeRequest`](#ReleaseModeRequest)
+
+## ReleaseModeRequest {#ReleaseModeRequest}
+現在、デバイスに設定されている運転モード(operation mode)を解除する際に使用します。デバイスの運転モードを解除し、前の運転モードまたはデフォルトの運転モードに戻るようにClova Home Extensionにリクエストします。このリクエストに対するレスポンスとして、[`ReleaseModeConfirmation`](#ReleaseModeConfirmation)メッセージを使用する必要があります。
+
+### Payload fields
+
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
+|---------------|---------|-----------------------------|:---------:|
+| `accessToken` | string  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。 | 常時    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | デバイスから解除する運転モードの情報を持つオブジェクト                         | 常時    |
+
+### Message example
+
+{% raw %}
+
+```json
+{
+  "header": {
+    "messageId": "33da6561-0149-4532-a30b-e0de8f75c4cf",
+    "name": "ReleaseModeRequest",
+    "namespace": "ClovaHome",
+    "payloadVersion": "1.0"
+  },
+  "payload": {
+    "accessToken": "92ebcb67fe33",
+    "appliance": {
+        "applianceId": "device-006"
+    },
+    "mode": "sleep"
+  }
+}
+```
+
+{% endraw %}
+
+### 次の項目も参照してください。
+* [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)
 
 ## SetBrightnessConfirmation {#SetBrightnessConfirmation}
 [`SetBrightnessRequest`](#SetBrightnessRequest)メッセージに対するレスポンスです。照明の輝度を変更するように設定した結果をCEKに返します。
@@ -3550,11 +3773,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 設定する輝度情報を持つオブジェクト                | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `brightness`       | [BrightnessInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#BrightnessInfoObject) | 設定する輝度情報を持つオブジェクト                | 常時    |
 
 ### Message example
 
@@ -3628,11 +3851,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | 設定するテレビチャンネル名の情報を持つオブジェクト                | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `channelName`       | [TVChannelNameInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelNameInfoObject) | 設定するテレビチャンネル名の情報を持つオブジェクト                | 常時    |
 
 ### Message example
 
@@ -3706,11 +3929,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 設定するテレビチャンネルの情報を持つオブジェクト                | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `channel`       | [TVChannelInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TVChannelInfoObject) | 設定するテレビチャンネルの情報を持つオブジェクト                | 常時    |
 
 ### Message example
 
@@ -3786,11 +4009,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `color`         | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | 照明や画面、電球に設定する色の情報を持っているオブジェクト            | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `color`         | [ColorInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorInfoObject) | 照明や画面、電球に設定する色の情報を持っているオブジェクト            | 常時    |
 
 ### Message example
 
@@ -3866,11 +4089,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `colorTemperature` | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | 照明や画面、電球に設定する色温度の情報を持っているオブジェクト                | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `colorTemperature` | [ColorTemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ColorTemperatureInfoObject) | 照明や画面、電球に設定する色温度の情報を持っているオブジェクト                | 常時    |
 
 ### Message example
 
@@ -3944,11 +4167,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 設定するファンの速度情報を持つオブジェクトファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul>     | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `fanSpeed`       | [SpeedInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#SpeedInfoObject) | 設定するファンの速度情報を持つオブジェクトファンの速度とは風速のことで、次のいずれかになります。<ul><li><code>1</code>：弱風(1段階)</li><li><code>2</code>：中風(2段階)</li><li><code>3</code>：強風(3段階)</li></ul>     | 常時    |
 
 ### Message example
 
@@ -4022,11 +4245,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。        | &nbsp; |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト     | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。        | 常時    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト     | 常時    |
 
 ### Message example
 
@@ -4100,11 +4323,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。        | &nbsp; |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト     | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。        | 常時    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト     | 常時    |
 
 ### Message example
 
@@ -4173,11 +4396,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `lockState`       | string | 設定するデバイスのロック状態。次のいずれかになります。<ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `lockState`       | string | 設定するデバイスのロック状態。次のいずれかになります。<ul><li><code>"LOCKED"</code></li><li><code>"UNLOCKED"</code></li></ul> | 常時    |
 
 ### Message example
 
@@ -4249,11 +4472,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken` | string  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。 | &nbsp; |
-| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | 設定する運転モードの情報を持つオブジェクト                         | &nbsp; |
+| `accessToken` | string  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。 | 常時    |
+| `appliance`   | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `mode`        | [ModeInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ModeInfoObject) | 設定する運転モードの情報を持つオブジェクト                         | 常時    |
 
 ### Message example
 
@@ -4327,11 +4550,11 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
-| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト                | &nbsp; |
+| `accessToken`   | string | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`     | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject) | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
+| `targetTemperature`       | [TemperatureInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#TemperatureInfoObject) | 設定する温度情報を持つオブジェクト                | 常時    |
 
 ### Message example
 
@@ -4401,10 +4624,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。     | 常時    |
 
 ### Message example
 
@@ -4464,10 +4687,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
 
 ### Message example
 
@@ -4527,10 +4750,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
 
 ### Message example
 
@@ -4590,10 +4813,10 @@ IoTデバイスの情報の確認、デバイス操作のリクエストおよ�
 
 ### Payload fields
 
-| フィールド名       | データ型    | フィールドの説明                     | Optional |
+| フィールド名       | データ型    | フィールドの説明                     | 任意 |
 |---------------|---------|-----------------------------|:---------:|
-| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | &nbsp; |
-| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | &nbsp; |
+| `accessToken`      | string                                  | IoTサービスのユーザーアカウントのアクセストークン。CEKは、外部サービスの認可サーバーから取得したユーザーアカウントのアクセストークンを渡します。詳細については、[ユーザーアカウントをリンクする](/CEK/Guides/Link_User_Account.md)を参照してください。                          | 常時    |
+| `appliance`        | [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)     | エンドポイントの情報を持つオブジェクト。`applianceId`フィールドは必須です。 | 常時    |
 
 ### Message example
 

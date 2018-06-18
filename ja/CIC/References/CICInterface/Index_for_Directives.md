@@ -16,6 +16,7 @@
 | Clova              | [`HandleDelegatedEvent`](/CIC/References/CICInterface/Clova.md#HandleDelegatedEvent) | クライアントに対して、Clovaアプリから[委任されたユーザーのリクエストを処理する](/CIC/Guides/Interact_with_CIC.md#HandleDelegation)ように指示します。   |
 | Clova              | [`Hello`](/CIC/References/CICInterface/Clova.md#Hello)                          | クライアントに対して、ダウンチャネルが確立したことを通知します。                                       |
 | Clova              | [`Help`](/CIC/References/CICInterface/Clova.md#Help)                            | クライアントに対して、あらかじめ用意されたヘルプを提供するように指示します。                                       |
+| Clova              | [`LaunchURI`](/CIC/References/CICInterface/Clova.md#LaunchURI)     | クライアントに、URIで表現されるウェブサイトまたはアプリを開いたり、起動するように指示します。       |
 | Clova              | [`RenderTemplate`](/CIC/References/CICInterface/Clova.md#RenderTemplate)        | クライアントに対して、テンプレートを表示するように指示します。                                                     |
 | Clova              | [`RenderText`](/CIC/References/CICInterface/Clova.md#RenderText)                | クライアントに対して、テキストを表示するように指示します。                                                     |
 | Clova              | [`StartExtension`](/CIC/References/CICInterface/Clova.md#StartExtension)        | クライアントに対して、特定のExtensionを起動するように指示します。                                             |
@@ -27,8 +28,9 @@
 | DeviceControl      | [`Decrease`](/CIC/References/CICInterface/DeviceControl.md#Decrease)             | クライアントに、スピーカーの音量または画面の明るさを、基本値だけ下げるように指示します。                            |
 | DeviceControl      | [`ExpectReportState`](/CIC/References/CICInterface/DeviceControl.md#ExpectReportState) | クライアントに、デバイスの現在の状態をCICにレポートするように指示します。                                  |
 | DeviceControl      | [`Increase`](/CIC/References/CICInterface/DeviceControl.md#Increase)             | クライアントに、スピーカーの音量または画面の明るさを、基本値だけ上げるように指示します。                            |
-| DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | クライアントに、特定のアプリを起動するように指示します。                                                    |
-| DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | クライアントに、設定画面を開くように指示します。                                                     |
+| DeviceControl      | [`LaunchApp`](/CIC/References/CICInterface/DeviceControl.md#LaunchApp)           | **(Deprecated)** クライアントに、特定のアプリを起動するように指示します。                                                    |
+| DeviceControl      | [`Open`](/CIC/References/CICInterface/DeviceControl.md#Open)                     | クライアントに、特定の画面を表示するように指示します。  |
+| DeviceControl      | [`OpenScreen`](/CIC/References/CICInterface/DeviceControl.md#OpenScreen)         | **(Deprecated)** クライアントに、設定画面を開くように指示します。                                                     |
 | DeviceControl      | [`SetValue`](/CIC/References/CICInterface/DeviceControl.md#SetValue)            | クライアントに、スピーカーの音量または画面の明るさを、指定された値に設定するように指示します。                           |
 | DeviceControl      | [`SynchronizeState`](/CIC/References/CICInterface/DeviceControl.md#SynchronizeState) | クライアントに、ユーザーのアカウントに登録されている他のクライアントデバイスの状態を更新するように指示します。           |
 | DeviceControl      | [`TurnOff`](/CIC/References/CICInterface/DeviceControl.md#TurnOff)               | クライアントに、指定された機能やモードをオフにしたり、または無効にするように指示します。                                  |

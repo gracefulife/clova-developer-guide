@@ -3,7 +3,7 @@ Clova Home Extensionメッセージは、IoTデバイスを制御するExtension
 
 ### メッセージフォーマット {#ClovaHomeExtMessageFormat}
 
-Clova Home Extensionメッセージは、`header`フィールドと`payload`フィールドで構成されます。リクエストメッセージとレスポンスメッセージの両方に共通します。そのうち`payload`フィールドは、使用される[インターフェース](#ClovaHomeExtInterface)によって構成が異なることがあります。ここでは、Clova Home Extensionメッセージの共通フォーマットについて説明します。
+Clova Home Extensionメッセージは、`header`フィールドと`payload`で構成されます。リクエストメッセージとレスポンスメッセージの両方に共通します。そのうち、`payload`は、使用された[インターフェース](#ClovaHomeExtInterface)によって構成が異なることがあります。ここでは、Clova Home Extensionメッセージの共通フォーマットについて説明します。
 
 <div class="note">
   <p><strong>メモ</strong></p>
