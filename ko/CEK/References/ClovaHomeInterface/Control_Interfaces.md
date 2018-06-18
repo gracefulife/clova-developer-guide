@@ -4,21 +4,21 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 
 | 메시지 이름         | 메시지 타입  | 메시지 설명                                   |
 |------------------|-----------|---------------------------------------------|
-| [`ChargeConfirmation`](#ChargeConfirmation)                                   | Response | [`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`ChargeConfirmation`](#ChargeConfirmation)                                   | Response | [`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`ChargeRequest`](#ChargeRequest)                                             | Request  | 대상 기기가 스스로를 충전하도록 Clova Home extension에게 요청합니다. |
-| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | [`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 설정한 결과를 CEK에게 전달합니다. |
+| [`CloseConfirmation`](#CloseConfirmation)                                     | Response | [`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`CloseRequest`](#CloseRequest)                                               | Request  | 스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 Clova Home extension에게 요청합니다.  |
-| [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)         | Response | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)         | Response | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`DecrementBrightnessRequest`](#DecrementBrightnessRequest)                   | Request  | 대상 기기가 지정한 수준만큼 조명의 밝기를 낮추도록 Clova Home extension에게 요청합니다. |
-| [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)               | Response | [`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)               | Response | [`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`DecrementChannelRequest`](#DecrementChannelRequest)                         | Request  | 대상 기기가 지정한 수준만큼 TV 채널을 낮추도록 Clova Home extension에게 요청합니다. |
-| [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)             | Response | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)             | Response | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest)                       | Request  | 대상 기기가 지정한 값만큼 팬 속도를 낮추도록 Clova Home extension에게 요청합니다. |
-| [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest)           | Request  | 주로 에어컨이나 온도 조절 장치와 같은 기기를 제어할 때 사용되며, 대상 기기가 지정한 값만큼 압력이나 수압의 세기를 낮추도록 Clova Home extension에게 요청합니다.  |
-| [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation) | Response | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest)     | Request  | 대상 기기가 지정한 값만큼 온도를 낮추도록 Clova Home extension에게 요청합니다.      |
-| [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                 | Response | [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다. |
+| [`DecrementVolumeConfirmation`](#DecrementVolumeConfirmation)                 | Response | [`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`DecrementVolumeRequest`](#DecrementVolumeRequest)                           | Request  | 대상 기기가 지정한 값만큼 볼륨 크기를 낮추도록 Clova home extension에게 요청합니다. |
 | [`GetAirQualityRequest`](#GetAirQualityRequest)                               | Request  | 대상 기기가 측정한 공기질 정보를 Clova Home extension에게 요청합니다. |
 | [`GetAirQualityResponse`](#GetAirQualityResponse)                             | Response | [`GetAirQualityRequest`](#GetAirQualityRequest) 메시지에 대한 응답으로 대상 기기가 측정한 공기질 정보를 CEK에게 전달합니다. |
@@ -78,61 +78,61 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 | [`GetUsageTimeResponse`](#GetUsageTimeResponse)                               | Response | [`GetUsageTimeRequest`](#GetUsageTimeRequest) 메시지에 대한 응답으로 대상 기기가 사용된 시간 정보를 CEK에게 전달합니다.  |
 | [`HealthCheckRequest`](#HealthCheckRequest)                                   | Request  | 지정한 기기의 상태를 파악할 때 사용되며, 대상 기기의 상태 정보를 Clova Home extension에게 요청합니다. |
 | [`HealthCheckResponse`](#HealthCheckResponse)                                 | Response | [`HealthCheckRequest`](#HealthCheckRequest) 메시지에 대한 응답으로 지정한 기기의 상태 정보를 CEK에게 전달합니다. |
-| [`IncrementBrightnessConfirmation`](#IncrementBrightnessConfirmation)         | Response | [`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 설정한 결과를 CEK에게 전달합니다. |
+| [`IncrementBrightnessConfirmation`](#IncrementBrightnessConfirmation)         | Response | [`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`IncrementBrightnessRequest`](#IncrementBrightnessRequest)                   | Request  | 대상 기기가 지정한 수준만큼 조명의 밝기를 높이도록 Clova Home extension에게 요청합니다. |
-| [`IncrementChannelConfirmation`](#IncrementChannelConfirmation)               | Response | [`IncrementChannelRequest`](#IncrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 높이도록 설정한 결과를 CEK에게 전달합니다. |
+| [`IncrementChannelConfirmation`](#IncrementChannelConfirmation)               | Response | [`IncrementChannelRequest`](#IncrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`IncrementChannelRequest`](#IncrementChannelRequest)                         | Request  | 대상 기기가 지정한 수준만큼 TV 채널을 높이도록 Clova Home extension에게 요청합니다. |
-| [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)             | Response | [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬의 속도를 높이도록 설정한 결과를 CEK에게 전달합니다. |
+| [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)             | Response | [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬의 속도를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest)                       | Request | 대상 기기가 지정한 값만큼 팬 속도를 높이도록 Clova Home extension에게 요청합니다. |
-| [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 높이도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation) | Response | [`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`IncrementIntensityLevelRequest`](#IncrementIntensityLevelRequest)           | Request  | 대상 기기가 지정한 값만큼 압력이나 수압의 세기를 높이도록 Clova Home extension에게 요청합니다. |
-| [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) | Response | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 높이도록 설정한 결과를 CEK에게 전달합니다. |
+| [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation) | Response | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest)     | Request  | 대상 기기가 지정한 값만큼 온도를 높이도록 Clova Home extension에게 요청합니다.     |
-| [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)                 | Response | [`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 설정한 결과를 CEK에게 전달합니다. |
+| [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)                 | Response | [`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`IncrementVolumeRequest`](#IncrementVolumeRequest)                           | Request | 대상 기기가 지정한 값만큼 볼륨 크기를 높이도록 Clova Home extension에게 요청합니다. |
-| [`LowerConfirmation`](#LowerConfirmation)                                     | Response | [`LowerRequest`](#LowerRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 낮추도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`LowerConfirmation`](#LowerConfirmation)                                     | Response | [`LowerRequest`](#LowerRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`LowerRequest`](#LowerRequest)                                               | Request  | 주로 커튼이나 블라인드, 침대 같은 기기를 제어할 때 사용되며, 대상 기기의 높낮이를 내리도록 Clova Home extension에게 요청합니다.  |
 | [`MuteConfirmation`](#MuteConfirmation)                                       | Response | [`MuteRequest`](#MuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 끄도록 설정(음소거)한 결과를 CEK에게 전달합니다. |
 | [`MuteRequest`](#MuteRequest)                                                 | Request  | 대상 기기의 소리를 끄도록(음소거) Clova Home extension에게 요청합니다. |
-| [`OpenConfirmation`](#OpenConfirmation)                                       | Response | [`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 설정한 결과를 CEK에게 전달합니다. |
+| [`OpenConfirmation`](#OpenConfirmation)                                       | Response | [`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`OpenRequest`](#OpenRequest)                                                 | Request  | 스마트 커튼이나 비데 등의 제품을 제어할 때 사용되며, 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 Clova Home extension에게 요청합니다.  |
-| [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | [`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`RaiseConfirmation`](#RaiseConfirmation)                                     | Response | [`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`RaiseRequest`](#RaiseRequest)                                               | Request  | 주로 커튼이나 블라인드, 침대 같은 기기를 제어할 때 사용되며, 대상 기기의 높낮이를 높이도록 Clova Home extension에게 요청합니다.  |
-| [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)                         | Response | [`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)                         | Response | [`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`ReleaseModeRequest`](#ReleaseModeRequest)                                   | Request  | 현재 기기에 설정된 운전 모드(operation mode)를 해제할 때 사용되며, 기기의 운전 모드를 해제하여 이전 운전 모드나 기본 운전 모드로 돌아가도록 Clova Home extension에게 요청합니다.  |
-| [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)                     | Response | [`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetBrightnessRequest`](#SetBrightnessRequest)                               | Request  | 대상 기기가 조명 밝기를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. |
-| [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)               | Response | [`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)               | Response | [`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetChannelByNameRequest`](#SetChannelByNameRequest)                         | Request  | 대상 기기가 지정한 채널 이름으로 채널을 변경하도록 Clova Home extension에게 요청합니다. |
-| [`SetChannelConfirmation`](#SetChannelConfirmation)                           | Response | [`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 채널 번호로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetChannelConfirmation`](#SetChannelConfirmation)                           | Response | [`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 채널 번호로 TV 채널을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetChannelRequest`](#SetChannelRequest)                                     | Request  | 대상 기기가 지정한 채널 번호로 TV 채널을 변경하도록 Clova Home extension에게 요청합니다. |
-| [`SetColorConfirmation`](#SetColorConfirmation)                               | Response | [`SetColorRequest`](#SetColorRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색을 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetColorConfirmation`](#SetColorConfirmation)                               | Response | [`SetColorRequest`](#SetColorRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetColorRequest`](#SetColorRequest)                                         | Request  | 주로 스마트 전등과 같은 기기를 제어할 때 사용되며, 대상 기기의 조명이나 화면, 전등의 색을 변경하도록 Clova Home extension에게 요청합니다.  |
-| [`SetColorTemperatureConfirmation`](#SetColorTemperatureConfirmation)         | Response | [`SetColorTemperatureRequest`](#SetColorTemperatureRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`SetColorTemperatureConfirmation`](#SetColorTemperatureConfirmation)         | Response | [`SetColorTemperatureRequest`](#SetColorTemperatureRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`SetColorTemperatureRequest`](#SetColorTemperatureRequest)                   | Request  | 주로 스마트 전등과 같은 기기를 제어할 때 사용되며, 대상 기기의 조명이나 화면, 전등의 색온도를 변경하도록 Clova Home extension에게 요청합니다.  |
-| [`SetFanSpeedConfirmation`](#SetFanSpeedConfirmation)                         | Response | [`SetFanSpeedRequest`](#SetFanSpeedRequest) 메시지에 대한 응답으로 팬 속도를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetFanSpeedConfirmation`](#SetFanSpeedConfirmation)                         | Response | [`SetFanSpeedRequest`](#SetFanSpeedRequest) 메시지에 대한 응답으로 팬 속도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetFanSpeedRequest`](#SetFanSpeedRequest)                                   | Request  | 대상 기기가 지정한 값으로 팬 속도를 변경하도록 Clova Home extension에게 요청합니다. |
-| [`SetFreezerTargetTemperatureConfirmation`](#SetFreezerTargetTemperatureConfirmation)  | Response  |  [`SetFreezerTargetTemperatureRequest`](#SetFreezerTargetTemperatureRequest) 메시지에 대한 응답으로 냉동실의 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetFreezerTargetTemperatureConfirmation`](#SetFreezerTargetTemperatureConfirmation)  | Response  |  [`SetFreezerTargetTemperatureRequest`](#SetFreezerTargetTemperatureRequest) 메시지에 대한 응답으로 냉동실의 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetFreezerTargetTemperatureRequest`](#SetFreezerTargetTemperatureRequest)   | Request  | 냉장고 같은 기기를 제어할 때 사용되며, 냉장고의 냉동고 희망 온도를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다.  |
-| [`SetFridgeTargetTemperatureConfirmation`](#SetFridgeTargetTemperatureConfirmation) | Response | [`SetFridgeTargetTemperatureRequest`](#SetFridgeTargetTemperatureRequest) 메시지에 대한 응답으로 냉장실의 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`SetFridgeTargetTemperatureConfirmation`](#SetFridgeTargetTemperatureConfirmation) | Response | [`SetFridgeTargetTemperatureRequest`](#SetFridgeTargetTemperatureRequest) 메시지에 대한 응답으로 냉장실의 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`SetFridgeTargetTemperatureRequest`](#SetFridgeTargetTemperatureRequest)     | Request  | 냉장고 같은 기기를 제어할 때 사용되며, 냉장고의 냉장실 희망 온도를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다.  |
-| [`SetLockStateConfirmation`](#SetLockStateConfirmation)                       | Response | [`SetLockStateRequest`](#SetLockStateRequest) 메시지에 대한 응답으로 대상 기기가 잠기거나 열리도록 설정한 결과를 CEK에게 전달합니다.  |
+| [`SetLockStateConfirmation`](#SetLockStateConfirmation)                       | Response | [`SetLockStateRequest`](#SetLockStateRequest) 메시지에 대한 응답으로 대상 기기가 잠기거나 열리도록 요청한 후 처리된 결과를 CEK에게 전달합니다.  |
 | [`SetLockStateRequest`](#SetLockStateRequest)                                 | Request  | 대상 기기를 잠그거나 열도록 Clova Home extension에게 요청합니다.  |
-| [`SetModeConfirmation`](#SetModeConfirmation)                                 | Response | [`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 운전 모드(operation mode)를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetModeConfirmation`](#SetModeConfirmation)                                 | Response | [`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 운전 모드(operation mode)를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetModeRequest`](#SetModeRequest)                                           | Request  | 대상 기기가 지정한 모드로 운전 모드(operation mode)를 변경하도록 Clova Home extension에게 요청합니다. |
-| [`SetTargetTemperatureConfirmation`](#SetTargetTemperatureConfirmation)       | Response | [`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest) 메시지에 대한 응답으로 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다. |
+| [`SetTargetTemperatureConfirmation`](#SetTargetTemperatureConfirmation)       | Response | [`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest) 메시지에 대한 응답으로 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest)                 | Request  | 대상 기기가 희망 온도를 지정한 값으로 변경하도록 Clova Home extension에게 요청합니다. |
 | [`StopConfirmation`](#StopConfirmation)                                       | Response | [`StopRequest`](#StopRequest) 메시지에 대한 응답으로 대상 기기에게 동작 중지를 요청한 결과를 CEK에게 전달합니다.  |
 | [`StopRequest`](#StopRequest)                                                 | Request  | 기기의 현재 동작을 중지하도록 Clova Home extension에게 요청합니다.  |
-| [`TurnOffConfirmation`](#TurnOffConfirmation)                                 | Response | [`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다. |
+| [`TurnOffConfirmation`](#TurnOffConfirmation)                                 | Response | [`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`TurnOffRequest`](#TurnOffRequest)                                           | Request  | 대상 기기를 끄도록 Clova Home extension에게 요청합니다.                        |
-| [`TurnOnConfirmation`](#TurnOnConfirmation)                                   | Response | [`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 설정한 결과를 CEK에게 전달합니다. |
+| [`TurnOnConfirmation`](#TurnOnConfirmation)                                   | Response | [`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 요청한 후 처리된 결과를 CEK에게 전달합니다. |
 | [`TurnOnRequest`](#TurnOnRequest)                                             | Request  | 대상 기기를 켜도록 Clova Home extension에게 요청합니다.                        |
 | [`UnmuteConfirmation`](#UnmuteConfirmation)                                   | Response | [`UnmuteRequest`](#UnmuteRequest) 메시지에 대한 응답으로 대상 기기의 소리를 켜도록 설정(음소거 해제)한 결과를 CEK에게 전달합니다. |
 | [`UnmuteRequest`](#UnmuteRequest)                                             | Request  | 대상 기기의 소리를 켜도록(음소거 해제) Clova Home extension에게 요청합니다. |
 
 ## ChargeConfirmation {#ChargeConfirmation}
-[`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 설정한 결과를 CEK에게 전달합니다.
+[`ChargeRequest`](#ChargeRequest) 메시지에 대한 응답으로 대상 기기가 스스로 충전하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -196,7 +196,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`ChargeConfirmation`](#ChargeConfirmation)
 
 ## CloseConfirmation {#CloseConfirmation}
-[`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 설정한 결과를 CEK에게 전달합니다.
+[`CloseRequest`](#CloseRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단하거나, 비데의 뚜껑을 닫도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -260,7 +260,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`CloseConfirmation`](#CloseConfirmation)
 
 ## DecrementBrightnessConfirmation {#DecrementBrightnessConfirmation}
-[`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementBrightnessRequest`](#DecrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -345,7 +345,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementBrightnessConfirmation`](#DecrementBrightnessConfirmation)
 
 ## DecrementChannelConfirmation {#DecrementChannelConfirmation}
-[`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementChannelRequest`](#DecrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -437,7 +437,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementChannelConfirmation`](#DecrementChannelConfirmation)
 
 ## DecrementFanSpeedConfirmation {#DecrementFanSpeedConfirmation}
-[`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementFanSpeedRequest`](#DecrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬 속도를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -522,7 +522,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementFanSpeedConfirmation`](#DecrementFanSpeedConfirmation)
 
 ## DecrementIntensityLevelConfirmation {#DecrementIntensityLevelConfirmation}
-[`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -607,7 +607,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementIntensityLevelConfirmation`](#DecrementIntensityLevelConfirmation)
 
 ## DecrementTargetTemperatureConfirmation {#DecrementTargetTemperatureConfirmation}
-[`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementTargetTemperatureRequest`](#DecrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -692,7 +692,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`DecrementTargetTemperatureConfirmation`](#DecrementTargetTemperatureConfirmation)
 
 ## DecrementVolumeConfirmation {#DecrementVolumeConfirmation}
-[`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementVolumeRequest`](#DecrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨 크기를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -2887,7 +2887,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`HealthCheckRequest`](#HealthCheckRequest)
 
 ## IncrementBrightnessConfirmation {#IncrementBrightnessConfirmation}
-[`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`IncrementBrightnessRequest`](#IncrementBrightnessRequest) 메시지에 대한 응답으로 대상 기기가 조명 밝기를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -2972,7 +2972,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementBrightnessConfirmation`](#IncrementBrightnessConfirmation)
 
 ## IncrementChannelConfirmation {#IncrementChannelConfirmation}
-[`IncrementChannelRequest`](#IncrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`IncrementChannelRequest`](#IncrementChannelRequest) 메시지에 대한 응답으로 대상 기기가 TV 채널을 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3065,7 +3065,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementChannelConfirmation`](#IncrementChannelConfirmation)
 
 ## IncrementFanSpeedConfirmation {#IncrementFanSpeedConfirmation}
-[`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬의 속도를 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`IncrementFanSpeedRequest`](#IncrementFanSpeedRequest) 메시지에 대한 응답으로 대상 기기가 팬의 속도를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3150,7 +3150,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementFanSpeedConfirmation`](#IncrementFanSpeedConfirmation)
 
 ## IncrementIntensityLevelConfirmation {#IncrementIntensityLevelConfirmation}
-[`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`DecrementIntensityLevelRequest`](#DecrementIntensityLevelRequest) 메시지에 대한 응답으로 대상 기기가 압력이나 수압 등의 세기를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3235,7 +3235,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementIntensityLevelConfirmation`](#IncrementIntensityLevelConfirmation)
 
 ## IncrementTargetTemperatureConfirmation {#IncrementTargetTemperatureConfirmation}
-[`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`IncrementTargetTemperatureRequest`](#IncrementTargetTemperatureRequest) 메시지에 대한 응답으로 대상 기기가 온도를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3320,7 +3320,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementTargetTemperatureConfirmation`](#IncrementTargetTemperatureConfirmation)
 
 ## IncrementVolumeConfirmation {#IncrementVolumeConfirmation}
-[`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`IncrementVolumeRequest`](#IncrementVolumeRequest) 메시지에 대한 응답으로 대상 기기가 스피커 볼륨을 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3401,7 +3401,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`IncrementVolumeConfirmation`](#IncrementVolumeConfirmation)
 
 ## LowerConfirmation {#LowerConfirmation}
-[`LowerRequest`](#LowerRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 낮추도록 설정한 결과를 CEK에게 전달합니다.
+[`LowerRequest`](#LowerRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 낮추도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3532,7 +3532,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`MuteConfirmation`](#MuteConfirmation)
 
 ## OpenConfirmation {#OpenConfirmation}
-[`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 설정한 결과를 CEK에게 전달합니다.
+[`OpenRequest`](#OpenRequest) 메시지에 대한 응답으로 스마트 커튼이 일광 차단을 해제하거나, 비데의 뚜껑을 열도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3596,7 +3596,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`OpenConfirmation`](#OpenConfirmation)
 
 ## RaiseConfirmation {#RaiseConfirmation}
-[`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 설정한 결과를 CEK에게 전달합니다.
+[`RaiseRequest`](#RaiseRequest) 메시지에 대한 응답으로 대상 기기의 높낮이를 높이도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3665,7 +3665,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`RaiseConfirmation`](#RaiseConfirmation)
 
 ## ReleaseModeConfirmation {#ReleaseModeConfirmation}
-[`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 설정한 결과를 CEK에게 전달합니다.
+[`ReleaseModeRequest`](#ReleaseModeRequest) 메시지에 대한 응답으로 현재 기기의 운전 모드(operation mode)를 해제하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3747,7 +3747,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`ReleaseModeConfirmation`](#ReleaseModeConfirmation)
 
 ## SetBrightnessConfirmation {#SetBrightnessConfirmation}
-[`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetBrightnessRequest`](#SetBrightnessRequest) 메시지에 대한 응답으로 조명 밝기를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3825,7 +3825,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetBrightnessConfirmation`](#SetBrightnessConfirmation)
 
 ## SetChannelByNameConfirmation {#SetChannelByNameConfirmation}
-[`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetChannelByNameRequest`](#SetChannelByNameRequest) 메시지에 대한 응답으로 채널 이름으로 TV 채널을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3903,7 +3903,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetChannelByNameConfirmation`](#SetChannelByNameConfirmation)
 
 ## SetChannelConfirmation {#SetChannelConfirmation}
-[`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 채널 번호로 TV 채널을 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetChannelRequest`](#SetChannelRequest) 메시지에 대한 응답으로 채널 번호로 TV 채널을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -3989,7 +3989,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetChannelConfirmation`](#SetChannelConfirmation)
 
 ## SetColorConfirmation {#SetColorConfirmation}
-[`SetColorRequest`](#SetColorRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색을 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetColorRequest`](#SetColorRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색을 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4071,7 +4071,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetColorConfirmation`](#SetColorConfirmation)
 
 ## SetColorTemperatureConfirmation {#SetColorTemperatureConfirmation}
-[`SetColorTemperatureRequest`](#SetColorTemperatureRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetColorTemperatureRequest`](#SetColorTemperatureRequest) 메시지에 대한 응답으로 대상기기의 조명이나 화면, 전등의 색온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4149,7 +4149,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetColorTemperatureConfirmation`](#SetColorTemperatureConfirmation)
 
 ## SetFanSpeedConfirmation {#SetFanSpeedConfirmation}
-[`SetFanSpeedRequest`](#SetFanSpeedRequest) 메시지에 대한 응답으로 팬 속도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetFanSpeedRequest`](#SetFanSpeedRequest) 메시지에 대한 응답으로 팬 속도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4227,7 +4227,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetFanSpeedConfirmation`](#SetFanSpeedConfirmation)
 
 ## SetFreezerTargetTemperatureConfirmation {#SetFreezerTargetTemperatureConfirmation}
-[`SetFreezerTargetTemperatureRequest`](#SetFreezerTargetTemperatureRequest) 메시지에 대한 응답으로 냉동실의 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetFreezerTargetTemperatureRequest`](#SetFreezerTargetTemperatureRequest) 메시지에 대한 응답으로 냉동실의 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4305,7 +4305,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetFreezerTargetTemperatureConfirmation`](#SetFreezerTargetTemperatureConfirmation)
 
 ## SetFridgeTargetTemperatureConfirmation {#SetFridgeTargetTemperatureConfirmation}
-[`SetFridgeTargetTemperatureRequest`](#SetFridgeTargetTemperatureRequest) 메시지에 대한 응답으로 냉장실의 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetFridgeTargetTemperatureRequest`](#SetFridgeTargetTemperatureRequest) 메시지에 대한 응답으로 냉장실의 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4383,7 +4383,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetFridgeTargetTemperatureConfirmation`](#SetFridgeTargetTemperatureConfirmation)
 
 ## SetLockStateConfirmation {#SetLockStateConfirmation}
-[`SetLockStateRequest`](#SetLockStateRequest) 메시지에 대한 응답으로 대상 기기가 잠기거나 열리도록 설정한 결과를 CEK에게 전달합니다.
+[`SetLockStateRequest`](#SetLockStateRequest) 메시지에 대한 응답으로 대상 기기가 잠기거나 열리도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4454,7 +4454,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetLockStateConfirmation`](#SetLockStateConfirmation)
 
 ## SetModeConfirmation {#SetModeConfirmation}
-[`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 운전 모드(operation mode)를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetModeRequest`](#SetModeRequest) 메시지에 대한 응답으로 운전 모드(operation mode)를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4532,7 +4532,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`SetModeConfirmation`](#SetModeConfirmation)
 
 ## SetTargetTemperatureConfirmation {#SetTargetTemperatureConfirmation}
-[`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest) 메시지에 대한 응답으로 희망 온도를 변경하도록 설정한 결과를 CEK에게 전달합니다.
+[`SetTargetTemperatureRequest`](#SetTargetTemperatureRequest) 메시지에 대한 응답으로 희망 온도를 변경하도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 
@@ -4680,7 +4680,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`StopConfirmation`](#StopConfirmation)
 
 ## TurnOffConfirmation {#TurnOffConfirmation}
-[`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 설정한 결과를 CEK에게 전달합니다.
+[`TurnOffRequest`](#TurnOffRequest) 메시지에 대한 응답으로 대상 기기를 끄도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 없음
@@ -4743,7 +4743,7 @@ IoT 기기 정보 확인 및 기기 제어와 관련된 요청 및 응답을 수
 * [`TurnOffConfirmation`](#TurnOffConfirmation)
 
 ## TurnOnConfirmation {#TurnOnConfirmation}
-[`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 설정한 결과를 CEK에게 전달합니다.
+[`TurnOnRequest`](#TurnOnRequest) 메시지에 대한 응답으로 대상 기기를 켜도록 요청한 후 처리된 결과를 CEK에게 전달합니다.
 
 ### Payload fields
 없음

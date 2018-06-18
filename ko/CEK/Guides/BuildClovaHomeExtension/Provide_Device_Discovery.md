@@ -43,6 +43,7 @@
         "version": "v1.0",
         "friendlyName": "거실 전등",
         "friendlyDescription": "스마트폰으로 제어할 수 있는 전등",
+        "isIr": false,
         "isReachable": true,
           "actions": [
             "DecrementBrightness",
@@ -63,6 +64,7 @@
         "version": "v1.0",
         "friendlyName": "부엌 플러그",
         "friendlyDescription": "에너지를 절약하는 플러그",
+        "isIr": false,
         "isReachable": true,
         "actions": [
           "HealthCheck",
