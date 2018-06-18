@@ -112,6 +112,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
 | `playableItems[].controls[].selected`       | boolean      | 미디어 콘텐츠가 선택된 상태 여부. 이 값은 선호 항목의 개념이 들어간 것을 표현할 때 사용될 수 있습니다. 이 값이 `true`로 선택되었다면 사용자가 선호 항목으로 등록해둔 콘텐츠이기 때문에 미디어 플레이어에서 관련된 UI에 표현해야 합니다. <ul><li><code>true</code>: 선택됨</li><li><code>false</code>: 선택 안됨</li></ul> | 항상  |
 | `playableItems[].controls[].type`           | string       | 버튼의 타입. 현재는 `"BUTTON"` 값만 사용됩니다.  | 항상 |
 | `playableItems[].headerText`       | string        | 주로 현재 재생 목록의 제목을 표현하는 텍스트 필드                                                | 조건부  |
+| `playableItems[].isLive`           | boolean       | 실시간 방송 콘텐츠 여부를 나타내는 아이콘.<ul><li><code>true</code>: 실시간 방송 콘텐츠</li><li><code>false</code>: 실시간 방송 콘텐츠 아님</li></ul><div class="note"><p><strong>Note!</strong></p><p>실시간 방송 콘텐츠일 경우 생방송(live)을 의미하는 아이콘을 표시해야 합니다.</p></div>  | 조건부  |
 | `playableItems[].lyrics[]`         | object array  | 가사 정보를 담고 있는 객체 배열.                                                            | 조건부  |
 | `playableItems[].lyrics[].data`    | string        | 가사 데이터. 이 필드 또는 `playableItems[].lyrics[].url` 필드 중 하나는 존재합니다.              | 조건부  |
 | `playableItems[].lyrics[].format`  | string        | 가사 데이터의 포맷.<ul><li><code>"LRC"</code>: <a href="https://en.wikipedia.org/wiki/LRC_(file_format)" target="_blank">LRC 포맷</a></li><li><code>"PLAIN"</code>: 일반 텍스트 형식</li></ul>  | 항상  |
@@ -180,6 +181,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
               "url": null
             }
           ],
+          "isLive": false,
           "showAdultIcon": false,
           "titleSubText1": "Alice Sara Ott, Symphonie Orchester Des Bayerischen Rundfunks, Esa-Pekka Salonen",
           "titleSubText2": "Wonderland - Edvard Grieg : Piano Concerto, Lyric Pieces",
@@ -204,6 +206,7 @@ CIC가 클라이언트에게 미디어 플레이어에 표시할 재생 목록, 
               "url": null
             }
           ],
+          "isLive": true,
           "showAdultIcon": false,
           "titleSubText1": "Berliner Philharmoniker, Herbert Von Karajan",
           "titleSubText2": "Mendelssohn : Violin Concerto; A Midsummer Night`s Dream",
