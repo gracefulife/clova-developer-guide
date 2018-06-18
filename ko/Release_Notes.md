@@ -2,6 +2,15 @@
 
 이 페이지는 Clova 플랫폼과 문서의 변경 이력을 제공합니다.
 
+## 2018-06-17
+
+* CIC
+  * 실시간 방송 콘텐츠를 구분하기 위해 [TemplateRuntime.RenderPlayerInfo](/CIC/References/CICInterface/TemplateRuntime.md#RenderPlayerInfo)에 isLive 필드 추가
+
+* CEK
+  * [Content template](/CIC/References/Content_Templates.md)의 [공통 필드](/CIC/References/ContentTemplates/Common_Fields.md)에 subtitle 필드 추가
+  * 적외선 방식으로 제어되는 기기를 위해 Clova Home extension API [ApplianceInfoObject](/CEK/References/ClovaHomeInterface/Shared_Objects.md#ApplianceInfoObject)에 isIr 필드 추가
+
 ## 2018-05-28
 
 * CEK
