@@ -4,7 +4,7 @@
 
 * [README](/README.md)
 * [Copyrights](/Copyright.md)
-* [Terms and abbreviations](/Glossary.md)
+* [Glossary](/Glossary.md)
 
 ## Design
 * [Design guidelines for client devices](/Design/Design_Guideline_For_Client_Hardware.md)

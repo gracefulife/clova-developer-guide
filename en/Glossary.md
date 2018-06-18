@@ -54,7 +54,7 @@ An extension that provides a service for controlling IoT appliances. See [Buildi
 ### Clova Home extension messages {#ClovaHomeExtMessage}
 Messages used by [Clova Home extensions](#ClovaHomeExtension) when they exchange information with [Clova Extensions Kit](#CEK) to control IoT appliances. See [Clova Home extension message](/CEK/References/CEK_API.md#ClovaHomeExtMessage) for more details.
 
-### Clova Interface Connection (CIC) {#CIC}
+### Clova Interface Connect (CIC) {#CIC}
 A platform that serves as an interface between Clova and a client aiming to provide AI assistant services, such as PC/mobile apps, mobile devices, or home appliances. See [CIC overview](/CIC/CIC_Overview.md) for more details.
 
 ### Content Template {#ContentTemplate}
