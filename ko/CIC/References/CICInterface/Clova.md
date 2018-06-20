@@ -15,8 +15,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 | [`RenderText`](#RenderText)                      | Directive | 클라이언트에게 텍스트를 표시하도록 지시합니다.                     |
 | [`StartExtension`](#StartExtension)              | Directive | 클라이언트에게 특정 Extension을 시작하도록 지시합니다.            |
 
-<<<<<<< HEAD
-=======
 {% if book.TargetReaderType == "Internal" or book.TargetReaderType == "Uplus" %}
 ## ExpectLogin directive {#ExpectLogin}
 
@@ -54,7 +52,6 @@ Clova 인터페이스는 CIC가 사용자 요청이 인식된 결과를 클라�
 
 {% endif %}
 
->>>>>>> doc-KR-Partner-LGUplus
 ## FinishExtension directive {#FinishExtension}
 
 클라이언트에게 특정 Extension 사용을 종료하도록 지시합니다. 클라이언트는 FinishExtension 지시 메시지를 수신하면 해당 값에 대응하는 Extension을 종료해야 합니다.
